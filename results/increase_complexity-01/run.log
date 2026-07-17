@@ -1,0 +1,1348 @@
+Device: cuda
+Regimes: ['standard', 'super_2x', 'super_4x']
+Depths: [3, 5, 7]  Seeds: [0, 1, 2]  MaxEpochs: 30
+S_l threshold: |z|>2.0  Saturation: |tanh(z)|>0.99  Layer: 80%
+EVAL_N=2048 (preloaded GPU tensor, fixed per run)
+Loading MNIST to GPU…
+  Train: torch.Size([60000, 784])  Test: torch.Size([10000, 784])
+Data loaded to GPU in 11.4s
+
+────────────────────────────────────────────────────────────
+Regime=standard  Depth=3  Seed=0
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [0.3328, 0.333, 0.3338]
+  Init CE: 2.3086  (ln10=2.3026)
+  Init S_l    : ['0.0011', '0.0000', '0.0000']
+  Init sat_frc: ['0.0000', '0.0000', '0.0000']
+  Init Var(z) : ['0.3237', '0.0705', '0.0197']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.4601 | sat=['0.011', '0.000', '0.000']
+  Epoch   5 | loss=0.0931 | sat=['0.087', '0.000', '0.000']
+  Epoch  10 | loss=0.0340 | sat=['0.125', '0.000', '0.000']
+  Epoch  15 | loss=0.0131 | sat=['0.141', '0.000', '0.000']
+  Epoch  20 | loss=0.0054 | sat=['0.149', '0.000', '0.000']
+  Epoch  25 | loss=0.0028 | sat=['0.153', '0.000', '0.000']
+  Epoch  30 | loss=0.0018 | sat=['0.156', '0.000', '0.000']
+  Final test acc: 98.23%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 1/27 done | elapsed=21s | ETA=538s
+
+────────────────────────────────────────────────────────────
+Regime=standard  Depth=3  Seed=1
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [0.3333, 0.3319, 0.3321]
+  Init CE: 2.3001  (ln10=2.3026)
+  Init S_l    : ['0.0012', '0.0000', '0.0000']
+  Init sat_frc: ['0.0000', '0.0000', '0.0000']
+  Init Var(z) : ['0.3353', '0.0689', '0.0190']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.4614 | sat=['0.009', '0.000', '0.000']
+  Epoch   5 | loss=0.0931 | sat=['0.089', '0.000', '0.000']
+  Epoch  10 | loss=0.0339 | sat=['0.128', '0.000', '0.000']
+  Epoch  15 | loss=0.0131 | sat=['0.142', '0.000', '0.000']
+  Epoch  20 | loss=0.0053 | sat=['0.150', '0.000', '0.000']
+  Epoch  25 | loss=0.0027 | sat=['0.154', '0.000', '0.000']
+  Epoch  30 | loss=0.0018 | sat=['0.156', '0.000', '0.000']
+  Final test acc: 98.16%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 2/27 done | elapsed=28s | ETA=354s
+
+────────────────────────────────────────────────────────────
+Regime=standard  Depth=3  Seed=2
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [0.334, 0.3345, 0.3301]
+  Init CE: 2.2903  (ln10=2.3026)
+  Init S_l    : ['0.0014', '0.0000', '0.0000']
+  Init sat_frc: ['0.0001', '0.0000', '0.0000']
+  Init Var(z) : ['0.3389', '0.0694', '0.0199']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.4651 | sat=['0.009', '0.000', '0.000']
+  Epoch   5 | loss=0.0921 | sat=['0.085', '0.000', '0.000']
+  Epoch  10 | loss=0.0334 | sat=['0.123', '0.000', '0.000']
+  Epoch  15 | loss=0.0123 | sat=['0.139', '0.000', '0.000']
+  Epoch  20 | loss=0.0049 | sat=['0.145', '0.000', '0.000']
+  Epoch  25 | loss=0.0027 | sat=['0.149', '0.000', '0.000']
+  Epoch  30 | loss=0.0017 | sat=['0.151', '0.000', '0.000']
+  Final test acc: 98.14%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 3/27 done | elapsed=36s | ETA=289s
+
+────────────────────────────────────────────────────────────
+Regime=standard  Depth=5  Seed=0
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [0.3328, 0.333, 0.3338, 0.3326, 0.3334]
+  Init CE: 2.3109  (ln10=2.3026)
+  Init S_l    : ['0.0011', '0.0000', '0.0000', '0.0000', '0.0000']
+  Init sat_frc: ['0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Init Var(z) : ['0.3237', '0.0705', '0.0197', '0.0062', '0.0020']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.6180 | sat=['0.007', '0.000', '0.000', '0.000', '0.000']
+  Epoch   5 | loss=0.0808 | sat=['0.079', '0.000', '0.000', '0.000', '0.000']
+  Epoch  10 | loss=0.0260 | sat=['0.113', '0.000', '0.000', '0.000', '0.000']
+  Epoch  15 | loss=0.0068 | sat=['0.124', '0.000', '0.000', '0.000', '0.000']
+  Epoch  20 | loss=0.0021 | sat=['0.126', '0.000', '0.000', '0.000', '0.000']
+  Epoch  25 | loss=0.0010 | sat=['0.128', '0.000', '0.000', '0.000', '0.000']
+  Epoch  30 | loss=0.0007 | sat=['0.129', '0.000', '0.000', '0.000', '0.000']
+  Final test acc: 98.13%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Layer 4: CENSORED(>30)
+  Layer 5: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 4/27 done | elapsed=46s | ETA=265s
+
+────────────────────────────────────────────────────────────
+Regime=standard  Depth=5  Seed=1
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [0.3333, 0.3319, 0.3321, 0.3349, 0.3329]
+  Init CE: 2.3138  (ln10=2.3026)
+  Init S_l    : ['0.0012', '0.0000', '0.0000', '0.0000', '0.0000']
+  Init sat_frc: ['0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Init Var(z) : ['0.3353', '0.0689', '0.0190', '0.0061', '0.0020']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.6086 | sat=['0.008', '0.000', '0.000', '0.000', '0.000']
+  Epoch   5 | loss=0.0769 | sat=['0.084', '0.000', '0.000', '0.000', '0.000']
+  Epoch  10 | loss=0.0232 | sat=['0.118', '0.000', '0.000', '0.000', '0.000']
+  Epoch  15 | loss=0.0058 | sat=['0.130', '0.000', '0.000', '0.000', '0.000']
+  Epoch  20 | loss=0.0017 | sat=['0.132', '0.000', '0.000', '0.000', '0.000']
+  Epoch  25 | loss=0.0010 | sat=['0.133', '0.000', '0.000', '0.000', '0.000']
+  Epoch  30 | loss=0.0007 | sat=['0.134', '0.000', '0.000', '0.000', '0.001']
+  Final test acc: 98.23%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Layer 4: CENSORED(>30)
+  Layer 5: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 5/27 done | elapsed=56s | ETA=246s
+
+────────────────────────────────────────────────────────�  Epoch  15 | loss=0.0069 | sat=['0.129', '0.000', '0.000', '0.000', '0.000']
+  Epoch  20 | loss=0.0017 | sat=['0.134', '0.000', '0.000', '0.000', '0.000']
+  Epoch  25 | loss=0.0009 | sat=['0.134', '0.000', '0.000', '0.000', '0.000']
+  Epoch  30 | loss=0.0006 | sat=['0.137', '0.000', '0.000', '0.000', '0.000']
+
+  Final test acc: 98.27%
+  Layer 1: CENSORED (>30)
+  Layer 2: CENSORED (>30)
+  Layer 3: CENSORED (>30)
+  Layer 4: CENSORED (>30)
+  Layer 5: CENSORED (>30)
+  No layers crossed 80% threshold within 30 epochs.
+  No Spearman computed: no crossings.
+  Spearman(S_l, ce_censored)[all censored]: nan
+  Spearman(depth_idx, ce_censored)[all censored]: nan
+  → Done in 927s total elapsed
+
+────────────────────────────────────────────────────────────
+Regime=standard  Depth=5  Seed=2
+────────────────────────────────────────────────────────────
+  n·σ² per layer: ['0.3340', '0.3345', '0.3301', '0.3326', '0.3353']
+  Init CE loss : 2.3003  (ln10=2.3026)
+  Init S_l     : ['0.0014', '0.0000', '0.0000', '0.0000', '0.0000']
+  Init sat_frac: ['0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Init Var(z_l): ['0.3342', '0.0686', '0.0198', '0.0061', '0.0019']
+  [SANITY] Init CE in [2.0, 3.0]: PASS
+  S_l weakly decreasing with depth: True
+  S_l weakly increasing with depth: False
+  Epoch   1 | loss=0.6025 | sat=['0.009', '0.000', '0.000', '0.000', '0.000']
+  Epoch   5 | loss=0.0777 | sat=['0.088', '0.000', '0.000', '0.000', '0.000']
+  Epoch  10 | loss=0.0230 | sat=['0.123', '0.000', '0.000', '0.000', '0.000']
+  Epoch  15 | loss=0.0059 | sat=['0.134', '0.000', '0.000', '0.000', '0.000']
+  Epoch  20 | loss=0.0018 | sat=['0.138', '0.000', '0.000', '0.000', '0.001']
+  Epoch  25 | loss=0.0009 | sat=['0.138', '0.000', '0.000', '0.000', '0.001']
+  Epoch  30 | loss=0.0007 | sat=['0.139', '0.000', '0.000', '0.000', '0.001']
+
+  Final test acc: 98.06%
+  Layer 1: CENSORED (>30)
+  Layer 2: CENSORED (>30)
+  Layer 3: CENSORED (>30)
+  Layer 4: CENSORED (>30)
+  Layer 5: CENSORED (>30)
+  No layers crossed 80% threshold within 30 epochs.
+  No Spearman computed: no crossings.
+  Spearman(S_l, ce_censored)[all censored]: nan
+  Spearman(depth_idx, ce_censored)[all censored]: nan
+  → Done in 1112s total elapsed
+
+────────────────────────────────────────────────────────────
+Regime=standard  Depth=7  Seed=0
+────────────────────────────────────────────────────────────
+  n·σ² per layer: ['0.3328', '0.3330', '0.3338', '0.3326', '0.3334', '0.3335', '0.3343']
+  Init CE loss : 2.3027  (ln10=2.3026)
+  Init S_l     : ['0.0012', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Init sat_frac: ['0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Init Var(z_l): ['0.3244', '0.0705', '0.0196', '0.0062', '0.0020', '0.0006', '0.0002']
+  [SANITY] Init CE in [2.0, 3.0]: PASS
+  S_l weakly decreasing with depth: True
+  S_l weakly increasing with depth: False
+  Epoch   1 | loss=0.8715 | sat=['0.012', '0.000', '0.000', '0.000', '0.000', '0.000', '0.000']
+  Epoch   5 | loss=0.0789 | sat=['0.101', '0.000', '0.000', '0.000', '0.000', '0.000', '0.000']
+  Epoch  10 | loss=0.0246 | sat=['0.135', '0.000', '0.000', '0.000', '0.000', '0.000', '0.000']
+  Epoch  15 | loss=0.0058 | sat=['0.152', '0.000', '0.000', '0.000', '0.000', '0.000', '0.000']
+  Epoch  20 | loss=0.0012 | sat=['0.153', '0.000', '0.000', '0.000', '0.000', '0.000', '0.001']
+  Epoch  25 | loss=0.0006 | sat=['0.153', '0.000', '0.000', '0.000', '0.000', '0.000', '0.001']
+  Epoch  30 | loss=0.0004 | sat=['0.152', '0.000', '0.000', '0.000', '0.000', '0.000', '0.001']
+
+  Final test acc: 98.29%
+  Layer 1: CENSORED (>30)
+  Layer 2: CENSORED (>30)
+  Layer 3: CENSORED (>30)
+  Layer 4: CENSORED (>30)
+  Layer 5: CENSORED (>30)
+  Layer 6: CENSORED (>30)
+  Layer 7: CENSORED (>30)
+  No layers crossed 80% threshold within 30 epochs.
+  No Spearman computed: no crossings.
+  Spearman(S_l, ce_censored)[all censored]: nan
+  Spearman(depth_idx, ce_censored)[all censored]: nan
+  → Done in 1296s total elapsed
+
+────────────────────────────────────────────────────────────
+Regime=standard  Depth=7  Seed=1
+────────────────────────────────────────────────────────────
+  n·σ² per layer: ['0.3333', '0.3319', '0.3321', '0.3349', '0.3329', '0.3314', '0.3342']
+  Init CE loss : 2.3048  (ln10=2.3026)
+  Init S_l     : ['0.0013', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Init sat_frac: ['0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Init Var(z_l): ['0.3367', '0.0692', '0.0189', '0.0061', '0.0020', '0.0006', '0.0002']
+  [SANITY] Init CE in [2.0, 3.0]: PASS
+  S_l weakly decreasing with depth: True
+  S_l weakly increasing with depth: False
+  Epoch   1 | loss=0.8769 | sat=['0.012', '0.000', '0.000', '0.000', '0.000', '0.000', '0.000']
+  Epoch   5 | loss=0.0802 | sat=['0.100', '0.000', '0.000', '0.000', '0.000', '0.000', '0.000']
+0.000']
+  Epoch  15 | loss=0.0058 | sat=['0.152', '0.000', '0.000', '0.000', '0.000', '0.000', '0.000']
+  Epoch  20 | loss=0.0012 | sat=['0.153', '0.000', '0.000', '0.000', '0.000', '0.000', '0.001']
+  Epoch  25 | loss=0.0006 | sat=['0.153', '0.000', '0.000', '0.000', '0.000', '0.000', '0.001']
+  Epoch  30 | loss=0.0004 | sat=['0.152', '0.000', '0.000', '0.000', '0.000', '0.000', '0.001']
+
+  Final test acc: 98.29%
+  Layer 1: CENSORED (>30)
+  Layer 2: CENSORED (>30)
+  Layer 3: CENSORED (>30)
+  Layer 4: CENSORED (>30)
+  Layer 5: CENSORED (>30)
+  Layer 6: CENSORED (>30)
+  Layer 7: CENSORED (>30)
+  No layers crossed 80% threshold within 30 epochs.
+  No Spearman computed: no crossings.
+  Spearman(S_l, ce_censored)[all censored]: nan
+  Spearman(depth_idx, ce_censored)[all censored]: nan
+  → Done in 1296s total elapsed
+
+────────────────────────────────────────────────────────────
+Regime=standard  Depth=7  Seed=1
+────────────────────────────────────────────────────────────
+  n·σ² per layer: ['0.3333', '0.3319', '0.3321', '0.3349', '0.3329', '0.3314', '0.3342']
+  Init CE loss : 2.3048  (ln10=2.3026)
+  Init S_l     : ['0.0013', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Init sat_frac: ['0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+  Init Var(z_l): ['0.3367', '0.0692', '0.0189', '0.0061', '0.0020', '0.0006', '0.0002']
+  [SANITY] Init CE in [2.0, 3.0]: PASS
+  S_l weakly decreasing with depth: True
+  S_l weakly increasing with depth: False
+  Epoch   1 | loss=0.8769 | sat=['0.012', '0.000', '0.000', '0.000', '0.000', '0.000', '0.000']
+  Epoch   5 | loss=0.0802 | sat=['0.100', '0.000', '0.000', '0.000', '0.000', '0.000', '0.000']
+ing: False
+  Epoch   1 | loss=0.3666 | sat=['0.110', '0.024', '0.013']
+  Epoch   5 | loss=0.0734 | sat=['0.171', '0.034', '0.015']
+  Epoch  10 | loss=0.0267 | sat=['0.193', '0.036', '0.014']
+  Epoch  15 | loss=0.0111 | sat=['0.202', '0.036', '0.014']
+  Epoch  20 | loss=0.0054 | sat=['0.207', '0.037', '0.014']
+  Epoch  25 | loss=0.0033 | sat=['0.211', '0.037', '0.015']
+  Epoch  30 | loss=0.0023 | sat=['0.213', '0.037', '0.015']
+  Final test acc: 97.92%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 10/27 done | elapsed=109s | ETA=185s
+
+────────────────────────────────────────────────────────────
+Regime=super_2x  Depth=3  Seed=1
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [2.0072, 1.9994, 1.9902]
+  Init CE: 2.6388  (ln10=2.3026)
+  Init S_l    : ['0.1654', '0.0492', '0.0249']
+  Init sat_frc: ['0.0704', '0.0088', '0.0028']
+  Init Var(z) : ['2.1225', '1.0310', '0.7978']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.3791 | sat=['0.129', '0.022', '0.010']
+  Epoch   5 | loss=0.0719 | sat=['0.187', '0.026', '0.011']
+  Epoch  10 | loss=0.0249 | sat=['0.206', '0.027', '0.011']
+  Epoch  15 | loss=0.0097 | sat=['0.214', '0.027', '0.011']
+  Epoch  20 | loss=0.0048 | sat=['0.219', '0.026', '0.012']
+  Epoch  25 | loss=0.0029 | sat=['0.222', '0.026', '0.012']
+  Epoch  30 | loss=0.0020 | sat=['0.225', '0.026', '0.013']
+  Final test acc: 97.81%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 11/27 done | elapsed=117s | ETA=170s
+
+────────────────────────────────────────────────────────────
+Regime=super_2x  Depth=3  Seed=2
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [1.9898, 2.009, 1.9789]
+  Init CE: 2.6515  (ln10=2.3026)
+  Init S_l    : ['0.1437', '0.0533', '0.0246']
+  Init sat_frc: ['0.0561', '0.0105', '0.0031']
+  Init Var(z) : ['1.8969', '1.0590', '0.7803']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.3811 | sat=['0.109', '0.024', '0.011']
+  Epoch   5 | loss=0.0750 | sat=['0.171', '0.034', '0.011']
+  Epoch  10 | loss=0.0267 | sat=['0.193', '0.035', '0.011']
+  Epoch  15 | loss=0.0107 | sat=['0.202', '0.035', '0.011']
+  Epoch  20 | loss=0.0053 | sat=['0.207', '0.035', '0.011']
+  Epoch  25 | loss=0.0032 | sat=['0.210', '0.035', '0.011']
+  Epoch  30 | loss=0.0022 | sat=['0.212', '0.035', '0.012']
+  Final test acc: 97.71%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 12/27 done | elapsed=125s | ETA=156s
+
+────────────────────────────────────────────────────────────
+Regime=super_2x  Depth=5  Seed=0
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [2.0051, 2.0029, 1.9983, 2.0018, 1.9866]
+  Init CE: 2.4405  (ln10=2.3026)
+  Init S_l    : ['0.1466', '0.0482', '0.0263', '0.0183', '0.0164']
+  Init sat_frc: ['0.0576', '0.0084', '0.0033', '0.0017', '0.0018']
+  Init Var(z) : ['1.9133', '1.0248', '0.8071', '0.7157', '0.6743']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.3402 | sat=['0.113', '0.025', '0.010', '0.006', '0.005']
+  Epoch   5 | loss=0.0469 | sat=['0.157', '0.035', '0.011', '0.006', '0.005']
+  Epoch  10 | loss=0.0091 | sat=['0.169', '0.037', '0.011', '0.005', '0.007']
+  Epoch  15 | loss=0.0029 | sat=['0.172', '0.038', '0.011', '0.005', '0.008']
+  Epoch  20 | loss=0.0015 | sat=['0.174', '0.038', '0.011', '0.005', '0.009']
+  Epoch  25 | loss=0.0010 | sat=['0.175', '0.038', '0.011', '0.005', '0.010']
+  Epoch  30 | loss=0.0007 | sat=['0.176', '0.038', '0.011', '0.006', '0.010']
+  Final test acc: 97.57%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Layer 4: CENSORED(>30)
+  Layer 5: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 13/27 done | elapsed=134s | ETA=145s
+
+────────────────────────────────────────────────────────────
+Regime=super_2x  Depth=5  Seed=1
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [2.0072, 1.9994, 1.9902, 1.9939, 2.0089]
+  Init CE: 2.6026  (ln10=2.3026)
+  Init S_l    : ['0.1654', '0.0492', '0.0249', '0.0193', '0.0160']
+  Init sat_frc: ['0.0704', '0.0088', '0.0028', '0.0021', '0.0016']
+  Init Var(z) : ['2.1225', '1.0310', '0.7978', '0.7249', '0.6776']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.3520 | sat=['0.123', '0.021', '0.008', '0.005', '0.006']
+  Epoch   5 | loss=0.0469 | sat=['0.169', '0.029', '0.011', '0.005', '0.006']
+  Epoch  10 | loss=0.0104 | sat=['0.181', '0.030', '0.011', '0.005', '0.007']
+  Epoch  15 | loss=0.0030 | sat=['0.185', '0.031', '0.011', '0.004', '0.009']
+  Epoch  20 | loss=0.0015 | sat=['0.187', '0.031', '0.011', '0.004', '0.010']
+  Epoch  25 | loss=0.0010 | sat=['0.188', '0.031', '0.011', '0.005', '0.011']
+  Epoch  30 | loss=0.0008 | sat=['0.189', '0.031', '0.011', '0.005', '0.011']
+  Final test acc: 97.72%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Layer 4: CENSORED(>30)
+  Layer 5: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 14/27 done | elapsed=144s | ETA=134s
+
+────────────────────────────────────────────────────────────
+Regime=super_2x  Depth=5  Seed=2
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [1.9898, 2.009, 1.9789, 1.9851, 1.9848]
+  Init CE: 2.5170  (ln10=2.3026)
+  Init S_l    : ['0.1437', '0.0533', '0.0246', '0.0163', '0.0136']
+  Init sat_frc: ['0.0561', '0.0105', '0.0031', '0.0014', '0.0013']
+  Init Var(z) : ['1.8969', '1.0590', '0.7803', '0.6922', '0.6552']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.3435 | sat=['0.110', '0.026', '0.008', '0.006', '0.007']
+  Epoch   5 | loss=0.0486 | sat=['0.155', '0.036', '0.010', '0.006', '0.008']
+  Epoch  10 | loss=0.0100 | sat=['0.165', '0.038', '0.010', '0.006', '0.010']
+  Epoch  15 | loss=0.0031 | sat=['0.168', '0.038', '0.010', '0.005', '0.011']
+  Epoch  20 | loss=0.0016 | sat=['0.170', '0.038', '0.010', '0.005', '0.012']
+  Epoch  25 | loss=0.0010 | sat=['0.172', '0.039', '0.010', '0.006', '0.013']
+  Epoch  30 | loss=0.0008 | sat=['0.173', '0.039', '0.010', '0.006', '0.013']
+  Final test acc: 97.57%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Layer 4: CENSORED(>30)
+  Layer 5: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 15/27 done | elapsed=154s | ETA=123s
+
+────────────────────────────────────────────────────────────
+Regime=super_2x  Depth=7  Seed=0
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [2.0051, 2.0029, 1.9983, 2.0018, 1.9866, 1.9931, 2.0138]
+  Init CE: 2.5049  (ln10=2.3026)
+  Init S_l    : ['0.1466', '0.0482', '0.0263', '0.0183', '0.0164', '0.0129', '0.0112']
+  Init sat_frc: ['0.0576', '0.0084', '0.0033', '0.0017', '0.0018', '0.0010', '0.0008']
+  Init Var(z) : ['1.9133', '1.0248', '0.8071', '0.7157', '0.6743', '0.6476', '0.6190']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.3224 | sat=['0.116', '0.026', '0.012', '0.009', '0.005', '0.004', '0.006']
+  Epoch   5 | loss=0.0328 | sat=['0.148', '0.033', '0.015', '0.012', '0.005', '0.003', '0.007']
+  Epoch  10 | loss=0.0044 | sat=['0.154', '0.033', '0.015', '0.011', '0.004', '0.003', '0.008']
+  Epoch  15 | loss=0.0014 | sat=['0.156', '0.034', '0.014', '0.011', '0.004', '0.004', '0.009']
+  Epoch  20 | loss=0.0008 | sat=['0.157', '0.034', '0.015', '0.011', '0.004', '0.004', '0.010']
+  Epoch  25 | loss=0.0006 | sat=['0.158', '0.034', '0.015', '0.011', '0.004', '0.004', '0.011']
+  Epoch  30 | loss=0.0004 | sat=['0.158', '0.034', '0.015', '0.011', '0.004', '0.004', '0.012']
+  Final test acc: 97.55%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Layer 4: CENSORED(>30)
+  Layer 5: CENSORED(>30)
+  Layer 6: CENSORED(>30)
+  Layer 7: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 16/27 done | elapsed=166s | ETA=114s
+
+────────────────────────────────────────────────────────────
+Regime=super_2x  Depth=7  Seed=1
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [2.0072, 1.9994, 1.9902, 1.9939, 2.0089, 2.0201, 2.0024]
+  Init CE: 2.7717  (ln10=2.3026)
+  Init S_l    : ['0.1654', '0.0492', '0.0249', '0.0193', '0.0160', '0.0130', '0.0124']
+  Init sat_frc: ['0.0704', '0.0088', '0.0028', '0.0021', '0.0016', '0.0010', '0.0008']
+  Init Var(z) : ['2.1225', '1.0310', '0.7978', '0.7249', '0.6776', '0.6478', '0.6472']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.3351 | sat=['0.125', '0.024', '0.008', '0.005', '0.005', '0.005', '0.006']
+  Epoch   5 | loss=0.0327 | sat=['0.155', '0.031', '0.011', '0.006', '0.005', '0.005', '0.007']
+  Epoch  10 | loss=0.0041 | sat=['0.161', '0.032', '0.011', '0.006', '0.005', '0.005', '0.008']
+  Epoch  15 | loss=0.0014 | sat=['0.163', '0.032', '0.011', '0.006', '0.005', '0.005', '0.010']
+  Epoch  20 | loss=0.0008 | sat=['0.165', '0.032', '0.011', '0.006', '0.005', '0.005', '0.010']
+  Epoch  25 | loss=0.0005 | sat=['0.165', '0.032', '0.011', '0.006', '0.005', '0.005', '0.011']
+  Epoch  30 | loss=0.0004 | sat=['0.166', '0.033', '0.012', '0.006', '0.005', '0.005', '0.012']
+  Final test acc: 97.50%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Layer 4: CENSORED(>30)
+  Layer 5: CENSORED(>30)
+  Layer 6: CENSORED(>30)
+  Layer 7: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 17/27 done | elapsed=178s | ETA=105s
+
+────────────────────────────────────────────────────────────
+Regime=super_2x  Depth=7  Seed=2
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [1.9898, 2.009, 1.9789, 1.9851, 1.9848, 2.0205, 1.9966]
+  Init CE: 2.4169  (ln10=2.3026)
+  Init S_l    : ['0.1437', '0.0533', '0.0246', '0.0163', '0.0136', '0.0138', '0.0126']
+  Init sat_frc: ['0.0561', '0.0105', '0.0031', '0.0014', '0.0013', '0.0011', '0.0011']
+  Init Var(z) : ['1.8969', '1.0590', '0.7803', '0.6922', '0.6552', '0.6522', '0.6384']
+  S_l weakly decreasing: False  increasing: False
+  Epoch   1 | loss=0.3275 | sat=['0.110', '0.026', '0.011', '0.006', '0.006', '0.006', '0.005']
+  Epoch   5 | loss=0.0335 | sat=['0.146', '0.034', '0.013', '0.007', '0.005', '0.005', '0.007']
+  Epoch  10 | loss=0.0037 | sat=['0.153', '0.035', '0.014', '0.007', '0.004', '0.005', '0.008']
+  Epoch  15 | loss=0.0013 | sat=['0.155', '0.035', '0.014', '0.007', '0.004', '0.006', '0.010']
+  Epoch  20 | loss=0.0008 | sat=['0.156', '0.036', '0.014', '0.007', '0.004', '0.006', '0.011']
+  Epoch  25 | loss=0.0005 | sat=['0.157', '0.036', '0.014', '0.007', '0.004', '0.006', '0.012']
+  Epoch  30 | loss=0.0004 | sat=['0.157', '0.036', '0.014', '0.007', '0.004', '0.006', '0.013']
+  Final test acc: 97.61%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Layer 4: CENSORED(>30)
+  Layer 5: CENSORED(>30)
+  Layer 6: CENSORED(>30)
+  Layer 7: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 18/27 done | elapsed=190s | ETA=95s
+
+────────────────────────────────────────────────────────────
+Regime=super_4x  Depth=3  Seed=0
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [4.0102, 4.0058, 3.9966]
+  Init CE: 2.6162  (ln10=2.3026)
+  Init S_l    : ['0.2991', '0.2095', '0.1836']
+  Init sat_frc: ['0.1731', '0.0960', '0.0791']
+  Init Var(z) : ['3.8265', '2.5209', '2.2616']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.4050 | sat=['0.239', '0.130', '0.109']
+  Epoch   5 | loss=0.0773 | sat=['0.285', '0.140', '0.109']
+  Epoch  10 | loss=0.0282 | sat=['0.299', '0.142', '0.106']
+  Epoch  15 | loss=0.0125 | sat=['0.305', '0.142', '0.105']
+  Epoch  20 | loss=0.0067 | sat=['0.309', '0.142', '0.105']
+  Epoch  25 | loss=0.0042 | sat=['0.311', '0.142', '0.106']
+  Epoch  30 | loss=0.0029 | sat=['0.312', '0.142', '0.106']
+  Final test acc: 97.11%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 19/27 done | elapsed=197s | ETA=83s
+
+────────────────────────────────────────────────────────────
+Regime=super_4x  Depth=3  Seed=1
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [4.0145, 3.9988, 3.9804]
+  Init CE: 2.7990  (ln10=2.3026)
+  Init S_l    : ['0.3215', '0.2104', '0.1821']
+  Init sat_frc: ['0.1929', '0.0962', '0.0764']
+  Init Var(z) : ['4.2450', '2.5143', '2.2244']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.4203 | sat=['0.262', '0.129', '0.101']
+  Epoch   5 | loss=0.0773 | sat=['0.305', '0.136', '0.098']
+  Epoch  10 | loss=0.0268 | sat=['0.317', '0.139', '0.096']
+  Epoch  15 | loss=0.0111 | sat=['0.322', '0.139', '0.095']
+  Epoch  20 | loss=0.0058 | sat=['0.325', '0.138', '0.096']
+  Epoch  25 | loss=0.0037 | sat=['0.327', '0.139', '0.096']
+  Epoch  30 | loss=0.0027 | sat=['0.329', '0.139', '0.097']
+  Final test acc: 97.34%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 20/27 done | elapsed=205s | ETA=72s
+
+────────────────────────────────────────────────────────────
+Regime=super_4x  Depth=3  Seed=2
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [3.9796, 4.018, 3.9578]
+  Init CE: 2.8330  (ln10=2.3026)
+  Init S_l    : ['0.2958', '0.2151', '0.1760']
+  Init sat_frc: ['0.1700', '0.1016', '0.0741']
+  Init Var(z) : ['3.7939', '2.6068', '2.1907']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.4223 | sat=['0.238', '0.141', '0.101']
+  Epoch   5 | loss=0.0786 | sat=['0.286', '0.155', '0.097']
+  Epoch  10 | loss=0.0274 | sat=['0.301', '0.155', '0.095']
+  Epoch  15 | loss=0.0115 | sat=['0.306', '0.155', '0.094']
+  Epoch  20 | loss=0.0061 | sat=['0.310', '0.156', '0.095']
+  Epoch  25 | loss=0.0039 | sat=['0.312', '0.156', '0.096']
+  Epoch  30 | loss=0.0027 | sat=['0.314', '0.156', '0.096']
+  Final test acc: 97.17%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 21/27 done | elapsed=212s | ETA=61s
+
+────────────────────────────────────────────────────────────
+Regime=super_4x  Depth=5  Seed=0
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [4.0102, 4.0058, 3.9966, 4.0037, 3.9731]
+  Init CE: 2.5932  (ln10=2.3026)
+  Init S_l    : ['0.2991', '0.2095', '0.1836', '0.1749', '0.1706']
+  Init sat_frc: ['0.1731', '0.0960', '0.0791', '0.0732', '0.0712']
+  Init Var(z) : ['3.8265', '2.5209', '2.2616', '2.1783', '2.1458']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.3967 | sat=['0.246', '0.149', '0.117', '0.102', '0.096']
+  Epoch   5 | loss=0.0473 | sat=['0.276', '0.164', '0.121', '0.101', '0.098']
+  Epoch  10 | loss=0.0094 | sat=['0.283', '0.164', '0.120', '0.098', '0.099']
+  Epoch  15 | loss=0.0037 | sat=['0.285', '0.164', '0.120', '0.098', '0.102']
+  Epoch  20 | loss=0.0021 | sat=['0.287', '0.165', '0.120', '0.098', '0.104']
+  Epoch  25 | loss=0.0014 | sat=['0.288', '0.165', '0.120', '0.099', '0.105']
+  Epoch  30 | loss=0.0010 | sat=['0.288', '0.165', '0.121', '0.099', '0.107']
+  Final test acc: 96.66%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Layer 4: CENSORED(>30)
+  Layer 5: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 22/27 done | elapsed=222s | ETA=51s
+
+────────────────────────────────────────────────────────────
+Regime=super_4x  Depth=5  Seed=1
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [4.0145, 3.9988, 3.9804, 3.9877, 4.0178]
+  Init CE: 2.7577  (ln10=2.3026)
+  Init S_l    : ['0.3215', '0.2104', '0.1821', '0.1769', '0.1732']
+  Init sat_frc: ['0.1929', '0.0962', '0.0764', '0.0743', '0.0722']
+  Init Var(z) : ['4.2450', '2.5143', '2.2244', '2.1990', '2.1628']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.4138 | sat=['0.270', '0.141', '0.110', '0.098', '0.100']
+  Epoch   5 | loss=0.0475 | sat=['0.300', '0.153', '0.114', '0.096', '0.099']
+  Epoch  10 | loss=0.0102 | sat=['0.306', '0.154', '0.114', '0.094', '0.100']
+  Epoch  15 | loss=0.0038 | sat=['0.308', '0.154', '0.114', '0.093', '0.102']
+  Epoch  20 | loss=0.0021 | sat=['0.309', '0.154', '0.114', '0.093', '0.104']
+  Epoch  25 | loss=0.0014 | sat=['0.310', '0.154', '0.114', '0.093', '0.105']
+  Epoch  30 | loss=0.0011 | sat=['0.310', '0.154', '0.114', '0.093', '0.106']
+  Final test acc: 96.79%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Layer 4: CENSORED(>30)
+  Layer 5: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 23/27 done | elapsed=232s | ETA=40s
+
+────────────────────────────────────────────────────────────
+Regime=super_4x  Depth=5  Seed=2
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [3.9796, 4.018, 3.9578, 3.9702, 3.9696]
+  Init CE: 2.6836  (ln10=2.3026)
+  Init S_l    : ['0.2958', '0.2151', '0.1760', '0.1698', '0.1689']
+  Init sat_frc: ['0.1700', '0.1016', '0.0741', '0.0696', '0.0687']
+  Init Var(z) : ['3.7939', '2.6068', '2.1907', '2.1254', '2.1174']
+  S_l weakly decreasing: True  increasing: False
+  Epoch   1 | loss=0.4014 | sat=['0.247', '0.150', '0.103', '0.102', '0.098']
+  Epoch   5 | loss=0.0489 | sat=['0.275', '0.161', '0.108', '0.102', '0.101']
+  Epoch  10 | loss=0.0102 | sat=['0.280', '0.161', '0.107', '0.099', '0.103']
+  Epoch  15 | loss=0.0039 | sat=['0.283', '0.163', '0.108', '0.098', '0.105']
+  Epoch  20 | loss=0.0021 | sat=['0.284', '0.163', '0.108', '0.098', '0.107']
+  Epoch  25 | loss=0.0014 | sat=['0.285', '0.164', '0.108', '0.098', '0.108']
+  Epoch  30 | loss=0.0011 | sat=['0.285', '0.164', '0.108', '0.098', '0.110']
+  Final test acc: 96.54%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Layer 4: CENSORED(>30)
+  Layer 5: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 24/27 done | elapsed=242s | ETA=30s
+
+────────────────────────────────────────────────────────────
+Regime=super_4x  Depth=7  Seed=0
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [4.0102, 4.0058, 3.9966, 4.0037, 3.9731, 3.9863, 4.0276]
+  Init CE: 2.6597  (ln10=2.3026)
+  Init S_l    : ['0.2991', '0.2095', '0.1836', '0.1749', '0.1706', '0.1717', '0.1680']
+  Init sat_frc: ['0.1731', '0.0960', '0.0791', '0.0732', '0.0712', '0.0704', '0.0680']
+  Init Var(z) : ['3.8265', '2.5209', '2.2616', '2.1783', '2.1458', '2.1372', '2.1064']
+  S_l weakly decreasing: False  increasing: False
+  Epoch   1 | loss=0.4053 | sat=['0.265', '0.158', '0.122', '0.125', '0.102', '0.099', '0.103']
+  Epoch   5 | loss=0.0308 | sat=['0.284', '0.163', '0.127', '0.128', '0.102', '0.098', '0.107']
+  Epoch  10 | loss=0.0045 | sat=['0.288', '0.164', '0.126', '0.128', '0.101', '0.097', '0.110']
+  Epoch  15 | loss=0.0019 | sat=['0.288', '0.164', '0.126', '0.129', '0.101', '0.097', '0.114']
+  Epoch  20 | loss=0.0011 | sat=['0.289', '0.164', '0.126', '0.129', '0.101', '0.097', '0.116']
+  Epoch  25 | loss=0.0008 | sat=['0.290', '0.164', '0.126', '0.129', '0.101', '0.098', '0.117']
+  Epoch  30 | loss=0.0006 | sat=['0.290', '0.164', '0.126', '0.130', '0.101', '0.098', '0.119']
+  Final test acc: 96.70%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Layer 4: CENSORED(>30)
+  Layer 5: CENSORED(>30)
+  Layer 6: CENSORED(>30)
+  Layer 7: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 25/27 done | elapsed=254s | ETA=20s
+
+────────────────────────────────────────────────────────────
+Regime=super_4x  Depth=7  Seed=1
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [4.0145, 3.9988, 3.9804, 3.9877, 4.0178, 4.0402, 4.0049]
+  Init CE: 2.9498  (ln10=2.3026)
+  Init S_l    : ['0.3215', '0.2104', '0.1821', '0.1769', '0.1732', '0.1714', '0.1740']
+  Init sat_frc: ['0.1929', '0.0962', '0.0764', '0.0743', '0.0722', '0.0702', '0.0715']
+  Init Var(z) : ['4.2450', '2.5143', '2.2244', '2.1990', '2.1628', '2.1350', '2.1531']
+  S_l weakly decreasing: False  increasing: False
+  Epoch   1 | loss=0.4215 | sat=['0.275', '0.151', '0.120', '0.105', '0.105', '0.102', '0.103']
+  Epoch   5 | loss=0.0300 | sat=['0.295', '0.159', '0.124', '0.110', '0.105', '0.101', '0.103']
+  Epoch  10 | loss=0.0045 | sat=['0.298', '0.160', '0.123', '0.110', '0.106', '0.101', '0.108']
+  Epoch  15 | loss=0.0019 | sat=['0.299', '0.161', '0.124', '0.110', '0.106', '0.102', '0.111']
+  Epoch  20 | loss=0.0011 | sat=['0.299', '0.161', '0.124', '0.111', '0.106', '0.103', '0.114']
+  Epoch  25 | loss=0.0008 | sat=['0.300', '0.161', '0.124', '0.111', '0.106', '0.103', '0.115']
+  Epoch  30 | loss=0.0006 | sat=['0.300', '0.161', '0.124', '0.111', '0.106', '0.103', '0.117']
+  Final test acc: 96.49%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Layer 4: CENSORED(>30)
+  Layer 5: CENSORED(>30)
+  Layer 6: CENSORED(>30)
+  Layer 7: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 26/27 done | elapsed=266s | ETA=10s
+
+────────────────────────────────────────────────────────────
+Regime=super_4x  Depth=7  Seed=2
+────────────────────────────────────────────────────────────
+  n·σ² per layer: [3.9796, 4.018, 3.9578, 3.9702, 3.9696, 4.041, 3.9932]
+  Init CE: 2.5637  (ln10=2.3026)
+  Init S_l    : ['0.2958', '0.2151', '0.1760', '0.1698', '0.1689', '0.1752', '0.1712']
+  Init sat_frc: ['0.1700', '0.1016', '0.0741', '0.0696', '0.0687', '0.0732', '0.0705']
+  Init Var(z) : ['3.7939', '2.6068', '2.1907', '2.1254', '2.1174', '2.1725', '2.1400']
+  S_l weakly decreasing: False  increasing: False
+  Epoch   1 | loss=0.4144 | sat=['0.254', '0.151', '0.116', '0.113', '0.106', '0.104', '0.100']
+  Epoch   5 | loss=0.0316 | sat=['0.277', '0.160', '0.124', '0.117', '0.108', '0.103', '0.104']
+  Epoch  10 | loss=0.0045 | sat=['0.281', '0.160', '0.124', '0.118', '0.107', '0.101', '0.108']
+  Epoch  15 | loss=0.0019 | sat=['0.282', '0.160', '0.123', '0.118', '0.107', '0.102', '0.112']
+  Epoch  20 | loss=0.0011 | sat=['0.283', '0.160', '0.123', '0.118', '0.107', '0.103', '0.114']
+  Epoch  25 | loss=0.0008 | sat=['0.283', '0.160', '0.124', '0.118', '0.107', '0.103', '0.116']
+  Epoch  30 | loss=0.0006 | sat=['0.284', '0.161', '0.124', '0.118', '0.107', '0.103', '0.118']
+  Final test acc: 96.56%
+  No layers crossed 80% within 30 epochs.
+  Layer 1: CENSORED(>30)
+  Layer 2: CENSORED(>30)
+  Layer 3: CENSORED(>30)
+  Layer 4: CENSORED(>30)
+  Layer 5: CENSORED(>30)
+  Layer 6: CENSORED(>30)
+  Layer 7: CENSORED(>30)
+  Spearman undefined (0 crossed, all ce equal).
+  → 27/27 done | elapsed=278s | ETA=0s
+
+============================================================
+AGGREGATED RESULTS
+============================================================
+
+standard_d3:
+  Spearman(S_l, crossing)    = None 95%CI [None,None]
+  Spearman(depth, crossing)  = None 95%CI [None,None]
+  first_to_cross (layer#)    = [None, None, None]
+  n_censored per seed        = [3, 3, 3]
+  Mean init S_l              = ['0.0012', '0.0000', '0.0000']
+
+standard_d5:
+  Spearman(S_l, crossing)    = None 95%CI [None,None]
+  Spearman(depth, crossing)  = None 95%CI [None,None]
+  first_to_cross (layer#)    = [None, None, None]
+  n_censored per seed        = [5, 5, 5]
+  Mean init S_l              = ['0.0012', '0.0000', '0.0000', '0.0000', '0.0000']
+
+standard_d7:
+  Spearman(S_l, crossing)    = None 95%CI [None,None]
+  Spearman(depth, crossing)  = None 95%CI [None,None]
+  first_to_cross (layer#)    = [None, None, None]
+  n_censored per seed        = [7, 7, 7]
+  Mean init S_l              = ['0.0012', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000']
+
+super_2x_d3:
+  Spearman(S_l, crossing)    = None 95%CI [None,None]
+  Spearman(depth, crossing)  = None 95%CI [None,None]
+  first_to_cross (layer#)    = [None, None, None]
+  n_censored per seed        = [3, 3, 3]
+  Mean init S_l              = ['0.1519', '0.0502', '0.0253']
+
+super_2x_d5:
+  Spearman(S_l, crossing)    = None 95%CI [None,None]
+  Spearman(depth, crossing)  = None 95%CI [None,None]
+  first_to_cross (layer#)    = [None, None, None]
+  n_censored per seed        = [5, 5, 5]
+  Mean init S_l              = ['0.1519', '0.0502', '0.0253', '0.0180', '0.0153']
+
+super_2x_d7:
+  Spearman(S_l, crossing)    = None 95%CI [None,None]
+  Spearman(depth, crossing)  = None 95%CI [None,None]
+  first_to_cross (layer#)    = [None, None, None]
+  n_censored per seed        = [7, 7, 7]
+  Mean init S_l              = ['0.1519', '0.0502', '0.0253', '0.0180', '0.0153', '0.0132', '0.0121']
+
+super_4x_d3:
+  Spearman(S_l, crossing)    = None 95%CI [None,None]
+  Spearman(depth, crossing)  = None 95%CI [None,None]
+  first_to_cross (layer#)    = [None, None, None]
+  n_censored per seed        = [3, 3, 3]
+  Mean init S_l              = ['0.3055', '0.2117', '0.1806']
+
+super_4x_d5:
+  Spearman(S_l, crossing)    = None 95%CI [None,None]
+  Spearman(depth, crossing)  = None 95%CI [None,None]
+  first_to_cross (layer#)    = [None, None, None]
+  n_censored per seed        = [5, 5, 5]
+  Mean init S_l              = ['0.3055', '0.2117', '0.1806', '0.1739', '0.1709']
+
+super_4x_d7:
+  Spearman(S_l, crossing)    = None 95%CI [None,None]
+  Spearman(depth, crossing)  = None 95%CI [None,None]
+  first_to_cross (layer#)    = [None, None, None]
+  n_censored per seed        = [7, 7, 7]
+  Mean init S_l              = ['0.3055', '0.2117', '0.1806', '0.1739', '0.1709', '0.1728', '0.1710']
+
+============================================================
+ORDER-REVERSAL SUMMARY
+============================================================
+
+Depth=3:
+  standard    : first=[None, None, None]  layer1_first=0/0  layerL_first=0/0
+  super_2x    : first=[None, None, None]  layer1_first=0/0  layerL_first=0/0
+  super_4x    : first=[None, None, None]  layer1_first=0/0  layerL_first=0/0
+  Sign reversal (standard<0 & super_4x>0): False (std_sp=None, s4x_sp=None)
+
+Depth=5:
+  standard    : first=[None, None, None]  layer1_first=0/0  layerL_first=0/0
+  super_2x    : first=[None, None, None]  layer1_first=0/0  layerL_first=0/0
+  super_4x    : first=[None, None, None]  layer1_first=0/0  layerL_first=0/0
+  Sign reversal (standard<0 & super_4x>0): False (std_sp=None, s4x_sp=None)
+
+Depth=7:
+  standard    : first=[None, None, None]  layer1_first=0/0  layerL_first=0/0
+  super_2x    : first=[None, None, None]  layer1_first=0/0  layerL_first=0/0
+  super_4x    : first=[None, None, None]  layer1_first=0/0  layerL_first=0/0
+  Sign reversal (standard<0 & super_4x>0): False (std_sp=None, s4x_sp=None)
+
+Results written → /workspace/results/increase_complexity-01/RESULTS.json
+Total elapsed: 277.6s  Status: PARTIAL
+
+{
+  "status": "PARTIAL",
+  "scale": "probe",
+  "metrics": {
+    "per_config": {
+      "standard_d3": {
+        "regime": "standard",
+        "depth": 3,
+        "n_seeds": 3,
+        "spearman_sl_mean": null,
+        "spearman_sl_ci95": null,
+        "spearman_depth_mean": null,
+        "spearman_depth_ci95": null,
+        "first_to_cross": [
+          null,
+          null,
+          null
+        ],
+        "n_censored_per_seed": [
+          3,
+          3,
+          3
+        ],
+        "mean_init_S_l": [
+          0.001205,
+          0.0,
+          0.0
+        ],
+        "mean_init_sat_frac": [
+          3.7e-05,
+          0.0,
+          0.0
+        ],
+        "mean_init_var": [
+          0.33263433333333337,
+          0.06959366666666666,
+          0.019544666666666665
+        ],
+        "mean_crossing_epochs": [
+          31.0,
+          31.0,
+          31.0
+        ],
+        "spearman_sl_per_seed": [
+          null,
+          null,
+          null
+        ],
+        "spearman_depth_per_seed": [
+          null,
+          null,
+          null
+        ]
+      },
+      "standard_d5": {
+        "regime": "standard",
+        "depth": 5,
+        "n_seeds": 3,
+        "spearman_sl_mean": null,
+        "spearman_sl_ci95": null,
+        "spearman_depth_mean": null,
+        "spearman_depth_ci95": null,
+        "first_to_cross": [
+          null,
+          null,
+          null
+        ],
+        "n_censored_per_seed": [
+          5,
+          5,
+          5
+        ],
+        "mean_init_S_l": [
+          0.001205,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_init_sat_frac": [
+          3.7e-05,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_init_var": [
+          0.33263433333333337,
+          0.06959366666666666,
+          0.019544666666666665,
+          0.006167333333333334,
+          0.0019763333333333334
+        ],
+        "mean_crossing_epochs": [
+          31.0,
+          31.0,
+          31.0,
+          31.0,
+          31.0
+        ],
+        "spearman_sl_per_seed": [
+          null,
+          null,
+          null
+        ],
+        "spearman_depth_per_seed": [
+          null,
+          null,
+          null
+        ]
+      },
+      "standard_d7": {
+        "regime": "standard",
+        "depth": 7,
+        "n_seeds": 3,
+        "spearman_sl_mean": null,
+        "spearman_sl_ci95": null,
+        "spearman_depth_mean": null,
+        "spearman_depth_ci95": null,
+        "first_to_cross": [
+          null,
+          null,
+          null
+        ],
+        "n_censored_per_seed": [
+          7,
+          7,
+          7
+        ],
+        "mean_init_S_l": [
+          0.001205,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_init_sat_frac": [
+          3.7e-05,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_init_var": [
+          0.33263433333333337,
+          0.06959366666666666,
+          0.019544666666666665,
+          0.006167333333333334,
+          0.0019763333333333334,
+          0.0006386666666666667,
+          0.00021433333333333333
+        ],
+        "mean_crossing_epochs": [
+          31.0,
+          31.0,
+          31.0,
+          31.0,
+          31.0,
+          31.0,
+          31.0
+        ],
+        "spearman_sl_per_seed": [
+          null,
+          null,
+          null
+        ],
+        "spearman_depth_per_seed": [
+          null,
+          null,
+          null
+        ]
+      },
+      "super_2x_d3": {
+        "regime": "super_2x",
+        "depth": 3,
+        "n_seeds": 3,
+        "spearman_sl_mean": null,
+        "spearman_sl_ci95": null,
+        "spearman_depth_mean": null,
+        "spearman_depth_ci95": null,
+        "first_to_cross": [
+          null,
+          null,
+          null
+        ],
+        "n_censored_per_seed": [
+          3,
+          3,
+          3
+        ],
+        "mean_init_S_l": [
+          0.151891,
+          0.050249999999999996,
+          0.025276666666666666
+        ],
+        "mean_init_sat_frac": [
+          0.061341,
+          0.009244,
+          0.0030376666666666664
+        ],
+        "mean_init_var": [
+          1.9775686666666665,
+          1.0382896666666666,
+          0.7950616666666667
+        ],
+        "mean_crossing_epochs": [
+          31.0,
+          31.0,
+          31.0
+        ],
+        "spearman_sl_per_seed": [
+          null,
+          null,
+          null
+        ],
+        "spearman_depth_per_seed": [
+          null,
+          null,
+          null
+        ]
+      },
+      "super_2x_d5": {
+        "regime": "super_2x",
+        "depth": 5,
+        "n_seeds": 3,
+        "spearman_sl_mean": null,
+        "spearman_sl_ci95": null,
+        "spearman_depth_mean": null,
+        "spearman_depth_ci95": null,
+        "first_to_cross": [
+          null,
+          null,
+          null
+        ],
+        "n_censored_per_seed": [
+          5,
+          5,
+          5
+        ],
+        "mean_init_S_l": [
+          0.151891,
+          0.050249999999999996,
+          0.025276666666666666,
+          0.01796266666666667,
+          0.015333666666666667
+        ],
+        "mean_init_sat_frac": [
+          0.061341,
+          0.009244,
+          0.0030376666666666664,
+          0.00173,
+          0.00155
+        ],
+        "mean_init_var": [
+          1.9775686666666665,
+          1.0382896666666666,
+          0.7950616666666667,
+          0.7109390000000001,
+          0.6690226666666668
+        ],
+        "mean_crossing_epochs": [
+          31.0,
+          31.0,
+          31.0,
+          31.0,
+          31.0
+        ],
+        "spearman_sl_per_seed": [
+          null,
+          null,
+          null
+        ],
+        "spearman_depth_per_seed": [
+          null,
+          null,
+          null
+        ]
+      },
+      "super_2x_d7": {
+        "regime": "super_2x",
+        "depth": 7,
+        "n_seeds": 3,
+        "spearman_sl_mean": null,
+        "spearman_sl_ci95": null,
+        "spearman_depth_mean": null,
+        "spearman_depth_ci95": null,
+        "first_to_cross": [
+          null,
+          null,
+          null
+        ],
+        "n_censored_per_seed": [
+          7,
+          7,
+          7
+        ],
+        "mean_init_S_l": [
+          0.151891,
+          0.050249999999999996,
+          0.025276666666666666,
+          0.01796266666666667,
+          0.015333666666666667,
+          0.013211666666666668,
+          0.012089666666666667
+        ],
+        "mean_init_sat_frac": [
+          0.061341,
+          0.009244,
+          0.0030376666666666664,
+          0.00173,
+          0.00155,
+          0.0010306666666666667,
+          0.000873
+        ],
+        "mean_init_var": [
+          1.9775686666666665,
+          1.0382896666666666,
+          0.7950616666666667,
+          0.7109390000000001,
+          0.6690226666666668,
+          0.649228,
+          0.6348716666666666
+        ],
+        "mean_crossing_epochs": [
+          31.0,
+          31.0,
+          31.0,
+          31.0,
+          31.0,
+          31.0,
+          31.0
+        ],
+        "spearman_sl_per_seed": [
+          null,
+          null,
+          null
+        ],
+        "spearman_depth_per_seed": [
+          null,
+          null,
+          null
+        ]
+      },
+      "super_4x_d3": {
+        "regime": "super_4x",
+        "depth": 3,
+        "n_seeds": 3,
+        "spearman_sl_mean": null,
+        "spearman_sl_ci95": null,
+        "spearman_depth_mean": null,
+        "spearman_depth_ci95": null,
+        "first_to_cross": [
+          null,
+          null,
+          null
+        ],
+        "n_censored_per_seed": [
+          3,
+          3,
+          3
+        ],
+        "mean_init_S_l": [
+          0.30546633333333334,
+          0.211678,
+          0.1805783333333333
+        ],
+        "mean_init_sat_frac": [
+          0.17867599999999997,
+          0.09795766666666668,
+          0.076552
+        ],
+        "mean_init_var": [
+          3.9551380000000003,
+          2.547340333333333,
+          2.225551333333333
+        ],
+        "mean_crossing_epochs": [
+          31.0,
+          31.0,
+          31.0
+        ],
+        "spearman_sl_per_seed": [
+          null,
+          null,
+          null
+        ],
+        "spearman_depth_per_seed": [
+          null,
+          null,
+          null
+        ]
+      },
+      "super_4x_d5": {
+        "regime": "super_4x",
+        "depth": 5,
+        "n_seeds": 3,
+        "spearman_sl_mean": null,
+        "spearman_sl_ci95": null,
+        "spearman_depth_mean": null,
+        "spearman_depth_ci95": null,
+        "first_to_cross": [
+          null,
+          null,
+          null
+        ],
+        "n_censored_per_seed": [
+          5,
+          5,
+          5
+        ],
+        "mean_init_S_l": [
+          0.30546633333333334,
+          0.211678,
+          0.1805783333333333,
+          0.17388333333333336,
+          0.170915
+        ],
+        "mean_init_sat_frac": [
+          0.17867599999999997,
+          0.09795766666666668,
+          0.076552,
+          0.07240733333333334,
+          0.07068400000000001
+        ],
+        "mean_init_var": [
+          3.9551380000000003,
+          2.547340333333333,
+          2.225551333333333,
+          2.1675846666666665,
+          2.1420023333333336
+        ],
+        "mean_crossing_epochs": [
+          31.0,
+          31.0,
+          31.0,
+          31.0,
+          31.0
+        ],
+        "spearman_sl_per_seed": [
+          null,
+          null,
+          null
+        ],
+        "spearman_depth_per_seed": [
+          null,
+          null,
+          null
+        ]
+      },
+      "super_4x_d7": {
+        "regime": "super_4x",
+        "depth": 7,
+        "n_seeds": 3,
+        "spearman_sl_mean": null,
+        "spearman_sl_ci95": null,
+        "spearman_depth_mean": null,
+        "spearman_depth_ci95": null,
+        "first_to_cross": [
+          null,
+          null,
+          null
+        ],
+        "n_censored_per_seed": [
+          7,
+          7,
+          7
+        ],
+        "mean_init_S_l": [
+          0.30546633333333334,
+          0.211678,
+          0.1805783333333333,
+          0.17388333333333336,
+          0.170915,
+          0.17277833333333334,
+          0.17102366666666668
+        ],
+        "mean_init_sat_frac": [
+          0.17867599999999997,
+          0.09795766666666668,
+          0.076552,
+          0.07240733333333334,
+          0.07068400000000001,
+          0.07124333333333334,
+          0.06997666666666667
+        ],
+        "mean_init_var": [
+          3.9551380000000003,
+          2.547340333333333,
+          2.225551333333333,
+          2.1675846666666665,
+          2.1420023333333336,
+          2.1482403333333333,
+          2.1331403333333334
+        ],
+        "mean_crossing_epochs": [
+          31.0,
+          31.0,
+          31.0,
+          31.0,
+          31.0,
+          31.0,
+          31.0
+        ],
+        "spearman_sl_per_seed": [
+          null,
+          null,
+          null
+        ],
+        "spearman_depth_per_seed": [
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "order_reversal_by_depth": {
+      "d3": false,
+      "d5": false,
+      "d7": false
+    },
+    "any_crossings": false,
+    "any_diverged": false,
+    "elapsed_seconds": 277.6
+  },
+  "subject_executed": "tanh MLP, MNIST std-norm, depths=[3, 5, 7], seeds=[0, 1, 2], regimes=[standard(n\u00b7\u03c3\u00b2=1/3), super_2x(n\u00b7\u03c3\u00b2=2), super_4x(n\u00b7\u03c3\u00b2=4)], lr=1e-2, momentum=0.9, batch=256, max_epochs=30, device=cuda, preloaded GPU tensors",
+  "notes": "Probe. Goal: does super-standard init reverse saturation order (deep-first vs standard init's shallow-first)? order_reversal_by_depth: sign(Spearman(S_l,crossing)) flips from standard to super_4x regime. Right-censored crossings (no 80% within 30 epochs) assigned epoch=31. Baseline-00 (Glorot n\u00b7\u03c3\u00b2\u22481): no crossings in 50 epochs. Standard init (n\u00b7\u03c3\u00b2=1/3): expect near-zero S_l everywhere, likely right-censored. Super_4x (n\u00b7\u03c3\u00b2=4): expect some crossings, deep layers first due to gradient flow mechanism.",
+  "baseline_comparison": {
+    "baseline00_glorot_no_crossings": true,
+    "baseline00_layer1_max_sat": 0.196,
+    "this_round_new_regimes": "standard(1/3) and super_2x(2) and super_4x(4)"
+  }
+}
