@@ -1,0 +1,781 @@
+{
+  "status": "SUCCESS",
+  "scale": "full",
+  "metrics": {
+    "primary_metric": "Spearman(init_S_l, final_sat_frac_|tanh|>0.9) per (regime, depth), mean \u00b1 95% bootstrap CI over 5 seeds",
+    "sat_threshold_final": "|tanh(z)| > 0.9  \u27fa  |z| > 1.4722",
+    "init_sl_threshold": "|z| > 2.0",
+    "summary_table": [
+      {
+        "config": "standard_d3",
+        "regime": "standard",
+        "depth": 3,
+        "n_seeds": 5,
+        "spearman_sl_mean": 0.866,
+        "spearman_sl_ci95_lo": 0.866,
+        "spearman_sl_ci95_hi": 0.866,
+        "spearman_depth_mean": -0.5,
+        "spearman_depth_ci95": [
+          -0.5,
+          -0.5
+        ],
+        "layer1_is_max_frac": 1.0
+      },
+      {
+        "config": "standard_d5",
+        "regime": "standard",
+        "depth": 5,
+        "n_seeds": 5,
+        "spearman_sl_mean": 0.7071,
+        "spearman_sl_ci95_lo": 0.7071,
+        "spearman_sl_ci95_hi": 0.7071,
+        "spearman_depth_mean": -0.18,
+        "spearman_depth_ci95": [
+          -0.26,
+          -0.1
+        ],
+        "layer1_is_max_frac": 1.0
+      },
+      {
+        "config": "standard_d7",
+        "regime": "standard",
+        "depth": 7,
+        "n_seeds": 5,
+        "spearman_sl_mean": 0.6124,
+        "spearman_sl_ci95_lo": 0.6124,
+        "spearman_sl_ci95_hi": 0.6124,
+        "spearman_depth_mean": 0.0357,
+        "spearman_depth_ci95": [
+          0.0357,
+          0.0357
+        ],
+        "layer1_is_max_frac": 1.0
+      },
+      {
+        "config": "super_2x_d3",
+        "regime": "super_2x",
+        "depth": 3,
+        "n_seeds": 5,
+        "spearman_sl_mean": 1.0,
+        "spearman_sl_ci95_lo": 1.0,
+        "spearman_sl_ci95_hi": 1.0,
+        "spearman_depth_mean": -1.0,
+        "spearman_depth_ci95": [
+          -1.0,
+          -1.0
+        ],
+        "layer1_is_max_frac": 1.0
+      },
+      {
+        "config": "super_2x_d5",
+        "regime": "super_2x",
+        "depth": 5,
+        "n_seeds": 5,
+        "spearman_sl_mean": 0.7,
+        "spearman_sl_ci95_lo": 0.7,
+        "spearman_sl_ci95_hi": 0.7,
+        "spearman_depth_mean": -0.7,
+        "spearman_depth_ci95": [
+          -0.7,
+          -0.7
+        ],
+        "layer1_is_max_frac": 1.0
+      },
+      {
+        "config": "super_2x_d7",
+        "regime": "super_2x",
+        "depth": 7,
+        "n_seeds": 5,
+        "spearman_sl_mean": 0.6714,
+        "spearman_sl_ci95_lo": 0.5786,
+        "spearman_sl_ci95_hi": 0.7714,
+        "spearman_depth_mean": -0.5643,
+        "spearman_depth_ci95": [
+          -0.5929,
+          -0.5357
+        ],
+        "layer1_is_max_frac": 1.0
+      },
+      {
+        "config": "super_4x_d3",
+        "regime": "super_4x",
+        "depth": 3,
+        "n_seeds": 5,
+        "spearman_sl_mean": 1.0,
+        "spearman_sl_ci95_lo": 1.0,
+        "spearman_sl_ci95_hi": 1.0,
+        "spearman_depth_mean": -1.0,
+        "spearman_depth_ci95": [
+          -1.0,
+          -1.0
+        ],
+        "layer1_is_max_frac": 1.0
+      },
+      {
+        "config": "super_4x_d5",
+        "regime": "super_4x",
+        "depth": 5,
+        "n_seeds": 5,
+        "spearman_sl_mean": 0.84,
+        "spearman_sl_ci95_lo": 0.74,
+        "spearman_sl_ci95_hi": 0.94,
+        "spearman_depth_mean": -0.82,
+        "spearman_depth_ci95": [
+          -0.9,
+          -0.74
+        ],
+        "layer1_is_max_frac": 1.0
+      },
+      {
+        "config": "super_4x_d7",
+        "regime": "super_4x",
+        "depth": 7,
+        "n_seeds": 5,
+        "spearman_sl_mean": 0.7714,
+        "spearman_sl_ci95_lo": 0.6714,
+        "spearman_sl_ci95_hi": 0.8643,
+        "spearman_depth_mean": -0.6286,
+        "spearman_depth_ci95": [
+          -0.6429,
+          -0.6143
+        ],
+        "layer1_is_max_frac": 1.0
+      }
+    ],
+    "per_config": {
+      "standard_d3": {
+        "regime": "standard",
+        "depth": 3,
+        "n_seeds": 5,
+        "spearman_sl_per_seed": [
+          0.8660254037844387,
+          0.8660254037844387,
+          0.8660254037844387,
+          0.8660254037844387,
+          0.8660254037844387
+        ],
+        "spearman_sl_mean": 0.866,
+        "spearman_sl_ci95": [
+          0.866,
+          0.866
+        ],
+        "spearman_depth_per_seed": [
+          -0.5,
+          -0.5,
+          -0.5,
+          -0.5,
+          -0.5
+        ],
+        "spearman_depth_mean": -0.5,
+        "spearman_depth_ci95": [
+          -0.5,
+          -0.5
+        ],
+        "mean_init_S_l": [
+          0.001212,
+          0.0,
+          0.0
+        ],
+        "mean_final_sat09": [
+          0.395843,
+          0.010194,
+          0.020146
+        ],
+        "mean_rank_final_sat09": [
+          1.0,
+          3.0,
+          2.0
+        ],
+        "layer1_is_max_count": "5/5",
+        "layer1_is_max_fraction": 1.0,
+        "last_layer_gt_all_middle": {
+          "count": "5/5",
+          "fraction": 1.0,
+          "per_seed": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        }
+      },
+      "standard_d5": {
+        "regime": "standard",
+        "depth": 5,
+        "n_seeds": 5,
+        "spearman_sl_per_seed": [
+          0.7071067811865475,
+          0.7071067811865475,
+          0.7071067811865475,
+          0.7071067811865475,
+          0.7071067811865475
+        ],
+        "spearman_sl_mean": 0.7071,
+        "spearman_sl_ci95": [
+          0.7071,
+          0.7071
+        ],
+        "spearman_depth_per_seed": [
+          -0.3,
+          -0.09999999999999999,
+          -0.09999999999999999,
+          -0.09999999999999999,
+          -0.3
+        ],
+        "spearman_depth_mean": -0.18,
+        "spearman_depth_ci95": [
+          -0.26,
+          -0.1
+        ],
+        "mean_init_S_l": [
+          0.001212,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_final_sat09": [
+          0.379748,
+          0.008072,
+          0.000511,
+          0.008208,
+          0.083529
+        ],
+        "mean_rank_final_sat09": [
+          1.0,
+          3.6,
+          5.0,
+          3.4,
+          2.0
+        ],
+        "layer1_is_max_count": "5/5",
+        "layer1_is_max_fraction": 1.0,
+        "last_layer_gt_all_middle": {
+          "count": "5/5",
+          "fraction": 1.0,
+          "per_seed": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        }
+      },
+      "standard_d7": {
+        "regime": "standard",
+        "depth": 7,
+        "n_seeds": 5,
+        "spearman_sl_per_seed": [
+          0.6123724356957946,
+          0.6123724356957946,
+          0.6123724356957946,
+          0.6123724356957946,
+          0.6123724356957946
+        ],
+        "spearman_sl_mean": 0.6124,
+        "spearman_sl_ci95": [
+          0.6124,
+          0.6124
+        ],
+        "spearman_depth_per_seed": [
+          0.03571428571428572,
+          0.03571428571428572,
+          0.03571428571428572,
+          0.03571428571428572,
+          0.03571428571428572
+        ],
+        "spearman_depth_mean": 0.0357,
+        "spearman_depth_ci95": [
+          0.0357,
+          0.0357
+        ],
+        "mean_init_S_l": [
+          0.001212,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_final_sat09": [
+          0.393047,
+          0.007479,
+          0.000132,
+          0.000425,
+          0.004598,
+          0.034213,
+          0.12594
+        ],
+        "mean_rank_final_sat09": [
+          1.0,
+          4.0,
+          7.0,
+          6.0,
+          5.0,
+          3.0,
+          2.0
+        ],
+        "layer1_is_max_count": "5/5",
+        "layer1_is_max_fraction": 1.0,
+        "last_layer_gt_all_middle": {
+          "count": "5/5",
+          "fraction": 1.0,
+          "per_seed": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        }
+      },
+      "super_2x_d3": {
+        "regime": "super_2x",
+        "depth": 3,
+        "n_seeds": 5,
+        "spearman_sl_per_seed": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "spearman_sl_mean": 1.0,
+        "spearman_sl_ci95": [
+          1.0,
+          1.0
+        ],
+        "spearman_depth_per_seed": [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        "spearman_depth_mean": -1.0,
+        "spearman_depth_ci95": [
+          -1.0,
+          -1.0
+        ],
+        "mean_init_S_l": [
+          0.151622,
+          0.050081,
+          0.025735
+        ],
+        "mean_final_sat09": [
+          0.490821,
+          0.230064,
+          0.181421
+        ],
+        "mean_rank_final_sat09": [
+          1.0,
+          2.0,
+          3.0
+        ],
+        "layer1_is_max_count": "5/5",
+        "layer1_is_max_fraction": 1.0,
+        "last_layer_gt_all_middle": {
+          "count": "0/5",
+          "fraction": 0.0,
+          "per_seed": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      "super_2x_d5": {
+        "regime": "super_2x",
+        "depth": 5,
+        "n_seeds": 5,
+        "spearman_sl_per_seed": [
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7
+        ],
+        "spearman_sl_mean": 0.7,
+        "spearman_sl_ci95": [
+          0.7,
+          0.7
+        ],
+        "spearman_depth_per_seed": [
+          -0.7,
+          -0.7,
+          -0.7,
+          -0.7,
+          -0.7
+        ],
+        "spearman_depth_mean": -0.7,
+        "spearman_depth_ci95": [
+          -0.7,
+          -0.7
+        ],
+        "mean_init_S_l": [
+          0.151622,
+          0.050081,
+          0.025735,
+          0.017643,
+          0.014716
+        ],
+        "mean_final_sat09": [
+          0.456852,
+          0.2449,
+          0.158167,
+          0.134116,
+          0.196089
+        ],
+        "mean_rank_final_sat09": [
+          1.0,
+          2.0,
+          4.0,
+          5.0,
+          3.0
+        ],
+        "layer1_is_max_count": "5/5",
+        "layer1_is_max_fraction": 1.0,
+        "last_layer_gt_all_middle": {
+          "count": "0/5",
+          "fraction": 0.0,
+          "per_seed": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      "super_2x_d7": {
+        "regime": "super_2x",
+        "depth": 7,
+        "n_seeds": 5,
+        "spearman_sl_per_seed": [
+          0.6071428571428572,
+          0.5357142857142858,
+          0.6071428571428572,
+          0.8571428571428573,
+          0.7500000000000002
+        ],
+        "spearman_sl_mean": 0.6714,
+        "spearman_sl_ci95": [
+          0.5786,
+          0.7714
+        ],
+        "spearman_depth_per_seed": [
+          -0.6071428571428572,
+          -0.5357142857142858,
+          -0.5357142857142858,
+          -0.6071428571428572,
+          -0.5357142857142858
+        ],
+        "spearman_depth_mean": -0.5643,
+        "spearman_depth_ci95": [
+          -0.5929,
+          -0.5357
+        ],
+        "mean_init_S_l": [
+          0.151622,
+          0.050081,
+          0.025735,
+          0.017643,
+          0.014716,
+          0.013004,
+          0.013089
+        ],
+        "mean_final_sat09": [
+          0.439304,
+          0.247657,
+          0.173238,
+          0.14151,
+          0.122638,
+          0.136375,
+          0.214669
+        ],
+        "mean_rank_final_sat09": [
+          1.0,
+          2.0,
+          4.0,
+          5.6,
+          7.0,
+          5.4,
+          3.0
+        ],
+        "layer1_is_max_count": "5/5",
+        "layer1_is_max_fraction": 1.0,
+        "last_layer_gt_all_middle": {
+          "count": "0/5",
+          "fraction": 0.0,
+          "per_seed": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      "super_4x_d3": {
+        "regime": "super_4x",
+        "depth": 3,
+        "n_seeds": 5,
+        "spearman_sl_per_seed": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "spearman_sl_mean": 1.0,
+        "spearman_sl_ci95": [
+          1.0,
+          1.0
+        ],
+        "spearman_depth_per_seed": [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        "spearman_depth_mean": -1.0,
+        "spearman_depth_ci95": [
+          -1.0,
+          -1.0
+        ],
+        "mean_init_S_l": [
+          0.305567,
+          0.211514,
+          0.18147
+        ],
+        "mean_final_sat09": [
+          0.582832,
+          0.425097,
+          0.374752
+        ],
+        "mean_rank_final_sat09": [
+          1.0,
+          2.0,
+          3.0
+        ],
+        "layer1_is_max_count": "5/5",
+        "layer1_is_max_fraction": 1.0,
+        "last_layer_gt_all_middle": {
+          "count": "0/5",
+          "fraction": 0.0,
+          "per_seed": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      "super_4x_d5": {
+        "regime": "super_4x",
+        "depth": 5,
+        "n_seeds": 5,
+        "spearman_sl_per_seed": [
+          0.8999999999999998,
+          0.8999999999999998,
+          0.7,
+          0.7,
+          0.9999999999999999
+        ],
+        "spearman_sl_mean": 0.84,
+        "spearman_sl_ci95": [
+          0.74,
+          0.94
+        ],
+        "spearman_depth_per_seed": [
+          -0.8999999999999998,
+          -0.8999999999999998,
+          -0.7,
+          -0.7,
+          -0.8999999999999998
+        ],
+        "spearman_depth_mean": -0.82,
+        "spearman_depth_ci95": [
+          -0.9,
+          -0.74
+        ],
+        "mean_init_S_l": [
+          0.305567,
+          0.211514,
+          0.18147,
+          0.172595,
+          0.170508
+        ],
+        "mean_final_sat09": [
+          0.56785,
+          0.444476,
+          0.391309,
+          0.367284,
+          0.391739
+        ],
+        "mean_rank_final_sat09": [
+          1.0,
+          2.0,
+          3.4,
+          5.0,
+          3.6
+        ],
+        "layer1_is_max_count": "5/5",
+        "layer1_is_max_fraction": 1.0,
+        "last_layer_gt_all_middle": {
+          "count": "0/5",
+          "fraction": 0.0,
+          "per_seed": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      "super_4x_d7": {
+        "regime": "super_4x",
+        "depth": 7,
+        "n_seeds": 5,
+        "spearman_sl_per_seed": [
+          0.5714285714285715,
+          0.8214285714285715,
+          0.7142857142857144,
+          0.9285714285714288,
+          0.8214285714285715
+        ],
+        "spearman_sl_mean": 0.7714,
+        "spearman_sl_ci95": [
+          0.6714,
+          0.8643
+        ],
+        "spearman_depth_per_seed": [
+          -0.6071428571428572,
+          -0.6071428571428572,
+          -0.642857142857143,
+          -0.642857142857143,
+          -0.642857142857143
+        ],
+        "spearman_depth_mean": -0.6286,
+        "spearman_depth_ci95": [
+          -0.6429,
+          -0.6143
+        ],
+        "mean_init_S_l": [
+          0.305567,
+          0.211514,
+          0.18147,
+          0.172595,
+          0.170508,
+          0.172295,
+          0.173588
+        ],
+        "mean_final_sat09": [
+          0.564831,
+          0.449046,
+          0.406599,
+          0.398338,
+          0.386831,
+          0.379832,
+          0.412835
+        ],
+        "mean_rank_final_sat09": [
+          1.0,
+          2.0,
+          4.2,
+          5.0,
+          5.8,
+          7.0,
+          3.0
+        ],
+        "layer1_is_max_count": "5/5",
+        "layer1_is_max_fraction": 1.0,
+        "last_layer_gt_all_middle": {
+          "count": "0/5",
+          "fraction": 0.0,
+          "per_seed": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      }
+    },
+    "reversal_analysis": {
+      "per_depth": {
+        "depth_3": {
+          "standard_spearman_sl": 0.866,
+          "super_2x_spearman_sl": 1.0,
+          "super_4x_spearman_sl": 1.0,
+          "standard_spearman_depth": -0.5,
+          "super_2x_spearman_depth": -1.0,
+          "super_4x_spearman_depth": -1.0,
+          "sign_reversal_2x": false,
+          "sign_reversal_4x": false,
+          "any_sign_reversal": false,
+          "layer1_is_max_standard": "5/5",
+          "layer1_is_max_super_2x": "5/5",
+          "layer1_is_max_super_4x": "5/5",
+          "layer1_frac_standard": 1.0,
+          "layer1_frac_super_2x": 1.0,
+          "layer1_frac_super_4x": 1.0
+        },
+        "depth_5": {
+          "standard_spearman_sl": 0.7071,
+          "super_2x_spearman_sl": 0.7,
+          "super_4x_spearman_sl": 0.84,
+          "standard_spearman_depth": -0.18,
+          "super_2x_spearman_depth": -0.7,
+          "super_4x_spearman_depth": -0.82,
+          "sign_reversal_2x": false,
+          "sign_reversal_4x": false,
+          "any_sign_reversal": false,
+          "layer1_is_max_standard": "5/5",
+          "layer1_is_max_super_2x": "5/5",
+          "layer1_is_max_super_4x": "5/5",
+          "layer1_frac_standard": 1.0,
+          "layer1_frac_super_2x": 1.0,
+          "layer1_frac_super_4x": 1.0
+        },
+        "depth_7": {
+          "standard_spearman_sl": 0.6124,
+          "super_2x_spearman_sl": 0.6714,
+          "super_4x_spearman_sl": 0.7714,
+          "standard_spearman_depth": 0.0357,
+          "super_2x_spearman_depth": -0.5643,
+          "super_4x_spearman_depth": -0.6286,
+          "sign_reversal_2x": false,
+          "sign_reversal_4x": false,
+          "any_sign_reversal": false,
+          "layer1_is_max_standard": "5/5",
+          "layer1_is_max_super_2x": "5/5",
+          "layer1_is_max_super_4x": "5/5",
+          "layer1_frac_standard": 1.0,
+          "layer1_frac_super_2x": 1.0,
+          "layer1_frac_super_4x": 1.0
+        }
+      },
+      "any_sign_reversal": false,
+      "reversal_in_all_depths": false,
+      "layer1_first_in_standard_everywhere": true,
+      "verdict": "NO REVERSAL: layer-1-first ordering persists in all regimes; Spearman(S_l, sat09) stays POSITIVE everywhere. Standard and super-standard both show layer 1 as max-saturation layer."
+    },
+    "reversal_verdict": "NO REVERSAL: layer-1-first ordering persists in all regimes; Spearman(S_l, sat09) stays POSITIVE everywhere. Standard and super-standard both show layer 1 as max-saturation layer.",
+    "any_diverged": false,
+    "sanity_ce_ok": true,
+    "elapsed_seconds": 374.7,
+    "total_runs": 45
+  },
+  "subject_executed": "tanh MLP, MNIST std-norm (\u00b5=0.1307, \u03c3=0.3081), depths=[3, 5, 7], seeds=[0, 1, 2, 3, 4], regimes=[standard(uniform,n\u00b7\u03c3\u00b2\u22481/3), super_2x(normal,n\u00b7\u03c3\u00b2=2), super_4x(normal,n\u00b7\u03c3\u00b2=4)], lr=1e-2, momentum=0.9, batch=256, max_epochs=25, device=cuda, bootstrap_n=10000, total_runs=45",
+  "notes": "Round increase_complexity-03: confirmatory (full) run, 5 seeds, 25 epochs. Reuses refine-02 non-censored metric: Spearman(init S_l, final_sat_frac_|tanh|>0.9). REVERSAL VERDICT: NO REVERSAL: layer-1-first ordering persists in all regimes; Spearman(S_l, sat09) stays POSITIVE everywhere. Standard and super-standard both show layer 1 as max-saturation layer. Baseline (refine-02, 3 seeds): no reversal, Spearman positive everywhere."
+}
