@@ -1,0 +1,164 @@
+Device: cuda
+Depths: [3, 5]  Seed: 42  MaxEpochs: 50
+Glorot init_scale: 1.0  (n·σ²≈1.0)
+S_l threshold: |z| > 2.0  (tanh' < 0.1)
+Saturation unit threshold: |tanh(z)| > 0.99  (|z| > 2.6467)
+Input normalization: MNIST std norm (mean=0.1307, std=0.3081)
+  → Var(x) ≈ 1, so Var(z1) ≈ n·σ² ≈ 1.5  (Glorot assumption satisfied)
+Data loaded.
+
+============================================================
+Depth=3  Seed=42  init_scale=1.0
+============================================================
+  n·σ² per layer at init: ['1.5060', '1.0055', '0.9984']
+  Init CE loss: 2.4882  (ln(10)=2.3026)
+  Init train acc: 7.67%
+  Init S_l scores  (|z|>2.0):          ['0.0963', '0.0029', '0.0000']
+  Init sat fracs   (|tanh(z)|>0.99):   ['0.0309', '0.0001', '0.0000']
+  Init variances   Var(z_l):            ['1.4510', '0.4413', '0.2471']
+  [SANITY] Init CE in [2.1, 2.6]: PASS
+  Var(z_l) strictly decreasing: True
+  S_l strictly decreasing: True  (weakly: True)
+  Epoch   1 | train_loss=0.3915 acc=88.3% | sat=['0.071', '0.001', '0.000']
+  Epoch  10 | train_loss=0.0283 acc=99.4% | sat=['0.163', '0.005', '0.001']
+  Epoch  20 | train_loss=0.0049 acc=100.0% | sat=['0.179', '0.005', '0.001']
+  Epoch  30 | train_loss=0.0019 acc=100.0% | sat=['0.188', '0.005', '0.001']
+  Epoch  40 | train_loss=0.0011 acc=100.0% | sat=['0.189', '0.005', '0.001']
+  Epoch  50 | train_loss=0.0008 acc=100.0% | sat=['0.196', '0.005', '0.001']
+
+  Final test acc: 98.11%
+  [SANITY] Test acc > 10%: PASS
+
+  Saturation crossing epochs (≥80% sat at |tanh(z)|>0.99):
+    Layer 1: NEVER (>50 epochs)
+    Layer 2: NEVER (>50 epochs)
+    Layer 3: NEVER (>50 epochs)
+
+============================================================
+Depth=5  Seed=42  init_scale=1.0
+============================================================
+  n·σ² per layer at init: ['1.5060', '1.0055', '0.9984', '0.9971', '0.9961']
+  Init CE loss: 2.3768  (ln(10)=2.3026)
+  Init train acc: 12.97%
+  Init S_l scores  (|z|>2.0):          ['0.0964', '0.0028', '0.0000', '0.0000', '0.0000']
+  Init sat fracs   (|tanh(z)|>0.99):   ['0.0310', '0.0001', '0.0000', '0.0000', '0.0000']
+  Init variances   Var(z_l):            ['1.4532', '0.4403', '0.2481', '0.1688', '0.1335']
+  [SANITY] Init CE in [2.1, 2.6]: PASS
+  Var(z_l) strictly decreasing: True
+  S_l strictly decreasing: False  (weakly: True)
+  Epoch   1 | train_loss=0.3774 acc=88.8% | sat=['0.080', '0.001', '0.000', '0.000', '0.000']
+  Epoch  10 | train_loss=0.0125 acc=99.8% | sat=['0.166', '0.002', '0.000', '0.000', '0.000']
+  Epoch  20 | train_loss=0.0014 acc=100.0% | sat=['0.173', '0.002', '0.000', '0.000', '0.001']
+  Epoch  30 | train_loss=0.0006 acc=100.0% | sat=['0.174', '0.002', '0.000', '0.000', '0.001']
+  Epoch  40 | train_loss=0.0004 acc=100.0% | sat=['0.174', '0.002', '0.000', '0.000', '0.001']
+  Epoch  50 | train_loss=0.0003 acc=100.0% | sat=['0.175', '0.002', '0.000', '0.000', '0.002']
+
+  Final test acc: 98.05%
+  [SANITY] Test acc > 10%: PASS
+
+  Saturation crossing epochs (≥80% sat at |tanh(z)|>0.99):
+    Layer 1: NEVER (>50 epochs)
+    Layer 2: NEVER (>50 epochs)
+    Layer 3: NEVER (>50 epochs)
+    Layer 4: NEVER (>50 epochs)
+    Layer 5: NEVER (>50 epochs)
+
+============================================================
+SUMMARY
+============================================================
+  Depth=3  init_CE=2.4882  test_acc=98.1%
+    S_l at init: ['0.0963', '0.0029', '0.0000']
+    S_l decreasing: True
+    Var(z_l) decreasing: True
+    Crossing epochs: [-1, -1, -1]
+    Spearman(S_l, crossing): None
+    Spearman(depth, crossing): None
+  Depth=5  init_CE=2.3768  test_acc=98.0%
+    S_l at init: ['0.0964', '0.0028', '0.0000', '0.0000', '0.0000']
+    S_l decreasing: False
+    Var(z_l) decreasing: True
+    Crossing epochs: [-1, -1, -1, -1, -1]
+    Spearman(S_l, crossing): None
+    Spearman(depth, crossing): None
+
+Results written to /workspace/results/baseline-00/RESULTS.json
+Status: SUCCESS
+
+============================================================
+RESULTS.json:
+{
+  "status": "SUCCESS",
+  "scale": "probe",
+  "metrics": {
+    "depth3": {
+      "init_CE_loss": 2.4882316809336342,
+      "test_acc": 0.9811,
+      "init_S_l": [
+        0.09625053405761719,
+        0.002887725830078125,
+        4.57763671875e-05
+      ],
+      "init_variances": [
+        1.4510128498077393,
+        0.4413279891014099,
+        0.24708586931228638
+      ],
+      "n_sigma2": [
+        1.506041333079338,
+        1.0054724216461182,
+        0.9984204769134521
+      ],
+      "crossing_epochs": [
+        -1,
+        -1,
+        -1
+      ],
+      "var_decreasing": true,
+      "s_l_decreasing": true,
+      "spearman_S_l_vs_crossing": null,
+      "spearman_depth_vs_crossing": null,
+      "sanity_init_ce": true,
+      "sanity_test_acc": true
+    },
+    "depth5": {
+      "init_CE_loss": 2.376766553878784,
+      "test_acc": 0.9805,
+      "init_S_l": [
+        0.09641265869140625,
+        0.002777099609375,
+        4.38690185546875e-05,
+        0.0,
+        0.0
+      ],
+      "init_variances": [
+        1.4531805515289307,
+        0.44031623005867004,
+        0.24805791676044464,
+        0.16883128881454468,
+        0.13348403573036194
+      ],
+      "n_sigma2": [
+        1.506041333079338,
+        1.0054724216461182,
+        0.9984204769134521,
+        0.9971401691436768,
+        0.9961051940917969
+      ],
+      "crossing_epochs": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "var_decreasing": true,
+      "s_l_decreasing": false,
+      "spearman_S_l_vs_crossing": null,
+      "spearman_depth_vs_crossing": null,
+      "sanity_init_ce": true,
+      "sanity_test_acc": true
+    }
+  },
+  "subject_executed": "tanh MLP, standard Glorot (n\u00b7\u03c3\u00b2=1.0), depths=[3, 5], seed=42, 50 epochs, width=256, MNIST (mean/std normalized), SGD lr=0.01 momentum=0.9, batch_size=256",
+  "notes": "Probe baseline. Key finding: MNIST pixels/255 gives E[x\u00b2]\u22480.11, so Glorot gives Var(z1)\u22480.17 and S_l\u22480 everywhere. Fix: use MNIST standard normalization ((x-0.1307)/0.3081) \u2192 Var(x)\u22481, Var(z1)\u22481.51, S_l computable. This script uses the fix. Both quantities (saturation trajectory and S_l) verified computable. All sanity checks: init_CE\u2248ln(10) True, test_acc>10% True."
+}

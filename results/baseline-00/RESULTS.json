@@ -1,0 +1,50 @@
+{
+  "status": "SUCCESS",
+  "scale": "probe",
+  "metrics": {
+    "depth3": {
+      "init_CE_loss": 2.4882,
+      "test_acc": 0.9811,
+      "sanity_init_ce_pass": true,
+      "sanity_test_acc_pass": true,
+      "n_sigma2_per_layer": [1.5060, 1.0055, 0.9984],
+      "init_S_l": [0.0963, 0.0029, 0.0000],
+      "init_variances_Var_z_l": [1.4510, 0.4413, 0.2471],
+      "var_decreasing_strict": true,
+      "s_l_decreasing_strict": true,
+      "crossing_epochs_80pct": [-1, -1, -1],
+      "sat_frac_epoch0":  [0.031, 0.000, 0.000],
+      "sat_frac_epoch50": [0.196, 0.005, 0.001],
+      "spearman_S_l_vs_crossing": null,
+      "spearman_depth_vs_crossing": null,
+      "note": "No 80% crossing within 50 epochs. Layer 1 plateaus at ~20% sat."
+    },
+    "depth5": {
+      "init_CE_loss": 2.3768,
+      "test_acc": 0.9805,
+      "sanity_init_ce_pass": true,
+      "sanity_test_acc_pass": true,
+      "n_sigma2_per_layer": [1.5060, 1.0055, 0.9984, 0.9971, 0.9961],
+      "init_S_l": [0.0964, 0.0028, 0.0000, 0.0000, 0.0000],
+      "init_variances_Var_z_l": [1.4532, 0.4403, 0.2481, 0.1688, 0.1335],
+      "var_decreasing_strict": true,
+      "s_l_decreasing_strict": false,
+      "s_l_decreasing_weak": true,
+      "crossing_epochs_80pct": [-1, -1, -1, -1, -1],
+      "sat_frac_epoch0":  [0.031, 0.000, 0.000, 0.000, 0.000],
+      "sat_frac_epoch50": [0.175, 0.002, 0.000, 0.000, 0.002],
+      "spearman_S_l_vs_crossing": null,
+      "spearman_depth_vs_crossing": null,
+      "note": "S_l strict decrease fails because layers 3-5 all S_l=0 (ties). Var strictly decreasing throughout."
+    },
+    "sanity_summary": {
+      "init_CE_in_range_2p1_to_2p6": {"depth3": true, "depth5": true},
+      "test_acc_above_10pct": {"depth3": true, "depth5": true},
+      "var_z_l_monotone_decreasing": {"depth3": true, "depth5": true},
+      "s_l_monotone_decreasing_strict": {"depth3": true, "depth5": false},
+      "s_l_monotone_decreasing_weak": {"depth3": true, "depth5": true}
+    }
+  },
+  "subject_executed": "tanh MLP from scratch, standard Glorot (n*sigma^2=1.0), depths=[3,5], seed=42, 50 epochs, width=256, MNIST standard-norm ((x/255-0.1307)/0.3081), SGD lr=0.01 momentum=0.9, batch_size=256, device=cuda (NVIDIA A10)",
+  "notes": "Probe baseline. Pipeline verified end-to-end. Two critical findings: (1) Input normalization: pixels/255 gives Var(z1)~0.17 making S_l~0 everywhere; MNIST standard normalization (subtract mean, divide by std) gives Var(z1)~1.51 making S_l computable (layer1=0.096). All future rounds must use MNIST std-norm. (2) Saturation crossing: no layer reaches 80% saturation within 50 epochs; layer 1 plateaus at ~20% with standard Glorot. The 80%-crossing-epoch metric requires either more epochs (200+) or super-standard init (n*sigma^2 > 1) to see crossings. BOTH quantities are computable: S_l values [0.096, 0.003, 0] for depth=3 are strictly monotone-decreasing; Var(z_l) strictly decreasing for both depths. Init CE in [2.1,2.6] and test_acc>98% confirm basic sanity. STATUS=SUCCESS: pipeline runs, metrics move as expected (Var decreases monotonically), both quantities measurable."
+}
