@@ -1,0 +1,67 @@
+Device: cuda
+Datasets dir: /opt/datasets
+
+Loading real CIFAR-100 from /opt/datasets
+[torchvision] Loaded CIFAR-100: train=(50000, 3, 32, 32), test=(10000, 3, 32, 32)
+  Normalized: X_tr range [-1.90, 2.03]
+Data loaded. train=(50000, 3, 32, 32) test=(10000, 3, 32, 32)
+
+============================================================
+SEED 0
+============================================================
+Params: 3,296,164
+  Task  1/20 step  500 loss=0.1162
+  Task  1/20 step 1000 loss=0.0090
+  Task  1/20 step 1500 loss=0.0001
+  Task  1/20 step 2000 loss=0.0000
+  Task  1 | acc=0.910 dead=0.592 erank=47.15 loss=0.0000 wall=59.9s
+  Task  2/20 step  500 loss=0.2581
+  Task  2/20 step 1000 loss=0.1058
+  Task  2/20 step 1500 loss=0.0835
+  Task  2/20 step 2000 loss=0.0002
+  Task  2 | acc=0.886 dead=0.953 erank=10.55 loss=0.0004 wall=63.0s
+  Task  3/20 step  500 loss=2.6823
+  Task  3/20 step 1000 loss=2.1508
+  Task  3/20 step 1500 loss=1.9229
+  Task  3/20 step 2000 loss=1.8088
+  Task  3 | acc=0.200 dead=1.000 erank=0.00 loss=1.8280 wall=59.3s
+  Task  4/20 step  500 loss=4.5390
+  Task  4/20 step 1000 loss=3.4863
+  Task  4/20 step 1500 loss=2.7583
+  Task  4/20 step 2000 loss=2.3032
+  Task  4 | acc=0.200 dead=1.000 erank=0.00 loss=2.3753 wall=62.5s
+  Task  5/20 step  500 loss=4.9774
+  Task  5/20 step 1000 loss=3.9863
+  Task  5/20 step 1500 loss=3.1932
+  Task  5/20 step 2000 loss=2.6120
+  Task  5 | acc=0.200 dead=1.000 erank=0.00 loss=2.7104 wall=59.2s
+  Task  6/20 step  500 loss=5.4098
+  Task  6/20 step 1000 loss=4.4202
+  Task  6/20 step 1500 loss=3.5827
+  Task  6/20 step 2000 loss=2.9081
+  Task  6 | acc=0.200 dead=1.000 erank=0.00 loss=3.0290 wall=62.2s
+  Task  7/20 step  500 loss=5.8037
+  Task  7/20 step 1000 loss=4.8091
+  Task  7/20 step 1500 loss=3.9363
+  Task  7/20 step 2000 loss=3.1952
+  Task  7 | acc=0.200 dead=1.000 erank=0.00 loss=3.3353 wall=58.9s
+  Task  8/20 step  500 loss=6.1374
+  Task  8/20 step 1000 loss=5.1324
+  Task  8/20 step 1500 loss=4.2443
+  Task  8/20 step 2000 loss=3.4596
+  Task  8 | acc=0.200 dead=1.000 erank=0.00 loss=3.6075 wall=59.8s
+  Task  9/20 step  500 loss=6.4822
+  Task  9/20 step 1000 loss=5.4658
+  Task  9/20 step 1500 loss=4.5578
+  Task  9/20 step 2000 loss=3.7416
+  Task  9 | acc=0.200 dead=1.000 erank=0.00 loss=3.8933 wall=61.9s
+  Task 10/20 step  500 loss=6.7936
+  Task 10/20 step 1000 loss=5.7608
+  Task 10/20 step 1500 loss=4.8498
+  Task 10/20 step 2000 loss=3.9989
+  Task 10 | acc=0.200 dead=1.000 erank=0.00 loss=4.1621 wall=59.4s
+  Task 11/20 step  500 loss=7.0645
+  Task 11/20 step 1000 loss=6.0242
+  Task 11/20 step 1500 loss=5.0881
+  Task 11/20 step 2000 loss=4.2234
+  Task 11 | acc=0.200 dead=1.000 erank=0.00 loss=4.3885 wall=63.1s

@@ -1,24 +1,31 @@
-# EXPERIMENT BRIEF — round baseline_A2 (probe)
+# EXPERIMENT BRIEF — round baseline_A3 (probe)
 
 ## THIS ROUND (do exactly this)
-BASELINE RE-RUN (clean) — Arm A with GroupNorm, fix the BatchNorm-collapse confound.
+BASELINE RE-RUN (clean, REAL data) — Arm A, GroupNorm, real CIFAR-100.
 
-CONTEXT: A prior baseline attempt used BatchNorm and it COLLAPSED in the small-batch continual setting — producing artifactual all-dead-units and an effective-rank=500 zero-matrix SVD artifact. That run is INVALID. A corrected script already exists in the repo at src/baseline_A_v2.py (GroupNorm instead of BatchNorm). Your job: RUN that corrected baseline properly to completion and produce clean, trustworthy reference numbers.
+TWO confounds were found and fixed in prior attempts:
+1. BatchNorm collapsed in small-batch continual training → FIXED by using GroupNorm (keep GroupNorm).
+2. CIFAR-100 download was too slow so a prior run silently fell back to SYNTHETIC random data → the collapse was an artifact of structureless data. This is now fixed at the infra level.
 
-STEPS:
-1. Use src/baseline_A_v2.py (GroupNorm ConvNet, vanilla Adam, NO neuron resets). If it needs small fixes to run end-to-end, fix them — but keep GroupNorm and keep the "no resets" property (this is the vanilla plasticity-loss reference).
-2. Run class-incremental CIFAR-100, ~15-20 tasks, 2 SEEDS, BOTH to completion. This is a probe but the baseline MUST be clean — correctness over speed. Keep total wall time < 35 min if possible; if you must cut, reduce number of tasks/epochs, NOT seeds.
-3. Measure per-task accuracy across the sequence + a TRUSTWORTHY plasticity signal: dead-unit fraction (fraction of ReLU units with ~0 activation on a held-out batch) and effective rank of a hidden representation (guard against zero-matrix → report NaN/skip, never a spurious constant like 500).
-4. The scientific question: does average accuracy on NEW tasks decline across the sequence (genuine loss of plasticity), with GroupNorm removing the BN artifact? Report honestly — if plasticity loss is weak/absent with GroupNorm, SAY SO; that is a real finding, do not manufacture a decline.
+REAL DATA IS NOW PRE-BAKED INTO THE IMAGE:
+- CIFAR-100 and CIFAR-10 are already on local disk at /opt/datasets (env var SH_DATASETS_DIR=/opt/datasets).
+- Load with torchvision: datasets.CIFAR100(root=os.environ.get("SH_DATASETS_DIR","/opt/datasets"), train=True/False, download=False).
+- download=False is intentional — the data is already there; do NOT trigger a network download.
+- If for ANY reason real CIFAR-100 cannot be loaded, ABORT with a clear error and write RESULTS.json status:"FAILED" with the reason. DO NOT fall back to synthetic data. A synthetic run is worthless here.
 
-CRITICAL OUTPUT:
-- Write results/baseline_A2/RESULTS.json INCREMENTALLY (rewrite after each task). At the END set status:"DONE" and FILL the top-level summary: {"arm":"A_adam_noreset_groupnorm","status":"DONE","per_seed":[...],"mean_acc":<float>,"plasticity_trend":"declining|flat|weak","dead_unit_frac_final":<float>,"effective_rank_trend":"...","notes":"<what happened, incl. whether GroupNorm fixed the BN artifact>"}.
-- Save run.log. Commit everything EXCEPT dataset files and weights (.pt/.pth/.safetensors).
-- Do NOT leave status:"RUNNING" — finalize it.
+EXPERIMENT (Arm A reference, must be clean):
+- Model: small ConvNet with GroupNorm (reuse src/baseline_A_v2.py's model; just swap the data loader to REAL CIFAR-100 from /opt/datasets and set download=False).
+- Task stream: class-incremental REAL CIFAR-100, ~15-20 tasks (5 classes/task). Vanilla Adam, NO resets.
+- 2 SEEDS, both to completion. Correctness over speed; < 35 min target. If time-pressed, cut tasks/epochs, NOT seeds and NOT to synthetic.
+- Metrics per task: accuracy, dead-unit fraction (ReLU units ~0 on a held-out real batch), effective rank of a hidden representation (report 0/NaN honestly for a collapsed matrix — never a constant like 500).
+
+SCIENTIFIC HONESTY: With REAL CIFAR-100 + GroupNorm, does vanilla-Adam-no-resets actually lose plasticity (accuracy on new tasks declines, dead units accumulate)? It may be MILDER than the synthetic collapse. Report the true picture — mild, strong, or absent. A milder-than-expected result is fine and important.
+
+OUTPUT: results/baseline_A3/RESULTS.json, written incrementally, FINALIZED with status:"DONE" and top-level summary {arm, status, per_seed:[...], mean_acc, plasticity_trend:"declining|flat|weak", dead_unit_frac_final, effective_rank_trend, data_source:"cifar100_real", notes}. Save run.log. Commit all except datasets + weights (.pt/.pth/.safetensors). data_source MUST be "cifar100_real" or the run is invalid.
 
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/baseline_A2/.
+for context and build on them; write this round's outputs under results/baseline_A3/.
 
 ## Idea
 Adam's v_t is the Fisher — repurposing optimizer state as a zero-overhead neuron utility for plasticity-preserving resets
@@ -52,4 +59,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: Arm A — Adam + no resets (vanilla Adam continual fine-tuning, tasks presented sequentially): the most widely documented, zero-design-choice reference in plasticity literature; build and validate first to confirm forgetting occurs and effective rank decays, establishing the phenomenon the CBP arms are meant to fix before any utility comparison is made
 - eval contract: Dataset: 5-task split-CIFAR-100, ResNet-18 pretrained on CIFAR-10. Primary metric: mean final-task top-1 accuracy averaged over tasks 2–5 (task 1 excluded as warm-up). Secondary metric: effective rank of the final conv layer weight matrix at end of each task (rank collapse as plasticity proxy). Equivalence test (utility-source claim): two one-sided paired t-tests (TOST, α=0.05, Δ=1.0 pp) on primary metric between arm D (v_t-EMA) and arm C (explicit-Fisher) across 5 seeds — both one-sided p-values must be < 0.05 to declare equivalence. Accumulation test (mechanistic claim): TOST (same α, Δ) between arm D (v_t-EMA) and arm E (snapshot-g²); a significant difference (i.e., TOST fails to find equivalence) licenses 'accumulation is the decisive property.' Optimizer-isolation test: paired t-test (α=0.05, two-sided) between arm C (Adam+Fisher) and arm F (SGD+Fisher) — tests whether optimizer identity beyond utility source affects outcome. Speedup reported as mean ± std wall-clock seconds/reset-step (arm D vs arm C), not folded into accuracy equivalence.
 
-Record everything under results/baseline_A2/. Do not commit weights.
+Record everything under results/baseline_A3/. Do not commit weights.

@@ -1,0 +1,27 @@
+{
+  "arm": "A_adam_noreset_groupnorm_realcifar100",
+  "status": "RUNNING",
+  "data_source": "cifar100_real",
+  "per_seed": [],
+  "per_task_acc": [],
+  "mean_acc": null,
+  "plasticity_trend": null,
+  "dead_unit_frac_final": null,
+  "effective_rank_trend": null,
+  "notes": "",
+  "latest_seed": 0,
+  "latest_task": 11,
+  "latest_per_task_acc": [
+    0.91,
+    0.886,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ]
+}
