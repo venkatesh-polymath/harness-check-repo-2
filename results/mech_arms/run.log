@@ -1,0 +1,135 @@
+Device: cuda
+Datasets: /opt/datasets
+Seeds: [0, 1, 2, 3, 4, 5]  Tasks: 4×5cls  Steps/task: 1000
+Arms: ['B', 'C', 'D', 'RANDOM']  reset_every=100  reset_frac=0.1
+Estimated wall-time: ~4 arms × 6 seeds × 4 tasks × ~22s ≈ 35 min
+
+Loading real CIFAR-100 from /opt/datasets
+[torchvision] Loaded CIFAR-100: train=(50000, 3, 32, 32), test=(10000, 3, 32, 32)
+Data loaded: train=(50000, 3, 32, 32) test=(10000, 3, 32, 32)
+Model params: 3,296,164
+
+[0.1m elapsed] === SEED 0 ===
+
+[0.1m] Running ARM B, seed 0
+
+============================================================
+ARM B | SEED 0
+============================================================
+  [B/s0] Task  1/4 | acc=0.898 dead=0.510 erank=58.17 resets=10 loss=0.0336 wall=31.2s
+  [B/s0] Task  2/4 | acc=0.912 dead=0.875 erank=12.84 resets=10 loss=0.0459 wall=30.3s
+  [B/s0] Task  3/4 | acc=0.834 dead=0.863 erank=13.16 resets=10 loss=0.3116 wall=30.5s
+  [B/s0] Task  4/4 | acc=0.802 dead=0.879 erank=12.69 resets=10 loss=0.4869 wall=30.3s
+
+[2.2m] Running ARM C, seed 0
+
+============================================================
+ARM C | SEED 0
+============================================================
+  [C/s0] Task  1/4 | acc=0.866 dead=0.660 erank=48.30 resets=10 loss=0.0483 wall=30.6s
+  [C/s0] Task  2/4 | acc=0.914 dead=0.857 erank=14.56 resets=10 loss=0.0236 wall=30.6s
+  [C/s0] Task  3/4 | acc=0.818 dead=0.883 erank=13.25 resets=10 loss=0.3860 wall=30.9s
+  [C/s0] Task  4/4 | acc=0.822 dead=0.859 erank=17.28 resets=10 loss=0.3236 wall=30.1s
+
+[4.3m] Running ARM D, seed 0
+
+============================================================
+ARM D | SEED 0
+============================================================
+  [D/s0] Task  1/4 | acc=0.880 dead=0.502 erank=59.91 resets=10 loss=0.0377 wall=30.0s
+  [D/s0] Task  2/4 | acc=0.888 dead=0.834 erank=16.28 resets=10 loss=0.0368 wall=30.0s
+  [D/s0] Task  3/4 | acc=0.844 dead=0.873 erank=10.85 resets=10 loss=0.2831 wall=30.4s
+  [D/s0] Task  4/4 | acc=0.720 dead=0.889 erank=12.53 resets=10 loss=0.6454 wall=30.2s
+
+[6.4m] Running ARM RANDOM, seed 0
+
+============================================================
+ARM RANDOM | SEED 0
+============================================================
+  [RANDOM/s0] Task  1/4 | acc=0.900 dead=0.766 erank=31.67 resets=10 loss=0.0328 wall=30.2s
+  [RANDOM/s0] Task  2/4 | acc=0.864 dead=0.865 erank=14.17 resets=10 loss=0.0481 wall=30.1s
+  [RANDOM/s0] Task  3/4 | acc=0.488 dead=0.902 erank=7.64 resets=10 loss=0.2833 wall=29.9s
+  [RANDOM/s0] Task  4/4 | acc=0.812 dead=0.859 erank=12.20 resets=10 loss=0.4684 wall=29.8s
+
+  >> Seed 0 done:
+     B=0.849  C=0.851  D=0.817  RANDOM=0.721
+     D-C=-3.40pp  B-D=+3.20pp  D-RANDOM=+9.60pp
+  >> Running D-C: mean=-3.40pp  CI=[nan, nan]  n=1
+  >> Running D-RANDOM: mean=+9.60pp  CI=[nan, nan]  p_1sided=None
+
+[8.4m elapsed] === SEED 1 ===
+
+[8.4m] Running ARM B, seed 1
+
+============================================================
+ARM B | SEED 1
+============================================================
+  [B/s1] Task  1/4 | acc=0.806 dead=0.516 erank=67.91 resets=10 loss=0.0508 wall=29.9s
+  [B/s1] Task  2/4 | acc=0.866 dead=0.857 erank=15.94 resets=10 loss=0.1178 wall=30.5s
+  [B/s1] Task  3/4 | acc=0.728 dead=0.842 erank=15.80 resets=10 loss=0.3650 wall=29.7s
+  [B/s1] Task  4/4 | acc=0.730 dead=0.891 erank=10.46 resets=10 loss=0.6802 wall=29.9s
+
+[10.5m] Running ARM C, seed 1
+
+============================================================
+ARM C | SEED 1
+============================================================
+  [C/s1] Task  1/4 | acc=0.816 dead=0.680 erank=45.96 resets=10 loss=0.0400 wall=32.3s
+  [C/s1] Task  2/4 | acc=0.874 dead=0.877 erank=15.96 resets=10 loss=0.1882 wall=30.6s
+  [C/s1] Task  3/4 | acc=0.694 dead=0.912 erank=6.04 resets=10 loss=0.7610 wall=30.1s
+  [C/s1] Task  4/4 | acc=0.754 dead=0.893 erank=11.30 resets=10 loss=0.5670 wall=30.4s
+
+[12.6m] Running ARM D, seed 1
+
+============================================================
+ARM D | SEED 1
+============================================================
+  [D/s1] Task  1/4 | acc=0.804 dead=0.520 erank=66.78 resets=10 loss=0.0395 wall=30.2s
+  [D/s1] Task  2/4 | acc=0.872 dead=0.842 erank=16.76 resets=10 loss=0.0496 wall=30.5s
+  [D/s1] Task  3/4 | acc=0.740 dead=0.879 erank=10.70 resets=10 loss=0.3763 wall=30.3s
+  [D/s1] Task  4/4 | acc=0.734 dead=0.875 erank=11.82 resets=10 loss=0.7050 wall=30.1s
+
+[14.7m] Running ARM RANDOM, seed 1
+
+============================================================
+ARM RANDOM | SEED 1
+============================================================
+  [RANDOM/s1] Task  1/4 | acc=0.804 dead=0.766 erank=35.75 resets=10 loss=0.0632 wall=30.2s
+  [RANDOM/s1] Task  2/4 | acc=0.836 dead=0.879 erank=11.26 resets=10 loss=0.1327 wall=30.0s
+  [RANDOM/s1] Task  3/4 | acc=0.640 dead=0.900 erank=8.06 resets=10 loss=0.6931 wall=30.2s
+  [RANDOM/s1] Task  4/4 | acc=0.786 dead=0.887 erank=14.48 resets=10 loss=0.4225 wall=30.2s
+
+  >> Seed 1 done:
+     B=0.775  C=0.774  D=0.782  RANDOM=0.754
+     D-C=+0.80pp  B-D=-0.73pp  D-RANDOM=+2.80pp
+  >> Running D-C: mean=-1.30pp  CI=[np.float64(-27.983), np.float64(25.383)]  n=2
+  >> Running D-RANDOM: mean=+6.20pp  CI=[np.float64(-37.001), np.float64(49.401)]  p_1sided=0.159668
+
+[16.8m elapsed] === SEED 2 ===
+
+[16.8m] Running ARM B, seed 2
+
+============================================================
+ARM B | SEED 2
+============================================================
+  [B/s2] Task  1/4 | acc=0.918 dead=0.553 erank=53.31 resets=10 loss=0.0134 wall=30.4s
+  [B/s2] Task  2/4 | acc=0.834 dead=0.873 erank=13.51 resets=10 loss=0.1743 wall=30.1s
+  [B/s2] Task  3/4 | acc=0.862 dead=0.828 erank=16.22 resets=10 loss=0.1893 wall=30.3s
+  [B/s2] Task  4/4 | acc=0.682 dead=0.865 erank=20.41 resets=10 loss=0.7703 wall=30.3s
+
+[18.8m] Running ARM C, seed 2
+
+============================================================
+ARM C | SEED 2
+============================================================
+  [C/s2] Task  1/4 | acc=0.912 dead=0.668 erank=42.98 resets=10 loss=0.0055 wall=30.7s
+  [C/s2] Task  2/4 | acc=0.836 dead=0.889 erank=9.73 resets=10 loss=0.3022 wall=30.5s
+  [C/s2] Task  3/4 | acc=0.862 dead=0.891 erank=12.69 resets=10 loss=0.2501 wall=30.5s
+  [C/s2] Task  4/4 | acc=0.842 dead=0.854 erank=16.83 resets=10 loss=0.2827 wall=30.5s
+
+[20.9m] Running ARM D, seed 2
+
+============================================================
+ARM D | SEED 2
+============================================================
+  [D/s2] Task  1/4 | acc=0.910 dead=0.559 erank=55.76 resets=10 loss=0.0284 wall=30.1s

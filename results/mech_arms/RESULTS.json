@@ -1,0 +1,143 @@
+{
+  "status": "RUNNING",
+  "scale": "full",
+  "n_seeds": 2,
+  "data_source": "cifar100_real",
+  "seeds_complete": [
+    0,
+    1
+  ],
+  "arms": {
+    "B": {
+      "per_seed_acc": [
+        0.8493,
+        0.7747
+      ],
+      "mean": 0.812,
+      "std": 0.0528,
+      "dead_final": 0.8848,
+      "erank_final": 11.58,
+      "per_task_acc_mean": [
+        0.8520000000000001,
+        0.889,
+        0.7809999999999999,
+        0.766
+      ],
+      "seeds_done": [
+        0,
+        1
+      ]
+    },
+    "C": {
+      "per_seed_acc": [
+        0.8513,
+        0.774
+      ],
+      "mean": 0.8127,
+      "std": 0.0547,
+      "dead_final": 0.876,
+      "erank_final": 14.29,
+      "per_task_acc_mean": [
+        0.841,
+        0.894,
+        0.756,
+        0.788
+      ],
+      "seeds_done": [
+        0,
+        1
+      ]
+    },
+    "D": {
+      "per_seed_acc": [
+        0.8173,
+        0.782
+      ],
+      "mean": 0.7997,
+      "std": 0.025,
+      "dead_final": 0.8818,
+      "erank_final": 12.17,
+      "per_task_acc_mean": [
+        0.8420000000000001,
+        0.88,
+        0.792,
+        0.727
+      ],
+      "seeds_done": [
+        0,
+        1
+      ]
+    },
+    "RANDOM": {
+      "per_seed_acc": [
+        0.7213,
+        0.754
+      ],
+      "mean": 0.7377,
+      "std": 0.0231,
+      "dead_final": 0.873,
+      "erank_final": 13.34,
+      "per_task_acc_mean": [
+        0.8520000000000001,
+        0.85,
+        0.5640000000000001,
+        0.799
+      ],
+      "seeds_done": [
+        0,
+        1
+      ]
+    },
+    "A_floor": 0.2
+  },
+  "paired": {
+    "D_minus_C": {
+      "mean_pp": -1.3,
+      "ci95_pp": [
+        -27.983,
+        25.383
+      ],
+      "t_stat": -0.619,
+      "t_p_value": 0.647117,
+      "per_seed": [
+        -3.4,
+        0.8
+      ],
+      "equivalent_within_3pp": false,
+      "interpretation": "CI=[-27.98,25.38] not fully within \u00b13pp"
+    },
+    "B_minus_D": {
+      "mean_pp": 1.233,
+      "ci95_pp": [
+        -23.756,
+        26.222
+      ],
+      "t_stat": 0.6271,
+      "t_p_value": 0.643416,
+      "per_seed": [
+        3.2,
+        -0.733
+      ],
+      "interpretation": "B better than D by +1.23pp (CI=[-23.76,26.22])"
+    },
+    "D_minus_RANDOM": {
+      "mean_pp": 6.2,
+      "ci95_pp": [
+        -37.001,
+        49.401
+      ],
+      "t_stat": 1.8235,
+      "t_p_value": 0.319331,
+      "t_p_value_one_sided": 0.159668,
+      "per_seed": [
+        9.6,
+        2.8
+      ],
+      "v_t_ranking_beats_random": false,
+      "interpretation": "D-RANDOM=+6.20pp CI=[-37.00,49.40], p_one_sided=0.1597 (need p<0.05 and D>RANDOM)"
+    }
+  },
+  "wall_time_min": 16.76,
+  "subject_executed": "Four-arm CBP (B=heuristic, C=Fisher, D=Adam-v_t, RANDOM=control), PAIRED on SAME task splits, SmallConvNetGN, real CIFAR-100, 4\u00d75 classes, 1000 steps/task, reset_every=100, reset_frac=0.1, seeds=[0, 1]",
+  "notes": "n=2 seeds, 4 tasks\u00d75cls, 1000 steps/task. D~C (v_t \u2248 Fisher)? equiv_within_3pp=False (D-C=-1.30pp CI=[np.float64(-27.983), np.float64(25.383)]). B vs D (heuristic vs v_t)? B-D=+1.23pp CI=[np.float64(-23.756), np.float64(26.222)]. D>>RANDOM (ranking carries info)? False (D-RANDOM=+6.20pp p_1sided=0.159668)."
+}
