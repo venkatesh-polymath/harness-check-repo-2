@@ -1,0 +1,329 @@
+{
+  "status": "SUCCESS",
+  "scale": "full",
+  "data_source": "cifar_real",
+  "seeds_per_cell": 8,
+  "cells": {
+    "cifar100_convnet": {
+      "floor": 0.2773,
+      "B": {
+        "mean": 0.7757,
+        "std": 0.0178,
+        "per_seed_acc": [
+          0.7849,
+          0.7509,
+          0.8049,
+          0.7764,
+          0.7818,
+          0.758,
+          0.7867,
+          0.7618
+        ],
+        "n_seeds": 8,
+        "dead_final_mean": 0.7573,
+        "erank_final_mean": 34.1752
+      },
+      "C": {
+        "mean": 0.7808,
+        "std": 0.0386,
+        "per_seed_acc": [
+          0.7922,
+          0.8038,
+          0.7687,
+          0.8169,
+          0.7676,
+          0.6951,
+          0.7987,
+          0.8033
+        ],
+        "n_seeds": 8,
+        "dead_final_mean": 0.8257,
+        "erank_final_mean": 23.3363
+      },
+      "D": {
+        "mean": 0.7832,
+        "std": 0.0211,
+        "per_seed_acc": [
+          0.7944,
+          0.8058,
+          0.7916,
+          0.8058,
+          0.7551,
+          0.7578,
+          0.7633,
+          0.7916
+        ],
+        "n_seeds": 8,
+        "dead_final_mean": 0.7856,
+        "erank_final_mean": 30.672
+      },
+      "RANDOM": {
+        "mean": 0.7699,
+        "std": 0.0384,
+        "per_seed_acc": [
+          0.8062,
+          0.7947,
+          0.6971,
+          0.7953,
+          0.7504,
+          0.7584,
+          0.7487,
+          0.8082
+        ],
+        "n_seeds": 8,
+        "dead_final_mean": 0.8433,
+        "erank_final_mean": 21.3634
+      },
+      "paired_D_C": {
+        "per_seed": [
+          0.22,
+          0.2,
+          2.29,
+          -1.11,
+          -1.25,
+          6.27,
+          -3.54,
+          -1.17
+        ],
+        "mean_pp": 0.239,
+        "ci95_pp": [
+          -2.227,
+          2.704
+        ],
+        "p_two_sided": 0.825436,
+        "p_one_sided": 0.412718,
+        "n": 8,
+        "equivalent_within_3pp": true
+      },
+      "paired_D_RANDOM": {
+        "per_seed": [
+          -1.18,
+          1.11,
+          9.45,
+          1.05,
+          0.47,
+          -0.06,
+          1.46,
+          -1.66
+        ],
+        "mean_pp": 1.33,
+        "ci95_pp": [
+          -1.566,
+          4.226
+        ],
+        "p_two_sided": 0.313454,
+        "p_one_sided": 0.156727,
+        "n": 8,
+        "equivalent_within_3pp": false,
+        "beats_random": false
+      },
+      "paired_D_B": {
+        "per_seed": [
+          0.95,
+          5.49,
+          -1.33,
+          2.94,
+          -2.67,
+          -0.02,
+          -2.34,
+          2.98
+        ],
+        "mean_pp": 0.75,
+        "ci95_pp": [
+          -1.666,
+          3.166
+        ],
+        "p_two_sided": 0.486701,
+        "p_one_sided": 0.243351,
+        "n": 8,
+        "equivalent_within_3pp": false
+      }
+    },
+    "cifar10_convnet": {
+      "floor": 0.8444,
+      "B": {
+        "mean": 0.9109,
+        "std": 0.0413,
+        "per_seed_acc": [
+          0.9271,
+          0.8441,
+          0.9233,
+          0.9407,
+          0.9209,
+          0.9508,
+          0.8475,
+          0.9325
+        ],
+        "n_seeds": 8,
+        "dead_final_mean": 0.874,
+        "erank_final_mean": 5.1899
+      },
+      "C": {
+        "mean": 0.9115,
+        "std": 0.0401,
+        "per_seed_acc": [
+          0.9206,
+          0.8401,
+          0.9314,
+          0.9477,
+          0.9261,
+          0.9359,
+          0.8561,
+          0.9339
+        ],
+        "n_seeds": 8,
+        "dead_final_mean": 0.8894,
+        "erank_final_mean": 5.8584
+      },
+      "D": {
+        "mean": 0.9158,
+        "std": 0.0334,
+        "per_seed_acc": [
+          0.922,
+          0.8423,
+          0.9281,
+          0.9454,
+          0.9278,
+          0.9479,
+          0.908,
+          0.9049
+        ],
+        "n_seeds": 8,
+        "dead_final_mean": 0.8728,
+        "erank_final_mean": 7.2466
+      },
+      "RANDOM": {
+        "mean": 0.9098,
+        "std": 0.0299,
+        "per_seed_acc": [
+          0.9116,
+          0.9033,
+          0.906,
+          0.9417,
+          0.8448,
+          0.9351,
+          0.9076,
+          0.928
+        ],
+        "n_seeds": 8,
+        "dead_final_mean": 0.9001,
+        "erank_final_mean": 6.7463
+      },
+      "paired_D_C": {
+        "per_seed": [
+          0.14,
+          0.22,
+          -0.33,
+          -0.23,
+          0.17,
+          1.2,
+          5.19,
+          -2.9
+        ],
+        "mean_pp": 0.433,
+        "ci95_pp": [
+          -1.451,
+          2.316
+        ],
+        "p_two_sided": 0.604087,
+        "p_one_sided": 0.302044,
+        "n": 8,
+        "equivalent_within_3pp": true
+      },
+      "paired_D_RANDOM": {
+        "per_seed": [
+          1.04,
+          -6.1,
+          2.21,
+          0.37,
+          8.3,
+          1.28,
+          0.04,
+          -2.31
+        ],
+        "mean_pp": 0.604,
+        "ci95_pp": [
+          -2.803,
+          4.011
+        ],
+        "p_two_sided": 0.687762,
+        "p_one_sided": 0.343881,
+        "n": 8,
+        "equivalent_within_3pp": false,
+        "beats_random": false
+      },
+      "paired_D_B": {
+        "per_seed": [
+          -0.51,
+          -0.18,
+          0.48,
+          0.47,
+          0.69,
+          -0.29,
+          6.05,
+          -2.76
+        ],
+        "mean_pp": 0.494,
+        "ci95_pp": [
+          -1.592,
+          2.58
+        ],
+        "p_two_sided": 0.593106,
+        "p_one_sided": 0.296553,
+        "n": 8,
+        "equivalent_within_3pp": true
+      }
+    }
+  },
+  "summary": {
+    "equivalence_holds_in": "2/2 cells",
+    "mechanism_holds_in": "0/2 cells",
+    "datasets": [
+      "cifar100",
+      "cifar10"
+    ],
+    "architecture": "convnet",
+    "n_cells_done": 2,
+    "n_cells_total": 2
+  },
+  "subject_executed": "CIFAR-100 (10T\u00d75cls) + CIFAR-10 (5T\u00d72cls) \u00d7 SmallConvNetGN \u00d7 A_floor/B/C/D/RANDOM \u00d7 1000 steps/task, reset_every=100, frac=0.1, seeds=[0, 1, 2, 3, 4, 5, 6, 7]",
+  "notes": "Deep ConvNet generalization run \u2014 clean CIs for Adam-v_t plasticity result across 2 datasets (CIFAR-100 10T, CIFAR-10 5T). Paired design: same seed \u2192 same task splits per arm.",
+  "wall_time_min": 31.83,
+  "run_count": 66,
+  "metrics": {
+    "cifar100_convnet": {
+      "floor": 0.2773,
+      "D_mean_acc": 0.7832,
+      "C_mean_acc": 0.7808,
+      "B_mean_acc": 0.7757,
+      "RANDOM_mean_acc": 0.7699,
+      "D_C_mean_pp": 0.239,
+      "D_C_ci95_pp": [
+        -2.227,
+        2.704
+      ],
+      "equivalent_within_3pp": true,
+      "D_RANDOM_mean_pp": 1.33,
+      "D_RANDOM_p_one_sided": 0.156727,
+      "beats_random": false,
+      "D_B_mean_pp": 0.75
+    },
+    "cifar10_convnet": {
+      "floor": 0.8444,
+      "D_mean_acc": 0.9158,
+      "C_mean_acc": 0.9115,
+      "B_mean_acc": 0.9109,
+      "RANDOM_mean_acc": 0.9098,
+      "D_C_mean_pp": 0.433,
+      "D_C_ci95_pp": [
+        -1.451,
+        2.316
+      ],
+      "equivalent_within_3pp": true,
+      "D_RANDOM_mean_pp": 0.604,
+      "D_RANDOM_p_one_sided": 0.343881,
+      "beats_random": false,
+      "D_B_mean_pp": 0.494
+    }
+  }
+}
