@@ -1,0 +1,190 @@
+{
+  "status": "DONE",
+  "scale": "probe",
+  "data_source": "cifar100_real",
+  "n_seeds": 3,
+  "tasks": 8,
+  "steps_per_task": 1000,
+  "reset_every": 100,
+  "reset_frac": 0.1,
+  "arms": {
+    "B": {
+      "per_seed_final_acc": [
+        0.8025,
+        0.833,
+        0.7985
+      ],
+      "mean_acc": 0.8113333333333334,
+      "std_acc": 0.015407429665226076,
+      "dead_final": 0.818359375,
+      "erank_final": 23.326187133789062,
+      "per_task_acc_mean": [
+        0.8740000000000001,
+        0.8706666666666667,
+        0.8079999999999999,
+        0.738,
+        0.8213333333333335,
+        0.8513333333333333,
+        0.7766666666666667,
+        0.7959999999999999
+      ],
+      "per_task_dead_mean": [
+        0.5260416666666666,
+        0.8684895833333334,
+        0.8444010416666666,
+        0.8782552083333334,
+        0.8522135416666666,
+        0.8248697916666666,
+        0.8346354166666666,
+        0.818359375
+      ],
+      "per_task_erank_mean": [
+        59.796522776285805,
+        14.094231923421225,
+        15.058284441630045,
+        14.520706494649252,
+        18.905197143554688,
+        18.85222880045573,
+        17.36981201171875,
+        23.326187133789062
+      ],
+      "seeds_done": [
+        0,
+        1,
+        2
+      ]
+    },
+    "C": {
+      "per_seed_final_acc": [
+        0.7670000000000001,
+        0.8370000000000001,
+        0.8005000000000001
+      ],
+      "mean_acc": 0.8015,
+      "std_acc": 0.02858612717152615,
+      "dead_final": 0.8450520833333334,
+      "erank_final": 18.70595868428548,
+      "per_task_acc_mean": [
+        0.8646666666666666,
+        0.8746666666666667,
+        0.7913333333333333,
+        0.806,
+        0.8093333333333333,
+        0.8213333333333335,
+        0.7806666666666667,
+        0.7946666666666666
+      ],
+      "per_task_dead_mean": [
+        0.6692708333333334,
+        0.8743489583333334,
+        0.8951822916666666,
+        0.8684895833333334,
+        0.87890625,
+        0.8717447916666666,
+        0.8528645833333334,
+        0.8450520833333334
+      ],
+      "per_task_erank_mean": [
+        45.74577713012695,
+        13.415790875752768,
+        10.660668849945068,
+        15.136896451314291,
+        12.656732877095541,
+        13.99852466583252,
+        17.976080894470215,
+        18.70595868428548
+      ],
+      "seeds_done": [
+        0,
+        1,
+        2
+      ]
+    },
+    "D": {
+      "per_seed_final_acc": [
+        0.7775000000000001,
+        0.8049999999999999,
+        0.769
+      ],
+      "mean_acc": 0.7838333333333334,
+      "std_acc": 0.015364099568655306,
+      "dead_final": 0.8131510416666666,
+      "erank_final": 21.83638095855713,
+      "per_task_acc_mean": [
+        0.8646666666666668,
+        0.8686666666666666,
+        0.8126666666666668,
+        0.7493333333333334,
+        0.7973333333333334,
+        0.8093333333333333,
+        0.7533333333333333,
+        0.7753333333333333
+      ],
+      "per_task_dead_mean": [
+        0.5266927083333334,
+        0.8515625,
+        0.8743489583333334,
+        0.876953125,
+        0.8776041666666666,
+        0.8255208333333334,
+        0.8248697916666666,
+        0.8131510416666666
+      ],
+      "per_task_erank_mean": [
+        60.81770579020182,
+        15.462042808532715,
+        10.432360649108887,
+        12.65810743967692,
+        13.666277567545572,
+        18.345250765482586,
+        22.527069091796875,
+        21.83638095855713
+      ],
+      "seeds_done": [
+        0,
+        1,
+        2
+      ]
+    },
+    "A_floor": {
+      "source": "prior_baseline_A3_reference",
+      "mean_acc": 0.2,
+      "dead_final": 1.0,
+      "notes": "vanilla Adam no-reset; collapses to chance by task 3"
+    }
+  },
+  "D_matches_C": {
+    "acc_diff_pp": -1.767,
+    "ci95_pp": [
+      -7.827,
+      4.294
+    ],
+    "equiv_margin_pp": 1.5,
+    "verdict": "D_worse",
+    "verdict_note": "Point estimate D is -1.767 pp below C, just outside \u00b11.5 pp margin. BUT n=3 seeds makes CI very wide [-7.8, +4.3] pp \u2014 underpowered. Cannot conclude equivalence or non-equivalence from probe alone. Earlier code had units bug (compared proportion to pp, always saying 'match'). Corrected here."
+  },
+  "recovers_plasticity": true,
+  "wall_time_min": 34.03,
+  "subject_executed": "Arms B/C/D CBP resets, SmallConvNetGN, real CIFAR-100, 8x5 classes, 1000 steps/task, reset_frac=0.1, reset_every=100, seeds=[0, 1, 2]",
+  "notes": "Probe run: 8 tasks x 5 cls/task, 1000 steps/task. Reset every 100 steps, frac=0.1. Arm A floor (prior baseline_A3): acc~0.2, dead~1.0. All CBP arms recover plasticity dramatically (acc 0.78-0.81 vs 0.20 floor). D_vs_C: point estimate D_worse by -1.767 pp (outside +-1.5 pp margin); CI [-7.8,+4.3] pp far too wide at n=3 to draw strong conclusion. B slightly best (0.811), C middle (0.802), D slightly lowest (0.784). Dead units still high (~0.81-0.85) but not 1.0; erank sustained (18-23 vs 0). Recovers plasticity: True. Wall: 34.0m.",
+  "metrics": {
+    "B_mean_acc_final_tasks": 0.8113,
+    "C_mean_acc_final_tasks": 0.8015,
+    "D_mean_acc_final_tasks": 0.7838,
+    "A_floor_acc": 0.2,
+    "B_std_acc": 0.0154,
+    "C_std_acc": 0.0286,
+    "D_std_acc": 0.0154,
+    "B_dead_final": 0.818,
+    "C_dead_final": 0.845,
+    "D_dead_final": 0.813,
+    "B_erank_final": 23.3,
+    "C_erank_final": 18.7,
+    "D_erank_final": 21.8,
+    "D_vs_C_diff_pp": -1.767,
+    "D_vs_C_ci95_pp": [-7.827, 4.294],
+    "D_vs_C_verdict": "D_worse",
+    "D_vs_C_underpowered": true,
+    "recovers_plasticity": true
+  }
+}

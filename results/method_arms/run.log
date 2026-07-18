@@ -1,0 +1,331 @@
+Device: cuda
+Datasets: /opt/datasets
+
+Loading real CIFAR-100 from /opt/datasets
+[torchvision] Loaded CIFAR-100: train=(50000, 3, 32, 32), test=(10000, 3, 32, 32)
+Data loaded: train=(50000, 3, 32, 32) test=(10000, 3, 32, 32)
+
+[0.1m elapsed] Starting Arm B, Seed 0
+
+============================================================
+ARM B | SEED 0
+============================================================
+  Params: 3,296,164
+  [B/s0] Task  1/8 | acc=0.898 dead=0.510 erank=58.17 resets=10 loss=0.0336 wall=28.3s
+  [B/s0] Task  2/8 | acc=0.912 dead=0.875 erank=12.84 resets=10 loss=0.0459 wall=27.6s
+  [B/s0] Task  3/8 | acc=0.834 dead=0.863 erank=13.16 resets=10 loss=0.3116 wall=27.7s
+  [B/s0] Task  4/8 | acc=0.802 dead=0.879 erank=12.69 resets=10 loss=0.4869 wall=27.6s
+  [B/s0] Task  5/8 | acc=0.802 dead=0.830 erank=25.47 resets=10 loss=0.4803 wall=27.6s
+  [B/s0] Task  6/8 | acc=0.826 dead=0.828 erank=17.49 resets=10 loss=0.2657 wall=27.6s
+  [B/s0] Task  7/8 | acc=0.810 dead=0.830 erank=24.70 resets=10 loss=0.3702 wall=27.6s
+  [B/s0] Task  8/8 | acc=0.772 dead=0.811 erank=26.69 resets=10 loss=0.3515 wall=27.6s
+
+[3.9m elapsed] Starting Arm B, Seed 1
+
+============================================================
+ARM B | SEED 1
+============================================================
+  Params: 3,296,164
+  [B/s1] Task  1/8 | acc=0.806 dead=0.516 erank=67.91 resets=10 loss=0.0508 wall=27.4s
+  [B/s1] Task  2/8 | acc=0.866 dead=0.857 erank=15.94 resets=10 loss=0.1178 wall=27.4s
+  [B/s1] Task  3/8 | acc=0.728 dead=0.842 erank=15.80 resets=10 loss=0.3650 wall=27.4s
+  [B/s1] Task  4/8 | acc=0.730 dead=0.891 erank=10.46 resets=10 loss=0.6802 wall=27.4s
+  [B/s1] Task  5/8 | acc=0.858 dead=0.844 erank=16.75 resets=10 loss=0.2528 wall=27.4s
+  [B/s1] Task  6/8 | acc=0.894 dead=0.844 erank=17.31 resets=10 loss=0.0894 wall=27.5s
+  [B/s1] Task  7/8 | acc=0.776 dead=0.854 erank=10.17 resets=10 loss=0.3363 wall=27.3s
+  [B/s1] Task  8/8 | acc=0.804 dead=0.818 erank=26.10 resets=10 loss=0.3861 wall=27.4s
+
+[7.6m elapsed] Starting Arm B, Seed 2
+
+============================================================
+ARM B | SEED 2
+============================================================
+  Params: 3,296,164
+  [B/s2] Task  1/8 | acc=0.918 dead=0.553 erank=53.31 resets=10 loss=0.0134 wall=27.5s
+  [B/s2] Task  2/8 | acc=0.834 dead=0.873 erank=13.51 resets=10 loss=0.1743 wall=27.5s
+  [B/s2] Task  3/8 | acc=0.862 dead=0.828 erank=16.22 resets=10 loss=0.1893 wall=27.3s
+  [B/s2] Task  4/8 | acc=0.682 dead=0.865 erank=20.41 resets=10 loss=0.7703 wall=27.4s
+  [B/s2] Task  5/8 | acc=0.804 dead=0.883 erank=14.50 resets=10 loss=0.4444 wall=27.3s
+  [B/s2] Task  6/8 | acc=0.834 dead=0.803 erank=21.75 resets=10 loss=0.2379 wall=27.3s
+  [B/s2] Task  7/8 | acc=0.744 dead=0.820 erank=17.23 resets=10 loss=0.4615 wall=27.3s
+  [B/s2] Task  8/8 | acc=0.812 dead=0.826 erank=17.19 resets=10 loss=0.3390 wall=27.3s
+
+Arm B done in 11.3 min
+
+[11.4m elapsed] Starting Arm C, Seed 0
+
+============================================================
+ARM C | SEED 0
+============================================================
+  Params: 3,296,164
+  [C/s0] Task  1/8 | acc=0.866 dead=0.660 erank=48.30 resets=10 loss=0.0483 wall=27.5s
+  [C/s0] Task  2/8 | acc=0.914 dead=0.857 erank=14.56 resets=10 loss=0.0236 wall=27.5s
+  [C/s0] Task  3/8 | acc=0.818 dead=0.883 erank=13.25 resets=10 loss=0.3860 wall=27.5s
+  [C/s0] Task  4/8 | acc=0.822 dead=0.859 erank=17.28 resets=10 loss=0.3236 wall=27.5s
+  [C/s0] Task  5/8 | acc=0.800 dead=0.869 erank=13.64 resets=10 loss=0.3856 wall=27.5s
+  [C/s0] Task  6/8 | acc=0.784 dead=0.875 erank=15.25 resets=10 loss=0.4114 wall=27.5s
+  [C/s0] Task  7/8 | acc=0.752 dead=0.830 erank=25.97 resets=10 loss=0.3991 wall=27.6s
+  [C/s0] Task  8/8 | acc=0.732 dead=0.854 erank=23.19 resets=10 loss=0.5910 wall=27.5s
+
+[15.2m elapsed] Starting Arm C, Seed 1
+
+============================================================
+ARM C | SEED 1
+============================================================
+  Params: 3,296,164
+  [C/s1] Task  1/8 | acc=0.816 dead=0.680 erank=45.96 resets=10 loss=0.0400 wall=27.6s
+  [C/s1] Task  2/8 | acc=0.874 dead=0.877 erank=15.96 resets=10 loss=0.1882 wall=27.5s
+  [C/s1] Task  3/8 | acc=0.694 dead=0.912 erank=6.04 resets=10 loss=0.7610 wall=27.7s
+  [C/s1] Task  4/8 | acc=0.754 dead=0.893 erank=11.30 resets=10 loss=0.5670 wall=27.5s
+  [C/s1] Task  5/8 | acc=0.838 dead=0.883 erank=10.78 resets=10 loss=0.2596 wall=27.5s
+  [C/s1] Task  6/8 | acc=0.892 dead=0.879 erank=12.31 resets=10 loss=0.1132 wall=27.5s
+  [C/s1] Task  7/8 | acc=0.792 dead=0.855 erank=15.09 resets=10 loss=0.2524 wall=27.5s
+  [C/s1] Task  8/8 | acc=0.826 dead=0.834 erank=18.24 resets=10 loss=0.2290 wall=27.6s
+
+[18.9m elapsed] Starting Arm C, Seed 2
+
+============================================================
+ARM C | SEED 2
+============================================================
+  Params: 3,296,164
+  [C/s2] Task  1/8 | acc=0.912 dead=0.668 erank=42.98 resets=10 loss=0.0055 wall=27.6s
+  [C/s2] Task  2/8 | acc=0.836 dead=0.889 erank=9.73 resets=10 loss=0.3022 wall=27.5s
+  [C/s2] Task  3/8 | acc=0.862 dead=0.891 erank=12.69 resets=10 loss=0.2501 wall=27.6s
+  [C/s2] Task  4/8 | acc=0.842 dead=0.854 erank=16.83 resets=10 loss=0.2827 wall=27.6s
+  [C/s2] Task  5/8 | acc=0.790 dead=0.885 erank=13.55 resets=10 loss=0.3647 wall=27.6s
+  [C/s2] Task  6/8 | acc=0.788 dead=0.861 erank=14.44 resets=10 loss=0.3111 wall=27.8s
+  [C/s2] Task  7/8 | acc=0.798 dead=0.873 erank=12.87 resets=10 loss=0.3622 wall=27.5s
+  [C/s2] Task  8/8 | acc=0.826 dead=0.848 erank=14.69 resets=10 loss=0.2674 wall=27.4s
+
+Arm C done in 11.3 min
+
+[22.7m elapsed] Starting Arm D, Seed 0
+
+============================================================
+ARM D | SEED 0
+============================================================
+  Params: 3,296,164
+  [D/s0] Task  1/8 | acc=0.880 dead=0.502 erank=59.91 resets=10 loss=0.0377 wall=27.5s
+  [D/s0] Task  2/8 | acc=0.888 dead=0.834 erank=16.28 resets=10 loss=0.0368 wall=27.4s
+  [D/s0] Task  3/8 | acc=0.844 dead=0.873 erank=10.85 resets=10 loss=0.2831 wall=27.5s
+  [D/s0] Task  4/8 | acc=0.720 dead=0.889 erank=12.53 resets=10 loss=0.6454 wall=27.3s
+  [D/s0] Task  5/8 | acc=0.804 dead=0.908 erank=10.44 resets=10 loss=0.4840 wall=27.4s
+  [D/s0] Task  6/8 | acc=0.820 dead=0.812 erank=18.93 resets=10 loss=0.2552 wall=27.4s
+  [D/s0] Task  7/8 | acc=0.762 dead=0.812 erank=24.40 resets=10 loss=0.4285 wall=27.4s
+  [D/s0] Task  8/8 | acc=0.724 dead=0.812 erank=27.92 resets=10 loss=0.4691 wall=27.6s
+
+[26.5m elapsed] Starting Arm D, Seed 1
+
+============================================================
+ARM D | SEED 1
+============================================================
+  Params: 3,296,164
+  [D/s1] Task  1/8 | acc=0.804 dead=0.520 erank=66.78 resets=10 loss=0.0395 wall=27.6s
+  [D/s1] Task  2/8 | acc=0.872 dead=0.842 erank=16.76 resets=10 loss=0.0496 wall=27.6s
+  [D/s1] Task  3/8 | acc=0.740 dead=0.879 erank=10.70 resets=10 loss=0.3763 wall=27.5s
+  [D/s1] Task  4/8 | acc=0.734 dead=0.875 erank=11.82 resets=10 loss=0.7050 wall=27.5s
+  [D/s1] Task  5/8 | acc=0.790 dead=0.859 erank=15.64 resets=10 loss=0.4701 wall=27.5s
+  [D/s1] Task  6/8 | acc=0.862 dead=0.820 erank=23.89 resets=10 loss=0.2219 wall=27.4s
+  [D/s1] Task  7/8 | acc=0.760 dead=0.811 erank=28.04 resets=10 loss=0.3644 wall=27.6s
+  [D/s1] Task  8/8 | acc=0.808 dead=0.799 erank=22.16 resets=10 loss=0.2172 wall=27.5s
+
+[30.3m elapsed] Starting Arm D, Seed 2
+
+============================================================
+ARM D | SEED 2
+============================================================
+  Params: 3,296,164
+  [D/s2] Task  1/8 | acc=0.910 dead=0.559 erank=55.76 resets=10 loss=0.0284 wall=27.3s
+  [D/s2] Task  2/8 | acc=0.846 dead=0.879 erank=13.35 resets=10 loss=0.1517 wall=27.4s
+  [D/s2] Task  3/8 | acc=0.854 dead=0.871 erank=9.75 resets=10 loss=0.2187 wall=27.4s
+  [D/s2] Task  4/8 | acc=0.794 dead=0.867 erank=13.62 resets=10 loss=0.3511 wall=27.4s
+  [D/s2] Task  5/8 | acc=0.798 dead=0.865 erank=14.91 resets=10 loss=0.6244 wall=27.3s
+  [D/s2] Task  6/8 | acc=0.746 dead=0.844 erank=12.21 resets=10 loss=0.4448 wall=27.3s
+  [D/s2] Task  7/8 | acc=0.738 dead=0.852 erank=15.14 resets=10 loss=0.3884 wall=27.2s
+  [D/s2] Task  8/8 | acc=0.794 dead=0.828 erank=15.43 resets=10 loss=0.2918 wall=27.3s
+
+Arm D done in 11.3 min
+
+============================================================
+DONE in 34.0 min
+{
+  "status": "DONE",
+  "scale": "probe",
+  "data_source": "cifar100_real",
+  "n_seeds": 3,
+  "tasks": 8,
+  "steps_per_task": 1000,
+  "reset_every": 100,
+  "reset_frac": 0.1,
+  "arms": {
+    "B": {
+      "per_seed_final_acc": [
+        0.8025,
+        0.833,
+        0.7985
+      ],
+      "mean_acc": 0.8113333333333334,
+      "std_acc": 0.015407429665226076,
+      "dead_final": 0.818359375,
+      "erank_final": 23.326187133789062,
+      "per_task_acc_mean": [
+        0.8740000000000001,
+        0.8706666666666667,
+        0.8079999999999999,
+        0.738,
+        0.8213333333333335,
+        0.8513333333333333,
+        0.7766666666666667,
+        0.7959999999999999
+      ],
+      "per_task_dead_mean": [
+        0.5260416666666666,
+        0.8684895833333334,
+        0.8444010416666666,
+        0.8782552083333334,
+        0.8522135416666666,
+        0.8248697916666666,
+        0.8346354166666666,
+        0.818359375
+      ],
+      "per_task_erank_mean": [
+        59.796522776285805,
+        14.094231923421225,
+        15.058284441630045,
+        14.520706494649252,
+        18.905197143554688,
+        18.85222880045573,
+        17.36981201171875,
+        23.326187133789062
+      ],
+      "seeds_done": [
+        0,
+        1,
+        2
+      ]
+    },
+    "C": {
+      "per_seed_final_acc": [
+        0.7670000000000001,
+        0.8370000000000001,
+        0.8005000000000001
+      ],
+      "mean_acc": 0.8015,
+      "std_acc": 0.02858612717152615,
+      "dead_final": 0.8450520833333334,
+      "erank_final": 18.70595868428548,
+      "per_task_acc_mean": [
+        0.8646666666666666,
+        0.8746666666666667,
+        0.7913333333333333,
+        0.806,
+        0.8093333333333333,
+        0.8213333333333335,
+        0.7806666666666667,
+        0.7946666666666666
+      ],
+      "per_task_dead_mean": [
+        0.6692708333333334,
+        0.8743489583333334,
+        0.8951822916666666,
+        0.8684895833333334,
+        0.87890625,
+        0.8717447916666666,
+        0.8528645833333334,
+        0.8450520833333334
+      ],
+      "per_task_erank_mean": [
+        45.74577713012695,
+        13.415790875752768,
+        10.660668849945068,
+        15.136896451314291,
+        12.656732877095541,
+        13.99852466583252,
+        17.976080894470215,
+        18.70595868428548
+      ],
+      "seeds_done": [
+        0,
+        1,
+        2
+      ]
+    },
+    "D": {
+      "per_seed_final_acc": [
+        0.7775000000000001,
+        0.8049999999999999,
+        0.769
+      ],
+      "mean_acc": 0.7838333333333334,
+      "std_acc": 0.015364099568655306,
+      "dead_final": 0.8131510416666666,
+      "erank_final": 21.83638095855713,
+      "per_task_acc_mean": [
+        0.8646666666666668,
+        0.8686666666666666,
+        0.8126666666666668,
+        0.7493333333333334,
+        0.7973333333333334,
+        0.8093333333333333,
+        0.7533333333333333,
+        0.7753333333333333
+      ],
+      "per_task_dead_mean": [
+        0.5266927083333334,
+        0.8515625,
+        0.8743489583333334,
+        0.876953125,
+        0.8776041666666666,
+        0.8255208333333334,
+        0.8248697916666666,
+        0.8131510416666666
+      ],
+      "per_task_erank_mean": [
+        60.81770579020182,
+        15.462042808532715,
+        10.432360649108887,
+        12.65810743967692,
+        13.666277567545572,
+        18.345250765482586,
+        22.527069091796875,
+        21.83638095855713
+      ],
+      "seeds_done": [
+        0,
+        1,
+        2
+      ]
+    },
+    "A_floor": {
+      "source": "prior_baseline_A3_reference",
+      "mean_acc": 0.2,
+      "dead_final": 1.0,
+      "notes": "vanilla Adam no-reset; collapses to chance by task 3"
+    }
+  },
+  "D_matches_C": {
+    "acc_diff": -1.767,
+    "ci95": [
+      -7.827,
+      4.294
+    ],
+    "equiv_margin_pp": 1.5,
+    "verdict": "match"
+  },
+  "recovers_plasticity": true,
+  "wall_time_min": 34.03,
+  "subject_executed": "Arms B/C/D CBP resets, SmallConvNetGN, real CIFAR-100, 8\u00d75 classes, 1000 steps/task, reset_frac=0.1, reset_every=100, seeds=[0, 1, 2]",
+  "notes": "Probe run: 8 tasks \u00d7 5 cls/task, 1000 steps/task. Reset every 100 steps, frac=0.1. Arm A floor (prior baseline_A3): acc\u22480.2, dead\u22481.0. D_vs_C verdict: match (acc_diff=-1.77pp). Recovers plasticity: True. Wall: 34.0m.",
+  "metrics": {
+    "B_mean_acc_final_tasks": 0.8113333333333334,
+    "C_mean_acc_final_tasks": 0.8015,
+    "D_mean_acc_final_tasks": 0.7838333333333334,
+    "A_floor_acc": 0.2,
+    "B_dead_final": 0.818359375,
+    "C_dead_final": 0.8450520833333334,
+    "D_dead_final": 0.8131510416666666,
+    "D_vs_C_diff_pp": -1.767,
+    "D_vs_C_verdict": "match",
+    "recovers_plasticity": true
+  }
+}
