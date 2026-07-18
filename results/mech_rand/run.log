@@ -1,0 +1,375 @@
+Device: cuda
+Datasets: /opt/datasets
+Seeds: [0, 1, 2, 3, 4, 5, 6, 7]  Tasks: 4×5cls  Steps/task: 1000
+Arms: ['D', 'RANDOM']  reset_every=100  reset_frac=0.1
+Estimated wall-time: 2 arms × 8 seeds × 4 tasks × ~22s ≈ 23 min
+
+Loading real CIFAR-100 from /opt/datasets
+[torchvision] Loaded CIFAR-100: train=(50000, 3, 32, 32), test=(10000, 3, 32, 32)
+Data loaded: train=(50000, 3, 32, 32) test=(10000, 3, 32, 32)
+Model params: 3,296,164
+
+[0.1m elapsed] === SEED 0 ===
+
+[0.1m] Running ARM D, seed 0
+
+============================================================
+ARM D | SEED 0
+============================================================
+  [D/s0] Task  1/4 | acc=0.880 dead=0.502 erank=59.91 resets=10 loss=0.0377 wall=22.8s
+  [D/s0] Task  2/4 | acc=0.888 dead=0.834 erank=16.28 resets=10 loss=0.0368 wall=21.6s
+  [D/s0] Task  3/4 | acc=0.844 dead=0.873 erank=10.85 resets=10 loss=0.2831 wall=21.7s
+  [D/s0] Task  4/4 | acc=0.720 dead=0.889 erank=12.53 resets=10 loss=0.6454 wall=21.7s
+
+[1.6m] Running ARM RANDOM, seed 0
+
+============================================================
+ARM RANDOM | SEED 0
+============================================================
+  [RANDOM/s0] Task  1/4 | acc=0.900 dead=0.766 erank=31.67 resets=10 loss=0.0328 wall=21.8s
+  [RANDOM/s0] Task  2/4 | acc=0.864 dead=0.865 erank=14.17 resets=10 loss=0.0481 wall=21.6s
+  [RANDOM/s0] Task  3/4 | acc=0.488 dead=0.902 erank=7.64 resets=10 loss=0.2833 wall=21.7s
+  [RANDOM/s0] Task  4/4 | acc=0.812 dead=0.859 erank=12.20 resets=10 loss=0.4684 wall=21.7s
+
+  >> Seed 0 done:
+     D=0.8173  RANDOM=0.7213  diff=+0.0960 (+9.60pp)
+  >> Running D-RANDOM: mean=+9.60pp  CI=[nan, nan]  p_one_sided=None  n=1  beats_random=False
+
+[3.1m elapsed] === SEED 1 ===
+
+[3.1m] Running ARM D, seed 1
+
+============================================================
+ARM D | SEED 1
+============================================================
+  [D/s1] Task  1/4 | acc=0.804 dead=0.520 erank=66.78 resets=10 loss=0.0395 wall=21.8s
+  [D/s1] Task  2/4 | acc=0.872 dead=0.842 erank=16.76 resets=10 loss=0.0496 wall=22.2s
+  [D/s1] Task  3/4 | acc=0.740 dead=0.879 erank=10.70 resets=10 loss=0.3763 wall=21.8s
+  [D/s1] Task  4/4 | acc=0.734 dead=0.875 erank=11.82 resets=10 loss=0.7050 wall=21.9s
+
+[4.6m] Running ARM RANDOM, seed 1
+
+============================================================
+ARM RANDOM | SEED 1
+============================================================
+  [RANDOM/s1] Task  1/4 | acc=0.804 dead=0.766 erank=35.75 resets=10 loss=0.0632 wall=22.1s
+  [RANDOM/s1] Task  2/4 | acc=0.836 dead=0.879 erank=11.26 resets=10 loss=0.1327 wall=22.0s
+  [RANDOM/s1] Task  3/4 | acc=0.640 dead=0.900 erank=8.06 resets=10 loss=0.6931 wall=22.4s
+  [RANDOM/s1] Task  4/4 | acc=0.786 dead=0.887 erank=14.48 resets=10 loss=0.4225 wall=22.1s
+
+  >> Seed 1 done:
+     D=0.7820  RANDOM=0.7540  diff=+0.0280 (+2.80pp)
+  >> Running D-RANDOM: mean=+6.20pp  CI=[np.float64(-37.001), np.float64(49.401)]  p_one_sided=0.159666  n=2  beats_random=False
+
+[6.1m elapsed] === SEED 2 ===
+
+[6.1m] Running ARM D, seed 2
+
+============================================================
+ARM D | SEED 2
+============================================================
+  [D/s2] Task  1/4 | acc=0.910 dead=0.559 erank=55.76 resets=10 loss=0.0284 wall=22.6s
+  [D/s2] Task  2/4 | acc=0.846 dead=0.879 erank=13.35 resets=10 loss=0.1517 wall=22.2s
+  [D/s2] Task  3/4 | acc=0.854 dead=0.871 erank=9.75 resets=10 loss=0.2187 wall=22.3s
+  [D/s2] Task  4/4 | acc=0.794 dead=0.867 erank=13.62 resets=10 loss=0.3511 wall=22.3s
+
+[7.6m] Running ARM RANDOM, seed 2
+
+============================================================
+ARM RANDOM | SEED 2
+============================================================
+  [RANDOM/s2] Task  1/4 | acc=0.908 dead=0.760 erank=33.73 resets=10 loss=0.0130 wall=21.8s
+  [RANDOM/s2] Task  2/4 | acc=0.842 dead=0.873 erank=10.71 resets=10 loss=0.2997 wall=22.2s
+  [RANDOM/s2] Task  3/4 | acc=0.846 dead=0.861 erank=15.22 resets=10 loss=0.2448 wall=22.3s
+  [RANDOM/s2] Task  4/4 | acc=0.840 dead=0.875 erank=15.24 resets=10 loss=0.2623 wall=22.5s
+
+  >> Seed 2 done:
+     D=0.8313  RANDOM=0.8427  diff=-0.0113 (-1.13pp)
+  >> Running D-RANDOM: mean=+3.76pp  CI=[np.float64(-9.734), np.float64(17.245)]  p_one_sided=0.176828  n=3  beats_random=False
+
+[9.1m elapsed] === SEED 3 ===
+
+[9.1m] Running ARM D, seed 3
+
+============================================================
+ARM D | SEED 3
+============================================================
+  [D/s3] Task  1/4 | acc=0.832 dead=0.561 erank=53.28 resets=10 loss=0.0380 wall=22.2s
+  [D/s3] Task  2/4 | acc=0.842 dead=0.842 erank=13.41 resets=10 loss=0.2159 wall=22.4s
+  [D/s3] Task  3/4 | acc=0.752 dead=0.881 erank=12.47 resets=10 loss=0.6131 wall=21.9s
+  [D/s3] Task  4/4 | acc=0.886 dead=0.842 erank=16.41 resets=10 loss=0.1448 wall=21.8s
+
+[10.6m] Running ARM RANDOM, seed 3
+
+============================================================
+ARM RANDOM | SEED 3
+============================================================
+  [RANDOM/s3] Task  1/4 | acc=0.838 dead=0.783 erank=29.52 resets=10 loss=0.0488 wall=22.0s
+  [RANDOM/s3] Task  2/4 | acc=0.604 dead=0.883 erank=13.53 resets=10 loss=0.1402 wall=22.2s
+  [RANDOM/s3] Task  3/4 | acc=0.646 dead=0.900 erank=10.88 resets=10 loss=0.2643 wall=22.0s
+  [RANDOM/s3] Task  4/4 | acc=0.890 dead=0.875 erank=11.50 resets=10 loss=0.1002 wall=22.0s
+
+  >> Seed 3 done:
+     D=0.8267  RANDOM=0.7133  diff=+0.1133 (+11.33pp)
+  >> Running D-RANDOM: mean=+5.65pp  CI=[np.float64(-3.63), np.float64(14.93)]  p_one_sided=0.074032  n=4  beats_random=False
+
+[12.1m elapsed] === SEED 4 ===
+
+[12.1m] Running ARM D, seed 4
+
+============================================================
+ARM D | SEED 4
+============================================================
+  [D/s4] Task  1/4 | acc=0.880 dead=0.516 erank=65.50 resets=10 loss=0.0411 wall=22.0s
+  [D/s4] Task  2/4 | acc=0.806 dead=0.846 erank=20.91 resets=10 loss=0.1856 wall=21.9s
+  [D/s4] Task  3/4 | acc=0.852 dead=0.863 erank=18.13 resets=10 loss=0.1964 wall=22.0s
+  [D/s4] Task  4/4 | acc=0.836 dead=0.836 erank=14.60 resets=10 loss=0.2526 wall=21.9s
+
+[13.6m] Running ARM RANDOM, seed 4
+
+============================================================
+ARM RANDOM | SEED 4
+============================================================
+  [RANDOM/s4] Task  1/4 | acc=0.878 dead=0.754 erank=36.59 resets=10 loss=0.0411 wall=21.9s
+  [RANDOM/s4] Task  2/4 | acc=0.774 dead=0.877 erank=15.15 resets=10 loss=0.3208 wall=22.5s
+  [RANDOM/s4] Task  3/4 | acc=0.794 dead=0.844 erank=15.08 resets=10 loss=0.3372 wall=22.5s
+  [RANDOM/s4] Task  4/4 | acc=0.800 dead=0.861 erank=12.87 resets=10 loss=0.2290 wall=22.1s
+
+  >> Seed 4 done:
+     D=0.8313  RANDOM=0.7893  diff=+0.0420 (+4.20pp)
+  >> Running D-RANDOM: mean=+5.36pp  CI=[np.float64(-0.963), np.float64(11.683)]  p_one_sided=0.0391  n=5  beats_random=False
+
+[15.2m elapsed] === SEED 5 ===
+
+[15.2m] Running ARM D, seed 5
+
+============================================================
+ARM D | SEED 5
+============================================================
+  [D/s5] Task  1/4 | acc=0.888 dead=0.512 erank=59.00 resets=10 loss=0.0264 wall=22.1s
+  [D/s5] Task  2/4 | acc=0.822 dead=0.877 erank=12.32 resets=10 loss=0.1344 wall=21.9s
+  [D/s5] Task  3/4 | acc=0.816 dead=0.852 erank=11.11 resets=10 loss=0.3103 wall=22.1s
+  [D/s5] Task  4/4 | acc=0.730 dead=0.895 erank=8.54 resets=10 loss=0.7097 wall=21.9s
+
+[16.7m] Running ARM RANDOM, seed 5
+
+============================================================
+ARM RANDOM | SEED 5
+============================================================
+  [RANDOM/s5] Task  1/4 | acc=0.840 dead=0.770 erank=34.09 resets=10 loss=0.0221 wall=21.9s
+  [RANDOM/s5] Task  2/4 | acc=0.818 dead=0.877 erank=12.00 resets=10 loss=0.1429 wall=21.9s
+  [RANDOM/s5] Task  3/4 | acc=0.668 dead=0.885 erank=12.12 resets=10 loss=0.3228 wall=21.8s
+  [RANDOM/s5] Task  4/4 | acc=0.778 dead=0.904 erank=10.02 resets=10 loss=0.5395 wall=21.7s
+
+  >> Seed 5 done:
+     D=0.7893  RANDOM=0.7547  diff=+0.0347 (+3.47pp)
+  >> Running D-RANDOM: mean=+5.04pp  CI=[np.float64(0.196), np.float64(9.893)]  p_one_sided=0.02205  n=6  beats_random=True
+
+[18.2m] 6 seeds complete — SPEC THRESHOLD MET (>=6). Continuing to all 8...
+
+[18.2m elapsed] === SEED 6 ===
+
+[18.2m] Running ARM D, seed 6
+
+============================================================
+ARM D | SEED 6
+============================================================
+  [D/s6] Task  1/4 | acc=0.896 dead=0.555 erank=51.16 resets=10 loss=0.0444 wall=22.0s
+  [D/s6] Task  2/4 | acc=0.766 dead=0.848 erank=19.69 resets=10 loss=0.1888 wall=21.9s
+  [D/s6] Task  3/4 | acc=0.830 dead=0.871 erank=10.21 resets=10 loss=0.2523 wall=22.3s
+  [D/s6] Task  4/4 | acc=0.754 dead=0.854 erank=14.94 resets=10 loss=0.5951 wall=22.0s
+
+[19.7m] Running ARM RANDOM, seed 6
+
+============================================================
+ARM RANDOM | SEED 6
+============================================================
+  [RANDOM/s6] Task  1/4 | acc=0.932 dead=0.766 erank=28.46 resets=10 loss=0.0015 wall=21.9s
+  [RANDOM/s6] Task  2/4 | acc=0.606 dead=0.869 erank=15.91 resets=10 loss=0.4415 wall=22.0s
+  [RANDOM/s6] Task  3/4 | acc=0.784 dead=0.898 erank=8.67 resets=10 loss=0.5328 wall=21.9s
+  [RANDOM/s6] Task  4/4 | acc=0.750 dead=0.861 erank=14.15 resets=10 loss=0.5735 wall=21.7s
+
+  >> Seed 6 done:
+     D=0.7833  RANDOM=0.7133  diff=+0.0700 (+7.00pp)
+  >> Running D-RANDOM: mean=+5.32pp  CI=[np.float64(1.364), np.float64(9.284)]  p_one_sided=0.008308  n=7  beats_random=True
+
+[21.2m] 7 seeds complete — SPEC THRESHOLD MET (>=6). Continuing to all 8...
+
+[21.2m elapsed] === SEED 7 ===
+
+[21.2m] Running ARM D, seed 7
+
+============================================================
+ARM D | SEED 7
+============================================================
+  [D/s7] Task  1/4 | acc=0.728 dead=0.562 erank=71.90 resets=10 loss=0.1499 wall=21.8s
+  [D/s7] Task  2/4 | acc=0.824 dead=0.865 erank=16.80 resets=10 loss=0.4040 wall=21.9s
+  [D/s7] Task  3/4 | acc=0.788 dead=0.861 erank=16.07 resets=10 loss=0.3621 wall=21.9s
+  [D/s7] Task  4/4 | acc=0.762 dead=0.855 erank=17.42 resets=10 loss=0.5664 wall=21.8s
+
+[22.7m] Running ARM RANDOM, seed 7
+
+============================================================
+ARM RANDOM | SEED 7
+============================================================
+  [RANDOM/s7] Task  1/4 | acc=0.722 dead=0.793 erank=35.85 resets=10 loss=0.1702 wall=21.7s
+  [RANDOM/s7] Task  2/4 | acc=0.876 dead=0.852 erank=16.11 resets=10 loss=0.0972 wall=21.6s
+  [RANDOM/s7] Task  3/4 | acc=0.814 dead=0.873 erank=13.63 resets=10 loss=0.2345 wall=21.8s
+  [RANDOM/s7] Task  4/4 | acc=0.762 dead=0.887 erank=11.75 resets=10 loss=0.5084 wall=21.7s
+
+  >> Seed 7 done:
+     D=0.7913  RANDOM=0.8173  diff=-0.0260 (-2.60pp)
+  >> Running D-RANDOM: mean=+4.33pp  CI=[np.float64(0.275), np.float64(8.391)]  p_one_sided=0.019758  n=8  beats_random=True
+
+[24.1m] 8 seeds complete — SPEC THRESHOLD MET (>=6). Continuing to all 8...
+
+======================================================================
+MECH_RAND FINAL RESULTS (8 seeds, 24.1 min)
+======================================================================
+  D (Adam-v_t):  mean=0.8066±0.0221  dead=0.864  erank=13.74
+  RANDOM:        mean=0.7632±0.0490  dead=0.876  erank=12.78
+
+Paired D-RANDOM: +4.33pp  CI=[np.float64(0.275), np.float64(8.391)]  p_one_sided=0.019758  v_t_ranking_beats_random=True
+
+Conclusion: YES: v_t ranking carries real information beyond 'any reset helps'. D beats RANDOM by +4.33pp (p_one_sided=0.0198, CI=[np.float64(0.275), np.float64(8.391)]).
+
+Full results at: /workspace/results/mech_rand/RESULTS.json
+{
+  "status": "DONE",
+  "scale": "full",
+  "n_seeds": 8,
+  "data_source": "cifar100_real",
+  "seeds_complete": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "D": {
+    "per_seed_acc": [
+      0.8173,
+      0.782,
+      0.8313,
+      0.8267,
+      0.8313,
+      0.7893,
+      0.7833,
+      0.7913
+    ],
+    "mean": 0.8066,
+    "std": 0.0221,
+    "dead_final": 0.864,
+    "erank_final": 13.74,
+    "per_task_acc_mean": [
+      0.85225,
+      0.8332499999999999,
+      0.8095000000000001,
+      0.7770000000000001
+    ],
+    "seeds_done": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "RANDOM": {
+    "per_seed_acc": [
+      0.7213,
+      0.754,
+      0.8427,
+      0.7133,
+      0.7893,
+      0.7547,
+      0.7133,
+      0.8173
+    ],
+    "mean": 0.7632,
+    "std": 0.049,
+    "dead_final": 0.8762,
+    "erank_final": 12.78,
+    "per_task_acc_mean": [
+      0.8527500000000001,
+      0.7775,
+      0.71,
+      0.8022500000000001
+    ],
+    "seeds_done": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "paired_D_minus_RANDOM": {
+    "per_seed": [
+      9.6,
+      2.8,
+      -1.133,
+      11.333,
+      4.2,
+      3.467,
+      7.0,
+      -2.6
+    ],
+    "mean_pp": 4.333,
+    "std_pp": 4.854,
+    "ci95_pp": [
+      0.275,
+      8.391
+    ],
+    "t_stat": 2.5251,
+    "t_p_value_two_sided": 0.039517,
+    "t_p_value_one_sided": 0.019758,
+    "n_seeds": 8,
+    "v_t_ranking_beats_random": true
+  },
+  "wall_time_min": 24.14,
+  "subject_executed": "Two-arm CBP (D=Adam-v_t utility, RANDOM=random-reset control), PAIRED on same task splits, SmallConvNetGN, real CIFAR-100, 4\u00d75 classes, 1000 steps/task, reset_every=100, reset_frac=0.1, seeds=[0, 1, 2, 3, 4, 5, 6, 7]",
+  "notes": "YES: v_t ranking carries real information beyond 'any reset helps'. D beats RANDOM by +4.33pp (p_one_sided=0.0198, CI=[np.float64(0.275), np.float64(8.391)]).",
+  "metrics": {
+    "D_mean_acc": 0.8066,
+    "D_std_acc": 0.0221,
+    "D_per_seed_acc": [
+      0.8173,
+      0.782,
+      0.8313,
+      0.8267,
+      0.8313,
+      0.7893,
+      0.7833,
+      0.7913
+    ],
+    "RANDOM_mean_acc": 0.7632,
+    "RANDOM_std_acc": 0.049,
+    "RANDOM_per_seed_acc": [
+      0.7213,
+      0.754,
+      0.8427,
+      0.7133,
+      0.7893,
+      0.7547,
+      0.7133,
+      0.8173
+    ],
+    "D_minus_RANDOM_mean_pp": 4.333,
+    "D_minus_RANDOM_ci95_pp": [
+      0.275,
+      8.391
+    ],
+    "D_minus_RANDOM_p_one_sided": 0.019758,
+    "v_t_ranking_beats_random": true
+  }
+}

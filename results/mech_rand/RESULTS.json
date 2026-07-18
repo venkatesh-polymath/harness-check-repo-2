@@ -1,0 +1,51 @@
+{
+  "status": "SUCCESS",
+  "scale": "full",
+  "n_seeds": 8,
+  "data_source": "cifar100_real",
+  "seeds_complete": [0, 1, 2, 3, 4, 5, 6, 7],
+  "D": {
+    "per_seed_acc": [0.8173, 0.782, 0.8313, 0.8267, 0.8313, 0.7893, 0.7833, 0.7913],
+    "mean": 0.8066,
+    "std": 0.0221,
+    "dead_final": 0.864,
+    "erank_final": 13.74,
+    "per_task_acc_mean": [0.85225, 0.8333, 0.8095, 0.777],
+    "seeds_done": [0, 1, 2, 3, 4, 5, 6, 7]
+  },
+  "RANDOM": {
+    "per_seed_acc": [0.7213, 0.754, 0.8427, 0.7133, 0.7893, 0.7547, 0.7133, 0.8173],
+    "mean": 0.7632,
+    "std": 0.049,
+    "dead_final": 0.8762,
+    "erank_final": 12.78,
+    "per_task_acc_mean": [0.8528, 0.7775, 0.71, 0.8023],
+    "seeds_done": [0, 1, 2, 3, 4, 5, 6, 7]
+  },
+  "paired_D_minus_RANDOM": {
+    "per_seed": [9.6, 2.8, -1.133, 11.333, 4.2, 3.467, 7.0, -2.6],
+    "mean_pp": 4.333,
+    "std_pp": 4.854,
+    "ci95_pp": [0.275, 8.391],
+    "t_stat": 2.5251,
+    "t_p_value_two_sided": 0.039517,
+    "t_p_value_one_sided": 0.019758,
+    "n_seeds": 8,
+    "v_t_ranking_beats_random": true
+  },
+  "metrics": {
+    "D_mean_acc": 0.8066,
+    "D_std_acc": 0.0221,
+    "D_per_seed_acc": [0.8173, 0.782, 0.8313, 0.8267, 0.8313, 0.7893, 0.7833, 0.7913],
+    "RANDOM_mean_acc": 0.7632,
+    "RANDOM_std_acc": 0.049,
+    "RANDOM_per_seed_acc": [0.7213, 0.754, 0.8427, 0.7133, 0.7893, 0.7547, 0.7133, 0.8173],
+    "D_minus_RANDOM_mean_pp": 4.333,
+    "D_minus_RANDOM_ci95_pp": [0.275, 8.391],
+    "D_minus_RANDOM_p_one_sided": 0.019758,
+    "v_t_ranking_beats_random": true
+  },
+  "wall_time_min": 24.14,
+  "subject_executed": "Two-arm paired CBP experiment (D=Adam-v_t utility vs RANDOM=random-reset control), SmallConvNetGN GroupNorm ConvNet, real CIFAR-100 /opt/datasets, 4 tasks x 5 classes class-incremental, 1000 steps/task, reset_every=100 steps, reset_frac=0.10, Adam lr=1e-3, 8 seeds {0..7} fully paired (same task split per seed), primary metric = mean accuracy tasks 2-4",
+  "notes": "YES: v_t's ranking carries real information beyond 'any reset helps equally'. D (Adam-v_t CBP) beats RANDOM (random-reset same cadence+fraction) by +4.33pp mean (CI=[0.275,8.391]pp, one-sided paired t-test p=0.0198, n=8 seeds). 6 of 8 per-seed diffs are positive. Effect is statistically significant at p<0.05. Conclusion: the utility ranking from Adam's exp_avg_sq (v_t) is the operative factor, not merely the act of periodically resetting neurons."
+}
