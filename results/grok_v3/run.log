@@ -1,0 +1,162 @@
+Device: cuda
+Grokking Ablation v3 — BN sublayer decomposition
+Arms: ['BN_all_noWD', 'BN_mlp_only_noWD', 'BN_attn_only_noWD', 'LN_wd0.25', 'LN_wd0.5', 'LN_wd0.75']
+Seeds: [42, 123, 7, 99, 2024], BS=256, max_steps=15000
+Device: cuda
+Total cells: 30
+
+############################################################
+ARM [1/6]: BN_all_noWD
+  norm1=BatchNorm, norm2=BatchNorm, WD=0.0
+
+  [1/5] seed=42
+
+============================================================
+CELL: BN_all_noWD seed=42
+  norm1=BatchNorm norm2=BatchNorm WD=0.0
+============================================================
+  step= 5000 | tr=0.997 | val=0.002 | wnorm=124.22 | 25s
+  step=10000 | tr=0.999 | val=0.001 | wnorm=128.97 | 49s
+  step=15000 | tr=1.000 | val=0.001 | wnorm=132.49 | 73s
+  DONE | steps=15000 | grok=NO | val=0.001 | wnorm_ratio=1.144 | 73s
+
+  [2/5] seed=123
+
+============================================================
+CELL: BN_all_noWD seed=123
+  norm1=BatchNorm norm2=BatchNorm WD=0.0
+============================================================
+  step= 5000 | tr=1.000 | val=0.001 | wnorm=122.77 | 24s
+  step=10000 | tr=1.000 | val=0.001 | wnorm=127.12 | 49s
+  step=15000 | tr=1.000 | val=0.002 | wnorm=130.72 | 73s
+  DONE | steps=15000 | grok=NO | val=0.002 | wnorm_ratio=1.122 | 73s
+
+  [3/5] seed=7
+
+============================================================
+CELL: BN_all_noWD seed=7
+  norm1=BatchNorm norm2=BatchNorm WD=0.0
+============================================================
+  step= 5000 | tr=1.000 | val=0.002 | wnorm=122.69 | 24s
+  step=10000 | tr=1.000 | val=0.002 | wnorm=128.12 | 48s
+  step=15000 | tr=1.000 | val=0.002 | wnorm=131.72 | 73s
+  DONE | steps=15000 | grok=NO | val=0.002 | wnorm_ratio=1.142 | 73s
+
+  [4/5] seed=99
+
+============================================================
+CELL: BN_all_noWD seed=99
+  norm1=BatchNorm norm2=BatchNorm WD=0.0
+============================================================
+  step= 5000 | tr=0.999 | val=0.001 | wnorm=123.80 | 24s
+  step=10000 | tr=0.999 | val=0.001 | wnorm=130.30 | 48s
+  step=15000 | tr=0.999 | val=0.002 | wnorm=133.04 | 73s
+  DONE | steps=15000 | grok=NO | val=0.002 | wnorm_ratio=1.153 | 73s
+
+  [5/5] seed=2024
+
+============================================================
+CELL: BN_all_noWD seed=2024
+  norm1=BatchNorm norm2=BatchNorm WD=0.0
+============================================================
+  step= 5000 | tr=1.000 | val=0.001 | wnorm=122.19 | 24s
+  step=10000 | tr=0.999 | val=0.002 | wnorm=127.60 | 48s
+  step=15000 | tr=1.000 | val=0.001 | wnorm=131.70 | 73s
+  DONE | steps=15000 | grok=NO | val=0.001 | wnorm_ratio=1.154 | 73s
+
+  ARM SUMMARY: BN_all_noWD → 0/5 grokked | mean_onset=None | mean_wnorm_ratio=1.1431
+
+############################################################
+ARM [2/6]: BN_mlp_only_noWD
+  norm1=LayerNorm, norm2=BatchNorm, WD=0.0
+
+  [1/5] seed=42
+
+============================================================
+CELL: BN_mlp_only_noWD seed=42
+  norm1=LayerNorm norm2=BatchNorm WD=0.0
+============================================================
+  step= 5000 | tr=1.000 | val=0.001 | wnorm=121.36 | 24s
+  step=10000 | tr=0.997 | val=0.003 | wnorm=124.02 | 48s
+  step=15000 | tr=1.000 | val=0.001 | wnorm=128.33 | 72s
+  DONE | steps=15000 | grok=NO | val=0.001 | wnorm_ratio=1.108 | 72s
+
+  [2/5] seed=123
+
+============================================================
+CELL: BN_mlp_only_noWD seed=123
+  norm1=LayerNorm norm2=BatchNorm WD=0.0
+============================================================
+  step= 5000 | tr=1.000 | val=0.001 | wnorm=123.31 | 24s
+  step=10000 | tr=0.999 | val=0.001 | wnorm=127.84 | 48s
+  step=15000 | tr=0.999 | val=0.001 | wnorm=131.59 | 72s
+  DONE | steps=15000 | grok=NO | val=0.001 | wnorm_ratio=1.130 | 72s
+
+  [3/5] seed=7
+
+============================================================
+CELL: BN_mlp_only_noWD seed=7
+  norm1=LayerNorm norm2=BatchNorm WD=0.0
+============================================================
+  step= 5000 | tr=1.000 | val=0.000 | wnorm=120.59 | 24s
+  step=10000 | tr=1.000 | val=0.001 | wnorm=125.62 | 48s
+  step=15000 | tr=1.000 | val=0.001 | wnorm=128.50 | 71s
+  DONE | steps=15000 | grok=NO | val=0.001 | wnorm_ratio=1.114 | 72s
+
+  [4/5] seed=99
+
+============================================================
+CELL: BN_mlp_only_noWD seed=99
+  norm1=LayerNorm norm2=BatchNorm WD=0.0
+============================================================
+  step= 5000 | tr=1.000 | val=0.001 | wnorm=120.73 | 24s
+  step=10000 | tr=1.000 | val=0.001 | wnorm=124.35 | 48s
+  step=15000 | tr=1.000 | val=0.001 | wnorm=126.04 | 72s
+  DONE | steps=15000 | grok=NO | val=0.001 | wnorm_ratio=1.092 | 72s
+
+  [5/5] seed=2024
+
+============================================================
+CELL: BN_mlp_only_noWD seed=2024
+  norm1=LayerNorm norm2=BatchNorm WD=0.0
+============================================================
+  step= 5000 | tr=1.000 | val=0.001 | wnorm=120.99 | 24s
+  step=10000 | tr=0.999 | val=0.001 | wnorm=124.18 | 48s
+  step=15000 | tr=1.000 | val=0.002 | wnorm=127.94 | 71s
+  DONE | steps=15000 | grok=NO | val=0.002 | wnorm_ratio=1.121 | 71s
+
+  ARM SUMMARY: BN_mlp_only_noWD → 0/5 grokked | mean_onset=None | mean_wnorm_ratio=1.1130
+
+############################################################
+ARM [3/6]: BN_attn_only_noWD
+  norm1=BatchNorm, norm2=LayerNorm, WD=0.0
+
+  [1/5] seed=42
+
+============================================================
+CELL: BN_attn_only_noWD seed=42
+  norm1=BatchNorm norm2=LayerNorm WD=0.0
+============================================================
+  step= 5000 | tr=0.997 | val=0.001 | wnorm=122.34 | 23s
+  step=10000 | tr=1.000 | val=0.002 | wnorm=127.32 | 47s
+  step=15000 | tr=1.000 | val=0.003 | wnorm=138.49 | 70s
+  DONE | steps=15000 | grok=NO | val=0.003 | wnorm_ratio=1.196 | 70s
+
+  [2/5] seed=123
+
+============================================================
+CELL: BN_attn_only_noWD seed=123
+  norm1=BatchNorm norm2=LayerNorm WD=0.0
+============================================================
+  step= 5000 | tr=0.997 | val=0.001 | wnorm=122.83 | 23s
+  step=10000 | tr=1.000 | val=0.002 | wnorm=127.01 | 47s
+  step=15000 | tr=1.000 | val=0.003 | wnorm=159.37 | 70s
+  DONE | steps=15000 | grok=NO | val=0.003 | wnorm_ratio=1.368 | 70s
+
+  [3/5] seed=7
+
+============================================================
+CELL: BN_attn_only_noWD seed=7
+  norm1=BatchNorm norm2=LayerNorm WD=0.0
+============================================================
+  step= 5000 | tr=0.995 | val=0.001 | wnorm=122.76 | 23s

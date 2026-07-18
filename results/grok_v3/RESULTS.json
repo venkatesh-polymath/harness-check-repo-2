@@ -1,0 +1,52 @@
+{
+  "status": "RUNNING",
+  "scale": "probe",
+  "arms": {
+    "BN_all_noWD": {
+      "n_seeds": 5,
+      "grok_rate": "0/5",
+      "grok_rate_float": 0.0,
+      "mean_onset": null,
+      "std_onset": null,
+      "final_wnorm_ratio_mean": 1.1431,
+      "final_wnorm_ratio_std": 0.0113,
+      "wnorm_ratios": [
+        1.1443,
+        1.1224,
+        1.1423,
+        1.1527,
+        1.1536
+      ]
+    },
+    "BN_mlp_only_noWD": {
+      "n_seeds": 5,
+      "grok_rate": "0/5",
+      "grok_rate_float": 0.0,
+      "mean_onset": null,
+      "std_onset": null,
+      "final_wnorm_ratio_mean": 1.113,
+      "final_wnorm_ratio_std": 0.0127,
+      "wnorm_ratios": [
+        1.1083,
+        1.1298,
+        1.1144,
+        1.0921,
+        1.1206
+      ]
+    }
+  },
+  "bn_mlp_only_groks": false,
+  "grokking_wd_threshold_interval": [
+    0.1,
+    1.0
+  ],
+  "bn_effective_wd_estimate": null,
+  "estimate_method": "Matched BN_all+noWD final_wnorm_ratio_mean=1.1431 to nearest LN+WD arm by absolute difference in wnorm_ratio. Best match: LN+WD=None (diff=inf).",
+  "wd_eff_comparison_table": {},
+  "n_seeds": 5,
+  "metrics": {
+    "n_cells_completed": 10
+  },
+  "subject_executed": "Arms: BN_all_noWD, BN_mlp_only_noWD, BN_attn_only_noWD (norm1=BN attn, norm2=BN MLP, mixed), LN_wd{0.25,0.5,0.75}. 5 seeds each. 1-layer Transformer d=128 h=4 mlp=512, P=97 mod-add, BS=256, AdamW LR=1e-3, 15k-step cap. grok_v2 reused for LN+WD=0.0, 0.1, 1.0 comparison anchors.",
+  "notes": ""
+}
