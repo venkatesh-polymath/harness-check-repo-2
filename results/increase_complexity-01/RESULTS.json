@@ -1,0 +1,286 @@
+{
+  "status": "RUNNING",
+  "scale": "probe",
+  "metrics": {
+    "n_cells_completed": 23,
+    "n_cells_total": 24,
+    "grid_table": [
+      {
+        "norm": "LayerNorm",
+        "WD": 0.0,
+        "BS": 64,
+        "seed": 42,
+        "grokked": false,
+        "grok_onset": null,
+        "final_val_acc": 0.003542,
+        "wnorm_ratio": 1.1579
+      },
+      {
+        "norm": "LayerNorm",
+        "WD": 0.0,
+        "BS": 64,
+        "seed": 123,
+        "grokked": false,
+        "grok_onset": null,
+        "final_val_acc": 0.003897,
+        "wnorm_ratio": 1.1573
+      },
+      {
+        "norm": "LayerNorm",
+        "WD": 0.0,
+        "BS": 256,
+        "seed": 42,
+        "grokked": false,
+        "grok_onset": null,
+        "final_val_acc": 0.003365,
+        "wnorm_ratio": 1.9871
+      },
+      {
+        "norm": "LayerNorm",
+        "WD": 0.0,
+        "BS": 256,
+        "seed": 123,
+        "grokked": false,
+        "grok_onset": null,
+        "final_val_acc": 0.004251,
+        "wnorm_ratio": 1.8606
+      },
+      {
+        "norm": "LayerNorm",
+        "WD": 0.0,
+        "BS": 512,
+        "seed": 42,
+        "grokked": false,
+        "grok_onset": null,
+        "final_val_acc": 0.003719,
+        "wnorm_ratio": 2.5534
+      },
+      {
+        "norm": "LayerNorm",
+        "WD": 0.0,
+        "BS": 512,
+        "seed": 123,
+        "grokked": false,
+        "grok_onset": null,
+        "final_val_acc": 0.003542,
+        "wnorm_ratio": 2.5767
+      },
+      {
+        "norm": "LayerNorm",
+        "WD": 1.0,
+        "BS": 64,
+        "seed": 42,
+        "grokked": true,
+        "grok_onset": 5400,
+        "final_val_acc": 0.990967,
+        "wnorm_ratio": 1.0221
+      },
+      {
+        "norm": "LayerNorm",
+        "WD": 1.0,
+        "BS": 64,
+        "seed": 123,
+        "grokked": true,
+        "grok_onset": 5800,
+        "final_val_acc": 0.990259,
+        "wnorm_ratio": 1.0066
+      },
+      {
+        "norm": "LayerNorm",
+        "WD": 1.0,
+        "BS": 256,
+        "seed": 42,
+        "grokked": true,
+        "grok_onset": 5600,
+        "final_val_acc": 0.992384,
+        "wnorm_ratio": 0.9747
+      },
+      {
+        "norm": "LayerNorm",
+        "WD": 1.0,
+        "BS": 256,
+        "seed": 123,
+        "grokked": true,
+        "grok_onset": 6400,
+        "final_val_acc": 0.994155,
+        "wnorm_ratio": 0.9882
+      },
+      {
+        "norm": "LayerNorm",
+        "WD": 1.0,
+        "BS": 512,
+        "seed": 42,
+        "grokked": true,
+        "grok_onset": 5700,
+        "final_val_acc": 0.99752,
+        "wnorm_ratio": 0.9357
+      },
+      {
+        "norm": "LayerNorm",
+        "WD": 1.0,
+        "BS": 512,
+        "seed": 123,
+        "grokked": true,
+        "grok_onset": 7600,
+        "final_val_acc": 0.995041,
+        "wnorm_ratio": 0.9262
+      },
+      {
+        "norm": "BatchNorm",
+        "WD": 0.0,
+        "BS": 64,
+        "seed": 42,
+        "grokked": false,
+        "grok_onset": null,
+        "final_val_acc": 0.001594,
+        "wnorm_ratio": 1.1871
+      },
+      {
+        "norm": "BatchNorm",
+        "WD": 0.0,
+        "BS": 64,
+        "seed": 123,
+        "grokked": false,
+        "grok_onset": null,
+        "final_val_acc": 0.000708,
+        "wnorm_ratio": 1.1865
+      },
+      {
+        "norm": "BatchNorm",
+        "WD": 0.0,
+        "BS": 256,
+        "seed": 42,
+        "grokked": false,
+        "grok_onset": null,
+        "final_val_acc": 0.001417,
+        "wnorm_ratio": 1.1589
+      },
+      {
+        "norm": "BatchNorm",
+        "WD": 0.0,
+        "BS": 256,
+        "seed": 123,
+        "grokked": false,
+        "grok_onset": null,
+        "final_val_acc": 0.001948,
+        "wnorm_ratio": 1.2307
+      },
+      {
+        "norm": "BatchNorm",
+        "WD": 0.0,
+        "BS": 512,
+        "seed": 42,
+        "grokked": false,
+        "grok_onset": null,
+        "final_val_acc": 0.000708,
+        "wnorm_ratio": 1.079
+      },
+      {
+        "norm": "BatchNorm",
+        "WD": 0.0,
+        "BS": 512,
+        "seed": 123,
+        "grokked": false,
+        "grok_onset": null,
+        "final_val_acc": 0.001771,
+        "wnorm_ratio": 1.0902
+      },
+      {
+        "norm": "BatchNorm",
+        "WD": 1.0,
+        "BS": 64,
+        "seed": 42,
+        "grokked": true,
+        "grok_onset": 8000,
+        "final_val_acc": 0.990436,
+        "wnorm_ratio": 1.0391
+      },
+      {
+        "norm": "BatchNorm",
+        "WD": 1.0,
+        "BS": 64,
+        "seed": 123,
+        "grokked": false,
+        "grok_onset": null,
+        "final_val_acc": 0.818278,
+        "wnorm_ratio": 1.106
+      },
+      {
+        "norm": "BatchNorm",
+        "WD": 1.0,
+        "BS": 256,
+        "seed": 42,
+        "grokked": true,
+        "grok_onset": 7300,
+        "final_val_acc": 0.990436,
+        "wnorm_ratio": 0.9737
+      },
+      {
+        "norm": "BatchNorm",
+        "WD": 1.0,
+        "BS": 256,
+        "seed": 123,
+        "grokked": true,
+        "grok_onset": 5800,
+        "final_val_acc": 0.990081,
+        "wnorm_ratio": 0.9838
+      },
+      {
+        "norm": "BatchNorm",
+        "WD": 1.0,
+        "BS": 512,
+        "seed": 42,
+        "grokked": true,
+        "grok_onset": 8100,
+        "final_val_acc": 0.99752,
+        "wnorm_ratio": 0.9397
+      }
+    ],
+    "summary_by_condition": {
+      "BN_noWD": {
+        "n_cells": 6,
+        "grok_rate": 0.0,
+        "mean_onset": null,
+        "BS_breakdown": {
+          "64": {
+            "n": 2,
+            "grok_rate": 0.0,
+            "mean_onset": null
+          },
+          "256": {
+            "n": 2,
+            "grok_rate": 0.0,
+            "mean_onset": null
+          },
+          "512": {
+            "n": 2,
+            "grok_rate": 0.0,
+            "mean_onset": null
+          }
+        }
+      },
+      "LN_WD1p0": {
+        "n_cells": 6,
+        "grok_rate": 1.0,
+        "mean_onset": 6083.0
+      },
+      "LN_noWD": {
+        "n_cells": 6,
+        "grok_rate": 0.0,
+        "mean_onset": null
+      },
+      "BN_WD1p0": {
+        "n_cells": 5,
+        "grok_rate": 0.8,
+        "mean_onset": 7300.0
+      }
+    },
+    "mechanistic_verdicts": {
+      "(a) BN+noWD_batch_size_effect": "BN+noWD grok rates: BS64=0.0, BS256=0.0, BS512=0.0. Mean onset: BS64=None, BS256=None, BS512=None. REFUTED: BN+noWD does not grok at any batch size.",
+      "(b) BN+noWD_vs_LN+WD_consistency": "INCONSISTENT: LN+WD=1.0 groks but BN+noWD does not.",
+      "(c) LN+noWD_control": "LN+noWD: 0/6 cells grokked. CONFIRMED: LN+noWD never groks (no regularization)."
+    }
+  },
+  "subject_executed": "Grid: norm {LN,BN} x WD {0,1.0} x BS {64,256,512} x seeds {42,123} = 24 cells. 1-layer transformer (d=128, h=4, mlp=512) on mod-97 addition. AdamW LR=1e-3, max 15k steps, early-stop at sustained val_acc>0.95.",
+  "notes": "Building on baseline-00 (LN+WD=1.0 grokked at step 5500). BN applied as BatchNorm1d over (B*T) dim in pre-norm positions. Status: 23/24 cells done."
+}

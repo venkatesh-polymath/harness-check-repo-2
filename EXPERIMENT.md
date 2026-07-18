@@ -1,10 +1,10 @@
-# EXPERIMENT BRIEF — round baseline-00 (probe)
+# EXPERIMENT BRIEF — round increase_complexity-01 (probe)
 
 ## THIS ROUND (do exactly this)
-Establish the BASELINE (probe — cheap). Implement FROM SCRATCH: modular-arithmetic dataset (a+b mod 97, all pairs, ~50/50 train/val split) + a small 1-layer transformer (or 2-layer MLP) in PyTorch. Baseline cell = LayerNorm + weight_decay 1e-3 + AdamW + batch_size 512, LR ~1e-3. Train and VERIFY GROKKING occurs: train acc rises to ~100% early, val acc stays low then GROKS (jumps to high) later. Report: grokking-onset step (first step val_acc>0.9), final train/val acc, and the weight-norm trajectory. Keep bounded: <= ~20k steps or stop once grokking is observed, total < 25 min. 1 seed for this smoke. Write results/baseline-00/RESULTS.json with status SUCCESS, grokking_onset_step, final accs, and whether grokking reproduced.
+CORE experiment. Build on baseline-00 grokking code (mod-97, small transformer, AdamW). Grid: norm {LayerNorm, BatchNorm} x weight_decay {0, 1.0} x batch_size {64, 256, 512}, 2 seeds (24 runs). Per cell: grok? (val_acc>0.9), onset step, final weight_norm_ratio. IMPORTANT: write/UPDATE results/increase_complexity-01/RESULTS.json AFTER EACH CELL completes (incremental) so partial progress is never lost. MECHANISTIC TESTS: (a) does BN+no-WD grok ONLY at small batch (implicit batch-noise reg ~1/batch) and FAIL at batch=512? (b) is BN+no-WD consistent with LN+WD (implicit-L2)? (c) CONTROL: LN+no-WD should NOT grok. Cap each run <=15k steps or early-stop on grok; total < 40 min. Final RESULTS.json: full grid table + one-line verdict per (a),(b),(c) + status SUCCESS.
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/baseline-00/.
+for context and build on them; write this round's outputs under results/increase_complexity-01/.
 
 ## Idea
 BatchNorm's Implicit Regularization Is Weight Decay for Grokking: A Normalization-Decomposition Experiment
@@ -38,4 +38,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: LayerNorm + WD=1e-3 + batch_size=512, AdamW, LR tuned by pilot, 5 seeds — this is the Power et al.-adjacent grokking reference cell (LN substituted for no-norm) that is well-documented to grok reliably on p=97 modular addition; it is the anchor against which all BN-arm calibrations are fit and all delay comparisons are made; it must be run first and must exhibit clean grokking before any other cell is launched
 - eval contract: Dataset: modular addition p=97, 40/60 train-val split, fixed across all cells. Primary metric: grokking delay (steps, right-censored at 100k). Secondary metrics: (i) L2 weight-norm trajectory sampled every 500 steps to test consistency beyond scalar delay-matching; (ii) effective-LR proxy ||Δθ_t|| / ||θ_t|| every 500 steps to flag WD-as-LR-modulation confound; (iii) memorization step (train_acc first hits 0.99) to separate memorization phase from generalization phase. Statistical test: two-sided Mann-Whitney U comparing grokking delay of each calibrated BN cell vs. its matched LN+WD reference cell (n=5 seeds per cell, α=0.05 Bonferroni-corrected across the batch_size × WD_ref grid of comparisons); weight-norm trajectory similarity reported as DTW distance with 1000-resample bootstrap 95% CI. Null hypothesis: after fitted-WD calibration, grokking delays of BN and LN+WD arms are drawn from the same distribution at each batch_size; rejection is evidence against simple L2-equivalence, non-rejection supports consistency (not identity) of mechanisms.
 
-Record everything under results/baseline-00/. Do not commit weights.
+Record everything under results/increase_complexity-01/. Do not commit weights.

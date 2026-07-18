@@ -1,0 +1,493 @@
+Device: cuda
+Grokking Grid Search — increase_complexity-01
+Grid: norm=['LayerNorm', 'BatchNorm'], WD=[0.0, 1.0], BS=[64, 256, 512], seeds=[42, 123]
+Max steps/cell=15000, EVAL_EVERY=100
+Device: cuda
+Total cells: 24
+
+[1/24] Starting cell: LayerNorm WD=0.0 BS=64 seed=42
+
+============================================================
+CELL: norm=LayerNorm WD=0.0 BS=64 seed=42
+============================================================
+  step= 1000 | tr=0.846 | val=0.000 | wnorm=120.14 | 3s
+  step= 2000 | tr=0.997 | val=0.001 | wnorm=122.46 | 6s
+  step= 3000 | tr=0.990 | val=0.001 | wnorm=124.04 | 9s
+  step= 4000 | tr=0.995 | val=0.001 | wnorm=125.35 | 12s
+  step= 5000 | tr=0.996 | val=0.001 | wnorm=126.49 | 15s
+  step= 6000 | tr=0.996 | val=0.000 | wnorm=127.61 | 18s
+  step= 7000 | tr=0.997 | val=0.001 | wnorm=128.64 | 21s
+  step= 8000 | tr=0.996 | val=0.001 | wnorm=129.62 | 24s
+  step= 9000 | tr=0.997 | val=0.002 | wnorm=130.62 | 27s
+  step=10000 | tr=0.994 | val=0.002 | wnorm=131.61 | 29s
+  step=11000 | tr=0.998 | val=0.003 | wnorm=132.54 | 32s
+  step=12000 | tr=0.998 | val=0.003 | wnorm=133.42 | 35s
+  step=13000 | tr=0.998 | val=0.003 | wnorm=134.29 | 38s
+  step=14000 | tr=0.998 | val=0.002 | wnorm=135.12 | 41s
+  step=15000 | tr=0.994 | val=0.004 | wnorm=135.98 | 44s
+  DONE | steps=15000 | grok=NO | val=0.004 | wnorm_ratio=1.16 | 44s
+  → Saved incremental results (1/24 done)
+
+[2/24] Starting cell: LayerNorm WD=0.0 BS=64 seed=123
+
+============================================================
+CELL: norm=LayerNorm WD=0.0 BS=64 seed=123
+============================================================
+  step= 1000 | tr=0.819 | val=0.000 | wnorm=120.57 | 3s
+  step= 2000 | tr=0.990 | val=0.000 | wnorm=122.84 | 6s
+  step= 3000 | tr=0.991 | val=0.001 | wnorm=124.43 | 9s
+  step= 4000 | tr=0.992 | val=0.000 | wnorm=125.75 | 12s
+  step= 5000 | tr=0.995 | val=0.001 | wnorm=126.95 | 14s
+  step= 6000 | tr=0.994 | val=0.001 | wnorm=128.05 | 17s
+  step= 7000 | tr=0.996 | val=0.001 | wnorm=129.12 | 20s
+  step= 8000 | tr=0.996 | val=0.001 | wnorm=130.15 | 23s
+  step= 9000 | tr=0.997 | val=0.002 | wnorm=131.21 | 26s
+  step=10000 | tr=0.994 | val=0.001 | wnorm=132.16 | 29s
+  step=11000 | tr=0.997 | val=0.002 | wnorm=133.13 | 32s
+  step=12000 | tr=1.000 | val=0.001 | wnorm=133.99 | 35s
+  step=13000 | tr=0.997 | val=0.003 | wnorm=134.91 | 38s
+  step=14000 | tr=0.997 | val=0.004 | wnorm=135.81 | 41s
+  step=15000 | tr=0.997 | val=0.004 | wnorm=136.69 | 43s
+  DONE | steps=15000 | grok=NO | val=0.004 | wnorm_ratio=1.16 | 43s
+  → Saved incremental results (2/24 done)
+
+[3/24] Starting cell: LayerNorm WD=0.0 BS=256 seed=42
+
+============================================================
+CELL: norm=LayerNorm WD=0.0 BS=256 seed=42
+============================================================
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=120.69 | 4s
+  step= 2000 | tr=0.994 | val=0.002 | wnorm=122.31 | 8s
+  step= 3000 | tr=0.999 | val=0.001 | wnorm=123.75 | 12s
+  step= 4000 | tr=0.999 | val=0.001 | wnorm=125.11 | 16s
+  step= 5000 | tr=1.000 | val=0.001 | wnorm=125.81 | 20s
+  step= 6000 | tr=1.000 | val=0.001 | wnorm=126.13 | 24s
+  step= 7000 | tr=1.000 | val=0.002 | wnorm=127.39 | 29s
+  step= 8000 | tr=1.000 | val=0.002 | wnorm=130.29 | 33s
+  step= 9000 | tr=1.000 | val=0.003 | wnorm=135.38 | 36s
+  step=10000 | tr=1.000 | val=0.003 | wnorm=143.28 | 40s
+  step=11000 | tr=1.000 | val=0.003 | wnorm=154.52 | 44s
+  step=12000 | tr=1.000 | val=0.003 | wnorm=169.24 | 48s
+  step=13000 | tr=1.000 | val=0.003 | wnorm=187.53 | 52s
+  step=14000 | tr=1.000 | val=0.003 | wnorm=208.99 | 56s
+  step=15000 | tr=1.000 | val=0.003 | wnorm=233.34 | 60s
+  DONE | steps=15000 | grok=NO | val=0.003 | wnorm_ratio=1.99 | 60s
+  → Saved incremental results (3/24 done)
+
+[4/24] Starting cell: LayerNorm WD=0.0 BS=256 seed=123
+
+============================================================
+CELL: norm=LayerNorm WD=0.0 BS=256 seed=123
+============================================================
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=121.11 | 4s
+  step= 2000 | tr=1.000 | val=0.001 | wnorm=122.31 | 8s
+  step= 3000 | tr=0.998 | val=0.001 | wnorm=123.64 | 12s
+  step= 4000 | tr=0.998 | val=0.002 | wnorm=124.98 | 16s
+  step= 5000 | tr=0.999 | val=0.001 | wnorm=126.26 | 20s
+  step= 6000 | tr=1.000 | val=0.002 | wnorm=126.85 | 25s
+  step= 7000 | tr=1.000 | val=0.002 | wnorm=127.11 | 29s
+  step= 8000 | tr=1.000 | val=0.003 | wnorm=128.58 | 33s
+  step= 9000 | tr=1.000 | val=0.002 | wnorm=131.92 | 37s
+  step=10000 | tr=1.000 | val=0.002 | wnorm=137.77 | 41s
+  step=11000 | tr=1.000 | val=0.002 | wnorm=146.83 | 45s
+  step=12000 | tr=1.000 | val=0.003 | wnorm=159.56 | 49s
+  step=13000 | tr=1.000 | val=0.003 | wnorm=176.13 | 54s
+  step=14000 | tr=1.000 | val=0.002 | wnorm=196.33 | 58s
+  step=15000 | tr=1.000 | val=0.004 | wnorm=219.75 | 62s
+  DONE | steps=15000 | grok=NO | val=0.004 | wnorm_ratio=1.86 | 62s
+  → Saved incremental results (4/24 done)
+
+[5/24] Starting cell: LayerNorm WD=0.0 BS=512 seed=42
+
+============================================================
+CELL: norm=LayerNorm WD=0.0 BS=512 seed=42
+============================================================
+  step= 1000 | tr=1.000 | val=0.002 | wnorm=120.60 | 6s
+  step= 2000 | tr=0.999 | val=0.001 | wnorm=122.17 | 12s
+  step= 3000 | tr=1.000 | val=0.001 | wnorm=123.44 | 18s
+  step= 4000 | tr=1.000 | val=0.001 | wnorm=123.77 | 24s
+  step= 5000 | tr=1.000 | val=0.001 | wnorm=124.74 | 29s
+  step= 6000 | tr=1.000 | val=0.002 | wnorm=127.37 | 35s
+  step= 7000 | tr=1.000 | val=0.002 | wnorm=132.25 | 40s
+  step= 8000 | tr=1.000 | val=0.002 | wnorm=140.18 | 45s
+  step= 9000 | tr=1.000 | val=0.002 | wnorm=151.79 | 51s
+  step=10000 | tr=1.000 | val=0.003 | wnorm=167.41 | 56s
+  step=11000 | tr=1.000 | val=0.003 | wnorm=187.06 | 62s
+  step=12000 | tr=1.000 | val=0.002 | wnorm=210.51 | 67s
+  step=13000 | tr=1.000 | val=0.003 | wnorm=237.50 | 72s
+  step=14000 | tr=1.000 | val=0.004 | wnorm=267.48 | 78s
+  step=15000 | tr=1.000 | val=0.004 | wnorm=299.85 | 83s
+  DONE | steps=15000 | grok=NO | val=0.004 | wnorm_ratio=2.55 | 83s
+  → Saved incremental results (5/24 done)
+
+[6/24] Starting cell: LayerNorm WD=0.0 BS=512 seed=123
+
+============================================================
+CELL: norm=LayerNorm WD=0.0 BS=512 seed=123
+============================================================
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=121.13 | 5s
+  step= 2000 | tr=1.000 | val=0.001 | wnorm=122.48 | 11s
+  step= 3000 | tr=1.000 | val=0.001 | wnorm=123.75 | 16s
+  step= 4000 | tr=1.000 | val=0.001 | wnorm=124.03 | 21s
+  step= 5000 | tr=1.000 | val=0.002 | wnorm=125.01 | 26s
+  step= 6000 | tr=1.000 | val=0.001 | wnorm=127.67 | 31s
+  step= 7000 | tr=1.000 | val=0.002 | wnorm=132.67 | 36s
+  step= 8000 | tr=1.000 | val=0.002 | wnorm=140.82 | 42s
+  step= 9000 | tr=1.000 | val=0.002 | wnorm=152.84 | 47s
+  step=10000 | tr=1.000 | val=0.002 | wnorm=169.03 | 52s
+  step=11000 | tr=1.000 | val=0.002 | wnorm=189.42 | 57s
+  step=12000 | tr=1.000 | val=0.002 | wnorm=213.72 | 62s
+  step=13000 | tr=1.000 | val=0.002 | wnorm=241.20 | 67s
+  step=14000 | tr=1.000 | val=0.003 | wnorm=271.56 | 73s
+  step=15000 | tr=1.000 | val=0.004 | wnorm=304.33 | 78s
+  DONE | steps=15000 | grok=NO | val=0.004 | wnorm_ratio=2.58 | 78s
+  → Saved incremental results (6/24 done)
+
+[7/24] Starting cell: LayerNorm WD=1.0 BS=64 seed=42
+
+============================================================
+CELL: norm=LayerNorm WD=1.0 BS=64 seed=42
+============================================================
+  step= 1000 | tr=0.266 | val=0.000 | wnorm=117.14 | 3s
+  step= 2000 | tr=0.946 | val=0.003 | wnorm=117.53 | 6s
+  step= 3000 | tr=0.987 | val=0.054 | wnorm=117.71 | 9s
+  step= 4000 | tr=0.982 | val=0.170 | wnorm=118.34 | 12s
+  step= 5000 | tr=0.998 | val=0.827 | wnorm=119.05 | 15s
+  *** GROKKING ONSET step=5400 val_acc=0.9844
+  step= 6000 | tr=0.995 | val=0.977 | wnorm=119.89 | 18s
+  *** GROKKING CONFIRMED step=6100
+  Early stop: val_acc=0.9910 at step=6103
+  DONE | steps=6103 | grok=YES @5400 | val=0.991 | wnorm_ratio=1.02 | 18s
+  → Saved incremental results (7/24 done)
+
+[8/24] Starting cell: LayerNorm WD=1.0 BS=64 seed=123
+
+============================================================
+CELL: norm=LayerNorm WD=1.0 BS=64 seed=123
+============================================================
+  step= 1000 | tr=0.225 | val=0.000 | wnorm=117.67 | 3s
+  step= 2000 | tr=0.896 | val=0.001 | wnorm=117.85 | 6s
+  step= 3000 | tr=0.972 | val=0.006 | wnorm=117.51 | 9s
+  step= 4000 | tr=0.986 | val=0.066 | wnorm=117.60 | 12s
+  step= 5000 | tr=0.993 | val=0.528 | wnorm=118.11 | 15s
+  *** GROKKING ONSET step=5800 val_acc=0.9570
+  step= 6000 | tr=0.994 | val=0.976 | wnorm=118.77 | 18s
+  *** GROKKING CONFIRMED step=6000
+  Early stop: val_acc=0.9903 at step=6093
+  DONE | steps=6093 | grok=YES @5800 | val=0.990 | wnorm_ratio=1.01 | 19s
+  → Saved incremental results (8/24 done)
+
+[9/24] Starting cell: LayerNorm WD=1.0 BS=256 seed=42
+
+============================================================
+CELL: norm=LayerNorm WD=1.0 BS=256 seed=42
+============================================================
+  step= 1000 | tr=0.999 | val=0.001 | wnorm=117.05 | 4s
+  step= 2000 | tr=1.000 | val=0.001 | wnorm=115.76 | 8s
+  step= 3000 | tr=0.999 | val=0.007 | wnorm=115.11 | 13s
+  step= 4000 | tr=0.995 | val=0.065 | wnorm=114.70 | 17s
+  step= 5000 | tr=1.000 | val=0.671 | wnorm=114.51 | 21s
+  *** GROKKING ONSET step=5600 val_acc=0.9660
+  *** GROKKING CONFIRMED step=5800
+  Early stop: val_acc=0.9924 at step=5800
+  DONE | steps=5800 | grok=YES @5600 | val=0.992 | wnorm_ratio=0.97 | 24s
+  → Saved incremental results (9/24 done)
+
+[10/24] Starting cell: LayerNorm WD=1.0 BS=256 seed=123
+
+============================================================
+CELL: norm=LayerNorm WD=1.0 BS=256 seed=123
+============================================================
+  step= 1000 | tr=1.000 | val=0.000 | wnorm=117.34 | 4s
+  step= 2000 | tr=1.000 | val=0.001 | wnorm=115.73 | 8s
+  step= 3000 | tr=0.985 | val=0.002 | wnorm=114.70 | 12s
+  step= 4000 | tr=0.999 | val=0.012 | wnorm=115.00 | 16s
+  step= 5000 | tr=1.000 | val=0.143 | wnorm=115.61 | 21s
+  step= 6000 | tr=0.999 | val=0.840 | wnorm=116.31 | 25s
+  *** GROKKING ONSET step=6400 val_acc=0.9603
+  *** GROKKING CONFIRMED step=6600
+  Early stop: val_acc=0.9942 at step=6600
+  DONE | steps=6600 | grok=YES @6400 | val=0.994 | wnorm_ratio=0.99 | 27s
+  → Saved incremental results (10/24 done)
+
+[11/24] Starting cell: LayerNorm WD=1.0 BS=512 seed=42
+
+============================================================
+CELL: norm=LayerNorm WD=1.0 BS=512 seed=42
+============================================================
+  step= 1000 | tr=1.000 | val=0.000 | wnorm=116.14 | 5s
+  step= 2000 | tr=1.000 | val=0.001 | wnorm=113.60 | 10s
+  step= 3000 | tr=1.000 | val=0.005 | wnorm=112.08 | 16s
+  step= 4000 | tr=1.000 | val=0.042 | wnorm=111.19 | 21s
+  step= 5000 | tr=1.000 | val=0.540 | wnorm=110.55 | 26s
+  *** GROKKING ONSET step=5700 val_acc=0.9706
+  step= 6000 | tr=1.000 | val=0.990 | wnorm=110.01 | 32s
+  *** GROKKING CONFIRMED step=6100
+  Early stop: val_acc=0.9975 at step=6100
+  DONE | steps=6100 | grok=YES @5700 | val=0.998 | wnorm_ratio=0.94 | 32s
+  → Saved incremental results (11/24 done)
+
+[12/24] Starting cell: LayerNorm WD=1.0 BS=512 seed=123
+
+============================================================
+CELL: norm=LayerNorm WD=1.0 BS=512 seed=123
+============================================================
+  step= 1000 | tr=1.000 | val=0.000 | wnorm=116.69 | 5s
+  step= 2000 | tr=1.000 | val=0.001 | wnorm=114.19 | 12s
+  step= 3000 | tr=1.000 | val=0.001 | wnorm=112.56 | 18s
+  step= 4000 | tr=1.000 | val=0.003 | wnorm=111.49 | 24s
+  step= 5000 | tr=1.000 | val=0.019 | wnorm=110.75 | 29s
+  step= 6000 | tr=0.812 | val=0.049 | wnorm=110.26 | 34s
+  step= 7000 | tr=1.000 | val=0.718 | wnorm=109.74 | 39s
+  *** GROKKING ONSET step=7600 val_acc=0.9578
+  *** GROKKING CONFIRMED step=7800
+  Early stop: val_acc=0.9950 at step=7800
+  DONE | steps=7800 | grok=YES @7600 | val=0.995 | wnorm_ratio=0.93 | 43s
+  → Saved incremental results (12/24 done)
+
+[13/24] Starting cell: BatchNorm WD=0.0 BS=64 seed=42
+
+============================================================
+CELL: norm=BatchNorm WD=0.0 BS=64 seed=42
+============================================================
+  step= 1000 | tr=0.936 | val=0.000 | wnorm=119.87 | 3s
+  step= 2000 | tr=0.991 | val=0.001 | wnorm=121.75 | 6s
+  step= 3000 | tr=0.994 | val=0.000 | wnorm=123.25 | 9s
+  step= 4000 | tr=0.993 | val=0.000 | wnorm=124.67 | 12s
+  step= 5000 | tr=0.996 | val=0.001 | wnorm=126.09 | 16s
+  step= 6000 | tr=0.997 | val=0.001 | wnorm=127.48 | 19s
+  step= 7000 | tr=0.996 | val=0.001 | wnorm=128.83 | 22s
+  step= 8000 | tr=0.994 | val=0.001 | wnorm=130.22 | 25s
+  step= 9000 | tr=0.995 | val=0.001 | wnorm=131.58 | 28s
+  step=10000 | tr=0.997 | val=0.001 | wnorm=132.89 | 31s
+  step=11000 | tr=0.999 | val=0.000 | wnorm=134.22 | 34s
+  step=12000 | tr=0.998 | val=0.001 | wnorm=135.60 | 37s
+  step=13000 | tr=0.996 | val=0.001 | wnorm=136.90 | 41s
+  step=14000 | tr=0.997 | val=0.001 | wnorm=138.19 | 44s
+  step=15000 | tr=0.998 | val=0.002 | wnorm=139.40 | 47s
+  DONE | steps=15000 | grok=NO | val=0.002 | wnorm_ratio=1.19 | 47s
+  → Saved incremental results (13/24 done)
+
+[14/24] Starting cell: BatchNorm WD=0.0 BS=64 seed=123
+
+============================================================
+CELL: norm=BatchNorm WD=0.0 BS=64 seed=123
+============================================================
+  step= 1000 | tr=0.894 | val=0.000 | wnorm=120.49 | 3s
+  step= 2000 | tr=0.983 | val=0.000 | wnorm=122.40 | 6s
+  step= 3000 | tr=0.993 | val=0.000 | wnorm=123.92 | 9s
+  step= 4000 | tr=0.992 | val=0.001 | wnorm=125.32 | 13s
+  step= 5000 | tr=0.995 | val=0.000 | wnorm=126.74 | 16s
+  step= 6000 | tr=0.995 | val=0.001 | wnorm=128.10 | 19s
+  step= 7000 | tr=0.994 | val=0.001 | wnorm=129.48 | 22s
+  step= 8000 | tr=0.996 | val=0.001 | wnorm=130.83 | 25s
+  step= 9000 | tr=0.997 | val=0.002 | wnorm=132.22 | 28s
+  step=10000 | tr=0.997 | val=0.001 | wnorm=133.62 | 31s
+  step=11000 | tr=0.998 | val=0.001 | wnorm=134.94 | 34s
+  step=12000 | tr=0.997 | val=0.002 | wnorm=136.25 | 38s
+  step=13000 | tr=0.997 | val=0.001 | wnorm=137.56 | 41s
+  step=14000 | tr=0.995 | val=0.001 | wnorm=138.84 | 44s
+  step=15000 | tr=0.998 | val=0.001 | wnorm=140.13 | 47s
+  DONE | steps=15000 | grok=NO | val=0.001 | wnorm_ratio=1.19 | 47s
+  → Saved incremental results (14/24 done)
+
+[15/24] Starting cell: BatchNorm WD=0.0 BS=256 seed=42
+
+============================================================
+CELL: norm=BatchNorm WD=0.0 BS=256 seed=42
+============================================================
+  step= 1000 | tr=0.998 | val=0.000 | wnorm=120.19 | 4s
+  step= 2000 | tr=0.999 | val=0.000 | wnorm=122.07 | 8s
+  step= 3000 | tr=0.999 | val=0.001 | wnorm=123.76 | 12s
+  step= 4000 | tr=0.999 | val=0.001 | wnorm=125.35 | 16s
+  step= 5000 | tr=0.997 | val=0.001 | wnorm=126.92 | 20s
+  step= 6000 | tr=1.000 | val=0.001 | wnorm=128.62 | 25s
+  step= 7000 | tr=1.000 | val=0.002 | wnorm=129.19 | 29s
+  step= 8000 | tr=1.000 | val=0.001 | wnorm=129.16 | 33s
+  step= 9000 | tr=0.999 | val=0.001 | wnorm=130.24 | 37s
+  step=10000 | tr=1.000 | val=0.001 | wnorm=131.02 | 41s
+  step=11000 | tr=1.000 | val=0.001 | wnorm=131.19 | 45s
+  step=12000 | tr=1.000 | val=0.002 | wnorm=132.69 | 49s
+  step=13000 | tr=0.999 | val=0.001 | wnorm=134.34 | 53s
+  step=14000 | tr=1.000 | val=0.001 | wnorm=135.50 | 57s
+  step=15000 | tr=0.997 | val=0.001 | wnorm=136.09 | 61s
+  DONE | steps=15000 | grok=NO | val=0.001 | wnorm_ratio=1.16 | 61s
+  → Saved incremental results (15/24 done)
+
+[16/24] Starting cell: BatchNorm WD=0.0 BS=256 seed=123
+
+============================================================
+CELL: norm=BatchNorm WD=0.0 BS=256 seed=123
+============================================================
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=120.63 | 4s
+  step= 2000 | tr=0.996 | val=0.001 | wnorm=122.24 | 8s
+  step= 3000 | tr=0.999 | val=0.001 | wnorm=123.92 | 12s
+  step= 4000 | tr=1.000 | val=0.001 | wnorm=125.48 | 17s
+  step= 5000 | tr=0.999 | val=0.001 | wnorm=127.08 | 21s
+  step= 6000 | tr=1.000 | val=0.001 | wnorm=128.70 | 25s
+  step= 7000 | tr=1.000 | val=0.001 | wnorm=130.30 | 29s
+  step= 8000 | tr=0.999 | val=0.001 | wnorm=131.90 | 33s
+  step= 9000 | tr=1.000 | val=0.001 | wnorm=133.49 | 37s
+  step=10000 | tr=1.000 | val=0.001 | wnorm=133.64 | 42s
+  step=11000 | tr=1.000 | val=0.000 | wnorm=133.54 | 46s
+  step=12000 | tr=1.000 | val=0.002 | wnorm=133.77 | 50s
+  step=13000 | tr=1.000 | val=0.002 | wnorm=135.47 | 54s
+  step=14000 | tr=1.000 | val=0.002 | wnorm=139.35 | 58s
+  step=15000 | tr=1.000 | val=0.002 | wnorm=145.35 | 62s
+  DONE | steps=15000 | grok=NO | val=0.002 | wnorm_ratio=1.23 | 62s
+  → Saved incremental results (16/24 done)
+
+[17/24] Starting cell: BatchNorm WD=0.0 BS=512 seed=42
+
+============================================================
+CELL: norm=BatchNorm WD=0.0 BS=512 seed=42
+============================================================
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=119.66 | 5s
+  step= 2000 | tr=1.000 | val=0.001 | wnorm=120.43 | 11s
+  step= 3000 | tr=1.000 | val=0.001 | wnorm=121.15 | 16s
+  step= 4000 | tr=1.000 | val=0.001 | wnorm=121.58 | 21s
+  step= 5000 | tr=0.988 | val=0.002 | wnorm=121.77 | 26s
+  step= 6000 | tr=1.000 | val=0.001 | wnorm=122.11 | 32s
+  step= 7000 | tr=1.000 | val=0.001 | wnorm=122.50 | 37s
+  step= 8000 | tr=1.000 | val=0.002 | wnorm=123.18 | 42s
+  step= 9000 | tr=0.998 | val=0.002 | wnorm=123.55 | 47s
+  step=10000 | tr=1.000 | val=0.001 | wnorm=124.17 | 53s
+  step=11000 | tr=0.999 | val=0.001 | wnorm=125.10 | 58s
+  step=12000 | tr=1.000 | val=0.001 | wnorm=125.53 | 63s
+  step=13000 | tr=1.000 | val=0.001 | wnorm=125.90 | 69s
+  step=14000 | tr=1.000 | val=0.001 | wnorm=126.34 | 74s
+  step=15000 | tr=1.000 | val=0.001 | wnorm=126.70 | 79s
+  DONE | steps=15000 | grok=NO | val=0.001 | wnorm_ratio=1.08 | 79s
+  → Saved incremental results (17/24 done)
+
+[18/24] Starting cell: BatchNorm WD=0.0 BS=512 seed=123
+
+============================================================
+CELL: norm=BatchNorm WD=0.0 BS=512 seed=123
+============================================================
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=120.49 | 5s
+  step= 2000 | tr=0.999 | val=0.001 | wnorm=121.55 | 11s
+  step= 3000 | tr=1.000 | val=0.001 | wnorm=121.92 | 16s
+  step= 4000 | tr=1.000 | val=0.001 | wnorm=122.35 | 21s
+  step= 5000 | tr=1.000 | val=0.001 | wnorm=123.01 | 27s
+  step= 6000 | tr=1.000 | val=0.001 | wnorm=123.44 | 32s
+  step= 7000 | tr=0.999 | val=0.002 | wnorm=124.64 | 37s
+  step= 8000 | tr=1.000 | val=0.001 | wnorm=125.16 | 43s
+  step= 9000 | tr=1.000 | val=0.001 | wnorm=125.53 | 48s
+  step=10000 | tr=0.999 | val=0.002 | wnorm=125.91 | 53s
+  step=11000 | tr=1.000 | val=0.001 | wnorm=126.27 | 59s
+  step=12000 | tr=1.000 | val=0.001 | wnorm=127.07 | 64s
+  step=13000 | tr=1.000 | val=0.001 | wnorm=127.42 | 69s
+  step=14000 | tr=1.000 | val=0.001 | wnorm=127.54 | 75s
+  step=15000 | tr=1.000 | val=0.002 | wnorm=128.76 | 80s
+  DONE | steps=15000 | grok=NO | val=0.002 | wnorm_ratio=1.09 | 80s
+  → Saved incremental results (18/24 done)
+
+[19/24] Starting cell: BatchNorm WD=1.0 BS=64 seed=42
+
+============================================================
+CELL: norm=BatchNorm WD=1.0 BS=64 seed=42
+============================================================
+  step= 1000 | tr=0.426 | val=0.000 | wnorm=117.14 | 3s
+  step= 2000 | tr=0.904 | val=0.002 | wnorm=118.02 | 6s
+  step= 3000 | tr=0.951 | val=0.008 | wnorm=118.73 | 9s
+  step= 4000 | tr=0.979 | val=0.024 | wnorm=119.36 | 13s
+  step= 5000 | tr=0.981 | val=0.088 | wnorm=119.90 | 16s
+  step= 6000 | tr=0.983 | val=0.369 | wnorm=120.34 | 19s
+  step= 7000 | tr=0.994 | val=0.852 | wnorm=120.76 | 22s
+  step= 8000 | tr=0.998 | val=0.965 | wnorm=121.29 | 25s
+  *** GROKKING ONSET step=8000 val_acc=0.9653
+  *** GROKKING CONFIRMED step=8200
+  step= 9000 | tr=0.994 | val=0.967 | wnorm=121.85 | 31s
+  Early stop: val_acc=0.9904 at step=9279
+  DONE | steps=9279 | grok=YES @8000 | val=0.990 | wnorm_ratio=1.04 | 33s
+  → Saved incremental results (19/24 done)
+
+[20/24] Starting cell: BatchNorm WD=1.0 BS=64 seed=123
+
+============================================================
+CELL: norm=BatchNorm WD=1.0 BS=64 seed=123
+============================================================
+  step= 1000 | tr=0.445 | val=0.001 | wnorm=117.87 | 3s
+  step= 2000 | tr=0.842 | val=0.012 | wnorm=119.02 | 6s
+  step= 3000 | tr=0.926 | val=0.068 | wnorm=120.12 | 9s
+  step= 4000 | tr=0.950 | val=0.271 | wnorm=121.18 | 13s
+  step= 5000 | tr=0.955 | val=0.579 | wnorm=122.19 | 16s
+  step= 6000 | tr=0.951 | val=0.713 | wnorm=123.15 | 19s
+  step= 7000 | tr=0.953 | val=0.749 | wnorm=124.12 | 22s
+  step= 8000 | tr=0.957 | val=0.759 | wnorm=125.05 | 25s
+  step= 9000 | tr=0.947 | val=0.762 | wnorm=125.95 | 29s
+  step=10000 | tr=0.973 | val=0.817 | wnorm=126.80 | 32s
+  step=11000 | tr=0.938 | val=0.763 | wnorm=127.62 | 35s
+  step=12000 | tr=0.962 | val=0.810 | wnorm=128.43 | 38s
+  step=13000 | tr=0.962 | val=0.795 | wnorm=129.18 | 41s
+  step=14000 | tr=0.963 | val=0.800 | wnorm=129.93 | 44s
+  step=15000 | tr=0.965 | val=0.818 | wnorm=130.63 | 48s
+  DONE | steps=15000 | grok=NO | val=0.818 | wnorm_ratio=1.11 | 48s
+  → Saved incremental results (20/24 done)
+
+[21/24] Starting cell: BatchNorm WD=1.0 BS=256 seed=42
+
+============================================================
+CELL: norm=BatchNorm WD=1.0 BS=256 seed=42
+============================================================
+  step= 1000 | tr=0.999 | val=0.001 | wnorm=116.27 | 4s
+  step= 2000 | tr=0.994 | val=0.001 | wnorm=115.08 | 8s
+  step= 3000 | tr=0.994 | val=0.002 | wnorm=114.38 | 13s
+  step= 4000 | tr=0.997 | val=0.009 | wnorm=114.08 | 17s
+  step= 5000 | tr=0.998 | val=0.024 | wnorm=114.04 | 21s
+  step= 6000 | tr=0.999 | val=0.237 | wnorm=114.11 | 25s
+  step= 7000 | tr=0.999 | val=0.895 | wnorm=113.91 | 29s
+  *** GROKKING ONSET step=7300 val_acc=0.9667
+  *** GROKKING CONFIRMED step=7500
+  Early stop: val_acc=0.9904 at step=7708
+  DONE | steps=7708 | grok=YES @7300 | val=0.990 | wnorm_ratio=0.97 | 33s
+  → Saved incremental results (21/24 done)
+
+[22/24] Starting cell: BatchNorm WD=1.0 BS=256 seed=123
+
+============================================================
+CELL: norm=BatchNorm WD=1.0 BS=256 seed=123
+============================================================
+  step= 1000 | tr=0.998 | val=0.001 | wnorm=117.46 | 4s
+  step= 2000 | tr=0.990 | val=0.002 | wnorm=116.58 | 8s
+  step= 3000 | tr=0.995 | val=0.005 | wnorm=116.08 | 12s
+  step= 4000 | tr=0.997 | val=0.054 | wnorm=115.78 | 16s
+  step= 5000 | tr=0.999 | val=0.567 | wnorm=115.72 | 21s
+  *** GROKKING ONSET step=5800 val_acc=0.9614
+  step= 6000 | tr=1.000 | val=0.974 | wnorm=115.94 | 25s
+  *** GROKKING CONFIRMED step=6000
+  Early stop: val_acc=0.9901 at step=6420
+  DONE | steps=6420 | grok=YES @5800 | val=0.990 | wnorm_ratio=0.98 | 28s
+  → Saved incremental results (22/24 done)
+
+[23/24] Starting cell: BatchNorm WD=1.0 BS=512 seed=42
+
+============================================================
+CELL: norm=BatchNorm WD=1.0 BS=512 seed=42
+============================================================
+  step= 1000 | tr=0.998 | val=0.000 | wnorm=115.56 | 5s
+  step= 2000 | tr=0.999 | val=0.001 | wnorm=113.87 | 11s
+  step= 3000 | tr=1.000 | val=0.001 | wnorm=112.39 | 16s
+  step= 4000 | tr=1.000 | val=0.007 | wnorm=111.68 | 22s
+  step= 5000 | tr=1.000 | val=0.035 | wnorm=110.45 | 27s
+  step= 6000 | tr=0.999 | val=0.148 | wnorm=110.06 | 32s
+  step= 7000 | tr=1.000 | val=0.517 | wnorm=110.01 | 38s
+  step= 8000 | tr=1.000 | val=0.915 | wnorm=110.46 | 43s
+  *** GROKKING ONSET step=8100 val_acc=0.9759
+  *** GROKKING CONFIRMED step=8300
+  Early stop: val_acc=0.9975 at step=8300
+  DONE | steps=8300 | grok=YES @8100 | val=0.998 | wnorm_ratio=0.94 | 45s
+  → Saved incremental results (23/24 done)
+
+[24/24] Starting cell: BatchNorm WD=1.0 BS=512 seed=123
+
+============================================================
+CELL: norm=BatchNorm WD=1.0 BS=512 seed=123
+============================================================
+  step= 1000 | tr=0.978 | val=0.001 | wnorm=116.53 | 5s
+  step= 2000 | tr=0.999 | val=0.001 | wnorm=114.87 | 11s
+  step= 3000 | tr=0.997 | val=0.004 | wnorm=114.12 | 16s
+  step= 4000 | tr=0.986 | val=0.034 | wnorm=113.35 | 21s
+  step= 5000 | tr=1.000 | val=0.341 | wnorm=112.52 | 27s
+  step= 6000 | tr=1.000 | val=0.870 | wnorm=111.57 | 32s
