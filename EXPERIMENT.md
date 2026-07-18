@@ -1,27 +1,24 @@
-# EXPERIMENT BRIEF — round baseline_A (probe)
+# EXPERIMENT BRIEF — round baseline_A2 (probe)
 
 ## THIS ROUND (do exactly this)
-BASELINE EXPERIMENT — Arm A (Adam + no resets), reproduce loss of plasticity.
+BASELINE RE-RUN (clean) — Arm A with GroupNorm, fix the BatchNorm-collapse confound.
 
-Task: Continual/class-incremental CIFAR-100 in a small ConvNet, presented as a sequence of tasks, optimized with vanilla Adam and NO neuron resets. Goal: establish the loss-of-plasticity reference curve (per-task accuracy degrades over the task sequence) that later utility arms will be compared against.
+CONTEXT: A prior baseline attempt used BatchNorm and it COLLAPSED in the small-batch continual setting — producing artifactual all-dead-units and an effective-rank=500 zero-matrix SVD artifact. That run is INVALID. A corrected script already exists in the repo at src/baseline_A_v2.py (GroupNorm instead of BatchNorm). Your job: RUN that corrected baseline properly to completion and produce clean, trustworthy reference numbers.
 
-Reference implementation (clone for the CBP data/task harness ONLY — you implement Arm A yourself): https://github.com/shibhansh/loss-of-plasticity (MIT). Standard PyTorch + torchvision CIFAR-100.
+STEPS:
+1. Use src/baseline_A_v2.py (GroupNorm ConvNet, vanilla Adam, NO neuron resets). If it needs small fixes to run end-to-end, fix them — but keep GroupNorm and keep the "no resets" property (this is the vanilla plasticity-loss reference).
+2. Run class-incremental CIFAR-100, ~15-20 tasks, 2 SEEDS, BOTH to completion. This is a probe but the baseline MUST be clean — correctness over speed. Keep total wall time < 35 min if possible; if you must cut, reduce number of tasks/epochs, NOT seeds.
+3. Measure per-task accuracy across the sequence + a TRUSTWORTHY plasticity signal: dead-unit fraction (fraction of ReLU units with ~0 activation on a held-out batch) and effective rank of a hidden representation (guard against zero-matrix → report NaN/skip, never a spurious constant like 500).
+4. The scientific question: does average accuracy on NEW tasks decline across the sequence (genuine loss of plasticity), with GroupNorm removing the BN artifact? Report honestly — if plasticity loss is weak/absent with GroupNorm, SAY SO; that is a real finding, do not manufacture a decline.
 
-Concrete spec (keep it SMALL and fast — this is a probe, must finish < 35 min on one A10G):
-- Model: small ConvNet (e.g. 3 conv blocks + 2 FC), ~1-2M params.
-- Task stream: Class-incremental CIFAR-100 as a sequence of ~15-20 tasks (e.g. 5 classes per task, or the "continual" permuted/class split the CBP repo uses — pick the simplest that shows plasticity loss). Cap total wall time.
-- Optimizer: Adam, fixed lr. NO CBP, NO resets (this is the vanilla reference).
-- Metric: per-task online/final accuracy across the task sequence; report the trend (does average accuracy on new tasks decline?). Also log per-layer average activation / dead-unit fraction if cheap.
-- Seeds: 2 seeds if time allows, else 1 — correctness over coverage for the baseline.
-
-CRITICAL:
-- Write RESULTS.json INCREMENTALLY (after each task, rewrite the file) so a crash still yields partial data. Schema: {"arm":"A_adam_noreset","status":"RUNNING|DONE","per_task_acc":[...],"mean_acc":..,"plasticity_trend":"declining|flat","dead_unit_frac":[...],"notes":".."}.
-- Save all logs. Commit everything EXCEPT dataset files and model weights (.pt/.pth/.safetensors) — the weight-guard will reject weights.
-- If loss of plasticity does NOT appear (accuracy flat/rising), say so honestly in notes — that is itself a finding, do not fabricate a decline.
+CRITICAL OUTPUT:
+- Write results/baseline_A2/RESULTS.json INCREMENTALLY (rewrite after each task). At the END set status:"DONE" and FILL the top-level summary: {"arm":"A_adam_noreset_groupnorm","status":"DONE","per_seed":[...],"mean_acc":<float>,"plasticity_trend":"declining|flat|weak","dead_unit_frac_final":<float>,"effective_rank_trend":"...","notes":"<what happened, incl. whether GroupNorm fixed the BN artifact>"}.
+- Save run.log. Commit everything EXCEPT dataset files and weights (.pt/.pth/.safetensors).
+- Do NOT leave status:"RUNNING" — finalize it.
 
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/baseline_A/.
+for context and build on them; write this round's outputs under results/baseline_A2/.
 
 ## Idea
 Adam's v_t is the Fisher — repurposing optimizer state as a zero-overhead neuron utility for plasticity-preserving resets
@@ -55,4 +52,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: Arm A — Adam + no resets (vanilla Adam continual fine-tuning, tasks presented sequentially): the most widely documented, zero-design-choice reference in plasticity literature; build and validate first to confirm forgetting occurs and effective rank decays, establishing the phenomenon the CBP arms are meant to fix before any utility comparison is made
 - eval contract: Dataset: 5-task split-CIFAR-100, ResNet-18 pretrained on CIFAR-10. Primary metric: mean final-task top-1 accuracy averaged over tasks 2–5 (task 1 excluded as warm-up). Secondary metric: effective rank of the final conv layer weight matrix at end of each task (rank collapse as plasticity proxy). Equivalence test (utility-source claim): two one-sided paired t-tests (TOST, α=0.05, Δ=1.0 pp) on primary metric between arm D (v_t-EMA) and arm C (explicit-Fisher) across 5 seeds — both one-sided p-values must be < 0.05 to declare equivalence. Accumulation test (mechanistic claim): TOST (same α, Δ) between arm D (v_t-EMA) and arm E (snapshot-g²); a significant difference (i.e., TOST fails to find equivalence) licenses 'accumulation is the decisive property.' Optimizer-isolation test: paired t-test (α=0.05, two-sided) between arm C (Adam+Fisher) and arm F (SGD+Fisher) — tests whether optimizer identity beyond utility source affects outcome. Speedup reported as mean ± std wall-clock seconds/reset-step (arm D vs arm C), not folded into accuracy equivalence.
 
-Record everything under results/baseline_A/. Do not commit weights.
+Record everything under results/baseline_A2/. Do not commit weights.
