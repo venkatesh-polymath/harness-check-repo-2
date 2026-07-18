@@ -1,0 +1,219 @@
+[init] Device: cuda
+[init] Grid: ['cifar100', 'cifar10'] × ['convnet', 'mlp3', 'resnet'] × ['A_floor', 'B', 'C', 'D', 'RANDOM'] × 8 seeds
+[init] steps/task=800  reset_every=100  frac=0.1
+[init] Total training runs: 240
+
+[main] Loading datasets...
+[cifar100] torchvision: (50000, 3, 32, 32)
+[cifar10] torchvision: (50000, 3, 32, 32)
+[main] Datasets loaded.
+
+
+====================================================================
+DATASET: CIFAR100  (10 tasks × 5 cls = 100 classes)
+====================================================================
+
+────────────────────────────────────────────────────────
+ARCH: convnet  (n_pen=512)
+────────────────────────────────────────────────────────
+
+  SEED 0
+
+  [1/240] dataset=cifar100 arch=convnet arm=A_floor seed=0
+  [A_floor /s0/convnet] T 1/10 acc=0.866 dead=0.605 erank=51.00 loss=0.0780 wall=4.9s
+  [A_floor /s0/convnet] T 2/10 acc=0.898 dead=0.953 erank=11.18 loss=0.0606 wall=3.8s
+  [A_floor /s0/convnet] T 3/10 acc=0.200 dead=0.998 erank=1.00 loss=1.6143 wall=3.9s
+  [A_floor /s0/convnet] T 4/10 acc=0.200 dead=1.000 erank=0.00 loss=2.4915 wall=3.8s
+  [A_floor /s0/convnet] T 5/10 acc=0.200 dead=1.000 erank=0.00 loss=3.3892 wall=3.7s
+  [A_floor /s0/convnet] T 6/10 acc=0.200 dead=1.000 erank=0.00 loss=3.6562 wall=3.8s
+  [A_floor /s0/convnet] T 7/10 acc=0.200 dead=1.000 erank=0.00 loss=3.8845 wall=3.9s
+  [A_floor /s0/convnet] T 8/10 acc=0.200 dead=1.000 erank=0.00 loss=4.0703 wall=3.8s
+  [A_floor /s0/convnet] T 9/10 acc=0.200 dead=1.000 erank=0.00 loss=4.2708 wall=3.9s
+  [A_floor /s0/convnet] T10/10 acc=0.200 dead=1.000 erank=0.00 loss=4.4600 wall=3.8s
+  → primary_acc=0.2776  dead=1.000  erank=0.00  wall=39.8s
+
+  [2/240] dataset=cifar100 arch=convnet arm=B seed=0
+  [B       /s0/convnet] T 1/10 acc=0.846 dead=0.504 erank=63.93 loss=0.0691 wall=3.7s
+  [B       /s0/convnet] T 2/10 acc=0.900 dead=0.834 erank=18.48 loss=0.1307 wall=3.8s
+  [B       /s0/convnet] T 3/10 acc=0.784 dead=0.816 erank=18.16 loss=0.4738 wall=3.9s
+  [B       /s0/convnet] T 4/10 acc=0.682 dead=0.881 erank=12.60 loss=0.7278 wall=3.8s
+  [B       /s0/convnet] T 5/10 acc=0.830 dead=0.852 erank=17.52 loss=0.3574 wall=3.9s
+  [B       /s0/convnet] T 6/10 acc=0.820 dead=0.857 erank=15.94 loss=0.2602 wall=4.0s
+  [B       /s0/convnet] T 7/10 acc=0.728 dead=0.865 erank=16.10 loss=0.6246 wall=3.8s
+  [B       /s0/convnet] T 8/10 acc=0.698 dead=0.830 erank=25.30 loss=0.6772 wall=4.0s
+  [B       /s0/convnet] T 9/10 acc=0.770 dead=0.814 erank=22.29 loss=0.3297 wall=3.9s
+  [B       /s0/convnet] T10/10 acc=0.848 dead=0.793 erank=30.42 loss=0.2619 wall=4.0s
+  → primary_acc=0.7844  dead=0.793  erank=30.42  wall=39.2s
+
+  [3/240] dataset=cifar100 arch=convnet arm=C seed=0
+  [C       /s0/convnet] T 1/10 acc=0.876 dead=0.635 erank=47.47 loss=0.0661 wall=3.9s
+  [C       /s0/convnet] T 2/10 acc=0.858 dead=0.869 erank=15.16 loss=0.1354 wall=3.9s
+  [C       /s0/convnet] T 3/10 acc=0.814 dead=0.891 erank=10.28 loss=0.2997 wall=3.9s
+  [C       /s0/convnet] T 4/10 acc=0.762 dead=0.871 erank=12.36 loss=0.4859 wall=4.0s
+  [C       /s0/convnet] T 5/10 acc=0.826 dead=0.883 erank=11.68 loss=0.3925 wall=4.1s
+  [C       /s0/convnet] T 6/10 acc=0.778 dead=0.883 erank=13.13 loss=0.2644 wall=4.1s
+  [C       /s0/convnet] T 7/10 acc=0.778 dead=0.865 erank=15.92 loss=0.4094 wall=4.0s
+  [C       /s0/convnet] T 8/10 acc=0.712 dead=0.863 erank=17.05 loss=0.6371 wall=3.9s
+  [C       /s0/convnet] T 9/10 acc=0.748 dead=0.842 erank=18.83 loss=0.5530 wall=3.8s
+  [C       /s0/convnet] T10/10 acc=0.820 dead=0.830 erank=17.80 loss=0.4165 wall=3.9s
+  → primary_acc=0.7884  dead=0.830  erank=17.80  wall=40.1s
+
+  [4/240] dataset=cifar100 arch=convnet arm=D seed=0
+  [D       /s0/convnet] T 1/10 acc=0.862 dead=0.508 erank=62.06 loss=0.0772 wall=3.9s
+  [D       /s0/convnet] T 2/10 acc=0.902 dead=0.857 erank=12.43 loss=0.1563 wall=3.9s
+  [D       /s0/convnet] T 3/10 acc=0.720 dead=0.875 erank=8.38 loss=0.7294 wall=3.9s
+  [D       /s0/convnet] T 4/10 acc=0.774 dead=0.859 erank=12.97 loss=0.5430 wall=3.7s
+  [D       /s0/convnet] T 5/10 acc=0.800 dead=0.881 erank=9.98 loss=0.4927 wall=4.0s
+  [D       /s0/convnet] T 6/10 acc=0.778 dead=0.857 erank=16.28 loss=0.3480 wall=4.0s
+  [D       /s0/convnet] T 7/10 acc=0.776 dead=0.807 erank=24.59 loss=0.3675 wall=4.0s
+  [D       /s0/convnet] T 8/10 acc=0.742 dead=0.777 erank=36.41 loss=0.6261 wall=4.0s
+  [D       /s0/convnet] T 9/10 acc=0.828 dead=0.748 erank=36.98 loss=0.2240 wall=4.0s
+  [D       /s0/convnet] T10/10 acc=0.860 dead=0.742 erank=33.77 loss=0.1888 wall=3.7s
+  → primary_acc=0.7978  dead=0.742  erank=33.77  wall=39.7s
+
+  [5/240] dataset=cifar100 arch=convnet arm=RANDOM seed=0
+  [RANDOM  /s0/convnet] T 1/10 acc=0.868 dead=0.723 erank=38.86 loss=0.0614 wall=3.9s
+  [RANDOM  /s0/convnet] T 2/10 acc=0.794 dead=0.865 erank=17.68 loss=0.1391 wall=3.9s
+  [RANDOM  /s0/convnet] T 3/10 acc=0.780 dead=0.879 erank=12.94 loss=0.4957 wall=3.9s
+  [RANDOM  /s0/convnet] T 4/10 acc=0.692 dead=0.891 erank=12.79 loss=0.7627 wall=3.9s
+  [RANDOM  /s0/convnet] T 5/10 acc=0.742 dead=0.896 erank=10.54 loss=0.5301 wall=3.9s
+  [RANDOM  /s0/convnet] T 6/10 acc=0.808 dead=0.842 erank=15.59 loss=0.3452 wall=3.8s
+  [RANDOM  /s0/convnet] T 7/10 acc=0.732 dead=0.867 erank=17.10 loss=0.6062 wall=4.0s
+  [RANDOM  /s0/convnet] T 8/10 acc=0.692 dead=0.873 erank=17.46 loss=0.4899 wall=4.0s
+  [RANDOM  /s0/convnet] T 9/10 acc=0.766 dead=0.814 erank=27.98 loss=0.4030 wall=4.0s
+  [RANDOM  /s0/convnet] T10/10 acc=0.812 dead=0.854 erank=17.86 loss=0.3136 wall=4.0s
+  → primary_acc=0.7576  dead=0.854  erank=17.86  wall=39.9s
+  [io] RESULTS.json  status=RUNNING
+  [cell done] elapsed=3.5min
+
+  SEED 1
+
+  [6/240] dataset=cifar100 arch=convnet arm=A_floor seed=1
+  [A_floor /s1/convnet] T 1/10 acc=0.810 dead=0.641 erank=54.37 loss=0.1379 wall=3.8s
+  [A_floor /s1/convnet] T 2/10 acc=0.862 dead=0.969 erank=7.69 loss=0.2263 wall=3.8s
+  [A_floor /s1/convnet] T 3/10 acc=0.200 dead=0.998 erank=1.01 loss=1.6094 wall=3.9s
+  [A_floor /s1/convnet] T 4/10 acc=0.776 dead=0.990 erank=4.16 loss=0.3270 wall=3.9s
+  [A_floor /s1/convnet] T 5/10 acc=0.200 dead=0.998 erank=1.00 loss=1.6108 wall=3.8s
+  [A_floor /s1/convnet] T 6/10 acc=0.200 dead=1.000 erank=0.00 loss=2.5208 wall=3.9s
+  [A_floor /s1/convnet] T 7/10 acc=0.200 dead=1.000 erank=0.00 loss=3.4715 wall=3.6s
+  [A_floor /s1/convnet] T 8/10 acc=0.200 dead=1.000 erank=0.00 loss=3.7260 wall=3.8s
+  [A_floor /s1/convnet] T 9/10 acc=0.346 dead=0.996 erank=1.64 loss=1.3502 wall=3.9s
+  [A_floor /s1/convnet] T10/10 acc=0.200 dead=0.998 erank=1.00 loss=1.6118 wall=3.8s
+  → primary_acc=0.3538  dead=0.998  erank=1.00  wall=38.6s
+
+  [7/240] dataset=cifar100 arch=convnet arm=B seed=1
+  [B       /s1/convnet] T 1/10 acc=0.804 dead=0.551 erank=63.99 loss=0.1155 wall=3.9s
+  [B       /s1/convnet] T 2/10 acc=0.846 dead=0.873 erank=14.59 loss=0.3352 wall=4.0s
+  [B       /s1/convnet] T 3/10 acc=0.696 dead=0.869 erank=12.82 loss=0.6482 wall=3.7s
+  [B       /s1/convnet] T 4/10 acc=0.740 dead=0.873 erank=12.71 loss=0.6374 wall=4.0s
+  [B       /s1/convnet] T 5/10 acc=0.846 dead=0.857 erank=14.44 loss=0.3374 wall=3.9s
+  [B       /s1/convnet] T 6/10 acc=0.850 dead=0.848 erank=14.90 loss=0.2853 wall=3.9s
+  [B       /s1/convnet] T 7/10 acc=0.806 dead=0.783 erank=26.10 loss=0.2814 wall=4.0s
+  [B       /s1/convnet] T 8/10 acc=0.652 dead=0.875 erank=12.31 loss=0.8181 wall=3.7s
+  [B       /s1/convnet] T 9/10 acc=0.846 dead=0.814 erank=21.25 loss=0.2847 wall=3.9s
+  [B       /s1/convnet] T10/10 acc=0.712 dead=0.822 erank=21.52 loss=0.4546 wall=3.9s
+  → primary_acc=0.7771  dead=0.822  erank=21.52  wall=39.6s
+
+  [8/240] dataset=cifar100 arch=c  [B       /s1/convnet] T10/10 acc=0.762 dead=0.807 erank=20.73 loss=0.4348 wall=20.9s
+  → primary_acc=0.7520 dead=0.807 erank=20.73 wall=226.4s
+
+  [8/240] ARM=C SEED=1 dataset=cifar100 arch=convnet
+  [C       /s1/convnet] T 1/10 acc=0.812 dead=0.689 erank=47.61 loss=0.0543 wall=20.9s
+  [C       /s1/convnet] T 2/10 acc=0.864 dead=0.881 erank=17.81 loss=0.1692 wall=20.4s
+  [C       /s1/convnet] T 3/10 acc=0.730 dead=0.895 erank=9.36 loss=0.5306 wall=20.6s
+  [C       /s1/convnet] T 4/10 acc=0.744 dead=0.873 erank=15.98 loss=0.4332 wall=20.7s
+  [C       /s1/convnet] T 5/10 acc=0.828 dead=0.877 erank=11.38 loss=0.1820 wall=20.7s
+  [C       /s1/convnet] T 6/10 acc=0.890 dead=0.852 erank=16.45 loss=0.1969 wall=20.5s
+  [C       /s1/convnet] T 7/10 acc=0.810 dead=0.865 erank=12.62 loss=0.3329 wall=20.3s
+  [C       /s1/convnet] T 8/10 acc=0.810 dead=0.850 erank=14.56 loss=0.3098 wall=20.4s
+  [C       /s1/convnet] T 9/10 acc=0.896 dead=0.842 erank=18.35 loss=0.2477 wall=20.4s
+  [C       /s1/convnet] T10/10 acc=0.754 dead=0.820 erank=17.39 loss=0.5211 wall=20.8s
+  → primary_acc=0.8140 dead=0.820 erank=17.39 wall=215.5s
+
+  [9/240] ARM=D SEED=1 dataset=cifar100 arch=convnet
+  [D       /s1/convnet] T 1/10 acc=0.812 dead=0.527 erank=64.54 loss=0.0827 wall=21.2s
+  [D       /s1/convnet] T 2/10 acc=0.846 dead=0.811 erank=21.40 loss=0.1813 wall=21.1s
+  [D       /s1/convnet] T 3/10 acc=0.636 dead=0.877 erank=14.73 loss=0.7328 wall=20.9s
+] T 6/10 acc=0.872 dead=0.830 erank=20.57 loss=0.2516 wall=3.8s
+  [D       /s1/convnet] T 7/10 acc=0.736 dead=0.891 erank=7.51 loss=0.4975 wall=3.9s
+  [D       /s1/convnet] T 8/10 acc=0.668 dead=0.842 erank=18.75 loss=0.7222 wall=3.9s
+  [D       /s1/convnet] T 9/10 acc=0.866 dead=0.807 erank=23.40 loss=0.3279 wall=3.9s
+  [D       /s1/convnet] T10/10 acc=0.692 dead=0.812 erank=16.76 loss=0.6204 wall=3.8s
+  → primary_acc=0.7607  dead=0.812  erank=16.76  wall=38.9s
+
+  [10/240] dataset=cifar100 arch=convnet arm=RANDOM seed=1
+  [RANDOM  /s1/convnet] T 1/10 acc=0.824 dead=0.746 erank=39.83 loss=0.1228 wall=3.8s
+  [RANDOM  /s1/convnet] T 2/10 acc=0.858 dead=0.848 erank=18.84 loss=0.1632 wall=3.8s
+  [RANDOM  /s1/convnet] T 3/10 acc=0.638 dead=0.893 erank=12.75 loss=0.6037 wall=3.8s
+  [RANDOM  /s1/convnet] T 4/10 acc=0.780 dead=0.836 erank=19.14 loss=0.4336 wall=3.9s
+  [RANDOM  /s1/convnet] T 5/10 acc=0.624 dead=0.900 erank=9.32 loss=0.3366 wall=3.8s
+  [RANDOM  /s1/convnet] T 6/10 acc=0.864 dead=0.873 erank=14.15 loss=0.3031 wall=3.6s
+  [RANDOM  /s1/convnet] T 7/10 acc=0.726 dead=0.900 erank=8.72 loss=0.4592 wall=3.9s
+  [RANDOM  /s1/convnet] T 8/10 acc=0.784 dead=0.877 erank=12.40 loss=0.4010 wall=3.8s
+  [RANDOM  /s1/convnet] T 9/10 acc=0.868 dead=0.889 erank=9.52 loss=0.2552 wall=3.9s
+  [RANDOM  /s1/convnet] T10/10 acc=0.684 dead=0.881 erank=12.73 loss=0.5523 wall=3.9s
+  → primary_acc=0.7584  dead=0.881  erank=12.73  wall=38.8s
+  [io] RESULTS.json  status=RUNNING
+  [cell done] elapsed=6.7min
+
+  SEED 2
+
+  [11/240] dataset=cifar100 arch=convnet arm=A_floor seed=2
+  [A_floor /s2/convnet] T 1/10 acc=0.912 dead=0.613 erank=50.80 loss=0.0436 wall=3.8s
+  [A_floor /s2/convnet] T 2/10 acc=0.856 dead=0.943 erank=12.53 loss=0.2865 wall=3.6s
+  [A_floor /s2/convnet] T 3/10 acc=0.806 dead=0.990 erank=3.47 loss=0.2957 wall=3.9s
+  [A_floor /s2/convnet] T 4/10 acc=0.598 dead=0.994 erank=2.58 loss=0.9923 wall=3.8s
+  [A_floor /s2/convnet] T 5/10 acc=0.200 dead=0.998 erank=1.00 loss=1.6111 wall=3.9s
+  [A_floor /s2/convnet] T 6/10 acc=0.200 dead=1.000 erank=0.00 loss=2.5498 wall=3.8s
+  [A_floor /s2/convnet] T 7/10 acc=0.200 dead=1.000 erank=0.00 loss=3.4522 wall=3.6s
+  [A_floor /s2/convnet] T 8/10 acc=0.200 dead=1.000 erank=0.00 loss=3.7150 wall=3.8s
+  [A_floor /s2/convnet] T 9/10 acc=0.200 dead=1.000 erank=0.00 loss=3.9682 wall=3.8s
+  [A_floor /s2/convnet] T10/10 acc=0.200 dead=1.000 erank=0.00 loss=4.1661 wall=3.9s
+  → primary_acc=0.3844  dead=1.000  erank=0.00  wall=38.2s
+
+  [12/240] dataset=cifar100 arch=convnet arm=B seed=2
+  [B       /s2/convnet] T 1/10 acc=0.914 dead=0.527 erank=61.24 loss=0.0707 wall=4.0s
+  [B       /s2/convnet] T 2/10 acc=0.876 dead=0.812 erank=21.08 loss=0.2104 wall=4.0s
+  [B       /s2/convnet] T 3/10 acc=0.824 dead=0.875 erank=10.88 loss=0.3408 wall=3.8s
+  [B       /s2/convnet] T 4/10 acc=0.822 dead=0.857 erank=16.61 loss=0.3932 wall=4.0s
+  [B       /s2/convnet] T 5/10 acc=0.752 dead=0.850 erank=14.77 loss=0.6013 wall=4.0s
+  [B       /s2/convnet] T 6/10 acc=0.748 dead=0.865 erank=15.19 loss=0.6120 wall=3.9s
+  [B       /s2/convnet] T 7/10 acc=0.682 dead=0.863 erank=13.83 loss=0.8204 wall=3.9s
+  [B       /s2/convnet] T 8/10 acc=0.804 dead=0.793 erank=25.71 loss=0.4036 wall=3.8s
+  [B       /s2/convnet] T 9/10 acc=0.782 dead=0.807 erank=26.60 loss=0.4188 wall=4.0s
+  [B       /s2/convnet] T10/10 acc=0.682 dead=0.801 erank=28.87 loss=0.8039 wall=3.9s
+  → primary_acc=0.7747  dead=0.801  erank=28.87  wall=39.9s
+
+  [13/240] dataset=cifar100 arch=convnet arm=C seed=2
+  [C       /s2/convnet] T 1/10 acc=0.894 dead=0.676 erank=47.70 loss=0.0886 wall=3.9s
+  [C       /s2/convnet] T 2/10 acc=0.842 dead=0.879 erank=15.70 loss=0.1400 wall=3.9s
+  [C       /s2/convnet] T 3/10 acc=0.854 dead=0.883 erank=10.14 loss=0.1938 wall=3.8s
+  [C       /s2/convnet] T 4/10 acc=0.736 dead=0.895 erank=11.18 loss=0.6250 wall=3.8s
+  [C       /s2/convnet] T 5/10 acc=0.674 dead=0.891 erank=7.54 loss=0.7713 wall=3.9s
+  [C       /s2/convnet] T 6/10 acc=0.814 dead=0.850 erank=16.92 loss=0.3881 wall=3.9s
+  [C       /s2/convnet] T 7/10 acc=0.736 dead=0.867 erank=12.38 loss=0.6407 wall=3.9s
+  [C       /s2/convnet] T 8/10 acc=0.784 dead=0.863 erank=8.49 loss=0.4433 wall=3.9s
+  [C       /s2/convnet] T 9/10 acc=0.722 dead=0.883 erank=12.87 loss=0.6200 wall=3.7s
+  [C       /s2/convnet] T10/10 acc=0.728 dead=0.881 erank=12.66 loss=0.6502 wall=3.9s
+  → primary_acc=0.7656  dead=0.881  erank=12.66  wall=38.9s
+
+  [14/240] dataset=cifar100 arch=convnet arm=D seed=2
+  [D       /s2/convnet] T 1/10 acc=0.926 dead=0.527 erank=58.63 loss=0.0522 wall=3.8s
+  [D       /s2/convnet] T 2/10 acc=0.846 dead=0.789 erank=26.63 loss=0.2208 wall=3.9s
+  [D       /s2/convnet] T 3/10 acc=0.830 dead=0.869 erank=14.22 loss=0.3237 wall=3.9s
+  [D       /s2/convnet] T 4/10 acc=0.806 dead=0.887 erank=12.40 loss=0.3992 wall=3.8s
+  [D       /s2/convnet] T 5/10 acc=0.798 dead=0.859 erank=14.36 loss=0.4380 wall=3.6s
+  [D       /s2/convnet] T 6/10 acc=0.794 dead=0.859 erank=14.55 loss=0.4850 wall=3.9s
+  [D       /s2/convnet] T 7/10 acc=0.696 dead=0.869 erank=13.54 loss=0.7063 wall=3.8s
+  [D       /s2/convnet] T 8/10 acc=0.806 dead=0.820 erank=21.77 loss=0.3898 wall=3.9s
+  [D       /s2/convnet] T 9/10 acc=0.716 dead=0.820 erank=23.51 loss=0.5933 wall=3.8s
+  [D       /s2/convnet] T10/10 acc=0.662 dead=0.811 erank=28.60 loss=0.8144 wall=3.8s
+  → primary_acc=0.7727  dead=0.810  erank=28.60  wall=38.6s
+
+  [15/240] dataset=cifar100 arch=convnet arm=RANDOM seed=2
+  [RANDOM  /s2/convnet] T 1/10 acc=0.904 dead=0.744 erank=37.50 loss=0.0805 wall=3.6s
+  [RANDOM  /s2/convnet] T 2/10 acc=0.846 dead=0.854 erank=13.42 loss=0.2232 wall=3.8s
+  [RANDOM  /s2/convnet] T 3/10 acc=0.846 dead=0.881 erank=11.73 loss=0.2989 wall=3.8s
+  [RANDOM  /s2/convnet] T 4/10 acc=0.844 dead=0.887 erank=10.97 loss=0.3625 wall=3.9s
+  [RANDOM  /s2/convnet] T 5/10 acc=0.828 dead=0.873 erank=10.72 loss=0.3208 wall=3.9s
+  [RANDOM  /s2/convnet] T 6/10 acc=0.798 dead=0.910 erank=8.14 loss=0.5068 wall=3.7s

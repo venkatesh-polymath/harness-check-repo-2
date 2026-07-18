@@ -1,0 +1,121 @@
+{
+  "status": "RUNNING",
+  "scale": "full",
+  "data_source": "cifar_real",
+  "n_seeds": 2,
+  "seeds": [
+    0,
+    1
+  ],
+  "cells": {
+    "cifar100_convnet": {
+      "floor": 0.3157,
+      "B": {
+        "mean": 0.7808,
+        "std": 0.0052,
+        "per_seed_acc": [
+          0.7844,
+          0.7771
+        ],
+        "n_seeds": 2,
+        "dead_final_mean": 0.8076,
+        "erank_final_mean": 25.9712
+      },
+      "C": {
+        "mean": 0.7571,
+        "std": 0.0443,
+        "per_seed_acc": [
+          0.7884,
+          0.7258
+        ],
+        "n_seeds": 2,
+        "dead_final_mean": 0.8359,
+        "erank_final_mean": 19.4286
+      },
+      "D": {
+        "mean": 0.7792,
+        "std": 0.0262,
+        "per_seed_acc": [
+          0.7978,
+          0.7607
+        ],
+        "n_seeds": 2,
+        "dead_final_mean": 0.7773,
+        "erank_final_mean": 25.264
+      },
+      "RANDOM": {
+        "mean": 0.758,
+        "std": 0.0006,
+        "per_seed_acc": [
+          0.7576,
+          0.7584
+        ],
+        "n_seeds": 2,
+        "dead_final_mean": 0.8672,
+        "erank_final_mean": 15.2929
+      },
+      "paired_D_C": {
+        "per_seed": [
+          0.94,
+          3.49
+        ],
+        "mean_pp": 2.215,
+        "ci95_pp": [
+          -13.985,
+          18.415
+        ],
+        "p_two_sided": 0.332507,
+        "p_one_sided": 0.166253,
+        "n": 2,
+        "equivalent_within_3pp": false
+      },
+      "paired_D_RANDOM": {
+        "per_seed": [
+          4.02,
+          0.23
+        ],
+        "mean_pp": 2.125,
+        "ci95_pp": [
+          -21.953,
+          26.203
+        ],
+        "p_two_sided": 0.463616,
+        "p_one_sided": 0.231808,
+        "n": 2,
+        "beats_random": false
+      },
+      "paired_D_B": {
+        "per_seed": [
+          1.34,
+          -1.64
+        ],
+        "mean_pp": -0.15,
+        "ci95_pp": [
+          -19.082,
+          18.782
+        ],
+        "p_two_sided": 0.936126,
+        "p_one_sided": 0.531937,
+        "n": 2
+      }
+    }
+  },
+  "summary": {
+    "equivalence_holds_in": "0/1 cells",
+    "mechanism_holds_in": "0/1 cells",
+    "datasets": [
+      "cifar100",
+      "cifar10"
+    ],
+    "architectures": [
+      "convnet",
+      "mlp3",
+      "resnet"
+    ],
+    "n_cells_done": 1,
+    "n_cells_total": 6
+  },
+  "subject_executed": "CIFAR-100 (10T\u00d75cls) + CIFAR-10 (5T\u00d72cls) \u00d7 ConvNet+MLP3+ResNet \u00d7 A_floor/B/C/D/RANDOM \u00d7 800 steps/task, reset_every=100, frac=0.1, seeds=[0, 1]",
+  "notes": "Does Adam's v_t zero-cost plasticity reset generalize across datasets (CIFAR-100, CIFAR-10) and architectures (ConvNet, MLP3, ResNet)?",
+  "elapsed_min": 6.72
+}

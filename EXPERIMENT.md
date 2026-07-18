@@ -1,27 +1,43 @@
-# EXPERIMENT BRIEF — round bd_paired (full)
+# EXPERIMENT BRIEF — round scale_grid (full)
 
 ## THIS ROUND (do exactly this)
-PAIRED B-vs-D run — the practically decisive comparison: is Adam-v_t (free) as good as the original CBP contribution heuristic? Setup validated: GroupNorm ConvNet, real CIFAR-100 at /opt/datasets (download=False, ABORT if missing, NEVER synthetic), class-incremental 5-classes/task, Adam, masked eval. Reuse prior method_arms code. Run ONLY these two arms.
+SCALE-OUT EXPERIMENT — generalize the Adam-v_t plasticity-reset result across DATASETS and ARCHITECTURES. This directly answers the reviewer critique "single dataset, single architecture." Prior finding to reproduce broadly: on CIFAR-100 + GroupNorm ConvNet, all reset arms recover plasticity ~4x over the no-reset floor (0.20), D(Adam-v_t) is statistically EQUIVALENT to C(explicit Fisher) (paired, within +/-3pp), D BEATS random reset (+4.3pp, p=0.02), at zero extra compute.
 
-TWO ARMS, identical per-seed task splits (paired), same reset cadence + reset fraction, differing ONLY in the neuron-utility:
-- B: CBP contribution heuristic = |outgoing weight| x mean post-activation (running average), reset lowest.
-- D (OURS): Adam exp_avg_sq (v_t) aggregated per neuron (mean over the neuron's incoming-weight fan), reset lowest. Zero extra compute.
+CRITICAL EXECUTION PATTERN (prior runs got cut because the agent supervised training turn-by-turn):
+- Write ONE self-contained python script `run_grid.py` that runs the ENTIRE grid internally (all datasets x architectures x arms x seeds in nested loops).
+- The script must write results/scale/RESULTS.json INCREMENTALLY (rewrite after every (dataset,arch,seed) cell completes) AND per-cell rows to results/scale/rows.jsonl.
+- Launch it ONCE as a single BLOCKING call: `python run_grid.py 2>&1 | tee results/scale/run.log` and WAIT for it to finish. Do NOT supervise cell-by-cell; let it run. Budget it to finish within ~2.5 hours of GPU wall time; if the grid is too big, the script itself should reduce seeds (min 6) — never drop datasets/architectures/arms.
+- After it finishes, read RESULTS.json, sanity-check, finalize status:"DONE", commit.
 
-PAIRED: 8 seeds {0..7}. Per seed run B and D on the SAME task split. Per-seed diff d_s = acc_D(s) - acc_B(s).
-SIZED TO FINISH (2 arms only): 4 tasks/run, ~1000 steps/task (~20 min). Write results/bd_paired/RESULTS.json incrementally; FINALIZE at >=6 seeds.
+GRID:
+- Datasets (real, pre-baked at /opt/datasets, download=False, NEVER synthetic, ABORT if missing): CIFAR-100 AND CIFAR-10. Build a class-incremental stream from each (5 classes/task; CIFAR-10 -> 2 tasks is too few, so use 2 classes/task -> 5 tasks for CIFAR-10, and 5 classes/task -> 10 tasks for CIFAR-100).
+- Architectures (>=2, ideally 3): (1) GroupNorm ConvNet (reuse prior), (2) 3-hidden-layer MLP with GroupNorm, (3) small GroupNorm ResNet (~4 residual blocks). Keep param counts modest so H100 runs fast.
+- Arms (identical per-seed task splits, same reset cadence + fraction; only the neuron-utility differs): A_floor (NO reset), B (CBP heuristic |out weight| x mean post-activation), C (explicit empirical-Fisher (dL/da)^2), D (Adam exp_avg_sq v_t per-neuron, OURS), RANDOM (reset random units, utility ignored — the mechanistic control).
+- Seeds: 8 (min 6 if time-pressed). PAIRED: same seed -> same task split across all arms so C-vs-D and D-vs-RANDOM are paired.
+- ~800-1000 steps/task; Adam; masked eval.
 
-HEADLINE: per-arm mean±std final-task acc; paired D-B mean_pp, 95% CI, equivalent_within_3pp? Is v_t a drop-in for the CBP heuristic?
+METRICS per (dataset, arch, arm, seed): final-few-tasks accuracy, dead-unit fraction, effective rank.
+AGGREGATE per (dataset, arch): mean±std per arm; PAIRED D-C (mean_pp, 95% CI, equivalent_within_3pp); PAIRED D-RANDOM (mean_pp, 95% CI, p_one_sided, beats_random); PAIRED D-B (mean_pp, CI). Floor accuracy.
 
-OUTPUT results/bd_paired/RESULTS.json status:"DONE":
-{"status":"DONE","n_seeds":<>=6>,"data_source":"cifar100_real",
- "B":{"per_seed_acc":[...],"mean":..,"std":..},"D":{"per_seed_acc":[...],"mean":..,"std":..},
- "paired_D_minus_B":{"per_seed":[...],"mean_pp":..,"ci95_pp":[lo,hi],"equivalent_within_3pp":bool},
- "notes":"is v_t a zero-cost drop-in for the CBP contribution heuristic?"}
-Do NOT leave status RUNNING. Save run.log. Commit all except datasets + weights.
+KEY QUESTIONS (report honestly per dataset×arch):
+- Does the no-reset floor collapse and do reset arms recover plasticity in EVERY dataset×arch?
+- Does D≈C (equivalence) hold across ALL datasets×architectures? (generality of the main claim)
+- Does D>RANDOM hold across settings? (generality of the mechanism)
+- Is D a drop-in for B everywhere?
+
+OUTPUT results/scale/RESULTS.json status:"DONE":
+{"status":"DONE","data_source":"cifar_real","n_seeds":<>=6>,
+ "cells":{"<dataset>_<arch>":{"floor":..,"B":{mean,std},"C":{mean,std},"D":{mean,std},"RANDOM":{mean,std},
+     "paired_D_C":{mean_pp,ci95_pp,equivalent_within_3pp},
+     "paired_D_RANDOM":{mean_pp,ci95_pp,p_one_sided,beats_random},
+     "paired_D_B":{mean_pp,ci95_pp}}, ...},
+ "summary":{"equivalence_holds_in":"k/N cells","mechanism_holds_in":"k/N cells","datasets":[...],"architectures":[...]},
+ "notes":"does the zero-cost v_t result generalize across datasets and architectures?"}
+Do NOT leave status RUNNING. Save run.log + rows.jsonl. Commit all except datasets + weights (.pt/.pth/.safetensors).
 
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/bd_paired/.
+for context and build on them; write this round's outputs under results/scale_grid/.
 
 ## Idea
 Adam's v_t is the Fisher — repurposing optimizer state as a zero-overhead neuron utility for plasticity-preserving resets
@@ -55,4 +71,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: Arm A — Adam + no resets (vanilla Adam continual fine-tuning, tasks presented sequentially): the most widely documented, zero-design-choice reference in plasticity literature; build and validate first to confirm forgetting occurs and effective rank decays, establishing the phenomenon the CBP arms are meant to fix before any utility comparison is made
 - eval contract: Dataset: 5-task split-CIFAR-100, ResNet-18 pretrained on CIFAR-10. Primary metric: mean final-task top-1 accuracy averaged over tasks 2–5 (task 1 excluded as warm-up). Secondary metric: effective rank of the final conv layer weight matrix at end of each task (rank collapse as plasticity proxy). Equivalence test (utility-source claim): two one-sided paired t-tests (TOST, α=0.05, Δ=1.0 pp) on primary metric between arm D (v_t-EMA) and arm C (explicit-Fisher) across 5 seeds — both one-sided p-values must be < 0.05 to declare equivalence. Accumulation test (mechanistic claim): TOST (same α, Δ) between arm D (v_t-EMA) and arm E (snapshot-g²); a significant difference (i.e., TOST fails to find equivalence) licenses 'accumulation is the decisive property.' Optimizer-isolation test: paired t-test (α=0.05, two-sided) between arm C (Adam+Fisher) and arm F (SGD+Fisher) — tests whether optimizer identity beyond utility source affects outcome. Speedup reported as mean ± std wall-clock seconds/reset-step (arm D vs arm C), not folded into accuracy equivalence.
 
-Record everything under results/bd_paired/. Do not commit weights.
+Record everything under results/scale_grid/. Do not commit weights.
