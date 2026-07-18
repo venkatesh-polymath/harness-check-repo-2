@@ -1,0 +1,12 @@
+{
+  "wd_1p0_verification": {
+    "grokking_onset_step": 5500,
+    "grokking_confirmed_step": 5700,
+    "final_train_acc": 1.0,
+    "final_val_acc": 0.990081,
+    "init_wnorm": 117.429254,
+    "final_wnorm": 109.51623,
+    "elapsed_seconds": 38.9,
+    "total_steps": 5868
+  }
+}

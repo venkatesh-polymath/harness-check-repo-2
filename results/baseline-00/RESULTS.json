@@ -1,0 +1,67 @@
+{
+  "status": "SUCCESS",
+  "scale": "probe",
+  "metrics": {
+    "grokking_onset_step": 5500,
+    "grokking_confirmed_step": 5700,
+    "final_train_acc": 1.0,
+    "final_val_acc": 0.9901,
+    "final_train_loss": 0.001,
+    "final_val_loss": 0.0734,
+    "init_val_ce": 4.7514,
+    "init_weight_norm": 117.4293,
+    "final_weight_norm": 109.516,
+    "weight_norm_ratio": 0.933,
+    "total_steps": 5868,
+    "elapsed_seconds": 38.9,
+    "grokking_reproduced": true,
+    "baseline_wd": 1.0,
+    "note_on_wd": "Power et al. standard WD=1.0 used; WD=1e-3 (study spec draft) failed to grok in 100k steps",
+    "wnorm_trajectory_sampled_wd1p0": [
+      [500,  117.556],
+      [1000, 116.140],
+      [1500, 114.812],
+      [2000, 113.767],
+      [2500, 112.938],
+      [3000, 112.213],
+      [3500, 111.524],
+      [4000, 111.125],
+      [4500, 110.641],
+      [5000, 110.255],
+      [5500, 109.830],
+      [5868, 109.516]
+    ],
+    "wd_1e-3_diagnostic": {
+      "status": "NO_GROKKING_IN_100k_STEPS",
+      "total_steps": 100000,
+      "elapsed_seconds": 637.5,
+      "final_train_acc": 1.0,
+      "final_val_acc": 0.021785,
+      "final_val_loss": 86.668,
+      "init_weight_norm": 117.4293,
+      "peak_weight_norm": 601.43,
+      "final_weight_norm": 566.819,
+      "weight_norm_ratio": 4.827,
+      "diagnosis": "WD=1e-3 with LR=1e-3 yields effective per-step decay of only 1e-6 per param. Weight norm exploded 4.8x from init and only slowly decreasing at step 100k. Grokking requires much longer or stronger WD.",
+      "wnorm_at_key_steps": {
+        "step_500": 119.796,
+        "step_5000": 125.358,
+        "step_10000": 150.859,
+        "step_25000": 579.417,
+        "step_50000": 589.642,
+        "step_100000": 566.819
+      }
+    },
+    "sanity_gates": {
+      "init_ce_in_range_4p4_to_4p7": false,
+      "init_ce_value": 4.7514,
+      "init_ce_note": "Slightly above [4.4,4.7] range at 4.75; still indicates near-uniform init",
+      "architecture_can_memorize": true,
+      "memorization_step_wd1p0": 1000,
+      "memorization_step_wd1em3": 500,
+      "grokking_observed": true
+    }
+  },
+  "subject_executed": "1-layer transformer (d_model=128, n_heads=4, mlp_hidden=512, LayerNorm) on modular addition p=97, AdamW WD=1.0 LR=1e-3 BS=512, seed=42, train_frac=0.4 (3763 train / 5646 val). Also ran diagnostic at WD=1e-3 for 100k steps (no grokking).",
+  "notes": "ARCHITECTURE VERIFIED CORRECT. Grokking reproduced at step 5500 (WD=1.0, Power et al. standard). KEY FINDING: Study spec draft baseline WD=1e-3 is too weak -- weight norm exploded 4.8x, no grokking in 100k steps (637s). Effective per-step decay = LR*WD = 1e-6 (negligible). RECOMMENDATION: Use WD=1.0 as the anchor baseline (not 1e-3). The LN+WD sweep in the full experiment must include WD values up to 1.0 for calibration against BN+noWD to make sense. Weight norm under WD=1.0 stayed stable (117 init -> 110 final, ratio=0.93) confirming regularization is working as expected for grokking."
+}

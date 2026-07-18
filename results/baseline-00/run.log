@@ -1,0 +1,225 @@
+Device: cuda
+============================================================
+Grokking Baseline — probe run
+P=97, seed=42, train_frac=0.4
+Arch: d_model=128, n_heads=4, mlp_hidden=512
+Optim: AdamW, LR=0.001, WD=0.001, BS=512
+Max steps: 100000
+============================================================
+Train size: 3763, Val size: 5646
+
+Sanity — init val CE: 4.7514  (expected ~4.5747)
+Sanity — init weight norm: 117.4293
+step=   500 | tr_acc=1.000 tr_loss=0.0602 | val_acc=0.001 val_loss=9.6253 | wnorm=119.796 | 4s
+step=  1000 | tr_acc=1.000 tr_loss=0.0002 | val_acc=0.002 val_loss=13.0107 | wnorm=120.591 | 7s
+step=  1500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.002 val_loss=16.1462 | wnorm=121.338 | 10s
+step=  2000 | tr_acc=1.000 tr_loss=0.0001 | val_acc=0.000 val_loss=16.7882 | wnorm=122.085 | 13s
+step=  2500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.001 val_loss=17.3527 | wnorm=122.172 | 16s
+step=  3000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.001 val_loss=18.1490 | wnorm=122.406 | 19s
+step=  3500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.001 val_loss=16.2361 | wnorm=122.630 | 22s
+step=  4000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.001 val_loss=15.5464 | wnorm=123.181 | 25s
+step=  4500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.002 val_loss=14.9044 | wnorm=124.071 | 28s
+step=  5000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.002 val_loss=14.7264 | wnorm=125.358 | 31s
+step=  5500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.002 val_loss=14.2812 | wnorm=127.120 | 34s
+step=  6000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.002 val_loss=14.1773 | wnorm=129.451 | 37s
+step=  6500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.003 val_loss=14.0540 | wnorm=132.445 | 40s
+step=  7000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.003 val_loss=13.9859 | wnorm=136.187 | 43s
+step=  7500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.003 val_loss=13.8419 | wnorm=140.769 | 47s
+step=  8000 | tr_acc=0.998 tr_loss=0.0092 | val_acc=0.002 val_loss=23.3342 | wnorm=143.281 | 50s
+step=  8500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.001 val_loss=26.0299 | wnorm=143.460 | 53s
+step=  9000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.001 val_loss=26.1122 | wnorm=143.457 | 56s
+step=  9500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.002 val_loss=14.3482 | wnorm=145.001 | 59s
+step= 10000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.003 val_loss=13.3281 | wnorm=150.859 | 62s
+step= 10500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.002 val_loss=13.2239 | wnorm=158.016 | 65s
+step= 11000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.003 val_loss=13.1672 | wnorm=166.194 | 68s
+step= 11500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.003 val_loss=13.1898 | wnorm=175.315 | 71s
+step= 12000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.003 val_loss=13.1617 | wnorm=185.492 | 74s
+step= 12500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.002 val_loss=13.1137 | wnorm=196.567 | 77s
+step= 13000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.003 val_loss=13.0992 | wnorm=208.471 | 81s
+step= 13500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.003 val_loss=13.0604 | wnorm=221.216 | 84s
+step= 14000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.003 val_loss=13.0537 | wnorm=234.791 | 87s
+step= 14500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.003 val_loss=13.0537 | wnorm=249.070 | 90s
+step= 15000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.003 val_loss=22.4213 | wnorm=251.092 | 93s
+step= 15500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.003 val_loss=22.3253 | wnorm=251.017 | 96s
+step= 16000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.003 val_loss=14.2009 | wnorm=252.930 | 99s
+step= 16500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.004 val_loss=12.9316 | wnorm=266.697 | 102s
+step= 17000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.004 val_loss=12.8537 | wnorm=282.379 | 105s
+step= 17500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.004 val_loss=12.9267 | wnorm=298.747 | 109s
+step= 18000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.004 val_loss=12.9251 | wnorm=315.678 | 112s
+step= 18500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.004 val_loss=12.9087 | wnorm=332.899 | 115s
+step= 19000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.004 val_loss=12.8660 | wnorm=350.494 | 118s
+step= 19500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.004 val_loss=12.9300 | wnorm=368.575 | 121s
+step= 20000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.004 val_loss=12.9230 | wnorm=386.921 | 124s
+step= 20500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.005 val_loss=12.9946 | wnorm=405.684 | 127s
+step= 21000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.004 val_loss=12.9856 | wnorm=424.416 | 131s
+step= 21500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.005 val_loss=12.9811 | wnorm=443.438 | 134s
+step= 22000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.004 val_loss=12.9927 | wnorm=462.590 | 137s
+step= 22500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.004 val_loss=13.0047 | wnorm=482.117 | 140s
+step= 23000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.005 val_loss=13.0788 | wnorm=501.309 | 143s
+step= 23500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.005 val_loss=13.0581 | wnorm=520.872 | 146s
+step= 24000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.005 val_loss=13.0930 | wnorm=540.591 | 149s
+step= 24500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.005 val_loss=13.1407 | wnorm=560.173 | 153s
+step= 25000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.005 val_loss=13.2285 | wnorm=579.417 | 156s
+step= 25500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.006 val_loss=13.1573 | wnorm=598.659 | 159s
+step= 26000 | tr_acc=0.998 tr_loss=0.0061 | val_acc=0.003 val_loss=32.7391 | wnorm=601.430 | 162s
+step= 26500 | tr_acc=0.996 tr_loss=0.0180 | val_acc=0.002 val_loss=42.6787 | wnorm=601.216 | 165s
+step= 27000 | tr_acc=0.995 tr_loss=0.0287 | val_acc=0.002 val_loss=53.0353 | wnorm=601.003 | 168s
+step= 27500 | tr_acc=0.995 tr_loss=0.0357 | val_acc=0.002 val_loss=61.6652 | wnorm=600.770 | 171s
+step= 28000 | tr_acc=1.000 tr_loss=0.0021 | val_acc=0.002 val_loss=69.8914 | wnorm=600.547 | 174s
+step= 28500 | tr_acc=0.993 tr_loss=0.0442 | val_acc=0.003 val_loss=76.6830 | wnorm=600.339 | 177s
+step= 29000 | tr_acc=0.999 tr_loss=0.0017 | val_acc=0.002 val_loss=83.7038 | wnorm=600.098 | 180s
+step= 29500 | tr_acc=0.994 tr_loss=0.0431 | val_acc=0.002 val_loss=88.0499 | wnorm=599.820 | 183s
+step= 30000 | tr_acc=0.996 tr_loss=0.0162 | val_acc=0.003 val_loss=94.6505 | wnorm=599.524 | 186s
+step= 30500 | tr_acc=0.999 tr_loss=0.0065 | val_acc=0.002 val_loss=103.2468 | wnorm=599.279 | 190s
+step= 31000 | tr_acc=0.997 tr_loss=0.0116 | val_acc=0.003 val_loss=110.0092 | wnorm=599.039 | 193s
+step= 31500 | tr_acc=0.998 tr_loss=0.0083 | val_acc=0.002 val_loss=118.9155 | wnorm=598.795 | 196s
+step= 32000 | tr_acc=0.999 tr_loss=0.0021 | val_acc=0.001 val_loss=123.6787 | wnorm=598.532 | 199s
+step= 32500 | tr_acc=0.999 tr_loss=0.0167 | val_acc=0.002 val_loss=129.3589 | wnorm=598.261 | 202s
+step= 33000 | tr_acc=0.999 tr_loss=0.0083 | val_acc=0.001 val_loss=135.7436 | wnorm=597.977 | 205s
+step= 33500 | tr_acc=1.000 tr_loss=0.0015 | val_acc=0.003 val_loss=139.4079 | wnorm=597.690 | 208s
+step= 34000 | tr_acc=0.998 tr_loss=0.0207 | val_acc=0.002 val_loss=144.9775 | wnorm=597.437 | 211s
+step= 34500 | tr_acc=0.997 tr_loss=0.0205 | val_acc=0.002 val_loss=150.6350 | wnorm=597.188 | 214s
+step= 35000 | tr_acc=0.999 tr_loss=0.0040 | val_acc=0.003 val_loss=152.6861 | wnorm=596.950 | 217s
+step= 35500 | tr_acc=1.000 tr_loss=0.0002 | val_acc=0.003 val_loss=156.0376 | wnorm=596.767 | 220s
+step= 36000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.002 val_loss=155.1534 | wnorm=596.522 | 224s
+step= 36500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.002 val_loss=154.9788 | wnorm=596.259 | 227s
+step= 37000 | tr_acc=0.996 tr_loss=0.0391 | val_acc=0.004 val_loss=149.7118 | wnorm=596.076 | 230s
+step= 37500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.003 val_loss=154.5098 | wnorm=595.815 | 233s
+step= 38000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.003 val_loss=152.5138 | wnorm=595.555 | 236s
+step= 38500 | tr_acc=0.997 tr_loss=0.0200 | val_acc=0.003 val_loss=156.3864 | wnorm=595.316 | 239s
+step= 39000 | tr_acc=0.999 tr_loss=0.0011 | val_acc=0.005 val_loss=162.8425 | wnorm=595.052 | 242s
+step= 39500 | tr_acc=0.998 tr_loss=0.0137 | val_acc=0.003 val_loss=166.4581 | wnorm=594.786 | 245s
+step= 40000 | tr_acc=1.000 tr_loss=0.0003 | val_acc=0.002 val_loss=167.5751 | wnorm=594.487 | 248s
+step= 40500 | tr_acc=0.999 tr_loss=0.0040 | val_acc=0.003 val_loss=173.9708 | wnorm=594.241 | 251s
+step= 41000 | tr_acc=0.999 tr_loss=0.0031 | val_acc=0.003 val_loss=173.5121 | wnorm=594.021 | 254s
+step= 41500 | tr_acc=0.999 tr_loss=0.0095 | val_acc=0.003 val_loss=172.1686 | wnorm=593.711 | 258s
+step= 42000 | tr_acc=0.999 tr_loss=0.0068 | val_acc=0.005 val_loss=177.3610 | wnorm=593.461 | 261s
+step= 42500 | tr_acc=0.999 tr_loss=0.0099 | val_acc=0.004 val_loss=173.2699 | wnorm=593.204 | 264s
+step= 43000 | tr_acc=1.000 tr_loss=0.0018 | val_acc=0.004 val_loss=176.5929 | wnorm=593.026 | 267s
+step= 43500 | tr_acc=0.998 tr_loss=0.0299 | val_acc=0.003 val_loss=176.6252 | wnorm=592.783 | 270s
+step= 44000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.004 val_loss=176.7440 | wnorm=592.521 | 273s
+step= 44500 | tr_acc=1.000 tr_loss=0.0004 | val_acc=0.004 val_loss=175.0459 | wnorm=592.298 | 276s
+step= 45000 | tr_acc=0.999 tr_loss=0.0018 | val_acc=0.005 val_loss=175.1613 | wnorm=592.030 | 279s
+step= 45500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.005 val_loss=174.6602 | wnorm=591.799 | 283s
+step= 46000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.005 val_loss=174.6158 | wnorm=591.540 | 289s
+step= 46500 | tr_acc=0.999 tr_loss=0.0157 | val_acc=0.005 val_loss=172.9348 | wnorm=591.261 | 293s
+step= 47000 | tr_acc=0.999 tr_loss=0.0032 | val_acc=0.005 val_loss=174.1121 | wnorm=591.022 | 297s
+step= 47500 | tr_acc=0.999 tr_loss=0.0062 | val_acc=0.005 val_loss=172.9984 | wnorm=590.821 | 300s
+step= 48000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.008 val_loss=170.1693 | wnorm=590.558 | 303s
+step= 48500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.008 val_loss=170.3624 | wnorm=590.300 | 306s
+step= 49000 | tr_acc=0.999 tr_loss=0.0109 | val_acc=0.006 val_loss=169.1635 | wnorm=590.106 | 310s
+step= 49500 | tr_acc=0.999 tr_loss=0.0060 | val_acc=0.008 val_loss=170.1232 | wnorm=589.874 | 313s
+step= 50000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.007 val_loss=171.8649 | wnorm=589.642 | 316s
+step= 50500 | tr_acc=0.999 tr_loss=0.0167 | val_acc=0.008 val_loss=168.2313 | wnorm=589.356 | 320s
+step= 51000 | tr_acc=1.000 tr_loss=0.0001 | val_acc=0.008 val_loss=167.1091 | wnorm=589.092 | 323s
+step= 51500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.009 val_loss=168.2027 | wnorm=588.827 | 326s
+step= 52000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.009 val_loss=168.1123 | wnorm=588.570 | 329s
+step= 52500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.009 val_loss=168.9651 | wnorm=588.319 | 332s
+step= 53000 | tr_acc=1.000 tr_loss=0.0055 | val_acc=0.009 val_loss=167.5684 | wnorm=588.053 | 335s
+step= 53500 | tr_acc=0.999 tr_loss=0.0036 | val_acc=0.011 val_loss=165.1852 | wnorm=587.791 | 338s
+step= 54000 | tr_acc=0.998 tr_loss=0.0174 | val_acc=0.010 val_loss=163.0288 | wnorm=587.575 | 341s
+step= 54500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.010 val_loss=164.1358 | wnorm=587.296 | 344s
+step= 55000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.010 val_loss=164.3809 | wnorm=587.040 | 348s
+step= 55500 | tr_acc=0.998 tr_loss=0.0300 | val_acc=0.009 val_loss=164.7740 | wnorm=586.780 | 351s
+step= 56000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.009 val_loss=165.5435 | wnorm=586.539 | 354s
+step= 56500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.009 val_loss=165.5973 | wnorm=586.283 | 357s
+step= 57000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.011 val_loss=160.8839 | wnorm=586.113 | 360s
+step= 57500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.011 val_loss=160.7737 | wnorm=585.858 | 363s
+step= 58000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.012 val_loss=159.8590 | wnorm=585.610 | 366s
+step= 58500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.010 val_loss=158.7977 | wnorm=585.394 | 369s
+step= 59000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.010 val_loss=158.5676 | wnorm=585.137 | 373s
+step= 59500 | tr_acc=0.999 tr_loss=0.0171 | val_acc=0.013 val_loss=157.5385 | wnorm=584.953 | 376s
+step= 60000 | tr_acc=0.999 tr_loss=0.0077 | val_acc=0.013 val_loss=162.5455 | wnorm=584.784 | 379s
+step= 60500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.014 val_loss=165.6746 | wnorm=584.493 | 382s
+step= 61000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.015 val_loss=165.5396 | wnorm=584.237 | 385s
+step= 61500 | tr_acc=0.999 tr_loss=0.0067 | val_acc=0.012 val_loss=159.0937 | wnorm=584.046 | 388s
+step= 62000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.012 val_loss=164.7303 | wnorm=583.784 | 391s
+step= 62500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.012 val_loss=164.4565 | wnorm=583.529 | 394s
+step= 63000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.013 val_loss=156.0437 | wnorm=583.294 | 397s
+step= 63500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.011 val_loss=158.0658 | wnorm=582.980 | 400s
+step= 64000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.011 val_loss=157.9698 | wnorm=582.725 | 403s
+step= 64500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.011 val_loss=155.4015 | wnorm=582.478 | 407s
+step= 65000 | tr_acc=1.000 tr_loss=0.0044 | val_acc=0.014 val_loss=157.5049 | wnorm=582.228 | 410s
+step= 65500 | tr_acc=0.999 tr_loss=0.0030 | val_acc=0.012 val_loss=158.7262 | wnorm=581.978 | 413s
+step= 66000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.012 val_loss=160.6367 | wnorm=581.809 | 416s
+step= 66500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.011 val_loss=159.6596 | wnorm=581.557 | 420s
+step= 67000 | tr_acc=0.999 tr_loss=0.0137 | val_acc=0.015 val_loss=156.0107 | wnorm=581.316 | 423s
+step= 67500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.015 val_loss=153.7070 | wnorm=581.060 | 427s
+step= 68000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.015 val_loss=152.4822 | wnorm=580.811 | 430s
+step= 68500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.013 val_loss=150.0406 | wnorm=580.570 | 433s
+step= 69000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.013 val_loss=149.8947 | wnorm=580.318 | 436s
+step= 69500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.014 val_loss=141.1243 | wnorm=580.086 | 439s
+step= 70000 | tr_acc=0.999 tr_loss=0.0090 | val_acc=0.015 val_loss=146.4397 | wnorm=579.792 | 442s
+step= 70500 | tr_acc=0.999 tr_loss=0.0028 | val_acc=0.011 val_loss=152.2466 | wnorm=579.583 | 445s
+step= 71000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.016 val_loss=154.3194 | wnorm=579.336 | 448s
+step= 71500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.016 val_loss=153.7984 | wnorm=579.084 | 452s
+step= 72000 | tr_acc=0.999 tr_loss=0.0042 | val_acc=0.015 val_loss=149.6788 | wnorm=578.958 | 456s
+step= 72500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.015 val_loss=150.0766 | wnorm=578.687 | 459s
+step= 73000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.015 val_loss=148.2927 | wnorm=578.438 | 462s
+step= 73500 | tr_acc=1.000 tr_loss=0.0008 | val_acc=0.015 val_loss=142.0426 | wnorm=578.199 | 465s
+step= 74000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.018 val_loss=148.4156 | wnorm=577.966 | 468s
+step= 74500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.018 val_loss=148.2901 | wnorm=577.716 | 472s
+step= 75000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.018 val_loss=143.9027 | wnorm=577.475 | 475s
+step= 75500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.015 val_loss=143.9070 | wnorm=577.238 | 478s
+step= 76000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.015 val_loss=143.7281 | wnorm=576.989 | 481s
+step= 76500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.015 val_loss=137.8919 | wnorm=576.754 | 484s
+step= 77000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.016 val_loss=135.8731 | wnorm=576.554 | 488s
+step= 77500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.016 val_loss=135.7335 | wnorm=576.305 | 491s
+step= 78000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.015 val_loss=129.0203 | wnorm=576.074 | 494s
+step= 78500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.016 val_loss=131.0119 | wnorm=575.921 | 497s
+step= 79000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.016 val_loss=130.2597 | wnorm=575.673 | 500s
+step= 79500 | tr_acc=0.997 tr_loss=0.0442 | val_acc=0.016 val_loss=118.8166 | wnorm=575.497 | 503s
+step= 80000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.016 val_loss=122.1423 | wnorm=575.275 | 506s
+step= 80500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.016 val_loss=121.3330 | wnorm=575.028 | 509s
+step= 81000 | tr_acc=0.998 tr_loss=0.0182 | val_acc=0.017 val_loss=117.3435 | wnorm=574.991 | 512s
+step= 81500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.015 val_loss=120.1037 | wnorm=574.731 | 516s
+step= 82000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.015 val_loss=116.7861 | wnorm=574.493 | 520s
+step= 82500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.015 val_loss=113.6646 | wnorm=574.377 | 523s
+step= 83000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.015 val_loss=113.5122 | wnorm=574.128 | 526s
+step= 83500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.014 val_loss=102.9420 | wnorm=573.922 | 531s
+step= 84000 | tr_acc=0.999 tr_loss=0.0006 | val_acc=0.016 val_loss=111.7430 | wnorm=573.704 | 535s
+step= 84500 | tr_acc=1.000 tr_loss=0.0002 | val_acc=0.016 val_loss=118.9419 | wnorm=573.500 | 538s
+step= 85000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.017 val_loss=121.4965 | wnorm=573.244 | 542s
+step= 85500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.017 val_loss=120.4635 | wnorm=572.999 | 545s
+step= 86000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.016 val_loss=101.2420 | wnorm=572.825 | 549s
+step= 86500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.018 val_loss=109.6769 | wnorm=572.622 | 552s
+step= 87000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.017 val_loss=108.6528 | wnorm=572.382 | 555s
+step= 87500 | tr_acc=0.999 tr_loss=0.0048 | val_acc=0.018 val_loss=103.6703 | wnorm=572.192 | 558s
+step= 88000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.018 val_loss=103.5619 | wnorm=571.896 | 561s
+step= 88500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.017 val_loss=102.0230 | wnorm=571.658 | 564s
+step= 89000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.017 val_loss=95.9740 | wnorm=571.506 | 567s
+step= 89500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.018 val_loss=97.8685 | wnorm=571.243 | 571s
+step= 90000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.018 val_loss=97.6385 | wnorm=570.995 | 574s
+step= 90500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.018 val_loss=88.5808 | wnorm=570.820 | 577s
+step= 91000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.018 val_loss=98.1252 | wnorm=570.607 | 581s
+step= 91500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.019 val_loss=98.1034 | wnorm=570.357 | 584s
+step= 92000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.020 val_loss=94.2336 | wnorm=570.132 | 587s
+step= 92500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.023 val_loss=93.5619 | wnorm=569.975 | 590s
+step= 93000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.022 val_loss=93.3216 | wnorm=569.729 | 593s
+step= 93500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.022 val_loss=85.4134 | wnorm=569.536 | 597s
+step= 94000 | tr_acc=1.000 tr_loss=0.0002 | val_acc=0.021 val_loss=94.5109 | wnorm=569.353 | 600s
+step= 94500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.020 val_loss=98.4893 | wnorm=569.086 | 603s
+step= 95000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.020 val_loss=98.1150 | wnorm=568.842 | 606s
+step= 95500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.020 val_loss=86.6863 | wnorm=568.673 | 609s
+step= 96000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.022 val_loss=87.3586 | wnorm=568.491 | 612s
+step= 96500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.022 val_loss=87.0377 | wnorm=568.248 | 615s
+step= 97000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.022 val_loss=78.3359 | wnorm=568.071 | 618s
+step= 97500 | tr_acc=0.999 tr_loss=0.0035 | val_acc=0.026 val_loss=86.7519 | wnorm=567.933 | 622s
+step= 98000 | tr_acc=0.999 tr_loss=0.0012 | val_acc=0.021 val_loss=96.3370 | wnorm=567.662 | 625s
+step= 98500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.025 val_loss=96.8037 | wnorm=567.429 | 628s
+step= 99000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.024 val_loss=95.8119 | wnorm=567.191 | 631s
+step= 99500 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.023 val_loss=79.9067 | wnorm=567.060 | 634s
+step=100000 | tr_acc=1.000 tr_loss=0.0000 | val_acc=0.022 val_loss=86.6683 | wnorm=566.819 | 637s
+
+============================================================
+DONE  |  steps=100000  |  elapsed=637.5s
+Final train acc=1.0000  loss=0.0000
+Final val   acc=0.0218  loss=86.6683
+Grokking onset step: None
+Grokking confirmed step: None
+Init weight norm: 117.4293  |  Final weight norm: 566.8194
+Weight norm ratio (final/init): 4.8269
+============================================================
+
+Results saved to results/baseline-00/RESULTS.json
+History saved to results/baseline-00/history.json
