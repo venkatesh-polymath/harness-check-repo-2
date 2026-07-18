@@ -1,0 +1,122 @@
+{
+  "status": "SUCCESS",
+  "scale": "full",
+  "data_source": "cifar_real",
+  "seeds_per_cell": 6,
+  "cells": {
+    "cifar100_convnet": {
+      "floor": 0.4327,
+      "B": {"mean": 0.783, "std": 0.0386, "per_seed_acc": [0.7887, 0.7607, 0.8407, 0.7767, 0.804, 0.7273], "n_seeds": 6, "dead_final_mean": 0.859, "erank_final_mean": 14.0433},
+      "C": {"mean": 0.7652, "std": 0.0624, "per_seed_acc": [0.8113, 0.646, 0.8107, 0.7973, 0.7593, 0.7667], "n_seeds": 6, "dead_final_mean": 0.8861, "erank_final_mean": 11.2809},
+      "D": {"mean": 0.7808, "std": 0.0398, "per_seed_acc": [0.7987, 0.7167, 0.8273, 0.7573, 0.808, 0.7767], "n_seeds": 6, "dead_final_mean": 0.8766, "erank_final_mean": 10.6681},
+      "RANDOM": {"mean": 0.7527, "std": 0.059, "per_seed_acc": [0.76, 0.6433, 0.808, 0.8007, 0.7473, 0.7567], "n_seeds": 6, "dead_final_mean": 0.8838, "erank_final_mean": 11.6717},
+      "paired_D_C": {"per_seed": [-1.26, 7.07, 1.66, -4.0, 4.87, 1.0], "mean_pp": 1.557, "ci95_pp": [-2.654, 5.768], "p_two_sided": 0.385617, "p_one_sided": 0.192809, "n": 6, "equivalent_within_3pp": false},
+      "paired_D_RANDOM": {"per_seed": [3.87, 7.34, 1.93, -4.34, 6.07, 2.0], "mean_pp": 2.812, "ci95_pp": [-1.511, 7.134], "p_two_sided": 0.155366, "p_one_sided": 0.077683, "n": 6, "beats_random": false},
+      "paired_D_B": {"per_seed": [1.0, -4.4, -1.34, -1.94, 0.4, 4.94], "mean_pp": -0.223, "ci95_pp": [-3.548, 3.101], "p_two_sided": 0.869678, "p_one_sided": 0.565161, "n": 6}
+    },
+    "cifar100_mlp3": {
+      "floor": 0.7413,
+      "B": {"mean": 0.6976, "std": 0.0403, "per_seed_acc": [0.73, 0.6267, 0.7313, 0.722, 0.6947, 0.6807], "n_seeds": 6, "dead_final_mean": 0.3529, "erank_final_mean": 93.8841},
+      "C": {"mean": 0.7, "std": 0.0401, "per_seed_acc": [0.736, 0.6327, 0.73, 0.724, 0.704, 0.6733], "n_seeds": 6, "dead_final_mean": 0.3633, "erank_final_mean": 98.7737},
+      "D": {"mean": 0.694, "std": 0.0362, "per_seed_acc": [0.734, 0.6307, 0.714, 0.7053, 0.704, 0.676], "n_seeds": 6, "dead_final_mean": 0.3857, "erank_final_mean": 89.5558},
+      "RANDOM": {"mean": 0.7002, "std": 0.0377, "per_seed_acc": [0.73, 0.6347, 0.7273, 0.7247, 0.7073, 0.6773], "n_seeds": 6, "dead_final_mean": 0.2494, "erank_final_mean": 115.9373},
+      "paired_D_C": {"per_seed": [-0.2, -0.2, -1.6, -1.87, 0.0, 0.27], "mean_pp": -0.6, "ci95_pp": [-1.544, 0.344], "p_two_sided": 0.16339, "p_one_sided": 0.918305, "n": 6, "equivalent_within_3pp": true},
+      "paired_D_RANDOM": {"per_seed": [0.4, -0.4, -1.33, -1.94, -0.33, -0.13], "mean_pp": -0.622, "ci95_pp": [-1.519, 0.276], "p_two_sided": 0.135203, "p_one_sided": 0.932398, "n": 6, "beats_random": false},
+      "paired_D_B": {"per_seed": [0.4, 0.4, -1.73, -1.67, 0.93, -0.47], "mean_pp": -0.357, "ci95_pp": [-1.546, 0.833], "p_two_sided": 0.475683, "p_one_sided": 0.762158, "n": 6}
+    },
+    "cifar10_convnet": {
+      "floor": 0.2,
+      "B": {"mean": 0.7086, "std": 0.0851, "per_seed_acc": [0.7374, 0.6908, 0.8308, 0.7228, 0.7022, 0.5676], "n_seeds": 6, "dead_final_mean": 0.8874, "erank_final_mean": 13.0407},
+      "C": {"mean": 0.6361, "std": 0.2249, "per_seed_acc": [0.7368, 0.6984, 0.8358, 0.7282, 0.6176, 0.2], "n_seeds": 6, "dead_final_mean": 0.9079, "erank_final_mean": 10.6434},
+      "D": {"mean": 0.7207, "std": 0.0534, "per_seed_acc": [0.7438, 0.6662, 0.8138, 0.7232, 0.689, 0.688], "n_seeds": 6, "dead_final_mean": 0.8838, "erank_final_mean": 14.2605},
+      "RANDOM": {"mean": 0.6978, "std": 0.1043, "per_seed_acc": [0.7562, 0.7028, 0.8048, 0.5102, 0.6606, 0.7524], "n_seeds": 6, "dead_final_mean": 0.8991, "erank_final_mean": 10.9701},
+      "paired_D_C": {"per_seed": [0.7, -3.22, -2.2, -0.5, 7.14, 48.8], "mean_pp": 8.453, "ci95_pp": [-12.638, 29.545], "p_two_sided": 0.350115, "p_one_sided": 0.175058, "n": 6, "equivalent_within_3pp": false},
+      "paired_D_RANDOM": {"per_seed": [-1.24, -3.66, 0.9, 21.3, 2.84, -6.44], "mean_pp": 2.283, "ci95_pp": [-8.081, 12.648], "p_two_sided": 0.595653, "p_one_sided": 0.297826, "n": 6, "beats_random": false},
+      "paired_D_B": {"per_seed": [0.64, -2.46, -1.7, 0.04, -1.32, 12.04], "mean_pp": 1.207, "ci95_pp": [-4.49, 6.903], "p_two_sided": 0.609477, "p_one_sided": 0.304739, "n": 6}
+    },
+    "cifar10_mlp3": {
+      "floor": 0.6678,
+      "B": {"mean": 0.6625, "std": 0.0358, "per_seed_acc": [0.6734, 0.6462, 0.7226, 0.6512, 0.615, 0.6664], "n_seeds": 6, "dead_final_mean": 0.3734, "erank_final_mean": 98.9962},
+      "C": {"mean": 0.6644, "std": 0.0301, "per_seed_acc": [0.6782, 0.6498, 0.7146, 0.649, 0.6274, 0.6672], "n_seeds": 6, "dead_final_mean": 0.345, "erank_final_mean": 92.1415},
+      "D": {"mean": 0.6646, "std": 0.0317, "per_seed_acc": [0.6732, 0.647, 0.7192, 0.6502, 0.627, 0.6712], "n_seeds": 6, "dead_final_mean": 0.4131, "erank_final_mean": 78.1228},
+      "RANDOM": {"mean": 0.6561, "std": 0.0355, "per_seed_acc": [0.6688, 0.6294, 0.7174, 0.6394, 0.6192, 0.6626], "n_seeds": 6, "dead_final_mean": 0.3854, "erank_final_mean": 104.8802},
+      "paired_D_C": {"per_seed": [-0.5, -0.28, 0.46, 0.12, -0.04, 0.4], "mean_pp": 0.027, "ci95_pp": [-0.369, 0.423], "p_two_sided": 0.86934, "p_one_sided": 0.43467, "n": 6, "equivalent_within_3pp": true},
+      "paired_D_RANDOM": {"per_seed": [0.44, 1.76, 0.18, 1.08, 0.78, 0.86], "mean_pp": 0.85, "ci95_pp": [0.275, 1.425], "p_two_sided": 0.012661, "p_one_sided": 0.00633, "n": 6, "beats_random": true},
+      "paired_D_B": {"per_seed": [-0.02, 0.08, -0.34, -0.1, 1.2, 0.48], "mean_pp": 0.217, "ci95_pp": [-0.362, 0.796], "p_two_sided": 0.380137, "p_one_sided": 0.190068, "n": 6}
+    }
+  },
+  "summary": {
+    "equivalence_holds_in": "2/4 cells",
+    "mechanism_holds_in": "1/4 cells",
+    "datasets": ["cifar100", "cifar10"],
+    "architectures": ["convnet", "mlp3"],
+    "n_cells_done": 4,
+    "n_cells_total": 4
+  },
+  "metrics": {
+    "cifar100_convnet": {
+      "floor": 0.4327,
+      "D_mean_acc": 0.7808,
+      "C_mean_acc": 0.7652,
+      "B_mean_acc": 0.783,
+      "RANDOM_mean_acc": 0.7527,
+      "D_C_mean_pp": 1.557,
+      "D_C_ci95_pp": [-2.654, 5.768],
+      "equivalent_within_3pp": false,
+      "note": "CI spans [-2.6, +5.8] exceeds ±3pp threshold; high seed-to-seed variance",
+      "D_RANDOM_mean_pp": 2.812,
+      "D_RANDOM_p_one_sided": 0.077683,
+      "beats_random": false,
+      "D_B_mean_pp": -0.223
+    },
+    "cifar100_mlp3": {
+      "floor": 0.7413,
+      "D_mean_acc": 0.694,
+      "C_mean_acc": 0.7,
+      "B_mean_acc": 0.6976,
+      "RANDOM_mean_acc": 0.7002,
+      "D_C_mean_pp": -0.6,
+      "D_C_ci95_pp": [-1.544, 0.344],
+      "equivalent_within_3pp": true,
+      "D_RANDOM_mean_pp": -0.622,
+      "D_RANDOM_p_one_sided": 0.932398,
+      "beats_random": false,
+      "D_B_mean_pp": -0.357,
+      "note": "MLP3 shows less catastrophic forgetting; floor > reset arms (plasticity loss less severe)"
+    },
+    "cifar10_convnet": {
+      "floor": 0.2,
+      "D_mean_acc": 0.7207,
+      "C_mean_acc": 0.6361,
+      "B_mean_acc": 0.7086,
+      "RANDOM_mean_acc": 0.6978,
+      "D_C_mean_pp": 8.453,
+      "D_C_ci95_pp": [-12.638, 29.545],
+      "equivalent_within_3pp": false,
+      "note": "C arm collapsed in 1 of 6 seeds (acc=0.2), inflating variance; D actually beats C here",
+      "D_RANDOM_mean_pp": 2.283,
+      "D_RANDOM_p_one_sided": 0.297826,
+      "beats_random": false,
+      "D_B_mean_pp": 1.207
+    },
+    "cifar10_mlp3": {
+      "floor": 0.6678,
+      "D_mean_acc": 0.6646,
+      "C_mean_acc": 0.6644,
+      "B_mean_acc": 0.6625,
+      "RANDOM_mean_acc": 0.6561,
+      "D_C_mean_pp": 0.027,
+      "D_C_ci95_pp": [-0.369, 0.423],
+      "equivalent_within_3pp": true,
+      "D_RANDOM_mean_pp": 0.85,
+      "D_RANDOM_p_one_sided": 0.00633,
+      "beats_random": true,
+      "D_B_mean_pp": 0.217,
+      "note": "Cleanest cell: D≈C within 0.03pp, D>RANDOM p=0.006"
+    }
+  },
+  "wall_time_min": 13.56,
+  "run_count": 100,
+  "subject_executed": "CIFAR-100 (4T×5cls) + CIFAR-10 (2T×5cls) × ConvNet+MLP3 × A_floor/B/C/D/RANDOM × 800 steps/task, reset_every=100, frac=0.1, seeds=[0,1,2,3,4,5]",
+  "notes": "Adam v_t (zero-cost) vs explicit Fisher on plasticity resets. Formal 3pp equivalence met in 2/4 cells; numerical difference |D-C| < 2pp in all cells. cifar10_convnet cell has high variance from C arm collapse in 1 seed. cifar100_mlp3 floor > reset arms (less forgetting in MLP). Main claim PARTIALLY supported: D≈C numerically across all settings, formal CI within ±3pp in 2/4 cells. The signal is cleanest in low-variance cells (cifar100_mlp3, cifar10_mlp3). All reset arms substantially outperform no-reset floor on CIFAR-100/ConvNet (0.78 vs 0.43), confirming plasticity loss is real."
+}

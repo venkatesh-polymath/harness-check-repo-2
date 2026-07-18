@@ -1,0 +1,100 @@
+{"dataset": "cifar100", "arch": "convnet", "arm": "A_floor", "seed": 0, "primary_acc": 0.4327, "per_task_acc": [0.866, 0.898, 0.2, 0.2], "dead_final": 1.0, "erank_final": 0.0, "wall_s": 14.5}
+{"dataset": "cifar100", "arch": "convnet", "arm": "B", "seed": 0, "primary_acc": 0.7887, "per_task_acc": [0.846, 0.9, 0.784, 0.682], "dead_final": 0.8809, "erank_final": 12.6011, "wall_s": 13.6}
+{"dataset": "cifar100", "arch": "convnet", "arm": "C", "seed": 0, "primary_acc": 0.8113, "per_task_acc": [0.876, 0.858, 0.814, 0.762], "dead_final": 0.8711, "erank_final": 12.3635, "wall_s": 13.6}
+{"dataset": "cifar100", "arch": "convnet", "arm": "D", "seed": 0, "primary_acc": 0.7987, "per_task_acc": [0.862, 0.902, 0.72, 0.774], "dead_final": 0.8594, "erank_final": 12.9719, "wall_s": 13.5}
+{"dataset": "cifar100", "arch": "convnet", "arm": "RANDOM", "seed": 0, "primary_acc": 0.76, "per_task_acc": [0.866, 0.744, 0.832, 0.704], "dead_final": 0.8828, "erank_final": 14.508, "wall_s": 13.5}
+{"dataset": "cifar100", "arch": "convnet", "arm": "B", "seed": 1, "primary_acc": 0.7607, "per_task_acc": [0.804, 0.846, 0.696, 0.74], "dead_final": 0.873, "erank_final": 12.7113, "wall_s": 13.8}
+{"dataset": "cifar100", "arch": "convnet", "arm": "C", "seed": 1, "primary_acc": 0.646, "per_task_acc": [0.81, 0.826, 0.68, 0.432], "dead_final": 0.916, "erank_final": 6.3304, "wall_s": 13.5}
+{"dataset": "cifar100", "arch": "convnet", "arm": "D", "seed": 1, "primary_acc": 0.7167, "per_task_acc": [0.812, 0.82, 0.586, 0.744], "dead_final": 0.873, "erank_final": 11.3023, "wall_s": 13.6}
+{"dataset": "cifar100", "arch": "convnet", "arm": "RANDOM", "seed": 1, "primary_acc": 0.6433, "per_task_acc": [0.822, 0.718, 0.56, 0.652], "dead_final": 0.8848, "erank_final": 12.582, "wall_s": 13.5}
+{"dataset": "cifar100", "arch": "convnet", "arm": "B", "seed": 2, "primary_acc": 0.8407, "per_task_acc": [0.914, 0.876, 0.824, 0.822], "dead_final": 0.8574, "erank_final": 16.6142, "wall_s": 14.0}
+{"dataset": "cifar100", "arch": "convnet", "arm": "C", "seed": 2, "primary_acc": 0.8107, "per_task_acc": [0.894, 0.842, 0.854, 0.736], "dead_final": 0.8945, "erank_final": 11.1768, "wall_s": 13.9}
+{"dataset": "cifar100", "arch": "convnet", "arm": "D", "seed": 2, "primary_acc": 0.8273, "per_task_acc": [0.926, 0.846, 0.83, 0.806], "dead_final": 0.8867, "erank_final": 12.4021, "wall_s": 13.8}
+{"dataset": "cifar100", "arch": "convnet", "arm": "RANDOM", "seed": 2, "primary_acc": 0.808, "per_task_acc": [0.916, 0.754, 0.828, 0.842], "dead_final": 0.8711, "erank_final": 14.901, "wall_s": 13.7}
+{"dataset": "cifar100", "arch": "convnet", "arm": "B", "seed": 3, "primary_acc": 0.7767, "per_task_acc": [0.824, 0.772, 0.704, 0.854], "dead_final": 0.8477, "erank_final": 14.2593, "wall_s": 13.9}
+{"dataset": "cifar100", "arch": "convnet", "arm": "C", "seed": 3, "primary_acc": 0.7973, "per_task_acc": [0.814, 0.75, 0.79, 0.852], "dead_final": 0.8926, "erank_final": 10.1335, "wall_s": 13.9}
+{"dataset": "cifar100", "arch": "convnet", "arm": "D", "seed": 3, "primary_acc": 0.7573, "per_task_acc": [0.814, 0.7, 0.714, 0.858], "dead_final": 0.8652, "erank_final": 9.8085, "wall_s": 13.8}
+{"dataset": "cifar100", "arch": "convnet", "arm": "RANDOM", "seed": 3, "primary_acc": 0.8007, "per_task_acc": [0.808, 0.766, 0.738, 0.898], "dead_final": 0.875, "erank_final": 9.9405, "wall_s": 13.7}
+{"dataset": "cifar100", "arch": "convnet", "arm": "B", "seed": 4, "primary_acc": 0.804, "per_task_acc": [0.868, 0.772, 0.84, 0.8], "dead_final": 0.8262, "erank_final": 14.8525, "wall_s": 14.0}
+{"dataset": "cifar100", "arch": "convnet", "arm": "C", "seed": 4, "primary_acc": 0.7593, "per_task_acc": [0.888, 0.768, 0.812, 0.698], "dead_final": 0.877, "erank_final": 13.1828, "wall_s": 13.8}
+{"dataset": "cifar100", "arch": "convnet", "arm": "D", "seed": 4, "primary_acc": 0.808, "per_task_acc": [0.876, 0.782, 0.834, 0.808], "dead_final": 0.8711, "erank_final": 8.1201, "wall_s": 13.7}
+{"dataset": "cifar100", "arch": "convnet", "arm": "RANDOM", "seed": 4, "primary_acc": 0.7473, "per_task_acc": [0.87, 0.782, 0.7, 0.76], "dead_final": 0.8789, "erank_final": 11.8075, "wall_s": 13.8}
+{"dataset": "cifar100", "arch": "convnet", "arm": "B", "seed": 5, "primary_acc": 0.7273, "per_task_acc": [0.876, 0.784, 0.634, 0.764], "dead_final": 0.8691, "erank_final": 13.2213, "wall_s": 14.0}
+{"dataset": "cifar100", "arch": "convnet", "arm": "C", "seed": 5, "primary_acc": 0.7667, "per_task_acc": [0.866, 0.81, 0.688, 0.802], "dead_final": 0.8652, "erank_final": 14.4983, "wall_s": 13.8}
+{"dataset": "cifar100", "arch": "convnet", "arm": "D", "seed": 5, "primary_acc": 0.7767, "per_task_acc": [0.878, 0.802, 0.798, 0.73], "dead_final": 0.9043, "erank_final": 9.4036, "wall_s": 13.7}
+{"dataset": "cifar100", "arch": "convnet", "arm": "RANDOM", "seed": 5, "primary_acc": 0.7567, "per_task_acc": [0.858, 0.814, 0.764, 0.692], "dead_final": 0.9102, "erank_final": 6.291, "wall_s": 13.7}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "A_floor", "seed": 0, "primary_acc": 0.7413, "per_task_acc": [0.734, 0.796, 0.758, 0.67], "dead_final": 0.4199, "erank_final": 81.3715, "wall_s": 7.5}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "B", "seed": 0, "primary_acc": 0.73, "per_task_acc": [0.712, 0.776, 0.77, 0.644], "dead_final": 0.4453, "erank_final": 76.8326, "wall_s": 7.8}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "C", "seed": 0, "primary_acc": 0.736, "per_task_acc": [0.734, 0.8, 0.744, 0.664], "dead_final": 0.2852, "erank_final": 116.4753, "wall_s": 7.5}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "D", "seed": 0, "primary_acc": 0.734, "per_task_acc": [0.704, 0.78, 0.774, 0.648], "dead_final": 0.3262, "erank_final": 109.5776, "wall_s": 7.5}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "RANDOM", "seed": 0, "primary_acc": 0.73, "per_task_acc": [0.724, 0.774, 0.758, 0.658], "dead_final": 0.2578, "erank_final": 112.9234, "wall_s": 7.5}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "B", "seed": 1, "primary_acc": 0.6267, "per_task_acc": [0.724, 0.694, 0.58, 0.606], "dead_final": 0.2324, "erank_final": 130.8731, "wall_s": 7.8}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "C", "seed": 1, "primary_acc": 0.6327, "per_task_acc": [0.736, 0.684, 0.602, 0.612], "dead_final": 0.3242, "erank_final": 119.0328, "wall_s": 7.5}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "D", "seed": 1, "primary_acc": 0.6307, "per_task_acc": [0.728, 0.692, 0.596, 0.604], "dead_final": 0.4121, "erank_final": 94.9601, "wall_s": 7.4}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "RANDOM", "seed": 1, "primary_acc": 0.6347, "per_task_acc": [0.732, 0.69, 0.6, 0.614], "dead_final": 0.2969, "erank_final": 128.1771, "wall_s": 7.2}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "B", "seed": 2, "primary_acc": 0.7313, "per_task_acc": [0.824, 0.736, 0.756, 0.702], "dead_final": 0.375, "erank_final": 94.5951, "wall_s": 7.4}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "C", "seed": 2, "primary_acc": 0.73, "per_task_acc": [0.81, 0.754, 0.738, 0.698], "dead_final": 0.3281, "erank_final": 98.8561, "wall_s": 7.1}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "D", "seed": 2, "primary_acc": 0.714, "per_task_acc": [0.812, 0.72, 0.732, 0.69], "dead_final": 0.3809, "erank_final": 89.7947, "wall_s": 7.0}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "RANDOM", "seed": 2, "primary_acc": 0.7273, "per_task_acc": [0.826, 0.74, 0.762, 0.68], "dead_final": 0.2207, "erank_final": 115.5728, "wall_s": 7.1}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "B", "seed": 3, "primary_acc": 0.722, "per_task_acc": [0.692, 0.706, 0.626, 0.834], "dead_final": 0.3086, "erank_final": 84.7946, "wall_s": 7.4}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "C", "seed": 3, "primary_acc": 0.724, "per_task_acc": [0.708, 0.698, 0.652, 0.822], "dead_final": 0.4512, "erank_final": 69.7692, "wall_s": 7.3}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "D", "seed": 3, "primary_acc": 0.7053, "per_task_acc": [0.72, 0.692, 0.612, 0.812], "dead_final": 0.3633, "erank_final": 78.0417, "wall_s": 7.7}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "RANDOM", "seed": 3, "primary_acc": 0.7247, "per_task_acc": [0.692, 0.68, 0.662, 0.832], "dead_final": 0.252, "erank_final": 96.0199, "wall_s": 7.3}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "B", "seed": 4, "primary_acc": 0.6947, "per_task_acc": [0.822, 0.71, 0.65, 0.724], "dead_final": 0.377, "erank_final": 81.776, "wall_s": 7.4}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "C", "seed": 4, "primary_acc": 0.704, "per_task_acc": [0.804, 0.702, 0.67, 0.74], "dead_final": 0.3965, "erank_final": 91.7813, "wall_s": 7.3}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "D", "seed": 4, "primary_acc": 0.704, "per_task_acc": [0.8, 0.706, 0.67, 0.736], "dead_final": 0.4258, "erank_final": 73.9849, "wall_s": 7.0}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "RANDOM", "seed": 4, "primary_acc": 0.7073, "per_task_acc": [0.8, 0.7, 0.69, 0.732], "dead_final": 0.2598, "erank_final": 108.9498, "wall_s": 7.0}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "B", "seed": 5, "primary_acc": 0.6807, "per_task_acc": [0.768, 0.692, 0.704, 0.646], "dead_final": 0.3789, "erank_final": 94.4334, "wall_s": 7.4}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "C", "seed": 5, "primary_acc": 0.6733, "per_task_acc": [0.746, 0.676, 0.67, 0.674], "dead_final": 0.3945, "erank_final": 96.7273, "wall_s": 7.1}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "D", "seed": 5, "primary_acc": 0.676, "per_task_acc": [0.752, 0.692, 0.672, 0.664], "dead_final": 0.4062, "erank_final": 90.9758, "wall_s": 7.3}
+{"dataset": "cifar100", "arch": "mlp3", "arm": "RANDOM", "seed": 5, "primary_acc": 0.6773, "per_task_acc": [0.74, 0.692, 0.672, 0.668], "dead_final": 0.209, "erank_final": 133.981, "wall_s": 7.5}
+{"dataset": "cifar10", "arch": "convnet", "arm": "A_floor", "seed": 0, "primary_acc": 0.2, "per_task_acc": [0.781, 0.2], "dead_final": 1.0, "erank_final": 0.0, "wall_s": 6.9}
+{"dataset": "cifar10", "arch": "convnet", "arm": "B", "seed": 0, "primary_acc": 0.7374, "per_task_acc": [0.8002, 0.7374], "dead_final": 0.8887, "erank_final": 14.0469, "wall_s": 7.1}
+{"dataset": "cifar10", "arch": "convnet", "arm": "C", "seed": 0, "primary_acc": 0.7368, "per_task_acc": [0.7926, 0.7368], "dead_final": 0.8965, "erank_final": 11.8167, "wall_s": 7.1}
+{"dataset": "cifar10", "arch": "convnet", "arm": "D", "seed": 0, "primary_acc": 0.7438, "per_task_acc": [0.8008, 0.7438], "dead_final": 0.8828, "erank_final": 15.7703, "wall_s": 7.0}
+{"dataset": "cifar10", "arch": "convnet", "arm": "RANDOM", "seed": 0, "primary_acc": 0.7562, "per_task_acc": [0.8114, 0.7562], "dead_final": 0.9004, "erank_final": 12.709, "wall_s": 6.9}
+{"dataset": "cifar10", "arch": "convnet", "arm": "B", "seed": 1, "primary_acc": 0.6908, "per_task_acc": [0.8694, 0.6908], "dead_final": 0.8906, "erank_final": 14.2372, "wall_s": 7.1}
+{"dataset": "cifar10", "arch": "convnet", "arm": "C", "seed": 1, "primary_acc": 0.6984, "per_task_acc": [0.858, 0.6984], "dead_final": 0.9141, "erank_final": 6.7037, "wall_s": 7.0}
+{"dataset": "cifar10", "arch": "convnet", "arm": "D", "seed": 1, "primary_acc": 0.6662, "per_task_acc": [0.8662, 0.6662], "dead_final": 0.8867, "erank_final": 14.3667, "wall_s": 7.1}
+{"dataset": "cifar10", "arch": "convnet", "arm": "RANDOM", "seed": 1, "primary_acc": 0.7028, "per_task_acc": [0.864, 0.7028], "dead_final": 0.8926, "erank_final": 13.5888, "wall_s": 6.9}
+{"dataset": "cifar10", "arch": "convnet", "arm": "B", "seed": 2, "primary_acc": 0.8308, "per_task_acc": [0.7442, 0.8308], "dead_final": 0.8711, "erank_final": 16.4319, "wall_s": 7.0}
+{"dataset": "cifar10", "arch": "convnet", "arm": "C", "seed": 2, "primary_acc": 0.8358, "per_task_acc": [0.7412, 0.8358], "dead_final": 0.8809, "erank_final": 15.5061, "wall_s": 7.0}
+{"dataset": "cifar10", "arch": "convnet", "arm": "D", "seed": 2, "primary_acc": 0.8138, "per_task_acc": [0.7362, 0.8138], "dead_final": 0.8633, "erank_final": 19.1972, "wall_s": 6.9}
+{"dataset": "cifar10", "arch": "convnet", "arm": "RANDOM", "seed": 2, "primary_acc": 0.8048, "per_task_acc": [0.753, 0.8048], "dead_final": 0.8984, "erank_final": 9.9892, "wall_s": 6.9}
+{"dataset": "cifar10", "arch": "convnet", "arm": "B", "seed": 3, "primary_acc": 0.7228, "per_task_acc": [0.867, 0.7228], "dead_final": 0.9023, "erank_final": 10.0295, "wall_s": 7.0}
+{"dataset": "cifar10", "arch": "convnet", "arm": "C", "seed": 3, "primary_acc": 0.7282, "per_task_acc": [0.8594, 0.7282], "dead_final": 0.9082, "erank_final": 9.8046, "wall_s": 6.9}
+{"dataset": "cifar10", "arch": "convnet", "arm": "D", "seed": 3, "primary_acc": 0.7232, "per_task_acc": [0.861, 0.7232], "dead_final": 0.8984, "erank_final": 10.2818, "wall_s": 6.9}
+{"dataset": "cifar10", "arch": "convnet", "arm": "RANDOM", "seed": 3, "primary_acc": 0.5102, "per_task_acc": [0.8548, 0.5102], "dead_final": 0.9082, "erank_final": 9.6882, "wall_s": 6.9}
+{"dataset": "cifar10", "arch": "convnet", "arm": "B", "seed": 4, "primary_acc": 0.7022, "per_task_acc": [0.8364, 0.7022], "dead_final": 0.8906, "erank_final": 11.7191, "wall_s": 7.0}
+{"dataset": "cifar10", "arch": "convnet", "arm": "C", "seed": 4, "primary_acc": 0.6176, "per_task_acc": [0.8354, 0.6176], "dead_final": 0.9082, "erank_final": 7.0944, "wall_s": 7.0}
+{"dataset": "cifar10", "arch": "convnet", "arm": "D", "seed": 4, "primary_acc": 0.689, "per_task_acc": [0.8268, 0.689], "dead_final": 0.8887, "erank_final": 12.5788, "wall_s": 6.9}
+{"dataset": "cifar10", "arch": "convnet", "arm": "RANDOM", "seed": 4, "primary_acc": 0.6606, "per_task_acc": [0.8386, 0.6606], "dead_final": 0.9004, "erank_final": 8.2276, "wall_s": 6.9}
+{"dataset": "cifar10", "arch": "convnet", "arm": "B", "seed": 5, "primary_acc": 0.5676, "per_task_acc": [0.799, 0.5676], "dead_final": 0.8809, "erank_final": 11.7795, "wall_s": 7.1}
+{"dataset": "cifar10", "arch": "convnet", "arm": "C", "seed": 5, "primary_acc": 0.2, "per_task_acc": [0.778, 0.2], "dead_final": 0.9395, "erank_final": 12.9352, "wall_s": 7.0}
+{"dataset": "cifar10", "arch": "convnet", "arm": "D", "seed": 5, "primary_acc": 0.688, "per_task_acc": [0.8064, 0.688], "dead_final": 0.8828, "erank_final": 13.3679, "wall_s": 6.8}
+{"dataset": "cifar10", "arch": "convnet", "arm": "RANDOM", "seed": 5, "primary_acc": 0.7524, "per_task_acc": [0.8188, 0.7524], "dead_final": 0.8945, "erank_final": 11.6175, "wall_s": 6.8}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "A_floor", "seed": 0, "primary_acc": 0.6678, "per_task_acc": [0.663, 0.6678], "dead_final": 0.3203, "erank_final": 78.4239, "wall_s": 3.7}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "B", "seed": 0, "primary_acc": 0.6734, "per_task_acc": [0.6444, 0.6734], "dead_final": 0.3926, "erank_final": 91.759, "wall_s": 4.1}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "C", "seed": 0, "primary_acc": 0.6782, "per_task_acc": [0.6428, 0.6782], "dead_final": 0.3398, "erank_final": 89.4224, "wall_s": 3.8}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "D", "seed": 0, "primary_acc": 0.6732, "per_task_acc": [0.6478, 0.6732], "dead_final": 0.4277, "erank_final": 73.3454, "wall_s": 3.9}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "RANDOM", "seed": 0, "primary_acc": 0.6688, "per_task_acc": [0.6352, 0.6688], "dead_final": 0.4062, "erank_final": 96.7658, "wall_s": 3.9}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "B", "seed": 1, "primary_acc": 0.6462, "per_task_acc": [0.7124, 0.6462], "dead_final": 0.332, "erank_final": 111.6616, "wall_s": 4.1}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "C", "seed": 1, "primary_acc": 0.6498, "per_task_acc": [0.714, 0.6498], "dead_final": 0.3457, "erank_final": 88.2326, "wall_s": 3.7}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "D", "seed": 1, "primary_acc": 0.647, "per_task_acc": [0.7154, 0.647], "dead_final": 0.3965, "erank_final": 78.1525, "wall_s": 3.7}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "RANDOM", "seed": 1, "primary_acc": 0.6294, "per_task_acc": [0.7218, 0.6294], "dead_final": 0.3945, "erank_final": 95.5763, "wall_s": 3.8}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "B", "seed": 2, "primary_acc": 0.7226, "per_task_acc": [0.585, 0.7226], "dead_final": 0.3652, "erank_final": 95.5386, "wall_s": 3.9}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "C", "seed": 2, "primary_acc": 0.7146, "per_task_acc": [0.5806, 0.7146], "dead_final": 0.332, "erank_final": 96.0536, "wall_s": 3.7}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "D", "seed": 2, "primary_acc": 0.7192, "per_task_acc": [0.586, 0.7192], "dead_final": 0.4102, "erank_final": 78.5165, "wall_s": 3.8}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "RANDOM", "seed": 2, "primary_acc": 0.7174, "per_task_acc": [0.5798, 0.7174], "dead_final": 0.3691, "erank_final": 104.4897, "wall_s": 3.8}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "B", "seed": 3, "primary_acc": 0.6512, "per_task_acc": [0.717, 0.6512], "dead_final": 0.373, "erank_final": 98.0996, "wall_s": 4.1}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "C", "seed": 3, "primary_acc": 0.649, "per_task_acc": [0.7162, 0.649], "dead_final": 0.3457, "erank_final": 89.1784, "wall_s": 3.9}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "D", "seed": 3, "primary_acc": 0.6502, "per_task_acc": [0.7208, 0.6502], "dead_final": 0.3945, "erank_final": 77.7241, "wall_s": 3.9}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "RANDOM", "seed": 3, "primary_acc": 0.6394, "per_task_acc": [0.714, 0.6394], "dead_final": 0.377, "erank_final": 109.2323, "wall_s": 3.9}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "B", "seed": 4, "primary_acc": 0.615, "per_task_acc": [0.7028, 0.615], "dead_final": 0.377, "erank_final": 101.0011, "wall_s": 4.0}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "C", "seed": 4, "primary_acc": 0.6274, "per_task_acc": [0.7068, 0.6274], "dead_final": 0.3574, "erank_final": 94.3487, "wall_s": 3.9}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "D", "seed": 4, "primary_acc": 0.627, "per_task_acc": [0.7044, 0.627], "dead_final": 0.4473, "erank_final": 75.8777, "wall_s": 3.9}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "RANDOM", "seed": 4, "primary_acc": 0.6192, "per_task_acc": [0.7036, 0.6192], "dead_final": 0.3828, "erank_final": 113.655, "wall_s": 3.9}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "B", "seed": 5, "primary_acc": 0.6664, "per_task_acc": [0.68, 0.6664], "dead_final": 0.4004, "erank_final": 95.9175, "wall_s": 4.0}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "C", "seed": 5, "primary_acc": 0.6672, "per_task_acc": [0.6852, 0.6672], "dead_final": 0.3496, "erank_final": 95.6132, "wall_s": 3.9}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "D", "seed": 5, "primary_acc": 0.6712, "per_task_acc": [0.685, 0.6712], "dead_final": 0.4023, "erank_final": 85.1203, "wall_s": 3.8}
+{"dataset": "cifar10", "arch": "mlp3", "arm": "RANDOM", "seed": 5, "primary_acc": 0.6626, "per_task_acc": [0.6814, 0.6626], "dead_final": 0.3828, "erank_final": 109.5622, "wall_s": 3.8}
