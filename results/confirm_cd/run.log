@@ -1,0 +1,395 @@
+Device: cuda
+Datasets: /opt/datasets
+Seeds: [0, 1, 2, 3, 4, 5, 6, 7]  Tasks: 5  Steps/task: 1000
+Arms: ['C', 'D']  (C=Fisher, D=Adam-v_t)
+
+Loading real CIFAR-100 from /opt/datasets
+[torchvision] Loaded CIFAR-100: train=(50000, 3, 32, 32), test=(10000, 3, 32, 32)
+Data loaded: train=(50000, 3, 32, 32) test=(10000, 3, 32, 32)
+Model params: 3,296,164
+
+[0.1m elapsed] === SEED 0 ===
+
+[0.1m] Running ARM C, seed 0
+
+============================================================
+ARM C | SEED 0
+============================================================
+  [C/s0] Task  1/5 | acc=0.866 dead=0.660 erank=48.30 resets=10 loss=0.0483 wall=23.9s
+  [C/s0] Task  2/5 | acc=0.914 dead=0.857 erank=14.56 resets=10 loss=0.0236 wall=23.0s
+  [C/s0] Task  3/5 | acc=0.818 dead=0.883 erank=13.25 resets=10 loss=0.3860 wall=22.6s
+  [C/s0] Task  4/5 | acc=0.822 dead=0.859 erank=17.28 resets=10 loss=0.3236 wall=23.1s
+  [C/s0] Task  5/5 | acc=0.800 dead=0.869 erank=13.64 resets=10 loss=0.3856 wall=23.7s
+
+[2.1m] Running ARM D, seed 0
+
+============================================================
+ARM D | SEED 0
+============================================================
+  [D/s0] Task  1/5 | acc=0.880 dead=0.502 erank=59.91 resets=10 loss=0.0377 wall=22.7s
+  [D/s0] Task  2/5 | acc=0.888 dead=0.834 erank=16.28 resets=10 loss=0.0368 wall=22.2s
+  [D/s0] Task  3/5 | acc=0.844 dead=0.873 erank=10.85 resets=10 loss=0.2831 wall=23.3s
+  [D/s0] Task  4/5 | acc=0.720 dead=0.889 erank=12.53 resets=10 loss=0.6454 wall=23.7s
+  [D/s0] Task  5/5 | acc=0.804 dead=0.908 erank=10.44 resets=10 loss=0.4840 wall=22.6s
+
+  >> Seed 0 done: C=0.839 D=0.814 D-C=-2.45pp
+  >> Running paired D-C: mean=-2.45pp  CI=[nan,nan]  p=None  n=1
+
+[4.0m elapsed] === SEED 1 ===
+
+[4.0m] Running ARM C, seed 1
+
+============================================================
+ARM C | SEED 1
+============================================================
+  [C/s1] Task  1/5 | acc=0.816 dead=0.680 erank=45.96 resets=10 loss=0.0400 wall=22.6s
+  [C/s1] Task  2/5 | acc=0.874 dead=0.877 erank=15.96 resets=10 loss=0.1882 wall=22.6s
+  [C/s1] Task  3/5 | acc=0.694 dead=0.912 erank=6.04 resets=10 loss=0.7610 wall=22.9s
+  [C/s1] Task  4/5 | acc=0.754 dead=0.893 erank=11.30 resets=10 loss=0.5670 wall=24.2s
+  [C/s1] Task  5/5 | acc=0.838 dead=0.883 erank=10.78 resets=10 loss=0.2596 wall=23.2s
+
+[6.0m] Running ARM D, seed 1
+
+============================================================
+ARM D | SEED 1
+============================================================
+  [D/s1] Task  1/5 | acc=0.804 dead=0.520 erank=66.78 resets=10 loss=0.0395 wall=23.1s
+  [D/s1] Task  2/5 | acc=0.872 dead=0.842 erank=16.76 resets=10 loss=0.0496 wall=22.7s
+  [D/s1] Task  3/5 | acc=0.740 dead=0.879 erank=10.70 resets=10 loss=0.3763 wall=23.0s
+  [D/s1] Task  4/5 | acc=0.734 dead=0.875 erank=11.82 resets=10 loss=0.7050 wall=22.7s
+  [D/s1] Task  5/5 | acc=0.790 dead=0.859 erank=15.64 resets=10 loss=0.4701 wall=22.7s
+
+  >> Seed 1 done: C=0.790 D=0.784 D-C=-0.60pp
+  >> Running paired D-C: mean=-1.52pp  CI=[-13.28,10.23]  p=0.347102  n=2
+
+[8.0m elapsed] === SEED 2 ===
+
+[8.0m] Running ARM C, seed 2
+
+============================================================
+ARM C | SEED 2
+============================================================
+  [C/s2] Task  1/5 | acc=0.912 dead=0.668 erank=42.98 resets=10 loss=0.0055 wall=22.2s
+  [C/s2] Task  2/5 | acc=0.836 dead=0.889 erank=9.73 resets=10 loss=0.3022 wall=22.7s
+  [C/s2] Task  3/5 | acc=0.862 dead=0.891 erank=12.69 resets=10 loss=0.2501 wall=23.7s
+  [C/s2] Task  4/5 | acc=0.842 dead=0.854 erank=16.83 resets=10 loss=0.2827 wall=22.5s
+  [C/s2] Task  5/5 | acc=0.790 dead=0.885 erank=13.55 resets=10 loss=0.3647 wall=22.0s
+
+[9.9m] Running ARM D, seed 2
+
+============================================================
+ARM D | SEED 2
+============================================================
+  [D/s2] Task  1/5 | acc=0.910 dead=0.559 erank=55.76 resets=10 loss=0.0284 wall=22.3s
+  [D/s2] Task  2/5 | acc=0.846 dead=0.879 erank=13.35 resets=10 loss=0.1517 wall=22.8s
+  [D/s2] Task  3/5 | acc=0.854 dead=0.871 erank=9.75 resets=10 loss=0.2187 wall=22.1s
+  [D/s2] Task  4/5 | acc=0.794 dead=0.867 erank=13.62 resets=10 loss=0.3511 wall=22.0s
+  [D/s2] Task  5/5 | acc=0.798 dead=0.865 erank=14.91 resets=10 loss=0.6244 wall=22.2s
+
+  >> Seed 2 done: C=0.833 D=0.823 D-C=-0.95pp
+  >> Running paired D-C: mean=-1.33pp  CI=[-3.77,1.11]  p=0.143196  n=3
+
+[11.8m elapsed] === SEED 3 ===
+
+[11.8m] Running ARM C, seed 3
+
+============================================================
+ARM C | SEED 3
+============================================================
+  [C/s3] Task  1/5 | acc=0.870 dead=0.715 erank=35.77 resets=10 loss=0.0114 wall=22.7s
+  [C/s3] Task  2/5 | acc=0.828 dead=0.893 erank=10.41 resets=10 loss=0.1735 wall=21.9s
+  [C/s3] Task  3/5 | acc=0.766 dead=0.908 erank=6.70 resets=10 loss=0.3123 wall=21.8s
+  [C/s3] Task  4/5 | acc=0.876 dead=0.883 erank=9.09 resets=10 loss=0.2040 wall=22.2s
+  [C/s3] Task  5/5 | acc=0.766 dead=0.879 erank=11.30 resets=10 loss=0.3742 wall=23.0s
+
+[13.7m] Running ARM D, seed 3
+
+============================================================
+ARM D | SEED 3
+============================================================
+  [D/s3] Task  1/5 | acc=0.832 dead=0.561 erank=53.28 resets=10 loss=0.0380 wall=23.7s
+  [D/s3] Task  2/5 | acc=0.842 dead=0.842 erank=13.41 resets=10 loss=0.2159 wall=24.3s
+  [D/s3] Task  3/5 | acc=0.752 dead=0.881 erank=12.47 resets=10 loss=0.6131 wall=24.5s
+  [D/s3] Task  4/5 | acc=0.886 dead=0.842 erank=16.41 resets=10 loss=0.1448 wall=23.1s
+  [D/s3] Task  5/5 | acc=0.694 dead=0.854 erank=19.82 resets=10 loss=0.5467 wall=23.4s
+
+  >> Seed 3 done: C=0.809 D=0.793 D-C=-1.55pp
+  >> Running paired D-C: mean=-1.39pp  CI=[-2.68,-0.10]  p=0.041624  n=4
+
+[15.8m elapsed] === SEED 4 ===
+
+[15.8m] Running ARM C, seed 4
+
+============================================================
+ARM C | SEED 4
+============================================================
+  [C/s4] Task  1/5 | acc=0.874 dead=0.664 erank=48.61 resets=10 loss=0.0391 wall=23.5s
+  [C/s4] Task  2/5 | acc=0.804 dead=0.879 erank=15.05 resets=10 loss=0.2080 wall=23.7s
+  [C/s4] Task  3/5 | acc=0.856 dead=0.871 erank=13.73 resets=10 loss=0.1583 wall=24.0s
+  [C/s4] Task  4/5 | acc=0.786 dead=0.900 erank=6.93 resets=10 loss=0.2714 wall=23.5s
+  [C/s4] Task  5/5 | acc=0.714 dead=0.883 erank=10.45 resets=10 loss=0.6867 wall=25.5s
+
+[17.8m] Running ARM D, seed 4
+
+============================================================
+ARM D | SEED 4
+============================================================
+  [D/s4] Task  1/5 | acc=0.880 dead=0.516 erank=65.50 resets=10 loss=0.0411 wall=24.5s
+  [D/s4] Task  2/5 | acc=0.806 dead=0.846 erank=20.91 resets=10 loss=0.1856 wall=22.9s
+  [D/s4] Task  3/5 | acc=0.852 dead=0.863 erank=18.13 resets=10 loss=0.1964 wall=22.8s
+  [D/s4] Task  4/5 | acc=0.836 dead=0.836 erank=14.60 resets=10 loss=0.2526 wall=23.0s
+  [D/s4] Task  5/5 | acc=0.732 dead=0.871 erank=13.11 resets=10 loss=0.6479 wall=23.4s
+
+  >> Seed 4 done: C=0.790 D=0.806 D-C=+1.65pp
+  >> Running paired D-C: mean=-0.78pp  CI=[-2.68,1.12]  p=0.317577  n=5
+
+[19.8m elapsed] === SEED 5 ===
+
+[19.8m] Running ARM C, seed 5
+
+============================================================
+ARM C | SEED 5
+============================================================
+  [C/s5] Task  1/5 | acc=0.888 dead=0.699 erank=41.31 resets=10 loss=0.0344 wall=22.7s
+  [C/s5] Task  2/5 | acc=0.798 dead=0.877 erank=15.62 resets=10 loss=0.2108 wall=23.5s
+  [C/s5] Task  3/5 | acc=0.802 dead=0.896 erank=8.39 resets=10 loss=0.3876 wall=23.9s
+  [C/s5] Task  4/5 | acc=0.722 dead=0.902 erank=8.33 resets=10 loss=0.5196 wall=23.8s
+  [C/s5] Task  5/5 | acc=0.810 dead=0.863 erank=17.72 resets=10 loss=0.2147 wall=23.6s
+
+[21.8m] Running ARM D, seed 5
+
+============================================================
+ARM D | SEED 5
+============================================================
+  [D/s5] Task  1/5 | acc=0.888 dead=0.512 erank=59.00 resets=10 loss=0.0264 wall=23.6s
+  [D/s5] Task  2/5 | acc=0.822 dead=0.877 erank=12.32 resets=10 loss=0.1344 wall=23.8s
+  [D/s5] Task  3/5 | acc=0.816 dead=0.852 erank=11.11 resets=10 loss=0.3103 wall=23.6s
+  [D/s5] Task  4/5 | acc=0.730 dead=0.895 erank=8.54 resets=10 loss=0.7097 wall=28.0s
+  [D/s5] Task  5/5 | acc=0.780 dead=0.842 erank=18.49 resets=10 loss=0.3408 wall=26.6s
+
+  >> Seed 5 done: C=0.783 D=0.787 D-C=+0.40pp
+  >> Running paired D-C: mean=-0.58pp  CI=[-2.10,0.94]  p=0.36958  n=6
+
+[24.0m] 6 seeds complete — priority finalization check (spec says >=6 is sufficient)
+
+[24.0m elapsed] === SEED 6 ===
+
+[24.0m] Running ARM C, seed 6
+
+============================================================
+ARM C | SEED 6
+============================================================
+  [C/s6] Task  1/5 | acc=0.922 dead=0.695 erank=36.38 resets=10 loss=0.0123 wall=22.9s
+  [C/s6] Task  2/5 | acc=0.758 dead=0.871 erank=14.86 resets=10 loss=0.2402 wall=22.8s
+  [C/s6] Task  3/5 | acc=0.764 dead=0.896 erank=8.35 resets=10 loss=0.8865 wall=22.7s
+  [C/s6] Task  4/5 | acc=0.794 dead=0.865 erank=13.45 resets=10 loss=0.3523 wall=22.8s
+  [C/s6] Task  5/5 | acc=0.740 dead=0.887 erank=14.02 resets=10 loss=0.6700 wall=22.8s
+
+[25.9m] Running ARM D, seed 6
+
+============================================================
+ARM D | SEED 6
+============================================================
+  [D/s6] Task  1/5 | acc=0.896 dead=0.555 erank=51.16 resets=10 loss=0.0444 wall=23.3s
+  [D/s6] Task  2/5 | acc=0.766 dead=0.848 erank=19.69 resets=10 loss=0.1888 wall=22.7s
+  [D/s6] Task  3/5 | acc=0.830 dead=0.871 erank=10.21 resets=10 loss=0.2523 wall=23.7s
+  [D/s6] Task  4/5 | acc=0.754 dead=0.854 erank=14.94 resets=10 loss=0.5951 wall=25.6s
+  [D/s6] Task  5/5 | acc=0.806 dead=0.863 erank=13.75 resets=10 loss=0.3579 wall=22.5s
+
+  >> Seed 6 done: C=0.764 D=0.789 D-C=+2.50pp
+  >> Running paired D-C: mean=-0.14pp  CI=[-1.77,1.49]  p=0.83738  n=7
+
+[27.9m] 7 seeds complete — priority finalization check (spec says >=6 is sufficient)
+
+[27.9m elapsed] === SEED 7 ===
+
+[27.9m] Running ARM C, seed 7
+
+============================================================
+ARM C | SEED 7
+============================================================
+  [C/s7] Task  1/5 | acc=0.720 dead=0.711 erank=49.27 resets=10 loss=0.1648 wall=22.4s
+  [C/s7] Task  2/5 | acc=0.848 dead=0.879 erank=15.29 resets=10 loss=0.1590 wall=22.4s
+  [C/s7] Task  3/5 | acc=0.782 dead=0.889 erank=10.36 resets=10 loss=0.2471 wall=22.4s
+  [C/s7] Task  4/5 | acc=0.744 dead=0.873 erank=13.48 resets=10 loss=0.3734 wall=22.4s
+  [C/s7] Task  5/5 | acc=0.754 dead=0.871 erank=12.14 resets=10 loss=0.4242 wall=22.2s
+
+[29.8m] Running ARM D, seed 7
+
+============================================================
+ARM D | SEED 7
+============================================================
+  [D/s7] Task  1/5 | acc=0.728 dead=0.562 erank=71.90 resets=10 loss=0.1499 wall=22.9s
+  [D/s7] Task  2/5 | acc=0.824 dead=0.865 erank=16.80 resets=10 loss=0.4040 wall=23.1s
+  [D/s7] Task  3/5 | acc=0.788 dead=0.861 erank=16.07 resets=10 loss=0.3621 wall=22.3s
+  [D/s7] Task  4/5 | acc=0.762 dead=0.855 erank=17.42 resets=10 loss=0.5664 wall=22.1s
+  [D/s7] Task  5/5 | acc=0.730 dead=0.842 erank=20.50 resets=10 loss=0.6381 wall=22.9s
+
+  >> Seed 7 done: C=0.782 D=0.776 D-C=-0.60pp
+  >> Running paired D-C: mean=-0.20pp  CI=[-1.57,1.17]  p=0.740363  n=8
+
+[31.8m] 8 seeds complete — priority finalization check (spec says >=6 is sufficient)
+
+============================================================
+DONE in 31.8 min
+
+Arm C: mean=0.7986 ± 0.0259
+Arm D: mean=0.7966 ± 0.0162
+Paired D-C: -0.20pp  CI=[-1.57,1.17]  p=0.740363
+Equivalent within 3pp: True
+
+YES — v_t IS a statistically equivalent zero-cost substitute for explicit Fisher. Paired D-C diff = -0.20pp (95% CI [-1.57,1.17]), p=0.740363. CI fully within ±3pp equivalence margin. Adam's exp_avg_sq can replace the extra backward pass with no measurable accuracy cost.
+
+Full results at: /workspace/results/confirm_cd/RESULTS.json
+{
+  "status": "SUCCESS",
+  "scale": "full",
+  "data_source": "cifar100_real",
+  "n_seeds": 8,
+  "seeds_complete": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "C": {
+    "per_seed_acc": [
+      0.8385,
+      0.79,
+      0.8325,
+      0.809,
+      0.79,
+      0.783,
+      0.764,
+      0.782
+    ],
+    "mean": 0.7986,
+    "std": 0.0259,
+    "dead_final": 0.8774,
+    "erank_final": 12.95,
+    "per_task_acc_mean": [
+      0.8584999999999999,
+      0.8325,
+      0.793,
+      0.7925,
+      0.7765
+    ],
+    "per_task_dead_mean": [
+      0.6865234375,
+      0.877685546875,
+      0.893310546875,
+      0.878662109375,
+      0.87744140625
+    ],
+    "per_task_erank_mean": [
+      43.57264471054077,
+      13.935535907745361,
+      9.937812268733978,
+      12.085335671901703,
+      12.950318217277527
+    ],
+    "seeds_done": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "D": {
+    "per_seed_acc": [
+      0.814,
+      0.784,
+      0.823,
+      0.7935,
+      0.8065,
+      0.787,
+      0.789,
+      0.776
+    ],
+    "mean": 0.7966,
+    "std": 0.0162,
+    "dead_final": 0.863,
+    "erank_final": 15.83,
+    "per_task_acc_mean": [
+      0.85225,
+      0.8332499999999999,
+      0.8095000000000001,
+      0.7770000000000001,
+      0.76675
+    ],
+    "per_task_dead_mean": [
+      0.53564453125,
+      0.85400390625,
+      0.868896484375,
+      0.864013671875,
+      0.863037109375
+    ],
+    "per_task_erank_mean": [
+      60.41047143936157,
+      16.189772844314575,
+      12.409663677215576,
+      13.735518455505371,
+      15.834736347198486
+    ],
+    "seeds_done": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "paired_D_minus_C": {
+    "per_seed": [
+      -2.45,
+      -0.6,
+      -0.95,
+      -1.55,
+      1.65,
+      0.4,
+      2.5,
+      -0.6
+    ],
+    "mean_pp": -0.2,
+    "std_pp": 1.641,
+    "ci95_pp": [
+      -1.572,
+      1.172
+    ],
+    "t_stat": -0.3448,
+    "t_p_value": 0.740363,
+    "n_seeds": 8,
+    "equivalent_within_3pp": true
+  },
+  "wall_time_min": 31.79,
+  "subject_executed": "Arms C (explicit Fisher) and D (Adam v_t), PAIRED, SmallConvNetGN, real CIFAR-100, 5\u00d75 classes, 1000 steps/task, reset_frac=0.1, reset_every=100, seeds=[0, 1, 2, 3, 4, 5, 6, 7]",
+  "notes": "confirm_cd: 8 seeds, 5 tasks\u00d75 cls, 1000 steps/task, reset_every=100, reset_frac=0.1. C=explicit-Fisher, D=Adam-v_t. YES \u2014 v_t IS a statistically equivalent zero-cost substitute for explicit Fisher. Paired D-C diff = -0.20pp (95% CI [-1.57,1.17]), p=0.740363. CI fully within \u00b13pp equivalence margin. Adam's exp_avg_sq can replace the extra backward pass with no measurable accuracy cost. Wall: 31.8m.",
+  "metrics": {
+    "C_mean_acc": 0.7986,
+    "C_std_acc": 0.0259,
+    "C_dead_final": 0.8774,
+    "D_mean_acc": 0.7966,
+    "D_std_acc": 0.0162,
+    "D_dead_final": 0.863,
+    "D_minus_C_mean_pp": -0.2,
+    "D_minus_C_ci95_pp": [
+      -1.572,
+      1.172
+    ],
+    "D_minus_C_t_p_value": 0.740363,
+    "equivalent_within_3pp": true,
+    "B_reference_mean_acc": 0.811,
+    "A_floor_acc": 0.2
+  }
+}

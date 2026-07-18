@@ -1,0 +1,152 @@
+{
+  "status": "SUCCESS",
+  "scale": "full",
+  "data_source": "cifar100_real",
+  "n_seeds": 8,
+  "seeds_complete": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "C": {
+    "per_seed_acc": [
+      0.8385,
+      0.79,
+      0.8325,
+      0.809,
+      0.79,
+      0.783,
+      0.764,
+      0.782
+    ],
+    "mean": 0.7986,
+    "std": 0.0259,
+    "dead_final": 0.8774,
+    "erank_final": 12.95,
+    "per_task_acc_mean": [
+      0.8584999999999999,
+      0.8325,
+      0.793,
+      0.7925,
+      0.7765
+    ],
+    "per_task_dead_mean": [
+      0.6865234375,
+      0.877685546875,
+      0.893310546875,
+      0.878662109375,
+      0.87744140625
+    ],
+    "per_task_erank_mean": [
+      43.57264471054077,
+      13.935535907745361,
+      9.937812268733978,
+      12.085335671901703,
+      12.950318217277527
+    ],
+    "seeds_done": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "D": {
+    "per_seed_acc": [
+      0.814,
+      0.784,
+      0.823,
+      0.7935,
+      0.8065,
+      0.787,
+      0.789,
+      0.776
+    ],
+    "mean": 0.7966,
+    "std": 0.0162,
+    "dead_final": 0.863,
+    "erank_final": 15.83,
+    "per_task_acc_mean": [
+      0.85225,
+      0.8332499999999999,
+      0.8095000000000001,
+      0.7770000000000001,
+      0.76675
+    ],
+    "per_task_dead_mean": [
+      0.53564453125,
+      0.85400390625,
+      0.868896484375,
+      0.864013671875,
+      0.863037109375
+    ],
+    "per_task_erank_mean": [
+      60.41047143936157,
+      16.189772844314575,
+      12.409663677215576,
+      13.735518455505371,
+      15.834736347198486
+    ],
+    "seeds_done": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "paired_D_minus_C": {
+    "per_seed": [
+      -2.45,
+      -0.6,
+      -0.95,
+      -1.55,
+      1.65,
+      0.4,
+      2.5,
+      -0.6
+    ],
+    "mean_pp": -0.2,
+    "std_pp": 1.641,
+    "ci95_pp": [
+      -1.572,
+      1.172
+    ],
+    "t_stat": -0.3448,
+    "t_p_value": 0.740363,
+    "n_seeds": 8,
+    "equivalent_within_3pp": true
+  },
+  "wall_time_min": 31.79,
+  "subject_executed": "Arms C (explicit Fisher) and D (Adam v_t), PAIRED, SmallConvNetGN, real CIFAR-100, 5\u00d75 classes, 1000 steps/task, reset_frac=0.1, reset_every=100, seeds=[0, 1, 2, 3, 4, 5, 6, 7]",
+  "notes": "confirm_cd: 8 seeds, 5 tasks\u00d75 cls, 1000 steps/task, reset_every=100, reset_frac=0.1. C=explicit-Fisher, D=Adam-v_t. YES \u2014 v_t IS a statistically equivalent zero-cost substitute for explicit Fisher. Paired D-C diff = -0.20pp (95% CI [-1.57,1.17]), p=0.740363. CI fully within \u00b13pp equivalence margin. Adam's exp_avg_sq can replace the extra backward pass with no measurable accuracy cost. Wall: 31.8m.",
+  "metrics": {
+    "C_mean_acc": 0.7986,
+    "C_std_acc": 0.0259,
+    "C_dead_final": 0.8774,
+    "D_mean_acc": 0.7966,
+    "D_std_acc": 0.0162,
+    "D_dead_final": 0.863,
+    "D_minus_C_mean_pp": -0.2,
+    "D_minus_C_ci95_pp": [
+      -1.572,
+      1.172
+    ],
+    "D_minus_C_t_p_value": 0.740363,
+    "equivalent_within_3pp": true,
+    "B_reference_mean_acc": 0.811,
+    "A_floor_acc": 0.2
+  }
+}
