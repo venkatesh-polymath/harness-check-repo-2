@@ -1,0 +1,92 @@
+Device: cuda
+Datasets: /opt/datasets
+Seeds: [0, 1, 2, 3, 4, 5, 6, 7]  Tasks: 4  Steps/task: 1000
+Arms: ['B', 'D']  (B=CBP-heuristic, D=Adam-v_t)
+
+Loading real CIFAR-100 from /opt/datasets
+[torchvision] Loaded CIFAR-100: train=(50000, 3, 32, 32), test=(10000, 3, 32, 32)
+Data loaded: train=(50000, 3, 32, 32) test=(10000, 3, 32, 32)
+Model params: 3,296,164
+
+[0.1m elapsed] === SEED 0 ===
+
+[0.1m] Running ARM B (CBP heuristic), seed 0
+
+============================================================
+ARM B | SEED 0
+============================================================
+  [B/s0] Task  1/4 | acc=0.898 dead=0.510 erank=58.17 resets=10 loss=0.0336 wall=26.0s
+  [B/s0] Task  2/4 | acc=0.912 dead=0.875 erank=12.84 resets=10 loss=0.0459 wall=25.6s
+  [B/s0] Task  3/4 | acc=0.834 dead=0.863 erank=13.16 resets=10 loss=0.3116 wall=25.5s
+  [B/s0] Task  4/4 | acc=0.802 dead=0.879 erank=12.69 resets=10 loss=0.4869 wall=27.0s
+
+[1.9m] Running ARM D (Adam v_t), seed 0
+
+============================================================
+ARM D | SEED 0
+============================================================
+  [D/s0] Task  1/4 | acc=0.880 dead=0.502 erank=59.91 resets=10 loss=0.0377 wall=23.6s
+  [D/s0] Task  2/4 | acc=0.888 dead=0.834 erank=16.28 resets=10 loss=0.0368 wall=23.9s
+  [D/s0] Task  3/4 | acc=0.844 dead=0.873 erank=10.85 resets=10 loss=0.2831 wall=24.2s
+  [D/s0] Task  4/4 | acc=0.720 dead=0.889 erank=12.53 resets=10 loss=0.6454 wall=26.9s
+
+  >> Seed 0 done: B=0.849 D=0.817 D-B=-3.20pp
+  >> Running paired D-B: mean=-3.20pp  CI=[nan,nan]  p=None  n=1
+
+[3.6m elapsed] === SEED 1 ===
+
+[3.6m] Running ARM B (CBP heuristic), seed 1
+
+============================================================
+ARM B | SEED 1
+============================================================
+  [B/s1] Task  1/4 | acc=0.806 dead=0.516 erank=67.91 resets=10 loss=0.0508 wall=26.5s
+  [B/s1] Task  2/4 | acc=0.866 dead=0.857 erank=15.94 resets=10 loss=0.1178 wall=24.9s
+  [B/s1] Task  3/4 | acc=0.728 dead=0.842 erank=15.80 resets=10 loss=0.3650 wall=26.8s
+  [B/s1] Task  4/4 | acc=0.730 dead=0.891 erank=10.46 resets=10 loss=0.6802 wall=25.5s
+
+[5.3m] Running ARM D (Adam v_t), seed 1
+
+============================================================
+ARM D | SEED 1
+============================================================
+  [D/s1] Task  1/4 | acc=0.804 dead=0.520 erank=66.78 resets=10 loss=0.0395 wall=27.0s
+  [D/s1] Task  2/4 | acc=0.872 dead=0.842 erank=16.76 resets=10 loss=0.0496 wall=29.1s
+  [D/s1] Task  3/4 | acc=0.740 dead=0.879 erank=10.70 resets=10 loss=0.3763 wall=26.2s
+  [D/s1] Task  4/4 | acc=0.734 dead=0.875 erank=11.82 resets=10 loss=0.7050 wall=24.7s
+
+  >> Seed 1 done: B=0.775 D=0.782 D-B=+0.73pp
+  >> Running paired D-B: mean=-1.23pp  CI=[-26.22,23.76]  p=0.643416  n=2
+
+[7.2m elapsed] === SEED 2 ===
+
+[7.2m] Running ARM B (CBP heuristic), seed 2
+
+============================================================
+ARM B | SEED 2
+============================================================
+  [B/s2] Task  1/4 | acc=0.918 dead=0.553 erank=53.31 resets=10 loss=0.0134 wall=25.3s
+  [B/s2] Task  2/4 | acc=0.834 dead=0.873 erank=13.51 resets=10 loss=0.1743 wall=26.1s
+  [B/s2] Task  3/4 | acc=0.862 dead=0.828 erank=16.22 resets=10 loss=0.1893 wall=26.0s
+  [B/s2] Task  4/4 | acc=0.682 dead=0.865 erank=20.41 resets=10 loss=0.7703 wall=26.4s
+
+[9.0m] Running ARM D (Adam v_t), seed 2
+
+============================================================
+ARM D | SEED 2
+============================================================
+  [D/s2] Task  1/4 | acc=0.910 dead=0.559 erank=55.76 resets=10 loss=0.0284 wall=25.3s
+  [D/s2] Task  2/4 | acc=0.846 dead=0.879 erank=13.35 resets=10 loss=0.1517 wall=24.5s
+  [D/s2] Task  3/4 | acc=0.854 dead=0.871 erank=9.75 resets=10 loss=0.2187 wall=24.0s
+  [D/s2] Task  4/4 | acc=0.794 dead=0.867 erank=13.62 resets=10 loss=0.3511 wall=22.9s
+
+  >> Seed 2 done: B=0.793 D=0.831 D-B=+3.87pp
+  >> Running paired D-B: mean=+0.47pp  CI=[-8.33,9.26]  p=0.840648  n=3
+
+[10.6m elapsed] === SEED 3 ===
+
+[10.6m] Running ARM B (CBP heuristic), seed 3
+
+============================================================
+ARM B | SEED 3
+============================================================

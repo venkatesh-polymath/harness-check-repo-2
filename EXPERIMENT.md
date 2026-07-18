@@ -1,29 +1,27 @@
-# EXPERIMENT BRIEF — round mech_rand (full)
+# EXPERIMENT BRIEF — round bd_paired (full)
 
 ## THIS ROUND (do exactly this)
-MECHANISTIC CONTROL (focused, powered) — does v_t's RANKING carry information, or does any reset help equally? Setup validated: GroupNorm ConvNet, real CIFAR-100 at /opt/datasets (download=False, ABORT if missing, NEVER synthetic), class-incremental 5-classes/task, Adam, masked eval. Reuse prior method_arms code. Run ONLY these two arms.
+PAIRED B-vs-D run — the practically decisive comparison: is Adam-v_t (free) as good as the original CBP contribution heuristic? Setup validated: GroupNorm ConvNet, real CIFAR-100 at /opt/datasets (download=False, ABORT if missing, NEVER synthetic), class-incremental 5-classes/task, Adam, masked eval. Reuse prior method_arms code. Run ONLY these two arms.
 
-TWO ARMS on IDENTICAL per-seed task splits (paired), same reset cadence + same reset FRACTION, differing ONLY in which units get reset:
-- D (OURS): reset the lowest-utility units by Adam exp_avg_sq (v_t) per-neuron score.
-- RANDOM (control): reset a RANDOM subset of units of the same size each cycle, ignoring utility.
-If D significantly beats RANDOM, v_t's ranking carries real signal (the effect is not just "any reset recycles capacity").
+TWO ARMS, identical per-seed task splits (paired), same reset cadence + reset fraction, differing ONLY in the neuron-utility:
+- B: CBP contribution heuristic = |outgoing weight| x mean post-activation (running average), reset lowest.
+- D (OURS): Adam exp_avg_sq (v_t) aggregated per neuron (mean over the neuron's incoming-weight fan), reset lowest. Zero extra compute.
 
-PAIRED: 8 seeds {0..7}. Per seed, run D and RANDOM on the SAME task split. Per-seed diff d_s = acc_D(s) - acc_RANDOM(s).
+PAIRED: 8 seeds {0..7}. Per seed run B and D on the SAME task split. Per-seed diff d_s = acc_D(s) - acc_B(s).
+SIZED TO FINISH (2 arms only): 4 tasks/run, ~1000 steps/task (~20 min). Write results/bd_paired/RESULTS.json incrementally; FINALIZE at >=6 seeds.
 
-SIZED TO FINISH (keep small — 2 arms only): 4 tasks/run, ~1000 steps/task. ~2 x 8 x 4 x ~22s ≈ 20 min. Write results/mech_rand/RESULTS.json INCREMENTALLY after each seed. FINALIZE the moment >=6 seeds done.
+HEADLINE: per-arm mean±std final-task acc; paired D-B mean_pp, 95% CI, equivalent_within_3pp? Is v_t a drop-in for the CBP heuristic?
 
-HEADLINE (finalize): per-arm mean±std final-task acc; paired D-RANDOM mean_pp, 95% CI, paired t-test p (one-sided H1: D>RANDOM). Does v_t ranking significantly beat random?
-
-OUTPUT results/mech_rand/RESULTS.json status:"DONE":
+OUTPUT results/bd_paired/RESULTS.json status:"DONE":
 {"status":"DONE","n_seeds":<>=6>,"data_source":"cifar100_real",
- "D":{"per_seed_acc":[...],"mean":..,"std":..},"RANDOM":{"per_seed_acc":[...],"mean":..,"std":..},
- "paired_D_minus_RANDOM":{"per_seed":[...],"mean_pp":..,"ci95_pp":[lo,hi],"t_p_value_one_sided":..,"v_t_ranking_beats_random":bool},
- "notes":"does v_t's ranking carry information vs random reset? honest answer."}
+ "B":{"per_seed_acc":[...],"mean":..,"std":..},"D":{"per_seed_acc":[...],"mean":..,"std":..},
+ "paired_D_minus_B":{"per_seed":[...],"mean_pp":..,"ci95_pp":[lo,hi],"equivalent_within_3pp":bool},
+ "notes":"is v_t a zero-cost drop-in for the CBP contribution heuristic?"}
 Do NOT leave status RUNNING. Save run.log. Commit all except datasets + weights.
 
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/mech_rand/.
+for context and build on them; write this round's outputs under results/bd_paired/.
 
 ## Idea
 Adam's v_t is the Fisher — repurposing optimizer state as a zero-overhead neuron utility for plasticity-preserving resets
@@ -57,4 +55,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: Arm A — Adam + no resets (vanilla Adam continual fine-tuning, tasks presented sequentially): the most widely documented, zero-design-choice reference in plasticity literature; build and validate first to confirm forgetting occurs and effective rank decays, establishing the phenomenon the CBP arms are meant to fix before any utility comparison is made
 - eval contract: Dataset: 5-task split-CIFAR-100, ResNet-18 pretrained on CIFAR-10. Primary metric: mean final-task top-1 accuracy averaged over tasks 2–5 (task 1 excluded as warm-up). Secondary metric: effective rank of the final conv layer weight matrix at end of each task (rank collapse as plasticity proxy). Equivalence test (utility-source claim): two one-sided paired t-tests (TOST, α=0.05, Δ=1.0 pp) on primary metric between arm D (v_t-EMA) and arm C (explicit-Fisher) across 5 seeds — both one-sided p-values must be < 0.05 to declare equivalence. Accumulation test (mechanistic claim): TOST (same α, Δ) between arm D (v_t-EMA) and arm E (snapshot-g²); a significant difference (i.e., TOST fails to find equivalence) licenses 'accumulation is the decisive property.' Optimizer-isolation test: paired t-test (α=0.05, two-sided) between arm C (Adam+Fisher) and arm F (SGD+Fisher) — tests whether optimizer identity beyond utility source affects outcome. Speedup reported as mean ± std wall-clock seconds/reset-step (arm D vs arm C), not folded into accuracy equivalence.
 
-Record everything under results/mech_rand/. Do not commit weights.
+Record everything under results/bd_paired/. Do not commit weights.
