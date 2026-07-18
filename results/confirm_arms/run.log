@@ -1,0 +1,47 @@
+Device: cuda
+Datasets: /opt/datasets
+Seeds: [0, 1, 2, 3, 4, 5, 6, 7]  Tasks: 6  Steps/task: 1200
+
+Loading real CIFAR-100 from /opt/datasets
+[torchvision] Loaded CIFAR-100: train=(50000, 3, 32, 32), test=(10000, 3, 32, 32)
+Data loaded: train=(50000, 3, 32, 32) test=(10000, 3, 32, 32)
+Model params: 3,296,164
+
+[0.1m elapsed] Starting Arm B, Seed 0
+
+============================================================
+ARM B | SEED 0
+============================================================
+  [B/s0] Task  1/6 | acc=0.892 dead=0.502 erank=61.17 resets=12 loss=0.0328 wall=36.1s
+  [B/s0] Task  2/6 | acc=0.902 dead=0.889 erank=10.69 resets=12 loss=0.0497 wall=35.3s
+  [B/s0] Task  3/6 | acc=0.848 dead=0.875 erank=9.33 resets=12 loss=0.1578 wall=35.4s
+  [B/s0] Task  4/6 | acc=0.794 dead=0.852 erank=13.92 resets=12 loss=0.5117 wall=35.4s
+  [B/s0] Task  5/6 | acc=0.848 dead=0.850 erank=17.96 resets=12 loss=0.2226 wall=35.3s
+  [B/s0] Task  6/6 | acc=0.834 dead=0.828 erank=15.07 resets=12 loss=0.1530 wall=35.4s
+/usr/local/lib/python3.12/site-packages/numpy/_core/_methods.py:219: RuntimeWarning: Degrees of freedom <= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/usr/local/lib/python3.12/site-packages/numpy/_core/_methods.py:211: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+
+[3.7m elapsed] Starting Arm B, Seed 1
+
+============================================================
+ARM B | SEED 1
+============================================================
+  [B/s1] Task  1/6 | acc=0.808 dead=0.514 erank=65.02 resets=12 loss=0.0014 wall=35.2s
+  [B/s1] Task  2/6 | acc=0.866 dead=0.859 erank=12.17 resets=12 loss=0.0639 wall=35.1s
+  [B/s1] Task  3/6 | acc=0.728 dead=0.859 erank=15.48 resets=12 loss=0.5238 wall=35.1s
+  [B/s1] Task  4/6 | acc=0.714 dead=0.896 erank=11.24 resets=12 loss=0.7583 wall=35.0s
+  [B/s1] Task  5/6 | acc=0.866 dead=0.861 erank=14.76 resets=12 loss=0.1725 wall=35.1s
+  [B/s1] Task  6/6 | acc=0.858 dead=0.842 erank=19.95 resets=12 loss=0.1853 wall=35.3s
+
+[7.3m elapsed] Starting Arm B, Seed 2
+
+============================================================
+ARM B | SEED 2
+============================================================
+  [B/s2] Task  1/6 | acc=0.918 dead=0.562 erank=56.40 resets=12 loss=0.0340 wall=35.5s
+  [B/s2] Task  2/6 | acc=0.848 dead=0.869 erank=14.91 resets=12 loss=0.0544 wall=35.2s
+  [B/s2] Task  3/6 | acc=0.884 dead=0.873 erank=14.15 resets=12 loss=0.1467 wall=35.2s
+  [B/s2] Task  4/6 | acc=0.838 dead=0.844 erank=16.55 resets=12 loss=0.2298 wall=35.1s
+  [B/s2] Task  5/6 | acc=0.808 dead=0.855 erank=12.53 resets=12 loss=0.3449 wall=35.3s
