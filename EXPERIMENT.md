@@ -1,37 +1,29 @@
-# EXPERIMENT BRIEF — round mech_arms (full)
+# EXPERIMENT BRIEF — round mech_rand (full)
 
 ## THIS ROUND (do exactly this)
-MECHANISTIC + PAIRED run — add the prior-art heuristic and a control arm to the decisive comparison. Setup validated: GroupNorm ConvNet, real CIFAR-100 at /opt/datasets (download=False, ABORT if missing, NEVER synthetic), class-incremental 5-classes/task, Adam, masked eval. Reuse prior method_arms code.
+MECHANISTIC CONTROL (focused, powered) — does v_t's RANKING carry information, or does any reset help equally? Setup validated: GroupNorm ConvNet, real CIFAR-100 at /opt/datasets (download=False, ABORT if missing, NEVER synthetic), class-incremental 5-classes/task, Adam, masked eval. Reuse prior method_arms code. Run ONLY these two arms.
 
-FOUR ARMS on IDENTICAL per-seed task splits (paired), differing ONLY in which neurons get reset each cycle:
-- B: CBP heuristic utility (|out weight| x mean post-activation).
-- C: explicit empirical-Fisher utility (mean (dL/da_i)^2 over a held-out batch).
-- D (OURS): Adam exp_avg_sq (v_t) aggregated per neuron — zero extra compute.
-- RANDOM (control): reset a RANDOM subset of units each cycle (same cadence + same reset fraction as B/C/D), utility ignored. This is the mechanistic control — if D >> RANDOM, then v_t's RANKING carries real information (not just "any reset helps").
-Same cadence, same reset fraction, same architecture/Adam hyperparams across all four.
+TWO ARMS on IDENTICAL per-seed task splits (paired), same reset cadence + same reset FRACTION, differing ONLY in which units get reset:
+- D (OURS): reset the lowest-utility units by Adam exp_avg_sq (v_t) per-neuron score.
+- RANDOM (control): reset a RANDOM subset of units of the same size each cycle, ignoring utility.
+If D significantly beats RANDOM, v_t's ranking carries real signal (the effect is not just "any reset recycles capacity").
 
-PAIRED DESIGN: 6 seeds {0..5}. For each seed run all FOUR arms on the SAME task split. Compute paired diffs: D-C, B-D, D-RANDOM (all per-seed).
+PAIRED: 8 seeds {0..7}. Per seed, run D and RANDOM on the SAME task split. Per-seed diff d_s = acc_D(s) - acc_RANDOM(s).
 
-SIZED TO FINISH (prior runs got cut — keep SMALL): 4 tasks/run, ~1000 steps/task. ~4 arms x 6 seeds x 4 tasks x ~22s ≈ 35 min. Write results/mech_arms/RESULTS.json INCREMENTALLY after each seed (all 4 arms) so a cut yields >=4 paired seeds. FINALIZE the moment >=4 seeds done — prioritize finalization.
+SIZED TO FINISH (keep small — 2 arms only): 4 tasks/run, ~1000 steps/task. ~2 x 8 x 4 x ~22s ≈ 20 min. Write results/mech_rand/RESULTS.json INCREMENTALLY after each seed. FINALIZE the moment >=6 seeds done.
 
-HEADLINE (finalize):
-- Per arm: per-seed final-task acc list, mean±std, final dead-unit fraction, effective rank.
-- Paired D-C: mean_pp, 95% CI, TOST equivalent_within_3pp? (report CI-based, NOT p-value-as-evidence-for-equivalence).
-- Paired B-D: is v_t better/worse than the CBP heuristic? mean_pp + CI.
-- Paired D-RANDOM: mean_pp + CI + p. Is v_t's ranking significantly BETTER than random reset? (This is the mechanistic-isolation result.)
+HEADLINE (finalize): per-arm mean±std final-task acc; paired D-RANDOM mean_pp, 95% CI, paired t-test p (one-sided H1: D>RANDOM). Does v_t ranking significantly beat random?
 
-OUTPUT results/mech_arms/RESULTS.json status:"DONE":
-{"status":"DONE","n_seeds":<>=4>,"data_source":"cifar100_real",
- "arms":{"B":{"per_seed_acc":[...],"mean":..,"std":..,"dead_final":..,"erank_final":..},"C":{...},"D":{...},"RANDOM":{...},"A_floor":0.20},
- "paired":{"D_minus_C":{"mean_pp":..,"ci95_pp":[..],"equivalent_within_3pp":bool},
-           "B_minus_D":{"mean_pp":..,"ci95_pp":[..]},
-           "D_minus_RANDOM":{"mean_pp":..,"ci95_pp":[..],"t_p_value":..,"v_t_ranking_beats_random":bool}},
- "notes":"does v_t match Fisher (D~C), beat/tie the heuristic (B vs D), and beat random reset (D>>RANDOM = ranking carries info)?"}
+OUTPUT results/mech_rand/RESULTS.json status:"DONE":
+{"status":"DONE","n_seeds":<>=6>,"data_source":"cifar100_real",
+ "D":{"per_seed_acc":[...],"mean":..,"std":..},"RANDOM":{"per_seed_acc":[...],"mean":..,"std":..},
+ "paired_D_minus_RANDOM":{"per_seed":[...],"mean_pp":..,"ci95_pp":[lo,hi],"t_p_value_one_sided":..,"v_t_ranking_beats_random":bool},
+ "notes":"does v_t's ranking carry information vs random reset? honest answer."}
 Do NOT leave status RUNNING. Save run.log. Commit all except datasets + weights.
 
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/mech_arms/.
+for context and build on them; write this round's outputs under results/mech_rand/.
 
 ## Idea
 Adam's v_t is the Fisher — repurposing optimizer state as a zero-overhead neuron utility for plasticity-preserving resets
@@ -65,4 +57,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: Arm A — Adam + no resets (vanilla Adam continual fine-tuning, tasks presented sequentially): the most widely documented, zero-design-choice reference in plasticity literature; build and validate first to confirm forgetting occurs and effective rank decays, establishing the phenomenon the CBP arms are meant to fix before any utility comparison is made
 - eval contract: Dataset: 5-task split-CIFAR-100, ResNet-18 pretrained on CIFAR-10. Primary metric: mean final-task top-1 accuracy averaged over tasks 2–5 (task 1 excluded as warm-up). Secondary metric: effective rank of the final conv layer weight matrix at end of each task (rank collapse as plasticity proxy). Equivalence test (utility-source claim): two one-sided paired t-tests (TOST, α=0.05, Δ=1.0 pp) on primary metric between arm D (v_t-EMA) and arm C (explicit-Fisher) across 5 seeds — both one-sided p-values must be < 0.05 to declare equivalence. Accumulation test (mechanistic claim): TOST (same α, Δ) between arm D (v_t-EMA) and arm E (snapshot-g²); a significant difference (i.e., TOST fails to find equivalence) licenses 'accumulation is the decisive property.' Optimizer-isolation test: paired t-test (α=0.05, two-sided) between arm C (Adam+Fisher) and arm F (SGD+Fisher) — tests whether optimizer identity beyond utility source affects outcome. Speedup reported as mean ± std wall-clock seconds/reset-step (arm D vs arm C), not folded into accuracy equivalence.
 
-Record everything under results/mech_arms/. Do not commit weights.
+Record everything under results/mech_rand/. Do not commit weights.
