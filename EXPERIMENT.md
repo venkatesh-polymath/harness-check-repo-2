@@ -1,10 +1,34 @@
-# EXPERIMENT BRIEF — round increase_complexity-01 (probe)
+# EXPERIMENT BRIEF — round grok_v2 (probe)
 
 ## THIS ROUND (do exactly this)
-CORE experiment. Build on baseline-00 grokking code (mod-97, small transformer, AdamW). Grid: norm {LayerNorm, BatchNorm} x weight_decay {0, 1.0} x batch_size {64, 256, 512}, 2 seeds (24 runs). Per cell: grok? (val_acc>0.9), onset step, final weight_norm_ratio. IMPORTANT: write/UPDATE results/increase_complexity-01/RESULTS.json AFTER EACH CELL completes (incremental) so partial progress is never lost. MECHANISTIC TESTS: (a) does BN+no-WD grok ONLY at small batch (implicit batch-noise reg ~1/batch) and FAIL at batch=512? (b) is BN+no-WD consistent with LN+WD (implicit-L2)? (c) CONTROL: LN+no-WD should NOT grok. Cap each run <=15k steps or early-stop on grok; total < 40 min. Final RESULTS.json: full grid table + one-line verdict per (a),(b),(c) + status SUCCESS.
+GROKKING GRID v2 — powered + curve-logged re-run to fix peer-review weaknesses.
+
+The existing code src/grokking_grid.py (on this branch) already implements: a small Transformer on modular addition mod P=97, norm∈{LayerNorm,BatchNorm}, AdamW with DECOUPLED weight decay (norm/bias params excluded — keep this), early-stop on grok (val_acc>0.95 sustained), cap 15k steps, and per-cell training `history`. REUSE it; make these targeted changes:
+
+1) POWER (fixes "only 2 seeds" reject): SEEDS = [42, 123, 7, 99, 2024] (5 seeds).
+2) WD LEVELS (fixes "only WD=1.0 tested for BN"): weight_decay ∈ {0.0, 0.01, 0.1, 1.0}. This directly tests whether a MILDER explicit WD matches BatchNorm's implicit regularization strength.
+3) CONTROL CELL COUNT: fix batch_size = 256 for this powered grid (BS-robustness was already shown in v1 at {64,256,512}; note that in results). Grid = norm{2} × WD{4} × seed{5} = 40 cells.
+4) SAVE TRAINING CURVES (fixes "endpoint-only, can't tell 'never groks' from 'needs more steps'"): for ONE seed (42) of every (norm × WD) cell = 8 representative cells, dump the full per-eval history (step, train_acc, val_acc, train_loss, val_loss, weight_norm) to results/grok_v2/curves/<norm>_wd<wd>.json. Run those representative cells to the FULL 15k-step cap (no early stop) so a non-grokking curve is unambiguous.
+5) AGGREGATE STATS (fixes underpowering + post-hoc threshold + anomaly handling):
+   - Per (norm, WD): grok_rate = #grokked/5, Wilson 95% CI on that rate, mean±std grok onset over grokked seeds, and the FULL per-seed final_val_acc list (so partial-grokkers / outliers like the ~0.818 stall are visible, not hidden behind a binary).
+   - Report the weight_norm_ratio per cell but DO NOT invent a threshold "law"; just tabulate ratios for grokked vs non-grokked cells and let the reader see the separation. No post-hoc cutoff claims.
+6) SANITY: log init_val_ce and note ln(vocab). vocab≈115 → ln≈4.74, so init_ce≈4.75 is near-uniform (report the exact value honestly; do not assert a tighter gate).
+
+SCIENTIFIC QUESTIONS (report honestly whatever the data shows):
+- Q1: Does BN+noWD grok? (v1: 0/6.) With 5 seeds, is grok_rate still 0/5?
+- Q2 (NEW, the sharpened claim): at what explicit WD level does the LN model start grokking — 0.01? 0.1? 1.0? This locates BN's implicit-regularization equivalent on the explicit-WD axis. If BN+noWD groks at a rate matching LN+WD=X, state that X.
+- Q3: weight-norm trajectory — do grokking cells compress weight norm and non-grokking cells not? (Use the saved curves.)
+
+OUTPUT results/grok_v2/RESULTS.json, incremental AND FINALIZED status:"DONE":
+{"status":"DONE","grid":[{norm,WD,seed,grokked,grok_onset,final_val_acc,wnorm_ratio}...],
+ "by_condition":{"<norm>_wd<wd>":{"grok_rate":k_of_5,"wilson_ci95":[lo,hi],"mean_onset":..,"std_onset":..,"final_val_accs":[5 values]}...},
+ "bn_nowd_groks": true/false, "implicit_wd_equivalent_level": <the explicit WD level whose LN grok-rate matches BN+noWD, or null>,
+ "init_val_ce": .., "vocab_size": .., "n_seeds":5, "curves_saved":[...], "notes":"honest summary incl. anomalies"}
+Do NOT leave status RUNNING. If low on wall-clock, drop WD=0.01 first (keep 0,0.1,1.0) but NEVER drop seeds or fail to finalize. Save run.log. Commit all except datasets + weights.
+
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/increase_complexity-01/.
+for context and build on them; write this round's outputs under results/grok_v2/.
 
 ## Idea
 BatchNorm's Implicit Regularization Is Weight Decay for Grokking: A Normalization-Decomposition Experiment
@@ -38,4 +62,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: LayerNorm + WD=1e-3 + batch_size=512, AdamW, LR tuned by pilot, 5 seeds — this is the Power et al.-adjacent grokking reference cell (LN substituted for no-norm) that is well-documented to grok reliably on p=97 modular addition; it is the anchor against which all BN-arm calibrations are fit and all delay comparisons are made; it must be run first and must exhibit clean grokking before any other cell is launched
 - eval contract: Dataset: modular addition p=97, 40/60 train-val split, fixed across all cells. Primary metric: grokking delay (steps, right-censored at 100k). Secondary metrics: (i) L2 weight-norm trajectory sampled every 500 steps to test consistency beyond scalar delay-matching; (ii) effective-LR proxy ||Δθ_t|| / ||θ_t|| every 500 steps to flag WD-as-LR-modulation confound; (iii) memorization step (train_acc first hits 0.99) to separate memorization phase from generalization phase. Statistical test: two-sided Mann-Whitney U comparing grokking delay of each calibrated BN cell vs. its matched LN+WD reference cell (n=5 seeds per cell, α=0.05 Bonferroni-corrected across the batch_size × WD_ref grid of comparisons); weight-norm trajectory similarity reported as DTW distance with 1000-resample bootstrap 95% CI. Null hypothesis: after fitted-WD calibration, grokking delays of BN and LN+WD arms are drawn from the same distribution at each batch_size; rejection is evidence against simple L2-equivalence, non-rejection supports consistency (not identity) of mechanisms.
 
-Record everything under results/increase_complexity-01/. Do not commit weights.
+Record everything under results/grok_v2/. Do not commit weights.

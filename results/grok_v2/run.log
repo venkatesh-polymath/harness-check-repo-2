@@ -1,0 +1,1538 @@
+Device: cuda
+Grokking Grid v2 — grok_v2 (probe)
+Grid: norm=['LayerNorm', 'BatchNorm'], WD=[0.0, 0.01, 0.1, 1.0], seeds=[42, 123, 7, 99, 2024], BS=256
+Max steps/cell=15000, EVAL_EVERY=100
+Device: cuda
+Total cells: 40
+
+[1/40] Starting: LayerNorm WD=0.0 seed=42 curve=True
+
+============================================================
+CELL: norm=LayerNorm WD=0.0 seed=42 [CURVE]
+============================================================
+  init_val_ce=4.7173  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=120.69 | 5s
+  step= 2000 | tr=0.995 | val=0.001 | wnorm=122.26 | 10s
+  step= 3000 | tr=0.998 | val=0.001 | wnorm=123.73 | 15s
+  step= 4000 | tr=0.998 | val=0.001 | wnorm=125.07 | 20s
+  step= 5000 | tr=0.992 | val=0.001 | wnorm=126.31 | 24s
+  step= 6000 | tr=1.000 | val=0.002 | wnorm=126.70 | 29s
+  step= 7000 | tr=1.000 | val=0.001 | wnorm=127.11 | 34s
+  step= 8000 | tr=1.000 | val=0.002 | wnorm=129.00 | 38s
+  step= 9000 | tr=1.000 | val=0.002 | wnorm=132.74 | 43s
+  step=10000 | tr=1.000 | val=0.002 | wnorm=138.97 | 48s
+  step=11000 | tr=1.000 | val=0.003 | wnorm=148.33 | 52s
+  step=12000 | tr=1.000 | val=0.003 | wnorm=161.22 | 57s
+  step=13000 | tr=1.000 | val=0.002 | wnorm=177.82 | 62s
+  step=14000 | tr=1.000 | val=0.004 | wnorm=197.92 | 67s
+  step=15000 | tr=1.000 | val=0.004 | wnorm=221.22 | 71s
+  DONE | steps=15000 | grok=NO | val=0.004 | wnorm_ratio=1.88 | 71s
+  Saved curve: results/grok_v2/curves/layernorm_wd0.0.json
+  → Saved incremental results (1/40 done)
+
+[2/40] Starting: LayerNorm WD=0.01 seed=42 curve=True
+
+============================================================
+CELL: norm=LayerNorm WD=0.01 seed=42 [CURVE]
+============================================================
+  init_val_ce=4.7173  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=120.61 | 5s
+  step= 2000 | tr=1.000 | val=0.002 | wnorm=121.89 | 10s
+  step= 3000 | tr=0.993 | val=0.001 | wnorm=123.11 | 14s
+  step= 4000 | tr=0.997 | val=0.001 | wnorm=124.28 | 19s
+  step= 5000 | tr=0.999 | val=0.001 | wnorm=125.33 | 24s
+  step= 6000 | tr=0.999 | val=0.002 | wnorm=126.35 | 29s
+  step= 7000 | tr=1.000 | val=0.001 | wnorm=126.53 | 34s
+  step= 8000 | tr=1.000 | val=0.002 | wnorm=126.78 | 40s
+  step= 9000 | tr=1.000 | val=0.003 | wnorm=128.56 | 44s
+  step=10000 | tr=1.000 | val=0.003 | wnorm=132.26 | 49s
+  step=11000 | tr=1.000 | val=0.004 | wnorm=138.51 | 54s
+  step=12000 | tr=1.000 | val=0.004 | wnorm=147.87 | 59s
+  step=13000 | tr=1.000 | val=0.005 | wnorm=160.66 | 64s
+  step=14000 | tr=1.000 | val=0.006 | wnorm=176.79 | 69s
+  step=15000 | tr=1.000 | val=0.006 | wnorm=195.97 | 74s
+  DONE | steps=15000 | grok=NO | val=0.006 | wnorm_ratio=1.67 | 74s
+  Saved curve: results/grok_v2/curves/layernorm_wd0.01.json
+  → Saved incremental results (2/40 done)
+
+[3/40] Starting: LayerNorm WD=0.1 seed=42 curve=True
+
+============================================================
+CELL: norm=LayerNorm WD=0.1 seed=42 [CURVE]
+============================================================
+  init_val_ce=4.7173  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=120.35 | 5s
+  step= 2000 | tr=1.000 | val=0.001 | wnorm=120.89 | 10s
+  step= 3000 | tr=1.000 | val=0.002 | wnorm=120.59 | 15s
+  step= 4000 | tr=0.996 | val=0.001 | wnorm=121.11 | 20s
+  step= 5000 | tr=0.994 | val=0.001 | wnorm=121.61 | 25s
+  step= 6000 | tr=0.999 | val=0.002 | wnorm=122.02 | 30s
+  step= 7000 | tr=0.997 | val=0.001 | wnorm=122.41 | 35s
+  step= 8000 | tr=0.998 | val=0.002 | wnorm=122.76 | 40s
+  step= 9000 | tr=1.000 | val=0.003 | wnorm=123.18 | 45s
+  step=10000 | tr=1.000 | val=0.003 | wnorm=122.91 | 50s
+  step=11000 | tr=1.000 | val=0.005 | wnorm=122.73 | 55s
+  step=12000 | tr=1.000 | val=0.008 | wnorm=123.88 | 60s
+  step=13000 | tr=0.999 | val=0.009 | wnorm=124.29 | 65s
+  step=14000 | tr=0.995 | val=0.016 | wnorm=124.38 | 70s
+  step=15000 | tr=0.999 | val=0.024 | wnorm=124.36 | 75s
+  DONE | steps=15000 | grok=NO | val=0.024 | wnorm_ratio=1.06 | 75s
+  Saved curve: results/grok_v2/curves/layernorm_wd0.1.json
+  → Saved incremental results (3/40 done)
+
+[4/40] Starting: LayerNorm WD=1.0 seed=42 curve=True
+
+============================================================
+CELL: norm=LayerNorm WD=1.0 seed=42 [CURVE]
+============================================================
+  init_val_ce=4.7173  ln(P=97)=4.5747
+  step= 1000 | tr=0.999 | val=0.001 | wnorm=117.05 | 5s
+  step= 2000 | tr=1.000 | val=0.001 | wnorm=115.69 | 10s
+  step= 3000 | tr=0.999 | val=0.006 | wnorm=115.07 | 15s
+  step= 4000 | tr=0.999 | val=0.141 | wnorm=115.30 | 20s
+  step= 5000 | tr=1.000 | val=0.917 | wnorm=115.16 | 25s
+  *** GROKKING ONSET step=5100 val_acc=0.9557
+  *** GROKKING CONFIRMED step=5600
+  step= 6000 | tr=1.000 | val=0.999 | wnorm=114.84 | 30s
+  step= 7000 | tr=1.000 | val=1.000 | wnorm=114.38 | 35s
+  step= 8000 | tr=1.000 | val=1.000 | wnorm=113.98 | 40s
+  step= 9000 | tr=1.000 | val=1.000 | wnorm=113.35 | 44s
+  step=10000 | tr=1.000 | val=1.000 | wnorm=112.93 | 49s
+  step=11000 | tr=1.000 | val=1.000 | wnorm=112.62 | 54s
+  step=12000 | tr=1.000 | val=1.000 | wnorm=112.51 | 59s
+  step=13000 | tr=1.000 | val=1.000 | wnorm=112.63 | 64s
+  step=14000 | tr=1.000 | val=1.000 | wnorm=112.61 | 69s
+  step=15000 | tr=1.000 | val=1.000 | wnorm=112.76 | 74s
+  DONE | steps=15000 | grok=YES @5100 | val=1.000 | wnorm_ratio=0.96 | 74s
+  Saved curve: results/grok_v2/curves/layernorm_wd1.0.json
+  → Saved incremental results (4/40 done)
+
+[5/40] Starting: BatchNorm WD=0.0 seed=42 curve=True
+
+============================================================
+CELL: norm=BatchNorm WD=0.0 seed=42 [CURVE]
+============================================================
+  init_val_ce=4.8871  ln(P=97)=4.5747
+  step= 1000 | tr=0.994 | val=0.000 | wnorm=120.23 | 5s
+  step= 2000 | tr=0.997 | val=0.001 | wnorm=122.15 | 10s
+  step= 3000 | tr=1.000 | val=0.001 | wnorm=123.83 | 15s
+  step= 4000 | tr=0.996 | val=0.001 | wnorm=125.52 | 20s
+  step= 5000 | tr=0.997 | val=0.002 | wnorm=127.17 | 25s
+  step= 6000 | tr=1.000 | val=0.000 | wnorm=128.11 | 30s
+  step= 7000 | tr=1.000 | val=0.001 | wnorm=128.21 | 35s
+  step= 8000 | tr=0.999 | val=0.001 | wnorm=128.38 | 40s
+  step= 9000 | tr=0.998 | val=0.001 | wnorm=130.22 | 45s
+  step=10000 | tr=0.999 | val=0.001 | wnorm=131.89 | 50s
+  step=11000 | tr=1.000 | val=0.001 | wnorm=133.12 | 55s
+  step=12000 | tr=0.997 | val=0.002 | wnorm=133.36 | 60s
+  step=13000 | tr=1.000 | val=0.001 | wnorm=134.72 | 65s
+  step=14000 | tr=1.000 | val=0.002 | wnorm=134.85 | 70s
+  step=15000 | tr=1.000 | val=0.001 | wnorm=135.38 | 76s
+  DONE | steps=15000 | grok=NO | val=0.001 | wnorm_ratio=1.15 | 76s
+  Saved curve: results/grok_v2/curves/batchnorm_wd0.0.json
+  → Saved incremental results (5/40 done)
+
+[6/40] Starting: BatchNorm WD=0.01 seed=42 curve=True
+
+============================================================
+CELL: norm=BatchNorm WD=0.01 seed=42 [CURVE]
+============================================================
+  init_val_ce=4.8871  ln(P=97)=4.5747
+  step= 1000 | tr=0.997 | val=0.000 | wnorm=120.14 | 6s
+  step= 2000 | tr=0.997 | val=0.001 | wnorm=121.92 | 11s
+  step= 3000 | tr=0.999 | val=0.001 | wnorm=123.51 | 16s
+  step= 4000 | tr=0.999 | val=0.001 | wnorm=124.98 | 21s
+  step= 5000 | tr=0.999 | val=0.001 | wnorm=126.52 | 26s
+  step= 6000 | tr=0.999 | val=0.001 | wnorm=128.08 | 31s
+  step= 7000 | tr=0.999 | val=0.001 | wnorm=129.51 | 36s
+  step= 8000 | tr=1.000 | val=0.002 | wnorm=131.02 | 41s
+  step= 9000 | tr=1.000 | val=0.001 | wnorm=131.05 | 47s
+  step=10000 | tr=1.000 | val=0.002 | wnorm=130.80 | 52s
+  step=11000 | tr=1.000 | val=0.001 | wnorm=131.73 | 57s
+  step=12000 | tr=1.000 | val=0.001 | wnorm=131.72 | 62s
+  step=13000 | tr=1.000 | val=0.001 | wnorm=132.23 | 68s
+  step=14000 | tr=1.000 | val=0.001 | wnorm=132.29 | 73s
+  step=15000 | tr=0.998 | val=0.001 | wnorm=133.80 | 78s
+  DONE | steps=15000 | grok=NO | val=0.001 | wnorm_ratio=1.14 | 78s
+  Saved curve: results/grok_v2/curves/batchnorm_wd0.01.json
+  → Saved incremental results (6/40 done)
+
+[7/40] Starting: BatchNorm WD=0.1 seed=42 curve=True
+
+============================================================
+CELL: norm=BatchNorm WD=0.1 seed=42 [CURVE]
+============================================================
+  init_val_ce=4.8871  ln(P=97)=4.5747
+  step= 1000 | tr=0.998 | val=0.000 | wnorm=119.54 | 5s
+  step= 2000 | tr=0.998 | val=0.001 | wnorm=120.57 | 10s
+  step= 3000 | tr=0.998 | val=0.000 | wnorm=121.37 | 16s
+  step= 4000 | tr=0.998 | val=0.000 | wnorm=122.06 | 21s
+  step= 5000 | tr=0.998 | val=0.001 | wnorm=122.71 | 26s
+  step= 6000 | tr=0.999 | val=0.000 | wnorm=123.36 | 31s
+  step= 7000 | tr=1.000 | val=0.001 | wnorm=122.78 | 36s
+  step= 8000 | tr=0.998 | val=0.001 | wnorm=123.22 | 42s
+  step= 9000 | tr=0.999 | val=0.001 | wnorm=123.84 | 47s
+  step=10000 | tr=0.999 | val=0.002 | wnorm=124.45 | 52s
+  step=11000 | tr=1.000 | val=0.001 | wnorm=124.74 | 58s
+  step=12000 | tr=1.000 | val=0.002 | wnorm=124.39 | 63s
+  step=13000 | tr=1.000 | val=0.002 | wnorm=123.78 | 68s
+  step=14000 | tr=0.998 | val=0.002 | wnorm=124.04 | 73s
+  step=15000 | tr=1.000 | val=0.002 | wnorm=124.59 | 79s
+  DONE | steps=15000 | grok=NO | val=0.002 | wnorm_ratio=1.06 | 79s
+  Saved curve: results/grok_v2/curves/batchnorm_wd0.1.json
+  → Saved incremental results (7/40 done)
+
+[8/40] Starting: BatchNorm WD=1.0 seed=42 curve=True
+
+============================================================
+CELL: norm=BatchNorm WD=1.0 seed=42 [CURVE]
+============================================================
+  init_val_ce=4.8871  ln(P=97)=4.5747
+  step= 1000 | tr=0.999 | val=0.001 | wnorm=116.27 | 5s
+  step= 2000 | tr=0.995 | val=0.001 | wnorm=115.10 | 10s
+  step= 3000 | tr=0.997 | val=0.002 | wnorm=114.39 | 16s
+  step= 4000 | tr=0.998 | val=0.007 | wnorm=114.04 | 21s
+  step= 5000 | tr=0.995 | val=0.030 | wnorm=114.01 | 26s
+  step= 6000 | tr=0.999 | val=0.399 | wnorm=114.08 | 31s
+  *** GROKKING ONSET step=6900 val_acc=0.9555
+  step= 7000 | tr=0.999 | val=0.966 | wnorm=114.38 | 36s
+  *** GROKKING CONFIRMED step=7100
+  step= 8000 | tr=1.000 | val=0.993 | wnorm=115.04 | 41s
+  step= 9000 | tr=0.999 | val=0.995 | wnorm=115.15 | 46s
+  step=10000 | tr=0.996 | val=0.976 | wnorm=115.38 | 51s
+  step=11000 | tr=1.000 | val=1.000 | wnorm=115.23 | 56s
+  step=12000 | tr=0.998 | val=0.984 | wnorm=115.72 | 62s
+  step=13000 | tr=1.000 | val=0.999 | wnorm=116.99 | 67s
+  step=14000 | tr=1.000 | val=1.000 | wnorm=117.30 | 72s
+  step=15000 | tr=1.000 | val=1.000 | wnorm=117.57 | 77s
+  DONE | steps=15000 | grok=YES @6900 | val=1.000 | wnorm_ratio=1.00 | 77s
+  Saved curve: results/grok_v2/curves/batchnorm_wd1.0.json
+  → Saved incremental results (8/40 done)
+
+[9/40] Starting: LayerNorm WD=1.0 seed=123 curve=False
+
+============================================================
+CELL: norm=LayerNorm WD=1.0 seed=123 
+============================================================
+  init_val_ce=4.7441  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.000 | wnorm=117.34 | 5s
+  step= 2000 | tr=1.000 | val=0.001 | wnorm=115.71 | 10s
+  step= 3000 | tr=1.000 | val=0.002 | wnorm=115.15 | 15s
+  step= 4000 | tr=1.000 | val=0.008 | wnorm=114.53 | 20s
+  step= 5000 | tr=1.000 | val=0.056 | wnorm=114.44 | 24s
+  step= 6000 | tr=1.000 | val=0.489 | wnorm=114.94 | 29s
+  *** GROKKING ONSET step=6700 val_acc=0.9789
+  step= 7000 | tr=1.000 | val=0.981 | wnorm=115.16 | 34s
+  *** GROKKING CONFIRMED step=7200
+  Early stop: val_acc=0.9981 at step=7200
+  DONE | steps=7200 | grok=YES @6700 | val=0.998 | wnorm_ratio=0.97 | 35s
+  → Saved incremental results (9/40 done)
+
+[10/40] Starting: LayerNorm WD=0.1 seed=123 curve=False
+
+============================================================
+CELL: norm=LayerNorm WD=0.1 seed=123 
+============================================================
+  init_val_ce=4.7441  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.000 | wnorm=120.62 | 5s
+  step= 2000 | tr=0.986 | val=0.001 | wnorm=121.29 | 9s
+  step= 3000 | tr=0.999 | val=0.001 | wnorm=121.87 | 14s
+  step= 4000 | tr=0.998 | val=0.001 | wnorm=122.37 | 19s
+  step= 5000 | tr=0.999 | val=0.001 | wnorm=122.83 | 24s
+  step= 6000 | tr=0.998 | val=0.001 | wnorm=123.17 | 29s
+  step= 7000 | tr=1.000 | val=0.003 | wnorm=122.78 | 33s
+  step= 8000 | tr=1.000 | val=0.003 | wnorm=122.75 | 38s
+  step= 9000 | tr=0.998 | val=0.002 | wnorm=123.87 | 43s
+  step=10000 | tr=0.998 | val=0.002 | wnorm=124.08 | 48s
+  step=11000 | tr=1.000 | val=0.003 | wnorm=124.27 | 53s
+  step=12000 | tr=1.000 | val=0.003 | wnorm=123.64 | 58s
+  step=13000 | tr=1.000 | val=0.006 | wnorm=125.42 | 63s
+  step=14000 | tr=0.995 | val=0.006 | wnorm=127.87 | 68s
+  step=15000 | tr=0.995 | val=0.009 | wnorm=127.60 | 73s
+  DONE | steps=15000 | grok=NO | val=0.009 | wnorm_ratio=1.08 | 73s
+  → Saved incremental results (10/40 done)
+
+[11/40] Starting: LayerNorm WD=0.01 seed=123 curve=False
+
+============================================================
+CELL: norm=LayerNorm WD=0.01 seed=123 
+============================================================
+  init_val_ce=4.7441  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=121.04 | 5s
+  step= 2000 | tr=1.000 | val=0.001 | wnorm=122.13 | 10s
+  step= 3000 | tr=0.999 | val=0.001 | wnorm=123.44 | 15s
+  step= 4000 | tr=0.999 | val=0.001 | wnorm=124.64 | 20s
+  step= 5000 | tr=0.998 | val=0.001 | wnorm=125.82 | 25s
+  step= 6000 | tr=0.999 | val=0.001 | wnorm=126.86 | 30s
+  step= 7000 | tr=1.000 | val=0.001 | wnorm=127.63 | 35s
+  step= 8000 | tr=1.000 | val=0.001 | wnorm=127.66 | 41s
+  step= 9000 | tr=1.000 | val=0.002 | wnorm=128.36 | 46s
+  step=10000 | tr=1.000 | val=0.002 | wnorm=130.81 | 51s
+  step=11000 | tr=1.000 | val=0.002 | wnorm=135.51 | 55s
+  step=12000 | tr=1.000 | val=0.002 | wnorm=143.17 | 61s
+  step=13000 | tr=1.000 | val=0.003 | wnorm=154.29 | 66s
+  step=14000 | tr=1.000 | val=0.003 | wnorm=169.08 | 71s
+  step=15000 | tr=1.000 | val=0.004 | wnorm=187.29 | 76s
+  DONE | steps=15000 | grok=NO | val=0.004 | wnorm_ratio=1.59 | 76s
+  → Saved incremental results (11/40 done)
+
+[12/40] Starting: LayerNorm WD=0.0 seed=123 curve=False
+
+============================================================
+CELL: norm=LayerNorm WD=0.0 seed=123 
+============================================================
+  init_val_ce=4.7441  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=121.11 | 5s
+  step= 2000 | tr=1.000 | val=0.001 | wnorm=122.31 | 10s
+  step= 3000 | tr=0.998 | val=0.001 | wnorm=123.52 | 15s
+  step= 4000 | tr=0.996 | val=0.001 | wnorm=124.84 | 20s
+  step= 5000 | tr=0.995 | val=0.001 | wnorm=126.11 | 25s
+  step= 6000 | tr=0.999 | val=0.001 | wnorm=127.30 | 30s
+  step= 7000 | tr=1.000 | val=0.001 | wnorm=127.86 | 35s
+  step= 8000 | tr=1.000 | val=0.001 | wnorm=128.13 | 40s
+  step= 9000 | tr=1.000 | val=0.002 | wnorm=129.73 | 44s
+  step=10000 | tr=1.000 | val=0.002 | wnorm=133.28 | 49s
+  step=11000 | tr=1.000 | val=0.001 | wnorm=139.46 | 54s
+  step=12000 | tr=1.000 | val=0.001 | wnorm=148.94 | 59s
+  step=13000 | tr=1.000 | val=0.002 | wnorm=162.15 | 64s
+  step=14000 | tr=1.000 | val=0.002 | wnorm=179.17 | 69s
+  step=15000 | tr=1.000 | val=0.003 | wnorm=199.80 | 74s
+  DONE | steps=15000 | grok=NO | val=0.003 | wnorm_ratio=1.69 | 74s
+  → Saved incremental results (12/40 done)
+
+[13/40] Starting: BatchNorm WD=1.0 seed=123 curve=False
+
+============================================================
+CELL: norm=BatchNorm WD=1.0 seed=123 
+============================================================
+  init_val_ce=4.9393  ln(P=97)=4.5747
+  step= 1000 | tr=0.998 | val=0.001 | wnorm=117.46 | 5s
+  step= 2000 | tr=0.993 | val=0.001 | wnorm=116.57 | 10s
+  step= 3000 | tr=0.999 | val=0.003 | wnorm=116.13 | 16s
+  step= 4000 | tr=0.997 | val=0.064 | wnorm=115.80 | 21s
+  step= 5000 | tr=0.996 | val=0.518 | wnorm=115.71 | 26s
+  step= 6000 | tr=0.999 | val=0.956 | wnorm=115.92 | 31s
+  *** GROKKING ONSET step=6000 val_acc=0.9561
+  *** GROKKING CONFIRMED step=6200
+  Early stop: val_acc=0.9947 at step=6200
+  DONE | steps=6200 | grok=YES @6000 | val=0.995 | wnorm_ratio=0.98 | 32s
+  → Saved incremental results (13/40 done)
+
+[14/40] Starting: BatchNorm WD=0.1 seed=123 curve=False
+
+============================================================
+CELL: norm=BatchNorm WD=0.1 seed=123 
+============================================================
+  init_val_ce=4.9393  ln(P=97)=4.5747
+  step= 1000 | tr=0.998 | val=0.001 | wnorm=120.23 | 5s
+  step= 2000 | tr=0.998 | val=0.001 | wnorm=121.26 | 10s
+  step= 3000 | tr=0.997 | val=0.001 | wnorm=122.06 | 16s
+  step= 4000 | tr=0.998 | val=0.001 | wnorm=122.74 | 21s
+  step= 5000 | tr=0.999 | val=0.001 | wnorm=123.41 | 26s
+  step= 6000 | tr=0.998 | val=0.001 | wnorm=124.04 | 31s
+  step= 7000 | tr=0.999 | val=0.001 | wnorm=124.69 | 36s
+  step= 8000 | tr=1.000 | val=0.001 | wnorm=124.35 | 41s
+  step= 9000 | tr=1.000 | val=0.002 | wnorm=124.54 | 46s
+  step=10000 | tr=0.998 | val=0.003 | wnorm=125.20 | 52s
+  step=11000 | tr=0.999 | val=0.003 | wnorm=125.69 | 57s
+  step=12000 | tr=1.000 | val=0.002 | wnorm=125.23 | 62s
+  step=13000 | tr=1.000 | val=0.001 | wnorm=124.98 | 67s
+  step=14000 | tr=1.000 | val=0.002 | wnorm=124.76 | 72s
+  step=15000 | tr=1.000 | val=0.004 | wnorm=124.23 | 77s
+  DONE | steps=15000 | grok=NO | val=0.004 | wnorm_ratio=1.05 | 77s
+  → Saved incremental results (14/40 done)
+
+[15/40] Starting: BatchNorm WD=0.01 seed=123 curve=False
+
+============================================================
+CELL: norm=BatchNorm WD=0.01 seed=123 
+============================================================
+  init_val_ce=4.9393  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=120.56 | 5s
+  step= 2000 | tr=0.999 | val=0.001 | wnorm=122.03 | 10s
+  step= 3000 | tr=0.998 | val=0.000 | wnorm=123.60 | 15s
+  step= 4000 | tr=0.999 | val=0.000 | wnorm=125.09 | 21s
+  step= 5000 | tr=0.999 | val=0.001 | wnorm=126.61 | 26s
+  step= 6000 | tr=1.000 | val=0.001 | wnorm=127.42 | 31s
+  step= 7000 | tr=1.000 | val=0.001 | wnorm=127.42 | 36s
+  step= 8000 | tr=1.000 | val=0.000 | wnorm=127.70 | 42s
+  step= 9000 | tr=1.000 | val=0.001 | wnorm=127.66 | 47s
+  step=10000 | tr=1.000 | val=0.001 | wnorm=128.00 | 52s
+  step=11000 | tr=1.000 | val=0.001 | wnorm=128.52 | 57s
+  step=12000 | tr=1.000 | val=0.001 | wnorm=128.50 | 63s
+  step=13000 | tr=0.998 | val=0.001 | wnorm=129.97 | 68s
+  step=14000 | tr=1.000 | val=0.001 | wnorm=131.22 | 73s
+  step=15000 | tr=1.000 | val=0.001 | wnorm=131.19 | 79s
+  DONE | steps=15000 | grok=NO | val=0.001 | wnorm_ratio=1.11 | 79s
+  → Saved incremental results (15/40 done)
+
+[16/40] Starting: BatchNorm WD=0.0 seed=123 curve=False
+
+============================================================
+CELL: norm=BatchNorm WD=0.0 seed=123 
+============================================================
+  init_val_ce=4.9393  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=120.63 | 5s
+  step= 2000 | tr=0.992 | val=0.001 | wnorm=122.47 | 11s
+  step= 3000 | tr=1.000 | val=0.000 | wnorm=123.85 | 16s
+  step= 4000 | tr=0.999 | val=0.002 | wnorm=124.50 | 21s
+  step= 5000 | tr=1.000 | val=0.001 | wnorm=125.84 | 26s
+  step= 6000 | tr=1.000 | val=0.001 | wnorm=126.01 | 31s
+  step= 7000 | tr=0.998 | val=0.000 | wnorm=127.26 | 37s
+  step= 8000 | tr=1.000 | val=0.000 | wnorm=128.76 | 42s
+  step= 9000 | tr=1.000 | val=0.001 | wnorm=129.75 | 47s
+  step=10000 | tr=1.000 | val=0.001 | wnorm=130.15 | 53s
+  step=11000 | tr=1.000 | val=0.001 | wnorm=131.70 | 58s
+  step=12000 | tr=1.000 | val=0.000 | wnorm=131.84 | 63s
+  step=13000 | tr=1.000 | val=0.001 | wnorm=131.74 | 69s
+  step=14000 | tr=1.000 | val=0.001 | wnorm=132.37 | 74s
+  step=15000 | tr=1.000 | val=0.002 | wnorm=134.79 | 79s
+  DONE | steps=15000 | grok=NO | val=0.002 | wnorm_ratio=1.14 | 79s
+  → Saved incremental results (16/40 done)
+
+[17/40] Starting: LayerNorm WD=1.0 seed=7 curve=False
+
+============================================================
+CELL: norm=LayerNorm WD=1.0 seed=7 
+============================================================
+  init_val_ce=4.7410  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=116.45 | 5s
+  step= 2000 | tr=1.000 | val=0.001 | wnorm=115.15 | 10s
+  step= 3000 | tr=0.999 | val=0.007 | wnorm=114.12 | 15s
+  step= 4000 | tr=0.969 | val=0.048 | wnorm=113.80 | 20s
+  step= 5000 | tr=1.000 | val=0.520 | wnorm=113.80 | 25s
+  *** GROKKING ONSET step=5700 val_acc=0.9662
+  step= 6000 | tr=1.000 | val=0.981 | wnorm=113.76 | 30s
+  *** GROKKING CONFIRMED step=6100
+  Early stop: val_acc=0.9940 at step=6100
+  DONE | steps=6100 | grok=YES @5700 | val=0.994 | wnorm_ratio=0.97 | 30s
+  → Saved incremental results (17/40 done)
+
+[18/40] Starting: LayerNorm WD=0.1 seed=7 curve=False
+
+============================================================
+CELL: norm=LayerNorm WD=0.1 seed=7 
+============================================================
+  init_val_ce=4.7410  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=119.51 | 5s
+  step= 2000 | tr=1.000 | val=0.001 | wnorm=119.95 | 10s
+  step= 3000 | tr=1.000 | val=0.001 | wnorm=119.74 | 15s
+  step= 4000 | tr=1.000 | val=0.001 | wnorm=119.67 | 19s
+  step= 5000 | tr=0.988 | val=0.001 | wnorm=119.70 | 24s
+  step= 6000 | tr=0.999 | val=0.001 | wnorm=120.30 | 29s
+  step= 7000 | tr=0.998 | val=0.001 | wnorm=120.79 | 34s
+  step= 8000 | tr=0.997 | val=0.004 | wnorm=121.17 | 39s
+  step= 9000 | tr=1.000 | val=0.003 | wnorm=120.89 | 44s
+  step=10000 | tr=1.000 | val=0.005 | wnorm=120.90 | 49s
+  step=11000 | tr=1.000 | val=0.003 | wnorm=120.94 | 53s
+  step=12000 | tr=0.999 | val=0.003 | wnorm=121.05 | 58s
+  step=13000 | tr=0.999 | val=0.007 | wnorm=121.42 | 63s
+  step=14000 | tr=1.000 | val=0.010 | wnorm=121.60 | 68s
+  step=15000 | tr=1.000 | val=0.015 | wnorm=121.37 | 73s
+  DONE | steps=15000 | grok=NO | val=0.015 | wnorm_ratio=1.04 | 73s
+  → Saved incremental results (18/40 done)
+
+[19/40] Starting: LayerNorm WD=0.01 seed=7 curve=False
+
+============================================================
+CELL: norm=LayerNorm WD=0.01 seed=7 
+============================================================
+  init_val_ce=4.7410  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.000 | wnorm=120.13 | 5s
+  step= 2000 | tr=1.000 | val=0.001 | wnorm=121.21 | 9s
+  step= 3000 | tr=0.996 | val=0.001 | wnorm=122.34 | 14s
+  step= 4000 | tr=0.997 | val=0.000 | wnorm=123.47 | 19s
+  step= 5000 | tr=1.000 | val=0.001 | wnorm=124.45 | 24s
+  step= 6000 | tr=1.000 | val=0.000 | wnorm=124.72 | 29s
+  step= 7000 | tr=1.000 | val=0.000 | wnorm=125.09 | 34s
+  step= 8000 | tr=1.000 | val=0.001 | wnorm=126.99 | 39s
+  step= 9000 | tr=1.000 | val=0.002 | wnorm=130.87 | 44s
+  step=10000 | tr=1.000 | val=0.002 | wnorm=137.31 | 49s
+  step=11000 | tr=1.000 | val=0.002 | wnorm=146.80 | 54s
+  step=12000 | tr=1.000 | val=0.003 | wnorm=159.54 | 59s
+  step=13000 | tr=1.000 | val=0.003 | wnorm=175.55 | 64s
+  step=14000 | tr=1.000 | val=0.004 | wnorm=194.42 | 69s
+  step=15000 | tr=1.000 | val=0.003 | wnorm=215.71 | 74s
+  DONE | steps=15000 | grok=NO | val=0.003 | wnorm_ratio=1.84 | 74s
+  → Saved incremental results (19/40 done)
+
+[20/40] Starting: LayerNorm WD=0.0 seed=7 curve=False
+
+============================================================
+CELL: norm=LayerNorm WD=0.0 seed=7 
+============================================================
+  init_val_ce=4.7410  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.000 | wnorm=120.20 | 5s
+  step= 2000 | tr=0.999 | val=0.002 | wnorm=122.02 | 10s
+  step= 3000 | tr=0.998 | val=0.001 | wnorm=123.60 | 15s
+  step= 4000 | tr=1.000 | val=0.001 | wnorm=124.25 | 20s
+  step= 5000 | tr=1.000 | val=0.001 | wnorm=124.80 | 25s
+  step= 6000 | tr=1.000 | val=0.002 | wnorm=126.54 | 30s
+  step= 7000 | tr=1.000 | val=0.003 | wnorm=130.10 | 34s
+  step= 8000 | tr=1.000 | val=0.003 | wnorm=136.15 | 39s
+  step= 9000 | tr=1.000 | val=0.002 | wnorm=145.32 | 44s
+  step=10000 | tr=1.000 | val=0.003 | wnorm=158.02 | 49s
+  step=11000 | tr=1.000 | val=0.004 | wnorm=174.33 | 54s
+  step=12000 | tr=1.000 | val=0.004 | wnorm=194.16 | 58s
+  step=13000 | tr=1.000 | val=0.004 | wnorm=216.89 | 63s
+  step=14000 | tr=1.000 | val=0.004 | wnorm=242.22 | 68s
+  step=15000 | tr=1.000 | val=0.004 | wnorm=269.55 | 73s
+  DONE | steps=15000 | grok=NO | val=0.004 | wnorm_ratio=2.30 | 73s
+  → Saved incremental results (20/40 done)
+
+[21/40] Starting: BatchNorm WD=1.0 seed=7 curve=False
+
+============================================================
+CELL: norm=BatchNorm WD=1.0 seed=7 
+============================================================
+  init_val_ce=4.9366  ln(P=97)=4.5747
+  step= 1000 | tr=0.994 | val=0.001 | wnorm=115.92 | 5s
+  step= 2000 | tr=0.988 | val=0.002 | wnorm=114.72 | 10s
+  step= 3000 | tr=0.993 | val=0.019 | wnorm=114.01 | 16s
+  step= 4000 | tr=0.997 | val=0.313 | wnorm=113.59 | 21s
+  step= 5000 | tr=0.999 | val=0.924 | wnorm=113.60 | 27s
+  *** GROKKING ONSET step=5200 val_acc=0.9506
+  *** GROKKING CONFIRMED step=5400
+  Early stop: val_acc=0.9959 at step=5400
+  DONE | steps=5400 | grok=YES @5200 | val=0.996 | wnorm_ratio=0.97 | 29s
+  → Saved incremental results (21/40 done)
+
+[22/40] Starting: BatchNorm WD=0.1 seed=7 curve=False
+
+============================================================
+CELL: norm=BatchNorm WD=0.1 seed=7 
+============================================================
+  init_val_ce=4.9366  ln(P=97)=4.5747
+  step= 1000 | tr=0.994 | val=0.000 | wnorm=119.16 | 5s
+  step= 2000 | tr=0.997 | val=0.001 | wnorm=120.20 | 10s
+  step= 3000 | tr=0.997 | val=0.001 | wnorm=121.00 | 15s
+  step= 4000 | tr=0.998 | val=0.000 | wnorm=121.75 | 21s
+  step= 5000 | tr=0.999 | val=0.002 | wnorm=122.48 | 26s
+  step= 6000 | tr=1.000 | val=0.001 | wnorm=123.15 | 31s
+  step= 7000 | tr=0.999 | val=0.002 | wnorm=123.78 | 36s
+  step= 8000 | tr=1.000 | val=0.002 | wnorm=123.73 | 41s
+  step= 9000 | tr=0.999 | val=0.002 | wnorm=123.80 | 46s
+  step=10000 | tr=0.999 | val=0.006 | wnorm=124.46 | 51s
+  step=11000 | tr=1.000 | val=0.010 | wnorm=124.28 | 56s
+  step=12000 | tr=1.000 | val=0.008 | wnorm=124.03 | 62s
+  step=13000 | tr=1.000 | val=0.011 | wnorm=123.48 | 67s
+  step=14000 | tr=0.999 | val=0.021 | wnorm=124.09 | 72s
+  step=15000 | tr=1.000 | val=0.031 | wnorm=123.60 | 77s
+  DONE | steps=15000 | grok=NO | val=0.031 | wnorm_ratio=1.06 | 77s
+  → Saved incremental results (22/40 done)
+
+[23/40] Starting: BatchNorm WD=0.01 seed=7 curve=False
+
+============================================================
+CELL: norm=BatchNorm WD=0.01 seed=7 
+============================================================
+  init_val_ce=4.9366  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=119.70 | 5s
+  step= 2000 | tr=0.998 | val=0.001 | wnorm=121.51 | 10s
+  step= 3000 | tr=0.997 | val=0.001 | wnorm=123.10 | 15s
+  step= 4000 | tr=0.999 | val=0.001 | wnorm=124.67 | 20s
+  step= 5000 | tr=1.000 | val=0.001 | wnorm=125.76 | 26s
+  step= 6000 | tr=1.000 | val=0.001 | wnorm=126.20 | 31s
+  step= 7000 | tr=0.992 | val=0.002 | wnorm=126.27 | 36s
+  step= 8000 | tr=1.000 | val=0.001 | wnorm=127.51 | 41s
+  step= 9000 | tr=1.000 | val=0.001 | wnorm=127.48 | 46s
+  step=10000 | tr=1.000 | val=0.002 | wnorm=127.90 | 51s
+  step=11000 | tr=1.000 | val=0.001 | wnorm=127.86 | 57s
+  step=12000 | tr=0.999 | val=0.001 | wnorm=128.92 | 62s
+  step=13000 | tr=1.000 | val=0.002 | wnorm=129.36 | 67s
+  step=14000 | tr=0.998 | val=0.002 | wnorm=130.38 | 72s
+  step=15000 | tr=1.000 | val=0.002 | wnorm=131.75 | 78s
+  DONE | steps=15000 | grok=NO | val=0.002 | wnorm_ratio=1.13 | 78s
+  → Saved incremental results (23/40 done)
+
+[24/40] Starting: BatchNorm WD=0.0 seed=7 curve=False
+
+============================================================
+CELL: norm=BatchNorm WD=0.0 seed=7 
+============================================================
+  init_val_ce=4.9366  ln(P=97)=4.5747
+  step= 1000 | tr=0.998 | val=0.001 | wnorm=119.82 | 5s
+  step= 2000 | tr=0.993 | val=0.001 | wnorm=121.72 | 11s
+  step= 3000 | tr=0.999 | val=0.001 | wnorm=123.48 | 16s
+  step= 4000 | tr=1.000 | val=0.001 | wnorm=125.13 | 21s
+  step= 5000 | tr=1.000 | val=0.002 | wnorm=125.74 | 27s
+  step= 6000 | tr=1.000 | val=0.001 | wnorm=126.79 | 32s
+  step= 7000 | tr=0.999 | val=0.001 | wnorm=128.38 | 37s
+  step= 8000 | tr=0.997 | val=0.001 | wnorm=130.03 | 42s
+  step= 9000 | tr=1.000 | val=0.001 | wnorm=131.00 | 48s
+  step=10000 | tr=1.000 | val=0.002 | wnorm=131.07 | 53s
+  step=11000 | tr=1.000 | val=0.001 | wnorm=131.42 | 58s
+  step=12000 | tr=1.000 | val=0.001 | wnorm=131.46 | 63s
+  step=13000 | tr=1.000 | val=0.001 | wnorm=132.40 | 68s
+  step=14000 | tr=0.999 | val=0.001 | wnorm=133.97 | 73s
+  step=15000 | tr=1.000 | val=0.002 | wnorm=134.74 | 79s
+  DONE | steps=15000 | grok=NO | val=0.002 | wnorm_ratio=1.15 | 79s
+  → Saved incremental results (24/40 done)
+
+[25/40] Starting: LayerNorm WD=1.0 seed=99 curve=False
+
+============================================================
+CELL: norm=LayerNorm WD=1.0 seed=99 
+============================================================
+  init_val_ce=4.7316  ln(P=97)=4.5747
+  step= 1000 | tr=0.995 | val=0.000 | wnorm=116.71 | 5s
+  step= 2000 | tr=0.990 | val=0.001 | wnorm=115.82 | 10s
+  step= 3000 | tr=0.997 | val=0.004 | wnorm=115.84 | 15s
+  step= 4000 | tr=0.998 | val=0.060 | wnorm=116.21 | 20s
+  step= 5000 | tr=0.999 | val=0.910 | wnorm=116.52 | 24s
+  *** GROKKING ONSET step=5200 val_acc=0.9655
+  *** GROKKING CONFIRMED step=5400
+  Early stop: val_acc=0.9904 at step=5502
+  DONE | steps=5502 | grok=YES @5200 | val=0.990 | wnorm_ratio=1.00 | 27s
+  → Saved incremental results (25/40 done)
+
+[26/40] Starting: LayerNorm WD=0.1 seed=99 curve=False
+
+============================================================
+CELL: norm=LayerNorm WD=0.1 seed=99 
+============================================================
+  init_val_ce=4.7316  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=120.00 | 5s
+  step= 2000 | tr=0.999 | val=0.001 | wnorm=121.29 | 10s
+  step= 3000 | tr=1.000 | val=0.001 | wnorm=121.31 | 15s
+  step= 4000 | tr=0.996 | val=0.001 | wnorm=121.67 | 20s
+  step= 5000 | tr=0.995 | val=0.001 | wnorm=122.08 | 25s
+  step= 6000 | tr=1.000 | val=0.001 | wnorm=121.99 | 30s
+  step= 7000 | tr=0.998 | val=0.001 | wnorm=121.88 | 35s
+  step= 8000 | tr=1.000 | val=0.001 | wnorm=121.30 | 40s
+  step= 9000 | tr=0.998 | val=0.001 | wnorm=121.69 | 45s
+  step=10000 | tr=0.999 | val=0.001 | wnorm=122.22 | 50s
+  step=11000 | tr=0.999 | val=0.002 | wnorm=122.67 | 55s
+  step=12000 | tr=0.999 | val=0.003 | wnorm=123.03 | 60s
+  step=13000 | tr=1.000 | val=0.003 | wnorm=122.71 | 65s
+  step=14000 | tr=1.000 | val=0.007 | wnorm=123.13 | 71s
+  step=15000 | tr=0.998 | val=0.006 | wnorm=123.79 | 76s
+  DONE | steps=15000 | grok=NO | val=0.006 | wnorm_ratio=1.06 | 76s
+  → Saved incremental results (26/40 done)
+
+[27/40] Starting: LayerNorm WD=0.01 seed=99 curve=False
+
+============================================================
+CELL: norm=LayerNorm WD=0.01 seed=99 
+============================================================
+  init_val_ce=4.7316  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.002 | wnorm=120.54 | 5s
+  step= 2000 | tr=0.994 | val=0.001 | wnorm=121.98 | 10s
+  step= 3000 | tr=0.998 | val=0.001 | wnorm=123.34 | 15s
+  step= 4000 | tr=0.998 | val=0.002 | wnorm=124.57 | 20s
+  step= 5000 | tr=0.997 | val=0.002 | wnorm=125.73 | 25s
+  step= 6000 | tr=0.998 | val=0.001 | wnorm=126.81 | 30s
+  step= 7000 | tr=0.999 | val=0.001 | wnorm=127.88 | 35s
+  step= 8000 | tr=1.000 | val=0.002 | wnorm=128.39 | 40s
+  step= 9000 | tr=1.000 | val=0.002 | wnorm=128.36 | 45s
+  step=10000 | tr=1.000 | val=0.002 | wnorm=129.37 | 50s
+  step=11000 | tr=1.000 | val=0.003 | wnorm=132.18 | 55s
+  step=12000 | tr=1.000 | val=0.004 | wnorm=137.33 | 60s
+  step=13000 | tr=1.000 | val=0.004 | wnorm=145.49 | 66s
+  step=14000 | tr=1.000 | val=0.004 | wnorm=157.12 | 71s
+  step=15000 | tr=1.000 | val=0.006 | wnorm=172.35 | 76s
+  DONE | steps=15000 | grok=NO | val=0.006 | wnorm_ratio=1.47 | 76s
+  → Saved incremental results (27/40 done)
+
+[28/40] Starting: LayerNorm WD=0.0 seed=99 curve=False
+
+============================================================
+CELL: norm=LayerNorm WD=0.0 seed=99 
+============================================================
+  init_val_ce=4.7316  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.002 | wnorm=120.71 | 5s
+  step= 2000 | tr=1.000 | val=0.002 | wnorm=122.11 | 10s
+  step= 3000 | tr=0.998 | val=0.002 | wnorm=123.41 | 15s
+  step= 4000 | tr=0.995 | val=0.002 | wnorm=124.71 | 20s
+  step= 5000 | tr=1.000 | val=0.001 | wnorm=125.40 | 25s
+  step= 6000 | tr=1.000 | val=0.001 | wnorm=125.67 | 30s
+  step= 7000 | tr=1.000 | val=0.002 | wnorm=127.08 | 35s
+  step= 8000 | tr=1.000 | val=0.002 | wnorm=130.42 | 40s
+  step= 9000 | tr=1.000 | val=0.002 | wnorm=136.33 | 45s
+  step=10000 | tr=1.000 | val=0.002 | wnorm=145.51 | 50s
+  step=11000 | tr=1.000 | val=0.002 | wnorm=158.40 | 55s
+  step=12000 | tr=1.000 | val=0.004 | wnorm=175.13 | 60s
+  step=13000 | tr=1.000 | val=0.004 | wnorm=195.47 | 65s
+  step=14000 | tr=1.000 | val=0.004 | wnorm=218.98 | 70s
+  step=15000 | tr=1.000 | val=0.004 | wnorm=244.96 | 75s
+  DONE | steps=15000 | grok=NO | val=0.004 | wnorm_ratio=2.09 | 75s
+  → Saved incremental results (28/40 done)
+
+[29/40] Starting: BatchNorm WD=1.0 seed=99 curve=False
+
+============================================================
+CELL: norm=BatchNorm WD=1.0 seed=99 
+============================================================
+  init_val_ce=4.9538  ln(P=97)=4.5747
+  step= 1000 | tr=0.977 | val=0.001 | wnorm=116.27 | 5s
+  step= 2000 | tr=0.977 | val=0.000 | wnorm=115.24 | 11s
+  step= 3000 | tr=0.996 | val=0.002 | wnorm=114.73 | 16s
+  step= 4000 | tr=0.991 | val=0.011 | wnorm=114.42 | 21s
+  step= 5000 | tr=0.996 | val=0.238 | wnorm=114.22 | 26s
+  step= 6000 | tr=1.000 | val=0.917 | wnorm=114.26 | 31s
+  *** GROKKING ONSET step=6200 val_acc=0.9584
+  *** GROKKING CONFIRMED step=6400
+  Early stop: val_acc=0.9903 at step=6468
+  DONE | steps=6468 | grok=YES @6200 | val=0.990 | wnorm_ratio=0.98 | 34s
+  → Saved incremental results (29/40 done)
+
+[30/40] Starting: BatchNorm WD=0.1 seed=99 curve=False
+
+============================================================
+CELL: norm=BatchNorm WD=0.1 seed=99 
+============================================================
+  init_val_ce=4.9538  ln(P=97)=4.5747
+  step= 1000 | tr=0.999 | val=0.001 | wnorm=119.26 | 5s
+  step= 2000 | tr=0.995 | val=0.001 | wnorm=120.27 | 10s
+  step= 3000 | tr=1.000 | val=0.001 | wnorm=121.08 | 16s
+  step= 4000 | tr=1.000 | val=0.000 | wnorm=121.82 | 21s
+  step= 5000 | tr=0.999 | val=0.001 | wnorm=122.49 | 26s
+  step= 6000 | tr=1.000 | val=0.001 | wnorm=122.16 | 31s
+  step= 7000 | tr=1.000 | val=0.001 | wnorm=121.87 | 36s
+  step= 8000 | tr=1.000 | val=0.001 | wnorm=121.52 | 42s
+  step= 9000 | tr=0.992 | val=0.001 | wnorm=121.11 | 47s
+  step=10000 | tr=0.997 | val=0.001 | wnorm=121.78 | 52s
+  step=11000 | tr=1.000 | val=0.001 | wnorm=121.35 | 57s
+  step=12000 | tr=1.000 | val=0.000 | wnorm=121.11 | 62s
+  step=13000 | tr=0.998 | val=0.001 | wnorm=121.33 | 68s
+  step=14000 | tr=0.997 | val=0.001 | wnorm=122.11 | 73s
+  step=15000 | tr=0.998 | val=0.003 | wnorm=122.98 | 78s
+  DONE | steps=15000 | grok=NO | val=0.003 | wnorm_ratio=1.05 | 78s
+  → Saved incremental results (30/40 done)
+
+[31/40] Starting: BatchNorm WD=0.01 seed=99 curve=False
+
+============================================================
+CELL: norm=BatchNorm WD=0.01 seed=99 
+============================================================
+  init_val_ce=4.9538  ln(P=97)=4.5747
+  step= 1000 | tr=0.996 | val=0.001 | wnorm=119.90 | 5s
+  step= 2000 | tr=0.998 | val=0.001 | wnorm=121.66 | 10s
+  step= 3000 | tr=0.999 | val=0.002 | wnorm=123.24 | 16s
+  step= 4000 | tr=0.997 | val=0.001 | wnorm=124.77 | 21s
+  step= 5000 | tr=0.999 | val=0.002 | wnorm=126.20 | 26s
+  step= 6000 | tr=0.999 | val=0.001 | wnorm=127.61 | 31s
+  step= 7000 | tr=0.999 | val=0.001 | wnorm=129.06 | 37s
+  step= 8000 | tr=1.000 | val=0.002 | wnorm=129.33 | 42s
+  step= 9000 | tr=1.000 | val=0.001 | wnorm=130.16 | 47s
+  step=10000 | tr=1.000 | val=0.001 | wnorm=131.57 | 52s
+  step=11000 | tr=1.000 | val=0.001 | wnorm=132.84 | 57s
+  step=12000 | tr=1.000 | val=0.001 | wnorm=132.81 | 63s
+  step=13000 | tr=0.998 | val=0.002 | wnorm=132.82 | 68s
+  step=14000 | tr=1.000 | val=0.001 | wnorm=132.80 | 73s
+  step=15000 | tr=0.999 | val=0.003 | wnorm=133.61 | 79s
+  DONE | steps=15000 | grok=NO | val=0.003 | wnorm_ratio=1.14 | 79s
+  → Saved incremental results (31/40 done)
+
+[32/40] Starting: BatchNorm WD=0.0 seed=99 curve=False
+
+============================================================
+CELL: norm=BatchNorm WD=0.0 seed=99 
+============================================================
+  init_val_ce=4.9538  ln(P=97)=4.5747
+  step= 1000 | tr=0.998 | val=0.001 | wnorm=119.97 | 5s
+  step= 2000 | tr=0.997 | val=0.001 | wnorm=121.82 | 11s
+  step= 3000 | tr=0.999 | val=0.001 | wnorm=123.43 | 16s
+  step= 4000 | tr=0.999 | val=0.001 | wnorm=125.12 | 21s
+  step= 5000 | tr=0.999 | val=0.001 | wnorm=126.77 | 26s
+  step= 6000 | tr=1.000 | val=0.002 | wnorm=127.93 | 32s
+  step= 7000 | tr=0.998 | val=0.001 | wnorm=128.37 | 37s
+  step= 8000 | tr=0.999 | val=0.002 | wnorm=129.91 | 42s
+  step= 9000 | tr=0.999 | val=0.001 | wnorm=131.47 | 47s
+  step=10000 | tr=0.999 | val=0.001 | wnorm=133.15 | 52s
+  step=11000 | tr=1.000 | val=0.002 | wnorm=134.15 | 57s
+  step=12000 | tr=1.000 | val=0.002 | wnorm=134.22 | 62s
+  step=13000 | tr=1.000 | val=0.001 | wnorm=134.67 | 67s
+  step=14000 | tr=1.000 | val=0.002 | wnorm=134.64 | 72s
+  step=15000 | tr=0.999 | val=0.002 | wnorm=135.77 | 77s
+  DONE | steps=15000 | grok=NO | val=0.002 | wnorm_ratio=1.16 | 77s
+  → Saved incremental results (32/40 done)
+
+[33/40] Starting: LayerNorm WD=1.0 seed=2024 curve=False
+
+============================================================
+CELL: norm=LayerNorm WD=1.0 seed=2024 
+============================================================
+  init_val_ce=4.7561  ln(P=97)=4.5747
+  step= 1000 | tr=0.995 | val=0.000 | wnorm=115.74 | 5s
+  step= 2000 | tr=0.998 | val=0.001 | wnorm=114.68 | 10s
+  step= 3000 | tr=1.000 | val=0.003 | wnorm=113.81 | 15s
+  step= 4000 | tr=0.992 | val=0.052 | wnorm=114.11 | 20s
+  step= 5000 | tr=0.999 | val=0.877 | wnorm=114.62 | 25s
+  *** GROKKING ONSET step=5200 val_acc=0.9506
+  *** GROKKING CONFIRMED step=5400
+  Early stop: val_acc=0.9908 at step=5474
+  DONE | steps=5474 | grok=YES @5200 | val=0.991 | wnorm_ratio=0.99 | 27s
+  → Saved incremental results (33/40 done)
+
+[34/40] Starting: LayerNorm WD=0.1 seed=2024 curve=False
+
+============================================================
+CELL: norm=LayerNorm WD=0.1 seed=2024 
+============================================================
+  init_val_ce=4.7561  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.000 | wnorm=118.80 | 5s
+  step= 2000 | tr=0.999 | val=0.001 | wnorm=119.55 | 10s
+  step= 3000 | tr=0.999 | val=0.001 | wnorm=120.36 | 15s
+  step= 4000 | tr=0.999 | val=0.001 | wnorm=120.95 | 20s
+  step= 5000 | tr=0.999 | val=0.001 | wnorm=121.44 | 25s
+  step= 6000 | tr=1.000 | val=0.001 | wnorm=121.14 | 30s
+  step= 7000 | tr=1.000 | val=0.001 | wnorm=121.10 | 35s
+  step= 8000 | tr=0.999 | val=0.001 | wnorm=122.13 | 39s
+  step= 9000 | tr=0.999 | val=0.002 | wnorm=122.32 | 44s
+  step=10000 | tr=0.997 | val=0.001 | wnorm=122.49 | 49s
+  step=11000 | tr=0.999 | val=0.002 | wnorm=122.70 | 54s
+  step=12000 | tr=0.999 | val=0.003 | wnorm=122.93 | 59s
+  step=13000 | tr=0.999 | val=0.004 | wnorm=123.12 | 63s
+  step=14000 | tr=1.000 | val=0.005 | wnorm=122.65 | 68s
+  step=15000 | tr=0.999 | val=0.007 | wnorm=123.50 | 73s
+  DONE | steps=15000 | grok=NO | val=0.007 | wnorm_ratio=1.07 | 73s
+  → Saved incremental results (34/40 done)
+
+[35/40] Starting: LayerNorm WD=0.01 seed=2024 curve=False
+
+============================================================
+CELL: norm=LayerNorm WD=0.01 seed=2024 
+============================================================
+  init_val_ce=4.7561  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.001 | wnorm=119.16 | 5s
+  step= 2000 | tr=1.000 | val=0.000 | wnorm=120.75 | 10s
+  step= 3000 | tr=1.000 | val=0.001 | wnorm=121.53 | 15s
+  step= 4000 | tr=0.997 | val=0.000 | wnorm=122.35 | 20s
+  step= 5000 | tr=0.997 | val=0.001 | wnorm=123.43 | 25s
+  step= 6000 | tr=0.998 | val=0.001 | wnorm=124.45 | 30s
+  step= 7000 | tr=0.999 | val=0.001 | wnorm=125.39 | 35s
+  step= 8000 | tr=0.997 | val=0.001 | wnorm=126.33 | 40s
+  step= 9000 | tr=1.000 | val=0.001 | wnorm=127.19 | 45s
+  step=10000 | tr=1.000 | val=0.001 | wnorm=128.03 | 49s
+  step=11000 | tr=1.000 | val=0.001 | wnorm=128.03 | 54s
+  step=12000 | tr=1.000 | val=0.001 | wnorm=129.10 | 59s
+  step=13000 | tr=1.000 | val=0.002 | wnorm=132.09 | 64s
+  step=14000 | tr=1.000 | val=0.002 | wnorm=137.50 | 69s
+  step=15000 | tr=1.000 | val=0.003 | wnorm=145.90 | 74s
+  DONE | steps=15000 | grok=NO | val=0.003 | wnorm_ratio=1.26 | 74s
+  → Saved incremental results (35/40 done)
+
+[36/40] Starting: LayerNorm WD=0.0 seed=2024 curve=False
+
+============================================================
+CELL: norm=LayerNorm WD=0.0 seed=2024 
+============================================================
+  init_val_ce=4.7561  ln(P=97)=4.5747
+  step= 1000 | tr=1.000 | val=0.000 | wnorm=119.46 | 5s
+  step= 2000 | tr=1.000 | val=0.001 | wnorm=120.87 | 9s
+  step= 3000 | tr=0.997 | val=0.001 | wnorm=122.10 | 14s
+  step= 4000 | tr=0.999 | val=0.001 | wnorm=123.39 | 19s
+  step= 5000 | tr=0.995 | val=0.001 | wnorm=124.60 | 24s
+  step= 6000 | tr=1.000 | val=0.000 | wnorm=125.72 | 29s
+  step= 7000 | tr=1.000 | val=0.001 | wnorm=125.96 | 34s
+  step= 8000 | tr=1.000 | val=0.000 | wnorm=126.51 | 38s
+  step= 9000 | tr=1.000 | val=0.001 | wnorm=128.80 | 43s
+  step=10000 | tr=1.000 | val=0.002 | wnorm=133.18 | 48s
+  step=11000 | tr=1.000 | val=0.003 | wnorm=140.31 | 53s
+  step=12000 | tr=1.000 | val=0.003 | wnorm=150.78 | 58s
+  step=13000 | tr=1.000 | val=0.003 | wnorm=164.89 | 63s
+  step=14000 | tr=1.000 | val=0.003 | wnorm=182.67 | 67s
+  step=15000 | tr=1.000 | val=0.003 | wnorm=203.89 | 72s
+  DONE | steps=15000 | grok=NO | val=0.003 | wnorm_ratio=1.76 | 72s
+  → Saved incremental results (36/40 done)
+
+[37/40] Starting: BatchNorm WD=1.0 seed=2024 curve=False
+
+============================================================
+CELL: norm=BatchNorm WD=1.0 seed=2024 
+============================================================
+  init_val_ce=4.9920  ln(P=97)=4.5747
+  step= 1000 | tr=0.993 | val=0.000 | wnorm=115.01 | 5s
+  step= 2000 | tr=0.999 | val=0.001 | wnorm=113.93 | 10s
+  step= 3000 | tr=0.998 | val=0.005 | wnorm=113.27 | 15s
+  step= 4000 | tr=0.996 | val=0.060 | wnorm=112.85 | 20s
+  step= 5000 | tr=0.997 | val=0.677 | wnorm=112.71 | 25s
+  *** GROKKING ONSET step=5600 val_acc=0.9543
+  *** GROKKING CONFIRMED step=5800
+  Early stop: val_acc=0.9901 at step=5981
+  DONE | steps=5981 | grok=YES @5600 | val=0.990 | wnorm_ratio=0.97 | 31s
+  → Saved incremental results (37/40 done)
+
+[38/40] Starting: BatchNorm WD=0.1 seed=2024 curve=False
+
+============================================================
+CELL: norm=BatchNorm WD=0.1 seed=2024 
+============================================================
+  init_val_ce=4.9920  ln(P=97)=4.5747
+  step= 1000 | tr=0.996 | val=0.000 | wnorm=118.13 | 5s
+  step= 2000 | tr=0.995 | val=0.001 | wnorm=119.19 | 10s
+  step= 3000 | tr=0.999 | val=0.000 | wnorm=120.06 | 15s
+  step= 4000 | tr=0.998 | val=0.001 | wnorm=120.74 | 20s
+  step= 5000 | tr=1.000 | val=0.001 | wnorm=121.20 | 25s
+  step= 6000 | tr=0.994 | val=0.001 | wnorm=120.82 | 30s
+  step= 7000 | tr=0.996 | val=0.001 | wnorm=121.46 | 35s
+  step= 8000 | tr=0.998 | val=0.001 | wnorm=122.09 | 40s
+  step= 9000 | tr=0.997 | val=0.002 | wnorm=122.74 | 45s
+  step=10000 | tr=0.999 | val=0.002 | wnorm=123.48 | 51s
+  step=11000 | tr=0.997 | val=0.002 | wnorm=124.15 | 56s
+  step=12000 | tr=1.000 | val=0.004 | wnorm=124.52 | 61s
+  step=13000 | tr=1.000 | val=0.007 | wnorm=123.96 | 66s
+  step=14000 | tr=1.000 | val=0.007 | wnorm=123.61 | 71s
+  step=15000 | tr=0.999 | val=0.009 | wnorm=123.80 | 76s
+  DONE | steps=15000 | grok=NO | val=0.009 | wnorm_ratio=1.07 | 76s
+  → Saved incremental results (38/40 done)
+
+[39/40] Starting: BatchNorm WD=0.01 seed=2024 curve=False
+
+============================================================
+CELL: norm=BatchNorm WD=0.01 seed=2024 
+============================================================
+  init_val_ce=4.9920  ln(P=97)=4.5747
+  step= 1000 | tr=0.999 | val=0.001 | wnorm=118.71 | 5s
+  step= 2000 | tr=0.996 | val=0.001 | wnorm=120.51 | 10s
+  step= 3000 | tr=0.997 | val=0.001 | wnorm=122.12 | 15s
+  step= 4000 | tr=0.998 | val=0.001 | wnorm=123.66 | 20s
+  step= 5000 | tr=1.000 | val=0.001 | wnorm=125.17 | 25s
+  step= 6000 | tr=0.999 | val=0.001 | wnorm=126.71 | 31s
+  step= 7000 | tr=1.000 | val=0.002 | wnorm=128.21 | 36s
+  step= 8000 | tr=1.000 | val=0.001 | wnorm=129.61 | 41s
+  step= 9000 | tr=1.000 | val=0.001 | wnorm=129.62 | 46s
+  step=10000 | tr=0.998 | val=0.001 | wnorm=131.32 | 51s
+  step=11000 | tr=1.000 | val=0.001 | wnorm=131.39 | 56s
+  step=12000 | tr=1.000 | val=0.002 | wnorm=131.13 | 61s
+  step=13000 | tr=1.000 | val=0.002 | wnorm=131.39 | 67s
+  step=14000 | tr=1.000 | val=0.002 | wnorm=133.38 | 72s
+  step=15000 | tr=0.998 | val=0.004 | wnorm=137.74 | 77s
+  DONE | steps=15000 | grok=NO | val=0.004 | wnorm_ratio=1.19 | 77s
+  → Saved incremental results (39/40 done)
+
+[40/40] Starting: BatchNorm WD=0.0 seed=2024 curve=False
+
+============================================================
+CELL: norm=BatchNorm WD=0.0 seed=2024 
+============================================================
+  init_val_ce=4.9920  ln(P=97)=4.5747
+  step= 1000 | tr=0.997 | val=0.001 | wnorm=118.77 | 5s
+  step= 2000 | tr=0.996 | val=0.000 | wnorm=120.74 | 10s
+  step= 3000 | tr=1.000 | val=0.001 | wnorm=122.46 | 15s
+  step= 4000 | tr=0.998 | val=0.001 | wnorm=124.12 | 20s
+  step= 5000 | tr=1.000 | val=0.001 | wnorm=125.20 | 25s
+  step= 6000 | tr=1.000 | val=0.001 | wnorm=125.76 | 30s
+  step= 7000 | tr=0.998 | val=0.001 | wnorm=127.38 | 36s
+  step= 8000 | tr=0.999 | val=0.001 | wnorm=129.03 | 41s
+  step= 9000 | tr=1.000 | val=0.001 | wnorm=129.81 | 46s
+  step=10000 | tr=0.999 | val=0.002 | wnorm=130.53 | 51s
+  step=11000 | tr=0.999 | val=0.002 | wnorm=132.17 | 56s
+  step=12000 | tr=1.000 | val=0.002 | wnorm=133.83 | 61s
+  step=13000 | tr=1.000 | val=0.001 | wnorm=134.52 | 66s
+  step=14000 | tr=1.000 | val=0.002 | wnorm=134.51 | 71s
+  step=15000 | tr=1.000 | val=0.001 | wnorm=134.49 | 76s
+  DONE | steps=15000 | grok=NO | val=0.001 | wnorm_ratio=1.16 | 76s
+  → Saved incremental results (40/40 done)
+
+============================================================
+ALL DONE: 40 cells in 2670s (44.5 min)
+
+Final RESULTS.json:
+{
+  "status": "DONE",
+  "scale": "probe",
+  "grid": [
+    {
+      "norm": "LayerNorm",
+      "WD": 0.0,
+      "seed": 42,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.003897,
+      "wnorm_ratio": 1.8839
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.01,
+      "seed": 42,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.006199,
+      "wnorm_ratio": 1.6688
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.1,
+      "seed": 42,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.024442,
+      "wnorm_ratio": 1.059
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 1.0,
+      "seed": 42,
+      "grokked": true,
+      "grok_onset": 5100,
+      "final_val_acc": 1.0,
+      "wnorm_ratio": 0.9602
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.0,
+      "seed": 42,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.000886,
+      "wnorm_ratio": 1.1529
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.01,
+      "seed": 42,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.00124,
+      "wnorm_ratio": 1.1394
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.1,
+      "seed": 42,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.001594,
+      "wnorm_ratio": 1.061
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 1.0,
+      "seed": 42,
+      "grokked": true,
+      "grok_onset": 6900,
+      "final_val_acc": 0.999823,
+      "wnorm_ratio": 1.0012
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 1.0,
+      "seed": 123,
+      "grokked": true,
+      "grok_onset": 6700,
+      "final_val_acc": 0.998052,
+      "wnorm_ratio": 0.9742
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.1,
+      "seed": 123,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.008679,
+      "wnorm_ratio": 1.0804
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.01,
+      "seed": 123,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.003719,
+      "wnorm_ratio": 1.5858
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.0,
+      "seed": 123,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.002657,
+      "wnorm_ratio": 1.6917
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 1.0,
+      "seed": 123,
+      "grokked": true,
+      "grok_onset": 6000,
+      "final_val_acc": 0.994686,
+      "wnorm_ratio": 0.9821
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.1,
+      "seed": 123,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.003542,
+      "wnorm_ratio": 1.0518
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.01,
+      "seed": 123,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.000708,
+      "wnorm_ratio": 1.1108
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.0,
+      "seed": 123,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.001594,
+      "wnorm_ratio": 1.1412
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 1.0,
+      "seed": 7,
+      "grokked": true,
+      "grok_onset": 5700,
+      "final_val_acc": 0.993978,
+      "wnorm_ratio": 0.972
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.1,
+      "seed": 7,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.015409,
+      "wnorm_ratio": 1.0377
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.01,
+      "seed": 7,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.003365,
+      "wnorm_ratio": 1.8442
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.0,
+      "seed": 7,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.004074,
+      "wnorm_ratio": 2.3045
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 1.0,
+      "seed": 7,
+      "grokked": true,
+      "grok_onset": 5200,
+      "final_val_acc": 0.995926,
+      "wnorm_ratio": 0.9702
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.1,
+      "seed": 7,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.031173,
+      "wnorm_ratio": 1.0567
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.01,
+      "seed": 7,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.001771,
+      "wnorm_ratio": 1.1264
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.0,
+      "seed": 7,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.001948,
+      "wnorm_ratio": 1.152
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 1.0,
+      "seed": 99,
+      "grokked": true,
+      "grok_onset": 5200,
+      "final_val_acc": 0.990436,
+      "wnorm_ratio": 0.9974
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.1,
+      "seed": 99,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.006022,
+      "wnorm_ratio": 1.0574
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.01,
+      "seed": 99,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.005845,
+      "wnorm_ratio": 1.4722
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.0,
+      "seed": 99,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.004251,
+      "wnorm_ratio": 2.0924
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 1.0,
+      "seed": 99,
+      "grokked": true,
+      "grok_onset": 6200,
+      "final_val_acc": 0.990259,
+      "wnorm_ratio": 0.9763
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.1,
+      "seed": 99,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.002657,
+      "wnorm_ratio": 1.0505
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.01,
+      "seed": 99,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.002657,
+      "wnorm_ratio": 1.1413
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.0,
+      "seed": 99,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.002125,
+      "wnorm_ratio": 1.1597
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 1.0,
+      "seed": 2024,
+      "grokked": true,
+      "grok_onset": 5200,
+      "final_val_acc": 0.99079,
+      "wnorm_ratio": 0.9924
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.1,
+      "seed": 2024,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.007085,
+      "wnorm_ratio": 1.0662
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.01,
+      "seed": 2024,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.003011,
+      "wnorm_ratio": 1.2595
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.0,
+      "seed": 2024,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.003011,
+      "wnorm_ratio": 1.7602
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 1.0,
+      "seed": 2024,
+      "grokked": true,
+      "grok_onset": 5600,
+      "final_val_acc": 0.990081,
+      "wnorm_ratio": 0.9742
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.1,
+      "seed": 2024,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.008856,
+      "wnorm_ratio": 1.0688
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.01,
+      "seed": 2024,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.004251,
+      "wnorm_ratio": 1.1891
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.0,
+      "seed": 2024,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.001063,
+      "wnorm_ratio": 1.161
+    }
+  ],
+  "by_condition": {
+    "layer_wd0.0": {
+      "norm": "LayerNorm",
+      "WD": 0.0,
+      "n_cells": 5,
+      "grok_rate": "0/5",
+      "grok_rate_float": 0.0,
+      "wilson_ci95": [
+        0.0,
+        0.4345
+      ],
+      "mean_onset": null,
+      "std_onset": null,
+      "final_val_accs": [
+        0.003897,
+        0.002657,
+        0.004074,
+        0.004251,
+        0.003011
+      ],
+      "wnorm_ratios": [
+        1.8839,
+        1.6917,
+        2.3045,
+        2.0924,
+        1.7602
+      ]
+    },
+    "layer_wd0.01": {
+      "norm": "LayerNorm",
+      "WD": 0.01,
+      "n_cells": 5,
+      "grok_rate": "0/5",
+      "grok_rate_float": 0.0,
+      "wilson_ci95": [
+        0.0,
+        0.4345
+      ],
+      "mean_onset": null,
+      "std_onset": null,
+      "final_val_accs": [
+        0.006199,
+        0.003719,
+        0.003365,
+        0.005845,
+        0.003011
+      ],
+      "wnorm_ratios": [
+        1.6688,
+        1.5858,
+        1.8442,
+        1.4722,
+        1.2595
+      ]
+    },
+    "layer_wd0.1": {
+      "norm": "LayerNorm",
+      "WD": 0.1,
+      "n_cells": 5,
+      "grok_rate": "0/5",
+      "grok_rate_float": 0.0,
+      "wilson_ci95": [
+        0.0,
+        0.4345
+      ],
+      "mean_onset": null,
+      "std_onset": null,
+      "final_val_accs": [
+        0.024442,
+        0.008679,
+        0.015409,
+        0.006022,
+        0.007085
+      ],
+      "wnorm_ratios": [
+        1.059,
+        1.0804,
+        1.0377,
+        1.0574,
+        1.0662
+      ]
+    },
+    "layer_wd1.0": {
+      "norm": "LayerNorm",
+      "WD": 1.0,
+      "n_cells": 5,
+      "grok_rate": "5/5",
+      "grok_rate_float": 1.0,
+      "wilson_ci95": [
+        0.5655,
+        1.0
+      ],
+      "mean_onset": 5580.0,
+      "std_onset": 598.0,
+      "final_val_accs": [
+        1.0,
+        0.998052,
+        0.993978,
+        0.990436,
+        0.99079
+      ],
+      "wnorm_ratios": [
+        0.9602,
+        0.9742,
+        0.972,
+        0.9974,
+        0.9924
+      ]
+    },
+    "batch_wd0.0": {
+      "norm": "BatchNorm",
+      "WD": 0.0,
+      "n_cells": 5,
+      "grok_rate": "0/5",
+      "grok_rate_float": 0.0,
+      "wilson_ci95": [
+        0.0,
+        0.4345
+      ],
+      "mean_onset": null,
+      "std_onset": null,
+      "final_val_accs": [
+        0.000886,
+        0.001594,
+        0.001948,
+        0.002125,
+        0.001063
+      ],
+      "wnorm_ratios": [
+        1.1529,
+        1.1412,
+        1.152,
+        1.1597,
+        1.161
+      ]
+    },
+    "batch_wd0.01": {
+      "norm": "BatchNorm",
+      "WD": 0.01,
+      "n_cells": 5,
+      "grok_rate": "0/5",
+      "grok_rate_float": 0.0,
+      "wilson_ci95": [
+        0.0,
+        0.4345
+      ],
+      "mean_onset": null,
+      "std_onset": null,
+      "final_val_accs": [
+        0.00124,
+        0.000708,
+        0.001771,
+        0.002657,
+        0.004251
+      ],
+      "wnorm_ratios": [
+        1.1394,
+        1.1108,
+        1.1264,
+        1.1413,
+        1.1891
+      ]
+    },
+    "batch_wd0.1": {
+      "norm": "BatchNorm",
+      "WD": 0.1,
+      "n_cells": 5,
+      "grok_rate": "0/5",
+      "grok_rate_float": 0.0,
+      "wilson_ci95": [
+        0.0,
+        0.4345
+      ],
+      "mean_onset": null,
+      "std_onset": null,
+      "final_val_accs": [
+        0.001594,
+        0.003542,
+        0.031173,
+        0.002657,
+        0.008856
+      ],
+      "wnorm_ratios": [
+        1.061,
+        1.0518,
+        1.0567,
+        1.0505,
+        1.0688
+      ]
+    },
+    "batch_wd1.0": {
+      "norm": "BatchNorm",
+      "WD": 1.0,
+      "n_cells": 5,
+      "grok_rate": "5/5",
+      "grok_rate_float": 1.0,
+      "wilson_ci95": [
+        0.5655,
+        1.0
+      ],
+      "mean_onset": 5980.0,
+      "std_onset": 574.1,
+      "final_val_accs": [
+        0.999823,
+        0.994686,
+        0.995926,
+        0.990259,
+        0.990081
+      ],
+      "wnorm_ratios": [
+        1.0012,
+        0.9821,
+        0.9702,
+        0.9763,
+        0.9742
+      ]
+    }
+  },
+  "bn_nowd_groks": false,
+  "implicit_wd_equivalent_level": 0.0,
+  "init_val_ce": 4.7173,
+  "vocab_size": 97,
+  "ln_vocab": 4.5747,
+  "n_seeds": 5,
+  "curves_saved": [
+    "results/grok_v2/curves/layernorm_wd0.0.json",
+    "results/grok_v2/curves/layernorm_wd0.01.json",
+    "results/grok_v2/curves/layernorm_wd0.1.json",
+    "results/grok_v2/curves/layernorm_wd1.0.json",
+    "results/grok_v2/curves/batchnorm_wd0.0.json",
+    "results/grok_v2/curves/batchnorm_wd0.01.json",
+    "results/grok_v2/curves/batchnorm_wd0.1.json",
+    "results/grok_v2/curves/batchnorm_wd1.0.json"
+  ],
+  "metrics": {
+    "n_cells_completed": 40,
+    "n_cells_total": 40
+  },
+  "subject_executed": "Grid: norm {LN,BN} \u00d7 WD {0,0.01,0.1,1.0} \u00d7 seed {42,123,7,99,2024} = 40 cells. Fixed BS=256. 1-layer transformer (d=128, h=4, mlp=512) on mod-97 addition. AdamW LR=1e-3, max 15k steps. Seed=42 cells: full 15k (no early stop), curves saved. Other seeds: early-stop on sustained val_acc>0.95.",
+  "notes": "Build on increase_complexity-01: BN+noWD 0/6 groks (BS{64,256,512}, 2 seeds). This round: fixed BS=256, 5 seeds, WD expanded to {0,0.01,0.1,1.0}. Status: 40/40 cells done. BN+noWD: 0/5 grokked. LN+WD=1.0: 5/5 grokked. LN+noWD: 0/5 grokked."
+}

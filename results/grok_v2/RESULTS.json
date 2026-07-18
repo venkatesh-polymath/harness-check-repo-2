@@ -1,0 +1,606 @@
+{
+  "status": "DONE",
+  "scale": "probe",
+  "grid": [
+    {
+      "norm": "LayerNorm",
+      "WD": 0.0,
+      "seed": 42,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.003897,
+      "wnorm_ratio": 1.8839
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.01,
+      "seed": 42,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.006199,
+      "wnorm_ratio": 1.6688
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.1,
+      "seed": 42,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.024442,
+      "wnorm_ratio": 1.059
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 1.0,
+      "seed": 42,
+      "grokked": true,
+      "grok_onset": 5100,
+      "final_val_acc": 1.0,
+      "wnorm_ratio": 0.9602
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.0,
+      "seed": 42,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.000886,
+      "wnorm_ratio": 1.1529
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.01,
+      "seed": 42,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.00124,
+      "wnorm_ratio": 1.1394
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.1,
+      "seed": 42,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.001594,
+      "wnorm_ratio": 1.061
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 1.0,
+      "seed": 42,
+      "grokked": true,
+      "grok_onset": 6900,
+      "final_val_acc": 0.999823,
+      "wnorm_ratio": 1.0012
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 1.0,
+      "seed": 123,
+      "grokked": true,
+      "grok_onset": 6700,
+      "final_val_acc": 0.998052,
+      "wnorm_ratio": 0.9742
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.1,
+      "seed": 123,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.008679,
+      "wnorm_ratio": 1.0804
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.01,
+      "seed": 123,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.003719,
+      "wnorm_ratio": 1.5858
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.0,
+      "seed": 123,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.002657,
+      "wnorm_ratio": 1.6917
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 1.0,
+      "seed": 123,
+      "grokked": true,
+      "grok_onset": 6000,
+      "final_val_acc": 0.994686,
+      "wnorm_ratio": 0.9821
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.1,
+      "seed": 123,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.003542,
+      "wnorm_ratio": 1.0518
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.01,
+      "seed": 123,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.000708,
+      "wnorm_ratio": 1.1108
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.0,
+      "seed": 123,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.001594,
+      "wnorm_ratio": 1.1412
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 1.0,
+      "seed": 7,
+      "grokked": true,
+      "grok_onset": 5700,
+      "final_val_acc": 0.993978,
+      "wnorm_ratio": 0.972
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.1,
+      "seed": 7,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.015409,
+      "wnorm_ratio": 1.0377
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.01,
+      "seed": 7,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.003365,
+      "wnorm_ratio": 1.8442
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.0,
+      "seed": 7,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.004074,
+      "wnorm_ratio": 2.3045
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 1.0,
+      "seed": 7,
+      "grokked": true,
+      "grok_onset": 5200,
+      "final_val_acc": 0.995926,
+      "wnorm_ratio": 0.9702
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.1,
+      "seed": 7,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.031173,
+      "wnorm_ratio": 1.0567
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.01,
+      "seed": 7,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.001771,
+      "wnorm_ratio": 1.1264
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.0,
+      "seed": 7,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.001948,
+      "wnorm_ratio": 1.152
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 1.0,
+      "seed": 99,
+      "grokked": true,
+      "grok_onset": 5200,
+      "final_val_acc": 0.990436,
+      "wnorm_ratio": 0.9974
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.1,
+      "seed": 99,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.006022,
+      "wnorm_ratio": 1.0574
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.01,
+      "seed": 99,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.005845,
+      "wnorm_ratio": 1.4722
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.0,
+      "seed": 99,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.004251,
+      "wnorm_ratio": 2.0924
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 1.0,
+      "seed": 99,
+      "grokked": true,
+      "grok_onset": 6200,
+      "final_val_acc": 0.990259,
+      "wnorm_ratio": 0.9763
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.1,
+      "seed": 99,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.002657,
+      "wnorm_ratio": 1.0505
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.01,
+      "seed": 99,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.002657,
+      "wnorm_ratio": 1.1413
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.0,
+      "seed": 99,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.002125,
+      "wnorm_ratio": 1.1597
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 1.0,
+      "seed": 2024,
+      "grokked": true,
+      "grok_onset": 5200,
+      "final_val_acc": 0.99079,
+      "wnorm_ratio": 0.9924
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.1,
+      "seed": 2024,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.007085,
+      "wnorm_ratio": 1.0662
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.01,
+      "seed": 2024,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.003011,
+      "wnorm_ratio": 1.2595
+    },
+    {
+      "norm": "LayerNorm",
+      "WD": 0.0,
+      "seed": 2024,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.003011,
+      "wnorm_ratio": 1.7602
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 1.0,
+      "seed": 2024,
+      "grokked": true,
+      "grok_onset": 5600,
+      "final_val_acc": 0.990081,
+      "wnorm_ratio": 0.9742
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.1,
+      "seed": 2024,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.008856,
+      "wnorm_ratio": 1.0688
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.01,
+      "seed": 2024,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.004251,
+      "wnorm_ratio": 1.1891
+    },
+    {
+      "norm": "BatchNorm",
+      "WD": 0.0,
+      "seed": 2024,
+      "grokked": false,
+      "grok_onset": null,
+      "final_val_acc": 0.001063,
+      "wnorm_ratio": 1.161
+    }
+  ],
+  "by_condition": {
+    "layer_wd0.0": {
+      "norm": "LayerNorm",
+      "WD": 0.0,
+      "n_cells": 5,
+      "grok_rate": "0/5",
+      "grok_rate_float": 0.0,
+      "wilson_ci95": [
+        0.0,
+        0.4345
+      ],
+      "mean_onset": null,
+      "std_onset": null,
+      "final_val_accs": [
+        0.003897,
+        0.002657,
+        0.004074,
+        0.004251,
+        0.003011
+      ],
+      "wnorm_ratios": [
+        1.8839,
+        1.6917,
+        2.3045,
+        2.0924,
+        1.7602
+      ]
+    },
+    "layer_wd0.01": {
+      "norm": "LayerNorm",
+      "WD": 0.01,
+      "n_cells": 5,
+      "grok_rate": "0/5",
+      "grok_rate_float": 0.0,
+      "wilson_ci95": [
+        0.0,
+        0.4345
+      ],
+      "mean_onset": null,
+      "std_onset": null,
+      "final_val_accs": [
+        0.006199,
+        0.003719,
+        0.003365,
+        0.005845,
+        0.003011
+      ],
+      "wnorm_ratios": [
+        1.6688,
+        1.5858,
+        1.8442,
+        1.4722,
+        1.2595
+      ]
+    },
+    "layer_wd0.1": {
+      "norm": "LayerNorm",
+      "WD": 0.1,
+      "n_cells": 5,
+      "grok_rate": "0/5",
+      "grok_rate_float": 0.0,
+      "wilson_ci95": [
+        0.0,
+        0.4345
+      ],
+      "mean_onset": null,
+      "std_onset": null,
+      "final_val_accs": [
+        0.024442,
+        0.008679,
+        0.015409,
+        0.006022,
+        0.007085
+      ],
+      "wnorm_ratios": [
+        1.059,
+        1.0804,
+        1.0377,
+        1.0574,
+        1.0662
+      ]
+    },
+    "layer_wd1.0": {
+      "norm": "LayerNorm",
+      "WD": 1.0,
+      "n_cells": 5,
+      "grok_rate": "5/5",
+      "grok_rate_float": 1.0,
+      "wilson_ci95": [
+        0.5655,
+        1.0
+      ],
+      "mean_onset": 5580.0,
+      "std_onset": 598.0,
+      "final_val_accs": [
+        1.0,
+        0.998052,
+        0.993978,
+        0.990436,
+        0.99079
+      ],
+      "wnorm_ratios": [
+        0.9602,
+        0.9742,
+        0.972,
+        0.9974,
+        0.9924
+      ]
+    },
+    "batch_wd0.0": {
+      "norm": "BatchNorm",
+      "WD": 0.0,
+      "n_cells": 5,
+      "grok_rate": "0/5",
+      "grok_rate_float": 0.0,
+      "wilson_ci95": [
+        0.0,
+        0.4345
+      ],
+      "mean_onset": null,
+      "std_onset": null,
+      "final_val_accs": [
+        0.000886,
+        0.001594,
+        0.001948,
+        0.002125,
+        0.001063
+      ],
+      "wnorm_ratios": [
+        1.1529,
+        1.1412,
+        1.152,
+        1.1597,
+        1.161
+      ]
+    },
+    "batch_wd0.01": {
+      "norm": "BatchNorm",
+      "WD": 0.01,
+      "n_cells": 5,
+      "grok_rate": "0/5",
+      "grok_rate_float": 0.0,
+      "wilson_ci95": [
+        0.0,
+        0.4345
+      ],
+      "mean_onset": null,
+      "std_onset": null,
+      "final_val_accs": [
+        0.00124,
+        0.000708,
+        0.001771,
+        0.002657,
+        0.004251
+      ],
+      "wnorm_ratios": [
+        1.1394,
+        1.1108,
+        1.1264,
+        1.1413,
+        1.1891
+      ]
+    },
+    "batch_wd0.1": {
+      "norm": "BatchNorm",
+      "WD": 0.1,
+      "n_cells": 5,
+      "grok_rate": "0/5",
+      "grok_rate_float": 0.0,
+      "wilson_ci95": [
+        0.0,
+        0.4345
+      ],
+      "mean_onset": null,
+      "std_onset": null,
+      "final_val_accs": [
+        0.001594,
+        0.003542,
+        0.031173,
+        0.002657,
+        0.008856
+      ],
+      "wnorm_ratios": [
+        1.061,
+        1.0518,
+        1.0567,
+        1.0505,
+        1.0688
+      ]
+    },
+    "batch_wd1.0": {
+      "norm": "BatchNorm",
+      "WD": 1.0,
+      "n_cells": 5,
+      "grok_rate": "5/5",
+      "grok_rate_float": 1.0,
+      "wilson_ci95": [
+        0.5655,
+        1.0
+      ],
+      "mean_onset": 5980.0,
+      "std_onset": 574.1,
+      "final_val_accs": [
+        0.999823,
+        0.994686,
+        0.995926,
+        0.990259,
+        0.990081
+      ],
+      "wnorm_ratios": [
+        1.0012,
+        0.9821,
+        0.9702,
+        0.9763,
+        0.9742
+      ]
+    }
+  },
+  "bn_nowd_groks": false,
+  "implicit_wd_equivalent_level": null,
+  "init_val_ce": 4.7173,
+  "vocab_size": 97,
+  "ln_vocab": 4.5747,
+  "n_seeds": 5,
+  "curves_saved": [
+    "results/grok_v2/curves/layernorm_wd0.0.json",
+    "results/grok_v2/curves/layernorm_wd0.01.json",
+    "results/grok_v2/curves/layernorm_wd0.1.json",
+    "results/grok_v2/curves/layernorm_wd1.0.json",
+    "results/grok_v2/curves/batchnorm_wd0.0.json",
+    "results/grok_v2/curves/batchnorm_wd0.01.json",
+    "results/grok_v2/curves/batchnorm_wd0.1.json",
+    "results/grok_v2/curves/batchnorm_wd1.0.json"
+  ],
+  "metrics": {
+    "n_cells_completed": 40,
+    "n_cells_total": 40
+  },
+  "subject_executed": "Grid: norm {LN,BN} \u00d7 WD {0,0.01,0.1,1.0} \u00d7 seed {42,123,7,99,2024} = 40 cells. Fixed BS=256. 1-layer transformer (d=128, h=4, mlp=512) on mod-97 addition. AdamW LR=1e-3, max 15k steps. Seed=42 cells: full 15k (no early stop), curves saved. Other seeds: early-stop on sustained val_acc>0.95.",
+  "notes": "Build on increase_complexity-01 (BN+noWD 0/6 at BS{64,256,512}, 2 seeds). This round: fixed BS=256, 5 seeds, WD\u2208{0,0.01,0.1,1.0}. Q1 CONFIRMED: BN+noWD 0/5 \u2014 BatchNorm implicit regularization is insufficient for grokking. Q2 SHARP RESULT: LN groks ONLY at WD=1.0 (5/5); WD\u2208{0,0.01,0.1} all fail (0/5 each). The grokking threshold for LN lies strictly between WD=0.1 and WD=1.0 under this setup. BN+WD=1.0 also groks 5/5 (mean onset 5980 steps, slightly slower than LN+WD=1.0 at 5580 steps). BN+noWD is equivalent to LN+WD\u22640.1 in grokking behavior (all fail), so BN implicit reg is below the 0.1\u21921.0 threshold band \u2014 cannot pin exact equivalence without finer WD sweep. implicit_wd_equivalent_level=null: BN+noWD never groks so no grok-delay match is possible. Q3 weight-norm: grokking cells (WD=1.0) stabilize wnorm_ratio at ~0.96\u20131.00; non-grokking LN cells show unbounded growth (1.04\u20132.30\u00d7); BN cells grow less (1.05\u20131.19\u00d7) but still fail to generalize. init_val_ce=4.7173 (vs ln(97)=4.5747; slightly above uniform, expected for small random init variation). No anomalies: all 40 cells cleanly either grokked or remained near 0% val_acc."
+}
