@@ -1,0 +1,87 @@
+{
+  "status": "DONE",
+  "arm": "none",
+  "regime": "hidden=100 MLP, online Permuted-MNIST, SGD, validated healthy regime",
+  "n_seeds": 5,
+  "n_tasks": 280,
+  "K_events": 8,
+  "trig_frac": 0.92,
+  "dead_thresh": 0.5,
+  "mean_ss_acc": 0.7161888000000001,
+  "std_ss_acc": 0.047064907633607454,
+  "mean_auc_acc": 0.8265703571428572,
+  "mean_final_dead": 0.9139999806880951,
+  "mean_events": 0.0,
+  "mean_units_reset": 0.0,
+  "per_seed": [
+    {
+      "seed": 0,
+      "arm": "none",
+      "task1_acc": 0.9238,
+      "ss_acc": 0.748822,
+      "auc_acc": 0.8402971428571429,
+      "final_dead": 0.9249999821186066,
+      "n_events": 0,
+      "event_tasks": [],
+      "total_units_reset": 0,
+      "ss_minus_task1_pp": -17.497799999999998
+    },
+    {
+      "seed": 1,
+      "arm": "none",
+      "task1_acc": 0.9354,
+      "ss_acc": 0.754564,
+      "auc_acc": 0.8291707142857143,
+      "final_dead": 0.9149999618530273,
+      "n_events": 0,
+      "event_tasks": [],
+      "total_units_reset": 0,
+      "ss_minus_task1_pp": -18.0836
+    },
+    {
+      "seed": 2,
+      "arm": "none",
+      "task1_acc": 0.9309,
+      "ss_acc": 0.689376,
+      "auc_acc": 0.8267967857142858,
+      "final_dead": 0.9399999976158142,
+      "n_events": 0,
+      "event_tasks": [],
+      "total_units_reset": 0,
+      "ss_minus_task1_pp": -24.152399999999997
+    },
+    {
+      "seed": 3,
+      "arm": "none",
+      "task1_acc": 0.937,
+      "ss_acc": 0.7525820000000002,
+      "auc_acc": 0.8347942857142856,
+      "final_dead": 0.8899999856948853,
+      "n_events": 0,
+      "event_tasks": [],
+      "total_units_reset": 0,
+      "ss_minus_task1_pp": -18.441799999999986
+    },
+    {
+      "seed": 4,
+      "arm": "none",
+      "task1_acc": 0.9294,
+      "ss_acc": 0.6356,
+      "auc_acc": 0.8017928571428572,
+      "final_dead": 0.8999999761581421,
+      "n_events": 0,
+      "event_tasks": [],
+      "total_units_reset": 0,
+      "ss_minus_task1_pp": -29.379999999999995
+    }
+  ],
+  "total_wall_time_sec": 588.6914985179901,
+  "subject_executed": "intervention arm=none, 5 seeds x 280 tasks, K=8",
+  "metrics": {
+    "arm": "none",
+    "mean_ss_acc": 0.7161888000000001,
+    "mean_final_dead": 0.9139999806880951,
+    "mean_events": 0.0
+  },
+  "notes": "Matched-budget reset-timing comparison. Compare mean_ss_acc across arms none/triggered/fixed/random seed-by-seed to test whether the diagnostic's TIMING preserves plasticity. Honest either way."
+}

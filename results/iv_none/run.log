@@ -1,0 +1,166 @@
+ARM=none  hidden=100 5seeds x 280tasks  K=8 TRIG_FRAC=0.92
+
+==================================================================
+ARM=none SEED 0 (elapsed 0s)
+==================================================================
+  t  1/280 acc=0.9238 dead=0.0600 erank= 38.43
+  t  2/280 acc=0.9363 dead=0.2250 erank= 40.05
+  t  3/280 acc=0.9286 dead=0.3200 erank= 36.95
+  t 40/280 acc=0.8951 dead=0.7850 erank= 19.04
+  t 80/280 acc=0.8878 dead=0.7800 erank= 18.47
+  t120/280 acc=0.8783 dead=0.8200 erank= 14.49
+  t160/280 acc=0.8312 dead=0.8700 erank= 11.58
+  t200/280 acc=0.8323 dead=0.8900 erank=  9.36
+  t240/280 acc=0.7027 dead=0.9000 erank=  9.31
+  t280/280 acc=0.6873 dead=0.9250 erank=  5.77
+  Seed 0 DONE ss_acc=0.7488 task1=0.9238 events=0 reset=0
+
+==================================================================
+ARM=none SEED 1 (elapsed 116s)
+==================================================================
+  t  1/280 acc=0.9354 dead=0.0650 erank= 37.91
+  t  2/280 acc=0.9402 dead=0.2200 erank= 40.92
+  t  3/280 acc=0.9324 dead=0.2850 erank= 40.44
+  t 40/280 acc=0.9026 dead=0.6400 erank= 25.34
+  t 80/280 acc=0.8744 dead=0.8450 erank= 14.37
+  t120/280 acc=0.8544 dead=0.8500 erank= 12.59
+  t160/280 acc=0.8698 dead=0.8300 erank= 12.34
+  t200/280 acc=0.8256 dead=0.8750 erank=  8.81
+  t240/280 acc=0.8136 dead=0.8900 erank=  9.16
+  t280/280 acc=0.8027 dead=0.9150 erank=  7.62
+  Seed 1 DONE ss_acc=0.7546 task1=0.9354 events=0 reset=0
+
+==================================================================
+ARM=none SEED 2 (elapsed 230s)
+==================================================================
+  t  1/280 acc=0.9309 dead=0.0750 erank= 36.03
+  t  2/280 acc=0.9376 dead=0.2950 erank= 40.01
+  t  3/280 acc=0.9288 dead=0.3500 erank= 39.44
+  t 40/280 acc=0.8866 dead=0.7600 erank= 20.52
+  t 80/280 acc=0.8966 dead=0.7550 erank= 19.17
+  t120/280 acc=0.8548 dead=0.8150 erank= 14.85
+  t160/280 acc=0.8547 dead=0.8450 erank= 14.26
+  t200/280 acc=0.7998 dead=0.8700 erank= 11.51
+  t240/280 acc=0.7866 dead=0.9100 erank=  5.61
+  t280/280 acc=0.4253 dead=0.9400 erank=  4.44
+  Seed 2 DONE ss_acc=0.6894 task1=0.9309 events=0 reset=0
+
+==================================================================
+ARM=none SEED 3 (elapsed 349s)
+==================================================================
+  t  1/280 acc=0.9370 dead=0.0750 erank= 36.09
+  t  2/280 acc=0.9245 dead=0.2800 erank= 36.61
+  t  3/280 acc=0.9334 dead=0.3350 erank= 37.39
+  t 40/280 acc=0.8793 dead=0.8250 erank= 15.59
+  t 80/280 acc=0.8745 dead=0.7650 erank= 20.56
+  t120/280 acc=0.8462 dead=0.8400 erank= 11.01
+  t160/280 acc=0.8823 dead=0.7700 erank= 16.91
+  t200/280 acc=0.7960 dead=0.8950 erank=  8.58
+  t240/280 acc=0.7554 dead=0.8900 erank=  8.95
+  t280/280 acc=0.7197 dead=0.8900 erank=  8.07
+  Seed 3 DONE ss_acc=0.7526 task1=0.9370 events=0 reset=0
+
+==================================================================
+ARM=none SEED 4 (elapsed 468s)
+==================================================================
+  t  1/280 acc=0.9294 dead=0.0650 erank= 38.19
+  t  2/280 acc=0.9340 dead=0.2350 erank= 39.55
+  t  3/280 acc=0.9343 dead=0.2800 erank= 40.59
+  t 40/280 acc=0.8943 dead=0.7850 erank= 20.74
+  t 80/280 acc=0.8836 dead=0.7250 erank= 24.47
+  t120/280 acc=0.8619 dead=0.8350 erank= 15.22
+  t160/280 acc=0.7979 dead=0.8750 erank= 11.78
+  t200/280 acc=0.7697 dead=0.8850 erank=  8.88
+  t240/280 acc=0.7071 dead=0.9350 erank=  5.48
+  t280/280 acc=0.7582 dead=0.9000 erank=  6.90
+  Seed 4 DONE ss_acc=0.6356 task1=0.9294 events=0 reset=0
+
+==================================================================
+DONE arm=none in 589s
+{
+  "status": "DONE",
+  "arm": "none",
+  "regime": "hidden=100 MLP, online Permuted-MNIST, SGD, validated healthy regime",
+  "n_seeds": 5,
+  "n_tasks": 280,
+  "K_events": 8,
+  "trig_frac": 0.92,
+  "dead_thresh": 0.5,
+  "mean_ss_acc": 0.7161888000000001,
+  "std_ss_acc": 0.047064907633607454,
+  "mean_auc_acc": 0.8265703571428572,
+  "mean_final_dead": 0.9139999806880951,
+  "mean_events": 0.0,
+  "mean_units_reset": 0.0,
+  "per_seed": [
+    {
+      "seed": 0,
+      "arm": "none",
+      "task1_acc": 0.9238,
+      "ss_acc": 0.748822,
+      "auc_acc": 0.8402971428571429,
+      "final_dead": 0.9249999821186066,
+      "n_events": 0,
+      "event_tasks": [],
+      "total_units_reset": 0,
+      "ss_minus_task1_pp": -17.497799999999998
+    },
+    {
+      "seed": 1,
+      "arm": "none",
+      "task1_acc": 0.9354,
+      "ss_acc": 0.754564,
+      "auc_acc": 0.8291707142857143,
+      "final_dead": 0.9149999618530273,
+      "n_events": 0,
+      "event_tasks": [],
+      "total_units_reset": 0,
+      "ss_minus_task1_pp": -18.0836
+    },
+    {
+      "seed": 2,
+      "arm": "none",
+      "task1_acc": 0.9309,
+      "ss_acc": 0.689376,
+      "auc_acc": 0.8267967857142858,
+      "final_dead": 0.9399999976158142,
+      "n_events": 0,
+      "event_tasks": [],
+      "total_units_reset": 0,
+      "ss_minus_task1_pp": -24.152399999999997
+    },
+    {
+      "seed": 3,
+      "arm": "none",
+      "task1_acc": 0.937,
+      "ss_acc": 0.7525820000000002,
+      "auc_acc": 0.8347942857142856,
+      "final_dead": 0.8899999856948853,
+      "n_events": 0,
+      "event_tasks": [],
+      "total_units_reset": 0,
+      "ss_minus_task1_pp": -18.441799999999986
+    },
+    {
+      "seed": 4,
+      "arm": "none",
+      "task1_acc": 0.9294,
+      "ss_acc": 0.6356,
+      "auc_acc": 0.8017928571428572,
+      "final_dead": 0.8999999761581421,
+      "n_events": 0,
+      "event_tasks": [],
+      "total_units_reset": 0,
+      "ss_minus_task1_pp": -29.379999999999995
+    }
+  ],
+  "total_wall_time_sec": 588.6914985179901,
+  "subject_executed": "intervention arm=none, 5 seeds x 280 tasks, K=8",
+  "metrics": {
+    "arm": "none",
+    "mean_ss_acc": 0.7161888000000001,
+    "mean_final_dead": 0.9139999806880951,
+    "mean_events": 0.0
+  },
+  "notes": "Matched-budget reset-timing comparison. Compare mean_ss_acc across arms none/triggered/fixed/random seed-by-seed to test whether the diagnostic's TIMING preserves plasticity. Honest either way."
+}
