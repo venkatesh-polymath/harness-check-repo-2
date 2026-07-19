@@ -1,0 +1,251 @@
+{
+  "status": "DONE",
+  "benchmark": "online_permuted_mnist_h100",
+  "n_seeds": 8,
+  "n_tasks": 300,
+  "scale": "full",
+  "healthy": true,
+  "mean_dead_after_task1": 0.06687499838881195,
+  "mean_task1_acc": 0.9341999999999999,
+  "mean_acc_drop_pp": 18.9110625,
+  "plasticity_loss_confirmed": true,
+  "n_collapsed": 8,
+  "lead_times": {
+    "dead_unit_fraction": {
+      "mean": 217.375,
+      "median": 210.0,
+      "iqr": [
+        200.5,
+        245.75
+      ],
+      "ci95": [
+        196.625,
+        238.12812499999998
+      ]
+    },
+    "effective_rank": {
+      "mean": 208.625,
+      "median": 203.5,
+      "iqr": [
+        185.0,
+        237.5
+      ],
+      "ci95": [
+        186.25,
+        230.5
+      ]
+    },
+    "gradient_noise_scale": {
+      "mean": 211.875,
+      "median": 208.5,
+      "iqr": [
+        197.75,
+        237.5
+      ],
+      "ci95": [
+        193.621875,
+        229.75
+      ]
+    },
+    "weight_norm_drift": {
+      "mean": 166.375,
+      "median": 156.5,
+      "iqr": [
+        140.0,
+        199.25
+      ],
+      "ci95": [
+        140.621875,
+        192.87812499999998
+      ]
+    }
+  },
+  "precedence_order": [
+    "dead_unit_fraction",
+    "gradient_noise_scale",
+    "effective_rank",
+    "weight_norm_drift"
+  ],
+  "erank_vs_gns_paired": {
+    "median_diff": -7.0,
+    "wilcoxon_p": 0.3671875
+  },
+  "predictive_auc": {
+    "dead_unit_fraction": 0.9186319600304281,
+    "effective_rank": 0.9073471840150451,
+    "gradient_noise_scale": 0.2898305891524249,
+    "weight_norm_drift": 0.8799493824133525
+  },
+  "threshold_sensitivity": {
+    "30pct": [
+      "dead_unit_fraction",
+      "gradient_noise_scale",
+      "effective_rank",
+      "weight_norm_drift"
+    ],
+    "50pct": [
+      "dead_unit_fraction",
+      "gradient_noise_scale",
+      "effective_rank",
+      "weight_norm_drift"
+    ],
+    "70pct": [
+      "dead_unit_fraction",
+      "gradient_noise_scale",
+      "effective_rank",
+      "weight_norm_drift"
+    ],
+    "erank_first_in_all": false
+  },
+  "reproducibility": [
+    {
+      "seed": 0,
+      "model_seed": 0,
+      "data_seed": 42,
+      "erank_lead": 259,
+      "collapse_task": 269
+    },
+    {
+      "seed": 1,
+      "model_seed": 1,
+      "data_seed": 42,
+      "erank_lead": 202,
+      "collapse_task": 210
+    },
+    {
+      "seed": 2,
+      "model_seed": 2,
+      "data_seed": 42,
+      "erank_lead": 205,
+      "collapse_task": 219
+    },
+    {
+      "seed": 3,
+      "model_seed": 3,
+      "data_seed": 42,
+      "erank_lead": 242,
+      "collapse_task": 257
+    },
+    {
+      "seed": 4,
+      "model_seed": 4,
+      "data_seed": 42,
+      "erank_lead": 236,
+      "collapse_task": 249
+    },
+    {
+      "seed": 5,
+      "model_seed": 5,
+      "data_seed": 42,
+      "erank_lead": 157,
+      "collapse_task": 168
+    },
+    {
+      "seed": 6,
+      "model_seed": 6,
+      "data_seed": 42,
+      "erank_lead": 182,
+      "collapse_task": 200
+    },
+    {
+      "seed": 7,
+      "model_seed": 7,
+      "data_seed": 42,
+      "erank_lead": 186,
+      "collapse_task": 208
+    }
+  ],
+  "per_seed": [
+    {
+      "seed": 0,
+      "task1_acc": 0.9238,
+      "dead_after_task1": 0.05999999865889549,
+      "dead_at_init": 0.08499999716877937,
+      "healthy": true,
+      "t_collapse": 269,
+      "acc_first20": 0.9172450000000001,
+      "acc_last20": 0.778875,
+      "acc_drop_pp": 13.83700000000001
+    },
+    {
+      "seed": 1,
+      "task1_acc": 0.9354,
+      "dead_after_task1": 0.06499999761581421,
+      "dead_at_init": 0.09999999962747097,
+      "healthy": true,
+      "t_collapse": 210,
+      "acc_first20": 0.9162250000000002,
+      "acc_last20": 0.697805,
+      "acc_drop_pp": 21.842000000000017
+    },
+    {
+      "seed": 2,
+      "task1_acc": 0.9309,
+      "dead_after_task1": 0.07499999925494194,
+      "dead_at_init": 0.09999999403953552,
+      "healthy": true,
+      "t_collapse": 219,
+      "acc_first20": 0.9092600000000001,
+      "acc_last20": 0.7659,
+      "acc_drop_pp": 14.336000000000004
+    },
+    {
+      "seed": 3,
+      "task1_acc": 0.937,
+      "dead_after_task1": 0.07499999925494194,
+      "dead_at_init": 0.07999999728053808,
+      "healthy": true,
+      "t_collapse": 257,
+      "acc_first20": 0.913405,
+      "acc_last20": 0.7633050000000001,
+      "acc_drop_pp": 15.009999999999991
+    },
+    {
+      "seed": 4,
+      "task1_acc": 0.9294,
+      "dead_after_task1": 0.06499999947845936,
+      "dead_at_init": 0.06499999947845936,
+      "healthy": true,
+      "t_collapse": 249,
+      "acc_first20": 0.914625,
+      "acc_last20": 0.756215,
+      "acc_drop_pp": 15.841000000000005
+    },
+    {
+      "seed": 5,
+      "task1_acc": 0.9386,
+      "dead_after_task1": 0.08499999716877937,
+      "dead_at_init": 0.12999999895691872,
+      "healthy": true,
+      "t_collapse": 168,
+      "acc_first20": 0.91623,
+      "acc_last20": 0.689295,
+      "acc_drop_pp": 22.6935
+    },
+    {
+      "seed": 6,
+      "task1_acc": 0.9389,
+      "dead_after_task1": 0.07499999739229679,
+      "dead_at_init": 0.08999999798834324,
+      "healthy": true,
+      "t_collapse": 200,
+      "acc_first20": 0.9122549999999998,
+      "acc_last20": 0.6115000000000002,
+      "acc_drop_pp": 30.075499999999966
+    },
+    {
+      "seed": 7,
+      "task1_acc": 0.9396,
+      "dead_after_task1": 0.03499999828636646,
+      "dead_at_init": 0.10999999660998583,
+      "healthy": true,
+      "t_collapse": 208,
+      "acc_first20": 0.917815,
+      "acc_last20": 0.74128,
+      "acc_drop_pp": 17.6535
+    }
+  ],
+  "total_wall_time_sec": 1172.440143108368,
+  "subject_executed": "hidden=100 MLP, SGD lr=0.1 mom=0.9 wd=0.0, online Permuted-MNIST, 300 tasks, 8 seeds, NO repair, 20x64 GNS samples/task (proper McCandlish)",
+  "notes": "Validated healthy regime: hidden=100 MLP, SGD lr=0.10 (selected by verify_lr in smallnet round), momentum=0.9, wd=0. Online Permuted-MNIST 300 tasks 8 seeds. Collapse: 20.0pp below task1_acc sustained 2 tasks. GNS: 20x64 samples (proper McCandlish, 1 permutation call). Finding: dead_unit_fraction leads with longest median lead (210 tasks), not erank or GNS as predicted. GNS predictive AUC=0.29 (anti-predictive without inversion; inverted=0.71). Honest result."
+}

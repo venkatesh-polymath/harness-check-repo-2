@@ -1,28 +1,36 @@
-# EXPERIMENT BRIEF — round smallnet (full)
+# EXPERIMENT BRIEF — round valprec (full)
 
 ## THIS ROUND (do exactly this)
-DEFINITIVE loss-of-plasticity test — SMALL network (the config where it actually appears). Three prior healthy-regime runs (Split-CIFAR-100, permuted-MNIST 50-task, permuted-MNIST wide-MLP) showed NO plasticity loss — but all used WIDE MLPs (2000 units) that have too much redundant capacity and are documented to RESIST plasticity loss. Dohare et al.'s loss of plasticity appears in SMALLER networks. This is the last definitive test. Real data (MNIST) via /opt/datasets or torchvision (tiny); NEVER synthetic. Reuse the WORKING permuted-MNIST code (results/pmnist or pml) and change ONLY the network size + task count.
+POWERED PRECEDENCE in the VALIDATED healthy regime — this is the corrected core experiment. A small MLP (hidden=100) on online Permuted-MNIST GENUINELY loses plasticity while starting HEALTHY (confirmed: dead_after_task1=6.5%, task1_acc=0.94, acc drops 21.8pp over 300 tasks). Reuse that WORKING code (results/smallnet). Real MNIST via /opt/datasets or torchvision; NEVER synthetic.
 
-SETUP: Online Permuted-MNIST, but a SMALL MLP: hidden sizes {100, 256} (run BOTH if cheap; small nets are very fast). SGD, NO weight decay, healthy lr (verify dead_after_task1 < 25%, task1 acc reasonable ~0.85+). 300+ tasks, single-pass online (limited steps/task ~ a few hundred). 3 seeds. NO plasticity repair.
+SETUP (the validated healthy-collapse regime): 3-layer MLP hidden=100, ReLU, SGD (healthy lr, no weight decay), online Permuted-MNIST, 300 tasks, single-pass, NO repair. 8 SEEDS. Verify + report per-seed: dead_at_init, dead_after_task1 (must be < ~15% = healthy), task1_acc (~0.9), and that plasticity collapses (acc_first20 - acc_last20 materially > 0).
 
-THE QUESTION: does a HEALTHY SMALL net lose plasticity over the stream — new-task accuracy in the FIRST 20 tasks materially higher than the LAST 20 tasks (e.g. drop > 3-5pp)? Report acc_first20 vs acc_last20 per hidden size. Verify the net is HEALTHY at task 1 (not dying-ReLU): report dead_at_init + dead_after_task1 + task1_acc.
+INSTRUMENT every task: dead_unit_fraction, effective_rank (>=1, never 0), gradient_noise_scale (PROPER McCandlish, >=20 grad samples/task), weight_norm_drift, new-task accuracy. Save per-task trajectories to results/valprec/trajectories.json.
 
-IF genuine plasticity loss occurs (acc declines materially in a healthy small net): measure PRECEDENCE — per observable (dead_unit_fraction, effective_rank, gradient_noise_scale [proper McCandlish], weight_norm_drift) the lead time before the accuracy-decline onset, unbiased non-monotone onset, mean+median+IQR+95% CI, paired effective_rank-vs-GNS Wilcoxon. This VALIDATES the precedence claim in a healthy regime.
-IF NO loss even in a small healthy net at 300 tasks: report clearly — the honest conclusion is that loss of plasticity does not reproduce in these healthy MLP+permuted-MNIST regimes without the pathological dying-ReLU config.
+FULL ANALYSIS (address every reviewer point):
+1. Collapse onset per seed = first task new-task acc drops below (task1_acc - 20pp), sustained. Unbiased non-monotone onset for each observable (50% of init->final range, moving-avg window 2), applied IDENTICALLY to all four.
+2. LEAD TIMES per observable: mean, MEDIAN, IQR, 95% bootstrap CI over 8 seeds.
+3. PAIRED effective_rank-vs-GNS per-seed lead difference + Wilcoxon signed-rank p (the key comparison).
+4. PREDICTIVE analysis (reviewer's strongest ask): for each observable, does its value at task t predict whether collapse occurs within the next k=5 tasks? Report AUC (treat as binary classification over all (seed,task) points). Higher AUC = better early-warning.
+5. THRESHOLD SENSITIVITY: recompute the precedence ORDER for onset thresholds at {30%,50%,70%} of range; report whether effective_rank stays first (robustness).
+6. REPRODUCIBILITY: report a table {seed, model_seed, data_seed, erank_lead, collapse_task} with explicitly controlled seeds.
 
-EXECUTION: ONE run_small.py, single BLOCKING call `python run_small.py 2>&1 | tee results/smallnet/run.log`, WAIT. Small MLP over 300 tasks x 2 sizes x 3 seeds is VERY cheap (< 40 min). Write results/smallnet/RESULTS.json INCREMENTALLY (every 25 tasks) + FINALIZE. Do NOT leave status RUNNING.
+EXECUTION: ONE run_valprec.py, single BLOCKING call `python run_valprec.py 2>&1 | tee results/valprec/run.log`, WAIT. hidden=100 MLP x 300 tasks x 8 seeds is cheap (< 45 min). Write results/valprec/RESULTS.json INCREMENTALLY (after each seed) + FINALIZE. If wall approaches 40 min, finalize with >=5 seeds. Do NOT leave status RUNNING.
 
-OUTPUT results/smallnet/RESULTS.json status:"DONE":
-{"status":"DONE","benchmark":"online_permuted_mnist_smallnet",
- "by_hidden":{"100":{"dead_at_init":..,"dead_after_task1":..,"task1_acc":..,"acc_first20":..,"acc_last20":..,"acc_drop_pp":..,"plasticity_loss":true/false},"256":{...}},
- "any_healthy_collapse":true/false,
- "lead_times":{...or null},"precedence_order":[..],"erank_vs_gns_paired":{...},
- "notes":"does a SMALL healthy net lose plasticity? if yes does effective rank lead? honest final answer."}
+OUTPUT results/valprec/RESULTS.json status:"DONE":
+{"status":"DONE","benchmark":"online_permuted_mnist_h100","n_seeds":8,"n_tasks":300,
+ "healthy":true,"mean_dead_after_task1":..,"mean_task1_acc":..,"mean_acc_drop_pp":..,"plasticity_loss_confirmed":true,
+ "lead_times":{"effective_rank":{"mean":..,"median":..,"iqr":[..],"ci95":[..]},"dead_unit_fraction":{...},"weight_norm_drift":{...},"gradient_noise_scale":{...}},
+ "precedence_order":[..],"erank_vs_gns_paired":{"median_diff":..,"wilcoxon_p":..},
+ "predictive_auc":{"effective_rank":..,"dead_unit_fraction":..,"weight_norm_drift":..,"gradient_noise_scale":..},
+ "threshold_sensitivity":{"30pct":[order],"50pct":[order],"70pct":[order],"erank_first_in_all":true/false},
+ "reproducibility":[{seed,model_seed,data_seed,erank_lead,collapse_task}...],
+ "notes":"validated healthy regime: does effective rank lead + predict collapse best? honest."}
 Commit all except datasets + weights.
 
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/smallnet/.
+for context and build on them; write this round's outputs under results/valprec/.
 
 ## Idea
 Observable Temporal Precedence Map: Which Cheap Signal Leads Plasticity Collapse — and by How Many Tasks?
@@ -61,4 +69,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: Vanilla continual learning: 3-layer MLP (400–400, ReLU), SGD with nuisance-tuned LR and weight decay, BatchNorm OFF, Split-CIFAR-10, 10 tasks, 5 seeds, zero plasticity repair. Replicates the collapse trajectory documented in Dohare et al.; establishes the reference t_collapse distribution and all four signal trajectories before any optimizer or BN factor is introduced. Built and verified first.
 - eval contract: Dataset: Split-CIFAR-10 (10 tasks × 2 classes, fixed permutation seed=0). Primary metric: lead_time(signal) = t_collapse − onset(signal) in tasks, per signal × optimizer × BN arm, reported as mean ± 95% bootstrap CI over 5 seeds. Precedence-ordering consistency: Kendall's W (coefficient of concordance) over the 5 per-seed signal orderings within each optimizer × BN cell; W ≥ 0.70 → 'consistent ordering' (pre-registered threshold); W < 0.70 → 'config-conditional or noisy.' Pairwise lead-time differences between the 4 signals tested with Wilcoxon signed-rank (paired over seeds, Bonferroni-corrected for 6 pairs, α=0.05). Sensitivity: full ordering re-derived at k∈{1.5, 2.5} alongside k=2.0; any rank flip reported as a finding, not suppressed.
 
-Record everything under results/smallnet/. Do not commit weights.
+Record everything under results/valprec/. Do not commit weights.
