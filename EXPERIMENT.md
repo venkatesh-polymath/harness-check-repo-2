@@ -1,39 +1,31 @@
-# EXPERIMENT BRIEF — round precedence (full)
+# EXPERIMENT BRIEF — round gnsfix (full)
 
 ## THIS ROUND (do exactly this)
-RIGOROUS EXPERIMENT — the optimizer-conditional temporal-precedence map. Real data at /opt/datasets (download=False, NEVER synthetic, ABORT if missing). Baseline already confirmed: collapse reproduces; the 4 observables are measurable; a preliminary ordering exists (effective_rank led ~2.6 tasks, dead_unit ~1.8, gradient_noise_scale ~0.8 — NOTE: this CHALLENGES the original guess that GNS leads longest; report the TRUE ordering honestly).
+GNS-FIX re-run — make the gradient-noise-scale lead time TRUSTWORTHY so the precedence claim is defensible. Reviewers correctly flagged that GNS was estimated from only 2 minibatches (huge variance, CI spanning 7.6 tasks) and that the monotone/isotonic onset detector is biased against erratic non-monotone signals. Fix BOTH. Real data at /opt/datasets (download=False, NEVER synthetic, ABORT if missing).
 
-GOAL: for each observable, quantify the LEAD TIME (in tasks) by which it fires before plasticity collapse, WITH confidence intervals, and test whether the ordering is OPTIMIZER-CONDITIONAL.
+SETUP: the collapse regime only — 3-layer MLP (400-400, ReLU), SGD+momentum, BatchNorm OFF, Split-CIFAR-100 (10 tasks x 5 classes), 8 seeds, no repair. (This is the one config that collapses; the regime finding — Adam/BN prevent collapse — is unchanged, cite it.)
 
-DESIGN:
-- Dataset: Split-CIFAR-100 (10 tasks x 5 classes) — deeper stream = better lead-time resolution. (If collapse too weak under some config, note it.)
-- 3-layer MLP (400-400, ReLU). NO plasticity repair (we are MEASURING collapse, not fixing it).
-- CONFIGS (the optimizer-conditional test): {SGD+momentum, Adam} x {BatchNorm OFF, BatchNorm ON} = 4 configs.
-- 8 SEEDS per config.
-- Instrument EVERY task: dead_unit_fraction, effective_rank (penultimate activations), gradient_noise_scale (McCandlish B_simple, two mini-batches/step), weight_norm_drift, and new-task accuracy.
+TWO ESTIMATOR FIXES:
+1. PROPER GNS (McCandlish B_simple, arXiv:1812.06162): estimate the noise-to-signal ratio using MANY gradient samples per task — at least 20-40 minibatch gradients per measurement (not 2), computing the trace(Cov(g))/||g||^2 estimate with the small/big-batch pair method properly. Report the per-task GNS with a within-task standard error so the trajectory is trustworthy.
+2. NON-MONOTONE-FRIENDLY onset detector: do NOT isotonic/monotone-smooth. Define fire time as the first task where the observable's SMOOTHED (short moving-average, e.g. window 2) value crosses 50% of its [task1 -> final] range AND stays past it — applied identically to ALL four observables (effective_rank, dead_unit_fraction, weight_norm_drift, gradient_noise_scale) so none is disadvantaged.
 
-PRE-REGISTERED onset definitions (fixes the checkpoint's crux):
-- collapse onset t_col(seed) = first task where new-task acc falls below (chance + 5pp) and stays there.
-- observable fire time t_fire(obs,seed) = first task where the observable crosses 50% of its [task-1 value -> final value] range (monotone-smoothed).
-- lead_time(obs,seed) = t_col - t_fire(obs). Positive = leads collapse.
+Instrument all four observables every task + new-task accuracy. Same collapse-onset definition (new-task acc < chance+5pp, sustained).
 
-ANALYSIS (the deliverables):
-1. Per (config, observable): mean lead_time +/- 95% CI over 8 seeds; rank observables by mean lead time = the PRECEDENCE MAP per config.
-2. Optimizer-conditional test: does the ordering / GNS lead time DIFFER between SGD and Adam? (Hypothesis: Adam's per-coordinate normalization suppresses the gradient-noise-scale signal.) Report the SGD-vs-Adam difference in GNS lead time with a CI.
-3. Report the TRUE overall ordering honestly (baseline suggested effective_rank leads, not GNS).
+DELIVERABLE: per observable, mean lead time +/- 95% CI over 8 seeds, using the FIXED GNS + FIXED onset. The honest question: with a PROPER GNS estimator and an unbiased onset detector, does gradient-noise-scale still LAG (confirming the refutation), or does it actually lead? Report whatever the data shows. Also report each observable's CI so the reader sees which are reliably separated (effective_rank vs the rest).
 
-EXECUTION: write ONE run_rigorous.py, launch ONCE as a single BLOCKING call `python run_rigorous.py 2>&1 | tee results/precedence/run.log`, WAIT. MLPs are cheap: 4 configs x 8 seeds x 10 tasks. Write results/precedence/rows.jsonl per (config,seed) + rewrite RESULTS.json after each config. Must finish < 80 min; if wall approaches 70 min, finalize with >=6 seeds/config. Do NOT supervise cell-by-cell.
+EXECUTION: ONE run_gnsfix.py, single BLOCKING call `python run_gnsfix.py 2>&1 | tee results/gnsfix/run.log`, WAIT. 1 config x 8 seeds x 10 tasks, MLP + 20-40 grad samples/task = cheap, < 45 min. Write RESULTS.json incrementally + finalize.
 
-OUTPUT results/precedence/RESULTS.json status:"DONE":
-{"status":"DONE","dataset":"cifar100_split","n_seeds":8,
- "configs":{"sgd_bnoff":{"collapse_frac":..,"lead_times":{"effective_rank":{"mean":..,"ci95":[..]},"dead_unit_fraction":{...},"gradient_noise_scale":{...},"weight_norm_drift":{...}},"precedence_order":["obs by mean lead desc"]}, "adam_bnoff":{...},"sgd_bnon":{...},"adam_bnon":{...}},
- "optimizer_conditional":{"gns_lead_sgd":..,"gns_lead_adam":..,"sgd_minus_adam_pp":..,"ci95":[..],"adam_suppresses_gns":true/false},
- "overall_precedence_order":["obs ranked by lead time"], "notes":"the true precedence map + is it optimizer-conditional? honest."}
+OUTPUT results/gnsfix/RESULTS.json status:"DONE":
+{"status":"DONE","dataset":"cifar100_split","n_seeds":8,"gns_samples_per_task":<>=20>,
+ "lead_times":{"effective_rank":{"mean":..,"ci95":[..],"per_seed":[..]},"dead_unit_fraction":{...},"weight_norm_drift":{...},"gradient_noise_scale":{...}},
+ "precedence_order":["obs ranked by mean lead desc"],
+ "gns_still_lags": true/false, "gns_within_task_se_typical":.., "reliably_separated_pairs":[["effective_rank","gradient_noise_scale"], ...],
+ "notes":"with proper GNS + unbiased onset, does GNS lag or lead? honest."}
 Do NOT leave status RUNNING. Commit all except datasets + weights.
 
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/precedence/.
+for context and build on them; write this round's outputs under results/gnsfix/.
 
 ## Idea
 Observable Temporal Precedence Map: Which Cheap Signal Leads Plasticity Collapse — and by How Many Tasks?
@@ -72,4 +64,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: Vanilla continual learning: 3-layer MLP (400–400, ReLU), SGD with nuisance-tuned LR and weight decay, BatchNorm OFF, Split-CIFAR-10, 10 tasks, 5 seeds, zero plasticity repair. Replicates the collapse trajectory documented in Dohare et al.; establishes the reference t_collapse distribution and all four signal trajectories before any optimizer or BN factor is introduced. Built and verified first.
 - eval contract: Dataset: Split-CIFAR-10 (10 tasks × 2 classes, fixed permutation seed=0). Primary metric: lead_time(signal) = t_collapse − onset(signal) in tasks, per signal × optimizer × BN arm, reported as mean ± 95% bootstrap CI over 5 seeds. Precedence-ordering consistency: Kendall's W (coefficient of concordance) over the 5 per-seed signal orderings within each optimizer × BN cell; W ≥ 0.70 → 'consistent ordering' (pre-registered threshold); W < 0.70 → 'config-conditional or noisy.' Pairwise lead-time differences between the 4 signals tested with Wilcoxon signed-rank (paired over seeds, Bonferroni-corrected for 6 pairs, α=0.05). Sensitivity: full ordering re-derived at k∈{1.5, 2.5} alongside k=2.0; any rank flip reported as a finding, not suppressed.
 
-Record everything under results/precedence/. Do not commit weights.
+Record everything under results/gnsfix/. Do not commit weights.
