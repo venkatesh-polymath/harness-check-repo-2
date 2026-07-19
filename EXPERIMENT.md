@@ -1,31 +1,32 @@
-# EXPERIMENT BRIEF — round gnsfix (full)
+# EXPERIMENT BRIEF — round gns200 (full)
 
 ## THIS ROUND (do exactly this)
-GNS-FIX re-run — make the gradient-noise-scale lead time TRUSTWORTHY so the precedence claim is defensible. Reviewers correctly flagged that GNS was estimated from only 2 minibatches (huge variance, CI spanning 7.6 tasks) and that the monotone/isotonic onset detector is biased against erratic non-monotone signals. Fix BOTH. Real data at /opt/datasets (download=False, NEVER synthetic, ABORT if missing).
+CONSOLIDATION run — one authoritative, reviewer-proof precedence measurement. Real data at /opt/datasets (download=False, NEVER synthetic, ABORT if missing). Fix every validity concern from review:
 
-SETUP: the collapse regime only — 3-layer MLP (400-400, ReLU), SGD+momentum, BatchNorm OFF, Split-CIFAR-100 (10 tasks x 5 classes), 8 seeds, no repair. (This is the one config that collapses; the regime finding — Adam/BN prevent collapse — is unchanged, cite it.)
+SETUP: 3-layer MLP (400-400, ReLU), SGD+momentum, BatchNorm OFF, Split-CIFAR-100 (10 tasks x 5 classes), 8 seeds, no repair — the collapse regime. IMPORTANT lr sanity: use a learning rate that does NOT cause dying-ReLU at initialization; VERIFY by measuring dead-unit fraction at INIT (before any training) — it must be low (< ~15%). If lr=0.01 gives high init dead-fraction, tune lr down (e.g. 3e-3) until init is healthy, and report the lr used. The point is that plasticity is LOST over the task stream, not broken at init.
 
-TWO ESTIMATOR FIXES:
-1. PROPER GNS (McCandlish B_simple, arXiv:1812.06162): estimate the noise-to-signal ratio using MANY gradient samples per task — at least 20-40 minibatch gradients per measurement (not 2), computing the trace(Cov(g))/||g||^2 estimate with the small/big-batch pair method properly. Report the per-task GNS with a within-task standard error so the trajectory is trustworthy.
-2. NON-MONOTONE-FRIENDLY onset detector: do NOT isotonic/monotone-smooth. Define fire time as the first task where the observable's SMOOTHED (short moving-average, e.g. window 2) value crosses 50% of its [task1 -> final] range AND stays past it — applied identically to ALL four observables (effective_rank, dead_unit_fraction, weight_norm_drift, gradient_noise_scale) so none is disadvantaged.
+FOUR OBSERVABLES every task + at init: dead_unit_fraction, effective_rank (report the TRUE value — effective rank exp(H(singular values)) is >= 1 by definition; NEVER report 0.0; report the actual collapsed value e.g. ~1.0-2.0), gradient_noise_scale, weight_norm_drift. Plus new-task accuracy.
 
-Instrument all four observables every task + new-task accuracy. Same collapse-onset definition (new-task acc < chance+5pp, sustained).
+FIXES:
+1. GNS with B >= 200 gradient samples per task (McCandlish B_simple) — reviewers showed B=30 is insufficient (CI ~3.4 tasks). Report the per-task within-task standard error; target GNS lead-time CI resolution ~+/-1 task.
+2. Onset detector applied IDENTICALLY to all four observables: short moving-average smooth (window 2), fire = first task crossing 50% of [init -> final] range and staying; do NOT use monotone/isotonic smoothing that penalizes non-monotone GNS.
+3. init dead-unit sanity reported explicitly (dead_at_init).
 
-DELIVERABLE: per observable, mean lead time +/- 95% CI over 8 seeds, using the FIXED GNS + FIXED onset. The honest question: with a PROPER GNS estimator and an unbiased onset detector, does gradient-noise-scale still LAG (confirming the refutation), or does it actually lead? Report whatever the data shows. Also report each observable's CI so the reader sees which are reliably separated (effective_rank vs the rest).
+DELIVERABLE: per observable, mean lead time +/- 95% CI over 8 seeds, computed from THIS run only (one consistent set of numbers — no mixing with other runs). Which observables reliably lead (CI > 0)? Does GNS lag or lead with B>=200?
 
-EXECUTION: ONE run_gnsfix.py, single BLOCKING call `python run_gnsfix.py 2>&1 | tee results/gnsfix/run.log`, WAIT. 1 config x 8 seeds x 10 tasks, MLP + 20-40 grad samples/task = cheap, < 45 min. Write RESULTS.json incrementally + finalize.
+EXECUTION: ONE run_gns200.py, single BLOCKING call `python run_gns200.py 2>&1 | tee results/gns200/run.log`, WAIT. B=200 grad samples is the cost; still cheap on MLP. < 60 min. Write RESULTS.json incrementally + finalize.
 
-OUTPUT results/gnsfix/RESULTS.json status:"DONE":
-{"status":"DONE","dataset":"cifar100_split","n_seeds":8,"gns_samples_per_task":<>=20>,
- "lead_times":{"effective_rank":{"mean":..,"ci95":[..],"per_seed":[..]},"dead_unit_fraction":{...},"weight_norm_drift":{...},"gradient_noise_scale":{...}},
- "precedence_order":["obs ranked by mean lead desc"],
- "gns_still_lags": true/false, "gns_within_task_se_typical":.., "reliably_separated_pairs":[["effective_rank","gradient_noise_scale"], ...],
- "notes":"with proper GNS + unbiased onset, does GNS lag or lead? honest."}
+OUTPUT results/gns200/RESULTS.json status:"DONE":
+{"status":"DONE","dataset":"cifar100_split","n_seeds":8,"lr_used":..,"gns_B":<>=200>,
+ "dead_at_init":.., "collapse_reproduced":true/false,
+ "lead_times":{"effective_rank":{"mean":..,"ci95":[..]},"dead_unit_fraction":{...},"weight_norm_drift":{...},"gradient_noise_scale":{...}},
+ "precedence_order":[..], "reliable_leaders":["obs with CI>0"], "gns_leads_or_lags":"leads|lags|inconclusive",
+ "erank_at_init":.., "erank_at_collapse":.., "notes":"authoritative single-run precedence; all validity concerns addressed."}
 Do NOT leave status RUNNING. Commit all except datasets + weights.
 
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/gnsfix/.
+for context and build on them; write this round's outputs under results/gns200/.
 
 ## Idea
 Observable Temporal Precedence Map: Which Cheap Signal Leads Plasticity Collapse — and by How Many Tasks?
@@ -64,4 +65,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: Vanilla continual learning: 3-layer MLP (400–400, ReLU), SGD with nuisance-tuned LR and weight decay, BatchNorm OFF, Split-CIFAR-10, 10 tasks, 5 seeds, zero plasticity repair. Replicates the collapse trajectory documented in Dohare et al.; establishes the reference t_collapse distribution and all four signal trajectories before any optimizer or BN factor is introduced. Built and verified first.
 - eval contract: Dataset: Split-CIFAR-10 (10 tasks × 2 classes, fixed permutation seed=0). Primary metric: lead_time(signal) = t_collapse − onset(signal) in tasks, per signal × optimizer × BN arm, reported as mean ± 95% bootstrap CI over 5 seeds. Precedence-ordering consistency: Kendall's W (coefficient of concordance) over the 5 per-seed signal orderings within each optimizer × BN cell; W ≥ 0.70 → 'consistent ordering' (pre-registered threshold); W < 0.70 → 'config-conditional or noisy.' Pairwise lead-time differences between the 4 signals tested with Wilcoxon signed-rank (paired over seeds, Bonferroni-corrected for 6 pairs, α=0.05). Sensitivity: full ordering re-derived at k∈{1.5, 2.5} alongside k=2.0; any rank flip reported as a finding, not suppressed.
 
-Record everything under results/gnsfix/. Do not commit weights.
+Record everything under results/gns200/. Do not commit weights.

@@ -1,0 +1,288 @@
+Device: cuda
+torch.func.vmap available (fast per-sample gradients)
+GNS B=200 samples per measurement
+Loading data ... done.
+
+================================================================
+LEG A: Split-CIFAR-100 (10 tasks × 5 classes, task-incremental)
+================================================================
+
+================================================================
+LEG: Split-CIFAR-100
+     8 seeds × 10 tasks × 2000 steps, lr=0.01
+     shared_head=False
+================================================================
+  LR sanity: dead_at_init=0.0075 (threshold <0.15), erank=215.500
+
+--- Seed 0 (Split-CIFAR-100) ---
+  INIT: dead=0.0088, erank=219.816
+  Task  1: acc=0.654 dead=0.005 erank=142.84 wd=0.104 gns=168.0±19.2
+  Task  2: acc=0.664 dead=0.003 erank=166.85 wd=0.205 gns=150.1±18.8
+  Task  3: acc=0.680 dead=0.003 erank=183.95 wd=0.260 gns=240.7±14.6
+  Task  4: acc=0.662 dead=0.003 erank=189.33 wd=0.318 gns=255.9±13.8
+  Task  5: acc=0.814 dead=0.005 erank=191.24 wd=0.359 gns=268.1±24.5
+  Task  6: acc=0.636 dead=0.005 erank=206.21 wd=0.429 gns=229.3±25.6
+  Task  7: acc=0.738 dead=0.006 erank=209.25 wd=0.474 gns=185.6±22.1
+  Task  8: acc=0.706 dead=0.003 erank=216.49 wd=0.517 gns=221.9±16.5
+  Task  9: acc=0.672 dead=0.004 erank=221.74 wd=0.569 gns=242.8±16.7
+  Task 10: acc=0.760 dead=0.006 erank=226.27 wd=0.599 gns=250.3±18.0
+  t_col=None | onsets d=None e=1 w=5 g=4
+  LTs: d=None e=None w=None g=None
+
+--- Seed 1 (Split-CIFAR-100) ---
+  INIT: dead=0.0063, erank=213.441
+  Task  1: acc=0.664 dead=0.010 erank=146.08 wd=0.113 gns=198.6±21.6
+  Task  2: acc=0.664 dead=0.006 erank=167.29 wd=0.206 gns=205.0±20.5
+  Task  3: acc=0.686 dead=0.001 erank=178.82 wd=0.260 gns=201.6±20.4
+  Task  4: acc=0.662 dead=0.000 erank=183.30 wd=0.320 gns=148.4±21.2
+  Task  5: acc=0.830 dead=0.003 erank=189.35 wd=0.363 gns=242.1±27.3
+  Task  6: acc=0.636 dead=0.001 erank=208.63 wd=0.430 gns=253.6±22.4
+  Task  7: acc=0.744 dead=0.004 erank=208.98 wd=0.477 gns=184.6±16.4
+  Task  8: acc=0.676 dead=0.004 erank=214.39 wd=0.520 gns=210.4±19.1
+  Task  9: acc=0.648 dead=0.004 erank=219.04 wd=0.573 gns=159.7±14.9
+  Task 10: acc=0.736 dead=0.009 erank=223.17 wd=0.603 gns=255.6±18.4
+  t_col=None | onsets d=1 e=1 w=5 g=None
+  LTs: d=None e=None w=None g=None
+
+--- Seed 2 (Split-CIFAR-100) ---
+  INIT: dead=0.0063, erank=217.380
+  Task  1: acc=0.674 dead=0.005 erank=150.14 wd=0.121 gns=197.4±21.2
+  Task  2: acc=0.672 dead=0.006 erank=171.52 wd=0.215 gns=223.1±17.4
+  Task  3: acc=0.688 dead=0.003 erank=185.18 wd=0.272 gns=209.8±13.0
+  Task  4: acc=0.682 dead=0.001 erank=194.04 wd=0.331 gns=199.8±14.1
+  Task  5: acc=0.826 dead=0.003 erank=194.81 wd=0.373 gns=216.7±24.6
+  Task  6: acc=0.632 dead=0.001 erank=207.94 wd=0.442 gns=240.9±22.1
+  Task  7: acc=0.758 dead=0.003 erank=211.15 wd=0.488 gns=224.2±23.0
+  Task  8: acc=0.696 dead=0.000 erank=218.92 wd=0.530 gns=194.9±15.5
+  Task  9: acc=0.636 dead=0.001 erank=223.92 wd=0.584 gns=259.6±15.1
+  Task 10: acc=0.752 dead=0.006 erank=224.91 wd=0.613 gns=201.1±19.8
+  t_col=None | onsets d=None e=1 w=5 g=2
+  LTs: d=None e=None w=None g=None
+
+--- Seed 3 (Split-CIFAR-100) ---
+  INIT: dead=0.0150, erank=216.873
+  Task  1: acc=0.664 dead=0.001 erank=152.32 wd=0.129 gns=204.2±20.2
+  Task  2: acc=0.680 dead=0.003 erank=170.16 wd=0.214 gns=207.1±16.5
+  Task  3: acc=0.686 dead=0.004 erank=184.84 wd=0.271 gns=189.9±18.9
+  Task  4: acc=0.662 dead=0.003 erank=190.18 wd=0.329 gns=251.2±21.3
+  Task  5: acc=0.842 dead=0.001 erank=192.36 wd=0.373 gns=232.7±32.9
+  Task  6: acc=0.656 dead=0.001 erank=208.84 wd=0.440 gns=213.5±17.8
+  Task  7: acc=0.736 dead=0.001 erank=209.32 wd=0.487 gns=151.3±16.9
+  Task  8: acc=0.694 dead=0.006 erank=217.28 wd=0.529 gns=228.6±15.4
+  Task  9: acc=0.666 dead=0.007 erank=219.57 wd=0.582 gns=230.1±18.2
+  Task 10: acc=0.760 dead=0.014 erank=222.89 wd=0.611 gns=235.2±19.0
+  t_col=None | onsets d=None e=1 w=5 g=4
+  LTs: d=None e=None w=None g=None
+
+--- Seed 4 (Split-CIFAR-100) ---
+  INIT: dead=0.0050, erank=221.415
+  Task  1: acc=0.670 dead=0.004 erank=148.96 wd=0.115 gns=170.4±19.3
+  Task  2: acc=0.684 dead=0.004 erank=175.27 wd=0.230 gns=178.1±18.6
+  Task  3: acc=0.678 dead=0.004 erank=189.37 wd=0.285 gns=203.4±17.0
+  Task  4: acc=0.672 dead=0.005 erank=193.55 wd=0.345 gns=176.2±15.8
+  Task  5: acc=0.826 dead=0.005 erank=191.61 wd=0.386 gns=206.0±25.3
+  Task  6: acc=0.624 dead=0.005 erank=209.41 wd=0.451 gns=206.7±14.9
+  Task  7: acc=0.744 dead=0.003 erank=211.84 wd=0.498 gns=218.7±22.5
+  Task  8: acc=0.686 dead=0.005 erank=219.34 wd=0.540 gns=178.1±15.6
+  Task  9: acc=0.648 dead=0.004 erank=222.24 wd=0.591 gns=183.6±15.8
+  Task 10: acc=0.760 dead=0.011 erank=225.30 wd=0.621 gns=177.1±17.1
+  t_col=None | onsets d=None e=1 w=4 g=2
+  LTs: d=None e=None w=None g=None
+
+--- Seed 5 (Split-CIFAR-100) ---
+  INIT: dead=0.0125, erank=211.618
+  Task  1: acc=0.664 dead=0.006 erank=147.81 wd=0.120 gns  Task  9: acc=0.648 dead=0.004 erank=222.24 wdrift=0.591 gns=183.6 (se=16.7)
+  Task 10: acc=0.760 dead=0.011 erank=225.30 wdrift=0.621 gns=177.1 (se=17.9)
+  t_collapse=None, onsets: dead=None, erank=1, wdrift=4, gns=2
+  lead times: dead=None, erank=None, wdrift=None, gns=None
+
+--- Seed 5 ---
+  INIT: dead=0.013, erank=211.618, wdrift=0.000
+  Task  1: acc=0.664 dead=0.006 erank=147.81 wdrift=0.120 gns=204.1 (se=29.9)
+  Task  2: acc=0.658 dead=0.006 erank=166.70 wdrift=0.204 gns=248.5 (se=20.1)
+  Task  3: acc=0.654 dead=0.005 erank=179.92 wdrift=0.257 gns=223.2 (se=18.7)
+ask 10: acc=0.744 dead=0.005 erank=223.79 wd=0.596 gns=198.3±15.9
+  t_col=None | onsets d=None e=1 w=5 g=None
+  LTs: d=None e=None w=None g=None
+
+--- Seed 6 (Split-CIFAR-100) ---
+  INIT: dead=0.0037, erank=212.955
+  Task  1: acc=0.680 dead=0.005 erank=149.15 wd=0.120 gns=177.7±27.4
+  Task  2: acc=0.680 dead=0.004 erank=170.49 wd=0.215 gns=208.8±18.2
+  Task  3: acc=0.690 dead=0.003 erank=183.84 wd=0.271 gns=224.9±18.4
+  Task  4: acc=0.664 dead=0.003 erank=192.30 wd=0.329 gns=226.2±13.1
+  Task  5: acc=0.830 dead=0.000 erank=196.98 wd=0.371 gns=207.0±22.3
+  Task  6: acc=0.660 dead=0.000 erank=208.23 wd=0.435 gns=229.2±14.8
+  Task  7: acc=0.764 dead=0.003 erank=208.03 wd=0.481 gns=229.8±15.8
+  Task  8: acc=0.686 dead=0.006 erank=214.17 wd=0.523 gns=224.4±12.5
+  Task  9: acc=0.660 dead=0.004 erank=221.16 wd=0.575 gns=247.8±18.3
+  Task 10: acc=0.764 dead=0.006 erank=223.25 wd=0.605 gns=193.7±24.5
+  t_col=None | onsets d=9 e=1 w=5 g=2
+  LTs: d=None e=None w=None g=None
+
+--- Seed 7 (Split-CIFAR-100) ---
+  INIT: dead=0.0088, erank=217.173
+  Task  1: acc=0.664 dead=0.006 erank=145.36 wd=0.106 gns=199.0±27.3
+  Task  2: acc=0.660 dead=0.004 erank=166.63 wd=0.192 gns=190.3±16.8
+  Task  3: acc=0.674 dead=0.004 erank=176.18 wd=0.248 gns=202.8±15.8
+  Task  4: acc=0.672 dead=0.004 erank=185.89 wd=0.309 gns=164.8±17.5
+  Task  5: acc=0.826 dead=0.005 erank=192.05 wd=0.351 gns=143.4±15.9
+  Task  6: acc=0.614 dead=0.005 erank=204.88 wd=0.420 gns=219.5±17.0
+  Task  7: acc=0.726 dead=0.010 erank=207.79 wd=0.467 gns=185.2±20.3
+  Task  8: acc=0.702 dead=0.007 erank=214.06 wd=0.511 gns=220.7±17.2
+  Task  9: acc=0.642 dead=0.011 erank=219.44 wd=0.565 gns=179.2±20.6
+  Task 10: acc=0.758 dead=0.016 erank=221.66 wd=0.596 gns=160.3±16.4
+  t_col=None | onsets d=None e=1 w=5 g=None
+  LTs: d=None e=None w=None g=None
+
+[LEG A done] 0/8 collapsed, wall=311s
+
+================================================================
+LEG B: Permuted CIFAR-10 (20 tasks, shared head, proven collapse)
+================================================================
+
+================================================================
+LEG: Permuted-CIFAR-10
+     8 seeds × 20 tasks × 1000 steps, lr=0.05
+     shared_head=True
+================================================================
+  LR sanity: dead_at_init=0.2300 (threshold <0.35), erank=119.306
+
+--- Seed 0 (Permuted-CIFAR-10) ---
+  INIT: dead=0.2200, erank=112.104
+  Task  1: acc=0.297 dead=0.806 erank=26.01 wd=0.207 gns=71.7±14.9
+  Task  2: acc=0.234 dead=0.781 erank=22.18 wd=0.276 gns=54.0±21.9
+  Task  3: acc=0.221 dead=0.733 erank=26.80 wd=0.332 gns=72.0±23.6
+  Task  4: acc=0.222 dead=0.873 erank=22.84 wd=0.412 gns=181.5±51.5
+  Task  5: acc=0.162 dead=0.829 erank=20.41 wd=0.474 gns=168.4±36.2
+  Task  6: acc=0.100 dead=0.993 erank=6.31 wd=0.486 gns=147.4±57.3
+  Task  7: acc=0.100 dead=0.993 erank=6.31 wd=0.486 gns=150.2±40.6
+  Task  8: acc=0.100 dead=0.993 erank=6.31 wd=0.486 gns=216.4±67.8
+  Task  9: acc=0.100 dead=0.993 erank=6.31 wd=0.486 gns=155.8±48.0
+  Task 10: acc=0.100 dead=0.993 erank=6.31 wd=0.486 gns=127.6±40.3
+  Task 11: acc=0.100 dead=0.993 erank=6.31 wd=0.486 gns=167.2±48.3
+  Task 12: acc=0.100 dead=0.993 erank=6.31 wd=0.486 gns=173.5±41.0
+  Task 13: acc=0.100 dead=0.993 erank=6.31 wd=0.486 gns=187.7±42.6
+  Task 14: acc=0.100 dead=0.993 erank=6.31 wd=0.486 gns=177.4±48.2
+  Task 15: acc=0.100 dead=0.993 erank=6.31 wd=0.486 gns=180.6±61.6
+  Task 16: acc=0.100 dead=0.993 erank=6.31 wd=0.486 gns=149.6±45.0
+  Task 17: acc=0.100 dead=0.993 erank=6.31 wd=0.486 gns=164.4±44.7
+  Task 18: acc=0.100 dead=0.993 erank=6.31 wd=0.486 gns=173.0±58.8
+  Task 19: acc=0.100 dead=0.993 erank=6.31 wd=0.486 gns=150.6±39.6
+  Task 20: acc=0.100 dead=0.993 erank=6.31 wd=0.486 gns=166.5±50.8
+  t_col=6 | onsets d=2 e=2 w=3 g=4
+  LTs: d=4 e=4 w=3 g=2
+
+--- Seed 1 (Permuted-CIFAR-10) ---
+  INIT: dead=0.2525, erank=109.051
+  Task  1: acc=0.335 dead=0.839 erank=41.83 wd=0.233 gns=133.0±22.9
+  Task  2: acc=0.214 dead=0.885 erank=16.02 wd=0.310 gns=28.7±6.6
+  Task  3: acc=0.195 dead=0.848 erank=20.01 wd=0.367 gns=143.8±44.1
+  Task  4: acc=0.169 dead=0.966 erank=12.82 wd=0.416 gns=533.4±129.0
+  Task  5: acc=0.171 dead=0.870 erank=11.00 wd=0.481 gns=283.5±100.7
+  Task  6: acc=0.100 dead=0.993 erank=8.88 wd=0.484 gns=309.4±56.3
+  Task  7: acc=0.100 dead=0.993 erank=8.88 wd=0.484 gns=139.6±55.1
+  Task  8: acc=0.100 dead=0.993 erank=8.93 wd=0.484 gns=139.6±39.6
+  Task  9: acc=0.100 dead=0.993 erank=8.93 wd=0.484 gns=134.3±40.5
+  Task 10: acc=0.100 dead=0.993 erank=8.93 wd=0.484 gns=204.1±45.6
+  Task 11: acc=0.100 dead=0.993 erank=9.03 wd=0.484 gns=322.2±94.1
+  Task 12: acc=0.100 dead=0.993 erank=9.03 wd=0.484 gns=191.3±58.2
+  Task 13: acc=0.100 dead=0.993 erank=9.03 wd=0.484 gns=122.3±59.7
+  Task 14: acc=0.100 dead=0.993 erank=9.03 wd=0.484 gns=102.3±48.0
+  Task 15: acc=0.100 dead=0.993 erank=9.03 wd=0.484 gns=89.5±40.2
+  Task 16: acc=0.100 dead=0.993 erank=9.03 wd=0.484 gns=118.4±35.2
+  Task 17: acc=0.100 dead=0.993 erank=9.03 wd=0.484 gns=200.2±88.0
+  Task 18: acc=0.100 dead=0.993 erank=9.03 wd=0.484 gns=86.4±21.3
+  Task 19: acc=0.100 dead=0.993 erank=9.03 wd=0.484 gns=242.8±71.7
+  Task 20: acc=0.100 dead=0.993 erank=9.03 wd=0.484 gns=488.4±121.9
+  t_col=6 | onsets d=2 e=2 w=2 g=4
+  LTs: d=4 e=4 w=4 g=2
+
+--- Seed 2 (Permuted-CIFAR-10) ---
+  INIT: dead=0.2500, erank=106.358
+  Task  1: acc=0.253 dead=0.730 erank=39.75 wd=0.231 gns=81.3±18.7
+  Task  2: acc=0.259 dead=0.800 erank=21.39 wd=0.320 gns=122.5±37.0
+  Task  3: acc=0.169 dead=0.850 erank=15.21 wd=0.362 gns=195.4±82.9
+/workspace/src/run_gns200.py:165: UserWarning: torch.linalg.svd: During SVD computation with the selected cusolver driver, batches 0 failed to converge. A more accurate method will be used to compute the SVD as a fallback. Check doc at https://pytorch.org/docs/stable/generated/torch.linalg.svd.html (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/native/cuda/linalg/BatchLinearAlgebraLib.cpp:692.)
+  S=torch.linalg.svdvals(h.float()); S=S[S>0]
+  Task  4: acc=0.163 dead=0.873 erank=8.41 wd=0.436 gns=273.5±78.6
+  Task  5: acc=0.173 dead=0.978 erank=10.09 wd=0.470 gns=195.4±73.0
+  Task  6: acc=0.181 dead=0.979 erank=8.62 wd=0.518 gns=167.5±60.8
+  Task  7: acc=0.177 dead=0.988 erank=6.49 wd=0.578 gns=122.2±24.6
+  Task  8: acc=0.165 dead=0.935 erank=8.59 wd=0.613 gns=53.1±30.3
+  Task  9: acc=0.100 dead=0.990 erank=5.46 wd=0.616 gns=273.1±43.6
+  Task 10: acc=0.100 dead=0.990 erank=5.46 wd=0.616 gns=649.7±80.0
+  Task 11: acc=0.100 dead=0.990 erank=5.46 wd=0.616 gns=172.0±50.3
+  Task 12: acc=0.100 dead=0.990 erank=5.46 wd=0.616 gns=346.2±44.7
+  Task 13: acc=0.100 dead=0.990 erank=5.46 wd=0.616 gns=162.8±55.4
+  Task 14: acc=0.100 dead=0.990 erank=5.45 wd=0.616 gns=195.6±89.0
+  Task 15: acc=0.100 dead=0.990 erank=5.45 wd=0.616 gns=206.8±47.7
+  Task 16: acc=0.100 dead=0.990 erank=5.45 wd=0.616 gns=384.9±109.4
+  Task 17: acc=0.100 dead=0.990 erank=5.45 wd=0.616 gns=178.5±45.9
+  Task 18: acc=0.100 dead=0.990 erank=5.45 wd=0.616 gns=194.5±61.3
+  Task 19: acc=0.100 dead=0.990 erank=5.45 wd=0.616 gns=138.0±36.6
+  Task 20: acc=0.100 dead=0.990 erank=5.45 wd=0.616 gns=366.9±56.0
+  t_col=9 | onsets d=2 e=2 w=3 g=4
+  LTs: d=7 e=7 w=6 g=5
+
+--- Seed 3 (Permuted-CIFAR-10) ---
+  INIT: dead=0.2387, erank=119.420
+  Task  1: acc=0.308 dead=0.740 erank=46.82 wd=0.236 gns=112.0±17.9
+  Task  2: acc=0.261 dead=0.973 erank=9.84 wd=0.331 gns=124.3±44.9
+  Task  3: acc=0.171 dead=0.989 erank=6.99 wd=0.389 gns=33.1±17.3
+  Task  4: acc=0.185 dead=0.899 erank=11.08 wd=0.421 gns=150.2±103.5
+  Task  5: acc=0.176 dead=0.889 erank=9.41 wd=0.473 gns=298.7±107.3
+  Task  6: acc=0.100 dead=0.994 erank=1.53 wd=0.477 gns=440.0±98.5
+  Task  7: acc=0.100 dead=0.994 erank=1.53 wd=0.477 gns=211.4±72.8
+  Task  8: acc=0.100 dead=0.994 erank=1.49 wd=0.477 gns=112.2±35.1
+  Task  9: acc=0.100 dead=0.994 erank=1.13 wd=0.477 gns=180.7±34.1
+  Task 10: acc=0.100 dead=0.994 erank=1.00 wd=0.477 gns=159.0±46.0
+  Task 11: acc=0.100 dead=0.994 erank=1.11 wd=0.477 gns=165.6±63.3
+  Task 12: acc=0.100 dead=0.994 erank=1.16 wd=0.477 gns=231.6±68.0
+  Task 13: acc=0.100 dead=0.994 erank=1.00 wd=0.477 gns=103.5±39.8
+  Task 14: acc=0.100 dead=0.994 erank=1.00 wd=0.477 gns=361.7±81.3
+  Task 15: acc=0.100 dead=0.994 erank=1.00 wd=0.477 gns=209.4±92.9
+  Task 16: acc=0.100 dead=0.994 erank=1.00 wd=0.477 gns=138.6±43.2
+  Task 17: acc=0.100 dead=0.994 erank=1.00 wd=0.477 gns=117.1±26.3
+  Task 18: acc=0.100 dead=0.994 erank=1.10 wd=0.477 gns=115.8±31.9
+  Task 19: acc=0.100 dead=0.994 erank=1.10 wd=0.477 gns=189.7±68.1
+  Task 20: acc=0.100 dead=0.994 erank=1.21 wd=0.477 gns=428.5±133.8
+  t_col=6 | onsets d=2 e=2 w=2 g=6
+  LTs: d=4 e=4 w=4 g=0
+
+--- Seed 4 (Permuted-CIFAR-10) ---
+  INIT: dead=0.2350, erank=112.930
+  Task  1: acc=0.265 dead=0.729 erank=29.21 wd=0.230 gns=82.4±22.0
+  Task  2: acc=0.237 dead=0.859 erank=14.19 wd=0.308 gns=29.5±7.7
+  Task  3: acc=0.181 dead=0.868 erank=9.04 wd=0.365 gns=229.3±63.5
+  Task  4: acc=0.229 dead=0.941 erank=7.65 wd=0.415 gns=69.4±23.9
+  Task  5: acc=0.143 dead=0.998 erank=3.92 wd=0.494 gns=46.0±23.7
+  Task  6: acc=0.100 dead=0.998 erank=2.68 wd=0.496 gns=132.0±48.5
+  Task  7: acc=0.100 dead=0.998 erank=2.68 wd=0.496 gns=585.3±101.1
+  Task  8: acc=0.100 dead=0.998 erank=2.82 wd=0.496 gns=453.4±150.7
+  Task  9: acc=0.100 dead=0.998 erank=2.20 wd=0.496 gns=519.3±97.7
+  Task 10: acc=0.100 dead=0.998 erank=2.20 wd=0.496 gns=107.3±35.1
+  Task 11: acc=0.100 dead=0.998 erank=2.20 wd=0.496 gns=347.3±67.2
+  Task 12: acc=0.100 dead=0.998 erank=2.20 wd=0.496 gns=197.6±68.3
+  Task 13: acc=0.100 dead=0.998 erank=1.35 wd=0.496 gns=207.4±77.0
+  Task 14: acc=0.100 dead=0.998 erank=1.48 wd=0.496 gns=137.7±56.0
+  Task 15: acc=0.100 dead=0.998 erank=2.20 wd=0.496 gns=276.7±105.0
+  Task 16: acc=0.100 dead=0.998 erank=2.56 wd=0.496 gns=237.7±49.8
+  Task 17: acc=0.100 dead=0.998 erank=1.44 wd=0.497 gns=199.5±48.5
+  Task 18: acc=0.100 dead=0.998 erank=1.44 wd=0.497 gns=204.1±55.3
+  Task 19: acc=0.100 dead=0.998 erank=1.59 wd=0.497 gns=145.1±40.5
+  Task 20: acc=0.100 dead=0.998 erank=1.59 wd=0.497 gns=500.5±106.7
+  t_col=5 | onsets d=2 e=2 w=2 g=7
+  LTs: d=3 e=3 w=3 g=-2
+
+--- Seed 5 (Permuted-CIFAR-10) ---
+  INIT: dead=0.2288, erank=109.882
+  Task  1: acc=0.275 dead=0.839 erank=33.38 wd=0.227 gns=67.6±11.6
+  Task  2: acc=0.244 dead=0.860 erank=28.54 wd=0.304 gns=91.1±16.3
+  Task  3: acc=0.164 dead=0.776 erank=30.35 wd=0.373 gns=161.4±60.1
+  Task  4: acc=0.172 dead=0.831 erank=19.72 wd=0.422 gns=373.5±108.2
+  Task  5: acc=0.100 dead=0.990 erank=4.88 wd=0.427 gns=70.9±15.6
+  Task  6: acc=0.100 dead=0.990 erank=4.93 wd=0.427 gns=146.5±46.8
+  Task  7: acc=0.100 dead=0.990 erank=4.93 wd=0.427 gns=113.6±38.2
+  Task  8: acc=0.100 dead=0.990 erank=4.95 wd=0.427 gns=113.4±38.3
+  Task  9: acc=0.100 dead=0.990 erank=4.90 wd=0.427 gns=770.5±98.0
