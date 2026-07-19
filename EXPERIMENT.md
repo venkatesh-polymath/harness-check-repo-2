@@ -1,4 +1,4 @@
-# EXPERIMENT BRIEF — round pml (full)
+# EXPERIMENT BRIEF — round pml2 (full)
 
 ## THIS ROUND (do exactly this)
 DEFINITIVE loss-of-plasticity test (retry) — Online Permuted-MNIST at Dohare scale. A prior 50-task permuted-MNIST run WORKED (results/pmnist/, healthy net, task1 acc 0.975, but no plasticity loss at 50 tasks). REUSE that exact working code (results/pmnist/ script — MNIST loading, MLP, permutation stream all already work) and simply EXTEND the stream to 300 tasks to test whether loss of plasticity emerges at scale (Dohare shows it over hundreds of tasks). Do NOT rewrite from scratch; adapt the working script. MNIST via torchvision download=True is FINE (tiny ~11MB) — it worked before; do NOT abort on it.
@@ -19,7 +19,7 @@ Commit all except datasets + weights.
 
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/pml/.
+for context and build on them; write this round's outputs under results/pml2/.
 
 ## Idea
 Observable Temporal Precedence Map: Which Cheap Signal Leads Plasticity Collapse — and by How Many Tasks?
@@ -58,4 +58,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: Vanilla continual learning: 3-layer MLP (400–400, ReLU), SGD with nuisance-tuned LR and weight decay, BatchNorm OFF, Split-CIFAR-10, 10 tasks, 5 seeds, zero plasticity repair. Replicates the collapse trajectory documented in Dohare et al.; establishes the reference t_collapse distribution and all four signal trajectories before any optimizer or BN factor is introduced. Built and verified first.
 - eval contract: Dataset: Split-CIFAR-10 (10 tasks × 2 classes, fixed permutation seed=0). Primary metric: lead_time(signal) = t_collapse − onset(signal) in tasks, per signal × optimizer × BN arm, reported as mean ± 95% bootstrap CI over 5 seeds. Precedence-ordering consistency: Kendall's W (coefficient of concordance) over the 5 per-seed signal orderings within each optimizer × BN cell; W ≥ 0.70 → 'consistent ordering' (pre-registered threshold); W < 0.70 → 'config-conditional or noisy.' Pairwise lead-time differences between the 4 signals tested with Wilcoxon signed-rank (paired over seeds, Bonferroni-corrected for 6 pairs, α=0.05). Sensitivity: full ordering re-derived at k∈{1.5, 2.5} alongside k=2.0; any rank flip reported as a finding, not suppressed.
 
-Record everything under results/pml/. Do not commit weights.
+Record everything under results/pml2/. Do not commit weights.

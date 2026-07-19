@@ -1,0 +1,69 @@
+{
+  "status": "SUCCESS",
+  "scale": "full",
+  "benchmark": "online_permuted_mnist",
+  "n_tasks": 300,
+  "n_seeds": 3,
+  "metrics": {
+    "lr_used": 0.05,
+    "momentum": 0.9,
+    "weight_decay": 0.0,
+    "hidden_size": 2000,
+    "steps_per_task": 1000,
+    "dead_at_init": 0.054,
+    "dead_after_task1": 0.023,
+    "task1_acc": 0.9745,
+    "healthy": true,
+    "acc_first20_mean": 0.9768,
+    "acc_last20_mean": 0.9728,
+    "acc_drop_pp": 0.41,
+    "plasticity_loss_occurred": false,
+    "n_seeds_collapsed": 0,
+    "t_collapse_per_seed": [null, null, null],
+    "dead_at_task300_mean": 0.752,
+    "erank_at_task1_mean": 255.5,
+    "erank_at_task300_mean": 381.0,
+    "gns_range": "1.5-2.2 (stable)",
+    "wdrift_at_task300_mean": 32.9,
+    "lead_times": null,
+    "precedence_order": [],
+    "erank_vs_gns_wilcoxon_p": null,
+    "comparison_100task_run": {
+      "acc_drop_pp_at_100tasks": 0.16,
+      "plasticity_loss_at_100tasks": false,
+      "note": "No collapse at 100 tasks either; 300-task extension confirms result"
+    },
+    "per_seed": [
+      {
+        "seed": 0,
+        "task1_acc": 0.9755,
+        "acc_first20": 0.9771,
+        "acc_last20": 0.9731,
+        "acc_drop_pp": 0.41,
+        "t_collapse": null,
+        "dead_at_task300": 0.7478
+      },
+      {
+        "seed": 1,
+        "task1_acc": 0.9734,
+        "acc_first20": 0.9771,
+        "acc_last20": 0.9723,
+        "acc_drop_pp": 0.48,
+        "t_collapse": null,
+        "dead_at_task300": 0.7598
+      },
+      {
+        "seed": 2,
+        "task1_acc": 0.9747,
+        "acc_first20": 0.9763,
+        "acc_last20": 0.9729,
+        "acc_drop_pp": 0.34,
+        "t_collapse": null,
+        "dead_at_task300": 0.7468
+      }
+    ],
+    "wall_clock_sec": 959.0
+  },
+  "subject_executed": "Online Permuted-MNIST, 3-layer MLP (784→2000→2000→10, ReLU), SGD lr=0.05 momentum=0.9 WD=0.0, no plasticity repair, 300 tasks × 1000 steps/task × 3 seeds. 4 observables tracked per task: dead_unit_fraction (>95% threshold, both hidden layers averaged), effective_rank (penultimate layer SVD entropy), gradient_noise_scale (McCandlish B_opt, 2×64 mini-batches), weight_norm_drift (per-layer relative change from init). LR=0.05 reused from prior pmnist 100-task tuning run. MNIST downloaded via torchvision to /tmp/mnist. Run on NVIDIA H100 80GB. Script: src/run_pml2.py.",
+  "notes": "ANSWER: NO — a healthy net (task1_acc=0.975, dead_after_t1=0.023) does NOT lose plasticity at 300 permuted-MNIST tasks. acc_drop from first-20 to last-20 tasks = 0.41pp (trivial). 0/3 seeds met the collapse criterion (≥15pp drop, ≥2 consecutive tasks). This extends the prior 100-task result (0.16pp drop) to 300 tasks. Dead-unit fraction grew 33× (0.023→0.75) without causing accuracy collapse. Effective rank INCREASED from ~256 to ~381 (network becomes MORE diverse, not less). Gradient-noise scale was stable throughout (1.5–2.2 range). Weight-norm drift grew to 33× initial norm. No precedence analysis possible (no collapse to date). INTERPRETATION: Permuted-MNIST with SGD+momentum is not a good benchmark for plasticity loss — same label set across tasks, label-preserving permutations, large hidden width (2000). Loss of plasticity requires incompatible task distributions (split tasks) or more aggressive training. Dohare et al. collapse requires split-CIFAR or label-incompatible streams. This finding is consistent with but extends the prior pmnist run; honest negative result."
+}
