@@ -1,0 +1,175 @@
+{
+  "status": "DONE",
+  "exp": "g1b_fashion",
+  "regime": "2nd dataset \u2014 online Permuted-Fashion-MNIST, MLP hidden=100 (lr=0.05)",
+  "family": "mlp",
+  "dataset": "fashion",
+  "task": "perm_input",
+  "hidden": 100,
+  "lr": 0.05,
+  "n_seeds": 6,
+  "n_tasks": 250,
+  "healthy": true,
+  "mean_dead_after_task1": 0.12416666373610497,
+  "mean_task1_acc": 0.8035166666666665,
+  "mean_acc_drop_pp": 36.58908333333333,
+  "plasticity_loss_confirmed": true,
+  "n_collapsed": 6,
+  "lead_times": {
+    "dead_unit_fraction": {
+      "mean": 74.16666666666667,
+      "median": 85.5,
+      "iqr": [
+        64.0,
+        89.0
+      ],
+      "ci95": [
+        52.166666666666664,
+        91.83333333333333
+      ]
+    },
+    "effective_rank": {
+      "mean": 68.0,
+      "median": 78.0,
+      "iqr": [
+        54.25,
+        84.5
+      ],
+      "ci95": [
+        46.833333333333336,
+        85.67499999999995
+      ]
+    },
+    "gradient_noise_scale": {
+      "mean": 47.5,
+      "median": 47.0,
+      "iqr": [
+        29.5,
+        76.5
+      ],
+      "ci95": [
+        21.833333333333332,
+        72.0
+      ]
+    },
+    "weight_norm_drift": {
+      "mean": 49.666666666666664,
+      "median": 53.0,
+      "iqr": [
+        46.5,
+        62.5
+      ],
+      "ci95": [
+        26.333333333333332,
+        68.66666666666667
+      ]
+    }
+  },
+  "precedence_order": [
+    "dead_unit_fraction",
+    "effective_rank",
+    "weight_norm_drift",
+    "gradient_noise_scale"
+  ],
+  "erank_vs_gns_paired": {
+    "median_diff": 8.5,
+    "wilcoxon_p": 0.25
+  },
+  "predictive_auc": {
+    "dead_unit_fraction": 0.8911797677234206,
+    "effective_rank": 0.8964979148917089,
+    "gradient_noise_scale": 0.6103277879915698,
+    "weight_norm_drift": 0.6111295457602799
+  },
+  "threshold_sensitivity": {
+    "30pct": [
+      "dead_unit_fraction",
+      "effective_rank",
+      "gradient_noise_scale",
+      "weight_norm_drift"
+    ],
+    "50pct": [
+      "dead_unit_fraction",
+      "effective_rank",
+      "weight_norm_drift",
+      "gradient_noise_scale"
+    ],
+    "70pct": [
+      "dead_unit_fraction",
+      "effective_rank",
+      "gradient_noise_scale",
+      "weight_norm_drift"
+    ]
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "task1_acc": 0.8154,
+      "dead_after_task1": 0.11499999836087227,
+      "healthy": true,
+      "t_collapse": 95,
+      "acc_drop_pp": 14.433499999999999
+    },
+    {
+      "seed": 1,
+      "task1_acc": 0.7985,
+      "dead_after_task1": 0.08999999612569809,
+      "healthy": true,
+      "t_collapse": 88,
+      "acc_drop_pp": 14.799499999999998
+    },
+    {
+      "seed": 2,
+      "task1_acc": 0.7854,
+      "dead_after_task1": 0.11499999836087227,
+      "healthy": true,
+      "t_collapse": 90,
+      "acc_drop_pp": 66.67349999999999
+    },
+    {
+      "seed": 3,
+      "task1_acc": 0.8049,
+      "dead_after_task1": 0.14000000059604645,
+      "healthy": true,
+      "t_collapse": 61,
+      "acc_drop_pp": 38.18700000000001
+    },
+    {
+      "seed": 4,
+      "task1_acc": 0.8089,
+      "dead_after_task1": 0.12999999523162842,
+      "healthy": true,
+      "t_collapse": 105,
+      "acc_drop_pp": 67.265
+    },
+    {
+      "seed": 5,
+      "task1_acc": 0.808,
+      "dead_after_task1": 0.1549999937415123,
+      "healthy": true,
+      "t_collapse": 31,
+      "acc_drop_pp": 18.17599999999999
+    }
+  ],
+  "total_wall_time_sec": 1466.3959703445435,
+  "subject_executed": "2nd dataset \u2014 online Permuted-Fashion-MNIST, MLP hidden=100 (lr=0.05)",
+  "metrics": {
+    "regime": "2nd dataset \u2014 online Permuted-Fashion-MNIST, MLP hidden=100 (lr=0.05)",
+    "healthy": true,
+    "plasticity_loss_confirmed": true,
+    "mean_acc_drop_pp": 36.58908333333333,
+    "predictive_auc": {
+      "dead_unit_fraction": 0.8911797677234206,
+      "effective_rank": 0.8964979148917089,
+      "gradient_noise_scale": 0.6103277879915698,
+      "weight_norm_drift": 0.6111295457602799
+    },
+    "precedence_order": [
+      "dead_unit_fraction",
+      "effective_rank",
+      "weight_norm_drift",
+      "gradient_noise_scale"
+    ]
+  },
+  "notes": "Generality of the plasticity-precedence finding in regime g1b_fashion. Same analysis as run_valprec.py. Reports honestly whether dead+erank still lead/predict and GNS still fails."
+}
