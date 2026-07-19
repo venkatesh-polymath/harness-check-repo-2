@@ -1,0 +1,44 @@
+{
+  "status": "RUNNING",
+  "current_hidden": 100,
+  "current_seed": 2,
+  "current_task": 250,
+  "per_seed_so_far": [
+    {
+      "seed": 0,
+      "hidden": 100,
+      "tasks_done": 300,
+      "task1_acc": 0.9238,
+      "dead_at_init": 0.08499999716877937,
+      "dead_after_task1": 0.05999999865889549,
+      "healthy": true,
+      "t_collapse": 269,
+      "acc_first20": 0.9172450000000001,
+      "acc_last20": 0.778875
+    },
+    {
+      "seed": 1,
+      "hidden": 100,
+      "tasks_done": 300,
+      "task1_acc": 0.9354,
+      "dead_at_init": 0.09999999962747097,
+      "dead_after_task1": 0.06499999761581421,
+      "healthy": true,
+      "t_collapse": 112,
+      "acc_first20": 0.9162250000000002,
+      "acc_last20": 0.697805
+    },
+    {
+      "seed": 2,
+      "hidden": 100,
+      "tasks_done": 250,
+      "task1_acc": 0.9309,
+      "dead_at_init": 0.09999999403953552,
+      "dead_after_task1": 0.07499999925494194,
+      "healthy": true,
+      "t_collapse": 217,
+      "acc_first20": 0.9092600000000001,
+      "acc_last20": 0.76265
+    }
+  ]
+}

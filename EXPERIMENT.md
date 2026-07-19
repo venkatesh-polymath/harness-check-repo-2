@@ -1,25 +1,28 @@
-# EXPERIMENT BRIEF — round pml2 (full)
+# EXPERIMENT BRIEF — round smallnet (full)
 
 ## THIS ROUND (do exactly this)
-DEFINITIVE loss-of-plasticity test (retry) — Online Permuted-MNIST at Dohare scale. A prior 50-task permuted-MNIST run WORKED (results/pmnist/, healthy net, task1 acc 0.975, but no plasticity loss at 50 tasks). REUSE that exact working code (results/pmnist/ script — MNIST loading, MLP, permutation stream all already work) and simply EXTEND the stream to 300 tasks to test whether loss of plasticity emerges at scale (Dohare shows it over hundreds of tasks). Do NOT rewrite from scratch; adapt the working script. MNIST via torchvision download=True is FINE (tiny ~11MB) — it worked before; do NOT abort on it.
+DEFINITIVE loss-of-plasticity test — SMALL network (the config where it actually appears). Three prior healthy-regime runs (Split-CIFAR-100, permuted-MNIST 50-task, permuted-MNIST wide-MLP) showed NO plasticity loss — but all used WIDE MLPs (2000 units) that have too much redundant capacity and are documented to RESIST plasticity loss. Dohare et al.'s loss of plasticity appears in SMALLER networks. This is the last definitive test. Real data (MNIST) via /opt/datasets or torchvision (tiny); NEVER synthetic. Reuse the WORKING permuted-MNIST code (results/pmnist or pml) and change ONLY the network size + task count.
 
-CHANGES vs the 50-task run: n_tasks=300 (single-pass online, limited steps/task so it stays cheap), 3 seeds, 3-layer MLP (2000-2000), SGD, no weight decay, healthy lr (keep the one that gave dead<20%, task1 acc ~0.97). Track per-task new-task accuracy + the 4 observables every ~5 tasks.
+SETUP: Online Permuted-MNIST, but a SMALL MLP: hidden sizes {100, 256} (run BOTH if cheap; small nets are very fast). SGD, NO weight decay, healthy lr (verify dead_after_task1 < 25%, task1 acc reasonable ~0.85+). 300+ tasks, single-pass online (limited steps/task ~ a few hundred). 3 seeds. NO plasticity repair.
 
-QUESTION: does new-task accuracy DECLINE from early tasks (first 20) to late tasks (last 20) — genuine loss of plasticity in a HEALTHY net at 300 tasks? Report acc_first20 vs acc_last20. If loss occurs, measure precedence (per-observable lead time, mean+median+IQR+CI, paired erank-vs-GNS Wilcoxon). If NO loss even at 300 tasks, report that clearly.
+THE QUESTION: does a HEALTHY SMALL net lose plasticity over the stream — new-task accuracy in the FIRST 20 tasks materially higher than the LAST 20 tasks (e.g. drop > 3-5pp)? Report acc_first20 vs acc_last20 per hidden size. Verify the net is HEALTHY at task 1 (not dying-ReLU): report dead_at_init + dead_after_task1 + task1_acc.
 
-EXECUTION: ONE run_pml.py, single BLOCKING call `python run_pml.py 2>&1 | tee results/pml/run.log`, WAIT. 300 tasks x small MLP x single-pass x 3 seeds is cheap (<45 min). Write results/pml/RESULTS.json INCREMENTALLY (every 25 tasks) + FINALIZE. Do NOT leave status RUNNING.
+IF genuine plasticity loss occurs (acc declines materially in a healthy small net): measure PRECEDENCE — per observable (dead_unit_fraction, effective_rank, gradient_noise_scale [proper McCandlish], weight_norm_drift) the lead time before the accuracy-decline onset, unbiased non-monotone onset, mean+median+IQR+95% CI, paired effective_rank-vs-GNS Wilcoxon. This VALIDATES the precedence claim in a healthy regime.
+IF NO loss even in a small healthy net at 300 tasks: report clearly — the honest conclusion is that loss of plasticity does not reproduce in these healthy MLP+permuted-MNIST regimes without the pathological dying-ReLU config.
 
-OUTPUT results/pml/RESULTS.json status:"DONE":
-{"status":"DONE","benchmark":"online_permuted_mnist","n_tasks":300,"n_seeds":3,"lr_used":..,
- "dead_at_init":..,"dead_after_task1":..,"task1_acc":..,"healthy":true/false,
- "acc_first20_mean":..,"acc_last20_mean":..,"acc_drop_pp":..,"plasticity_loss_occurred":true/false,
+EXECUTION: ONE run_small.py, single BLOCKING call `python run_small.py 2>&1 | tee results/smallnet/run.log`, WAIT. Small MLP over 300 tasks x 2 sizes x 3 seeds is VERY cheap (< 40 min). Write results/smallnet/RESULTS.json INCREMENTALLY (every 25 tasks) + FINALIZE. Do NOT leave status RUNNING.
+
+OUTPUT results/smallnet/RESULTS.json status:"DONE":
+{"status":"DONE","benchmark":"online_permuted_mnist_smallnet",
+ "by_hidden":{"100":{"dead_at_init":..,"dead_after_task1":..,"task1_acc":..,"acc_first20":..,"acc_last20":..,"acc_drop_pp":..,"plasticity_loss":true/false},"256":{...}},
+ "any_healthy_collapse":true/false,
  "lead_times":{...or null},"precedence_order":[..],"erank_vs_gns_paired":{...},
- "notes":"does a healthy net lose plasticity at 300 tasks? does effective rank lead? honest."}
+ "notes":"does a SMALL healthy net lose plasticity? if yes does effective rank lead? honest final answer."}
 Commit all except datasets + weights.
 
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/pml2/.
+for context and build on them; write this round's outputs under results/smallnet/.
 
 ## Idea
 Observable Temporal Precedence Map: Which Cheap Signal Leads Plasticity Collapse — and by How Many Tasks?
@@ -58,4 +61,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: Vanilla continual learning: 3-layer MLP (400–400, ReLU), SGD with nuisance-tuned LR and weight decay, BatchNorm OFF, Split-CIFAR-10, 10 tasks, 5 seeds, zero plasticity repair. Replicates the collapse trajectory documented in Dohare et al.; establishes the reference t_collapse distribution and all four signal trajectories before any optimizer or BN factor is introduced. Built and verified first.
 - eval contract: Dataset: Split-CIFAR-10 (10 tasks × 2 classes, fixed permutation seed=0). Primary metric: lead_time(signal) = t_collapse − onset(signal) in tasks, per signal × optimizer × BN arm, reported as mean ± 95% bootstrap CI over 5 seeds. Precedence-ordering consistency: Kendall's W (coefficient of concordance) over the 5 per-seed signal orderings within each optimizer × BN cell; W ≥ 0.70 → 'consistent ordering' (pre-registered threshold); W < 0.70 → 'config-conditional or noisy.' Pairwise lead-time differences between the 4 signals tested with Wilcoxon signed-rank (paired over seeds, Bonferroni-corrected for 6 pairs, α=0.05). Sensitivity: full ordering re-derived at k∈{1.5, 2.5} alongside k=2.0; any rank flip reported as a finding, not suppressed.
 
-Record everything under results/pml2/. Do not commit weights.
+Record everything under results/smallnet/. Do not commit weights.
