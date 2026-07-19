@@ -1,0 +1,169 @@
+{
+  "status": "DONE",
+  "benchmark": "permuted_mnist",
+  "n_tasks": 100,
+  "n_seeds": 5,
+  "lr_used": 0.05,
+  "momentum": 0.9,
+  "weight_decay": 0.0,
+  "hidden_size": 2000,
+  "steps_per_task": 1000,
+  "gns_batch_size": 64,
+  "dead_at_init": 0.05205000210553408,
+  "dead_after_task1": 0.022800000943243505,
+  "task1_acc": 0.97514,
+  "healthy": true,
+  "plasticity_loss_occurred": false,
+  "acc_task1_mean": 0.97514,
+  "acc_late_mean": 0.9735339999999999,
+  "acc_drop_pp": 0.16060000000001073,
+  "t_collapse_per_seed": [
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "n_seeds_collapsed": 0,
+  "lead_times": {
+    "dead_unit_fraction": {
+      "mean": null,
+      "median": null,
+      "iqr": [
+        null,
+        null
+      ],
+      "ci95": [
+        null,
+        null
+      ],
+      "n_valid": 0
+    },
+    "effective_rank": {
+      "mean": null,
+      "median": null,
+      "iqr": [
+        null,
+        null
+      ],
+      "ci95": [
+        null,
+        null
+      ],
+      "n_valid": 0
+    },
+    "gradient_noise_scale": {
+      "mean": null,
+      "median": null,
+      "iqr": [
+        null,
+        null
+      ],
+      "ci95": [
+        null,
+        null
+      ],
+      "n_valid": 0
+    },
+    "weight_norm_drift": {
+      "mean": null,
+      "median": null,
+      "iqr": [
+        null,
+        null
+      ],
+      "ci95": [
+        null,
+        null
+      ],
+      "n_valid": 0
+    }
+  },
+  "precedence_order": [],
+  "erank_vs_gns_paired": {
+    "diffs_per_seed": [],
+    "median_diff": null,
+    "wilcoxon_stat": null,
+    "wilcoxon_p": null
+  },
+  "per_seed_summary": [
+    {
+      "seed": 0,
+      "dead_at_init": 0.050000003539025784,
+      "dead_after_task1": 0.021750000305473804,
+      "task1_acc": 0.9755,
+      "healthy": true,
+      "t_collapse": null,
+      "acc_task1": 0.9755,
+      "acc_task50": 0.9751,
+      "acc_task100": 0.9752,
+      "lead_dead": null,
+      "lead_erank": null,
+      "lead_gns": null,
+      "lead_wdrift": null
+    },
+    {
+      "seed": 1,
+      "dead_at_init": 0.058500003069639206,
+      "dead_after_task1": 0.020750001072883606,
+      "task1_acc": 0.9734,
+      "healthy": true,
+      "t_collapse": null,
+      "acc_task1": 0.9734,
+      "acc_task50": 0.9746,
+      "acc_task100": 0.9691,
+      "lead_dead": null,
+      "lead_erank": null,
+      "lead_gns": null,
+      "lead_wdrift": null
+    },
+    {
+      "seed": 2,
+      "dead_at_init": 0.053500001318752766,
+      "dead_after_task1": 0.027750001288950443,
+      "task1_acc": 0.9747,
+      "healthy": true,
+      "t_collapse": null,
+      "acc_task1": 0.9747,
+      "acc_task50": 0.9757,
+      "acc_task100": 0.976,
+      "lead_dead": null,
+      "lead_erank": null,
+      "lead_gns": null,
+      "lead_wdrift": null
+    },
+    {
+      "seed": 3,
+      "dead_at_init": 0.048500001430511475,
+      "dead_after_task1": 0.020750001072883606,
+      "task1_acc": 0.978,
+      "healthy": true,
+      "t_collapse": null,
+      "acc_task1": 0.978,
+      "acc_task50": 0.975,
+      "acc_task100": 0.9754,
+      "lead_dead": null,
+      "lead_erank": null,
+      "lead_gns": null,
+      "lead_wdrift": null
+    },
+    {
+      "seed": 4,
+      "dead_at_init": 0.049750001169741154,
+      "dead_after_task1": 0.023000000976026058,
+      "task1_acc": 0.9741,
+      "healthy": true,
+      "t_collapse": null,
+      "acc_task1": 0.9741,
+      "acc_task50": 0.9729,
+      "acc_task100": 0.9755,
+      "lead_dead": null,
+      "lead_erank": null,
+      "lead_gns": null,
+      "lead_wdrift": null
+    }
+  ],
+  "wall_clock_sec": 476.9,
+  "subject_executed": "Online Permuted-MNIST, 3-layer MLP (784\u21922000\u21922000\u219210, ReLU), SGD lr=0.05 momentum=0.9 WD=0.0, no plasticity repair, 100 tasks \u00d7 1000 steps/task \u00d7 5 seeds. 4 observables per task: dead_unit_fraction (>95% threshold), effective_rank (penultimate, always>=1), gradient_noise_scale (McCandlish B_opt, 64 samples/batch), weight_norm_drift. LR tuned on seed=0 task=0.",
+  "notes": "Network healthy=True: dead_at_init=0.052, dead_after_task1=0.023 (<0.20), task1_acc=0.975 (>0.90). Plasticity loss occurred=False: 0/5 seeds show collapse (>=15.0pp drop, >=2 consecutive tasks). acc_drop=0.2pp (task1\u2192late). Precedence order=[]. erank_vs_gns Wilcoxon p=None. GNS batch=64 samples (>20). Effective rank always>=1 (handled degenerate case)."
+}

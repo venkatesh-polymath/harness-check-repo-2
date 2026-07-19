@@ -1,34 +1,30 @@
-# EXPERIMENT BRIEF — round closeloop (full)
+# EXPERIMENT BRIEF — round pmnist (full)
 
 ## THIS ROUND (do exactly this)
-CLOSE-THE-LOOP EXPERIMENT — turn the leading indicator into a CAPABILITY. We showed effective rank leads plasticity collapse by ~4.75 tasks. Now USE that early warning: trigger an intervention when effective rank crosses the alarm threshold, and show it PREVENTS collapse better + more efficiently than a fixed-schedule reset. This is the payoff that converts an observation into a capability.
+GENUINE PLASTICITY LOSS in a HEALTHY regime — Permuted-MNIST, the canonical loss-of-plasticity benchmark (Dohare et al., loss of plasticity). The Split-CIFAR-100 setup did NOT collapse in any healthy config (only the broken 76.7%-dead config did), so we move to the standard benchmark where a HEALTHY network provably loses plasticity over MANY tasks. Real data at /opt/datasets (MNIST is small; if not pre-baked, note it — MNIST via torchvision is tiny, but prefer /opt/datasets; NEVER synthetic).
 
-SETUP (fix prior confounds): 3-layer MLP (400-400, ReLU), SGD+momentum, BatchNorm OFF, Split-CIFAR-100 (10 tasks x 5 classes), real data at /opt/datasets (download=False, NEVER synthetic, ABORT if missing). IMPORTANT: use MORE steps/task than before — >=300 steps/task (reviewers flagged 50 steps as too sparse / dying-ReLU confound); verify dead-unit fraction at INIT is < ~15% (report dead_at_init). 8 seeds (10 if time). Same task splits across arms (paired).
+SETUP: Online Permuted-MNIST — a long stream of tasks, each a fixed random PERMUTATION of the input pixels (same labels). 3-layer MLP (2000-2000 or 400-400, ReLU), SGD (tune lr so the net is HEALTHY: dead_after_task1 < ~20%, learns task 1 to high acc ~0.9+), no plasticity repair. This is the setup where loss of plasticity is well-documented: new-task accuracy DECLINES over the task stream even though each task is individually learnable.
 
-FOUR ARMS (identical everything except the reset POLICY):
-1. no_repair — vanilla, no reset (the collapsing floor).
-2. fixed_reset — reset the lowest-utility units on a FIXED cadence (e.g. every task), standard CBP-style, utility = |out weight| x mean activation. Count total resets.
-3. erank_triggered (OURS) — monitor effective rank of penultimate activations each task; when erank drops below an ALARM threshold (the early-warning level that precedes collapse), fire a targeted reset of the lowest-utility units. Resets fire ONLY when the alarm trips. Count total resets + WHEN they fired.
-4. random_time (control) — fire the SAME NUMBER of resets as erank_triggered but at RANDOM tasks (to isolate whether the TIMING from the leading indicator matters, not just the count).
+KEY: run a LONG stream — >= 50 tasks (100 if cheap; MNIST MLP is very fast). Verify GENUINE plasticity loss: (a) network HEALTHY at task 1 (dead < 20%, task1 acc ~0.9), (b) new-task accuracy DECLINES over the stream (e.g. task-1 acc 0.95 -> late-task acc drops materially). If loss of plasticity does NOT appear even here, report that honestly (it would mean the phenomenon needs an even longer/harder stream). Use 5 seeds.
 
-DELIVERABLES (the capability claims):
-1. Does erank_triggered PREVENT/DELAY collapse? mean final-few-tasks accuracy per arm +/- 95% CI over seeds. Target: erank_triggered >> no_repair floor, and >= fixed_reset.
-2. EFFICIENCY: does erank_triggered use FEWER resets than fixed_reset for equal-or-better accuracy? Report resets_fired per arm.
-3. TIMING matters: does erank_triggered beat random_time (same reset count, wrong timing)? paired diff + CI + p. If yes, the leading indicator's TIMING carries the benefit — the core capability claim.
+INSTRUMENT every task: dead_unit_fraction, effective_rank (penultimate; report >=1 correctly, never 0), gradient_noise_scale (proper McCandlish, >=20 samples), weight_norm_drift, and new-task accuracy. Report dead_at_init and dead_after_task1 to prove health.
 
-EXECUTION: ONE run_closeloop.py, single BLOCKING call `python run_closeloop.py 2>&1 | tee results/closeloop/run.log`, WAIT. 4 arms x 8 seeds x 10 tasks x >=300 steps, MLP = cheap; < 70 min. Write RESULTS.json incrementally + finalize.
+IF genuine healthy plasticity loss occurs, measure PRECEDENCE: for each observable, lead time (tasks) before the accuracy-collapse onset, unbiased non-monotone onset (50% of range, moving-avg window 2), applied identically to all 4. Report per-observable mean + median + IQR + 95% bootstrap CI, and the paired effective_rank-vs-GNS per-seed lead difference with a Wilcoxon signed-rank p.
 
-OUTPUT results/closeloop/RESULTS.json status:"DONE":
-{"status":"DONE","dataset":"cifar100_split","n_seeds":8,"steps_per_task":>=300,"dead_at_init":..,
- "arms":{"no_repair":{"mean_acc":..,"std":..,"resets":0},"fixed_reset":{"mean_acc":..,"std":..,"resets":..},"erank_triggered":{"mean_acc":..,"std":..,"resets":..,"reset_tasks":[..]},"random_time":{"mean_acc":..,"std":..,"resets":..}},
- "prevents_collapse": true/false, "triggered_vs_floor_pp":.., "triggered_vs_fixed_pp":{"mean":..,"ci95":[..]}, "triggered_vs_random_pp":{"mean":..,"ci95":[..],"p_one_sided":..,"timing_matters":true/false},
- "efficiency":{"triggered_resets":..,"fixed_resets":..,"triggered_uses_fewer":true/false},
- "notes":"does using effective-rank as an early-warning trigger PREVENT collapse better + more efficiently than fixed/random? honest."}
+EXECUTION: ONE run_pmnist.py, single BLOCKING call `python run_pmnist.py 2>&1 | tee results/pmnist/run.log`, WAIT. MNIST MLP over 50-100 tasks x 5 seeds is CHEAP (< 45 min). Write RESULTS.json incrementally + finalize. Save per-task trajectories to results/pmnist/trajectories.json (for later predictive analysis).
+
+OUTPUT results/pmnist/RESULTS.json status:"DONE":
+{"status":"DONE","benchmark":"permuted_mnist","n_tasks":..,"n_seeds":5,"lr_used":..,
+ "dead_at_init":..,"dead_after_task1":..,"task1_acc":..,"healthy":true/false,
+ "plasticity_loss_occurred":true/false,"acc_task1_mean":..,"acc_late_mean":..,"acc_drop_pp":..,
+ "lead_times":{"effective_rank":{"mean":..,"median":..,"iqr":[..],"ci95":[..]},"dead_unit_fraction":{...},"weight_norm_drift":{...},"gradient_noise_scale":{...}},
+ "precedence_order":[..],"erank_vs_gns_paired":{"median_diff":..,"wilcoxon_p":..},
+ "notes":"does a HEALTHY net lose plasticity here, and does effective rank still lead? honest."}
 Do NOT leave status RUNNING. Commit all except datasets + weights.
 
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/closeloop/.
+for context and build on them; write this round's outputs under results/pmnist/.
 
 ## Idea
 Observable Temporal Precedence Map: Which Cheap Signal Leads Plasticity Collapse — and by How Many Tasks?
@@ -67,4 +63,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: Vanilla continual learning: 3-layer MLP (400–400, ReLU), SGD with nuisance-tuned LR and weight decay, BatchNorm OFF, Split-CIFAR-10, 10 tasks, 5 seeds, zero plasticity repair. Replicates the collapse trajectory documented in Dohare et al.; establishes the reference t_collapse distribution and all four signal trajectories before any optimizer or BN factor is introduced. Built and verified first.
 - eval contract: Dataset: Split-CIFAR-10 (10 tasks × 2 classes, fixed permutation seed=0). Primary metric: lead_time(signal) = t_collapse − onset(signal) in tasks, per signal × optimizer × BN arm, reported as mean ± 95% bootstrap CI over 5 seeds. Precedence-ordering consistency: Kendall's W (coefficient of concordance) over the 5 per-seed signal orderings within each optimizer × BN cell; W ≥ 0.70 → 'consistent ordering' (pre-registered threshold); W < 0.70 → 'config-conditional or noisy.' Pairwise lead-time differences between the 4 signals tested with Wilcoxon signed-rank (paired over seeds, Bonferroni-corrected for 6 pairs, α=0.05). Sensitivity: full ordering re-derived at k∈{1.5, 2.5} alongside k=2.0; any rank flip reported as a finding, not suppressed.
 
-Record everything under results/closeloop/. Do not commit weights.
+Record everything under results/pmnist/. Do not commit weights.

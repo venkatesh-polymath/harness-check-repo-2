@@ -1,0 +1,381 @@
+Device: cuda
+Config: 5 seeds × 100 tasks × 1000 steps/task
+MLP: 784→2000→2000→10 (ReLU)
+SGD, momentum=0.9, WD=0.0
+MNIST loaded: train=(60000, 784), test=(10000, 784)
+Created 100 task permutations (task 0 = identity)
+
+=== LR Tuning (seed=0, task=0) ===
+  lr=0.0500: init_CE=2.3036 (log10=2.3026), task1_acc=0.9755, dead_init=0.0495, dead_after_t1=0.0208  ✓ HEALTHY
+  lr=0.0100: init_CE=2.3036 (log10=2.3026), task1_acc=0.9475, dead_init=0.0495, dead_after_t1=0.0615  ✓ HEALTHY
+  lr=0.0050: init_CE=2.3036 (log10=2.3026), task1_acc=0.9263, dead_init=0.0495, dead_after_t1=0.0735  ✓ HEALTHY
+  lr=0.0010: init_CE=2.3036 (log10=2.3026), task1_acc=0.8766, dead_init=0.0495, dead_after_t1=0.0850  ✗
+  → Selected LR = 0.05  (task1_acc = 0.9755)
+
+=== Main Experiment ===
+LR=0.05, momentum=0.9, WD=0.0
+5 seeds × 100 tasks × 1000 steps
+
+
+======================================================================
+SEED 0
+======================================================================
+  [sanity] init CE = 2.3044, expected = 2.3026, diff = 0.0018  PASS
+  dead_at_init = 0.0500
+  Task   1/100 | acc=0.9755  dead=0.0218  erank=259.934  gns=  1.7512  wdrift=1.8504
+  Task   2/100 | acc=0.9775  dead=0.1748  erank=247.599  gns=  1.6924  wdrift=2.5121
+  Task   3/100 | acc=0.9788  dead=0.2045  erank=260.116  gns=  1.6858  wdrift=2.8897
+  Task   4/100 | acc=0.9785  dead=0.2600  erank=258.275  gns=  2.0171  wdrift=3.8058
+  Task   5/100 | acc=0.9753  dead=0.2850  erank=265.708  gns=  1.9310  wdrift=4.5910
+  Task  10/100 | acc=0.9753  dead=0.3755  erank=257.016  gns=  2.0379  wdrift=7.6730
+  Task  20/100 | acc=0.9749  dead=0.4153  erank=282.025  gns=  2.0740  wdrift=11.8740
+  Task  30/100 | acc=0.9728  dead=0.4578  erank=292.201  gns=  1.7918  wdrift=14.8802
+  Task  40/100 | acc=0.9767  dead=0.4968  erank=301.792  gns=  2.0204  wdrift=17.5415
+  Task  50/100 | acc=0.9751  dead=0.5280  erank=305.673  gns=  2.0156  wdrift=18.6551
+  Task  60/100 | acc=0.9729  dead=0.5465  erank=309.623  gns=  1.8304  wdrift=19.7990
+  Task  70/100 | acc=0.9753  dead=0.5583  erank=323.248  gns=  1.8266  wdrift=20.3971
+  Task  80/100 | acc=0.9728  dead=0.6028  erank=312.172  gns=  1.9938  wdrift=22.5511
+  Task  90/100 | acc=0.9742  dead=0.6005  erank=331.013  gns=  2.0089  wdrift=23.4220
+  Task 100/100 | acc=0.9752  dead=0.6225  erank=340.936  gns=  1.9876  wdrift=24.6731
+
+  --- Seed 0 summary ---
+  dead_at_init=0.0500
+  dead_after_task1=0.0218
+  task1_acc=0.9755  late10_acc=0.9741
+  t_collapse=None  healthy=True
+
+======================================================================
+SEED 1
+======================================================================
+  [sanity] init CE = 2.3039, expected = 2.3026, diff = 0.0013  PASS
+  dead_at_init = 0.0585
+  Task   1/100 | acc=0.9734  dead=0.0208  erank=253.189  gns=  1.6499  wdrift=1.7861
+  Task   2/100 | acc=0.9795  dead=0.1648  erank=255.918  gns=  1.6413  wdrift=2.2557
+  Task   3/100 | acc=0.9787  dead=0.2055  erank=258.279  gns=  1.9825  wdrift=2.6917
+  Task   4/100 | acc=0.9760  dead=0.2468  erank=265.329  gns=  1.7395  wdrift=3.4731
+  Task   5/100 | acc=0.9766  dead=0.2820  erank=262.426  gns=  2.0367  wdrift=4.1518
+  Task  10/100 | acc=0.9785  dead=0.3645  erank=268.522  gns=  1.9773  wdrift=6.7064
+  Task  20/100 | acc=0.9752  dead=0.4258  erank=278.477  gns=  1.8021  wdrift=10.6337
+  Task  30/100 | acc=0.9762  dead=0.4843  erank=278.145  gns=  2.0986  wdrift=13.3599
+  Task  40/100 | acc=0.9737  dead=0.4903  erank=301.003  gns=  1.5751  wdrift=15.7888
+  Task  50/100 | acc=0.9746  dead=0.5173  erank=306.966  gns=  1.6373  wdrift=17.1539
+  Task  60/100 | acc=0.9732  dead=0.5638  erank=309.690  gns=  1.8434  wdrift=18.8303
+  Task  70/100 | acc=0.9754  dead=0.6035  erank=313.061  gns=  2.1616  wdrift=19.4292
+  Task  80/100 | acc=0.9731  dead=0.5905  erank=314.769  gns=  1.9748  wdrift=19.8201
+  Task  90/100 | acc=0.9727  dead=0.5923  erank=336.119  gns=  2.0722  wdrift=21.2237
+  Task 100/100 | acc=0.9691  dead=0.6368  erank=339.682  gns=  1.6263  wdrift=21.8192
+
+  --- Seed 1 summary ---
+  dead_at_init=0.0585
+  dead_after_task1=0.0208
+  task1_acc=0.9734  late10_acc=0.9736
+  t_collapse=None  healthy=True
+
+======================================================================
+SEED 2
+======================================================================
+  [sanity] init CE = 2.2995, expected = 2.3026, diff = 0.0031  PASS
+  dead_at_init = 0.0535
+  Task   1/100 | acc=0.9747  dead=0.0278  erank=253.304  gns=  2.5113  wdrift=1.7529
+  Task   2/100 | acc=0.9763  dead=0.1378  erank=256.138  gns=  1.8334  wdrift=2.2259
+  Task   3/100 | acc=0.9780  dead=0.1943  erank=257.621  gns=  1.7373  wdrift=2.7466
+  Task   4/100 | acc=0.9760  dead=0.2408  erank=264.311  gns=  2.1246  wdrift=3.6895
+  Task   5/100 | acc=0.9779  dead=0.2670  erank=269.119  gns=  2.3703  wdrift=4.6181
+  Task  10/100 | acc=0.9780  dead=0.3653  erank=266.096  gns=  2.0441  wdrift=7.6273
+  Task  20/100 | acc=0.9770  dead=0.4200  erank=288.402  gns=  1.8523  wdrift=12.4055
+  Task  30/100 | acc=0.9739  dead=0.4768  erank=289.997  gns=  1.8159  wdrift=15.3961
+  Task  40/100 | acc=0.9752  dead=0.5220  erank=292.996  gns=  2.1875  wdrift=17.7415
+  Task  50/100 | acc=0.9757  dead=0.5418  erank=306.149  gns=  1.7277  wdrift=19.4181
+  Task  60/100 | acc=0.9747  dead=0.5295  erank=319.771  gns=  1.8081  wdrift=21.2045
+  Task  70/100 | acc=0.9742  dead=0.5815  erank=339.356  gns=  1.7390  wdrift=21.9287
+  Task  80/100 | acc=0.9723  dead=0.6060  erank=337.532  gns=  1.8881  wdrift=22.4422
+  Task  90/100 | acc=0.9724  dead=0.6185  erank=330.759  gns=  1.8517  wdrift=23.2559
+  Task 100/100 | acc=0.9760  dead=0.6233  erank=341.985  gns=  2.0510  wdrift=24.3630
+
+  --- Seed 2 summary ---
+  dead_at_init=0.0535
+  dead_after_task1=0.0278
+  task1_acc=0.9747  late10_acc=0.9735
+  t_collapse=None  healthy=True
+
+======================================================================
+SEED 3
+======================================================================
+  [sanity] init CE = 2.3003, expected = 2.3026, diff = 0.0023  PASS
+  dead_at_init = 0.0485
+  Task   1/100 | acc=0.9780  dead=0.0208  erank=253.628  gns=  1.5754  wdrift=1.9457
+  Task   2/100 | acc=0.9773  dead=0.1758  erank=254.623  gns=  1.4027  wdrift=2.7276
+  Task   3/100 | acc=0.9780  dead=0.2268  erank=254.627  gns=  2.1698  wdrift=3.2631
+  Task   4/100 | acc=0.9744  dead=0.2630  erank=253.351  gns=  1.9662  wdrift=4.0347
+  Task   5/100 | acc=0.9776  dead=0.2940  erank=257.035  gns=  1.9644  wdrift=4.9410
+  Task  10/100 | acc=0.9749  dead=0.3643  erank=264.234  gns=  1.6796  wdrift=7.8284
+  Task  20/100 | acc=0.9766  dead=0.4465  erank=272.994  gns=  1.9076  wdrift=12.4360
+  Task  30/100 | acc=0.9743  dead=0.4733  erank=297.406  gns=  1.6253  wdrift=15.8901
+  Task  40/100 | acc=0.9757  dead=0.5013  erank=296.462  gns=  1.7810  wdrift=17.4144
+  Task  50/100 | acc=0.9750  dead=0.5308  erank=308.019  gns=  2.0017  wdrift=19.1797
+  Task  60/100 | acc=0.9742  dead=0.5563  erank=306.649  gns=  1.8233  wdrift=20.2514
+  Task  70/100 | acc=0.9729  dead=0.5690  erank=328.208  gns=  1.8585  wdrift=21.7264
+  Task  80/100 | acc=0.9745  dead=0.6063  erank=318.964  gns=  2.2988  wdrift=22.6247
+  Task  90/100 | acc=0.9710  dead=0.6025  erank=325.010  gns=  2.1116  wdrift=23.7114
+  Task 100/100 | acc=0.9754  dead=0.6320  erank=345.820  gns=  2.0916  wdrift=25.5623
+
+  --- Seed 3 summary ---
+  dead_at_init=0.0485
+  dead_after_task1=0.0208
+  task1_acc=0.9780  late10_acc=0.9731
+  t_collapse=None  healthy=True
+
+======================================================================
+SEED 4
+======================================================================
+  [sanity] init CE = 2.3023, expected = 2.3026, diff = 0.0003  PASS
+  dead_at_init = 0.0498
+  Task   1/100 | acc=0.9741  dead=0.0230  erank=259.499  gns=  1.5873  wdrift=1.8847
+  Task   2/100 | acc=0.9757  dead=0.1270  erank=255.437  gns=  2.1874  wdrift=2.2633
+  Task   3/100 | acc=0.9796  dead=0.2023  erank=266.093  gns=  1.8143  wdrift=2.8272
+  Task   4/100 | acc=0.9779  dead=0.2525  erank=267.506  gns=  1.8412  wdrift=3.5142
+  Task   5/100 | acc=0.9795  dead=0.2757  erank=266.489  gns=  1.5924  wdrift=4.2218
+  Task  10/100 | acc=0.9755  dead=0.3575  erank=275.086  gns=  1.8834  wdrift=7.1967
+  Task  20/100 | acc=0.9743  dead=0.4160  erank=283.711  gns=  1.5173  wdrift=10.8153
+  Task  30/100 | acc=0.9786  dead=0.4818  erank=289.898  gns=  2.1233  wdrift=14.2983
+  Task  40/100 | acc=0.9747  dead=0.5133  erank=308.881  gns=  1.7779  wdrift=16.3839
+  Task  50/100 | acc=0.9729  dead=0.5343  erank=316.144  gns=  1.8938  wdrift=18.3714
+  Task  60/100 | acc=0.9756  dead=0.5415  erank=318.579  gns=  2.3218  wdrift=19.5781
+  Task  70/100 | acc=0.9742  dead=0.5695  erank=317.061  gns=  1.9484  wdrift=19.8056
+  Task  80/100 | acc=0.9740  dead=0.6095  erank=311.911  gns=  1.9951  wdrift=21.2149
+  Task  90/100 | acc=0.9745  dead=0.6100  erank=341.729  gns=  1.8732  wdrift=21.6309
+  Task 100/100 | acc=0.9755  dead=0.6260  erank=334.655  gns=  2.1692  wdrift=22.9515
+
+  --- Seed 4 summary ---
+  dead_at_init=0.0498
+  dead_after_task1=0.0230
+  task1_acc=0.9741  late10_acc=0.9735
+  t_collapse=None  healthy=True
+
+
+======================================================================
+ANALYSIS
+======================================================================
+dead_at_init (mean across seeds):     0.0521
+dead_after_task1 (mean across seeds): 0.0228
+task1_acc (mean across seeds):        0.9751
+late_acc tasks 91-100 (mean):         0.9735
+acc_drop_pp:                          0.16pp
+healthy_all:                          True
+n_collapsed:                          0/5
+t_collapse_per_seed:                  [None, None, None, None, None]
+plasticity_loss_occurred:             False
+
+--- Onset detection ---
+  Seed 0, t_collapse=None:
+    dead_unit_fraction: onset=N/A (no collapse)
+    effective_rank: onset=N/A (no collapse)
+    gradient_noise_scale: onset=N/A (no collapse)
+    weight_norm_drift: onset=N/A (no collapse)
+  Seed 1, t_collapse=None:
+    dead_unit_fraction: onset=N/A (no collapse)
+    effective_rank: onset=N/A (no collapse)
+    gradient_noise_scale: onset=N/A (no collapse)
+    weight_norm_drift: onset=N/A (no collapse)
+  Seed 2, t_collapse=None:
+    dead_unit_fraction: onset=N/A (no collapse)
+    effective_rank: onset=N/A (no collapse)
+    gradient_noise_scale: onset=N/A (no collapse)
+    weight_norm_drift: onset=N/A (no collapse)
+  Seed 3, t_collapse=None:
+    dead_unit_fraction: onset=N/A (no collapse)
+    effective_rank: onset=N/A (no collapse)
+    gradient_noise_scale: onset=N/A (no collapse)
+    weight_norm_drift: onset=N/A (no collapse)
+  Seed 4, t_collapse=None:
+    dead_unit_fraction: onset=N/A (no collapse)
+    effective_rank: onset=N/A (no collapse)
+    gradient_noise_scale: onset=N/A (no collapse)
+    weight_norm_drift: onset=N/A (no collapse)
+
+--- Lead-time summary ---
+  dead_unit_fraction: no valid lead times
+  effective_rank: no valid lead times
+  gradient_noise_scale: no valid lead times
+  weight_norm_drift: no valid lead times
+
+  Precedence order: []
+
+  erank - gns lead diffs (per seed): []
+  median_diff: None
+  Wilcoxon: too few pairs (0) — skipped
+
+Wall-clock: 476.9s (7.9 min)
+
+Trajectories → results/pmnist/trajectories.json
+
+Results → results/pmnist/RESULTS.json
+{
+  "status": "DONE",
+  "benchmark": "permuted_mnist",
+  "n_tasks": 100,
+  "n_seeds": 5,
+  "lr_used": 0.05,
+  "momentum": 0.9,
+  "weight_decay": 0.0,
+  "hidden_size": 2000,
+  "steps_per_task": 1000,
+  "gns_batch_size": 64,
+  "dead_at_init": 0.05205000210553408,
+  "dead_after_task1": 0.022800000943243505,
+  "task1_acc": 0.97514,
+  "healthy": true,
+  "plasticity_loss_occurred": false,
+  "acc_task1_mean": 0.97514,
+  "acc_late_mean": 0.9735339999999999,
+  "acc_drop_pp": 0.16060000000001073,
+  "t_collapse_per_seed": [
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "n_seeds_collapsed": 0,
+  "lead_times": {
+    "dead_unit_fraction": {
+      "mean": null,
+      "median": null,
+      "iqr": [
+        null,
+        null
+      ],
+      "ci95": [
+        null,
+        null
+      ],
+      "n_valid": 0
+    },
+    "effective_rank": {
+      "mean": null,
+      "median": null,
+      "iqr": [
+        null,
+        null
+      ],
+      "ci95": [
+        null,
+        null
+      ],
+      "n_valid": 0
+    },
+    "gradient_noise_scale": {
+      "mean": null,
+      "median": null,
+      "iqr": [
+        null,
+        null
+      ],
+      "ci95": [
+        null,
+        null
+      ],
+      "n_valid": 0
+    },
+    "weight_norm_drift": {
+      "mean": null,
+      "median": null,
+      "iqr": [
+        null,
+        null
+      ],
+      "ci95": [
+        null,
+        null
+      ],
+      "n_valid": 0
+    }
+  },
+  "precedence_order": [],
+  "erank_vs_gns_paired": {
+    "diffs_per_seed": [],
+    "median_diff": null,
+    "wilcoxon_stat": null,
+    "wilcoxon_p": null
+  },
+  "per_seed_summary": [
+    {
+      "seed": 0,
+      "dead_at_init": 0.050000003539025784,
+      "dead_after_task1": 0.021750000305473804,
+      "task1_acc": 0.9755,
+      "healthy": true,
+      "t_collapse": null,
+      "acc_task1": 0.9755,
+      "acc_task50": 0.9751,
+      "acc_task100": 0.9752,
+      "lead_dead": null,
+      "lead_erank": null,
+      "lead_gns": null,
+      "lead_wdrift": null
+    },
+    {
+      "seed": 1,
+      "dead_at_init": 0.058500003069639206,
+      "dead_after_task1": 0.020750001072883606,
+      "task1_acc": 0.9734,
+      "healthy": true,
+      "t_collapse": null,
+      "acc_task1": 0.9734,
+      "acc_task50": 0.9746,
+      "acc_task100": 0.9691,
+      "lead_dead": null,
+      "lead_erank": null,
+      "lead_gns": null,
+      "lead_wdrift": null
+    },
+    {
+      "seed": 2,
+      "dead_at_init": 0.053500001318752766,
+      "dead_after_task1": 0.027750001288950443,
+      "task1_acc": 0.9747,
+      "healthy": true,
+      "t_collapse": null,
+      "acc_task1": 0.9747,
+      "acc_task50": 0.9757,
+      "acc_task100": 0.976,
+      "lead_dead": null,
+      "lead_erank": null,
+      "lead_gns": null,
+      "lead_wdrift": null
+    },
+    {
+      "seed": 3,
+      "dead_at_init": 0.048500001430511475,
+      "dead_after_task1": 0.020750001072883606,
+      "task1_acc": 0.978,
+      "healthy": true,
+      "t_collapse": null,
+      "acc_task1": 0.978,
+      "acc_task50": 0.975,
+      "acc_task100": 0.9754,
+      "lead_dead": null,
+      "lead_erank": null,
+      "lead_gns": null,
+      "lead_wdrift": null
+    },
+    {
+      "seed": 4,
+      "dead_at_init": 0.049750001169741154,
+      "dead_after_task1": 0.023000000976026058,
+      "task1_acc": 0.9741,
+      "healthy": true,
+      "t_collapse": null,
+      "acc_task1": 0.9741,
+      "acc_task50": 0.9729,
+      "acc_task100": 0.9755,
+      "lead_dead": null,
+      "lead_erank": null,
+      "lead_gns": null,
+      "lead_wdrift": null
+    }
+  ],
+  "wall_clock_sec": 476.9,
+  "subject_executed": "Online Permuted-MNIST, 3-layer MLP (784\u21922000\u21922000\u219210, ReLU), SGD lr=0.05 momentum=0.9 WD=0.0, no plasticity repair, 100 tasks \u00d7 1000 steps/task \u00d7 5 seeds. 4 observables per task: dead_unit_fraction (>95% threshold), effective_rank (penultimate, always>=1), gradient_noise_scale (McCandlish B_opt, 64 samples/batch), weight_norm_drift. LR tuned on seed=0 task=0.",
+  "notes": "Network healthy=True: dead_at_init=0.052, dead_after_task1=0.023 (<0.20), task1_acc=0.975 (>0.90). Plasticity loss occurred=False: 0/5 seeds show collapse (>=15.0pp drop, >=2 consecutive tasks). acc_drop=0.2pp (task1\u2192late). Precedence order=[]. erank_vs_gns Wilcoxon p=None. GNS batch=64 samples (>20). Effective rank always>=1 (handled degenerate case)."
+}
