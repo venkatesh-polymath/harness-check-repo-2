@@ -1,31 +1,39 @@
-# EXPERIMENT BRIEF — round baseline_obs (probe)
+# EXPERIMENT BRIEF — round precedence (full)
 
 ## THIS ROUND (do exactly this)
-BASELINE — establish plasticity collapse AND instrument the 4 leading-indicator observables per task. Real data at /opt/datasets (download=False, NEVER synthetic, ABORT if missing). This is the core measurement setup for a temporal-precedence study.
+RIGOROUS EXPERIMENT — the optimizer-conditional temporal-precedence map. Real data at /opt/datasets (download=False, NEVER synthetic, ABORT if missing). Baseline already confirmed: collapse reproduces; the 4 observables are measurable; a preliminary ordering exists (effective_rank led ~2.6 tasks, dead_unit ~1.8, gradient_noise_scale ~0.8 — NOTE: this CHALLENGES the original guess that GNS leads longest; report the TRUE ordering honestly).
 
-SETUP (canonical loss-of-plasticity): 3-layer MLP (400-400, ReLU), SGD+momentum with a nuisance-tuned LR + small weight decay, BatchNorm OFF, Split-CIFAR-10 (5 tasks x 2 classes) — OR if collapse is weak, Split-CIFAR-100 (10 tasks x 5 classes; deeper stream collapses harder). 5 seeds, NO plasticity repair. This must REPRODUCE loss of plasticity: per-task accuracy on NEW tasks declines across the stream. If it does NOT collapse on CIFAR-10, switch to CIFAR-100 split (report which you used).
+GOAL: for each observable, quantify the LEAD TIME (in tasks) by which it fires before plasticity collapse, WITH confidence intervals, and test whether the ordering is OPTIMIZER-CONDITIONAL.
 
-INSTRUMENT these 4 observables EVERY task (this is the point of the study):
-1. dead_unit_fraction — fraction of ReLU units ~0 on a held-out batch.
-2. effective_rank — of penultimate-layer activations (SVD entropy; report 0/NaN honestly for collapse).
-3. gradient_noise_scale — McCandlish B_simple estimator (two mini-batches per step, ratio of grad variance to grad norm); this is the NOVEL leading indicator.
-4. weight_norm_drift — L2 norm growth ratio vs init.
-Plus per-task NEW-task accuracy (the collapse signal).
+DESIGN:
+- Dataset: Split-CIFAR-100 (10 tasks x 5 classes) — deeper stream = better lead-time resolution. (If collapse too weak under some config, note it.)
+- 3-layer MLP (400-400, ReLU). NO plasticity repair (we are MEASURING collapse, not fixing it).
+- CONFIGS (the optimizer-conditional test): {SGD+momentum, Adam} x {BatchNorm OFF, BatchNorm ON} = 4 configs.
+- 8 SEEDS per config.
+- Instrument EVERY task: dead_unit_fraction, effective_rank (penultimate activations), gradient_noise_scale (McCandlish B_simple, two mini-batches/step), weight_norm_drift, and new-task accuracy.
 
-PRELIMINARY PRECEDENCE (the deliverable direction): define a simple "fire" threshold for each observable (e.g. crosses X% of its init-to-final range) and define collapse onset (new-task acc drops below Y). Report a FIRST-PASS lead time (tasks between each observable firing and collapse) per seed. This is preliminary — the rigorous run will pre-register thresholds; here just show the observables ARE measurable and move before/with collapse.
+PRE-REGISTERED onset definitions (fixes the checkpoint's crux):
+- collapse onset t_col(seed) = first task where new-task acc falls below (chance + 5pp) and stays there.
+- observable fire time t_fire(obs,seed) = first task where the observable crosses 50% of its [task-1 value -> final value] range (monotone-smoothed).
+- lead_time(obs,seed) = t_col - t_fire(obs). Positive = leads collapse.
 
-EXECUTION: write ONE run_baseline.py, launch ONCE as a single BLOCKING call `python run_baseline.py 2>&1 | tee results/baseline_obs/run.log`, WAIT. Write results/baseline_obs/RESULTS.json incrementally + finalize. Small: 5 seeds x (5-10 tasks) — must finish < 40 min.
+ANALYSIS (the deliverables):
+1. Per (config, observable): mean lead_time +/- 95% CI over 8 seeds; rank observables by mean lead time = the PRECEDENCE MAP per config.
+2. Optimizer-conditional test: does the ordering / GNS lead time DIFFER between SGD and Adam? (Hypothesis: Adam's per-coordinate normalization suppresses the gradient-noise-scale signal.) Report the SGD-vs-Adam difference in GNS lead time with a CI.
+3. Report the TRUE overall ordering honestly (baseline suggested effective_rank leads, not GNS).
 
-OUTPUT results/baseline_obs/RESULTS.json status:"DONE":
-{"status":"DONE","dataset":"cifar10_split|cifar100_split","n_seeds":5,"collapse_reproduced":true/false,
- "per_seed":[{"per_task_acc":[...],"dead":[...],"erank":[...],"grad_noise_scale":[...],"wnorm_drift":[...]}],
- "prelim_lead_times_tasks":{"grad_noise_scale":..,"effective_rank":..,"dead_unit_fraction":..,"weight_norm_drift":..},
- "notes":"did collapse reproduce? are the 4 observables measurable + do they move before collapse? honest."}
+EXECUTION: write ONE run_rigorous.py, launch ONCE as a single BLOCKING call `python run_rigorous.py 2>&1 | tee results/precedence/run.log`, WAIT. MLPs are cheap: 4 configs x 8 seeds x 10 tasks. Write results/precedence/rows.jsonl per (config,seed) + rewrite RESULTS.json after each config. Must finish < 80 min; if wall approaches 70 min, finalize with >=6 seeds/config. Do NOT supervise cell-by-cell.
+
+OUTPUT results/precedence/RESULTS.json status:"DONE":
+{"status":"DONE","dataset":"cifar100_split","n_seeds":8,
+ "configs":{"sgd_bnoff":{"collapse_frac":..,"lead_times":{"effective_rank":{"mean":..,"ci95":[..]},"dead_unit_fraction":{...},"gradient_noise_scale":{...},"weight_norm_drift":{...}},"precedence_order":["obs by mean lead desc"]}, "adam_bnoff":{...},"sgd_bnon":{...},"adam_bnon":{...}},
+ "optimizer_conditional":{"gns_lead_sgd":..,"gns_lead_adam":..,"sgd_minus_adam_pp":..,"ci95":[..],"adam_suppresses_gns":true/false},
+ "overall_precedence_order":["obs ranked by lead time"], "notes":"the true precedence map + is it optimizer-conditional? honest."}
 Do NOT leave status RUNNING. Commit all except datasets + weights.
 
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/baseline_obs/.
+for context and build on them; write this round's outputs under results/precedence/.
 
 ## Idea
 Observable Temporal Precedence Map: Which Cheap Signal Leads Plasticity Collapse — and by How Many Tasks?
@@ -64,4 +72,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: Vanilla continual learning: 3-layer MLP (400–400, ReLU), SGD with nuisance-tuned LR and weight decay, BatchNorm OFF, Split-CIFAR-10, 10 tasks, 5 seeds, zero plasticity repair. Replicates the collapse trajectory documented in Dohare et al.; establishes the reference t_collapse distribution and all four signal trajectories before any optimizer or BN factor is introduced. Built and verified first.
 - eval contract: Dataset: Split-CIFAR-10 (10 tasks × 2 classes, fixed permutation seed=0). Primary metric: lead_time(signal) = t_collapse − onset(signal) in tasks, per signal × optimizer × BN arm, reported as mean ± 95% bootstrap CI over 5 seeds. Precedence-ordering consistency: Kendall's W (coefficient of concordance) over the 5 per-seed signal orderings within each optimizer × BN cell; W ≥ 0.70 → 'consistent ordering' (pre-registered threshold); W < 0.70 → 'config-conditional or noisy.' Pairwise lead-time differences between the 4 signals tested with Wilcoxon signed-rank (paired over seeds, Bonferroni-corrected for 6 pairs, α=0.05). Sensitivity: full ordering re-derived at k∈{1.5, 2.5} alongside k=2.0; any rank flip reported as a finding, not suppressed.
 
-Record everything under results/baseline_obs/. Do not commit weights.
+Record everything under results/precedence/. Do not commit weights.

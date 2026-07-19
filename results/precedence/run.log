@@ -1,0 +1,649 @@
+Device: cuda
+Configs: ['sgd_bnoff', 'adam_bnoff', 'sgd_bnon', 'adam_bnon']
+8 seeds × 20 tasks × 1000 steps/task | collapse_thresh=0.15
+CIFAR-10: train=(50000, 3072), test=(10000, 3072)
+Built 20 permuted tasks. train=50000, test=10000, probe=512
+
+====================================================================
+CONFIG: sgd_bnoff  {'opt': 'sgd', 'bn': False, 'lr': 0.05, 'momentum': 0.9, 'wd': 0.0}
+====================================================================
+
+  --- SEED 0 ---
+  [sanity] CE_init=2.3035 exp=2.3026 PASS
+    t= 1 acc=0.297 dead=0.815 erank=5.32 gns=1.576 wd=1.681
+    t= 2 acc=0.254 dead=0.880 erank=2.60 gns=1.724 wd=2.893
+    t= 3 acc=0.162 dead=0.919 erank=1.22 gns=15.765 wd=3.322
+    t= 4 acc=0.175 dead=0.944 erank=1.11 gns=0.592 wd=3.414
+    t= 5 acc=0.167 dead=0.946 erank=1.42 gns=5.134 wd=3.779
+    t= 6 acc=0.216 dead=0.950 erank=1.74 gns=1.017 wd=4.532
+    t= 7 acc=0.225 dead=0.956 erank=1.75 gns=6.136 wd=5.276
+    t= 8 acc=0.215 dead=0.995 erank=1.86 gns=0.969 wd=5.767
+    t= 9 acc=0.197 dead=0.989 erank=1.98 gns=1.289 wd=6.094
+    t=10 acc=0.100 dead=0.998 erank=1.09 gns=0.945 wd=6.153
+    t=11 acc=0.100 dead=0.999 erank=1.05 gns=7.118 wd=6.153
+    t=12 acc=0.100 dead=0.999 erank=1.05 gns=2.686 wd=6.153
+    t=13 acc=0.100 dead=0.999 erank=1.06 gns=4.371 wd=6.153
+    t=14 acc=0.100 dead=0.999 erank=1.05 gns=2.749 wd=6.153
+    t=15 acc=0.100 dead=0.999 erank=1.05 gns=1.195 wd=6.153
+    t=16 acc=0.100 dead=0.999 erank=1.05 gns=14.676 wd=6.153
+    t=17 acc=0.100 dead=0.999 erank=1.05 gns=3.090 wd=6.153
+    t=18 acc=0.100 dead=0.999 erank=1.05 gns=6.863 wd=6.153
+    t=19 acc=0.100 dead=0.999 erank=1.06 gns=0.454 wd=6.153
+    t=20 acc=0.100 dead=0.999 erank=1.05 gns=4.428 wd=6.153
+
+  --- SEED 1 ---
+  [sanity] CE_init=2.3082 exp=2.3026 PASS
+    t= 1 acc=0.335 dead=0.839 erank=6.42 gns=1.703 wd=1.885
+    t= 2 acc=0.181 dead=0.857 erank=1.75 gns=1.677 wd=2.356
+    t= 3 acc=0.194 dead=0.880 erank=1.49 gns=4.039 wd=3.004
+    t= 4 acc=0.215 dead=0.963 erank=2.17 gns=0.521 wd=3.710
+    t= 5 acc=0.223 dead=0.964 erank=2.13 gns=0.935 wd=4.600
+    t= 6 acc=0.196 dead=0.993 erank=1.99 gns=0.120 wd=5.300
+    t= 7 acc=0.167 dead=0.984 erank=1.60 gns=2.181 wd=5.425
+    t= 8 acc=0.161 dead=0.992 erank=1.21 gns=2.107 wd=5.457
+    t= 9 acc=0.100 dead=0.999 erank=1.05 gns=0.492 wd=5.393
+    t=10 acc=0.100 dead=0.999 erank=1.05 gns=1.962 wd=5.393
+    t=11 acc=0.100 dead=0.999 erank=1.05 gns=3.455 wd=5.367
+    t=12 acc=0.100 dead=0.999 erank=1.05 gns=0.765 wd=5.367
+    t=13 acc=0.100 dead=0.999 erank=1.05 gns=3.689 wd=5.367
+    t=14 acc=0.100 dead=0.999 erank=1.05 gns=3.734 wd=5.375
+    t=15 acc=0.100 dead=0.999 erank=1.05 gns=0.654 wd=5.376
+    t=16 acc=0.100 dead=0.999 erank=1.05 gns=0.715 wd=5.382
+    t=17 acc=0.100 dead=0.999 erank=1.05 gns=4.317 wd=5.359
+    t=18 acc=0.100 dead=0.999 erank=1.04 gns=1.705 wd=5.359
+    t=19 acc=0.100 dead=0.999 erank=1.04 gns=1.215 wd=5.359
+    t=20 acc=0.100 dead=0.999 erank=1.05 gns=3.254 wd=5.359
+
+  --- SEED 2 ---
+  [sanity] CE_init=2.3054 exp=2.3026 PASS
+    t= 1 acc=0.253 dead=0.722 erank=5.61 gns=0.433 wd=1.821
+    t= 2 acc=0.242 dead=0.876 erank=2.68 gns=0.718 wd=2.753
+    t= 3 acc=0.198 dead=0.903 erank=2.27 gns=2.328 wd=3.580
+    t= 4 acc=0.188 dead=0.903 erank=1.47 gns=0.264 wd=4.015
+    t= 5 acc=0.162 dead=0.942 erank=1.32 gns=6.067 wd=4.338
+    t= 6 acc=0.183 dead=0.985 erank=1.61 gns=0.224 wd=4.581
+    t= 7 acc=0.178 dead=0.981 erank=1.32 gns=0.082 wd=5.383
+    t= 8 acc=0.159 dead=0.984 erank=1.36 gns=3.577 wd=5.598
+    t= 9 acc=0.167 dead=0.985 erank=1.26 gns=1.226 wd=6.092
+    t=10 acc=0.100 dead=0.999 erank=1.15 gns=3.965 wd=6.115
+    t=11 acc=0.100 dead=0.998 erank=1.11 gns=4.159 wd=6.117
+    t=12 acc=0.100 dead=0.998 erank=1.12 gns=3.295 wd=6.117
+    t=13 acc=0.100 dead=0.998 erank=1.12 gns=1.102 wd=6.119
+    t=14 acc=0.100 dead=0.998 erank=1.11 gns=3.191 wd=6.118
+    t=15 acc=0.100 dead=0.998 erank=1.11 gns=5.443 wd=6.119
+    t=16 acc=0.100 dead=0.998 erank=1.12 gns=2.377 wd=6.118
+    t=17 acc=0.100 dead=0.998 erank=1.12 gns=1.810 wd=6.118
+    t=18 acc=0.100 dead=0.998 erank=1.12 gns=1.313 wd=6.119
+    t=19 acc=0.100 dead=0.998 erank=1.13 gns=1.128 wd=6.120
+    t=20 acc=0.100 dead=0.998 erank=1.12 gns=2.954 wd=6.119
+
+  --- SEED 3 ---
+  [sanity] CE_init=2.3025 exp=2.3026 PASS
+    t= 1 acc=0.308 dead=0.734 erank=6.43 gns=0.924 wd=1.954
+    t= 2 acc=0.237 dead=0.754 erank=2.45 gns=2.260 wd=2.352
+    t= 3 acc=0.219 dead=0.906 erank=1.95 gns=0.645 wd=2.998
+    t= 4 acc=0.146 dead=0.897 erank=1.13 gns=2.764 wd=3.455
+    t= 5 acc=0.161 dead=0.931 erank=1.46 gns=1.223 wd=3.543
+    t= 6 acc=0.200 dead=0.946 erank=1.56 gns=1.305 wd=3.943
+    t= 7 acc=0.159 dead=0.985 erank=1.18 gns=2.024 wd=4.082
+    t= 8 acc=0.100 dead=0.999 erank=1.07 gns=1.179 wd=4.073
+    t= 9 acc=0.100 dead=0.999 erank=1.07 gns=2.218 wd=4.068
+    t=10 acc=0.100 dead=0.999 erank=1.07 gns=1.116 wd=4.069
+    t=11 acc=0.100 dead=0.999 erank=1.07 gns=1.197 wd=4.069
+    t=12 acc=0.100 dead=0.999 erank=1.07 gns=0.607 wd=4.069
+    t=13 acc=0.100 dead=0.999 erank=1.07 gns=1.544 wd=4.069
+    t=14 acc=0.100 dead=0.999 erank=1.07 gns=1.361 wd=4.069
+    t=15 acc=0.100 dead=0.999 erank=1.07 gns=3.904 wd=4.069
+    t=16 acc=0.100 dead=0.999 erank=1.07 gns=1.059 wd=4.077
+    t=17 acc=0.100 dead=0.999 erank=1.07 gns=2.304 wd=4.073
+    t=18 acc=0.100 dead=0.999 erank=1.07 gns=1.065 wd=4.072
+    t=19 acc=0.100 dead=0.999 erank=1.07 gns=0.916 wd=4.076
+    t=20 acc=0.100 dead=0.999 erank=1.06 gns=1.638 wd=4.075
+
+  --- SEED 4 ---
+  [sanity] CE_init=2.3086 exp=2.3026 PASS
+    t= 1 acc=0.265 dead=0.722 erank=6.18 gns=0.772 wd=1.569
+    t= 2 acc=0.242 dead=0.868 erank=2.74 gns=0.729 wd=2.627
+    t= 3 acc=0.169 dead=0.852 erank=1.22 gns=0.717 wd=3.285
+    t= 4 acc=0.132 dead=0.954 erank=1.07 gns=1.961 wd=3.711
+    t= 5 acc=0.100 dead=0.999 erank=1.04 gns=1.852 wd=3.719
+    t= 6 acc=0.100 dead=0.999 erank=1.04 gns=1.283 wd=3.719
+    t= 7 acc=0.100 dead=0.999 erank=1.03 gns=0.972 wd=3.659
+    t= 8 acc=0.100 dead=0.999 erank=1.03 gns=3.309 wd=3.676
+    t= 9 acc=0.100 dead=0.999 erank=1.03 gns=8.012 wd=3.676
+    t=10 acc=0.100 dead=0.999 erank=1.03 gns=4.479 wd=3.635
+    t=11 acc=0.100 dead=0.999 erank=1.03 gns=0.972 wd=3.663
+    t=12 acc=0.100 dead=0.999 erank=1.03 gns=1.539 wd=3.645
+    t=13 acc=0.100 dead=0.999 erank=1.02 gns=2.152 wd=3.645
+    t=14 acc=0.100 dead=0.999 erank=1.03 gns=2.781 wd=3.659
+    t=15 acc=0.100 dead=0.999 erank=1.03 gns=1.429 wd=3.659
+    t=16 acc=0.100 dead=0.999 erank=1.03 gns=1.762 wd=3.659
+    t=17 acc=0.100 dead=0.999 erank=1.03 gns=2.097 wd=3.659
+    t=18 acc=0.100 dead=0.999 erank=1.03 gns=2.022 wd=3.660
+    t=19 acc=0.100 dead=0.999 erank=1.03 gns=2.406 wd=3.680
+    t=20 acc=0.100 dead=0.999 erank=1.03 gns=3.596 wd=3.682
+
+  --- SEED 5 ---
+  [sanity] CE_init=2.3007 exp=2.3026 PASS
+    t= 1 acc=0.275 dead=0.845 erank=6.09 gns=1.435 wd=1.717
+    t= 2 acc=0.267 dead=0.861 erank=2.48 gns=1.350 wd=2.308
+    t= 3 acc=0.253 dead=0.890 erank=2.80 gns=2.175 wd=3.143
+    t= 4 acc=0.198 dead=0.919 erank=2.06 gns=1.104 wd=3.680
+    t= 5 acc=0.165 dead=0.952 erank=1.25 gns=2.186 wd=4.150
+    t= 6 acc=0.100 dead=0.999 erank=1.07 gns=4.426 wd=4.073
+    t= 7 acc=0.100 dead=0.999 erank=1.06 gns=1.381 wd=4.064
+    t= 8 acc=0.100 dead=0.999 erank=1.06 gns=8.542 wd=4.022
+    t= 9 acc=0.100 dead=0.999 erank=1.06 gns=2.804 wd=4.025
+    t=10 acc=0.100 dead=0.999 erank=1.05 gns=1.108 wd=3.993
+    t=11 acc=0.100 dead=0.999 erank=1.05 gns=0.500 wd=4.001
+    t=12 acc=0.100 dead=0.999 erank=1.05 gns=2.415 wd=4.003
+    t=13 acc=0.100 dead=0.999 erank=1.05 gns=11.392 wd=4.003
+    t=14 acc=0.100 dead=0.999 erank=1.05 gns=2.298 wd=4.004
+    t=15 acc=0.100 dead=0.999 erank=1.05 gns=2.195 wd=3.994
+    t=16 acc=0.100 dead=0.999 erank=1.05 gns=2.067 wd=3.995
+    t=17 acc=0.100 dead=0.999 erank=1.05 gns=2.807 wd=3.997
+    t=18 acc=0.100 dead=0.999 erank=1.05 gns=5.215 wd=3.998
+    t=19 acc=0.100 dead=0.999 erank=1.05 gns=3.463 wd=3.999
+    t=20 acc=0.100 dead=0.999 erank=1.05 gns=2.458 wd=4.013
+
+  --- SEED 6 ---
+  [sanity] CE_init=2.3055 exp=2.3026 PASS
+    t= 1 acc=0.275 dead=0.872 erank=5.87 gns=1.122 wd=1.541
+    t= 2 acc=0.186 dead=0.903 erank=1.27 gns=0.067 wd=1.795
+    t= 3 acc=0.204 dead=0.851 erank=1.59 gns=0.545 wd=2.147
+    t= 4 acc=0.182 dead=0.917 erank=1.65 gns=2.286 wd=2.708
+    t= 5 acc=0.100 dead=0.998 erank=1.15 gns=0.735 wd=2.698
+    t= 6 acc=0.100 dead=0.998 erank=1.09 gns=2.620 wd=2.703
+    t= 7 acc=0.100 dead=0.998 erank=1.10 gns=1.940 wd=2.719
+    t= 8 acc=0.179 dead=0.925 erank=1.69 gns=0.204 wd=2.812
+    t= 9 acc=0.163 dead=0.961 erank=1.45 gns=16.067 wd=3.070
+    t=10 acc=0.161 dead=0.961 erank=1.37 gns=0.443 wd=3.308
+    t=11 acc=0.175 dead=0.996 erank=1.59 gns=0.626 wd=3.590
+    t=12 acc=0.182 dead=0.995 erank=1.61 gns=0.129 wd=3.957
+    t=13 acc=0.180 dead=0.996 erank=1.65 gns=3.955 wd=5.148
+    t=14 acc=0.163 dead=0.998 erank=1.50 gns=4.780 wd=6.487
+    t=15 acc=0.188 dead=0.998 erank=1.54 gns=1.090 wd=7.699
+    t=16 acc=0.170 dead=0.998 erank=1.48 gns=6.243 wd=8.603
+    t=17 acc=0.163 dead=0.998 erank=1.48 gns=3.116 wd=9.362
+    t=18 acc=0.179 dead=0.995 erank=1.52 gns=0.688 wd=10.035
+    t=19 acc=0.184 dead=0.996 erank=1.54 gns=1.361 wd=10.598
+    t=20 acc=0.156 dead=0.998 erank=1.55 gns=1.657 wd=11.009
+
+  --- SEED 7 ---
+  [sanity] CE_init=2.3053 exp=2.3026 PASS
+    t= 1 acc=0.286 dead=0.782 erank=5.05 gns=1.529 wd=1.849
+    t= 2 acc=0.261 dead=0.836 erank=3.32 gns=0.614 wd=3.134
+    t= 3 acc=0.225 dead=0.881 erank=2.40 gns=0.132 wd=4.171
+    t= 4 acc=0.199 dead=0.877 erank=2.11 gns=0.531 wd=4.451
+    t= 5 acc=0.217 dead=0.930 erank=1.74 gns=3.978 wd=4.824
+    t= 6 acc=0.173 dead=0.947 erank=1.99 gns=0.717 wd=4.832
+    t= 7 acc=0.183 dead=0.960 erank=1.41 gns=1.240 wd=5.026
+    t= 8 acc=0.162 dead=0.808 erank=1.20 gns=0.627 wd=5.253
+    t= 9 acc=0.102 dead=0.998 erank=1.09 gns=0.793 wd=5.209
+    t=10 acc=0.100 dead=0.999 erank=1.05 gns=1.639 wd=5.215
+    t=11 acc=0.100 dead=0.999 erank=1.04 gns=3.245 wd=5.212
+    t=12 acc=0.100 dead=0.999 erank=1.04 gns=2.082 wd=5.192
+    t=13 acc=0.100 dead=0.999 erank=1.04 gns=5.084 wd=5.192
+    t=14 acc=0.100 dead=0.999 erank=1.04 gns=2.212 wd=5.192
+    t=15 acc=0.100 dead=0.999 erank=1.04 gns=7.806 wd=5.192
+    t=16 acc=0.100 dead=0.999 erank=1.04 gns=0.771 wd=5.189
+    t=17 acc=0.100 dead=0.999 erank=1.04 gns=6.838 wd=5.188
+    t=18 acc=0.100 dead=0.999 erank=1.03 gns=1.400 wd=5.188
+    t=19 acc=0.100 dead=0.999 erank=1.04 gns=1.310 wd=5.191
+    t=20 acc=0.100 dead=0.999 erank=1.04 gns=2.657 wd=5.177
+
+  sgd_bnoff SUMMARY: collapse 8/8
+    effective_rank                 lead=+5.50  CI=[+4.00,+6.88]  n=8
+    dead_unit_fraction             lead=+3.75  CI=[+1.75,+5.75]  n=8
+    weight_norm_drift              lead=+2.62  CI=[-1.00,+5.00]  n=8
+    gradient_noise_scale           lead=+0.38  CI=[-3.63,+4.00]  n=8
+
+====================================================================
+CONFIG: adam_bnoff  {'opt': 'adam', 'bn': False, 'lr': 0.001, 'wd': 0.0}
+====================================================================
+
+  --- SEED 0 ---
+  [sanity] CE_init=2.3035 exp=2.3026 PASS
+    t= 1 acc=0.384 dead=0.662 erank=15.95 gns=1.159 wd=0.930
+    t= 2 acc=0.390 dead=0.711 erank=10.18 gns=0.878 wd=1.616
+    t= 3 acc=0.386 dead=0.739 erank=7.74 gns=1.503 wd=2.046
+    t= 4 acc=0.408 dead=0.742 erank=6.83 gns=0.945 wd=2.336
+    t= 5 acc=0.399 dead=0.742 erank=7.06 gns=1.342 wd=2.553
+    t= 6 acc=0.418 dead=0.730 erank=7.22 gns=1.396 wd=2.721
+    t= 7 acc=0.422 dead=0.750 erank=7.02 gns=0.802 wd=2.879
+    t= 8 acc=0.395 dead=0.744 erank=6.94 gns=0.569 wd=3.025
+    t= 9 acc=0.400 dead=0.759 erank=6.98 gns=1.143 wd=3.151
+    t=10 acc=0.403 dead=0.767 erank=6.48 gns=0.615 wd=3.235
+    t=11 acc=0.403 dead=0.782 erank=6.32 gns=1.643 wd=3.347
+    t=12 acc=0.418 dead=0.782 erank=6.47 gns=1.937 wd=3.453
+    t=13 acc=0.400 dead=0.787 erank=6.42 gns=0.564 wd=3.569
+    t=14 acc=0.402 dead=0.786 erank=6.34 gns=1.133 wd=3.688
+    t=15 acc=0.413 dead=0.824 erank=5.89 gns=1.921 wd=3.755
+    t=16 acc=0.397 dead=0.824 erank=5.95 gns=2.011 wd=3.832
+    t=17 acc=0.375 dead=0.817 erank=5.44 gns=0.926 wd=3.928
+    t=18 acc=0.394 dead=0.821 erank=5.47 gns=1.626 wd=3.998
+    t=19 acc=0.379 dead=0.859 erank=5.02 gns=1.838 wd=4.046
+    t=20 acc=0.399 dead=0.837 erank=5.32 gns=2.371 wd=4.129
+
+  --- SEED 1 ---
+  [sanity] CE_init=2.3082 exp=2.3026 PASS
+    t= 1 acc=0.405 dead=0.671 erank=15.96 gns=0.978 wd=0.970
+    t= 2 acc=0.407 dead=0.703 erank=10.39 gns=1.571 wd=1.694
+    t= 3 acc=0.427 dead=0.696 erank=10.24 gns=1.014 wd=2.244
+    t= 4 acc=0.425 dead=0.714 erank=9.16 gns=0.687 wd=2.640
+    t= 5 acc=0.411 dead=0.724 erank=7.42 gns=1.704 wd=2.926
+    t= 6 acc=0.391 dead=0.741 erank=7.24 gns=0.978 wd=3.102
+    t= 7 acc=0.412 dead=0.740 erank=7.24 gns=1.054 wd=3.255
+    t= 8 acc=0.414 dead=0.740 erank=7.27 gns=0.858 wd=3.427
+    t= 9 acc=0.416 dead=0.750 erank=6.94 gns=0.678 wd=3.544
+    t=10 acc=0.411 dead=0.755 erank=6.95 gns=0.897 wd=3.656
+    t=11 acc=0.408 dead=0.770 erank=6.48 gns=1.928 wd=3.741
+    t=12 acc=0.396 dead=0.765 erank=6.54 gns=0.939 wd=3.825
+    t=13 acc=0.388 dead=0.800 erank=5.99 gns=0.874 wd=3.913
+    t=14 acc=0.402 dead=0.782 erank=6.31 gns=1.411 wd=3.987
+    t=15 acc=0.404 dead=0.791 erank=6.23 gns=1.601 wd=4.062
+    t=16 acc=0.402 dead=0.815 erank=5.71 gns=1.396 wd=4.127
+    t=17 acc=0.383 dead=0.829 erank=5.45 gns=2.052 wd=4.172
+    t=18 acc=0.402 dead=0.820 erank=5.59 gns=1.229 wd=4.256
+    t=19 acc=0.378 dead=0.862 erank=5.10 gns=1.008 wd=4.277
+    t=20 acc=0.378 dead=0.842 erank=5.22 gns=1.016 wd=4.372
+
+  --- SEED 2 ---
+  [sanity] CE_init=2.3054 exp=2.3026 PASS
+    t= 1 acc=0.402 dead=0.619 erank=16.85 gns=0.963 wd=0.853
+    t= 2 acc=0.402 dead=0.656 erank=10.20 gns=1.256 wd=1.529
+    t= 3 acc=0.395 dead=0.679 erank=7.47 gns=1.177 wd=1.950
+    t= 4 acc=0.395 dead=0.702 erank=6.63 gns=2.019 wd=2.264
+    t= 5 acc=0.391 dead=0.701 erank=6.78 gns=2.422 wd=2.484
+    t= 6 acc=0.398 dead=0.704 erank=6.79 gns=0.787 wd=2.657
+    t= 7 acc=0.417 dead=0.707 erank=6.82 gns=1.258 wd=2.806
+    t= 8 acc=0.397 dead=0.724 erank=6.70 gns=0.631 wd=2.943
+    t= 9 acc=0.398 dead=0.736 erank=6.20 gns=0.688 wd=3.055
+    t=10 acc=0.395 dead=0.741 erank=6.14 gns=1.904 wd=3.155
+    t=11 acc=0.399 dead=0.756 erank=6.10 gns=1.253 wd=3.263
+    t=12 acc=0.406 dead=0.769 erank=5.95 gns=3.034 wd=3.359
+    t=13 acc=0.369 dead=0.781 erank=5.73 gns=1.436 wd=3.446
+    t=14 acc=0.376 dead=0.779 erank=5.97 gns=0.439 wd=3.555
+    t=15 acc=0.387 dead=0.810 erank=5.53 gns=0.851 wd=3.626
+    t=16 acc=0.398 dead=0.804 erank=5.63 gns=1.544 wd=3.695
+    t=17 acc=0.390 dead=0.839 erank=5.22 gns=1.287 wd=3.740
+    t=18 acc=0.393 dead=0.815 erank=5.38 gns=1.103 wd=3.817
+    t=19 acc=0.378 dead=0.847 erank=4.97 gns=0.820 wd=3.833
+    t=20 acc=0.390 dead=0.814 erank=5.47 gns=1.778 wd=3.933
+
+  --- SEED 3 ---
+  [sanity] CE_init=2.3025 exp=2.3026 PASS
+    t= 1 acc=0.387 dead=0.617 erank=17.59 gns=1.133 wd=0.964
+    t= 2 acc=0.415 dead=0.644 erank=10.12 gns=1.543 wd=1.637
+    t= 3 acc=0.375 dead=0.670 erank=8.77 gns=0.685 wd=2.097
+    t= 4 acc=0.379 dead=0.709 erank=7.80 gns=1.091 wd=2.401
+    t= 5 acc=0.409 dead=0.705 erank=7.46 gns=0.677 wd=2.646
+    t= 6 acc=0.394 dead=0.727 erank=5.96 gns=0.647 wd=2.786
+    t= 7 acc=0.398 dead=0.735 erank=5.96 gns=0.728 wd=2.913
+    t= 8 acc=0.384 dead=0.754 erank=5.35 gns=1.629 wd=3.029
+    t= 9 acc=0.377 dead=0.747 erank=5.40 gns=2.418 wd=3.147
+    t=10 acc=0.377 dead=0.775 erank=5.33 gns=0.970 wd=3.238
+    t=11 acc=0.389 dead=0.756 erank=5.45 gns=1.785 wd=3.351
+    t=12 acc=0.379 dead=0.764 erank=5.50 gns=0.757 wd=3.461
+    t=13 acc=0.378 dead=0.782 erank=5.13 gns=0.890 wd=3.573
+    t=14 acc=0.392 dead=0.779 erank=5.16 gns=1.752 wd=3.690
+    t=15 acc=0.371 dead=0.817 erank=4.84 gns=2.206 wd=3.709
+    t=16 acc=0.373 dead=0.824 erank=4.71 gns=1.133 wd=3.761
+    t=17 acc=0.356 dead=0.842 erank=4.51 gns=1.213 wd=3.795
+    t=18 acc=0.385 dead=0.852 erank=4.48 gns=2.759 wd=3.861
+    t=19 acc=0.379 dead=0.856 erank=4.55 gns=1.334 wd=3.925
+    t=20 acc=0.381 dead=0.866 erank=4.32 gns=1.315 wd=3.986
+
+  --- SEED 4 ---
+  [sanity] CE_init=2.3086 exp=2.3026 PASS
+    t= 1 acc=0.389 dead=0.656 erank=17.10 gns=0.669 wd=0.975
+    t= 2 acc=0.428 dead=0.694 erank=11.07 gns=1.162 wd=1.706
+    t= 3 acc=0.388 dead=0.704 erank=9.97 gns=0.996 wd=2.246
+    t= 4 acc=0.375 dead=0.745 erank=8.57 gns=0.304 wd=2.610
+    t= 5 acc=0.424 dead=0.721 erank=8.63 gns=1.207 wd=2.882
+    t= 6 acc=0.419 dead=0.742 erank=8.04 gns=0.615 wd=3.120
+    t= 7 acc=0.406 dead=0.740 erank=7.73 gns=0.593 wd=3.296
+    t= 8 acc=0.389 dead=0.757 erank=7.12 gns=0.577 wd=3.423
+    t= 9 acc=0.403 dead=0.769 erank=6.39 gns=1.155 wd=3.562
+    t=10 acc=0.394 dead=0.796 erank=5.96 gns=0.995 wd=3.653
+    t=11 acc=0.389 dead=0.804 erank=5.90 gns=0.875 wd=3.761
+    t=12 acc=0.378 dead=0.800 erank=6.04 gns=0.501 wd=3.867
+    t=13 acc=0.401 dead=0.792 erank=6.14 gns=1.722 wd=3.981
+    t=14 acc=0.406 dead=0.790 erank=6.15 gns=2.795 wd=4.061
+    t=15 acc=0.395 dead=0.822 erank=5.72 gns=1.785 wd=4.116
+    t=16 acc=0.398 dead=0.827 erank=5.56 gns=0.640 wd=4.208
+    t=17 acc=0.391 dead=0.840 erank=5.38 gns=1.453 wd=4.297
+    t=18 acc=0.380 dead=0.857 erank=5.41 gns=0.970 wd=4.362
+    t=19 acc=0.381 dead=0.842 erank=5.11 gns=1.507 wd=4.384
+    t=20 acc=0.386 dead=0.852 erank=5.16 gns=2.646 wd=4.449
+
+  --- SEED 5 ---
+  [sanity] CE_init=2.3007 exp=2.3026 PASS
+    t= 1 acc=0.396 dead=0.645 erank=14.95 gns=2.706 wd=0.895
+    t= 2 acc=0.394 dead=0.695 erank=8.56 gns=0.661 wd=1.526
+    t= 3 acc=0.403 dead=0.697 erank=8.34 gns=1.605 wd=1.971
+    t= 4 acc=0.399 dead=0.727 erank=7.46 gns=2.162 wd=2.292
+    t= 5 acc=0.409 dead=0.741 erank=6.91 gns=1.208 wd=2.521
+    t= 6 acc=0.401 dead=0.731 erank=7.21 gns=1.059 wd=2.700
+    t= 7 acc=0.390 dead=0.741 erank=7.29 gns=0.579 wd=2.841
+    t= 8 acc=0.411 dead=0.756 erank=6.46 gns=1.610 wd=2.967
+    t= 9 acc=0.397 dead=0.779 erank=6.16 gns=1.159 wd=3.092
+    t=10 acc=0.403 dead=0.776 erank=6.51 gns=1.812 wd=3.186
+    t=11 acc=0.379 dead=0.796 erank=5.68 gns=1.483 wd=3.288
+    t=12 acc=0.378 dead=0.805 erank=5.14 gns=2.061 wd=3.377
+    t=13 acc=0.364 dead=0.826 erank=4.96 gns=1.417 wd=3.451
+    t=14 acc=0.377 dead=0.821 erank=5.05 gns=0.671 wd=3.531
+    t=15 acc=0.387 dead=0.822 erank=5.16 gns=1.780 wd=3.602
+    t=16 acc=0.385 dead=0.834 erank=4.92 gns=1.615 wd=3.683
+    t=17 acc=0.393 dead=0.832 erank=4.94 gns=2.792 wd=3.758
+    t=18 acc=0.386 dead=0.831 erank=4.95 gns=3.234 wd=3.835
+    t=19 acc=0.386 dead=0.832 erank=4.93 gns=1.355 wd=3.891
+    t=20 acc=0.390 dead=0.851 erank=4.63 gns=1.245 wd=3.962
+
+  --- SEED 6 ---
+  [sanity] CE_init=2.3055 exp=2.3026 PASS
+    t= 1 acc=0.406 dead=0.657 erank=16.11 gns=1.078 wd=0.946
+    t= 2 acc=0.385 dead=0.686 erank=10.89 gns=0.972 wd=1.638
+    t= 3 acc=0.416 dead=0.696 erank=9.26 gns=2.310 wd=2.141
+    t= 4 acc=0.397 dead=0.710 erank=7.57 gns=0.788 wd=2.507
+    t= 5 acc=0.387 dead=0.717 erank=6.97 gns=2.448 wd=2.738
+    t= 6 acc=0.392 dead=0.726 erank=6.25 gns=0.796 wd=2.868
+    t= 7 acc=0.409 dead=0.735 erank=6.25 gns=0.790 wd=2.980
+    t= 8 acc=0.397 dead=0.767 erank=5.81 gns=1.676 wd=3.085
+    t= 9 acc=0.398 dead=0.745 erank=6.08 gns=1.802 wd=3.196
+    t=10 acc=0.396 dead=0.764 erank=5.83 gns=0.634 wd=3.283
+    t=11 acc=0.412 dead=0.774 erank=5.88 gns=1.242 wd=3.386
+    t=12 acc=0.399 dead=0.762 erank=5.96 gns=2.242 wd=3.472
+    t=13 acc=0.381 dead=0.776 erank=5.78 gns=0.994 wd=3.552
+    t=14 acc=0.404 dead=0.796 erank=5.69 gns=1.987 wd=3.618
+    t=15 acc=0.401 dead=0.785 erank=5.80 gns=1.274 wd=3.721
+    t=16 acc=0.364 dead=0.836 erank=5.09 gns=1.514 wd=3.798
+    t=17 acc=0.383 dead=0.852 erank=5.02 gns=1.071 wd=3.835
+    t=18 acc=0.376 dead=0.831 erank=4.87 gns=1.660 wd=3.914
+    t=19 acc=0.376 dead=0.854 erank=4.67 gns=1.667 wd=3.976
+    t=20 acc=0.367 dead=0.851 erank=4.74 gns=0.613 wd=4.055
+
+  --- SEED 7 ---
+  [sanity] CE_init=2.3053 exp=2.3026 PASS
+    t= 1 acc=0.381 dead=0.650 erank=15.82 gns=1.264 wd=0.923
+    t= 2 acc=0.406 dead=0.690 erank=11.66 gns=1.262 wd=1.668
+    t= 3 acc=0.409 dead=0.706 erank=8.72 gns=0.980 wd=2.221
+    t= 4 acc=0.398 dead=0.754 erank=7.25 gns=0.925 wd=2.559
+    t= 5 acc=0.396 dead=0.742 erank=6.87 gns=1.756 wd=2.784
+    t= 6 acc=0.389 dead=0.756 erank=6.20 gns=1.125 wd=3.068
+    t= 7 acc=0.403 dead=0.750 erank=6.53 gns=2.514 wd=3.223
+    t= 8 acc=0.404 dead=0.760 erank=6.31 gns=1.855 wd=3.357
+    t= 9 acc=0.401 dead=0.766 erank=5.93 gns=1.245 wd=3.500
+    t=10 acc=0.402 dead=0.761 erank=6.40 gns=1.695 wd=3.633
+    t=11 acc=0.391 dead=0.775 erank=5.88 gns=1.719 wd=3.748
+    t=12 acc=0.411 dead=0.769 erank=6.04 gns=0.905 wd=3.865
+    t=13 acc=0.386 dead=0.792 erank=5.93 gns=1.465 wd=3.924
+    t=14 acc=0.400 dead=0.801 erank=5.66 gns=1.030 wd=4.019
+    t=15 acc=0.380 dead=0.800 erank=5.80 gns=0.484 wd=4.100
+    t=16 acc=0.382 dead=0.794 erank=5.82 gns=0.837 wd=4.166
+    t=17 acc=0.399 dead=0.810 erank=5.58 gns=1.427 wd=4.232
+    t=18 acc=0.394 dead=0.797 erank=5.67 gns=1.147 wd=4.317
+    t=19 acc=0.370 dead=0.837 erank=5.10 gns=1.186 wd=4.357
+    t=20 acc=0.384 dead=0.825 erank=5.20 gns=1.078 wd=4.457
+
+  adam_bnoff SUMMARY: collapse 0/8
+    dead_unit_fraction             lead=+nan  CI=[+nan,+nan]  n=0
+    effective_rank                 lead=+nan  CI=[+nan,+nan]  n=0
+    gradient_noise_scale           lead=+nan  CI=[+nan,+nan]  n=0
+    weight_norm_drift              lead=+nan  CI=[+nan,+nan]  n=0
+
+====================================================================
+CONFIG: sgd_bnon  {'opt': 'sgd', 'bn': True, 'lr': 0.05, 'momentum': 0.9, 'wd': 0.0}
+====================================================================
+
+  --- SEED 0 ---
+  [sanity] CE_init=2.3035 exp=2.3026 PASS
+    t= 1 acc=0.463 dead=0.235 erank=56.03 gns=1.958 wd=0.219
+    t= 2 acc=0.444 dead=0.274 erank=53.68 gns=1.715 wd=0.339
+    t= 3 acc=0.476 dead=0.246 erank=57.12 gns=1.800 wd=0.432
+    t= 4 acc=0.465 dead=0.273 erank=56.69 gns=1.936 wd=0.510
+    t= 5 acc=0.479 dead=0.266 erank=57.33 gns=2.094 wd=0.581
+    t= 6 acc=0.495 dead=0.275 erank=55.26 gns=1.591 wd=0.644
+    t= 7 acc=0.469 dead=0.280 erank=55.25 gns=1.494 wd=0.703
+    t= 8 acc=0.458 dead=0.292 erank=56.26 gns=1.653 wd=0.756
+    t= 9 acc=0.464 dead=0.302 erank=57.53 gns=1.776 wd=0.804
+    t=10 acc=0.499 dead=0.292 erank=58.20 gns=1.785 wd=0.851
+    t=11 acc=0.492 dead=0.308 erank=59.48 gns=2.092 wd=0.896
+    t=12 acc=0.484 dead=0.280 erank=61.00 gns=2.055 wd=0.938
+    t=13 acc=0.486 dead=0.315 erank=59.15 gns=1.912 wd=0.978
+    t=14 acc=0.460 dead=0.316 erank=58.23 gns=2.231 wd=1.018
+    t=15 acc=0.484 dead=0.324 erank=60.04 gns=1.945 wd=1.055
+    t=16 acc=0.479 dead=0.310 erank=64.34 gns=2.075 wd=1.090
+    t=17 acc=0.458 dead=0.352 erank=61.65 gns=1.733 wd=1.124
+    t=18 acc=0.489 dead=0.332 erank=64.34 gns=1.861 wd=1.157
+    t=19 acc=0.479 dead=0.335 erank=65.92 gns=1.830 wd=1.190
+    t=20 acc=0.466 dead=0.332 erank=63.72 gns=1.834 wd=1.221
+
+  --- SEED 1 ---
+  [sanity] CE_init=2.3082 exp=2.3026 PASS
+    t= 1 acc=0.465 dead=0.232 erank=53.87 gns=1.544 wd=0.216
+    t= 2 acc=0.443 dead=0.291 erank=54.63 gns=2.039 wd=0.337
+    t= 3 acc=0.464 dead=0.241 erank=55.68 gns=1.744 wd=0.430
+    t= 4 acc=0.468 dead=0.244 erank=54.74 gns=1.927 wd=0.509
+    t= 5 acc=0.477 dead=0.272 erank=56.81 gns=2.091 wd=0.581
+    t= 6 acc=0.481 dead=0.279 erank=55.32 gns=1.668 wd=0.644
+    t= 7 acc=0.491 dead=0.270 erank=55.88 gns=1.790 wd=0.702
+    t= 8 acc=0.452 dead=0.282 erank=55.88 gns=1.945 wd=0.754
+    t= 9 acc=0.474 dead=0.266 erank=57.95 gns=1.673 wd=0.803
+    t=10 acc=0.480 dead=0.266 erank=59.86 gns=1.626 wd=0.850
+    t=11 acc=0.468 dead=0.270 erank=59.29 gns=1.837 wd=0.895
+    t=12 acc=0.480 dead=0.291 erank=62.34 gns=1.784 wd=0.936
+    t=13 acc=0.475 dead=0.302 erank=61.72 gns=2.072 wd=0.977
+    t=14 acc=0.479 dead=0.345 erank=59.45 gns=1.928 wd=1.017
+    t=15 acc=0.453 dead=0.296 erank=61.11 gns=1.679 wd=1.054
+    t=16 acc=0.473 dead=0.317 erank=63.37 gns=1.589 wd=1.091
+    t=17 acc=0.488 dead=0.319 erank=64.03 gns=1.859 wd=1.124
+    t=18 acc=0.449 dead=0.306 erank=63.79 gns=1.725 wd=1.157
+    t=19 acc=0.462 dead=0.322 erank=64.67 gns=1.974 wd=1.189
+    t=20 acc=0.483 dead=0.326 erank=65.66 gns=1.933 wd=1.221
+
+  --- SEED 2 ---
+  [sanity] CE_init=2.3054 exp=2.3026 PASS
+    t= 1 acc=0.441 dead=0.262 erank=54.27 gns=1.584 wd=0.219
+    t= 2 acc=0.469 dead=0.255 erank=55.73 gns=1.814 wd=0.336
+    t= 3 acc=0.478 dead=0.274 erank=54.49 gns=1.917 wd=0.430
+    t= 4 acc=0.479 dead=0.271 erank=56.16 gns=2.043 wd=0.509
+    t= 5 acc=0.451 dead=0.304 erank=54.03 gns=2.016 wd=0.579
+    t= 6 acc=0.474 dead=0.270 erank=56.43 gns=1.756 wd=0.641
+    t= 7 acc=0.477 dead=0.276 erank=56.95 gns=1.973 wd=0.699
+    t= 8 acc=0.457 dead=0.304 erank=57.01 gns=1.910 wd=0.751
+    t= 9 acc=0.478 dead=0.302 erank=58.98 gns=1.854 wd=0.802
+    t=10 acc=0.457 dead=0.297 erank=59.60 gns=1.886 wd=0.848
+    t=11 acc=0.476 dead=0.289 erank=59.26 gns=1.957 wd=0.892
+    t=12 acc=0.491 dead=0.307 erank=61.29 gns=1.970 wd=0.933
+    t=13 acc=0.465 dead=0.304 erank=62.47 gns=1.932 wd=0.975
+    t=14 acc=0.480 dead=0.322 erank=62.41 gns=1.749 wd=1.014
+    t=15 acc=0.476 dead=0.320 erank=62.88 gns=1.955 wd=1.051
+    t=16 acc=0.475 dead=0.326 erank=63.05 gns=1.869 wd=1.087
+    t=17 acc=0.470 dead=0.311 erank=62.68 gns=2.166 wd=1.121
+    t=18 acc=0.477 dead=0.307 erank=64.90 gns=1.911 wd=1.154
+    t=19 acc=0.463 dead=0.326 erank=64.07 gns=2.001 wd=1.186
+    t=20 acc=0.461 dead=0.355 erank=61.61 gns=1.650 wd=1.218
+
+  --- SEED 3 ---
+  [sanity] CE_init=2.3025 exp=2.3026 PASS
+    t= 1 acc=0.400 dead=0.226 erank=53.67 gns=1.965 wd=0.214
+    t= 2 acc=0.477 dead=0.244 erank=51.18 gns=1.600 wd=0.332
+    t= 3 acc=0.467 dead=0.234 erank=52.33 gns=1.719 wd=0.423
+    t= 4 acc=0.475 dead=0.245 erank=56.27 gns=1.934 wd=0.504
+    t= 5 acc=0.479 dead=0.286 erank=55.51 gns=1.614 wd=0.575
+    t= 6 acc=0.485 dead=0.262 erank=57.73 gns=1.901 wd=0.638
+    t= 7 acc=0.434 dead=0.257 erank=57.72 gns=2.239 wd=0.696
+    t= 8 acc=0.489 dead=0.276 erank=60.62 gns=1.943 wd=0.750
+    t= 9 acc=0.457 dead=0.305 erank=58.15 gns=1.944 wd=0.801
+    t=10 acc=0.490 dead=0.281 erank=60.26 gns=1.907 wd=0.849
+    t=11 acc=0.474 dead=0.316 erank=59.29 gns=1.877 wd=0.893
+    t=12 acc=0.480 dead=0.316 erank=61.78 gns=1.573 wd=0.935
+    t=13 acc=0.458 dead=0.299 erank=64.08 gns=1.602 wd=0.975
+    t=14 acc=0.469 dead=0.305 erank=61.50 gns=1.582 wd=1.013
+    t=15 acc=0.455 dead=0.314 erank=61.13 gns=2.068 wd=1.051
+    t=16 acc=0.460 dead=0.312 erank=64.61 gns=1.841 wd=1.086
+    t=17 acc=0.473 dead=0.335 erank=63.40 gns=2.153 wd=1.120
+    t=18 acc=0.460 dead=0.347 erank=63.54 gns=1.962 wd=1.153
+    t=19 acc=0.463 dead=0.355 erank=63.95 gns=1.822 wd=1.186
+    t=20 acc=0.476 dead=0.320 erank=67.57 gns=1.814 wd=1.216
+
+  --- SEED 4 ---
+  [sanity] CE_init=2.3086 exp=2.3026 PASS
+    t= 1 acc=0.456 dead=0.262 erank=52.90 gns=1.562 wd=0.217
+    t= 2 acc=0.419 dead=0.274 erank=51.52 gns=2.073 wd=0.335
+    t= 3 acc=0.489 dead=0.245 erank=54.14 gns=1.627 wd=0.427
+    t= 4 acc=0.475 dead=0.255 erank=55.11 gns=1.923 wd=0.507
+    t= 5 acc=0.492 dead=0.254 erank=58.24 gns=2.187 wd=0.577
+    t= 6 acc=0.480 dead=0.289 erank=55.34 gns=1.675 wd=0.640
+    t= 7 acc=0.480 dead=0.279 erank=58.37 gns=1.584 wd=0.698
+    t= 8 acc=0.478 dead=0.261 erank=58.83 gns=1.620 wd=0.753
+    t= 9 acc=0.486 dead=0.281 erank=57.88 gns=1.729 wd=0.801
+    t=10 acc=0.477 dead=0.290 erank=59.08 gns=1.993 wd=0.848
+    t=11 acc=0.476 dead=0.292 erank=57.16 gns=2.123 wd=0.892
+    t=12 acc=0.433 dead=0.309 erank=57.04 gns=1.908 wd=0.933
+    t=13 acc=0.457 dead=0.316 erank=58.38 gns=2.070 wd=0.973
+    t=14 acc=0.490 dead=0.314 erank=59.65 gns=2.300 wd=1.012
+    t=15 acc=0.457 dead=0.297 erank=60.65 gns=1.864 wd=1.049
+    t=16 acc=0.469 dead=0.319 erank=61.94 gns=1.942 wd=1.084
+    t=17 acc=0.483 dead=0.324 erank=60.64 gns=1.848 wd=1.119
+    t=18 acc=0.471 dead=0.329 erank=63.00 gns=1.758 wd=1.151
+    t=19 acc=0.492 dead=0.307 erank=62.91 gns=1.931 wd=1.182
+    t=20 acc=0.470 dead=0.294 erank=63.59 gns=1.861 wd=1.212
+
+  --- SEED 5 ---
+  [sanity] CE_init=2.3007 exp=2.3026 PASS
+    t= 1 acc=0.467 dead=0.237 erank=52.05 gns=2.001 wd=0.215
+    t= 2 acc=0.442 dead=0.234 erank=52.29 gns=1.584 wd=0.332
+    t= 3 acc=0.469 dead=0.242 erank=53.20 gns=1.901 wd=0.425
+    t= 4 acc=0.446 dead=0.264 erank=51.70 gns=2.060 wd=0.504
+    t= 5 acc=0.468 dead=0.240 erank=53.74 gns=1.907 wd=0.572
+    t= 6 acc=0.446 dead=0.249 erank=54.63 gns=2.304 wd=0.634
+    t= 7 acc=0.491 dead=0.264 erank=56.59 gns=1.721 wd=0.692
+    t= 8 acc=0.464 dead=0.292 erank=54.91 gns=1.997 wd=0.744
+    t= 9 acc=0.454 dead=0.265 erank=55.29 gns=2.075 wd=0.793
+    t=10 acc=0.474 dead=0.279 erank=57.75 gns=1.670 wd=0.840
+    t=11 acc=0.484 dead=0.281 erank=58.25 gns=1.809 wd=0.883
+    t=12 acc=0.450 dead=0.274 erank=60.55 gns=2.055 wd=0.925
+    t=13 acc=0.463 dead=0.277 erank=61.01 gns=2.158 wd=0.966
+    t=14 acc=0.477 dead=0.299 erank=59.01 gns=2.073 wd=1.005
+    t=15 acc=0.481 dead=0.304 erank=60.76 gns=2.189 wd=1.042
+    t=16 acc=0.477 dead=0.316 erank=63.53 gns=2.068 wd=1.078
+    t=17 acc=0.483 dead=0.317 erank=65.09 gns=2.457 wd=1.112
+    t=18 acc=0.468 dead=0.316 erank=64.98 gns=2.169 wd=1.144
+    t=19 acc=0.464 dead=0.309 erank=65.08 gns=1.774 wd=1.177
+    t=20 acc=0.473 dead=0.305 erank=65.17 gns=1.944 wd=1.207
+
+  --- SEED 6 ---
+  [sanity] CE_init=2.3055 exp=2.3026 PASS
+    t= 1 acc=0.442 dead=0.245 erank=52.87 gns=1.695 wd=0.218
+    t= 2 acc=0.477 dead=0.262 erank=53.71 gns=1.712 wd=0.336
+    t= 3 acc=0.488 dead=0.235 erank=54.56 gns=2.025 wd=0.430
+    t= 4 acc=0.474 dead=0.281 erank=55.17 gns=1.827 wd=0.508
+    t= 5 acc=0.478 dead=0.251 erank=57.94 gns=2.215 wd=0.577
+    t= 6 acc=0.431 dead=0.262 erank=56.55 gns=1.892 wd=0.642
+    t= 7 acc=0.472 dead=0.267 erank=57.82 gns=1.566 wd=0.698
+    t= 8 acc=0.498 dead=0.257 erank=59.89 gns=1.777 wd=0.751
+    t= 9 acc=0.463 dead=0.273 erank=57.91 gns=1.812 wd=0.801
+    t=10 acc=0.471 dead=0.287 erank=61.98 gns=1.810 wd=0.848
+    t=11 acc=0.497 dead=0.272 erank=62.26 gns=1.655 wd=0.893
+    t=12 acc=0.472 dead=0.284 erank=63.61 gns=1.960 wd=0.936
+    t=13 acc=0.477 dead=0.270 erank=64.16 gns=2.040 wd=0.977
+    t=14 acc=0.460 dead=0.304 erank=60.87 gns=1.715 wd=1.016
+    t=15 acc=0.484 dead=0.290 erank=62.84 gns=1.889 wd=1.053
+    t=16 acc=0.472 dead=0.302 erank=65.80 gns=1.768 wd=1.088
+    t=17 acc=0.481 dead=0.311 erank=63.25 gns=2.572 wd=1.124
+    t=18 acc=0.466 dead=0.319 erank=63.73 gns=1.913 wd=1.156
+    t=19 acc=0.449 dead=0.295 erank=63.48 gns=1.864 wd=1.188
+    t=20 acc=0.470 dead=0.300 erank=64.66 gns=1.871 wd=1.219
+
+  --- SEED 7 ---
+  [sanity] CE_init=2.3053 exp=2.3026 PASS
+    t= 1 acc=0.457 dead=0.205 erank=53.53 gns=1.780 wd=0.216
+    t= 2 acc=0.428 dead=0.264 erank=53.64 gns=1.938 wd=0.337
+    t= 3 acc=0.465 dead=0.266 erank=53.59 gns=1.839 wd=0.428
+    t= 4 acc=0.456 dead=0.249 erank=53.30 gns=1.906 wd=0.508
+    t= 5 acc=0.480 dead=0.246 erank=55.55 gns=1.973 wd=0.578
+    t= 6 acc=0.466 dead=0.275 erank=54.24 gns=1.761 wd=0.640
+    t= 7 acc=0.480 dead=0.266 erank=56.84 gns=2.118 wd=0.697
+    t= 8 acc=0.480 dead=0.244 erank=57.35 gns=2.056 wd=0.750
+    t= 9 acc=0.441 dead=0.271 erank=58.25 gns=1.951 wd=0.799
+    t=10 acc=0.468 dead=0.254 erank=61.45 gns=2.001 wd=0.847
+    t=11 acc=0.462 dead=0.269 erank=61.48 gns=1.982 wd=0.891
+    t=12 acc=0.480 dead=0.284 erank=60.90 gns=1.773 wd=0.933
+    t=13 acc=0.425 dead=0.296 erank=58.20 gns=1.839 wd=0.974
+    t=14 acc=0.473 dead=0.284 erank=62.15 gns=2.021 wd=1.013
+    t=15 acc=0.485 dead=0.299 erank=60.24 gns=1.943 wd=1.049
+    t=16 acc=0.496 dead=0.281 erank=63.49 gns=1.546 wd=1.084
+    t=17 acc=0.479 dead=0.301 erank=64.95 gns=2.178 wd=1.118
+    t=18 acc=0.466 dead=0.297 erank=65.14 gns=1.827 wd=1.152
+    t=19 acc=0.478 dead=0.331 erank=64.74 gns=1.929 wd=1.184
+    t=20 acc=0.470 dead=0.331 erank=62.03 gns=1.965 wd=1.214
+
+  sgd_bnon SUMMARY: collapse 0/8
+    dead_unit_fraction             lead=+nan  CI=[+nan,+nan]  n=0
+    effective_rank                 lead=+nan  CI=[+nan,+nan]  n=0
+    gradient_noise_scale           lead=+nan  CI=[+nan,+nan]  n=0
+    weight_norm_drift              lead=+nan  CI=[+nan,+nan]  n=0
+
+====================================================================
+CONFIG: adam_bnon  {'opt': 'adam', 'bn': True, 'lr': 0.001, 'wd': 0.0}
+====================================================================
+
+  --- SEED 0 ---
+  [sanity] CE_init=2.3035 exp=2.3026 PASS
+    t= 1 acc=0.456 dead=0.201 erank=64.11 gns=2.276 wd=0.315
+    t= 2 acc=0.469 dead=0.200 erank=59.27 gns=1.446 wd=0.554
+    t= 3 acc=0.466 dead=0.207 erank=57.10 gns=1.658 wd=0.753
+    t= 4 acc=0.453 dead=0.226 erank=54.11 gns=1.727 wd=0.929
+    t= 5 acc=0.470 dead=0.219 erank=56.16 gns=2.800 wd=1.091
+    t= 6 acc=0.485 dead=0.237 erank=54.26 gns=1.107 wd=1.240
+    t= 7 acc=0.477 dead=0.215 erank=54.00 gns=1.314 wd=1.380
+    t= 8 acc=0.467 dead=0.244 erank=53.96 gns=1.304 wd=1.513
+    t= 9 acc=0.468 dead=0.255 erank=54.72 gns=1.659 wd=1.638
+    t=10 acc=0.494 dead=0.246 erank=57.82 gns=1.547 wd=1.756
+    t=11 acc=0.469 dead=0.260 erank=57.87 gns=2.467 wd=1.870
+    t=12 acc=0.478 dead=0.221 erank=58.41 gns=2.374 wd=1.979
+    t=13 acc=0.487 dead=0.216 erank=60.17 gns=1.944 wd=2.086
+    t=14 acc=0.479 dead=0.219 erank=58.69 gns=2.479 wd=2.187
+    t=15 acc=0.495 dead=0.237 erank=60.85 gns=1.774 wd=2.287
+    t=16 acc=0.492 dead=0.215 erank=62.54 gns=2.763 wd=2.380
+    t=17 acc=0.472 dead=0.242 erank=64.46 gns=1.948 wd=2.471
+    t=18 acc=0.477 dead=0.257 erank=64.31 gns=2.153 wd=2.561
+    t=19 acc=0.483 dead=0.249 erank=66.13 gns=1.482 wd=2.647
+    t=20 acc=0.469 dead=0.250 erank=63.98 gns=2.111 wd=2.728
+
+  --- SEED 1 ---
+  [sanity] CE_init=2.3082 exp=2.3026 PASS
+    t= 1 acc=0.459 dead=0.189 erank=64.59 gns=1.149 wd=0.316
+    t= 2 acc=0.472 dead=0.206 erank=56.01 gns=2.109 wd=0.554
+    t= 3 acc=0.464 dead=0.201 erank=53.97 gns=1.292 wd=0.754
+    t= 4 acc=0.488 dead=0.199 erank=51.86 gns=1.153 wd=0.930
+    t= 5 acc=0.474 dead=0.211 erank=53.85 gns=1.808 wd=1.095
+    t= 6 acc=0.469 dead=0.211 erank=52.24 gns=1.771 wd=1.245
+    t= 7 acc=0.490 dead=0.232 erank=54.00 gns=2.029 wd=1.387
+    t= 8 acc=0.484 dead=0.215 erank=54.69 gns=2.357 wd=1.521
+    t= 9 acc=0.491 dead=0.222 erank=53.88 gns=1.480 wd=1.648
+    t=10 acc=0.495 dead=0.226 erank=56.71 gns=1.681 wd=1.768
+    t=11 acc=0.479 dead=0.240 erank=55.35 gns=1.763 wd=1.883
+    t=12 acc=0.487 dead=0.224 erank=58.46 gns=1.736 wd=1.989
+    t=13 acc=0.479 dead=0.244 erank=59.76 gns=2.066 wd=2.094
+    t=14 acc=0.496 dead=0.255 erank=60.07 gns=1.859 wd=2.196
+    t=15 acc=0.472 dead=0.224 erank=59.63 gns=1.519 wd=2.293
+    t=16 acc=0.470 dead=0.226 erank=63.09 gns=1.379 wd=2.387
+    t=17 acc=0.486 dead=0.220 erank=66.25 gns=2.314 wd=2.480
+    t=18 acc=0.484 dead=0.247 erank=65.65 gns=1.999 wd=2.573
+    t=19 acc=0.483 dead=0.242 erank=66.81 gns=1.633 wd=2.659
+    t=20 acc=0.486 dead=0.216 erank=66.57 gns=2.352 wd=2.744
+
+  --- SEED 2 ---
+  [sanity] CE_init=2.3054 exp=2.3026 PASS
+    t= 1 acc=0.450 dead=0.224 erank=60.39 gns=1.013 wd=0.308
+    t= 2 acc=0.479 dead=0.192 erank=60.22 gns=1.998 wd=0.542
+    t= 3 acc=0.486 dead=0.209 erank=55.78 gns=2.106 wd=0.740
+    t= 4 acc=0.492 dead=0.215 erank=54.17 gns=1.824 wd=0.913
+    t= 5 acc=0.448 dead=0.252 erank=52.31 gns=2.321 wd=1.075
+    t= 6 acc=0.484 dead=0.242 erank=54.38 gns=1.608 wd=1.227
+    t= 7 acc=0.489 dead=0.231 erank=56.45 gns=1.777 wd=1.371
+    t= 8 acc=0.475 dead=0.256 erank=55.01 gns=1.601 wd=1.506
+    t= 9 acc=0.493 dead=0.251 erank=56.51 gns=1.428 wd=1.634
