@@ -44,8 +44,16 @@ import torch.optim as optim
 import torchvision
 
 ARM = os.environ.get("SH_ARM", "none").strip()
-if ARM not in ("none", "triggered", "fixed", "random"):
+if ARM not in ("none", "triggered", "fixed", "random", "smart"):
     print(f"FATAL unknown SH_ARM={ARM!r}", flush=True); sys.exit(2)
+# arm semantics:
+#   none      : no resets (control)
+#   triggered : fire when erank drops below TRIG_FRAC*running-max (naive early-warning;
+#               front-loads because erank falls fast early)
+#   smart     : fire when dead-fraction rises >= DEAD_STEP since the last event
+#               (budget-aware diagnostic timing — spreads events across the degradation)
+#   fixed     : K evenly spaced events
+#   random    : K seeded-random events
 
 _SUF = "_smoke" if os.environ.get("SH_SMOKE") == "1" else ""
 RESULTS_DIR  = f"results/iv_{ARM}{_SUF}"
@@ -66,9 +74,10 @@ LR, MOMENTUM, WEIGHT_DECAY = 0.10, 0.9, 0.0
 DATA_SEED = 42
 
 # reset-event budget / trigger
-K_EVENTS   = 8       # matched budget for fixed/random; cap for triggered
+K_EVENTS   = 8       # matched budget for fixed/random; cap for triggered/smart
 TRIG_FRAC  = 0.92    # fire when erank < TRIG_FRAC * running-max erank
 TRIG_GAP   = 8       # refractory: >= this many tasks between triggered events
+DEAD_STEP  = 0.10    # smart arm: fire each time dead-fraction rises this much since last event
 DEAD_THRESH = 0.50   # a unit is "resettable" if inactive on > this frac of probe
 SS_WINDOW  = 50      # steady-state window (last N tasks)
 
@@ -261,6 +270,7 @@ def main():
         accs, deads, eranks, event_tasks, event_counts = [], [], [], [], []
         run_max_erank = 0.0
         last_event = -TRIG_GAP - 1
+        last_event_dead = None   # dead-fraction at last smart event (set after task 0)
 
         for t in range(N_TASKS):
             p = perms[t]
@@ -273,9 +283,16 @@ def main():
             accs.append(acc); eranks.append(er); deads.append(df)
             run_max_erank = max(run_max_erank, er)
 
+            if last_event_dead is None:
+                last_event_dead = df   # baseline dead level (after task 0)
+
             fire = False
             if ARM == "triggered":
                 if (er < TRIG_FRAC * run_max_erank and (t - last_event) > TRIG_GAP
+                        and len(event_tasks) < K_EVENTS and t >= 5):
+                    fire = True
+            elif ARM == "smart":
+                if (df - last_event_dead >= DEAD_STEP and (t - last_event) > TRIG_GAP
                         and len(event_tasks) < K_EVENTS and t >= 5):
                     fire = True
             elif ARM in ("fixed", "random"):
@@ -285,7 +302,8 @@ def main():
                 nrst = apply_reset(model, opt, pr, gen)
                 event_tasks.append(t); event_counts.append(nrst)
                 last_event = t
-                print(f"  [event] task {t}: reset {nrst} units (erank={er:.2f})", flush=True)
+                last_event_dead = df   # next smart event needs another DEAD_STEP rise
+                print(f"  [event] task {t}: reset {nrst} units (erank={er:.2f} dead={df:.2f})", flush=True)
 
             if t < 3 or (t + 1) % 40 == 0 or t == N_TASKS - 1:
                 print(f"  t{t+1:3d}/{N_TASKS} acc={acc:.4f} dead={df:.4f} erank={er:6.2f}", flush=True)

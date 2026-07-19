@@ -42,11 +42,18 @@ from sklearn.metrics import roc_auc_score
 EXP = os.environ.get("SH_EXP", "g1_fashion").strip()
 
 CONFIGS = {
-    # 2nd dataset: permuted Fashion-MNIST, same MLP as the main result
+    # 2nd dataset: permuted Fashion-MNIST, same MLP as the main result.
+    # LR=0.10 (the MNIST value) is too hot for Fashion — it collapses to chance by
+    # task ~20 (dying-ReLU artifact). LR=0.03 gives a healthy gradual collapse.
     "g1_fashion": dict(
         family="mlp", dataset="fashion", task="perm_input",
-        hidden=100, lr=0.10, n_seeds=6, n_tasks=200,
+        hidden=100, lr=0.03, n_seeds=6, n_tasks=250,
         label="2nd dataset — online Permuted-Fashion-MNIST, MLP hidden=100",
+    ),
+    "g1b_fashion": dict(   # hedge LR in case 0.03 is too gentle to collapse
+        family="mlp", dataset="fashion", task="perm_input",
+        hidden=100, lr=0.05, n_seeds=6, n_tasks=250,
+        label="2nd dataset — online Permuted-Fashion-MNIST, MLP hidden=100 (lr=0.05)",
     ),
     # 2nd architecture size: narrower MLP, permuted MNIST
     "g2_narrow": dict(
