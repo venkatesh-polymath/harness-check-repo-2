@@ -1,0 +1,167 @@
+{
+  "status": "DONE",
+  "exp": "g3_cnn",
+  "regime": "2nd arch family \u2014 online Label-permuted MNIST, small ConvNet",
+  "family": "cnn",
+  "dataset": "mnist",
+  "task": "perm_label",
+  "hidden": 64,
+  "lr": 0.05,
+  "n_seeds": 5,
+  "n_tasks": 150,
+  "healthy": true,
+  "mean_dead_after_task1": 0.16458333333333336,
+  "mean_task1_acc": 0.97332,
+  "mean_acc_drop_pp": 35.296800000000005,
+  "plasticity_loss_confirmed": true,
+  "n_collapsed": 5,
+  "lead_times": {
+    "dead_unit_fraction": {
+      "mean": 5.8,
+      "median": 5.0,
+      "iqr": [
+        5.0,
+        8.0
+      ],
+      "ci95": [
+        4.2,
+        7.4
+      ]
+    },
+    "effective_rank": {
+      "mean": 1.8,
+      "median": 2.0,
+      "iqr": [
+        0.0,
+        2.0
+      ],
+      "ci95": [
+        0.4,
+        3.4099999999999455
+      ]
+    },
+    "gradient_noise_scale": {
+      "mean": -0.8,
+      "median": -1.0,
+      "iqr": [
+        -1.0,
+        0.0
+      ],
+      "ci95": [
+        -1.4,
+        -0.2
+      ]
+    },
+    "weight_norm_drift": {
+      "mean": 4.4,
+      "median": 5.0,
+      "iqr": [
+        3.0,
+        5.0
+      ],
+      "ci95": [
+        3.0,
+        5.8
+      ]
+    }
+  },
+  "precedence_order": [
+    "dead_unit_fraction",
+    "weight_norm_drift",
+    "effective_rank",
+    "gradient_noise_scale"
+  ],
+  "erank_vs_gns_paired": {
+    "median_diff": 3.0,
+    "wilcoxon_p": 0.125
+  },
+  "predictive_auc": {
+    "dead_unit_fraction": 0.9943155979990904,
+    "effective_rank": 0.9944292860391087,
+    "gradient_noise_scale": 0.9711232378353799,
+    "weight_norm_drift": 0.9963619827194179
+  },
+  "threshold_sensitivity": {
+    "30pct": [
+      "dead_unit_fraction",
+      "weight_norm_drift",
+      "effective_rank",
+      "gradient_noise_scale"
+    ],
+    "50pct": [
+      "dead_unit_fraction",
+      "weight_norm_drift",
+      "effective_rank",
+      "gradient_noise_scale"
+    ],
+    "70pct": [
+      "dead_unit_fraction",
+      "weight_norm_drift",
+      "effective_rank",
+      "gradient_noise_scale"
+    ]
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "task1_acc": 0.973,
+      "dead_after_task1": 0.18489583333333334,
+      "healthy": true,
+      "t_collapse": 7,
+      "acc_drop_pp": 35.958999999999996
+    },
+    {
+      "seed": 1,
+      "task1_acc": 0.9727,
+      "dead_after_task1": 0.15885416666666666,
+      "healthy": true,
+      "t_collapse": 5,
+      "acc_drop_pp": 35.983500000000014
+    },
+    {
+      "seed": 2,
+      "task1_acc": 0.9751,
+      "dead_after_task1": 0.16145833333333334,
+      "healthy": true,
+      "t_collapse": 7,
+      "acc_drop_pp": 28.512500000000006
+    },
+    {
+      "seed": 3,
+      "task1_acc": 0.9747,
+      "dead_after_task1": 0.171875,
+      "healthy": true,
+      "t_collapse": 10,
+      "acc_drop_pp": 40.323
+    },
+    {
+      "seed": 4,
+      "task1_acc": 0.9711,
+      "dead_after_task1": 0.14583333333333334,
+      "healthy": true,
+      "t_collapse": 10,
+      "acc_drop_pp": 35.706
+    }
+  ],
+  "total_wall_time_sec": 250.97538113594055,
+  "subject_executed": "2nd arch family \u2014 online Label-permuted MNIST, small ConvNet",
+  "metrics": {
+    "regime": "2nd arch family \u2014 online Label-permuted MNIST, small ConvNet",
+    "healthy": true,
+    "plasticity_loss_confirmed": true,
+    "mean_acc_drop_pp": 35.296800000000005,
+    "predictive_auc": {
+      "dead_unit_fraction": 0.9943155979990904,
+      "effective_rank": 0.9944292860391087,
+      "gradient_noise_scale": 0.9711232378353799,
+      "weight_norm_drift": 0.9963619827194179
+    },
+    "precedence_order": [
+      "dead_unit_fraction",
+      "weight_norm_drift",
+      "effective_rank",
+      "gradient_noise_scale"
+    ]
+  },
+  "notes": "Generality of the plasticity-precedence finding in regime g3_cnn. Same analysis as run_valprec.py. Reports honestly whether dead+erank still lead/predict and GNS still fails."
+}

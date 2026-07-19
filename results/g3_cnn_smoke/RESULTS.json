@@ -1,0 +1,110 @@
+{
+  "status": "DONE",
+  "exp": "g3_cnn",
+  "regime": "2nd arch family \u2014 online Label-permuted MNIST, small ConvNet",
+  "family": "cnn",
+  "dataset": "mnist",
+  "task": "perm_label",
+  "hidden": 64,
+  "lr": 0.05,
+  "n_seeds": 1,
+  "n_tasks": 4,
+  "healthy": true,
+  "mean_dead_after_task1": 0.18489583333333334,
+  "mean_task1_acc": 0.9737,
+  "mean_acc_drop_pp": 0.0,
+  "plasticity_loss_confirmed": false,
+  "n_collapsed": 0,
+  "lead_times": {
+    "dead_unit_fraction": {
+      "mean": null,
+      "median": null,
+      "iqr": [
+        null,
+        null
+      ],
+      "ci95": [
+        null,
+        null
+      ]
+    },
+    "effective_rank": {
+      "mean": null,
+      "median": null,
+      "iqr": [
+        null,
+        null
+      ],
+      "ci95": [
+        null,
+        null
+      ]
+    },
+    "gradient_noise_scale": {
+      "mean": null,
+      "median": null,
+      "iqr": [
+        null,
+        null
+      ],
+      "ci95": [
+        null,
+        null
+      ]
+    },
+    "weight_norm_drift": {
+      "mean": null,
+      "median": null,
+      "iqr": [
+        null,
+        null
+      ],
+      "ci95": [
+        null,
+        null
+      ]
+    }
+  },
+  "precedence_order": [],
+  "erank_vs_gns_paired": {
+    "median_diff": null,
+    "wilcoxon_p": null
+  },
+  "predictive_auc": {
+    "dead_unit_fraction": null,
+    "effective_rank": null,
+    "gradient_noise_scale": null,
+    "weight_norm_drift": null
+  },
+  "threshold_sensitivity": {
+    "30pct": [],
+    "50pct": [],
+    "70pct": []
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "task1_acc": 0.9737,
+      "dead_after_task1": 0.18489583333333334,
+      "healthy": true,
+      "t_collapse": null,
+      "acc_drop_pp": 0.0
+    }
+  ],
+  "total_wall_time_sec": 8.065187215805054,
+  "subject_executed": "2nd arch family \u2014 online Label-permuted MNIST, small ConvNet",
+  "metrics": {
+    "regime": "2nd arch family \u2014 online Label-permuted MNIST, small ConvNet",
+    "healthy": true,
+    "plasticity_loss_confirmed": false,
+    "mean_acc_drop_pp": 0.0,
+    "predictive_auc": {
+      "dead_unit_fraction": null,
+      "effective_rank": null,
+      "gradient_noise_scale": null,
+      "weight_norm_drift": null
+    },
+    "precedence_order": []
+  },
+  "notes": "Generality of the plasticity-precedence finding in regime g3_cnn. Same analysis as run_valprec.py. Reports honestly whether dead+erank still lead/predict and GNS still fails."
+}
