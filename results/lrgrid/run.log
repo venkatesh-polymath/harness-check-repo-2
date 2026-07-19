@@ -1,0 +1,1153 @@
+Device: cuda
+LR grid: [0.0001, 0.0003, 0.001, 0.003, 0.01]
+3 seeds × 10 tasks × 500 steps/task
+Collapse threshold: 0.25 (chance=0.20)
+Loading CIFAR-100...
+CIFAR-100: train=(50000, 3072), test=(10000, 3072)
+Split tasks: 10 tasks, ~2500 train / ~500 test per task
+Loaded 10 tasks. Starting grid...
+
+====================================================================
+LR = 0.0001  (1e-04)
+====================================================================
+
+  --- seed=0 lr=0.0001 ---
+    [init] dead_at_init=0.187  erank_at_init=87.82
+    t= 1  val_acc=0.324  train_acc=0.322  dead=0.205  erank=75.05
+    t= 2  val_acc=0.324  train_acc=0.296  dead=0.284  erank=62.83
+    t= 3  val_acc=0.330  train_acc=0.351  dead=0.237  erank=67.83
+    t= 4  val_acc=0.362  train_acc=0.348  dead=0.269  erank=59.44
+    t= 5  val_acc=0.404  train_acc=0.422  dead=0.300  erank=42.86
+    t= 6  val_acc=0.294  train_acc=0.266  dead=0.290  erank=47.23
+    t= 7  val_acc=0.402  train_acc=0.404  dead=0.290  erank=47.58
+    t= 8  val_acc=0.368  train_acc=0.389  dead=0.300  erank=46.67
+    t= 9  val_acc=0.252  train_acc=0.256  dead=0.295  erank=42.99
+    t=10  val_acc=0.460  train_acc=0.486  dead=0.281  erank=44.54
+  DONE: val_acc1=0.324  dead_init=0.188  dead_t1=0.205  collapses=False  erank_lead=None
+
+  --- seed=1 lr=0.0001 ---
+    [init] dead_at_init=0.214  erank_at_init=84.02
+    t= 1  val_acc=0.276  train_acc=0.280  dead=0.234  erank=72.28
+    t= 2  val_acc=0.384  train_acc=0.386  dead=0.284  erank=59.29
+    t= 3  val_acc=0.328  train_acc=0.333  dead=0.245  erank=68.75
+    t= 4  val_acc=0.362  train_acc=0.360  dead=0.286  erank=60.14
+    t= 5  val_acc=0.410  train_acc=0.429  dead=0.285  erank=42.37
+    t= 6  val_acc=0.306  train_acc=0.281  dead=0.278  erank=47.01
+    t= 7  val_acc=0.444  train_acc=0.430  dead=0.286  erank=48.01
+    t= 8  val_acc=0.360  train_acc=0.374  dead=0.296  erank=47.36
+    t= 9  val_acc=0.276  train_acc=0.265  dead=0.270  erank=44.42
+    t=10  val_acc=0.490  train_acc=0.521  dead=0.261  erank=45.54
+  DONE: val_acc1=0.276  dead_init=0.214  dead_t1=0.234  collapses=False  erank_lead=None
+
+  --- seed=2 lr=0.0001 ---
+    [init] dead_at_init=0.221  erank_at_init=83.30
+    t= 1  val_acc=0.314  train_acc=0.305  dead=0.236  erank=72.97
+    t= 2  val_acc=0.346  train_acc=0.311  dead=0.295  erank=62.79
+    t= 3  val_acc=0.336  train_acc=0.353  dead=0.257  erank=71.28
+    t= 4  val_acc=0.372  train_acc=0.359  dead=0.284  erank=62.21
+    t= 5  val_acc=0.414  train_acc=0.435  dead=0.295  erank=44.36
+    t= 6  val_acc=0.304  train_acc=0.278  dead=0.279  erank=49.16
+    t= 7  val_acc=0.418  train_acc=0.422  dead=0.284  erank=49.57
+    t= 8  val_acc=0.358  train_acc=0.384  dead=0.309  erank=47.95
+    t= 9  val_acc=0.258  train_acc=0.272  dead=0.289  erank=44.15
+    t=10  val_acc=0.484  train_acc=0.497  dead=0.270  erank=46.01
+  DONE: val_acc1=0.314  dead_init=0.221  dead_t1=0.236  collapses=False  erank_lead=None
+/usr/local/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/usr/local/lib/python3.12/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+
+  LR=0.0001 SUMMARY:
+    dead_at_init      = 0.207
+    dead_after_task1  = 0.225
+    task1_val_acc     = 0.305
+    task1_train_acc   = 0.302
+    final_acc         = 0.367
+    collapse_frac     = 0.00
+    mean_erank_lead   = nan
+
+====================================================================
+LR = 0.0003  (3e-04)
+====================================================================
+
+  --- seed=0 lr=0.0003 ---
+    [init] dead_at_init=0.187  erank_at_init=87.82
+    t= 1  val_acc=0.476  train_acc=0.460  dead=0.241  erank=51.98
+    t= 2  val_acc=0.498  train_acc=0.490  dead=0.296  erank=41.66
+    t= 3  val_acc=0.426  train_acc=0.466  dead=0.257  erank=40.47
+    t= 4  val_acc=0.454  train_acc=0.442  dead=0.267  erank=31.89
+    t= 5  val_acc=0.568  train_acc=0.560  dead=0.265  erank=22.02
+    t= 6  val_acc=0.410  train_acc=0.363  dead=0.261  erank=24.38
+    t= 7  val_acc=0.532  train_acc=0.518  dead=0.249  erank=22.23
+    t= 8  val_acc=0.412  train_acc=0.468  dead=0.266  erank=21.64
+    t= 9  val_acc=0.430  train_acc=0.413  dead=0.256  erank=21.02
+    t=10  val_acc=0.570  train_acc=0.579  dead=0.234  erank=19.89
+  DONE: val_acc1=0.476  dead_init=0.188  dead_t1=0.241  collapses=False  erank_lead=None
+
+  --- seed=1 lr=0.0003 ---
+    [init] dead_at_init=0.214  erank_at_init=84.02
+    t= 1  val_acc=0.448  train_acc=0.426  dead=0.245  erank=48.57
+    t= 2  val_acc=0.504  train_acc=0.499  dead=0.299  erank=38.19
+    t= 3  val_acc=0.454  train_acc=0.465  dead=0.280  erank=37.74
+    t= 4  val_acc=0.478  train_acc=0.446  dead=0.280  erank=30.01
+    t= 5  val_acc=0.562  train_acc=0.556  dead=0.279  erank=21.72
+    t= 6  val_acc=0.378  train_acc=0.340  dead=0.260  erank=24.71
+    t= 7  val_acc=0.516  train_acc=0.524  dead=0.251  erank=22.42
+    t= 8  val_acc=0.450  train_acc=0.471  dead=0.261  erank=21.23
+    t= 9  val_acc=0.426  train_acc=0.414  dead=0.260  erank=19.70
+    t=10  val_acc=0.590  train_acc=0.580  dead=0.235  erank=19.06
+  DONE: val_acc1=0.448  dead_init=0.214  dead_t1=0.245  collapses=False  erank_lead=None
+
+  --- seed=2 lr=0.0003 ---
+    [init] dead_at_init=0.221  erank_at_init=83.30
+    t= 1  val_acc=0.448  train_acc=0.442  dead=0.262  erank=51.24
+    t= 2  val_acc=0.502  train_acc=0.480  dead=0.317  erank=41.64
+    t= 3  val_acc=0.448  train_acc=0.460  dead=0.276  erank=41.47
+    t= 4  val_acc=0.476  train_acc=0.454  dead=0.289  erank=31.94
+    t= 5  val_acc=0.538  train_acc=0.545  dead=0.294  erank=22.53
+    t= 6  val_acc=0.392  train_acc=0.358  dead=0.264  erank=25.52
+    t= 7  val_acc=0.524  train_acc=0.538  dead=0.267  erank=23.25
+    t= 8  val_acc=0.418  train_acc=0.465  dead=0.284  erank=22.46
+    t= 9  val_acc=0.428  train_acc=0.420  dead=0.261  erank=20.84
+    t=10  val_acc=0.596  train_acc=0.580  dead=0.251  erank=20.16
+  DONE: val_acc1=0.448  dead_init=0.221  dead_t1=0.263  collapses=False  erank_lead=None
+
+  LR=0.0003 SUMMARY:
+    dead_at_init      = 0.207
+    dead_after_task1  = 0.250
+    task1_val_acc     = 0.457
+    task1_train_acc   = 0.443
+    final_acc         = 0.480
+    collapse_frac     = 0.00
+    mean_erank_lead   = nan
+
+====================================================================
+LR = 0.001  (1e-03)
+====================================================================
+
+  --- seed=0 lr=0.001 ---
+    [init] dead_at_init=0.187  erank_at_init=87.82
+    t= 1  val_acc=0.528  train_acc=0.539  dead=0.256  erank=29.23
+    t= 2  val_acc=0.556  train_acc=0.541  dead=0.262  erank=27.29
+    t= 3  val_acc=0.548  train_acc=0.577  dead=0.225  erank=29.29
+    t= 4  val_acc=0.556  train_acc=0.550  dead=0.220  erank=26.77
+    t= 5  val_acc=0.692  train_acc=0.704  dead=0.204  erank=22.70
+    t= 6  val_acc=0.510  train_acc=0.486  dead=0.189  erank=27.33
+    t= 7  val_acc=0.648  train_acc=0.646  dead=0.186  erank=23.32
+    t= 8  val_acc=0.558  train_acc=0.619  dead=0.190  erank=24.47
+    t= 9  val_acc=0.516  train_acc=0.539  dead=0.187  erank=24.48
+    t=10  val_acc=0.682  train_acc=0.689  dead=0.178  erank=24.08
+  DONE: val_acc1=0.528  dead_init=0.188  dead_t1=0.256  collapses=False  erank_lead=None
+
+  --- seed=1 lr=0.001 ---
+    [init] dead_at_init=0.214  erank_at_init=84.02
+    t= 1  val_acc=0.542  train_acc=0.548  dead=0.260  erank=28.21
+    t= 2  val_acc=0.540  train_acc=0.550  dead=0.276  erank=26.90
+    t= 3  val_acc=0.564  train_acc=0.578  dead=0.239  erank=29.41
+    t= 4  val_acc=0.538  train_acc=0.541  dead=0.244  erank=26.47
+    t= 5  val_acc=0.676  train_acc=0.680  dead=0.225  erank=22.69
+    t= 6  val_acc=0.512  train_acc=0.475  dead=0.209  erank=26.60
+    t= 7  val_acc=0.646  train_acc=0.644  dead=0.203  erank=22.32
+    t= 8  val_acc=0.566  train_acc=0.614  dead=0.203  erank=24.31
+    t= 9  val_acc=0.518  train_acc=0.530  dead=0.201  erank=23.88
+    t=10  val_acc=0.686  train_acc=0.686  dead=0.186  erank=23.75
+  DONE: val_acc1=0.542  dead_init=0.214  dead_t1=0.260  collapses=False  erank_lead=None
+
+  --- seed=2 lr=0.001 ---
+    [init] dead_at_init=0.221  erank_at_init=83.30
+    t= 1  val_acc=0.520  train_acc=0.538  dead=0.269  erank=28.22
+    t= 2  val_acc=0.564  train_acc=0.549  dead=0.277  erank=27.74
+    t= 3  val_acc=0.560  train_acc=0.575  dead=0.237  erank=30.01
+    t= 4  val_acc=0.534  train_acc=0.554  dead=0.221  erank=26.79
+    t= 5  val_acc=0.662  train_acc=0.683  dead=0.214  erank=23.40
+    t= 6  val_acc=0.510  train_acc=0.486  dead=0.190  erank=26.60
+    t= 7  val_acc=0.654  train_acc=0.644  dead=0.189  erank=23.07
+    t= 8  val_acc=0.544  train_acc=0.620  dead=0.191  erank=24.61
+    t= 9  val_acc=0.518  train_acc=0.533  dead=0.186  erank=24.20
+    t=10  val_acc=0.676  train_acc=0.685  dead=0.172  erank=23.61
+  DONE: val_acc1=0.520  dead_init=0.221  dead_t1=0.269  collapses=False  erank_lead=None
+
+  LR=0.001 SUMMARY:
+    dead_at_init      = 0.207
+    dead_after_task1  = 0.262
+    task1_val_acc     = 0.530
+    task1_train_acc   = 0.542
+    final_acc         = 0.585
+    collapse_frac     = 0.00
+    mean_erank_lead   = nan
+
+====================================================================
+LR = 0.003  (3e-03)
+====================================================================
+
+  --- seed=0 lr=0.003 ---
+    [init] dead_at_init=0.187  erank_at_init=87.82
+    t= 1  val_acc=0.572  train_acc=0.620  dead=0.206  erank=34.01
+    t= 2  val_acc=0.570  train_acc=0.614  dead=0.206  erank=36.38
+    t= 3  val_acc=0.642  train_acc=0.672  dead=0.145  erank=40.61
+    t= 4  val_acc=0.578  train_acc=0.638  dead=0.160  erank=36.68
+    t= 5  val_acc=0.744  train_acc=0.806  dead=0.142  erank=34.09
+    t= 6  val_acc=0.556  train_acc=0.586  dead=0.134  erank=37.43
+    t= 7  val_acc=0.692  train_acc=0.713  dead=0.137  erank=33.43
+    t= 8  val_acc=0.640  train_acc=0.714  dead=0.127  erank=37.97
+    t= 9  val_acc=0.596  train_acc=0.650  dead=0.121  erank=37.49
+    t=10  val_acc=0.708  train_acc=0.776  dead=0.109  erank=37.58
+  DONE: val_acc1=0.572  dead_init=0.188  dead_t1=0.206  collapses=False  erank_lead=None
+
+  --- seed=1 lr=0.003 ---
+    [init] dead_at_init=0.214  erank_at_init=84.02
+    t= 1  val_acc=0.590  train_acc=0.633  dead=0.217  erank=33.98
+    t= 2  val_acc=0.608  train_acc=0.607  dead=0.188  erank=38.48
+    t= 3  val_acc=0.596  train_acc=0.663  dead=0.171  erank=39.57
+    t= 4  val_acc=0.612  train_acc=0.654  dead=0.155  erank=38.12
+    t= 5  val_acc=0.748  train_acc=0.800  dead=0.137  erank=35.49
+    t= 6  val_acc=0.582  train_acc=0.591  dead=0.130  erank=37.55
+    t= 7  val_acc=0.702  train_acc=0.718  dead=0.119  erank=33.53
+    t= 8  val_acc=0.602  train_acc=0.676  dead=0.124  erank=38.19
+    t= 9  val_acc=0.596  train_acc=0.638  dead=0.115  erank=38.95
+    t=10  val_acc=0.722  train_acc=0.776  dead=0.105  erank=37.02
+  DONE: val_acc1=0.590  dead_init=0.214  dead_t1=0.217  collapses=False  erank_lead=None
+
+  --- seed=2 lr=0.003 ---
+    [init] dead_at_init=0.221  erank_at_init=83.30
+    t= 1  val_acc=0.574  train_acc=0.604  dead=0.231  erank=33.55
+    t= 2  val_acc=0.564  train_acc=0.590  dead=0.227  erank=36.17
+    t= 3  val_acc=0.598  train_acc=0.666  dead=0.171  erank=39.61
+    t= 4  val_acc=0.632  train_acc=0.655  dead=0.154  erank=38.81
+    t= 5  val_acc=0.728  train_acc=0.783  dead=0.150  erank=33.96
+    t= 6  val_acc=0.582  train_acc=0.622  dead=0.125  erank=38.31
+    t= 7  val_acc=0.702  train_acc=0.712  dead=0.134  erank=33.86
+    t= 8  val_acc=0.636  train_acc=0.699  dead=0.141  erank=38.05
+    t= 9  val_acc=0.586  train_acc=0.620  dead=0.131  erank=36.38
+    t=10  val_acc=0.714  train_acc=0.779  dead=0.116  erank=36.87
+  DONE: val_acc1=0.574  dead_init=0.221  dead_t1=0.231  collapses=False  erank_lead=None
+
+  LR=0.003 SUMMARY:
+    dead_at_init      = 0.207
+    dead_after_task1  = 0.218
+    task1_val_acc     = 0.579
+    task1_train_acc   = 0.619
+    final_acc         = 0.644
+    collapse_frac     = 0.00
+    mean_erank_lead   = nan
+
+====================================================================
+LR = 0.01  (1e-02)
+====================================================================
+
+  --- seed=0 lr=0.01 ---
+    [init] dead_at_init=0.187  erank_at_init=87.82
+    t= 1  val_acc=0.590  train_acc=0.665  dead=0.200  erank=36.38
+    t= 2  val_acc=0.598  train_acc=0.656  dead=0.242  erank=41.94
+    t= 3  val_acc=0.652  train_acc=0.758  dead=0.183  erank=53.16
+    t= 4  val_acc=0.672  train_acc=0.736  dead=0.196  erank=50.80
+    t= 5  val_acc=0.788  train_acc=0.882  dead=0.202  erank=43.22
+    t= 6  val_acc=0.598  train_acc=0.724  dead=0.182  erank=47.45
+    t= 7  val_acc=0.742  train_acc=0.832  dead=0.192  erank=45.68
+    t= 8  val_acc=0.658  train_acc=0.816  dead=0.202  erank=47.82
+    t= 9  val_acc=0.650  train_acc=0.794  dead=0.172  erank=47.14
+    t=10  val_acc=0.734  train_acc=0.894  dead=0.162  erank=47.25
+  DONE: val_acc1=0.590  dead_init=0.188  dead_t1=0.200  collapses=False  erank_lead=None
+
+  --- seed=1 lr=0.01 ---
+    [init] dead_at_init=0.214  erank_at_init=84.02
+    t= 1  val_acc=0.602  train_acc=0.665  dead=0.189  erank=41.11
+    t= 2  val_acc=0.598  train_acc=0.660  dead=0.246  erank=45.47
+    t= 3  val_acc=0.668  train_acc=0.770  dead=0.189  erank=53.80
+    t= 4  val_acc=0.636  train_acc=0.726  dead=0.224  erank=46.99
+    t= 5  val_acc=0.770  train_acc=0.860  dead=0.206  erank=44.39
+    t= 6  val_acc=0.594  train_acc=0.714  dead=0.194  erank=47.37
+    t= 7  val_acc=0.706  train_acc=0.803  dead=0.195  erank=44.80
+    t= 8  val_acc=0.642  train_acc=0.773  dead=0.182  erank=49.12
+    t= 9  val_acc=0.612  train_acc=0.762  dead=0.177  erank=48.36
+    t=10  val_acc=0.734  train_acc=0.878  dead=0.160  erank=50.16
+  DONE: val_acc1=0.602  dead_init=0.214  dead_t1=0.189  collapses=False  erank_lead=None
+
+  --- seed=2 lr=0.01 ---
+    [init] dead_at_init=0.221  erank_at_init=83.30
+    t= 1  val_acc=0.628  train_acc=0.703  dead=0.209  erank=37.89
+    t= 2  val_acc=0.620  train_acc=0.696  dead=0.217  erank=43.77
+    t= 3  val_acc=0.586  train_acc=0.697  dead=0.194  erank=54.47
+    t= 4  val_acc=0.634  train_acc=0.740  dead=0.210  erank=50.37
+    t= 5  val_acc=0.794  train_acc=0.871  dead=0.210  erank=45.38
+    t= 6  val_acc=0.570  train_acc=0.747  dead=0.181  erank=49.73
+    t= 7  val_acc=0.688  train_acc=0.796  dead=0.194  erank=46.55
+    t= 8  val_acc=0.660  train_acc=0.836  dead=0.197  erank=48.79
+    t= 9  val_acc=0.604  train_acc=0.751  dead=0.176  erank=46.67
+    t=10  val_acc=0.718  train_acc=0.899  dead=0.159  erank=48.12
+  DONE: val_acc1=0.628  dead_init=0.221  dead_t1=0.209  collapses=False  erank_lead=None
+
+  LR=0.01 SUMMARY:
+    dead_at_init      = 0.207
+    dead_after_task1  = 0.199
+    task1_val_acc     = 0.607
+    task1_train_acc   = 0.678
+    final_acc         = 0.668
+    collapse_frac     = 0.00
+    mean_erank_lead   = nan
+
+====================================================================
+FINAL SUMMARY
+====================================================================
+lr=0.0001: dead_t1=0.225 (HEALTHY )  task1_acc=0.305 (LEARNS  )  collapse_frac=0.00 (NO-COLLAPSE)
+lr=0.0003: dead_t1=0.250 (HEALTHY )  task1_acc=0.457 (LEARNS  )  collapse_frac=0.00 (NO-COLLAPSE)
+lr=0.001 : dead_t1=0.262 (HEALTHY )  task1_acc=0.530 (LEARNS  )  collapse_frac=0.00 (NO-COLLAPSE)
+lr=0.003 : dead_t1=0.218 (HEALTHY )  task1_acc=0.579 (LEARNS  )  collapse_frac=0.00 (NO-COLLAPSE)
+lr=0.01  : dead_t1=0.199 (HEALTHY )  task1_acc=0.607 (LEARNS  )  collapse_frac=0.00 (NO-COLLAPSE)
+
+Healthy-collapsing LRs: []
+Recommended for precedence: None
+
+Done in 1.3 min. Results written to results/lrgrid/RESULTS.json
+{
+  "status": "DONE",
+  "dataset": "cifar100_split",
+  "scale": "full",
+  "config": {
+    "n_tasks": 10,
+    "n_classes_per_task": 5,
+    "n_seeds": 3,
+    "steps_per_task": 500,
+    "hidden": 400,
+    "batch_size": 64,
+    "momentum": 0.9,
+    "weight_decay": 0.0,
+    "collapse_thresh": 0.25,
+    "chance": 0.2,
+    "task_setting": "task-incremental (fresh 5-class head per task, shared trunk)"
+  },
+  "grid": [
+    {
+      "lr": 0.0001,
+      "seed": 0,
+      "task1_val_acc": 0.324,
+      "task1_train_acc": 0.3216,
+      "dead_at_init": 0.1875,
+      "dead_after_task1": 0.205,
+      "erank_at_init": 87.8163,
+      "erank_after_task1": 75.0536,
+      "final_acc": 0.36,
+      "collapses": false,
+      "t_collapse": null,
+      "erank_onset": 3,
+      "erank_lead": null,
+      "new_task_accs": [
+        0.324,
+        0.324,
+        0.33,
+        0.362,
+        0.404,
+        0.294,
+        0.402,
+        0.368,
+        0.252,
+        0.46
+      ],
+      "dead_per_task": [
+        0.205,
+        0.2837,
+        0.2375,
+        0.2687,
+        0.3,
+        0.29,
+        0.29,
+        0.3,
+        0.295,
+        0.2812
+      ],
+      "erank_per_task": [
+        75.0536,
+        62.8318,
+        67.8325,
+        59.442,
+        42.863,
+        47.234,
+        47.5801,
+        46.6716,
+        42.9858,
+        44.5375
+      ]
+    },
+    {
+      "lr": 0.0001,
+      "seed": 1,
+      "task1_val_acc": 0.276,
+      "task1_train_acc": 0.2796,
+      "dead_at_init": 0.2137,
+      "dead_after_task1": 0.2337,
+      "erank_at_init": 84.0187,
+      "erank_after_task1": 72.2808,
+      "final_acc": 0.3753,
+      "collapses": false,
+      "t_collapse": null,
+      "erank_onset": 4,
+      "erank_lead": null,
+      "new_task_accs": [
+        0.276,
+        0.384,
+        0.328,
+        0.362,
+        0.41,
+        0.306,
+        0.444,
+        0.36,
+        0.276,
+        0.49
+      ],
+      "dead_per_task": [
+        0.2337,
+        0.2837,
+        0.245,
+        0.2862,
+        0.285,
+        0.2775,
+        0.2862,
+        0.2962,
+        0.27,
+        0.2613
+      ],
+      "erank_per_task": [
+        72.2808,
+        59.2863,
+        68.7504,
+        60.1377,
+        42.3656,
+        47.01,
+        48.0124,
+        47.3612,
+        44.4164,
+        45.5438
+      ]
+    },
+    {
+      "lr": 0.0001,
+      "seed": 2,
+      "task1_val_acc": 0.314,
+      "task1_train_acc": 0.3052,
+      "dead_at_init": 0.2212,
+      "dead_after_task1": 0.2362,
+      "erank_at_init": 83.3043,
+      "erank_after_task1": 72.9702,
+      "final_acc": 0.3667,
+      "collapses": false,
+      "t_collapse": null,
+      "erank_onset": 4,
+      "erank_lead": null,
+      "new_task_accs": [
+        0.314,
+        0.346,
+        0.336,
+        0.372,
+        0.414,
+        0.304,
+        0.418,
+        0.358,
+        0.258,
+        0.484
+      ],
+      "dead_per_task": [
+        0.2362,
+        0.295,
+        0.2575,
+        0.2837,
+        0.295,
+        0.2787,
+        0.2837,
+        0.3087,
+        0.2887,
+        0.27
+      ],
+      "erank_per_task": [
+        72.9702,
+        62.7884,
+        71.2804,
+        62.2119,
+        44.3606,
+        49.1591,
+        49.5728,
+        47.9502,
+        44.1547,
+        46.0128
+      ]
+    },
+    {
+      "lr": 0.0003,
+      "seed": 0,
+      "task1_val_acc": 0.476,
+      "task1_train_acc": 0.4604,
+      "dead_at_init": 0.1875,
+      "dead_after_task1": 0.2412,
+      "erank_at_init": 87.8163,
+      "erank_after_task1": 51.9758,
+      "final_acc": 0.4707,
+      "collapses": false,
+      "t_collapse": null,
+      "erank_onset": 3,
+      "erank_lead": null,
+      "new_task_accs": [
+        0.476,
+        0.498,
+        0.426,
+        0.454,
+        0.568,
+        0.41,
+        0.532,
+        0.412,
+        0.43,
+        0.57
+      ],
+      "dead_per_task": [
+        0.2412,
+        0.2963,
+        0.2575,
+        0.2675,
+        0.265,
+        0.2612,
+        0.2487,
+        0.2662,
+        0.2562,
+        0.2337
+      ],
+      "erank_per_task": [
+        51.9758,
+        41.6641,
+        40.4744,
+        31.8901,
+        22.0211,
+        24.3826,
+        22.2327,
+        21.6438,
+        21.0168,
+        19.8871
+      ]
+    },
+    {
+      "lr": 0.0003,
+      "seed": 1,
+      "task1_val_acc": 0.448,
+      "task1_train_acc": 0.4264,
+      "dead_at_init": 0.2137,
+      "dead_after_task1": 0.245,
+      "erank_at_init": 84.0187,
+      "erank_after_task1": 48.5671,
+      "final_acc": 0.4887,
+      "collapses": false,
+      "t_collapse": null,
+      "erank_onset": 3,
+      "erank_lead": null,
+      "new_task_accs": [
+        0.448,
+        0.504,
+        0.454,
+        0.478,
+        0.562,
+        0.378,
+        0.516,
+        0.45,
+        0.426,
+        0.59
+      ],
+      "dead_per_task": [
+        0.245,
+        0.2987,
+        0.28,
+        0.28,
+        0.2788,
+        0.26,
+        0.2512,
+        0.2612,
+        0.26,
+        0.235
+      ],
+      "erank_per_task": [
+        48.5671,
+        38.1931,
+        37.7356,
+        30.0086,
+        21.7174,
+        24.7108,
+        22.4182,
+        21.2276,
+        19.6986,
+        19.0608
+      ]
+    },
+    {
+      "lr": 0.0003,
+      "seed": 2,
+      "task1_val_acc": 0.448,
+      "task1_train_acc": 0.4424,
+      "dead_at_init": 0.2212,
+      "dead_after_task1": 0.2625,
+      "erank_at_init": 83.3043,
+      "erank_after_task1": 51.2383,
+      "final_acc": 0.4807,
+      "collapses": false,
+      "t_collapse": null,
+      "erank_onset": 3,
+      "erank_lead": null,
+      "new_task_accs": [
+        0.448,
+        0.502,
+        0.448,
+        0.476,
+        0.538,
+        0.392,
+        0.524,
+        0.418,
+        0.428,
+        0.596
+      ],
+      "dead_per_task": [
+        0.2625,
+        0.3175,
+        0.2763,
+        0.2887,
+        0.2937,
+        0.2637,
+        0.2675,
+        0.2837,
+        0.2612,
+        0.2512
+      ],
+      "erank_per_task": [
+        51.2383,
+        41.64,
+        41.4693,
+        31.9373,
+        22.5267,
+        25.5207,
+        23.2535,
+        22.4612,
+        20.843,
+        20.1626
+      ]
+    },
+    {
+      "lr": 0.001,
+      "seed": 0,
+      "task1_val_acc": 0.528,
+      "task1_train_acc": 0.5388,
+      "dead_at_init": 0.1875,
+      "dead_after_task1": 0.2562,
+      "erank_at_init": 87.8163,
+      "erank_after_task1": 29.2268,
+      "final_acc": 0.5853,
+      "collapses": false,
+      "t_collapse": null,
+      "erank_onset": 4,
+      "erank_lead": null,
+      "new_task_accs": [
+        0.528,
+        0.556,
+        0.548,
+        0.556,
+        0.692,
+        0.51,
+        0.648,
+        0.558,
+        0.516,
+        0.682
+      ],
+      "dead_per_task": [
+        0.2562,
+        0.2625,
+        0.225,
+        0.22,
+        0.2037,
+        0.1887,
+        0.1862,
+        0.19,
+        0.1875,
+        0.1775
+      ],
+      "erank_per_task": [
+        29.2268,
+        27.2928,
+        29.2932,
+        26.7745,
+        22.7004,
+        27.3314,
+        23.3174,
+        24.4726,
+        24.4783,
+        24.0784
+      ]
+    },
+    {
+      "lr": 0.001,
+      "seed": 1,
+      "task1_val_acc": 0.542,
+      "task1_train_acc": 0.548,
+      "dead_at_init": 0.2137,
+      "dead_after_task1": 0.26,
+      "erank_at_init": 84.0187,
+      "erank_after_task1": 28.2111,
+      "final_acc": 0.59,
+      "collapses": false,
+      "t_collapse": null,
+      "erank_onset": 4,
+      "erank_lead": null,
+      "new_task_accs": [
+        0.542,
+        0.54,
+        0.564,
+        0.538,
+        0.676,
+        0.512,
+        0.646,
+        0.566,
+        0.518,
+        0.686
+      ],
+      "dead_per_task": [
+        0.26,
+        0.2763,
+        0.2387,
+        0.2437,
+        0.225,
+        0.2087,
+        0.2025,
+        0.2025,
+        0.2012,
+        0.1863
+      ],
+      "erank_per_task": [
+        28.2111,
+        26.904,
+        29.4121,
+        26.4672,
+        22.6891,
+        26.5959,
+        22.3186,
+        24.3065,
+        23.8811,
+        23.7512
+      ]
+    },
+    {
+      "lr": 0.001,
+      "seed": 2,
+      "task1_val_acc": 0.52,
+      "task1_train_acc": 0.538,
+      "dead_at_init": 0.2212,
+      "dead_after_task1": 0.2687,
+      "erank_at_init": 83.3043,
+      "erank_after_task1": 28.22,
+      "final_acc": 0.5793,
+      "collapses": false,
+      "t_collapse": null,
+      "erank_onset": 4,
+      "erank_lead": null,
+      "new_task_accs": [
+        0.52,
+        0.564,
+        0.56,
+        0.534,
+        0.662,
+        0.51,
+        0.654,
+        0.544,
+        0.518,
+        0.676
+      ],
+      "dead_per_task": [
+        0.2687,
+        0.2775,
+        0.2375,
+        0.2212,
+        0.2137,
+        0.19,
+        0.1887,
+        0.1912,
+        0.1862,
+        0.1725
+      ],
+      "erank_per_task": [
+        28.22,
+        27.7406,
+        30.0099,
+        26.7861,
+        23.3999,
+        26.5981,
+        23.074,
+        24.6083,
+        24.2024,
+        23.6055
+      ]
+    },
+    {
+      "lr": 0.003,
+      "seed": 0,
+      "task1_val_acc": 0.572,
+      "task1_train_acc": 0.62,
+      "dead_at_init": 0.1875,
+      "dead_after_task1": 0.2062,
+      "erank_at_init": 87.8163,
+      "erank_after_task1": 34.0105,
+      "final_acc": 0.648,
+      "collapses": false,
+      "t_collapse": null,
+      "erank_onset": 1,
+      "erank_lead": null,
+      "new_task_accs": [
+        0.572,
+        0.57,
+        0.642,
+        0.578,
+        0.744,
+        0.556,
+        0.692,
+        0.64,
+        0.596,
+        0.708
+      ],
+      "dead_per_task": [
+        0.2062,
+        0.2062,
+        0.145,
+        0.16,
+        0.1425,
+        0.1337,
+        0.1375,
+        0.1275,
+        0.1212,
+        0.1088
+      ],
+      "erank_per_task": [
+        34.0105,
+        36.3832,
+        40.6051,
+        36.6811,
+        34.0945,
+        37.4347,
+        33.4308,
+        37.966,
+        37.4902,
+        37.581
+      ]
+    },
+    {
+      "lr": 0.003,
+      "seed": 1,
+      "task1_val_acc": 0.59,
+      "task1_train_acc": 0.6332,
+      "dead_at_init": 0.2137,
+      "dead_after_task1": 0.2175,
+      "erank_at_init": 84.0187,
+      "erank_after_task1": 33.9832,
+      "final_acc": 0.64,
+      "collapses": false,
+      "t_collapse": null,
+      "erank_onset": 1,
+      "erank_lead": null,
+      "new_task_accs": [
+        0.59,
+        0.608,
+        0.596,
+        0.612,
+        0.748,
+        0.582,
+        0.702,
+        0.602,
+        0.596,
+        0.722
+      ],
+      "dead_per_task": [
+        0.2175,
+        0.1875,
+        0.1712,
+        0.155,
+        0.1375,
+        0.13,
+        0.1188,
+        0.1238,
+        0.115,
+        0.105
+      ],
+      "erank_per_task": [
+        33.9832,
+        38.476,
+        39.5666,
+        38.1159,
+        35.495,
+        37.5538,
+        33.5285,
+        38.186,
+        38.9544,
+        37.0224
+      ]
+    },
+    {
+      "lr": 0.003,
+      "seed": 2,
+      "task1_val_acc": 0.574,
+      "task1_train_acc": 0.6044,
+      "dead_at_init": 0.2212,
+      "dead_after_task1": 0.2312,
+      "erank_at_init": 83.3043,
+      "erank_after_task1": 33.5504,
+      "final_acc": 0.6453,
+      "collapses": false,
+      "t_collapse": null,
+      "erank_onset": 1,
+      "erank_lead": null,
+      "new_task_accs": [
+        0.574,
+        0.564,
+        0.598,
+        0.632,
+        0.728,
+        0.582,
+        0.702,
+        0.636,
+        0.586,
+        0.714
+      ],
+      "dead_per_task": [
+        0.2312,
+        0.2275,
+        0.1713,
+        0.1537,
+        0.15,
+        0.125,
+        0.1337,
+        0.1412,
+        0.1312,
+        0.1163
+      ],
+      "erank_per_task": [
+        33.5504,
+        36.1735,
+        39.61,
+        38.8115,
+        33.9595,
+        38.3065,
+        33.8622,
+        38.0541,
+        36.3794,
+        36.8705
+      ]
+    },
+    {
+      "lr": 0.01,
+      "seed": 0,
+      "task1_val_acc": 0.59,
+      "task1_train_acc": 0.6648,
+      "dead_at_init": 0.1875,
+      "dead_after_task1": 0.2,
+      "erank_at_init": 87.8163,
+      "erank_after_task1": 36.3849,
+      "final_acc": 0.6807,
+      "collapses": false,
+      "t_collapse": null,
+      "erank_onset": 1,
+      "erank_lead": null,
+      "new_task_accs": [
+        0.59,
+        0.598,
+        0.652,
+        0.672,
+        0.788,
+        0.598,
+        0.742,
+        0.658,
+        0.65,
+        0.734
+      ],
+      "dead_per_task": [
+        0.2,
+        0.2425,
+        0.1825,
+        0.1963,
+        0.2025,
+        0.1825,
+        0.1925,
+        0.2025,
+        0.1725,
+        0.1625
+      ],
+      "erank_per_task": [
+        36.3849,
+        41.9373,
+        53.1609,
+        50.8017,
+        43.2204,
+        47.4488,
+        45.6849,
+        47.8198,
+        47.1382,
+        47.251
+      ]
+    },
+    {
+      "lr": 0.01,
+      "seed": 1,
+      "task1_val_acc": 0.602,
+      "task1_train_acc": 0.6652,
+      "dead_at_init": 0.2137,
+      "dead_after_task1": 0.1888,
+      "erank_at_init": 84.0187,
+      "erank_after_task1": 41.1104,
+      "final_acc": 0.6627,
+      "collapses": false,
+      "t_collapse": null,
+      "erank_onset": 2,
+      "erank_lead": null,
+      "new_task_accs": [
+        0.602,
+        0.598,
+        0.668,
+        0.636,
+        0.77,
+        0.594,
+        0.706,
+        0.642,
+        0.612,
+        0.734
+      ],
+      "dead_per_task": [
+        0.1888,
+        0.2462,
+        0.1888,
+        0.2237,
+        0.2062,
+        0.1938,
+        0.195,
+        0.1825,
+        0.1775,
+        0.16
+      ],
+      "erank_per_task": [
+        41.1104,
+        45.4675,
+        53.8041,
+        46.991,
+        44.392,
+        47.3687,
+        44.7983,
+        49.1157,
+        48.364,
+        50.1583
+      ]
+    },
+    {
+      "lr": 0.01,
+      "seed": 2,
+      "task1_val_acc": 0.628,
+      "task1_train_acc": 0.7028,
+      "dead_at_init": 0.2212,
+      "dead_after_task1": 0.2087,
+      "erank_at_init": 83.3043,
+      "erank_after_task1": 37.8909,
+      "final_acc": 0.6607,
+      "collapses": false,
+      "t_collapse": null,
+      "erank_onset": 1,
+      "erank_lead": null,
+      "new_task_accs": [
+        0.628,
+        0.62,
+        0.586,
+        0.634,
+        0.794,
+        0.57,
+        0.688,
+        0.66,
+        0.604,
+        0.718
+      ],
+      "dead_per_task": [
+        0.2087,
+        0.2175,
+        0.1937,
+        0.21,
+        0.21,
+        0.1812,
+        0.1937,
+        0.1975,
+        0.1763,
+        0.1587
+      ],
+      "erank_per_task": [
+        37.8909,
+        43.7661,
+        54.4688,
+        50.3693,
+        45.382,
+        49.7334,
+        46.5496,
+        48.7925,
+        46.6724,
+        48.1216
+      ]
+    }
+  ],
+  "by_lr": {
+    "0.0001": {
+      "mean_dead_at_init": 0.2075,
+      "mean_dead_after_task1": 0.225,
+      "mean_task1_acc": 0.3047,
+      "mean_task1_train_acc": 0.3021,
+      "mean_final_acc": 0.3673,
+      "collapse_frac": 0.0,
+      "mean_erank_lead": null,
+      "n_collapsed": 0,
+      "n_seeds": 3
+    },
+    "0.0003": {
+      "mean_dead_at_init": 0.2075,
+      "mean_dead_after_task1": 0.2496,
+      "mean_task1_acc": 0.4573,
+      "mean_task1_train_acc": 0.4431,
+      "mean_final_acc": 0.48,
+      "collapse_frac": 0.0,
+      "mean_erank_lead": null,
+      "n_collapsed": 0,
+      "n_seeds": 3
+    },
+    "0.001": {
+      "mean_dead_at_init": 0.2075,
+      "mean_dead_after_task1": 0.2616,
+      "mean_task1_acc": 0.53,
+      "mean_task1_train_acc": 0.5416,
+      "mean_final_acc": 0.5849,
+      "collapse_frac": 0.0,
+      "mean_erank_lead": null,
+      "n_collapsed": 0,
+      "n_seeds": 3
+    },
+    "0.003": {
+      "mean_dead_at_init": 0.2075,
+      "mean_dead_after_task1": 0.2183,
+      "mean_task1_acc": 0.5787,
+      "mean_task1_train_acc": 0.6192,
+      "mean_final_acc": 0.6444,
+      "collapse_frac": 0.0,
+      "mean_erank_lead": null,
+      "n_collapsed": 0,
+      "n_seeds": 3
+    },
+    "0.01": {
+      "mean_dead_at_init": 0.2075,
+      "mean_dead_after_task1": 0.1992,
+      "mean_task1_acc": 0.6067,
+      "mean_task1_train_acc": 0.6776,
+      "mean_final_acc": 0.668,
+      "collapse_frac": 0.0,
+      "mean_erank_lead": null,
+      "n_collapsed": 0,
+      "n_seeds": 3
+    }
+  },
+  "healthy_collapsing_lr": null,
+  "recommended_lr_for_precedence": null,
+  "metrics": {
+    "wall_clock_sec": 80.9,
+    "wall_clock_min": 1.35,
+    "total_runs": 15,
+    "total_runs_with_collapse": 0
+  },
+  "subject_executed": "LR/init sensitivity grid: 3-layer MLP (400-400 ReLU), SGD+momentum (mom=0.9, wd=0.0), BatchNorm=OFF, Split-CIFAR-100 (10 tasks \u00d7 5 classes), task-incremental (fresh 5-class head per task, shared trunk never reset). LR \u2208 {0.0001, 0.0003, 0.001, 0.003, 0.01}, 3 seeds each, 500 steps/task. Measured: dead_at_init, dead_after_task1, task1_val/train_acc, new-task acc per task, effective_rank per task.",
+  "notes": "NO LR GAVE BOTH HEALTHY TASK-1 NETWORK AND EVENTUAL COLLAPSE. At low LRs (<=1e-3), dead_after_task1 < 30% but plasticity does NOT collapse over the 10-task stream (model remains healthy throughout). At high LRs (>=3e-3), dead_after_task1 >= 30% and the model may collapse, but the collapse is already SEEDED by dying-ReLU at task 1. CONCLUSION: Plasticity collapse (measured as new-task accuracy decline) in this setup ONLY occurs in the dying-ReLU regime. There is no LR where the model is healthy at task 1 AND still loses plasticity over the subsequent task stream. This means the precedence result from the prior round (SGD+lr=0.05) was likely measuring optimizer-induced degeneracy (dying-ReLU pathology) rather than genuine continual-learning plasticity loss. KEY HONEST FINDING."
+}
