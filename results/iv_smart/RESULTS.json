@@ -1,0 +1,91 @@
+{
+  "status": "SUCCESS",
+  "scale": "full",
+  "arm": "smart",
+  "regime": "hidden=100 MLP, online Permuted-MNIST, SGD, validated healthy regime",
+  "n_seeds": 5,
+  "n_tasks": 280,
+  "K_events": 8,
+  "trig_frac": 0.92,
+  "dead_thresh": 0.5,
+  "dead_step": 0.10,
+  "metrics": {
+    "arm": "smart",
+    "mean_ss_acc": 0.8744091999999999,
+    "std_ss_acc": 0.015089857393627018,
+    "mean_auc_acc": 0.8809414285714287,
+    "mean_final_dead": 0.7159999758005142,
+    "mean_events": 4.0,
+    "mean_units_reset": 760.2,
+    "ss_minus_task1_pp_mean": -5.689,
+    "per_seed_ss_acc": [0.85233, 0.89421, 0.87978, 0.88348, 0.86225],
+    "per_seed_final_dead": [0.675, 0.705, 0.785, 0.795, 0.620],
+    "per_seed_n_events": [4, 4, 4, 4, 4],
+    "baseline_comparison_note": "Smart arm fires dead-fraction-threshold events (DEAD_STEP=0.10 rise since last event). Mean 4 events fired (budget=8). ss_acc=0.874 vs task1_acc~0.931 = -5.7pp drop. Compare to none-arm (no resets) and fixed/random/triggered arms (other RESULTS)."
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "arm": "smart",
+      "task1_acc": 0.9238,
+      "ss_acc": 0.85233,
+      "auc_acc": 0.8782664285714286,
+      "final_dead": 0.6749999821186066,
+      "n_events": 4,
+      "event_tasks": [5, 22, 60, 267],
+      "total_units_reset": 764,
+      "ss_minus_task1_pp": -7.147
+    },
+    {
+      "seed": 1,
+      "arm": "smart",
+      "task1_acc": 0.9354,
+      "ss_acc": 0.8942119999999999,
+      "auc_acc": 0.8761599999999999,
+      "final_dead": 0.7049999833106995,
+      "n_events": 4,
+      "event_tasks": [5, 14, 51, 233],
+      "total_units_reset": 758,
+      "ss_minus_task1_pp": -4.119
+    },
+    {
+      "seed": 2,
+      "arm": "smart",
+      "task1_acc": 0.9309,
+      "ss_acc": 0.8797780000000002,
+      "auc_acc": 0.8839889285714286,
+      "final_dead": 0.7849999666213989,
+      "n_events": 4,
+      "event_tasks": [5, 14, 31, 190],
+      "total_units_reset": 752,
+      "ss_minus_task1_pp": -5.112
+    },
+    {
+      "seed": 3,
+      "arm": "smart",
+      "task1_acc": 0.937,
+      "ss_acc": 0.8834760000000002,
+      "auc_acc": 0.8889832142857143,
+      "final_dead": 0.7949999570846558,
+      "n_events": 4,
+      "event_tasks": [5, 25, 50, 197],
+      "total_units_reset": 763,
+      "ss_minus_task1_pp": -5.352
+    },
+    {
+      "seed": 4,
+      "arm": "smart",
+      "task1_acc": 0.9294,
+      "ss_acc": 0.86225,
+      "auc_acc": 0.8773085714285714,
+      "final_dead": 0.6199999898672104,
+      "n_events": 4,
+      "event_tasks": [5, 19, 63, 255],
+      "total_units_reset": 764,
+      "ss_minus_task1_pp": -6.715
+    }
+  ],
+  "total_wall_time_sec": 582.7291460037231,
+  "subject_executed": "Intervention arm=smart: dead-fraction-threshold timing, hidden=100 MLP, online Permuted-MNIST, SGD lr=0.1 momentum=0.9, 5 seeds x 280 tasks, K=8 budget. Resets fire when dead-fraction rises >=0.10 since last event (DEAD_STEP), with refractory gap=8 tasks. Each event reinitializes dead units (fresh incoming, zeroed outgoing, cleared momentum).",
+  "notes": "Smart arm fires on dead-fraction rising >=DEAD_STEP=0.10 since last event (budget-aware diagnostic timing). All 5 seeds fired exactly 4 events (used half the K=8 budget). mean_ss_acc=0.874+/-0.015. Final dead fraction=0.716 (still degraded but only partial resets). Smoke test passed before full run. No weights committed. Compare to other arms: none (control), triggered (erank-threshold), fixed, random to isolate timing value."
+}
