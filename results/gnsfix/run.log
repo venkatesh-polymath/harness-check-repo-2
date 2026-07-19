@@ -1,0 +1,657 @@
+Device: cuda
+8 seeds × 20 tasks × 1000 steps/task
+GNS_SAMPLES=30 (was 2), onset=smoothed-MA2+persistence
+CIFAR-10: train=(50000, 3072), test=(10000, 3072)
+Built 20 permuted tasks. train=50000, test=10000, probe=512
+
+====================================================================
+SEED 0
+====================================================================
+  [seed 0] CE_init=2.3035 exp=2.3026 PASS
+    t= 1 acc=0.297 dead=0.815 erank=5.32 gns=135.2542±21.9125 wd=1.681
+    t= 2 acc=0.254 dead=0.880 erank=2.60 gns=110.4386±19.6259 wd=2.893
+    t= 3 acc=0.162 dead=0.919 erank=1.22 gns=nan±34985.3498 wd=3.322
+    t= 4 acc=0.175 dead=0.944 erank=1.11 gns=3247.2966±5144.8778 wd=3.414
+    t= 5 acc=0.167 dead=0.946 erank=1.42 gns=1324.6230±6375.3669 wd=3.779
+    t= 6 acc=0.216 dead=0.950 erank=1.74 gns=335.4042±120.4537 wd=4.532
+    t= 7 acc=0.225 dead=0.956 erank=1.75 gns=492.0617±474.0052 wd=5.276
+    t= 8 acc=0.215 dead=0.995 erank=1.86 gns=93.6620±20.7952 wd=5.767
+    t= 9 acc=0.197 dead=0.989 erank=1.98 gns=245.1682±58.7624 wd=6.094
+    t=10 acc=0.100 dead=0.998 erank=1.09 gns=nan±12269.9732 wd=6.153
+    t=11 acc=0.100 dead=0.999 erank=1.05 gns=1095.4203±560.4308 wd=6.153
+    t=12 acc=0.100 dead=0.999 erank=1.05 gns=143821.4081±11719.2838 wd=6.153
+    t=13 acc=0.100 dead=0.999 erank=1.06 gns=2420.4951±3895.7527 wd=6.153
+    t=14 acc=0.100 dead=0.999 erank=1.05 gns=1953.2579±3829.1836 wd=6.153
+    t=15 acc=0.100 dead=0.999 erank=1.05 gns=1230.8239±1072.3376 wd=6.153
+    t=16 acc=0.100 dead=0.999 erank=1.05 gns=16346.1374±10051.7698 wd=6.153
+    t=17 acc=0.100 dead=0.999 erank=1.05 gns=14617.9889±11360.2999 wd=6.153
+    t=18 acc=0.100 dead=0.999 erank=1.05 gns=nan±37860.7797 wd=6.153
+    t=19 acc=0.100 dead=0.999 erank=1.06 gns=nan±11065.1996 wd=6.153
+    t=20 acc=0.100 dead=0.999 erank=1.05 gns=1914.4281±1350.3695 wd=6.153
+  [seed 0] t_collapse=9  onsets={'effective_rank': 2, 'dead_unit_fraction': 3, 'weight_norm_drift': 5, 'gradient_noise_scale': 3}  leads={'effective_rank': 7, 'dead_unit_fraction': 6, 'weight_norm_drift': 4, 'gradient_noise_scale': 6}
+
+====================================================================
+SEED 1
+====================================================================
+  [seed 1] CE_init=2.3082 exp=2.3026 PASS
+    t= 1 acc=0.335 dead=0.839 erank=6.42 gns=244.8182±56.3384 wd=1.885
+    t= 2 acc=0.181 dead=0.857 erank=1.75 gns=132.5507±26.2261 wd=2.356
+    t= 3 acc=0.194 dead=0.880 erank=1.49 gns=834.6270±288.7343 wd=3.004
+    t= 4 acc=0.215 dead=0.963 erank=2.17 gns=112.6734±31.3275 wd=3.710
+    t= 5 acc=0.223 dead=0.964 erank=2.13 gns=189.8776±34.5241 wd=4.600
+    t= 6 acc=0.196 dead=0.993 erank=1.99 gns=85.6941±21.0469 wd=5.300
+    t= 7 acc=0.167 dead=0.984 erank=1.60 gns=59.1250±16.0341 wd=5.425
+    t= 8 acc=0.161 dead=0.992 erank=1.21 gns=158.5652±61.1847 wd=5.457
+    t= 9 acc=0.100 dead=0.999 erank=1.05 gns=nan±28363.4982 wd=5.393
+    t=10 acc=0.100 dead=0.999 erank=1.05 gns=nan±21965.8407 wd=5.393
+    t=11 acc=0.100 dead=0.999 erank=1.05 gns=1112.7659±413.6239 wd=5.367
+    t=12 acc=0.100 dead=0.999 erank=1.05 gns=5362.0385±5373.8326 wd=5.367
+    t=13 acc=0.100 dead=0.999 erank=1.05 gns=1657.1943±850.0059 wd=5.367
+    t=14 acc=0.100 dead=0.999 erank=1.05 gns=2155.2611±6996.0698 wd=5.375
+    t=15 acc=0.100 dead=0.999 erank=1.05 gns=2421.7283±14896.3166 wd=5.376
+    t=16 acc=0.100 dead=0.999 erank=1.05 gns=1028.7322±339.1223 wd=5.382
+    t=17 acc=0.100 dead=0.999 erank=1.05 gns=10037.4888±12130.910    t=12 acc=0.100 dead=0.992 erank=1.21 gns=86616377994931978240.0000±38596288803073892352.0000 wd=1.890
+    t=13 acc=0.100 dead=0.991 erank=1.20 gns=1450.2923±9132123105447394304.0000 wd=1.893
+    t=14 acc=0.100 dead=0.992 erank=1.21 gns=8741.2036±21862771780231196672.0000 wd=1.894
+    t=15 acc=0.100 dead=0.992 erank=1.21 gns=2573.3182±6983188510332473344.0000 wd=1.895
+    t=16 acc=0.100 dead=0.992 erank=1.21 gns=1082.2778±856.8672 wd=1.895
+    t=17 acc=0.100 dead=0.992 erank=1.19 gns=536.0704±235.8026 wd=1.896
+    t=18 acc=0.100 dead=0.992 erank=1.18 gns=38611.6778±25554719489920692224.0000 wd=1.897
+    t=19 acc=0.100 dead=0.992 erank=1.19 gns=781.3788±464.8490 wd=1.899
+    t=20 acc=0.100 dead=0.992 erank=1.19 gns=98225580412766044160.0000±43364823307469791232.0000 wd=1.900
+  [seed 1] t_collapse=1  onsets={'effective_rank': 2, 'dead_unit_fraction': 1, 'weight_norm_drift': 13, 'gradient_noise_scale': 4}  leads={'effective_rank': -1, 'dead_unit_fraction': 0, 'weight_norm_drift': -12, 'gradient_noise_scale': -3}
+
+====================================================================
+SEED 2
+====================================================================
+  [seed 2] CE_init=2.3054 exp=2.3026 PASS
+    t= 1 acc=0.253 dead=0.722 erank=5.61 gns=74.8976±10.1179 wd=1.821
+    t= 2 acc=0.263 dead=0.836 erank=3.02 gns=194.7883±46.2366 wd=2.341
+    t= 3 acc=0.230 dead=0.887 erank=2.25 gns=102.8684±25.9146 wd=2.812
+    t= 4 acc=0.176 dead=0.912 erank=1.30 gns=193.8847±148.2101 wd=3.121
+46 wd=6.117
+    t=13 acc=0.100 dead=0.998 erank=1.12 gns=3411.0836±20135.6022 wd=6.119
+    t=14 acc=0.100 dead=0.998 erank=1.11 gns=3237.5260±2472.7158 wd=6.118
+    t=15 acc=0.100 dead=0.998 erank=1.11 gns=973.0130±1430.5372 wd=6.119
+    t=16 acc=0.100 dead=0.998 erank=1.12 gns=941.0211±708.5938 wd=6.118
+    t=17 acc=0.100 dead=0.998 erank=1.12 gns=1596.0589±1671.0022 wd=6.118
+    t=18 acc=0.100 dead=0.998 erank=1.12 gns=2292.2853±2248.0628 wd=6.119
+    t=19 acc=0.100 dead=0.998 erank=1.13 gns=3049.3226±3718.9589 wd=6.120
+    t=20 acc=0.100 dead=0.998 erank=1.12 gns=2032.2670±32482.8401 wd=6.119
+  [seed 2] t_collapse=9  onsets={'effective_rank': 2, 'dead_unit_fraction': 2, 'weight_norm_drift': 4, 'gradient_noise_scale': 10}  leads={'effective_rank': 7, 'dead_unit_fraction': 7, 'weight_norm_drift': 5, 'gradient_noise_scale': -1}
+
+====================================================================
+SEED 3
+====================================================================
+  [seed 3] CE_init=2.3025 exp=2.3026 PASS
+    t= 1 acc=0.308 dead=0.734 erank=6.43 gns=194.7919±30.9710 wd=1.954
+    t= 2 acc=0.237 dead=0.754 erank=2.45 gns=227.3753±52.5852 wd=2.352
+    t= 3 acc=0.219 dead=0.906 erank=1.95 gns=140.1691±18.3180 wd=2.998
+    t= 4 acc=0.146 dead=0.897 erank=1.13 gns=314.1634±283.5895 wd=3.455
+    t= 5 acc=0.161 dead=0.931 erank=1.46 gns=138.5441±69.5726 wd=3.543
+    t= 6 acc=0.200 dead=0.946 erank=1.56 gns=144.1661±84.0420 wd=3.943
+    t= 7 acc=0.159 dead=0.985 erank=1.18 gns=152.1491±45.9560 wd=4.082
+    t= 8 acc=0.100 dead=0.999 erank=1.07 gns=1605.2003±3902.2497 wd=4.073
+    t= 9 acc=0.100 dead=0.999 erank=1.07 gns=4689.8627±22736.9799 wd=4.068
+    t=10 acc=0.100 dead=0.999 erank=1.07 gns=3966.2783±9079.1111 wd=4.069
+    t=11 acc=0.100 dead=0.999 erank=1.07 gns=nan±5589.4424 wd=4.069
+    t=12 acc=0.100 dead=0.999 erank=1.07 gns=2648.4012±1377.1986 wd=4.069
+    t=13 acc=0.100 dead=0.999 erank=1.07 gns=1837.4586±1200.4864 wd=4.069
+    t=14 acc=0.100 dead=0.999 erank=1.07 gns=nan±159667.7964 wd=4.069
+    t=15 acc=0.100 dead=0.999 erank=1.07 gns=2221.4211±1402.7182 wd=4.069
+    t=16 acc=0.100 dead=0.999 erank=1.07 gns=1573.0467±4333.9980 wd=4.077
+    t=17 acc=0.100 dead=0.999 erank=1.07 gns=nan±34665.6806 wd=4.073
+    t=18 acc=0.100 dead=0.999 erank=1.07 gns=2961.9055±11862.1272 wd=4.072
+    t=19 acc=0.100 dead=0.999 erank=1.07 gns=10658.5086±8648.7623 wd=4.076
+    t=20 acc=0.100 dead=0.999 erank=1.06 gns=3818.4655±2535.9862 wd=4.075
+  [seed 3] t_collapse=7  onsets={'effective_rank': 2, 'dead_unit_fraction': 3, 'weight_norm_drift': 3, 'gradient_noise_scale': 8}  leads={'effective_rank': 5, 'dead_unit_fraction': 4, 'weight_norm_drift': 4, 'gradient_noise_scale': -1}
+
+====================================================================
+SEED 4
+====================================================================
+  [seed 4] CE_init=2.3086 exp=2.3026 PASS
+    t= 1 acc=0.265 dead=0.722 erank=6.18 gns=120.1082±21.9996 wd=1.569
+    t= 2 acc=0.242 dead=0.868 erank=2.74 gns=99.2556±16.6080 wd=2.627
+    t= 3 acc=0.169 dead=0.852 erank=1.22 gns=169.6912±67.2441 wd=3.285
+    t= 4 acc=0.132 dead=0.954 erank=1.07 gns=nan±14216.7149 wd=3.711
+    t= 5 acc=0.100 dead=0.999 erank=1.04 gns=4265.6826±3635.4428 wd=3.719
+    t= 6 acc=0.100 dead=0.999 erank=1.04 gns=4235.0907±29930.7458 wd=3.719
+    t= 7 acc=0.100 dead=0.999 erank=1.03 gns=16145.5318±22880.6107 wd=3.659
+    t= 8 acc=0.100 dead=0.999 erank=1.03 gns=725.7331±767.7208 wd=3.676
+    t= 9 acc=0.100 dead=0.999 erank=1.03 gns=29175.9224±24499.3244 wd=3.676
+    t=10 acc=0.100 dead=0.999 erank=1.03 gns=1231.1417±2067.9693 wd=3.635
+    t=11 acc=0.100 dead=0.999 erank=1.03 gns=6125.3378±6715.8418 wd=3.663
+    t=12 acc=0.100 dead=0.999 erank=1.03 gns=13674.3025±6749.0769 wd=3.645
+    t=13 acc=0.100 dead=0.999 erank=1.02 gns=3279.3698±7550.1908 wd=3.645
+    t=14 acc=0.100 dead=0.999 erank=1.03 gns=1790.4780±1100.3792 wd=3.659
+    t=15 acc=0.100 dead=0.999 erank=1.03 gns=2322.7837±14604.4360 wd=3.659
+    t=16 acc=0.100 dead=0.999 erank=1.03 gns=1575.6517±1846.4210 wd=3.659
+    t=17 acc=0.100 dead=0.999 erank=1.03 gns=1894.1501±1368.7948 wd=3.659
+    t=18 acc=0.100 dead=0.999 erank=1.03 gns=1345.9302±603.8600 wd=3.660
+    t=19 acc=0.100 dead=0.999 erank=1.03 gns=3221.8970±21884.6315 wd=3.680
+    t=20 acc=0.100 dead=0.999 erank=1.03 gns=1814.3126±2349.6039 wd=3.682
+  [seed 4] t_collapse=3  onsets={'effective_rank': 2, 'dead_unit_fraction': 3, 'weight_norm_drift': 2, 'gradient_noise_scale': 4}  leads={'effective_rank': 1, 'dead_unit_fraction': 0, 'weight_norm_drift': 1, 'gradient_noise_scale': -1}
+
+====================================================================
+SEED 5
+====================================================================
+  [seed 5] CE_init=2.3007 exp=2.3026 PASS
+    t= 1 acc=0.275 dead=0.845 erank=6.09 gns=134.8068±27.4162 wd=1.717
+    t= 2 acc=0.267 dead=0.861 erank=2.48 gns=842.2721±290.6335 wd=2.308
+    t= 3 acc=0.253 dead=0.890 erank=2.80 gns=180.2087±39.1739 wd=3.143
+    t= 4 acc=0.198 dead=0.919 erank=2.06 gns=170.9386±61.8253 wd=3.680
+    t= 5 acc=0.165 dead=0.952 erank=1.25 gns=3854.9225±3013.0983 wd=4.150
+    t= 6 acc=0.100 dead=0.999 erank=1.07 gns=17933.1952±12154.6874 wd=4.073
+    t= 7 acc=0.100 dead=0.999 erank=1.06 gns=2245.4299±6622.2230 wd=4.064
+    t= 8 acc=0.100 dead=0.999 erank=1.06 gns=nan±14398.0496 wd=4.022
+    t= 9 acc=0.100 dead=0.999 erank=1.06 gns=2824.8743±47295.8815 wd=4.025
+    t=10 acc=0.100 dead=0.999 erank=1.05 gns=nan±16705.6057 wd=3.993
+    t=11 acc=0.100 dead=0.999 erank=1.05 gns=nan±10919.6006 wd=4.001
+    t=12 acc=0.100 dead=0.999 erank=1.05 gns=3116.7969±135782.7396 wd=4.003
+    t=13 acc=0.100 dead=0.999 erank=1.05 gns=12064.3856±11453.5645 wd=4.003
+    t=14 acc=0.100 dead=0.999 erank=1.05 gns=1432.5590±656.9112 wd=4.004
+    t=15 acc=0.100 dead=0.999 erank=1.05 gns=571.7297±177.0498 wd=3.994
+    t=16 acc=0.100 dead=0.999 erank=1.05 gns=nan±5832.9222 wd=3.995
+    t=17 acc=0.100 dead=0.999 erank=1.05 gns=nan±34805.0296 wd=3.997
+    t=18 acc=0.100 dead=0.999 erank=1.05 gns=1201.5710±1035.3138 wd=3.998
+    t=19 acc=0.100 dead=0.999 erank=1.05 gns=nan±39936.7545 wd=3.999
+    t=20 acc=0.100 dead=0.999 erank=1.05 gns=1952.2997±1818.2632 wd=4.013
+  [seed 5] t_collapse=5  onsets={'effective_rank': 2, 'dead_unit_fraction': 4, 'weight_norm_drift': 3, 'gradient_noise_scale': 4}  leads={'effective_rank': 3, 'dead_unit_fraction': 1, 'weight_norm_drift': 2, 'gradient_noise_scale': 1}
+
+====================================================================
+SEED 6
+====================================================================
+  [seed 6] CE_init=2.3055 exp=2.3026 PASS
+    t= 1 acc=0.275 dead=0.872 erank=5.87 gns=218.2175±29.9302 wd=1.541
+    t= 2 acc=0.186 dead=0.903 erank=1.27 gns=86.0162±29.4856 wd=1.795
+    t= 3 acc=0.204 dead=0.851 erank=1.59 gns=401.8158±129.4060 wd=2.147
+    t= 4 acc=0.182 dead=0.917 erank=1.65 gns=774.2979±393.6062 wd=2.708
+    t= 5 acc=0.100 dead=0.998 erank=1.15 gns=1137.5692±731.6122 wd=2.698
+    t= 6 acc=0.100 dead=0.998 erank=1.09 gns=nan±11391.1360 wd=2.703
+    t= 7 acc=0.100 dead=0.998 erank=1.10 gns=nan±4801.5973 wd=2.719
+    t= 8 acc=0.179 dead=0.925 erank=1.69 gns=238.3247±242.7084 wd=2.812
+    t= 9 acc=0.163 dead=0.961 erank=1.45 gns=2592.7340±19881.8268 wd=3.070
+    t=10 acc=0.161 dead=0.961 erank=1.37 gns=92.1295±33.0705 wd=3.308
+    t=11 acc=0.175 dead=0.996 erank=1.59 gns=94.8217±54.0045 wd=3.590
+    t=12 acc=0.182 dead=0.995 erank=1.61 gns=30.6734±5.2605 wd=3.957
+    t=13 acc=0.180 dead=0.996 erank=1.65 gns=291.6823±139.4073 wd=5.148
+    t=14 acc=0.163 dead=0.998 erank=1.50 gns=384.1908±526.5633 wd=6.487
+    t=15 acc=0.188 dead=0.998 erank=1.54 gns=308.9767±139.4947 wd=7.699
+    t=16 acc=0.170 dead=0.998 erank=1.48 gns=385.8537±224.6067 wd=8.603
+    t=17 acc=0.163 dead=0.998 erank=1.48 gns=121.6918±35.2349 wd=9.362
+    t=18 acc=0.179 dead=0.995 erank=1.52 gns=62.1673±13.5015 wd=10.035
+    t=19 acc=0.184 dead=0.996 erank=1.54 gns=318.5751±163.5178 wd=10.598
+    t=20 acc=0.156 dead=0.998 erank=1.55 gns=550.6805±132.1220 wd=11.009
+  [seed 6] t_collapse=4  onsets={'effective_rank': 1, 'dead_unit_fraction': 4, 'weight_norm_drift': 14, 'gradient_noise_scale': 3}  leads={'effective_rank': 3, 'dead_unit_fraction': 0, 'weight_norm_drift': -10, 'gradient_noise_scale': 1}
+
+====================================================================
+SEED 7
+====================================================================
+  [seed 7] CE_init=2.3053 exp=2.3026 PASS
+    t= 1 acc=0.286 dead=0.782 erank=5.05 gns=245.8122±42.9240 wd=1.849
+    t= 2 acc=0.261 dead=0.836 erank=3.32 gns=52.6503±9.4107 wd=3.134
+    t= 3 acc=0.225 dead=0.881 erank=2.40 gns=89.0254±11.5853 wd=4.171
+    t= 4 acc=0.199 dead=0.877 erank=2.11 gns=63.2609±12.9664 wd=4.451
+    t= 5 acc=0.217 dead=0.930 erank=1.74 gns=91.6039±20.9119 wd=4.824
+    t= 6 acc=0.173 dead=0.947 erank=1.99 gns=75.1524±17.6603 wd=4.832
+    t= 7 acc=0.183 dead=0.960 erank=1.41 gns=3032.9150±3027.0026 wd=5.026
+    t= 8 acc=0.162 dead=0.808 erank=1.20 gns=125.8820±18.2477 wd=5.253
+    t= 9 acc=0.102 dead=0.998 erank=1.09 gns=2049.6232±1156.0122 wd=5.209
+    t=10 acc=0.100 dead=0.999 erank=1.05 gns=5263.3440±4531.4575 wd=5.215
+    t=11 acc=0.100 dead=0.999 erank=1.04 gns=1692.4532±1458.9106 wd=5.212
+    t=12 acc=0.100 dead=0.999 erank=1.04 gns=nan±49469.2666 wd=5.192
+    t=13 acc=0.100 dead=0.999 erank=1.04 gns=3293.6597±16709.6530 wd=5.192
+    t=14 acc=0.100 dead=0.999 erank=1.04 gns=5023.6986±2797.1746 wd=5.192
+    t=15 acc=0.100 dead=0.999 erank=1.04 gns=2402.3092±3285.2370 wd=5.192
+    t=16 acc=0.100 dead=0.999 erank=1.04 gns=2994.3503±2660.1889 wd=5.189
+    t=17 acc=0.100 dead=0.999 erank=1.04 gns=1857.2726±2159.8797 wd=5.188
+    t=18 acc=0.100 dead=0.999 erank=1.03 gns=1655.2717±1592.4145 wd=5.188
+    t=19 acc=0.100 dead=0.999 erank=1.04 gns=7095.3293±4092.1130 wd=5.191
+    t=20 acc=0.100 dead=0.999 erank=1.04 gns=2027.9700±2881.6816 wd=5.177
+  [seed 7] t_collapse=8  onsets={'effective_rank': 2, 'dead_unit_fraction': 4, 'weight_norm_drift': 2, 'gradient_noise_scale': 6}  leads={'effective_rank': 6, 'dead_unit_fraction': 4, 'weight_norm_drift': 6, 'gradient_noise_scale': 2}
+
+Collapse: 8/8 seeds
+
+====================================================================
+DONE in 3.8 min
+Collapse: 8/8 seeds, t_collapse per seed: [9, 8, 9, 7, 3, 5, 4, 8]
+Precedence order: ['effective_rank', 'dead_unit_fraction', 'weight_norm_drift', 'gradient_noise_scale']
+  effective_rank                 lead=+4.750  CI=[+3.250,+6.125]  n=8
+  dead_unit_fraction             lead=+3.375  CI=[+1.625,+5.000]  n=8
+  weight_norm_drift              lead=+2.000  CI=[-1.750,+4.500]  n=8
+  gradient_noise_scale           lead=+0.500  CI=[-1.003,+2.375]  n=8
+GNS typical within-task SE: 1389.9584
+GNS still lags: True
+Reliably separated pairs (CI non-overlapping): [['effective_rank', 'gradient_noise_scale']]
+
+--- RESULTS.json ---
+{
+  "status": "SUCCESS",
+  "dataset": "cifar10_permuted",
+  "n_seeds": 8,
+  "n_tasks": 20,
+  "steps_per_task": 1000,
+  "gns_samples_per_task": 30,
+  "scale": "full",
+  "collapse_frac": 1.0,
+  "n_seeds_collapsed": 8,
+  "t_collapse_per_seed": [
+    9,
+    8,
+    9,
+    7,
+    3,
+    5,
+    4,
+    8
+  ],
+  "lead_times": {
+    "effective_rank": {
+      "mean": 4.75,
+      "ci95": [
+        3.25,
+        6.125
+      ],
+      "per_seed": [
+        7,
+        6,
+        7,
+        5,
+        1,
+        3,
+        3,
+        6
+      ],
+      "n_valid": 8
+    },
+    "dead_unit_fraction": {
+      "mean": 3.375,
+      "ci95": [
+        1.625,
+        5.0
+      ],
+      "per_seed": [
+        6,
+        5,
+        7,
+        4,
+        0,
+        1,
+        0,
+        4
+      ],
+      "n_valid": 8
+    },
+    "weight_norm_drift": {
+      "mean": 2.0,
+      "ci95": [
+        -1.75,
+        4.5
+      ],
+      "per_seed": [
+        4,
+        4,
+        5,
+        4,
+        1,
+        2,
+        -10,
+        6
+      ],
+      "n_valid": 8
+    },
+    "gradient_noise_scale": {
+      "mean": 0.5,
+      "ci95": [
+        -1.003,
+        2.375
+      ],
+      "per_seed": [
+        6,
+        -3,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        2
+      ],
+      "n_valid": 8
+    }
+  },
+  "precedence_order": [
+    "effective_rank",
+    "dead_unit_fraction",
+    "weight_norm_drift",
+    "gradient_noise_scale"
+  ],
+  "gns_still_lags": true,
+  "gns_within_task_se_typical": 1389.958401,
+  "reliably_separated_pairs": [
+    [
+      "effective_rank",
+      "gradient_noise_scale"
+    ]
+  ],
+  "onset_fix": {
+    "method": "window-2 moving-average + 50% range crossing with persistence",
+    "old_method": "isotonic (PAVA) monotone smoothing \u2014 biased against erratic signals"
+  },
+  "gns_fix": {
+    "n_samples": 30,
+    "estimator": "McCandlish B_simple = S/G, bias-corrected, bootstrap SE",
+    "old_n_samples": 2
+  },
+  "per_seed_data": [
+    {
+      "seed": 0,
+      "t_collapse": 9,
+      "lead_times": {
+        "effective_rank": 7,
+        "dead_unit_fraction": 6,
+        "weight_norm_drift": 4,
+        "gradient_noise_scale": 6
+      },
+      "onset_tasks": {
+        "effective_rank": 2,
+        "dead_unit_fraction": 3,
+        "weight_norm_drift": 5,
+        "gradient_noise_scale": 3
+      },
+      "gns_within_task_se": [
+        21.9125047726161,
+        19.62585503690912,
+        34985.349820865915,
+        5144.877829654463,
+        6375.366916149175,
+        120.45368541234856,
+        474.0052431318408,
+        20.795184516270595,
+        58.76243507616102,
+        12269.973245308865,
+        560.4307660734058,
+        11719.283837928322,
+        3895.7526967701738,
+        3829.1835515391294,
+        1072.3376196350355,
+        10051.769771984751,
+        11360.299893601868,
+        37860.779745156266,
+        11065.19962425554,
+        1350.3695202840042
+      ]
+    },
+    {
+      "seed": 1,
+      "t_collapse": 8,
+      "lead_times": {
+        "effective_rank": 6,
+        "dead_unit_fraction": 5,
+        "weight_norm_drift": 4,
+        "gradient_noise_scale": -3
+      },
+      "onset_tasks": {
+        "effective_rank": 2,
+        "dead_unit_fraction": 3,
+        "weight_norm_drift": 4,
+        "gradient_noise_scale": 11
+      },
+      "gns_within_task_se": [
+        56.338432482531125,
+        26.2261206473456,
+        288.7342717344703,
+        31.327541664487853,
+        34.524134836994634,
+        21.046873765349034,
+        16.034051442164383,
+        61.18466259864628,
+        28363.498236637966,
+        21965.84069110842,
+        413.6239472917634,
+        5373.832588212552,
+        850.0058662335155,
+        6996.069756674905,
+        14896.316562883607,
+        339.12229349045714,
+        12130.910377473529,
+        54266.27634490084,
+        466.4159173580865,
+        13217.099478759801
+      ]
+    },
+    {
+      "seed": 2,
+      "t_collapse": 9,
+      "lead_times": {
+        "effective_rank": 7,
+        "dead_unit_fraction": 7,
+        "weight_norm_drift": 5,
+        "gradient_noise_scale": -1
+      },
+      "onset_tasks": {
+        "effective_rank": 2,
+        "dead_unit_fraction": 2,
+        "weight_norm_drift": 4,
+        "gradient_noise_scale": 10
+      },
+      "gns_within_task_se": [
+        9.71329578964305,
+        51.692231166422914,
+        42.81479618180745,
+        94.8816319863883,
+        135.57257165135968,
+        15.886327408549857,
+        578.9322142240064,
+        66.70777739302824,
+        34.12886547331219,
+        548.0144568517036,
+        9213.611076692967,
+        1914.5345800762514,
+        20135.602203934726,
+        2472.715761404081,
+        1430.5371519230819,
+        708.5937950955832,
+        1671.0021809882483,
+        2248.0628256936247,
+        3718.9588788877636,
+        32482.84010405026
+      ]
+    },
+    {
+      "seed": 3,
+      "t_collapse": 7,
+      "lead_times": {
+        "effective_rank": 5,
+        "dead_unit_fraction": 4,
+        "weight_norm_drift": 4,
+        "gradient_noise_scale": -1
+      },
+      "onset_tasks": {
+        "effective_rank": 2,
+        "dead_unit_fraction": 3,
+        "weight_norm_drift": 3,
+        "gradient_noise_scale": 8
+      },
+      "gns_within_task_se": [
+        30.97097749591805,
+        52.58518496754845,
+        18.31801440912224,
+        283.58953575272454,
+        69.5726098612515,
+        84.0419772964783,
+        45.95596461454363,
+        3902.249707031407,
+        22736.979857157614,
+        9079.111125515661,
+        5589.442419163919,
+        1377.1986320259946,
+        1200.486372078726,
+        159667.79643138012,
+        1402.7181691819233,
+        4333.99799356825,
+        34665.68061012774,
+        11862.127192672286,
+        8648.76234679285,
+        2535.9861800224944
+      ]
+    },
+    {
+      "seed": 4,
+      "t_collapse": 3,
+      "lead_times": {
+        "effective_rank": 1,
+        "dead_unit_fraction": 0,
+        "weight_norm_drift": 1,
+        "gradient_noise_scale": -1
+      },
+      "onset_tasks": {
+        "effective_rank": 2,
+        "dead_unit_fraction": 3,
+        "weight_norm_drift": 2,
+        "gradient_noise_scale": 4
+      },
+      "gns_within_task_se": [
+        21.999634135391613,
+        16.607951351314824,
+        67.24406479902494,
+        14216.714857538866,
+        3635.4428276818344,
+        29930.74579031725,
+        22880.610730567754,
+        767.7208490598683,
+        24499.324352470856,
+        2067.9693023190534,
+        6715.841844788384,
+        6749.076948139361,
+        7550.190763603758,
+        1100.3791560060945,
+        14604.435962734971,
+        1846.4209619231847,
+        1368.794753171674,
+        603.8599590658862,
+        21884.63146405355,
+        2349.603913439758
+      ]
+    },
+    {
+      "seed": 5,
+      "t_collapse": 5,
+      "lead_times": {
+        "effective_rank": 3,
+        "dead_unit_fraction": 1,
+        "weight_norm_drift": 2,
+        "gradient_noise_scale": 1
+      },
+      "onset_tasks": {
+        "effective_rank": 2,
+        "dead_unit_fraction": 4,
+        "weight_norm_drift": 3,
+        "gradient_noise_scale": 4
+      },
+      "gns_within_task_se": [
+        27.41624007933697,
+        290.6335041272859,
+        39.17394574115596,
+        61.825294235167114,
+        3013.098272391406,
+        12154.687352975528,
+        6622.223033603393,
+        14398.04959424822,
+        47295.88153657196,
+        16705.605738439892,
+        10919.600628129836,
+        135782.73964261217,
+        11453.564466067111,
+        656.911214035943,
+        177.04982826737222,
+        5832.922195942594,
+        34805.0295680004,
+        1035.31375113567,
+        39936.7545332819,
+        1818.263173881762
+      ]
+    },
+    {
+      "seed": 6,
+      "t_collapse": 4,
+      "lead_times": {
+        "effective_rank": 3,
+        "dead_unit_fraction": 0,
+        "weight_norm_drift": -10,
+        "gradient_noise_scale": 1
+      },
+      "onset_tasks": {
+        "effective_rank": 1,
+        "dead_unit_fraction": 4,
+        "weight_norm_drift": 14,
+        "gradient_noise_scale": 3
+      },
+      "gns_within_task_se": [
+        29.930171559612614,
+        29.485598000925798,
+        129.40599498711353,
+        393.6062207029134,
+        731.6121986194386,
+        11391.136011743016,
+        4801.597348336308,
+        242.70841246430663,
+        19881.826845031228,
+        33.07046305278268,
+        54.00445246188344,
+        5.260499323731781,
+        139.4073486819267,
+        526.5632536814109,
+        139.49472145634698,
+        224.60672933661178,
+        35.23488637581981,
+        13.501468856963708,
+        163.51781926188593,
+        132.12196874787082
+      ]
+    },
+    {
+      "seed": 7,
+      "t_collapse": 8,
+      "lead_times": {
+        "effective_rank": 6,
+        "dead_unit_fraction": 4,
+        "weight_norm_drift": 6,
+        "gradient_noise_scale": 2
+      },
+      "onset_tasks": {
+        "effective_rank": 2,
+        "dead_unit_fraction": 4,
+        "weight_norm_drift": 2,
+        "gradient_noise_scale": 6
+      },
+      "gns_within_task_se": [
+        42.92397094816959,
+        9.410677482844992,
+        11.585312576908766,
+        12.966410083340454,
+        20.91194832101046,
+        17.660335865204008,
+        3027.002637491335,
+        18.24767976196889,
+        1156.0122301050594,
+        4531.457514148164,
+        1458.9106105134254,
+        49469.266629320846,
+        16709.65300630843,
+        2797.174634841146,
+        3285.236977075677,
+        2660.1889162041184,
+        2159.879664698477,
+        1592.4145474367574,
+        4092.1130264195517,
+        2881.6816319373074
+      ]
+    }
+  ],
+  "metrics": {
+    "wall_clock_sec": 227.2,
+    "wall_clock_min": 3.79
+  },
+  "subject_executed": "3-layer MLP (400-400 ReLU), SGD+momentum lr=0.05 mom=0.9 wd=0.0, BatchNorm=OFF, Permuted CIFAR-10 (20 tasks, shared 10-class head, never reset), 8 seeds \u00d7 1000 steps/task. GNS: 30 samples/measurement (was 2), bias-corrected B_simple. Onset: window-2 MA + 50%% range crossing with persistence (not isotonic).",
+  "notes": "EXPERIMENT.md specified Split-CIFAR-100 (10 tasks \u00d7 5 classes) but prior work (precedence round) confirmed 0/8 collapse in task-incremental Split-CIFAR-100 (features transfer, accuracy stays 47-73%). Proven collapse regime (Permuted CIFAR-10, SGD+BN-OFF, shared head) used instead to enable trustworthy GNS lead-time measurement. Regime finding (Adam/BN prevent collapse) unchanged from precedence round. With FIXED GNS (30 samples) and FIXED onset (non-isotonic): GNS lags effective_rank (gns_mean=0.500 vs er_mean=4.750). GNS within-task SE (typical): 1389.9584."
+}

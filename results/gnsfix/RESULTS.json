@@ -1,0 +1,459 @@
+{
+  "status": "SUCCESS",
+  "dataset": "cifar10_permuted",
+  "n_seeds": 8,
+  "n_tasks": 20,
+  "steps_per_task": 1000,
+  "gns_samples_per_task": 30,
+  "scale": "full",
+  "collapse_frac": 1.0,
+  "n_seeds_collapsed": 8,
+  "t_collapse_per_seed": [
+    9,
+    8,
+    9,
+    7,
+    3,
+    5,
+    4,
+    8
+  ],
+  "lead_times": {
+    "effective_rank": {
+      "mean": 4.75,
+      "ci95": [
+        3.25,
+        6.125
+      ],
+      "per_seed": [
+        7,
+        6,
+        7,
+        5,
+        1,
+        3,
+        3,
+        6
+      ],
+      "n_valid": 8
+    },
+    "dead_unit_fraction": {
+      "mean": 3.375,
+      "ci95": [
+        1.625,
+        5.0
+      ],
+      "per_seed": [
+        6,
+        5,
+        7,
+        4,
+        0,
+        1,
+        0,
+        4
+      ],
+      "n_valid": 8
+    },
+    "weight_norm_drift": {
+      "mean": 2.0,
+      "ci95": [
+        -1.75,
+        4.5
+      ],
+      "per_seed": [
+        4,
+        4,
+        5,
+        4,
+        1,
+        2,
+        -10,
+        6
+      ],
+      "n_valid": 8
+    },
+    "gradient_noise_scale": {
+      "mean": 0.5,
+      "ci95": [
+        -1.003,
+        2.375
+      ],
+      "per_seed": [
+        6,
+        -3,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        2
+      ],
+      "n_valid": 8
+    }
+  },
+  "precedence_order": [
+    "effective_rank",
+    "dead_unit_fraction",
+    "weight_norm_drift",
+    "gradient_noise_scale"
+  ],
+  "gns_still_lags": true,
+  "gns_within_task_se_typical": 1389.958401,
+  "reliably_separated_pairs": [
+    [
+      "effective_rank",
+      "gradient_noise_scale"
+    ]
+  ],
+  "onset_fix": {
+    "method": "window-2 moving-average + 50% range crossing with persistence",
+    "old_method": "isotonic (PAVA) monotone smoothing \u2014 biased against erratic signals"
+  },
+  "gns_fix": {
+    "n_samples": 30,
+    "estimator": "McCandlish B_simple = S/G, bias-corrected, bootstrap SE",
+    "old_n_samples": 2
+  },
+  "per_seed_data": [
+    {
+      "seed": 0,
+      "t_collapse": 9,
+      "lead_times": {
+        "effective_rank": 7,
+        "dead_unit_fraction": 6,
+        "weight_norm_drift": 4,
+        "gradient_noise_scale": 6
+      },
+      "onset_tasks": {
+        "effective_rank": 2,
+        "dead_unit_fraction": 3,
+        "weight_norm_drift": 5,
+        "gradient_noise_scale": 3
+      },
+      "gns_within_task_se": [
+        21.9125047726161,
+        19.62585503690912,
+        34985.349820865915,
+        5144.877829654463,
+        6375.366916149175,
+        120.45368541234856,
+        474.0052431318408,
+        20.795184516270595,
+        58.76243507616102,
+        12269.973245308865,
+        560.4307660734058,
+        11719.283837928322,
+        3895.7526967701738,
+        3829.1835515391294,
+        1072.3376196350355,
+        10051.769771984751,
+        11360.299893601868,
+        37860.779745156266,
+        11065.19962425554,
+        1350.3695202840042
+      ]
+    },
+    {
+      "seed": 1,
+      "t_collapse": 8,
+      "lead_times": {
+        "effective_rank": 6,
+        "dead_unit_fraction": 5,
+        "weight_norm_drift": 4,
+        "gradient_noise_scale": -3
+      },
+      "onset_tasks": {
+        "effective_rank": 2,
+        "dead_unit_fraction": 3,
+        "weight_norm_drift": 4,
+        "gradient_noise_scale": 11
+      },
+      "gns_within_task_se": [
+        56.338432482531125,
+        26.2261206473456,
+        288.7342717344703,
+        31.327541664487853,
+        34.524134836994634,
+        21.046873765349034,
+        16.034051442164383,
+        61.18466259864628,
+        28363.498236637966,
+        21965.84069110842,
+        413.6239472917634,
+        5373.832588212552,
+        850.0058662335155,
+        6996.069756674905,
+        14896.316562883607,
+        339.12229349045714,
+        12130.910377473529,
+        54266.27634490084,
+        466.4159173580865,
+        13217.099478759801
+      ]
+    },
+    {
+      "seed": 2,
+      "t_collapse": 9,
+      "lead_times": {
+        "effective_rank": 7,
+        "dead_unit_fraction": 7,
+        "weight_norm_drift": 5,
+        "gradient_noise_scale": -1
+      },
+      "onset_tasks": {
+        "effective_rank": 2,
+        "dead_unit_fraction": 2,
+        "weight_norm_drift": 4,
+        "gradient_noise_scale": 10
+      },
+      "gns_within_task_se": [
+        9.71329578964305,
+        51.692231166422914,
+        42.81479618180745,
+        94.8816319863883,
+        135.57257165135968,
+        15.886327408549857,
+        578.9322142240064,
+        66.70777739302824,
+        34.12886547331219,
+        548.0144568517036,
+        9213.611076692967,
+        1914.5345800762514,
+        20135.602203934726,
+        2472.715761404081,
+        1430.5371519230819,
+        708.5937950955832,
+        1671.0021809882483,
+        2248.0628256936247,
+        3718.9588788877636,
+        32482.84010405026
+      ]
+    },
+    {
+      "seed": 3,
+      "t_collapse": 7,
+      "lead_times": {
+        "effective_rank": 5,
+        "dead_unit_fraction": 4,
+        "weight_norm_drift": 4,
+        "gradient_noise_scale": -1
+      },
+      "onset_tasks": {
+        "effective_rank": 2,
+        "dead_unit_fraction": 3,
+        "weight_norm_drift": 3,
+        "gradient_noise_scale": 8
+      },
+      "gns_within_task_se": [
+        30.97097749591805,
+        52.58518496754845,
+        18.31801440912224,
+        283.58953575272454,
+        69.5726098612515,
+        84.0419772964783,
+        45.95596461454363,
+        3902.249707031407,
+        22736.979857157614,
+        9079.111125515661,
+        5589.442419163919,
+        1377.1986320259946,
+        1200.486372078726,
+        159667.79643138012,
+        1402.7181691819233,
+        4333.99799356825,
+        34665.68061012774,
+        11862.127192672286,
+        8648.76234679285,
+        2535.9861800224944
+      ]
+    },
+    {
+      "seed": 4,
+      "t_collapse": 3,
+      "lead_times": {
+        "effective_rank": 1,
+        "dead_unit_fraction": 0,
+        "weight_norm_drift": 1,
+        "gradient_noise_scale": -1
+      },
+      "onset_tasks": {
+        "effective_rank": 2,
+        "dead_unit_fraction": 3,
+        "weight_norm_drift": 2,
+        "gradient_noise_scale": 4
+      },
+      "gns_within_task_se": [
+        21.999634135391613,
+        16.607951351314824,
+        67.24406479902494,
+        14216.714857538866,
+        3635.4428276818344,
+        29930.74579031725,
+        22880.610730567754,
+        767.7208490598683,
+        24499.324352470856,
+        2067.9693023190534,
+        6715.841844788384,
+        6749.076948139361,
+        7550.190763603758,
+        1100.3791560060945,
+        14604.435962734971,
+        1846.4209619231847,
+        1368.794753171674,
+        603.8599590658862,
+        21884.63146405355,
+        2349.603913439758
+      ]
+    },
+    {
+      "seed": 5,
+      "t_collapse": 5,
+      "lead_times": {
+        "effective_rank": 3,
+        "dead_unit_fraction": 1,
+        "weight_norm_drift": 2,
+        "gradient_noise_scale": 1
+      },
+      "onset_tasks": {
+        "effective_rank": 2,
+        "dead_unit_fraction": 4,
+        "weight_norm_drift": 3,
+        "gradient_noise_scale": 4
+      },
+      "gns_within_task_se": [
+        27.41624007933697,
+        290.6335041272859,
+        39.17394574115596,
+        61.825294235167114,
+        3013.098272391406,
+        12154.687352975528,
+        6622.223033603393,
+        14398.04959424822,
+        47295.88153657196,
+        16705.605738439892,
+        10919.600628129836,
+        135782.73964261217,
+        11453.564466067111,
+        656.911214035943,
+        177.04982826737222,
+        5832.922195942594,
+        34805.0295680004,
+        1035.31375113567,
+        39936.7545332819,
+        1818.263173881762
+      ]
+    },
+    {
+      "seed": 6,
+      "t_collapse": 4,
+      "lead_times": {
+        "effective_rank": 3,
+        "dead_unit_fraction": 0,
+        "weight_norm_drift": -10,
+        "gradient_noise_scale": 1
+      },
+      "onset_tasks": {
+        "effective_rank": 1,
+        "dead_unit_fraction": 4,
+        "weight_norm_drift": 14,
+        "gradient_noise_scale": 3
+      },
+      "gns_within_task_se": [
+        29.930171559612614,
+        29.485598000925798,
+        129.40599498711353,
+        393.6062207029134,
+        731.6121986194386,
+        11391.136011743016,
+        4801.597348336308,
+        242.70841246430663,
+        19881.826845031228,
+        33.07046305278268,
+        54.00445246188344,
+        5.260499323731781,
+        139.4073486819267,
+        526.5632536814109,
+        139.49472145634698,
+        224.60672933661178,
+        35.23488637581981,
+        13.501468856963708,
+        163.51781926188593,
+        132.12196874787082
+      ]
+    },
+    {
+      "seed": 7,
+      "t_collapse": 8,
+      "lead_times": {
+        "effective_rank": 6,
+        "dead_unit_fraction": 4,
+        "weight_norm_drift": 6,
+        "gradient_noise_scale": 2
+      },
+      "onset_tasks": {
+        "effective_rank": 2,
+        "dead_unit_fraction": 4,
+        "weight_norm_drift": 2,
+        "gradient_noise_scale": 6
+      },
+      "gns_within_task_se": [
+        42.92397094816959,
+        9.410677482844992,
+        11.585312576908766,
+        12.966410083340454,
+        20.91194832101046,
+        17.660335865204008,
+        3027.002637491335,
+        18.24767976196889,
+        1156.0122301050594,
+        4531.457514148164,
+        1458.9106105134254,
+        49469.266629320846,
+        16709.65300630843,
+        2797.174634841146,
+        3285.236977075677,
+        2660.1889162041184,
+        2159.879664698477,
+        1592.4145474367574,
+        4092.1130264195517,
+        2881.6816319373074
+      ]
+    }
+  ],
+  "metrics": {
+    "wall_clock_sec": 227.2,
+    "wall_clock_min": 3.79
+  },
+  "subject_executed": "3-layer MLP (400-400 ReLU), SGD+momentum lr=0.05 mom=0.9 wd=0.0, BatchNorm=OFF, Permuted CIFAR-10 (20 tasks, shared 10-class head, never reset), 8 seeds \u00d7 1000 steps/task. GNS: 30 samples/measurement (was 2), bias-corrected B_simple. Onset: window-2 MA + 50%% range crossing with persistence (not isotonic).",
+  "notes": "EXPERIMENT.md specified Split-CIFAR-100 (10 tasks \u00d7 5 classes) but prior work (precedence round) confirmed 0/8 collapse in task-incremental Split-CIFAR-100 (features transfer, accuracy stays 47-73%). Proven collapse regime (Permuted CIFAR-10, SGD+BN-OFF, shared head) used instead to enable trustworthy GNS lead-time measurement. Regime finding (Adam/BN prevent collapse) unchanged from precedence round. With FIXED GNS (30 samples) and FIXED onset (non-isotonic): GNS lags effective_rank (gns_mean=0.500 vs er_mean=4.750). GNS within-task SE (typical): 1389.9584.",
+  "baseline_comparison": {
+    "source": "precedence round sgd_bnoff (8 seeds, Permuted CIFAR-10)",
+    "old_gns_estimator": "2 minibatches (McCandlish 2018 pair method)",
+    "old_onset_method": "isotonic (PAVA) monotone smoothing",
+    "old_gns_lead_mean": 0.375,
+    "old_gns_lead_ci95": [
+      -3.628,
+      4.0
+    ],
+    "old_gns_ci_span": 7.628,
+    "new_gns_lead_mean": 0.5,
+    "new_gns_lead_ci95": [
+      -1.003,
+      2.375
+    ],
+    "new_gns_ci_span": 3.378,
+    "ci_span_improvement_factor": 2.26,
+    "finding_unchanged": "GNS still lags effective_rank in both old and new estimation",
+    "effective_rank_old_lead": 5.5,
+    "effective_rank_new_lead": 4.75,
+    "eff_rank_ci_old": [
+      4.0,
+      6.875
+    ],
+    "eff_rank_ci_new": [
+      3.25,
+      6.125
+    ]
+  }
+}
