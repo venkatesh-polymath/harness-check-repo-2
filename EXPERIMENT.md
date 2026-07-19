@@ -1,32 +1,34 @@
-# EXPERIMENT BRIEF — round gns200 (full)
+# EXPERIMENT BRIEF — round closeloop (full)
 
 ## THIS ROUND (do exactly this)
-CONSOLIDATION run — one authoritative, reviewer-proof precedence measurement. Real data at /opt/datasets (download=False, NEVER synthetic, ABORT if missing). Fix every validity concern from review:
+CLOSE-THE-LOOP EXPERIMENT — turn the leading indicator into a CAPABILITY. We showed effective rank leads plasticity collapse by ~4.75 tasks. Now USE that early warning: trigger an intervention when effective rank crosses the alarm threshold, and show it PREVENTS collapse better + more efficiently than a fixed-schedule reset. This is the payoff that converts an observation into a capability.
 
-SETUP: 3-layer MLP (400-400, ReLU), SGD+momentum, BatchNorm OFF, Split-CIFAR-100 (10 tasks x 5 classes), 8 seeds, no repair — the collapse regime. IMPORTANT lr sanity: use a learning rate that does NOT cause dying-ReLU at initialization; VERIFY by measuring dead-unit fraction at INIT (before any training) — it must be low (< ~15%). If lr=0.01 gives high init dead-fraction, tune lr down (e.g. 3e-3) until init is healthy, and report the lr used. The point is that plasticity is LOST over the task stream, not broken at init.
+SETUP (fix prior confounds): 3-layer MLP (400-400, ReLU), SGD+momentum, BatchNorm OFF, Split-CIFAR-100 (10 tasks x 5 classes), real data at /opt/datasets (download=False, NEVER synthetic, ABORT if missing). IMPORTANT: use MORE steps/task than before — >=300 steps/task (reviewers flagged 50 steps as too sparse / dying-ReLU confound); verify dead-unit fraction at INIT is < ~15% (report dead_at_init). 8 seeds (10 if time). Same task splits across arms (paired).
 
-FOUR OBSERVABLES every task + at init: dead_unit_fraction, effective_rank (report the TRUE value — effective rank exp(H(singular values)) is >= 1 by definition; NEVER report 0.0; report the actual collapsed value e.g. ~1.0-2.0), gradient_noise_scale, weight_norm_drift. Plus new-task accuracy.
+FOUR ARMS (identical everything except the reset POLICY):
+1. no_repair — vanilla, no reset (the collapsing floor).
+2. fixed_reset — reset the lowest-utility units on a FIXED cadence (e.g. every task), standard CBP-style, utility = |out weight| x mean activation. Count total resets.
+3. erank_triggered (OURS) — monitor effective rank of penultimate activations each task; when erank drops below an ALARM threshold (the early-warning level that precedes collapse), fire a targeted reset of the lowest-utility units. Resets fire ONLY when the alarm trips. Count total resets + WHEN they fired.
+4. random_time (control) — fire the SAME NUMBER of resets as erank_triggered but at RANDOM tasks (to isolate whether the TIMING from the leading indicator matters, not just the count).
 
-FIXES:
-1. GNS with B >= 200 gradient samples per task (McCandlish B_simple) — reviewers showed B=30 is insufficient (CI ~3.4 tasks). Report the per-task within-task standard error; target GNS lead-time CI resolution ~+/-1 task.
-2. Onset detector applied IDENTICALLY to all four observables: short moving-average smooth (window 2), fire = first task crossing 50% of [init -> final] range and staying; do NOT use monotone/isotonic smoothing that penalizes non-monotone GNS.
-3. init dead-unit sanity reported explicitly (dead_at_init).
+DELIVERABLES (the capability claims):
+1. Does erank_triggered PREVENT/DELAY collapse? mean final-few-tasks accuracy per arm +/- 95% CI over seeds. Target: erank_triggered >> no_repair floor, and >= fixed_reset.
+2. EFFICIENCY: does erank_triggered use FEWER resets than fixed_reset for equal-or-better accuracy? Report resets_fired per arm.
+3. TIMING matters: does erank_triggered beat random_time (same reset count, wrong timing)? paired diff + CI + p. If yes, the leading indicator's TIMING carries the benefit — the core capability claim.
 
-DELIVERABLE: per observable, mean lead time +/- 95% CI over 8 seeds, computed from THIS run only (one consistent set of numbers — no mixing with other runs). Which observables reliably lead (CI > 0)? Does GNS lag or lead with B>=200?
+EXECUTION: ONE run_closeloop.py, single BLOCKING call `python run_closeloop.py 2>&1 | tee results/closeloop/run.log`, WAIT. 4 arms x 8 seeds x 10 tasks x >=300 steps, MLP = cheap; < 70 min. Write RESULTS.json incrementally + finalize.
 
-EXECUTION: ONE run_gns200.py, single BLOCKING call `python run_gns200.py 2>&1 | tee results/gns200/run.log`, WAIT. B=200 grad samples is the cost; still cheap on MLP. < 60 min. Write RESULTS.json incrementally + finalize.
-
-OUTPUT results/gns200/RESULTS.json status:"DONE":
-{"status":"DONE","dataset":"cifar100_split","n_seeds":8,"lr_used":..,"gns_B":<>=200>,
- "dead_at_init":.., "collapse_reproduced":true/false,
- "lead_times":{"effective_rank":{"mean":..,"ci95":[..]},"dead_unit_fraction":{...},"weight_norm_drift":{...},"gradient_noise_scale":{...}},
- "precedence_order":[..], "reliable_leaders":["obs with CI>0"], "gns_leads_or_lags":"leads|lags|inconclusive",
- "erank_at_init":.., "erank_at_collapse":.., "notes":"authoritative single-run precedence; all validity concerns addressed."}
+OUTPUT results/closeloop/RESULTS.json status:"DONE":
+{"status":"DONE","dataset":"cifar100_split","n_seeds":8,"steps_per_task":>=300,"dead_at_init":..,
+ "arms":{"no_repair":{"mean_acc":..,"std":..,"resets":0},"fixed_reset":{"mean_acc":..,"std":..,"resets":..},"erank_triggered":{"mean_acc":..,"std":..,"resets":..,"reset_tasks":[..]},"random_time":{"mean_acc":..,"std":..,"resets":..}},
+ "prevents_collapse": true/false, "triggered_vs_floor_pp":.., "triggered_vs_fixed_pp":{"mean":..,"ci95":[..]}, "triggered_vs_random_pp":{"mean":..,"ci95":[..],"p_one_sided":..,"timing_matters":true/false},
+ "efficiency":{"triggered_resets":..,"fixed_resets":..,"triggered_uses_fewer":true/false},
+ "notes":"does using effective-rank as an early-warning trigger PREVENT collapse better + more efficiently than fixed/random? honest."}
 Do NOT leave status RUNNING. Commit all except datasets + weights.
 
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/gns200/.
+for context and build on them; write this round's outputs under results/closeloop/.
 
 ## Idea
 Observable Temporal Precedence Map: Which Cheap Signal Leads Plasticity Collapse — and by How Many Tasks?
@@ -65,4 +67,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: Vanilla continual learning: 3-layer MLP (400–400, ReLU), SGD with nuisance-tuned LR and weight decay, BatchNorm OFF, Split-CIFAR-10, 10 tasks, 5 seeds, zero plasticity repair. Replicates the collapse trajectory documented in Dohare et al.; establishes the reference t_collapse distribution and all four signal trajectories before any optimizer or BN factor is introduced. Built and verified first.
 - eval contract: Dataset: Split-CIFAR-10 (10 tasks × 2 classes, fixed permutation seed=0). Primary metric: lead_time(signal) = t_collapse − onset(signal) in tasks, per signal × optimizer × BN arm, reported as mean ± 95% bootstrap CI over 5 seeds. Precedence-ordering consistency: Kendall's W (coefficient of concordance) over the 5 per-seed signal orderings within each optimizer × BN cell; W ≥ 0.70 → 'consistent ordering' (pre-registered threshold); W < 0.70 → 'config-conditional or noisy.' Pairwise lead-time differences between the 4 signals tested with Wilcoxon signed-rank (paired over seeds, Bonferroni-corrected for 6 pairs, α=0.05). Sensitivity: full ordering re-derived at k∈{1.5, 2.5} alongside k=2.0; any rank flip reported as a finding, not suppressed.
 
-Record everything under results/gns200/. Do not commit weights.
+Record everything under results/closeloop/. Do not commit weights.

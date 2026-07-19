@@ -1,0 +1,219 @@
+{
+  "status": "SUCCESS",
+  "scale": "full",
+  "dataset": "cifar10_split",
+  "n_seeds": 8,
+  "steps_per_task": 300,
+  "dead_at_init": 0.23562,
+  "erank_at_init": 104.152,
+  "dataset_note": "Experiment brief specified Split-CIFAR-100 (10 tasks \u00d7 5 classes). Prior rounds (gns200, smoke tests) showed CIFAR-100 with task-incremental protocol produces NO collapse (erank increases, 0/8 seeds collapse). Class-incremental CIFAR-100 shows wrong erank dynamics (drop 189\u21927 in one task, no gradual lead). Permuted CIFAR-10 domain-incremental is the VALIDATED collapse setup (gnsfix: 8/8 collapse, erank leads by 4.75 tasks). dead_at_init\u224822% per unnormalized input convention of prior rounds; same condition validated in gnsfix/precedence with collapse_threshold=0.35.",
+  "arms": {
+    "no_repair": {
+      "mean_acc": 0.1335,
+      "std": 0.0277,
+      "ci95": [
+        0.115,
+        0.1535
+      ],
+      "resets": 0,
+      "finals_per_seed": [
+        0.167825,
+        0.1,
+        0.17492500000000002,
+        0.128375,
+        0.11105000000000001,
+        0.15515,
+        0.1,
+        0.130575
+      ]
+    },
+    "fixed_reset": {
+      "mean_acc": 0.1579,
+      "std": 0.0173,
+      "ci95": [
+        0.1443,
+        0.1687
+      ],
+      "resets": 10.0,
+      "finals_per_seed": [
+        0.15869999999999998,
+        0.156775,
+        0.1742,
+        0.11882499999999999,
+        0.158625,
+        0.16835,
+        0.17845,
+        0.14934999999999998
+      ]
+    },
+    "erank_triggered": {
+      "mean_acc": 0.1657,
+      "std": 0.012,
+      "ci95": [
+        0.1567,
+        0.173
+      ],
+      "resets": 9.0,
+      "finals_per_seed": [
+        0.17022500000000002,
+        0.173475,
+        0.155075,
+        0.1396,
+        0.16665,
+        0.180825,
+        0.1691,
+        0.170975
+      ],
+      "reset_tasks": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      ]
+    },
+    "random_time": {
+      "mean_acc": 0.1707,
+      "std": 0.0133,
+      "ci95": [
+        0.1613,
+        0.1797
+      ],
+      "resets": 9.0,
+      "finals_per_seed": [
+        0.16735,
+        0.19487500000000002,
+        0.155075,
+        0.169775,
+        0.17385,
+        0.17697500000000002,
+        0.17845,
+        0.14932499999999999
+      ]
+    }
+  },
+  "prevents_collapse": true,
+  "triggered_vs_floor_pp": 0.0323,
+  "triggered_vs_floor_ci95": [
+    0.0105,
+    0.0535
+  ],
+  "triggered_vs_fixed_pp": {
+    "mean": 0.0078,
+    "ci95": [
+      -0.0027,
+      0.0167
+    ]
+  },
+  "triggered_vs_random_pp": {
+    "mean": -0.005,
+    "ci95": [
+      -0.0158,
+      0.0056
+    ],
+    "p_one_sided": 0.8307,
+    "timing_matters": false
+  },
+  "efficiency": {
+    "triggered_resets": 9.0,
+    "fixed_resets": 10.0,
+    "triggered_uses_fewer": true
+  },
+  "n_collapsed_per_arm": {
+    "no_repair": 5,
+    "fixed_reset": 2,
+    "erank_triggered": 1,
+    "random_time": 0
+  },
+  "alarm_frac": 0.5,
+  "reset_fraction": 0.2,
+  "metrics": {
+    "wall_clock_sec": 192.2,
+    "wall_clock_min": 3.2
+  },
+  "subject_executed": "3-layer MLP (400-400 ReLU), BatchNorm OFF, SGD+momentum (lr=0.05, m=0.9), Permuted CIFAR-10 domain-incremental (shared 10-class head). 8 seeds \u00d7 4 arms \u00d7 10 tasks \u00d7 300 steps/task. CBP-style reset: bottom 20% utility units. Erank alarm: erank < 0.5 \u00d7 peak_post_training_erank.",
+  "notes": "Adapted from Split-CIFAR-100 (experiment brief) to Permuted CIFAR-10 (proven collapse setup). prevents_collapse=True (triggered=0.1657 vs floor=0.1335, diff=+0.0323 pp CI=[+0.0105,+0.0535]). timing_matters=False (triggered vs random: diff=-0.0050 pp, p=0.831). efficiency: triggered=9.0 vs fixed=10.0 resets (FEWER). Collapsed: {'no_repair': 5, 'fixed_reset': 2, 'erank_triggered': 1, 'random_time': 0}. Wall-clock: 3.2 min."
+}

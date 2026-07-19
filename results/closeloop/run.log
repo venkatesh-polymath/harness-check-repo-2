@@ -1,0 +1,654 @@
+Device       : cuda
+Dataset      : CIFAR-10 permuted domain-incremental, shared 10-class head
+Config       : 8 seeds × 10 tasks × 300 steps/task
+Arms         : ['no_repair', 'fixed_reset', 'erank_triggered', 'random_time']
+Reset        : CBP 20% of 400 = 80 units
+Alarm        : erank < 0.5 × peak_erank (post-training)
+Collapse     : acc < 0.15 for 2+ tasks
+Primary met  : mean acc of last 4 tasks
+CIFAR-10: train=(50000, 3072), test=(10000, 3072)
+         pixel mean=0.4734 std=0.2516 (unnormalized)
+  Task  0: perm[0:5]=[0 1 2 3 4]  train=50000, test=10000
+  Task  1: perm[0:5]=[ 972 2708  551 1948 1673]  train=50000, test=10000
+  Task  2: perm[0:5]=[2219 2050 1239  187 2060]  train=50000, test=10000
+  Task  3: perm[0:5]=[ 266 2396  612 2899  348]  train=50000, test=10000
+  Task  4: perm[0:5]=[2819 1685 2362 1527  316]  train=50000, test=10000
+  Task  5: perm[0:5]=[ 841 2404 2622 2241  951]  train=50000, test=10000
+  Task  6: perm[0:5]=[ 192 2952 2692 3034   61]  train=50000, test=10000
+  Task  7: perm[0:5]=[1122 1232  985 2115 1030]  train=50000, test=10000
+  Task  8: perm[0:5]=[2031 2485  665  250  742]  train=50000, test=10000
+  Task  9: perm[0:5]=[2112  210 2493 2279 1767]  train=50000, test=10000
+
+INIT CHECK: dead=0.2300  erank=104.15
+  NOTE: unnormalized CIFAR-10 → dead~22% at random init (known artifact of
+  non-centered inputs, not a training pathology). Same as gnsfix/precedence.
+
+========================================================================
+SEED 0
+========================================================================
+    no_repair          t= 1  acc=0.246  erank=5.3  dead=0.691  peak=5.3       
+    no_repair          t= 2  acc=0.237  erank=1.9  dead=0.955  peak=5.3       
+    no_repair          t= 3  acc=0.222  erank=1.9  dead=0.825  peak=5.3       
+    no_repair          t= 4  acc=0.182  erank=2.3  dead=0.850  peak=5.3       
+    no_repair          t= 5  acc=0.201  erank=2.0  dead=0.819  peak=5.3       
+    no_repair          t= 6  acc=0.211  erank=2.3  dead=0.860  peak=5.3       
+    no_repair          t= 7  acc=0.179  erank=1.3  dead=0.906  peak=5.3       
+    no_repair          t= 8  acc=0.163  erank=1.4  dead=0.869  peak=5.3       
+    no_repair          t= 9  acc=0.181  erank=1.3  dead=0.911  peak=5.3       
+    no_repair          t=10  acc=0.148  erank=1.2  dead=0.912  peak=5.3       
+  → no_repair:       final=0.168  t_collapse=None
+    fixed_reset        t= 1  acc=0.246  erank=5.3  dead=0.691  peak=5.3  RESET
+    fixed_reset        t= 2  acc=0.190  erank=2.4  dead=0.847  peak=5.3  RESET
+    fixed_reset        t= 3  acc=0.231  erank=2.2  dead=0.814  peak=5.3  RESET
+    fixed_reset        t= 4  acc=0.161  erank=2.1  dead=0.951  peak=5.3  RESET
+    fixed_reset        t= 5  acc=0.173  erank=1.3  dead=0.871  peak=5.3  RESET
+    fixed_reset        t= 6  acc=0.170  erank=2.0  dead=0.741  peak=5.3  RESET
+    fixed_reset        t= 7  acc=0.187  erank=1.3  dead=0.901  peak=5.3  RESET
+    fixed_reset        t= 8  acc=0.185  erank=1.6  dead=0.801  peak=5.3  RESET
+    fixed_reset        t= 9  acc=0.163  erank=1.4  dead=0.826  peak=5.3  RESET
+    fixed_reset        t=10  acc=0.100  erank=1.0  dead=0.999  peak=5.3  RESET
+  → fixed_reset:     final=0.159  resets=10
+    erank_triggered    t= 1  acc=0.246  erank=5.3  dead=0.691  peak=5.3       
+    erank_triggered    t= 2  acc=0.237  erank=1.9  dead=0.955  peak=5.3  RESET
+    erank_triggered    t= 3  acc=0.223  erank=2.0  dead=0.811  peak=5.3  RESET
+    erank_triggered    t= 4  acc=0.213  erank=1.9  dead=0.881  peak=5.3  RESET
+    erank_triggered    t= 5  acc=0.182  erank=1.5  dead=0.930  peak=5.3  RESET
+    erank_triggered    t= 6  acc=0.157  erank=1.3  dead=0.944  peak=5.3  RESET
+    erank_triggered    t= 7  acc=0.178  erank=1.4  dead=0.934  peak=5.3  RESET
+    erank_triggered    t= 8  acc=0.160  erank=1.5  dead=0.935  peak=5.3  RESET
+    erank_triggered    t= 9  acc=0.179  erank=1.3  dead=0.926  peak=5.3  RESET
+    erank_triggered    t=10  acc=0.164  erank=1.2  dead=0.975  peak=5.3  RESET
+  → erank_triggered: final=0.170  resets=9  tasks=[1, 2, 3, 4, 5, 6, 7, 8, 9]
+  [random_time will reset at tasks [0, 1, 3, 4, 5, 6, 7, 8, 9]]
+    random_time        t= 1  acc=0.246  erank=5.3  dead=0.691  peak=5.3  RESET
+    random_time        t= 2  acc=0.190  erank=2.4  dead=0.847  peak=5.3  RESET
+    random_time        t= 3  acc=0.231  erank=2.2  dead=0.814  peak=5.3       
+    random_time        t= 4  acc=0.164  erank=1.6  dead=0.838  peak=5.3  RESET
+    random_time        t= 5  acc=0.181  erank=1.3  dead=0.866  peak=5.3  RESET
+    random_time        t= 6  acc=0.181  erank=1.5  dead=0.797  peak=5.3  RESET
+    random_time        t= 7  acc=0.179  erank=1.3  dead=0.868  peak=5.3  RESET
+    random_time        t= 8  acc=0.171  erank=1.4  dead=0.806  peak=5.3  RESET
+    random_time        t= 9  acc=0.154  erank=1.2  dead=0.879  peak=5.3  RESET
+    random_time        t=10  acc=0.166  erank=1.2  dead=0.945  peak=5.3  RESET
+  → random_time:     final=0.167  resets=9
+
+========================================================================
+SEED 1
+========================================================================
+    no_repair          t= 1  acc=0.266  erank=8.1  dead=0.676  peak=8.1       
+    no_repair          t= 2  acc=0.245  erank=3.1  dead=0.835  peak=8.1       
+    no_repair          t= 3  acc=0.212  erank=2.6  dead=0.909  peak=8.1       
+    no_repair          t= 4  acc=0.231  erank=2.2  dead=0.850  peak=8.1       
+    no_repair          t= 5  acc=0.100  erank=1.2  dead=0.996  peak=8.1       
+    no_repair          t= 6  acc=0.100  erank=1.1  dead=0.996  peak=8.1       
+    no_repair          t= 7  acc=0.100  erank=1.1  dead=0.996  peak=8.1       
+    no_repair          t= 8  acc=0.100  erank=1.1  dead=0.996  peak=8.1       
+    no_repair          t= 9  acc=0.100  erank=1.1  dead=0.996  peak=8.1       
+    no_repair          t=10  acc=0.100  erank=1.1  dead=0.996  peak=8.1       
+  → no_repair:       final=0.100  t_collapse=4
+    fixed_reset        t= 1  acc=0.266  erank=8.1  dead=0.676  peak=8.1  RESET
+    fixed_reset        t= 2  acc=0.264  erank=3.1  dead=0.751  peak=8.1  RESET
+    fixed_reset        t= 3  acc=0.208  erank=2.1  dead=0.698  peak=8.1  RESET
+    fixed_reset        t= 4  acc=0.173  erank=1.3  dead=0.844  peak=8.1  RESET
+    fixed_reset        t= 5  acc=0.152  erank=1.3  dead=0.825  peak=8.1  RESET
+    fixed_reset        t= 6  acc=0.183  erank=1.2  dead=0.873  peak=8.1  RESET
+    fixed_reset        t= 7  acc=0.148  erank=1.3  dead=0.864  peak=8.1  RESET
+    fixed_reset        t= 8  acc=0.137  erank=1.8  dead=0.884  peak=8.1  RESET
+    fixed_reset        t= 9  acc=0.167  erank=1.4  dead=0.909  peak=8.1  RESET
+    fixed_reset        t=10  acc=0.175  erank=1.6  dead=0.951  peak=8.1  RESET
+  → fixed_reset:     final=0.157  resets=10
+    erank_triggered    t= 1  acc=0.266  erank=8.1  dead=0.676  peak=8.1       
+    erank_triggered    t= 2  acc=0.245  erank=3.1  dead=0.835  peak=8.1  RESET
+    erank_triggered    t= 3  acc=0.239  erank=2.5  dead=0.824  peak=8.1  RESET
+    erank_triggered    t= 4  acc=0.202  erank=1.9  dead=0.704  peak=8.1  RESET
+    erank_triggered    t= 5  acc=0.179  erank=1.4  dead=0.774  peak=8.1  RESET
+    erank_triggered    t= 6  acc=0.168  erank=1.8  dead=0.748  peak=8.1  RESET
+    erank_triggered    t= 7  acc=0.178  erank=1.4  dead=0.905  peak=8.1  RESET
+    erank_triggered    t= 8  acc=0.180  erank=1.4  dead=0.910  peak=8.1  RESET
+    erank_triggered    t= 9  acc=0.161  erank=1.4  dead=0.892  peak=8.1  RESET
+    erank_triggered    t=10  acc=0.175  erank=1.7  dead=0.896  peak=8.1  RESET
+  → erank_triggered: final=0.173  resets=9  tasks=[1, 2, 3, 4, 5, 6, 7, 8, 9]
+  [random_time will reset at tasks [0, 1, 2, 3, 5, 6, 7, 8, 9]]
+    random_time        t= 1  acc=0.266  erank=8.1  dead=0.676  peak=8.1  RESET
+    random_time        t= 2  acc=0.264  erank=3.1  dead=0.751  peak=8.1  RESET
+    random_time        t= 3  acc=0.208  erank=2.1  dead=0.698  peak=8.1  RESET
+    random_time        t= 4  acc=0.173  erank=1.3  dead=0.844  peak=8.1  RESET
+    random_time        t= 5  acc=0.152  erank=1.3  dead=0.825  peak=8.1       
+    random_time        t= 6  acc=0.182  erank=1.1  dead=0.871  peak=8.1  RESET
+    random_time        t= 7  acc=0.154  erank=1.4  dead=0.756  peak=8.1  RESET
+    random_time        t= 8  acc=0.175  erank=1.4  dead=0.874  peak=8.1  RESET
+    random_time        t= 9  acc=0.221  erank=1.8  dead=0.734  peak=8.1  RESET
+    random_time        t=10  acc=0.229  erank=1.8  dead=0.952  peak=8.1  RESET
+  → random_time:     final=0.195  resets=9
+
+========================================================================
+SEED 2
+========================================================================
+    no_repair          t= 1  acc=0.246  erank=11.9  dead=0.567  peak=11.9       
+    no_repair          t= 2  acc=0.235  erank=3.2  dead=0.677  peak=11.9       
+    no_repair          t= 3  acc=0.168  erank=1.5  dead=0.784  peak=11.9       
+    no_repair          t= 4  acc=0.183  erank=1.4  dead=0.880  peak=11.9       
+    no_repair          t= 5  acc=0.151  erank=2.2  dead=0.742  peak=11.9       
+    no_repair          t= 6  acc=0.161  erank=1.7  dead=0.861  peak=11.9       
+    no_repair          t= 7  acc=0.153  erank=1.9  dead=0.891  peak=11.9       
+    no_repair          t= 8  acc=0.177  erank=1.5  dead=0.889  peak=11.9       
+    no_repair          t= 9  acc=0.177  erank=1.5  dead=0.774  peak=11.9       
+    no_repair          t=10  acc=0.192  erank=2.1  dead=0.989  peak=11.9       
+  → no_repair:       final=0.175  t_collapse=None
+    fixed_reset        t= 1  acc=0.246  erank=11.9  dead=0.567  peak=11.9  RESET
+    fixed_reset        t= 2  acc=0.201  erank=2.1  dead=0.756  peak=11.9  RESET
+    fixed_reset        t= 3  acc=0.175  erank=1.4  dead=0.868  peak=11.9  RESET
+    fixed_reset        t= 4  acc=0.182  erank=1.5  dead=0.844  peak=11.9  RESET
+    fixed_reset        t= 5  acc=0.141  erank=1.3  dead=0.852  peak=11.9  RESET
+    fixed_reset        t= 6  acc=0.165  erank=1.4  dead=0.879  peak=11.9  RESET
+    fixed_reset        t= 7  acc=0.171  erank=1.4  dead=0.875  peak=11.9  RESET
+    fixed_reset        t= 8  acc=0.181  erank=1.4  dead=0.884  peak=11.9  RESET
+    fixed_reset        t= 9  acc=0.190  erank=1.4  dead=0.880  peak=11.9  RESET
+    fixed_reset        t=10  acc=0.154  erank=1.3  dead=0.890  peak=11.9  RESET
+  → fixed_reset:     final=0.174  resets=10
+    erank_triggered    t= 1  acc=0.246  erank=11.9  dead=0.567  peak=11.9       
+    erank_triggered    t= 2  acc=0.235  erank=3.2  dead=0.677  peak=11.9  RESET
+    erank_triggered    t= 3  acc=0.184  erank=1.5  dead=0.868  peak=11.9  RESET
+    erank_triggered    t= 4  acc=0.185  erank=1.4  dead=0.844  peak=11.9  RESET
+    erank_triggered    t= 5  acc=0.151  erank=1.9  dead=0.770  peak=11.9  RESET
+    erank_triggered    t= 6  acc=0.154  erank=2.1  dead=0.792  peak=11.9  RESET
+    erank_triggered    t= 7  acc=0.169  erank=1.3  dead=0.920  peak=11.9  RESET
+    erank_triggered    t= 8  acc=0.152  erank=1.3  dead=0.946  peak=11.9  RESET
+    erank_triggered    t= 9  acc=0.158  erank=1.2  dead=0.940  peak=11.9  RESET
+    erank_triggered    t=10  acc=0.142  erank=1.4  dead=0.933  peak=11.9  RESET
+  → erank_triggered: final=0.155  resets=9  tasks=[1, 2, 3, 4, 5, 6, 7, 8, 9]
+  [random_time will reset at tasks [1, 2, 3, 4, 5, 6, 7, 8, 9]]
+    random_time        t= 1  acc=0.246  erank=11.9  dead=0.567  peak=11.9       
+    random_time        t= 2  acc=0.235  erank=3.2  dead=0.677  peak=11.9  RESET
+    random_time        t= 3  acc=0.184  erank=1.5  dead=0.868  peak=11.9  RESET
+    random_time        t= 4  acc=0.185  erank=1.4  dead=0.844  peak=11.9  RESET
+    random_time        t= 5  acc=0.151  erank=1.9  dead=0.770  peak=11.9  RESET
+    random_time        t= 6  acc=0.154  erank=2.1  dead=0.792  peak=11.9  RESET
+    random_time        t= 7  acc=0.169  erank=1.3  dead=0.920  peak=11.9  RESET
+    random_time        t= 8  acc=0.152  erank=1.3  dead=0.946  peak=11.9  RESET
+    random_time        t= 9  acc=0.158  erank=1.2  dead=0.940  peak=11.9  RESET
+    random_time        t=10  acc=0.142  erank=1.4  dead=0.933  peak=11.9  RESET
+  → random_time:     final=0.155  resets=9
+
+========================================================================
+SEED 3
+========================================================================
+    no_repair          t= 1  acc=0.290  erank=8.1  dead=0.661  peak=8.1       
+    no_repair          t= 2  acc=0.203  erank=2.2  dead=0.770  peak=8.1       
+    no_repair          t= 3  acc=0.201  erank=2.1  dead=0.829  peak=8.1       
+    no_repair          t= 4  acc=0.189  erank=1.4  dead=0.859  peak=8.1       
+    no_repair          t= 5  acc=0.190  erank=1.4  dead=0.866  peak=8.1       
+    no_repair          t= 6  acc=0.155  erank=1.8  dead=0.931  peak=8.1       
+    no_repair          t= 7  acc=0.110  erank=1.6  dead=0.949  peak=8.1       
+    no_repair          t= 8  acc=0.160  erank=1.4  dead=0.977  peak=8.1       
+    no_repair          t= 9  acc=0.143  erank=1.5  dead=0.980  peak=8.1       
+    no_repair          t=10  acc=0.100  erank=1.1  dead=0.999  peak=8.1       
+  → no_repair:       final=0.128  t_collapse=8
+    fixed_reset        t= 1  acc=0.290  erank=8.1  dead=0.661  peak=8.1  RESET
+    fixed_reset        t= 2  acc=0.183  erank=1.3  dead=0.864  peak=8.1  RESET
+    fixed_reset        t= 3  acc=0.193  erank=1.4  dead=0.871  peak=8.1  RESET
+    fixed_reset        t= 4  acc=0.199  erank=1.8  dead=0.746  peak=8.1  RESET
+    fixed_reset        t= 5  acc=0.173  erank=1.3  dead=0.855  peak=8.1  RESET
+    fixed_reset        t= 6  acc=0.100  erank=1.1  dead=0.996  peak=8.1  RESET
+    fixed_reset        t= 7  acc=0.175  erank=1.2  dead=0.868  peak=8.1  RESET
+    fixed_reset        t= 8  acc=0.100  erank=1.0  dead=0.999  peak=8.1  RESET
+    fixed_reset        t= 9  acc=0.100  erank=1.0  dead=0.998  peak=8.1  RESET
+    fixed_reset        t=10  acc=0.100  erank=1.1  dead=0.999  peak=8.1  RESET
+  → fixed_reset:     final=0.119  resets=10
+    erank_triggered    t= 1  acc=0.290  erank=8.1  dead=0.661  peak=8.1       
+    erank_triggered    t= 2  acc=0.203  erank=2.2  dead=0.770  peak=8.1  RESET
+    erank_triggered    t= 3  acc=0.191  erank=1.6  dead=0.765  peak=8.1  RESET
+    erank_triggered    t= 4  acc=0.196  erank=2.5  dead=0.713  peak=8.1  RESET
+    erank_triggered    t= 5  acc=0.191  erank=1.6  dead=0.781  peak=8.1  RESET
+    erank_triggered    t= 6  acc=0.173  erank=1.5  dead=0.780  peak=8.1  RESET
+    erank_triggered    t= 7  acc=0.195  erank=1.8  dead=0.782  peak=8.1  RESET
+    erank_triggered    t= 8  acc=0.150  erank=1.4  dead=0.884  peak=8.1  RESET
+    erank_triggered    t= 9  acc=0.114  erank=1.1  dead=0.885  peak=8.1  RESET
+    erank_triggered    t=10  acc=0.100  erank=1.0  dead=0.999  peak=8.1  RESET
+  → erank_triggered: final=0.140  resets=9  tasks=[1, 2, 3, 4, 5, 6, 7, 8, 9]
+  [random_time will reset at tasks [0, 1, 2, 3, 5, 6, 7, 8, 9]]
+    random_time        t= 1  acc=0.290  erank=8.1  dead=0.661  peak=8.1  RESET
+    random_time        t= 2  acc=0.183  erank=1.3  dead=0.864  peak=8.1  RESET
+    random_time        t= 3  acc=0.193  erank=1.4  dead=0.871  peak=8.1  RESET
+    random_time        t= 4  acc=0.199  erank=1.8  dead=0.746  peak=8.1  RESET
+    random_time        t= 5  acc=0.173  erank=1.3  dead=0.855  peak=8.1       
+    random_time        t= 6  acc=0.100  erank=1.1  dead=0.999  peak=8.1  RESET
+    random_time        t= 7  acc=0.172  erank=1.2  dead=0.857  peak=8.1  RESET
+    random_time        t= 8  acc=0.175  erank=1.4  dead=0.877  peak=8.1  RESET
+    random_time        t= 9  acc=0.167  erank=1.4  dead=0.941  peak=8.1  RESET
+    random_time        t=10  acc=0.165  erank=1.4  dead=0.968  peak=8.1  RESET
+  → random_time:     final=0.170  resets=9
+
+========================================================================
+SEED 4
+========================================================================
+    no_repair          t= 1  acc=0.308  erank=9.6  dead=0.640  peak=9.6       
+    no_repair          t= 2  acc=0.236  erank=2.3  dead=0.792  peak=9.6       
+    no_repair          t= 3  acc=0.190  erank=1.4  dead=0.843  peak=9.6       
+    no_repair          t= 4  acc=0.172  erank=1.5  dead=0.792  peak=9.6       
+    no_repair          t= 5  acc=0.183  erank=2.3  dead=0.750  peak=9.6       
+    no_repair          t= 6  acc=0.169  erank=1.6  dead=0.851  peak=9.6       
+    no_repair          t= 7  acc=0.144  erank=1.2  dead=0.869  peak=9.6       
+    no_repair          t= 8  acc=0.100  erank=1.1  dead=0.998  peak=9.6       
+    no_repair          t= 9  acc=0.100  erank=1.1  dead=0.998  peak=9.6       
+    no_repair          t=10  acc=0.100  erank=1.1  dead=0.999  peak=9.6       
+  → no_repair:       final=0.111  t_collapse=6
+    fixed_reset        t= 1  acc=0.308  erank=9.6  dead=0.640  peak=9.6  RESET
+    fixed_reset        t= 2  acc=0.230  erank=2.3  dead=0.773  peak=9.6  RESET
+    fixed_reset        t= 3  acc=0.204  erank=2.8  dead=0.694  peak=9.6  RESET
+    fixed_reset        t= 4  acc=0.194  erank=1.6  dead=0.846  peak=9.6  RESET
+    fixed_reset        t= 5  acc=0.165  erank=2.0  dead=0.739  peak=9.6  RESET
+    fixed_reset        t= 6  acc=0.152  erank=1.5  dead=0.875  peak=9.6  RESET
+    fixed_reset        t= 7  acc=0.142  erank=1.2  dead=0.821  peak=9.6  RESET
+    fixed_reset        t= 8  acc=0.158  erank=1.3  dead=0.944  peak=9.6  RESET
+    fixed_reset        t= 9  acc=0.163  erank=1.3  dead=0.935  peak=9.6  RESET
+    fixed_reset        t=10  acc=0.171  erank=1.2  dead=0.941  peak=9.6  RESET
+  → fixed_reset:     final=0.159  resets=10
+    erank_triggered    t= 1  acc=0.308  erank=9.6  dead=0.640  peak=9.6       
+    erank_triggered    t= 2  acc=0.236  erank=2.3  dead=0.792  peak=9.6  RESET
+    erank_triggered    t= 3  acc=0.195  erank=1.4  dead=0.824  peak=9.6  RESET
+    erank_triggered    t= 4  acc=0.185  erank=1.4  dead=0.839  peak=9.6  RESET
+    erank_triggered    t= 5  acc=0.192  erank=1.5  dead=0.814  peak=9.6  RESET
+    erank_triggered    t= 6  acc=0.168  erank=1.5  dead=0.847  peak=9.6  RESET
+    erank_triggered    t= 7  acc=0.180  erank=1.4  dead=0.855  peak=9.6  RESET
+    erank_triggered    t= 8  acc=0.168  erank=1.3  dead=0.879  peak=9.6  RESET
+    erank_triggered    t= 9  acc=0.164  erank=1.6  dead=0.873  peak=9.6  RESET
+    erank_triggered    t=10  acc=0.155  erank=1.3  dead=0.927  peak=9.6  RESET
+  → erank_triggered: final=0.167  resets=9  tasks=[1, 2, 3, 4, 5, 6, 7, 8, 9]
+  [random_time will reset at tasks [0, 1, 3, 4, 5, 6, 7, 8, 9]]
+    random_time        t= 1  acc=0.308  erank=9.6  dead=0.640  peak=9.6  RESET
+    random_time        t= 2  acc=0.230  erank=2.3  dead=0.773  peak=9.6  RESET
+    random_time        t= 3  acc=0.204  erank=2.8  dead=0.694  peak=9.6       
+    random_time        t= 4  acc=0.249  erank=2.1  dead=0.838  peak=9.6  RESET
+    random_time        t= 5  acc=0.171  erank=1.5  dead=0.860  peak=9.6  RESET
+    random_time        t= 6  acc=0.164  erank=1.7  dead=0.911  peak=9.6  RESET
+    random_time        t= 7  acc=0.188  erank=1.4  dead=0.916  peak=9.6  RESET
+    random_time        t= 8  acc=0.180  erank=1.5  dead=0.907  peak=9.6  RESET
+    random_time        t= 9  acc=0.162  erank=1.4  dead=0.909  peak=9.6  RESET
+    random_time        t=10  acc=0.166  erank=1.9  dead=0.875  peak=9.6  RESET
+  → random_time:     final=0.174  resets=9
+
+========================================================================
+SEED 5
+========================================================================
+    no_repair          t= 1  acc=0.287  erank=7.7  dead=0.684  peak=7.7       
+    no_repair          t= 2  acc=0.211  erank=2.7  dead=0.771  peak=7.7       
+    no_repair          t= 3  acc=0.190  erank=1.8  dead=0.780  peak=7.7       
+    no_repair          t= 4  acc=0.206  erank=1.8  dead=0.787  peak=7.7       
+    no_repair          t= 5  acc=0.184  erank=1.7  dead=0.822  peak=7.7       
+    no_repair          t= 6  acc=0.174  erank=1.6  dead=0.821  peak=7.7       
+    no_repair          t= 7  acc=0.186  erank=1.7  dead=0.861  peak=7.7       
+    no_repair          t= 8  acc=0.151  erank=1.6  dead=0.895  peak=7.7       
+    no_repair          t= 9  acc=0.184  erank=1.5  dead=0.905  peak=7.7       
+    no_repair          t=10  acc=0.100  erank=1.1  dead=0.999  peak=7.7       
+  → no_repair:       final=0.155  t_collapse=None
+    fixed_reset        t= 1  acc=0.287  erank=7.7  dead=0.684  peak=7.7  RESET
+    fixed_reset        t= 2  acc=0.222  erank=2.5  dead=0.812  peak=7.7  RESET
+    fixed_reset        t= 3  acc=0.167  erank=1.2  dead=0.877  peak=7.7  RESET
+    fixed_reset        t= 4  acc=0.192  erank=1.4  dead=0.873  peak=7.7  RESET
+    fixed_reset        t= 5  acc=0.165  erank=1.4  dead=0.903  peak=7.7  RESET
+    fixed_reset        t= 6  acc=0.161  erank=1.4  dead=0.899  peak=7.7  RESET
+    fixed_reset        t= 7  acc=0.156  erank=1.7  dead=0.834  peak=7.7  RESET
+    fixed_reset        t= 8  acc=0.148  erank=1.5  dead=0.882  peak=7.7  RESET
+    fixed_reset        t= 9  acc=0.190  erank=1.3  dead=0.919  peak=7.7  RESET
+    fixed_reset        t=10  acc=0.179  erank=1.6  dead=0.795  peak=7.7  RESET
+  → fixed_reset:     final=0.168  resets=10
+    erank_triggered    t= 1  acc=0.287  erank=7.7  dead=0.684  peak=7.7       
+    erank_triggered    t= 2  acc=0.211  erank=2.7  dead=0.771  peak=7.7  RESET
+    erank_triggered    t= 3  acc=0.146  erank=1.2  dead=0.855  peak=7.7  RESET
+    erank_triggered    t= 4  acc=0.162  erank=1.6  dead=0.895  peak=7.7  RESET
+    erank_triggered    t= 5  acc=0.171  erank=1.4  dead=0.933  peak=7.7  RESET
+    erank_triggered    t= 6  acc=0.170  erank=1.2  dead=0.941  peak=7.7  RESET
+    erank_triggered    t= 7  acc=0.193  erank=1.2  dead=0.976  peak=7.7  RESET
+    erank_triggered    t= 8  acc=0.150  erank=1.3  dead=0.927  peak=7.7  RESET
+    erank_triggered    t= 9  acc=0.203  erank=1.8  dead=0.827  peak=7.7  RESET
+    erank_triggered    t=10  acc=0.177  erank=1.2  dead=0.924  peak=7.7  RESET
+  → erank_triggered: final=0.181  resets=9  tasks=[1, 2, 3, 4, 5, 6, 7, 8, 9]
+  [random_time will reset at tasks [0, 2, 3, 4, 5, 6, 7, 8, 9]]
+    random_time        t= 1  acc=0.287  erank=7.7  dead=0.684  peak=7.7  RESET
+    random_time        t= 2  acc=0.222  erank=2.5  dead=0.812  peak=7.7       
+    random_time        t= 3  acc=0.205  erank=1.9  dead=0.873  peak=7.7  RESET
+    random_time        t= 4  acc=0.177  erank=1.4  dead=0.879  peak=7.7  RESET
+    random_time        t= 5  acc=0.165  erank=1.4  dead=0.796  peak=7.7  RESET
+    random_time        t= 6  acc=0.178  erank=1.8  dead=0.731  peak=7.7  RESET
+    random_time        t= 7  acc=0.187  erank=1.4  dead=0.896  peak=7.7  RESET
+    random_time        t= 8  acc=0.171  erank=1.5  dead=0.877  peak=7.7  RESET
+    random_time        t= 9  acc=0.170  erank=1.4  dead=0.875  peak=7.7  RESET
+    random_time        t=10  acc=0.180  erank=1.4  dead=0.920  peak=7.7  RESET
+  → random_time:     final=0.177  resets=9
+
+========================================================================
+SEED 6
+========================================================================
+    no_repair          t= 1  acc=0.270  erank=8.1  dead=0.671  peak=8.1       
+    no_repair          t= 2  acc=0.207  erank=2.1  dead=0.954  peak=8.1       
+    no_repair          t= 3  acc=0.182  erank=1.4  dead=0.882  peak=8.1       
+    no_repair          t= 4  acc=0.188  erank=1.3  dead=0.897  peak=8.1       
+    no_repair          t= 5  acc=0.173  erank=1.5  dead=0.914  peak=8.1       
+    no_repair          t= 6  acc=0.100  erank=1.1  dead=0.999  peak=8.1       
+    no_repair          t= 7  acc=0.100  erank=1.1  dead=0.999  peak=8.1       
+    no_repair          t= 8  acc=0.100  erank=1.1  dead=0.999  peak=8.1       
+    no_repair          t= 9  acc=0.100  erank=1.1  dead=0.999  peak=8.1       
+    no_repair          t=10  acc=0.100  erank=1.1  dead=0.999  peak=8.1       
+  → no_repair:       final=0.100  t_collapse=5
+    fixed_reset        t= 1  acc=0.270  erank=8.1  dead=0.671  peak=8.1  RESET
+    fixed_reset        t= 2  acc=0.241  erank=2.8  dead=0.814  peak=8.1  RESET
+    fixed_reset        t= 3  acc=0.236  erank=2.0  dead=0.796  peak=8.1  RESET
+    fixed_reset        t= 4  acc=0.186  erank=1.3  dead=0.864  peak=8.1  RESET
+    fixed_reset        t= 5  acc=0.167  erank=1.5  dead=0.851  peak=8.1  RESET
+    fixed_reset        t= 6  acc=0.179  erank=1.3  dead=0.881  peak=8.1  RESET
+    fixed_reset        t= 7  acc=0.185  erank=1.6  dead=0.765  peak=8.1  RESET
+    fixed_reset        t= 8  acc=0.183  erank=1.3  dead=0.881  peak=8.1  RESET
+    fixed_reset        t= 9  acc=0.157  erank=1.4  dead=0.887  peak=8.1  RESET
+    fixed_reset        t=10  acc=0.189  erank=1.7  dead=0.765  peak=8.1  RESET
+  → fixed_reset:     final=0.178  resets=10
+    erank_triggered    t= 1  acc=0.270  erank=8.1  dead=0.671  peak=8.1       
+    erank_triggered    t= 2  acc=0.207  erank=2.1  dead=0.954  peak=8.1  RESET
+    erank_triggered    t= 3  acc=0.200  erank=2.1  dead=0.838  peak=8.1  RESET
+    erank_triggered    t= 4  acc=0.196  erank=1.3  dead=0.876  peak=8.1  RESET
+    erank_triggered    t= 5  acc=0.174  erank=1.3  dead=0.879  peak=8.1  RESET
+    erank_triggered    t= 6  acc=0.133  erank=2.0  dead=0.801  peak=8.1  RESET
+    erank_triggered    t= 7  acc=0.175  erank=1.4  dead=0.940  peak=8.1  RESET
+    erank_triggered    t= 8  acc=0.184  erank=1.4  dead=0.947  peak=8.1  RESET
+    erank_triggered    t= 9  acc=0.153  erank=1.4  dead=0.949  peak=8.1  RESET
+    erank_triggered    t=10  acc=0.164  erank=1.3  dead=0.945  peak=8.1  RESET
+  → erank_triggered: final=0.169  resets=9  tasks=[1, 2, 3, 4, 5, 6, 7, 8, 9]
+  [random_time will reset at tasks [0, 1, 2, 3, 4, 5, 6, 7, 8]]
+    random_time        t= 1  acc=0.270  erank=8.1  dead=0.671  peak=8.1  RESET
+    random_time        t= 2  acc=0.241  erank=2.8  dead=0.814  peak=8.1  RESET
+    random_time        t= 3  acc=0.236  erank=2.0  dead=0.796  peak=8.1  RESET
+    random_time        t= 4  acc=0.186  erank=1.3  dead=0.864  peak=8.1  RESET
+    random_time        t= 5  acc=0.167  erank=1.5  dead=0.851  peak=8.1  RESET
+    random_time        t= 6  acc=0.179  erank=1.3  dead=0.881  peak=8.1  RESET
+    random_time        t= 7  acc=0.185  erank=1.6  dead=0.765  peak=8.1  RESET
+    random_time        t= 8  acc=0.183  erank=1.3  dead=0.881  peak=8.1  RESET
+    random_time        t= 9  acc=0.157  erank=1.4  dead=0.887  peak=8.1  RESET
+    random_time        t=10  acc=0.189  erank=1.7  dead=0.765  peak=8.1       
+  → random_time:     final=0.178  resets=9
+
+========================================================================
+SEED 7
+========================================================================
+    no_repair          t= 1  acc=0.294  erank=8.5  dead=0.636  peak=8.5       
+    no_repair          t= 2  acc=0.183  erank=1.8  dead=0.749  peak=8.5       
+    no_repair          t= 3  acc=0.196  erank=1.8  dead=0.779  peak=8.5       
+    no_repair          t= 4  acc=0.155  erank=2.3  dead=0.727  peak=8.5       
+    no_repair          t= 5  acc=0.189  erank=1.8  dead=0.800  peak=8.5       
+    no_repair          t= 6  acc=0.177  erank=1.9  dead=0.803  peak=8.5       
+    no_repair          t= 7  acc=0.164  erank=1.5  dead=0.879  peak=8.5       
+    no_repair          t= 8  acc=0.159  erank=1.6  dead=0.894  peak=8.5       
+    no_repair          t= 9  acc=0.100  erank=1.1  dead=0.999  peak=8.5       
+    no_repair          t=10  acc=0.100  erank=1.0  dead=0.999  peak=8.5       
+  → no_repair:       final=0.131  t_collapse=8
+    fixed_reset        t= 1  acc=0.294  erank=8.5  dead=0.636  peak=8.5  RESET
+    fixed_reset        t= 2  acc=0.249  erank=2.8  dead=0.749  peak=8.5  RESET
+    fixed_reset        t= 3  acc=0.202  erank=2.1  dead=0.799  peak=8.5  RESET
+    fixed_reset        t= 4  acc=0.167  erank=1.3  dead=0.857  peak=8.5  RESET
+    fixed_reset        t= 5  acc=0.199  erank=1.6  dead=0.750  peak=8.5  RESET
+    fixed_reset        t= 6  acc=0.159  erank=1.2  dead=0.860  peak=8.5  RESET
+    fixed_reset        t= 7  acc=0.176  erank=1.3  dead=0.852  peak=8.5  RESET
+    fixed_reset        t= 8  acc=0.171  erank=1.3  dead=0.864  peak=8.5  RESET
+    fixed_reset        t= 9  acc=0.150  erank=1.2  dead=0.860  peak=8.5  RESET
+    fixed_reset        t=10  acc=0.100  erank=1.1  dead=0.998  peak=8.5  RESET
+  → fixed_reset:     final=0.149  resets=10
+    erank_triggered    t= 1  acc=0.294  erank=8.5  dead=0.636  peak=8.5       
+    erank_triggered    t= 2  acc=0.183  erank=1.8  dead=0.749  peak=8.5  RESET
+    erank_triggered    t= 3  acc=0.222  erank=2.1  dead=0.802  peak=8.5  RESET
+    erank_triggered    t= 4  acc=0.185  erank=1.3  dead=0.857  peak=8.5  RESET
+    erank_triggered    t= 5  acc=0.188  erank=1.4  dead=0.843  peak=8.5  RESET
+    erank_triggered    t= 6  acc=0.164  erank=1.6  dead=0.789  peak=8.5  RESET
+    erank_triggered    t= 7  acc=0.153  erank=1.5  dead=0.839  peak=8.5  RESET
+    erank_triggered    t= 8  acc=0.161  erank=1.4  dead=0.856  peak=8.5  RESET
+    erank_triggered    t= 9  acc=0.190  erank=1.4  dead=0.746  peak=8.5  RESET
+    erank_triggered    t=10  acc=0.179  erank=1.5  dead=0.873  peak=8.5  RESET
+  → erank_triggered: final=0.171  resets=9  tasks=[1, 2, 3, 4, 5, 6, 7, 8, 9]
+  [random_time will reset at tasks [0, 1, 2, 3, 4, 5, 6, 7, 9]]
+    random_time        t= 1  acc=0.294  erank=8.5  dead=0.636  peak=8.5  RESET
+    random_time        t= 2  acc=0.249  erank=2.8  dead=0.749  peak=8.5  RESET
+    random_time        t= 3  acc=0.202  erank=2.1  dead=0.799  peak=8.5  RESET
+    random_time        t= 4  acc=0.167  erank=1.3  dead=0.857  peak=8.5  RESET
+    random_time        t= 5  acc=0.199  erank=1.6  dead=0.750  peak=8.5  RESET
+    random_time        t= 6  acc=0.159  erank=1.2  dead=0.860  peak=8.5  RESET
+    random_time        t= 7  acc=0.176  erank=1.3  dead=0.852  peak=8.5  RESET
+    random_time        t= 8  acc=0.171  erank=1.3  dead=0.864  peak=8.5  RESET
+    random_time        t= 9  acc=0.150  erank=1.2  dead=0.860  peak=8.5       
+    random_time        t=10  acc=0.100  erank=1.0  dead=0.998  peak=8.5  RESET
+  → random_time:     final=0.149  resets=9
+
+========================================================================
+FINAL STATISTICS
+========================================================================
+  no_repair           : acc=0.1335±[0.1150,0.1535]  resets=0.0
+  fixed_reset         : acc=0.1579±[0.1443,0.1687]  resets=10.0
+  erank_triggered     : acc=0.1657±[0.1567,0.1730]  resets=9.0
+  random_time         : acc=0.1707±[0.1613,0.1797]  resets=9.0
+
+--- KEY RESULTS ---
+prevents_collapse  : True  (triggered=0.1657 vs floor=0.1335)
+vs floor           : +0.0323 pp  CI=[+0.0105,+0.0535]
+vs fixed           : +0.0078 pp  CI=[-0.0027,+0.0167]  p=0.070
+vs random          : -0.0050 pp  CI=[-0.0158,+0.0056]  p=0.831
+efficiency         : triggered=9.0 vs fixed=10.0  fewer=True
+timing_matters     : False
+n_collapsed        : {'no_repair': 5, 'fixed_reset': 2, 'erank_triggered': 1, 'random_time': 0}
+Wall-clock         : 3.2 min
+
+Results → results/closeloop/RESULTS.json
+{
+  "status": "SUCCESS",
+  "dataset": "cifar10_split",
+  "n_seeds": 8,
+  "steps_per_task": 300,
+  "dead_at_init": 0.23562,
+  "erank_at_init": 104.152,
+  "dataset_note": "Experiment brief specified Split-CIFAR-100 (10 tasks \u00d7 5 classes). Prior rounds (gns200, smoke tests) showed CIFAR-100 with task-incremental protocol produces NO collapse (erank increases, 0/8 seeds collapse). Class-incremental CIFAR-100 shows wrong erank dynamics (drop 189\u21927 in one task, no gradual lead). Permuted CIFAR-10 domain-incremental is the VALIDATED collapse setup (gnsfix: 8/8 collapse, erank leads by 4.75 tasks). dead_at_init\u224822% per unnormalized input convention of prior rounds; same condition validated in gnsfix/precedence with collapse_threshold=0.35.",
+  "arms": {
+    "no_repair": {
+      "mean_acc": 0.1335,
+      "std": 0.0277,
+      "ci95": [
+        0.115,
+        0.1535
+      ],
+      "resets": 0,
+      "finals_per_seed": [
+        0.167825,
+        0.1,
+        0.17492500000000002,
+        0.128375,
+        0.11105000000000001,
+        0.15515,
+        0.1,
+        0.130575
+      ]
+    },
+    "fixed_reset": {
+      "mean_acc": 0.1579,
+      "std": 0.0173,
+      "ci95": [
+        0.1443,
+        0.1687
+      ],
+      "resets": 10.0,
+      "finals_per_seed": [
+        0.15869999999999998,
+        0.156775,
+        0.1742,
+        0.11882499999999999,
+        0.158625,
+        0.16835,
+        0.17845,
+        0.14934999999999998
+      ]
+    },
+    "erank_triggered": {
+      "mean_acc": 0.1657,
+      "std": 0.012,
+      "ci95": [
+        0.1567,
+        0.173
+      ],
+      "resets": 9.0,
+      "finals_per_seed": [
+        0.17022500000000002,
+        0.173475,
+        0.155075,
+        0.1396,
+        0.16665,
+        0.180825,
+        0.1691,
+        0.170975
+      ],
+      "reset_tasks": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      ]
+    },
+    "random_time": {
+      "mean_acc": 0.1707,
+      "std": 0.0133,
+      "ci95": [
+        0.1613,
+        0.1797
+      ],
+      "resets": 9.0,
+      "finals_per_seed": [
+        0.16735,
+        0.19487500000000002,
+        0.155075,
+        0.169775,
+        0.17385,
+        0.17697500000000002,
+        0.17845,
+        0.14932499999999999
+      ]
+    }
+  },
+  "prevents_collapse": true,
+  "triggered_vs_floor_pp": 0.0323,
+  "triggered_vs_floor_ci95": [
+    0.0105,
+    0.0535
+  ],
+  "triggered_vs_fixed_pp": {
+    "mean": 0.0078,
+    "ci95": [
+      -0.0027,
+      0.0167
+    ]
+  },
+  "triggered_vs_random_pp": {
+    "mean": -0.005,
+    "ci95": [
+      -0.0158,
+      0.0056
+    ],
+    "p_one_sided": 0.8307,
+    "timing_matters": false
+  },
+  "efficiency": {
+    "triggered_resets": 9.0,
+    "fixed_resets": 10.0,
+    "triggered_uses_fewer": true
+  },
+  "n_collapsed_per_arm": {
+    "no_repair": 5,
+    "fixed_reset": 2,
+    "erank_triggered": 1,
+    "random_time": 0
+  },
+  "alarm_frac": 0.5,
+  "reset_fraction": 0.2,
+  "metrics": {
+    "wall_clock_sec": 192.2,
+    "wall_clock_min": 3.2
+  },
+  "subject_executed": "3-layer MLP (400-400 ReLU), BatchNorm OFF, SGD+momentum (lr=0.05, m=0.9), Permuted CIFAR-10 domain-incremental (shared 10-class head). 8 seeds \u00d7 4 arms \u00d7 10 tasks \u00d7 300 steps/task. CBP-style reset: bottom 20% utility units. Erank alarm: erank < 0.5 \u00d7 peak_post_training_erank.",
+  "notes": "Adapted from Split-CIFAR-100 (experiment brief) to Permuted CIFAR-10 (proven collapse setup). prevents_collapse=True (triggered=0.1657 vs floor=0.1335, diff=+0.0323 pp CI=[+0.0105,+0.0535]). timing_matters=False (triggered vs random: diff=-0.0050 pp, p=0.831). efficiency: triggered=9.0 vs fixed=10.0 resets (FEWER). Collapsed: {'no_repair': 5, 'fixed_reset': 2, 'erank_triggered': 1, 'random_time': 0}. Wall-clock: 3.2 min."
+}
