@@ -1,0 +1,175 @@
+{
+  "status": "DONE",
+  "exp": "g2_narrow",
+  "regime": "2nd architecture \u2014 online Permuted-MNIST, narrower MLP hidden=50",
+  "family": "mlp",
+  "dataset": "mnist",
+  "task": "perm_input",
+  "hidden": 50,
+  "lr": 0.1,
+  "n_seeds": 6,
+  "n_tasks": 200,
+  "healthy": true,
+  "mean_dead_after_task1": 0.061666665288309254,
+  "mean_task1_acc": 0.9244833333333333,
+  "mean_acc_drop_pp": 29.188916666666675,
+  "plasticity_loss_confirmed": true,
+  "n_collapsed": 6,
+  "lead_times": {
+    "dead_unit_fraction": {
+      "mean": 74.66666666666667,
+      "median": 68.5,
+      "iqr": [
+        65.5,
+        79.75
+      ],
+      "ci95": [
+        65.66666666666667,
+        86.0
+      ]
+    },
+    "effective_rank": {
+      "mean": 63.666666666666664,
+      "median": 60.5,
+      "iqr": [
+        55.25,
+        66.5
+      ],
+      "ci95": [
+        51.5,
+        77.5
+      ]
+    },
+    "gradient_noise_scale": {
+      "mean": 68.16666666666667,
+      "median": 65.0,
+      "iqr": [
+        55.75,
+        72.0
+      ],
+      "ci95": [
+        55.333333333333336,
+        83.00833333333328
+      ]
+    },
+    "weight_norm_drift": {
+      "mean": 47.5,
+      "median": 41.0,
+      "iqr": [
+        38.75,
+        52.25
+      ],
+      "ci95": [
+        37.333333333333336,
+        60.166666666666664
+      ]
+    }
+  },
+  "precedence_order": [
+    "dead_unit_fraction",
+    "gradient_noise_scale",
+    "effective_rank",
+    "weight_norm_drift"
+  ],
+  "erank_vs_gns_paired": {
+    "median_diff": -7.0,
+    "wilcoxon_p": 0.40625
+  },
+  "predictive_auc": {
+    "dead_unit_fraction": 0.9630583241048357,
+    "effective_rank": 0.9565430047988187,
+    "gradient_noise_scale": 0.3115294696690046,
+    "weight_norm_drift": 0.9598529592715638
+  },
+  "threshold_sensitivity": {
+    "30pct": [
+      "dead_unit_fraction",
+      "effective_rank",
+      "gradient_noise_scale",
+      "weight_norm_drift"
+    ],
+    "50pct": [
+      "dead_unit_fraction",
+      "gradient_noise_scale",
+      "effective_rank",
+      "weight_norm_drift"
+    ],
+    "70pct": [
+      "gradient_noise_scale",
+      "dead_unit_fraction",
+      "effective_rank",
+      "weight_norm_drift"
+    ]
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "task1_acc": 0.913,
+      "dead_after_task1": 0.06999999843537807,
+      "healthy": true,
+      "t_collapse": 75,
+      "acc_drop_pp": 25.551000000000013
+    },
+    {
+      "seed": 1,
+      "task1_acc": 0.9242,
+      "dead_after_task1": 0.09999999776482582,
+      "healthy": true,
+      "t_collapse": 88,
+      "acc_drop_pp": 25.627500000000005
+    },
+    {
+      "seed": 2,
+      "task1_acc": 0.9301,
+      "dead_after_task1": 0.03999999910593033,
+      "healthy": true,
+      "t_collapse": 70,
+      "acc_drop_pp": 37.15600000000001
+    },
+    {
+      "seed": 3,
+      "task1_acc": 0.9322,
+      "dead_after_task1": 0.06999999843537807,
+      "healthy": true,
+      "t_collapse": 68,
+      "acc_drop_pp": 35.43000000000001
+    },
+    {
+      "seed": 4,
+      "task1_acc": 0.9263,
+      "dead_after_task1": 0.05999999865889549,
+      "healthy": true,
+      "t_collapse": 72,
+      "acc_drop_pp": 24.956500000000016
+    },
+    {
+      "seed": 5,
+      "task1_acc": 0.9211,
+      "dead_after_task1": 0.029999999329447746,
+      "healthy": true,
+      "t_collapse": 104,
+      "acc_drop_pp": 26.412500000000016
+    }
+  ],
+  "total_wall_time_sec": 754.8114371299744,
+  "subject_executed": "2nd architecture \u2014 online Permuted-MNIST, narrower MLP hidden=50",
+  "metrics": {
+    "regime": "2nd architecture \u2014 online Permuted-MNIST, narrower MLP hidden=50",
+    "healthy": true,
+    "plasticity_loss_confirmed": true,
+    "mean_acc_drop_pp": 29.188916666666675,
+    "predictive_auc": {
+      "dead_unit_fraction": 0.9630583241048357,
+      "effective_rank": 0.9565430047988187,
+      "gradient_noise_scale": 0.3115294696690046,
+      "weight_norm_drift": 0.9598529592715638
+    },
+    "precedence_order": [
+      "dead_unit_fraction",
+      "gradient_noise_scale",
+      "effective_rank",
+      "weight_norm_drift"
+    ]
+  },
+  "notes": "Generality of the plasticity-precedence finding in regime g2_narrow. Same analysis as run_valprec.py. Reports honestly whether dead+erank still lead/predict and GNS still fails."
+}

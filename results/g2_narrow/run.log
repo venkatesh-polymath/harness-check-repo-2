@@ -1,0 +1,284 @@
+EXP:      g2_narrow — 2nd architecture — online Permuted-MNIST, narrower MLP hidden=50
+Device:   cuda
+Config:   family=mlp dataset=mnist task=perm_input hidden=50 lr=0.1 6seeds x 200tasks
+Data loaded (mnist): train=(60000, 784), test=(10000, 784)
+
+==================================================================
+SEED 0/5  (elapsed 0s)
+==================================================================
+  dead_init=0.1000
+  Task   1/200 acc=0.9130 dead=0.0700 erank= 24.848 gns=   2.079 wd=2.0226 [1s]
+  Task   2/200 acc=0.9307 dead=0.2800 erank= 23.665 gns=   6.586 wd=3.3463 [2s]
+  Task   3/200 acc=0.9019 dead=0.3800 erank= 24.563 gns=   3.191 wd=4.1884 [2s]
+  Task  25/200 acc=0.8854 dead=0.6300 erank= 14.734 gns=   3.086 wd=12.4932 [16s]
+  Task  50/200 acc=0.7860 dead=0.7800 erank=  9.119 gns=   1.540 wd=17.4270 [32s]
+  Task  75/200 acc=0.8212 dead=0.8100 erank=  7.052 gns=   1.170 wd=21.3768 [48s]
+  Task 100/200 acc=0.7548 dead=0.8300 erank=  6.182 gns=   4.417 wd=22.7155 [64s]
+  Task 125/200 acc=0.5302 dead=0.8700 erank=  3.910 gns=   4.133 wd=24.0152 [80s]
+  Task 150/200 acc=0.7846 dead=0.8500 erank=  6.347 gns=   4.807 wd=24.3940 [96s]
+  Task 175/200 acc=0.5935 dead=0.8900 erank=  4.317 gns=   1.766 wd=26.8813 [112s]
+  Task 200/200 acc=0.4893 dead=0.9100 erank=  4.487 gns=   3.198 wd=28.4585 [127s]
+  Seed 0 DONE dead_t1=0.0700 task1_acc=0.9130 drop=25.55pp t_collapse=75
+
+==================================================================
+SEED 1/5  (elapsed 128s)
+==================================================================
+  dead_init=0.1500
+  Task   1/200 acc=0.9242 dead=0.1000 erank= 22.856 gns=   2.744 wd=1.9142 [1s]
+  Task   2/200 acc=0.9299 dead=0.2300 erank= 22.936 gns=   5.485 wd=2.6373 [2s]
+  Task   3/200 acc=0.9289 dead=0.3100 erank= 23.901 gns=   7.030 wd=3.2186 [2s]
+  Task  25/200 acc=0.8930 dead=0.6900 erank= 14.132 gns=   4.386 wd=11.1839 [16s]
+  Task  50/200 acc=0.8796 dead=0.7300 erank= 11.577 gns=   7.727 wd=13.8158 [32s]
+  Task  75/200 acc=0.8454 dead=0.7600 erank= 10.099 gns=   2.342 wd=17.0485 [48s]
+  Task 100/200 acc=0.6873 dead=0.8700 erank=  5.580 gns=   3.475 wd=20.0219 [64s]
+  Task 125/200 acc=0.2718 dead=0.9400 erank=  2.060 gns=   1.001 wd=18.8979 [79s]
+  Task 150/200 acc=0.7664 dead=0.8400 erank=  4.605 gns=   1.248 wd=22.4569 [94s]
+  Task 175/200 acc=0.6324 dead=0.8500 erank=  4.501 gns=   0.810 wd=22.9801 [110s]
+  Task 200/200 acc=0.6344 dead=0.8900 erank=  3.939 gns=   0.508 wd=24.5271 [125s]
+  Seed 1 DONE dead_t1=0.1000 task1_acc=0.9242 drop=25.63pp t_collapse=88
+
+==================================================================
+SEED 2/5  (elapsed 253s)
+==================================================================
+  dead_init=0.1000
+  Task   1/200 acc=0.9301 dead=0.0400 erank= 23.560 gns=   6.670 wd=1.8792 [0s]
+  Task   2/200 acc=0.9334 dead=0.2500 erank= 26.201 gns=   7.265 wd=2.8186 [1s]
+  Task   3/200 acc=0.9283 dead=0.2900 erank= 25.854 gns=   4.656 wd=3.4711 [2s]
+  Task  25/200 acc=0.8976 dead=0.6400 erank= 15.431 gns=   7.094 wd=11.8840 [15s]
+  Task  50/200 acc=0.7462 dead=0.7700 erank=  7.522 gns=  10.293 wd=17.8541 [30s]
+  Task  75/200 acc=0.7410 dead=0.8200 erank=  7.047 gns=   1.611 wd=20.3335 [46s]
+  Task 100/200 acc=0.6607 dead=0.8700 erank=  4.116 gns=   0.834 wd=23.1054 [61s]
+  Task 125/200 acc=0.6345 dead=0.8800 erank=  4.538 gns=   0.551 wd=22.7749 [76s]
+  Task 150/200 acc=0.6476 dead=0.9200 erank=  3.313 gns=   1.037 wd=24.8837 [92s]
+  Task 175/200 acc=0.6606 dead=0.8600 erank=  5.601 gns=   3.822 wd=25.2724 [107s]
+  Task 200/200 acc=0.5420 dead=0.8600 erank=  6.370 gns=   1.293 wd=25.3927 [123s]
+  Seed 2 DONE dead_t1=0.0400 task1_acc=0.9301 drop=37.16pp t_collapse=70
+
+==================================================================
+SEED 3/5  (elapsed 377s)
+==================================================================
+  dead_init=0.1900
+  Task   1/200 acc=0.9322 dead=0.0700 erank= 21.244 gns=   4.969 wd=1.6730 [1s]
+  Task   2/200 acc=0.9241 dead=0.2900 erank= 22.731 gns=   6.017 wd=2.9488 [1s]
+  Task   3/200 acc=0.9060 dead=0.3500 erank= 23.984 gns=   2.569 wd=3.8646 [2s]
+  Task  25/200 acc=0.8404 dead=0.7000 erank= 11.081 gns=   1.999 wd=13.1326 [15s]
+  Task  50/200 acc=0.7109 dead=0.8500 erank=  3.804 gns=   1.591 wd=19.2236 [31s]
+  Task  75/200 acc=0.6693 dead=0.8400 erank=  6.731 gns=   1.128 wd=21.5346 [46s]
+  Task 100/200 acc=0.6273 dead=0.9000 erank=  4.270 gns=   0.600 wd=23.2118 [61s]
+  Task 125/200 acc=0.4030 dead=0.9300 erank=  2.178 gns=   8.057 wd=24.5673 [76s]
+  Task 150/200 acc=0.4170 dead=0.9000 erank=  3.857 gns=   7.540 wd=23.8341 [91s]
+  Task 175/200 acc=0.5011 dead=0.9300 erank=  2.690 gns=   2.714 wd=25.2500 [106s]
+  Task 200/200 acc=0.3601 dead=0.9500 erank=  2.161 gns=   0.552 wd=26.8239 [121s]
+  Seed 3 DONE dead_t1=0.0700 task1_acc=0.9322 drop=35.43pp t_collapse=68
+
+==================================================================
+SEED 4/5  (elapsed 498s)
+==================================================================
+  dead_init=0.1500
+  Task   1/200 acc=0.9263 dead=0.0600 erank= 22.121 gns=   3.773 wd=1.7735 [0s]
+  Task   2/200 acc=0.9226 dead=0.2400 erank= 25.990 gns=   2.429 wd=2.7602 [1s]
+  Task   3/200 acc=0.9154 dead=0.2600 erank= 25.504 gns=   3.857 wd=3.5275 [2s]
+  Task  25/200 acc=0.8791 dead=0.6600 erank= 14.190 gns=   2.368 wd=11.4900 [19s]
+  Task  50/200 acc=0.8826 dead=0.7000 erank= 13.896 gns=   4.748 wd=15.7245 [34s]
+  Task  75/200 acc=0.1135 dead=0.9500 erank=  1.000 gns=  22.246 wd=16.1784 [50s]
+  Task 100/200 acc=0.5126 dead=0.8800 erank=  3.975 gns=   3.546 wd=21.2420 [66s]
+  Task 125/200 acc=0.7082 dead=0.8600 erank=  5.374 gns=   4.503 wd=23.1471 [82s]
+  Task 150/200 acc=0.4282 dead=0.9200 erank=  3.186 gns=   0.696 wd=24.3595 [97s]
+  Task 175/200 acc=0.6763 dead=0.8300 erank=  6.432 gns=   4.150 wd=27.0164 [114s]
+  Task 200/200 acc=0.7055 dead=0.8800 erank=  5.156 gns=   1.360 wd=27.7810 [129s]
+  Seed 4 DONE dead_t1=0.0600 task1_acc=0.9263 drop=24.96pp t_collapse=72
+
+==================================================================
+SEED 5/5  (elapsed 628s)
+==================================================================
+  dead_init=0.1000
+  Task   1/200 acc=0.9211 dead=0.0300 erank= 23.293 gns=   2.678 wd=1.8574 [1s]
+  Task   2/200 acc=0.9298 dead=0.2800 erank= 25.270 gns=   4.502 wd=2.7873 [1s]
+  Task   3/200 acc=0.9188 dead=0.3400 erank= 25.549 gns=   2.611 wd=3.6681 [2s]
+  Task  25/200 acc=0.8515 dead=0.6500 erank= 14.259 gns=   1.009 wd=10.4568 [16s]
+  Task  50/200 acc=0.8512 dead=0.7200 erank= 10.628 gns=   9.600 wd=14.9690 [31s]
+  Task  75/200 acc=0.7912 dead=0.8300 erank=  7.251 gns=   2.731 wd=18.2031 [47s]
+  Task 100/200 acc=0.8379 dead=0.8100 erank=  8.124 gns=   3.890 wd=18.9917 [63s]
+  Task 125/200 acc=0.6404 dead=0.8800 erank=  3.552 gns=   1.609 wd=21.4588 [79s]
+  Task 150/200 acc=0.8237 dead=0.8700 erank=  5.396 gns=   7.581 wd=21.5499 [95s]
+  Task 175/200 acc=0.6458 dead=0.8900 erank=  4.237 gns=   1.985 wd=24.1254 [111s]
+  Task 200/200 acc=0.7257 dead=0.8500 erank=  5.982 gns=   3.369 wd=23.5229 [127s]
+  Seed 5 DONE dead_t1=0.0300 task1_acc=0.9211 drop=26.41pp t_collapse=104
+
+==================================================================
+DONE g2_narrow in 755s
+{
+  "status": "DONE",
+  "exp": "g2_narrow",
+  "regime": "2nd architecture \u2014 online Permuted-MNIST, narrower MLP hidden=50",
+  "family": "mlp",
+  "dataset": "mnist",
+  "task": "perm_input",
+  "hidden": 50,
+  "lr": 0.1,
+  "n_seeds": 6,
+  "n_tasks": 200,
+  "healthy": true,
+  "mean_dead_after_task1": 0.061666665288309254,
+  "mean_task1_acc": 0.9244833333333333,
+  "mean_acc_drop_pp": 29.188916666666675,
+  "plasticity_loss_confirmed": true,
+  "n_collapsed": 6,
+  "lead_times": {
+    "dead_unit_fraction": {
+      "mean": 74.66666666666667,
+      "median": 68.5,
+      "iqr": [
+        65.5,
+        79.75
+      ],
+      "ci95": [
+        65.66666666666667,
+        86.0
+      ]
+    },
+    "effective_rank": {
+      "mean": 63.666666666666664,
+      "median": 60.5,
+      "iqr": [
+        55.25,
+        66.5
+      ],
+      "ci95": [
+        51.5,
+        77.5
+      ]
+    },
+    "gradient_noise_scale": {
+      "mean": 68.16666666666667,
+      "median": 65.0,
+      "iqr": [
+        55.75,
+        72.0
+      ],
+      "ci95": [
+        55.333333333333336,
+        83.00833333333328
+      ]
+    },
+    "weight_norm_drift": {
+      "mean": 47.5,
+      "median": 41.0,
+      "iqr": [
+        38.75,
+        52.25
+      ],
+      "ci95": [
+        37.333333333333336,
+        60.166666666666664
+      ]
+    }
+  },
+  "precedence_order": [
+    "dead_unit_fraction",
+    "gradient_noise_scale",
+    "effective_rank",
+    "weight_norm_drift"
+  ],
+  "erank_vs_gns_paired": {
+    "median_diff": -7.0,
+    "wilcoxon_p": 0.40625
+  },
+  "predictive_auc": {
+    "dead_unit_fraction": 0.9630583241048357,
+    "effective_rank": 0.9565430047988187,
+    "gradient_noise_scale": 0.3115294696690046,
+    "weight_norm_drift": 0.9598529592715638
+  },
+  "threshold_sensitivity": {
+    "30pct": [
+      "dead_unit_fraction",
+      "effective_rank",
+      "gradient_noise_scale",
+      "weight_norm_drift"
+    ],
+    "50pct": [
+      "dead_unit_fraction",
+      "gradient_noise_scale",
+      "effective_rank",
+      "weight_norm_drift"
+    ],
+    "70pct": [
+      "gradient_noise_scale",
+      "dead_unit_fraction",
+      "effective_rank",
+      "weight_norm_drift"
+    ]
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "task1_acc": 0.913,
+      "dead_after_task1": 0.06999999843537807,
+      "healthy": true,
+      "t_collapse": 75,
+      "acc_drop_pp": 25.551000000000013
+    },
+    {
+      "seed": 1,
+      "task1_acc": 0.9242,
+      "dead_after_task1": 0.09999999776482582,
+      "healthy": true,
+      "t_collapse": 88,
+      "acc_drop_pp": 25.627500000000005
+    },
+    {
+      "seed": 2,
+      "task1_acc": 0.9301,
+      "dead_after_task1": 0.03999999910593033,
+      "healthy": true,
+      "t_collapse": 70,
+      "acc_drop_pp": 37.15600000000001
+    },
+    {
+      "seed": 3,
+      "task1_acc": 0.9322,
+      "dead_after_task1": 0.06999999843537807,
+      "healthy": true,
+      "t_collapse": 68,
+      "acc_drop_pp": 35.43000000000001
+    },
+    {
+      "seed": 4,
+      "task1_acc": 0.9263,
+      "dead_after_task1": 0.05999999865889549,
+      "healthy": true,
+      "t_collapse": 72,
+      "acc_drop_pp": 24.956500000000016
+    },
+    {
+      "seed": 5,
+      "task1_acc": 0.9211,
+      "dead_after_task1": 0.029999999329447746,
+      "healthy": true,
+      "t_collapse": 104,
+      "acc_drop_pp": 26.412500000000016
+    }
+  ],
+  "total_wall_time_sec": 754.8114371299744,
+  "subject_executed": "2nd architecture \u2014 online Permuted-MNIST, narrower MLP hidden=50",
+  "metrics": {
+    "regime": "2nd architecture \u2014 online Permuted-MNIST, narrower MLP hidden=50",
+    "healthy": true,
+    "plasticity_loss_confirmed": true,
+    "mean_acc_drop_pp": 29.188916666666675,
+    "predictive_auc": {
+      "dead_unit_fraction": 0.9630583241048357,
+      "effective_rank": 0.9565430047988187,
+      "gradient_noise_scale": 0.3115294696690046,
+      "weight_norm_drift": 0.9598529592715638
+    },
+    "precedence_order": [
+      "dead_unit_fraction",
+      "gradient_noise_scale",
+      "effective_rank",
+      "weight_norm_drift"
+    ]
+  },
+  "notes": "Generality of the plasticity-precedence finding in regime g2_narrow. Same analysis as run_valprec.py. Reports honestly whether dead+erank still lead/predict and GNS still fails."
+}
