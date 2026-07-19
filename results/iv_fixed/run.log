@@ -1,0 +1,251 @@
+ARM=fixed  hidden=100 5seeds x 280tasks  K=8 TRIG_FRAC=0.92
+
+==================================================================
+ARM=fixed SEED 0 (elapsed 0s)
+==================================================================
+  t  1/280 acc=0.9238 dead=0.0600 erank= 38.43
+  t  2/280 acc=0.9363 dead=0.2250 erank= 40.05
+  t  3/280 acc=0.9286 dead=0.3200 erank= 36.95
+  [event] task 31: reset 191 units (erank=28.13)
+  t 40/280 acc=0.9253 dead=0.6150 erank= 25.52
+  [event] task 62: reset 188 units (erank=16.07)
+  t 80/280 acc=0.9144 dead=0.6100 erank= 25.76
+  [event] task 93: reset 191 units (erank=19.64)
+  t120/280 acc=0.8878 dead=0.6850 erank= 24.25
+  [event] task 124: reset 196 units (erank=20.41)
+  [event] task 156: reset 193 units (erank=22.65)
+  t160/280 acc=0.9333 dead=0.3500 erank= 37.72
+  [event] task 187: reset 194 units (erank=17.67)
+  t200/280 acc=0.8946 dead=0.5950 erank= 30.27
+  [event] task 218: reset 192 units (erank=24.50)
+  t240/280 acc=0.8778 dead=0.6350 erank= 25.67
+  [event] task 249: reset 192 units (erank=18.42)
+  t280/280 acc=0.8937 dead=0.7100 erank= 26.66
+  Seed 0 DONE ss_acc=0.9055 task1=0.9238 events=8 reset=1537
+
+==================================================================
+ARM=fixed SEED 1 (elapsed 129s)
+==================================================================
+  t  1/280 acc=0.9354 dead=0.0650 erank= 37.91
+  t  2/280 acc=0.9402 dead=0.2200 erank= 40.92
+  t  3/280 acc=0.9324 dead=0.2850 erank= 40.44
+  [event] task 31: reset 193 units (erank=24.80)
+  t 40/280 acc=0.9161 dead=0.6550 erank= 23.52
+  [event] task 62: reset 193 units (erank=20.80)
+  t 80/280 acc=0.9081 dead=0.6650 erank= 25.14
+  [event] task 93: reset 193 units (erank=28.46)
+  t120/280 acc=0.9026 dead=0.7300 erank= 18.45
+  [event] task 124: reset 193 units (erank=18.29)
+  [event] task 156: reset 186 units (erank=21.75)
+  t160/280 acc=0.9271 dead=0.2750 erank= 39.30
+  [event] task 187: reset 196 units (erank=23.71)
+  t200/280 acc=0.9165 dead=0.6350 erank= 29.22
+  [event] task 218: reset 192 units (erank=18.57)
+  t240/280 acc=0.9083 dead=0.7250 erank= 21.87
+  [event] task 249: reset 193 units (erank=25.52)
+  t280/280 acc=0.9015 dead=0.6250 erank= 28.37
+  Seed 1 DONE ss_acc=0.9091 task1=0.9354 events=8 reset=1539
+
+==================================================================
+ARM=fixed SEED 2 (elapsed 261s)
+==================================================================
+  t  1/280 acc=0.9309 dead=0.0750 erank= 36.03
+  t  2/280 acc=0.9376 dead=0.2950 erank= 40.01
+  t  3/280 acc=0.9288 dead=0.3500 erank= 39.44
+  [event] task 31: reset 190 units (erank=20.03)
+  t 40/280 acc=0.8953 dead=0.5850 erank= 29.55
+  [event] task 62: reset 191 units (erank=19.19)
+  t 80/280 acc=0.9177 dead=0.5600 erank= 32.65
+  [event] task 93: reset 194 units (erank=25.14)
+  t120/280 acc=0.9156 dead=0.6850 erank= 23.50
+  [event] task 124: reset 194 units (erank=28.37)
+  [event] task 156: reset 192 units (erank=26.00)
+  t160/280 acc=0.9260 dead=0.3400 erank= 35.34
+  [event] task 187: reset 194 units (erank=29.80)
+  t200/280 acc=0.9119 dead=0.6000 erank= 27.41
+  [event] task 218: reset 196 units (erank=22.19)
+  t240/280 acc=0.9139 dead=0.6900 erank= 22.16
+  [event] task 249: reset 192 units (erank=28.40)
+  t280/280 acc=0.8896 dead=0.7450 erank= 23.12
+  Seed 2 DONE ss_acc=0.9066 task1=0.9309 events=8 reset=1543
+
+==================================================================
+ARM=fixed SEED 3 (elapsed 391s)
+==================================================================
+  t  1/280 acc=0.9370 dead=0.0750 erank= 36.09
+  t  2/280 acc=0.9245 dead=0.2800 erank= 36.61
+  t  3/280 acc=0.9334 dead=0.3350 erank= 37.39
+  [event] task 31: reset 194 units (erank=21.61)
+  t 40/280 acc=0.9147 dead=0.5400 erank= 31.77
+  [event] task 62: reset 196 units (erank=29.11)
+  t 80/280 acc=0.9158 dead=0.6600 erank= 26.68
+  [event] task 93: reset 193 units (erank=23.32)
+  t120/280 acc=0.9056 dead=0.7400 erank= 20.09
+  [event] task 124: reset 193 units (erank=24.18)
+  [event] task 156: reset 195 units (erank=24.31)
+  t160/280 acc=0.9351 dead=0.3200 erank= 37.74
+  [event] task 187: reset 190 units (erank=25.11)
+  t200/280 acc=0.9052 dead=0.6600 erank= 24.83
+  [event] task 218: reset 193 units (erank=27.42)
+  t240/280 acc=0.9112 dead=0.6550 erank= 26.37
+  [event] task 249: reset 196 units (erank=30.32)
+  t280/280 acc=0.9122 dead=0.6650 erank= 27.37
+  Seed 3 DONE ss_acc=0.9100 task1=0.9370 events=8 reset=1550
+
+==================================================================
+ARM=fixed SEED 4 (elapsed 519s)
+==================================================================
+  t  1/280 acc=0.9294 dead=0.0650 erank= 38.19
+  t  2/280 acc=0.9340 dead=0.2350 erank= 39.55
+  t  3/280 acc=0.9343 dead=0.2800 erank= 40.59
+  [event] task 31: reset 193 units (erank=27.24)
+  t 40/280 acc=0.9148 dead=0.5250 erank= 29.69
+  [event] task 62: reset 196 units (erank=31.75)
+  t 80/280 acc=0.9053 dead=0.6550 erank= 27.63
+  [event] task 93: reset 195 units (erank=24.26)
+  t120/280 acc=0.9068 dead=0.7200 erank= 21.42
+  [event] task 124: reset 193 units (erank=29.36)
+  [event] task 156: reset 194 units (erank=22.73)
+  t160/280 acc=0.9288 dead=0.3200 erank= 35.35
+  [event] task 187: reset 194 units (erank=23.73)
+  t200/280 acc=0.9107 dead=0.6300 erank= 25.95
+  [event] task 218: reset 190 units (erank=23.50)
+  t240/280 acc=0.8950 dead=0.6950 erank= 21.57
+  [event] task 249: reset 196 units (erank=21.64)
+  t280/280 acc=0.8973 dead=0.7500 erank= 19.23
+  Seed 4 DONE ss_acc=0.9043 task1=0.9294 events=8 reset=1551
+
+==================================================================
+DONE arm=fixed in 647s
+{
+  "status": "DONE",
+  "arm": "fixed",
+  "regime": "hidden=100 MLP, online Permuted-MNIST, SGD, validated healthy regime",
+  "n_seeds": 5,
+  "n_tasks": 280,
+  "K_events": 8,
+  "trig_frac": 0.92,
+  "dead_thresh": 0.5,
+  "mean_ss_acc": 0.9071024000000001,
+  "std_ss_acc": 0.0021203227678823207,
+  "mean_auc_acc": 0.9091128571428572,
+  "mean_final_dead": 0.6989999741315842,
+  "mean_events": 8.0,
+  "mean_units_reset": 1544.0,
+  "per_seed": [
+    {
+      "seed": 0,
+      "arm": "fixed",
+      "task1_acc": 0.9238,
+      "ss_acc": 0.905508,
+      "auc_acc": 0.9085214285714287,
+      "final_dead": 0.7099999785423279,
+      "n_events": 8,
+      "event_tasks": [
+        31,
+        62,
+        93,
+        124,
+        156,
+        187,
+        218,
+        249
+      ],
+      "total_units_reset": 1537,
+      "ss_minus_task1_pp": -1.8291999999999975
+    },
+    {
+      "seed": 1,
+      "arm": "fixed",
+      "task1_acc": 0.9354,
+      "ss_acc": 0.9091,
+      "auc_acc": 0.9110185714285713,
+      "final_dead": 0.6249999850988388,
+      "n_events": 8,
+      "event_tasks": [
+        31,
+        62,
+        93,
+        124,
+        156,
+        187,
+        218,
+        249
+      ],
+      "total_units_reset": 1539,
+      "ss_minus_task1_pp": -2.629999999999999
+    },
+    {
+      "seed": 2,
+      "arm": "fixed",
+      "task1_acc": 0.9309,
+      "ss_acc": 0.906602,
+      "auc_acc": 0.9072532142857144,
+      "final_dead": 0.7449999749660492,
+      "n_events": 8,
+      "event_tasks": [
+        31,
+        62,
+        93,
+        124,
+        156,
+        187,
+        218,
+        249
+      ],
+      "total_units_reset": 1543,
+      "ss_minus_task1_pp": -2.429799999999993
+    },
+    {
+      "seed": 3,
+      "arm": "fixed",
+      "task1_acc": 0.937,
+      "ss_acc": 0.9099520000000001,
+      "auc_acc": 0.91037,
+      "final_dead": 0.6649999618530273,
+      "n_events": 8,
+      "event_tasks": [
+        31,
+        62,
+        93,
+        124,
+        156,
+        187,
+        218,
+        249
+      ],
+      "total_units_reset": 1550,
+      "ss_minus_task1_pp": -2.704799999999996
+    },
+    {
+      "seed": 4,
+      "arm": "fixed",
+      "task1_acc": 0.9294,
+      "ss_acc": 0.90435,
+      "auc_acc": 0.9084010714285715,
+      "final_dead": 0.7499999701976776,
+      "n_events": 8,
+      "event_tasks": [
+        31,
+        62,
+        93,
+        124,
+        156,
+        187,
+        218,
+        249
+      ],
+      "total_units_reset": 1551,
+      "ss_minus_task1_pp": -2.5050000000000017
+    }
+  ],
+  "total_wall_time_sec": 647.2249474525452,
+  "subject_executed": "intervention arm=fixed, 5 seeds x 280 tasks, K=8",
+  "metrics": {
+    "arm": "fixed",
+    "mean_ss_acc": 0.9071024000000001,
+    "mean_final_dead": 0.6989999741315842,
+    "mean_events": 8.0
+  },
+  "notes": "Matched-budget reset-timing comparison. Compare mean_ss_acc across arms none/triggered/fixed/random seed-by-seed to test whether the diagnostic's TIMING preserves plasticity. Honest either way."
+}

@@ -1,0 +1,48 @@
+{
+  "status": "DONE",
+  "arm": "fixed",
+  "regime": "hidden=100 MLP, online Permuted-MNIST, SGD, validated healthy regime",
+  "n_seeds": 1,
+  "n_tasks": 12,
+  "K_events": 8,
+  "trig_frac": 0.92,
+  "dead_thresh": 0.5,
+  "mean_ss_acc": 0.9302083333333332,
+  "std_ss_acc": 0.0,
+  "mean_auc_acc": 0.9302083333333332,
+  "mean_final_dead": 0.2499999888241291,
+  "mean_events": 8.0,
+  "mean_units_reset": 1234.0,
+  "per_seed": [
+    {
+      "seed": 0,
+      "arm": "fixed",
+      "task1_acc": 0.9238,
+      "ss_acc": 0.9302083333333332,
+      "auc_acc": 0.9302083333333332,
+      "final_dead": 0.2499999888241291,
+      "n_events": 8,
+      "event_tasks": [
+        1,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        11
+      ],
+      "total_units_reset": 1234,
+      "ss_minus_task1_pp": 0.6408333333333238
+    }
+  ],
+  "total_wall_time_sec": 7.94650673866272,
+  "subject_executed": "intervention arm=fixed, 1 seeds x 12 tasks, K=8",
+  "metrics": {
+    "arm": "fixed",
+    "mean_ss_acc": 0.9302083333333332,
+    "mean_final_dead": 0.2499999888241291,
+    "mean_events": 8.0
+  },
+  "notes": "Matched-budget reset-timing comparison. Compare mean_ss_acc across arms none/triggered/fixed/random seed-by-seed to test whether the diagnostic's TIMING preserves plasticity. Honest either way."
+}
