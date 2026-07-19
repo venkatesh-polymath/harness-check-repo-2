@@ -1,30 +1,30 @@
-# EXPERIMENT BRIEF — round pmnist (full)
+# EXPERIMENT BRIEF — round pmnist_long (full)
 
 ## THIS ROUND (do exactly this)
-GENUINE PLASTICITY LOSS in a HEALTHY regime — Permuted-MNIST, the canonical loss-of-plasticity benchmark (Dohare et al., loss of plasticity). The Split-CIFAR-100 setup did NOT collapse in any healthy config (only the broken 76.7%-dead config did), so we move to the standard benchmark where a HEALTHY network provably loses plasticity over MANY tasks. Real data at /opt/datasets (MNIST is small; if not pre-baked, note it — MNIST via torchvision is tiny, but prefer /opt/datasets; NEVER synthetic).
+DEFINITIVE loss-of-plasticity test — Dohare-scale Online Permuted-MNIST. Two prior runs (Split-CIFAR-100, and permuted-MNIST at 50 tasks) showed NO plasticity loss in a healthy network — but 50 tasks is too few; the canonical Dohare et al. loss-of-plasticity on permuted-MNIST emerges over HUNDREDS of tasks. This run settles it. Real data (MNIST) at /opt/datasets or torchvision (tiny); NEVER synthetic.
 
-SETUP: Online Permuted-MNIST — a long stream of tasks, each a fixed random PERMUTATION of the input pixels (same labels). 3-layer MLP (2000-2000 or 400-400, ReLU), SGD (tune lr so the net is HEALTHY: dead_after_task1 < ~20%, learns task 1 to high acc ~0.9+), no plasticity repair. This is the setup where loss of plasticity is well-documented: new-task accuracy DECLINES over the task stream even though each task is individually learnable.
+SETUP (match the known loss-of-plasticity regime): ONLINE Permuted-MNIST — a LONG stream of >= 500 tasks, each a fresh random pixel permutation. SINGLE PASS (online: each task's data seen ~once, limited steps/task e.g. 1 epoch or a few hundred steps) — this online/limited-data regime is where loss of plasticity is documented. 3-layer MLP (2000-2000, ReLU), SGD, NO weight decay, NO plasticity repair, lr tuned HEALTHY (dead_after_task1 < 20%, task1 acc high). 3 seeds (loss of plasticity is a strong effect if present).
 
-KEY: run a LONG stream — >= 50 tasks (100 if cheap; MNIST MLP is very fast). Verify GENUINE plasticity loss: (a) network HEALTHY at task 1 (dead < 20%, task1 acc ~0.9), (b) new-task accuracy DECLINES over the stream (e.g. task-1 acc 0.95 -> late-task acc drops materially). If loss of plasticity does NOT appear even here, report that honestly (it would mean the phenomenon needs an even longer/harder stream). Use 5 seeds.
+THE QUESTION: does new-task accuracy DECLINE over the 500-task stream (genuine loss of plasticity in a HEALTHY net)? Track the running per-task accuracy; report acc in the first 20 tasks vs the last 20 tasks. Verify the net stays healthy-ish (report dead-unit fraction trajectory).
 
-INSTRUMENT every task: dead_unit_fraction, effective_rank (penultimate; report >=1 correctly, never 0), gradient_noise_scale (proper McCandlish, >=20 samples), weight_norm_drift, and new-task accuracy. Report dead_at_init and dead_after_task1 to prove health.
+INSTRUMENT every task (or every few tasks to save compute): dead_unit_fraction, effective_rank, gradient_noise_scale (proper), weight_norm_drift, new-task accuracy.
 
-IF genuine healthy plasticity loss occurs, measure PRECEDENCE: for each observable, lead time (tasks) before the accuracy-collapse onset, unbiased non-monotone onset (50% of range, moving-avg window 2), applied identically to all 4. Report per-observable mean + median + IQR + 95% bootstrap CI, and the paired effective_rank-vs-GNS per-seed lead difference with a Wilcoxon signed-rank p.
+IF plasticity loss occurs (late-task acc materially below early-task acc): measure PRECEDENCE — per observable, lead time (tasks) before the accuracy decline crosses its onset, unbiased onset, mean+median+IQR+95% CI, paired effective_rank-vs-GNS Wilcoxon. This would VALIDATE the precedence claim in a healthy regime.
+IF plasticity loss does NOT occur even at 500 tasks in a healthy net: report that clearly — it means (in these settings) loss of plasticity is not reproduced without the pathological dying-ReLU config, which is the honest headline.
 
-EXECUTION: ONE run_pmnist.py, single BLOCKING call `python run_pmnist.py 2>&1 | tee results/pmnist/run.log`, WAIT. MNIST MLP over 50-100 tasks x 5 seeds is CHEAP (< 45 min). Write RESULTS.json incrementally + finalize. Save per-task trajectories to results/pmnist/trajectories.json (for later predictive analysis).
+EXECUTION: ONE run_pmnist_long.py, single BLOCKING call `python run_pmnist_long.py 2>&1 | tee results/pmnist_long/run.log`, WAIT. 500 tasks x small MLP x single-pass x 3 seeds is CHEAP (MNIST); < 60 min. Write RESULTS.json incrementally (every ~25 tasks) + finalize.
 
-OUTPUT results/pmnist/RESULTS.json status:"DONE":
-{"status":"DONE","benchmark":"permuted_mnist","n_tasks":..,"n_seeds":5,"lr_used":..,
+OUTPUT results/pmnist_long/RESULTS.json status:"DONE":
+{"status":"DONE","benchmark":"online_permuted_mnist","n_tasks":..,"n_seeds":3,"lr_used":..,"steps_per_task":..,
  "dead_at_init":..,"dead_after_task1":..,"task1_acc":..,"healthy":true/false,
- "plasticity_loss_occurred":true/false,"acc_task1_mean":..,"acc_late_mean":..,"acc_drop_pp":..,
- "lead_times":{"effective_rank":{"mean":..,"median":..,"iqr":[..],"ci95":[..]},"dead_unit_fraction":{...},"weight_norm_drift":{...},"gradient_noise_scale":{...}},
- "precedence_order":[..],"erank_vs_gns_paired":{"median_diff":..,"wilcoxon_p":..},
- "notes":"does a HEALTHY net lose plasticity here, and does effective rank still lead? honest."}
+ "acc_first20_mean":..,"acc_last20_mean":..,"acc_drop_pp":..,"plasticity_loss_occurred":true/false,
+ "dead_frac_trajectory_summary":"..","lead_times":{...or null},"precedence_order":[..],"erank_vs_gns_paired":{...},
+ "notes":"does a HEALTHY net lose plasticity at Dohare scale (500 tasks)? if yes does effective rank lead? honest."}
 Do NOT leave status RUNNING. Commit all except datasets + weights.
 
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/pmnist/.
+for context and build on them; write this round's outputs under results/pmnist_long/.
 
 ## Idea
 Observable Temporal Precedence Map: Which Cheap Signal Leads Plasticity Collapse — and by How Many Tasks?
@@ -63,4 +63,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: Vanilla continual learning: 3-layer MLP (400–400, ReLU), SGD with nuisance-tuned LR and weight decay, BatchNorm OFF, Split-CIFAR-10, 10 tasks, 5 seeds, zero plasticity repair. Replicates the collapse trajectory documented in Dohare et al.; establishes the reference t_collapse distribution and all four signal trajectories before any optimizer or BN factor is introduced. Built and verified first.
 - eval contract: Dataset: Split-CIFAR-10 (10 tasks × 2 classes, fixed permutation seed=0). Primary metric: lead_time(signal) = t_collapse − onset(signal) in tasks, per signal × optimizer × BN arm, reported as mean ± 95% bootstrap CI over 5 seeds. Precedence-ordering consistency: Kendall's W (coefficient of concordance) over the 5 per-seed signal orderings within each optimizer × BN cell; W ≥ 0.70 → 'consistent ordering' (pre-registered threshold); W < 0.70 → 'config-conditional or noisy.' Pairwise lead-time differences between the 4 signals tested with Wilcoxon signed-rank (paired over seeds, Bonferroni-corrected for 6 pairs, α=0.05). Sensitivity: full ordering re-derived at k∈{1.5, 2.5} alongside k=2.0; any rank flip reported as a finding, not suppressed.
 
-Record everything under results/pmnist/. Do not commit weights.
+Record everything under results/pmnist_long/. Do not commit weights.
