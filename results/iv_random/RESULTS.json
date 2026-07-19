@@ -1,0 +1,132 @@
+{
+  "status": "DONE",
+  "arm": "random",
+  "regime": "hidden=100 MLP, online Permuted-MNIST, SGD, validated healthy regime",
+  "n_seeds": 5,
+  "n_tasks": 280,
+  "K_events": 8,
+  "trig_frac": 0.92,
+  "dead_thresh": 0.5,
+  "mean_ss_acc": 0.9030263999999999,
+  "std_ss_acc": 0.009098134085624399,
+  "mean_auc_acc": 0.9030671428571428,
+  "mean_final_dead": 0.718999981880188,
+  "mean_events": 8.0,
+  "mean_units_reset": 1498.8,
+  "per_seed": [
+    {
+      "seed": 0,
+      "arm": "random",
+      "task1_acc": 0.9238,
+      "ss_acc": 0.905748,
+      "auc_acc": 0.9030267857142859,
+      "final_dead": 0.6449999809265137,
+      "n_events": 8,
+      "event_tasks": [
+        59,
+        60,
+        62,
+        133,
+        145,
+        168,
+        227,
+        234
+      ],
+      "total_units_reset": 1449,
+      "ss_minus_task1_pp": -1.8051999999999957
+    },
+    {
+      "seed": 1,
+      "arm": "random",
+      "task1_acc": 0.9354,
+      "ss_acc": 0.9135080000000001,
+      "auc_acc": 0.9062775,
+      "final_dead": 0.7449999749660492,
+      "n_events": 8,
+      "event_tasks": [
+        9,
+        56,
+        143,
+        169,
+        215,
+        226,
+        240,
+        247
+      ],
+      "total_units_reset": 1531,
+      "ss_minus_task1_pp": -2.189199999999991
+    },
+    {
+      "seed": 2,
+      "arm": "random",
+      "task1_acc": 0.9309,
+      "ss_acc": 0.9093899999999998,
+      "auc_acc": 0.9028496428571429,
+      "final_dead": 0.7049999833106995,
+      "n_events": 8,
+      "event_tasks": [
+        101,
+        107,
+        112,
+        167,
+        172,
+        209,
+        214,
+        248
+      ],
+      "total_units_reset": 1496,
+      "ss_minus_task1_pp": -2.151000000000014
+    },
+    {
+      "seed": 3,
+      "arm": "random",
+      "task1_acc": 0.937,
+      "ss_acc": 0.89893,
+      "auc_acc": 0.9021028571428571,
+      "final_dead": 0.7299999892711639,
+      "n_events": 8,
+      "event_tasks": [
+        55,
+        74,
+        82,
+        84,
+        140,
+        162,
+        186,
+        242
+      ],
+      "total_units_reset": 1521,
+      "ss_minus_task1_pp": -3.807000000000005
+    },
+    {
+      "seed": 4,
+      "arm": "random",
+      "task1_acc": 0.9294,
+      "ss_acc": 0.8875559999999999,
+      "auc_acc": 0.9010789285714286,
+      "final_dead": 0.7699999809265137,
+      "n_events": 8,
+      "event_tasks": [
+        5,
+        37,
+        40,
+        42,
+        57,
+        109,
+        199,
+        213
+      ],
+      "total_units_reset": 1497,
+      "ss_minus_task1_pp": -4.184400000000011
+    }
+  ],
+  "total_wall_time_sec": 545.8559050559998,
+  "subject_executed": "intervention arm=random, 5 seeds x 280 tasks, K=8",
+  "metrics": {
+    "arm": "random",
+    "mean_ss_acc": 0.9030263999999999,
+    "mean_final_dead": 0.718999981880188,
+    "mean_events": 8.0
+  },
+  "notes": "Matched-budget reset-timing comparison. Compare mean_ss_acc across arms none/triggered/fixed/random seed-by-seed to test whether the diagnostic's TIMING preserves plasticity. Honest either way."
+}
