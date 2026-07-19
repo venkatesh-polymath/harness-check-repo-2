@@ -47,7 +47,8 @@ ARM = os.environ.get("SH_ARM", "none").strip()
 if ARM not in ("none", "triggered", "fixed", "random"):
     print(f"FATAL unknown SH_ARM={ARM!r}", flush=True); sys.exit(2)
 
-RESULTS_DIR  = f"results/iv_{ARM}"
+_SUF = "_smoke" if os.environ.get("SH_SMOKE") == "1" else ""
+RESULTS_DIR  = f"results/iv_{ARM}{_SUF}"
 RESULTS_PATH = os.path.join(RESULTS_DIR, "RESULTS.json")
 TRAJ_PATH    = os.path.join(RESULTS_DIR, "trajectories.json")
 LOG_PATH     = os.path.join(RESULTS_DIR, "LOG.md")

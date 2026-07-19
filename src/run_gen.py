@@ -68,7 +68,8 @@ C = dict(CONFIGS[EXP])
 if os.environ.get("SH_SMOKE") == "1":
     C["n_seeds"], C["n_tasks"] = 1, 4   # fast CPU sanity run
 
-RESULTS_DIR  = f"results/{EXP}"
+_SUF = "_smoke" if os.environ.get("SH_SMOKE") == "1" else ""
+RESULTS_DIR  = f"results/{EXP}{_SUF}"
 RESULTS_PATH = os.path.join(RESULTS_DIR, "RESULTS.json")
 TRAJ_PATH    = os.path.join(RESULTS_DIR, "trajectories.json")
 LOG_PATH     = os.path.join(RESULTS_DIR, "LOG.md")
