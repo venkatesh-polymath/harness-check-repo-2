@@ -1,10 +1,10 @@
-# EXPERIMENT BRIEF — round baseline-00 (probe)
+# EXPERIMENT BRIEF — round refine-01 (probe)
 
 ## THIS ROUND (do exactly this)
-Establish the baseline only, do not build SNRI yet. Vanilla ResNet-18 + SGD + cosine LR on continual/non-stationary CIFAR-100 (task sequence per study spec). Log per-task train accuracy, plasticity loss curve, and effective rank of weight matrices over training. No plasticity intervention.
+Still baseline only (no SNRI). Strengthen non-stationarity to elicit measurable plasticity loss: extend to a longer task sequence (e.g. 15-20 sequential CIFAR-100 tasks, or add class-shuffle/warm-start-per-task) so cumulative rank collapse and rising dead-neuron fraction become clearly visible across tasks. Keep same architecture/optimizer. Log per-task plasticity (final train acc per task), effective-rank trajectory, and dead-neuron fraction per task. Goal: a baseline that demonstrably loses plasticity over the sequence.
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/baseline-00/.
+for context and build on them; write this round's outputs under results/refine-01/.
 
 ## Idea
 Spectral Null-Space Re-initialization (SNRI): A Provably Non-Disruptive, Rank-Maximizing Plasticity Maintenance Rule
@@ -39,4 +39,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: Vanilla ResNet-18 + SGD + cosine LR on CIFAR-100 with zero plasticity intervention — the published continual-learning plasticity benchmark with documented effective-rank collapse and accuracy reference numbers (Lyle et al. 2023, Abbas et al. 2023).
 - eval contract: Dataset: CIFAR-100 fixed standard split. Primary metric: effective rank (nuclear-norm / Frobenius-norm ratio) per weight matrix, sampled every 10 epochs, reported as AUC over the full training curve averaged across layers. Secondary metrics: final top-1 test accuracy, dead-neuron fraction (ReLU units with zero activation on entire val set at epoch 200). Sanity gates before any arm runs: (1) loss at init ≈ log(100) = 4.605 ± 0.01, (2) constant-predictor accuracy = 1.0 ± 0.1%, (3) single-batch memorization drives training loss < 0.01 within 500 steps, (4) two runs with identical seed produce bit-identical final weight checksums. Statistical test: paired Wilcoxon signed-rank test across 5 seeds (α = 0.05, Bonferroni-corrected for 4 pairwise comparisons vs. baseline) on both effective-rank AUC and final accuracy; report effect size (rank-biserial r).
 
-Record everything under results/baseline-00/. Do not commit weights.
+Record everything under results/refine-01/. Do not commit weights.
