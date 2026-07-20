@@ -1,0 +1,5 @@
+SWEEP K=16 arms=['none', 'triggered', 'smart', 'fixed', 'random'] 10seeds x 280tasks
+  K16 none      s0 ss=0.7107 dead=0.860 nev=0 [155s]
+  K16 none      s1 ss=0.7154 dead=0.890 nev=0 [312s]
+  K16 none      s2 ss=0.7890 dead=0.860 nev=0 [468s]
+  K16 none      s3 ss=0.7840 dead=0.890 nev=0 [625s]
