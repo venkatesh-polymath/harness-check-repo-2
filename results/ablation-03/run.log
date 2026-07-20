@@ -1,0 +1,169 @@
+[01:10:05] Python 3.12.10 (main, May 21 2025, 23:34:56) [GCC 12.2.0]
+[01:10:05] PyTorch 2.13.0+cu130
+[01:10:05] GPU: NVIDIA H100 80GB HBM3
+[01:10:05] Config: 20 tasks × 5 classes × 10 epochs
+[01:10:05] Arms: A=vanilla  B=SNRI  C=naive-random-reinit(ReDo)
+[01:10:07] CIFAR-100: 50000 train / 10000 test
+[01:10:07] 
+============================================================
+[01:10:07] ABLATION-03: Running arms A, B, C
+[01:10:07] ============================================================
+[01:10:07] 
+============================================================
+[01:10:07] ARM A_vanilla: starting
+[01:10:07] ============================================================
+[01:10:11]   Init rank=13.2356  init_dead=2.14%
+[01:10:21]   Arm A_vanilla T00: tr=62.9% rank=12.558 (drop=5.1%) dead=0.49% reinit=0 dis=N/A elapsed=10s
+[01:10:31]   Arm A_vanilla T01: tr=42.3% rank=12.332 (drop=6.8%) dead=3.72% reinit=0 dis=N/A elapsed=21s
+[01:10:42]   Arm A_vanilla T02: tr=27.0% rank=12.318 (drop=6.9%) dead=3.62% reinit=0 dis=N/A elapsed=31s
+[01:10:52]   Arm A_vanilla T03: tr=36.8% rank=12.312 (drop=7.0%) dead=3.64% reinit=0 dis=N/A elapsed=42s
+[01:11:03]   Arm A_vanilla T04: tr=62.7% rank=12.280 (drop=7.2%) dead=5.56% reinit=0 dis=N/A elapsed=52s
+[01:11:13]   Arm A_vanilla T05: tr=35.7% rank=12.266 (drop=7.3%) dead=4.94% reinit=0 dis=N/A elapsed=62s
+[01:11:23]   Arm A_vanilla T06: tr=59.6% rank=12.272 (drop=7.3%) dead=3.88% reinit=0 dis=N/A elapsed=72s
+[01:11:33]   Arm A_vanilla T07: tr=63.5% rank=12.265 (drop=7.3%) dead=5.16% reinit=0 dis=N/A elapsed=83s
+[01:11:43]   Arm A_vanilla T08: tr=54.0% rank=12.267 (drop=7.3%) dead=4.19% reinit=0 dis=N/A elapsed=93s
+[01:11:54]   Arm A_vanilla T09: tr=77.0% rank=12.259 (drop=7.4%) dead=6.65% reinit=0 dis=N/A elapsed=103s
+[01:12:04]   Arm A_vanilla T10: tr=81.4% rank=12.240 (drop=7.5%) dead=6.57% reinit=0 dis=N/A elapsed=113s
+[01:12:14]   Arm A_vanilla T11: tr=72.3% rank=12.227 (drop=7.6%) dead=6.59% reinit=0 dis=N/A elapsed=123s
+[01:12:24]   Arm A_vanilla T12: tr=82.6% rank=12.215 (drop=7.7%) dead=6.98% reinit=0 dis=N/A elapsed=134s
+[01:12:35]   Arm A_vanilla T13: tr=77.5% rank=12.190 (drop=7.9%) dead=7.12% reinit=0 dis=N/A elapsed=144s
+[01:12:45]   Arm A_vanilla T14: tr=82.6% rank=12.173 (drop=8.0%) dead=8.68% reinit=0 dis=N/A elapsed=154s
+[01:12:55]   Arm A_vanilla T15: tr=69.9% rank=12.147 (drop=8.2%) dead=6.68% reinit=0 dis=N/A elapsed=164s
+[01:13:05]   Arm A_vanilla T16: tr=82.7% rank=12.123 (drop=8.4%) dead=7.77% reinit=0 dis=N/A elapsed=175s
+[01:13:16]   Arm A_vanilla T17: tr=78.2% rank=12.092 (drop=8.6%) dead=7.85% reinit=0 dis=N/A elapsed=186s
+[01:13:28]   Arm A_vanilla T18: tr=85.8% rank=12.057 (drop=8.9%) dead=7.46% reinit=0 dis=N/A elapsed=197s
+[01:13:40]   Arm A_vanilla T19: tr=82.2% rank=11.997 (drop=9.4%) dead=6.76% reinit=0 dis=N/A elapsed=209s
+[01:13:40] 
+  Arm A_vanilla summary:
+[01:13:40]     rank: init=13.2356 final=11.9968 AUC=12.2296 drop=9.36% slope=-0.01837/task r=-0.916
+[01:13:40]     dead: init=2.14% final=6.76% slope=0.28927/task r=0.860
+[01:13:40]     total_reinit=0  time=3.5min
+[01:13:40] 
+============================================================
+[01:13:40] ARM B_SNRI: starting
+[01:13:40] ============================================================
+[01:13:43]   Init rank=13.2356  init_dead=2.14%
+[01:13:54]   Arm B_SNRI T00: tr=62.9% rank=12.558 (drop=5.1%) dead=0.49% reinit=0 dis=0.00e+00 elapsed=11s
+[01:14:05]   Arm B_SNRI T01: tr=48.0% rank=12.448 (drop=5.9%) dead=1.19% reinit=1 dis=1.34e-02 elapsed=21s
+[01:14:16]   Arm B_SNRI T02: tr=29.9% rank=12.420 (drop=6.2%) dead=2.17% reinit=1 dis=4.04e-03 elapsed=32s
+[01:14:27]   Arm B_SNRI T03: tr=24.2% rank=12.219 (drop=7.7%) dead=2.27% reinit=1 dis=6.01e-05 elapsed=44s
+[01:14:38]   Arm B_SNRI T04: tr=52.2% rank=12.213 (drop=7.7%) dead=2.58% reinit=1 dis=7.93e-04 elapsed=54s
+[01:14:49]   Arm B_SNRI T05: tr=34.8% rank=12.178 (drop=8.0%) dead=1.75% reinit=1 dis=2.81e-04 elapsed=66s
+[01:15:00]   Arm B_SNRI T06: tr=51.3% rank=12.187 (drop=7.9%) dead=0.82% reinit=1 dis=1.45e-03 elapsed=77s
+[01:15:11]   Arm B_SNRI T07: tr=54.7% rank=12.170 (drop=8.1%) dead=0.81% reinit=2 dis=3.14e-02 elapsed=88s
+[01:15:22]   Arm B_SNRI T08: tr=43.2% rank=12.110 (drop=8.5%) dead=1.15% reinit=2 dis=1.66e-03 elapsed=98s
+[01:15:32]   Arm B_SNRI T09: tr=63.4% rank=12.104 (drop=8.5%) dead=2.06% reinit=2 dis=2.66e-03 elapsed=109s
+[01:15:43]   Arm B_SNRI T10: tr=77.8% rank=12.104 (drop=8.6%) dead=2.87% reinit=3 dis=3.15e-02 elapsed=120s
+[01:15:54]   Arm B_SNRI T11: tr=71.7% rank=12.087 (drop=8.7%) dead=3.30% reinit=3 dis=1.20e-02 elapsed=131s
+[01:16:05]   Arm B_SNRI T12: tr=79.6% rank=12.078 (drop=8.7%) dead=4.52% reinit=2 dis=4.63e-03 elapsed=142s
+[01:16:15]   Arm B_SNRI T13: tr=72.7% rank=12.054 (drop=8.9%) dead=5.89% reinit=3 dis=4.90e-02 elapsed=152s
+[01:16:26]   Arm B_SNRI T14: tr=80.6% rank=12.047 (drop=9.0%) dead=5.68% reinit=3 dis=7.02e-03 elapsed=163s
+[01:16:37]   Arm B_SNRI T15: tr=68.0% rank=12.025 (drop=9.1%) dead=5.24% reinit=3 dis=1.25e-02 elapsed=174s
+[01:16:48]   Arm B_SNRI T16: tr=71.9% rank=11.991 (drop=9.4%) dead=7.83% reinit=2 dis=7.76e-03 elapsed=185s
+[01:16:58]   Arm B_SNRI T17: tr=71.0% rank=11.978 (drop=9.5%) dead=8.91% reinit=3 dis=2.23e-02 elapsed=195s
+[01:17:09]   Arm B_SNRI T18: tr=79.8% rank=11.952 (drop=9.7%) dead=11.52% reinit=3 dis=1.65e-02 elapsed=206s
+[01:17:20]   Arm B_SNRI T19: tr=74.6% rank=11.917 (drop=10.0%) dead=15.68% reinit=2 dis=2.94e-03 elapsed=217s
+[01:17:20] 
+  Arm B_SNRI summary:
+[01:17:20]     rank: init=13.2356 final=11.9167 AUC=12.1420 drop=9.96% slope=-0.02626/task r=-0.924
+[01:17:20]     dead: init=2.14% final=15.68% slope=0.57408/task r=0.847
+[01:17:20]     disruption: mean=1.109e-02 max=4.897e-02 min=0.000e+00
+[01:17:20]     total_reinit=39  time=3.6min
+[01:17:20] 
+============================================================
+[01:17:20] ARM C_naive: starting
+[01:17:20] ============================================================
+[01:17:23]   Init rank=13.2356  init_dead=2.14%
+[01:17:34]   Arm C_naive T00: tr=62.9% rank=12.558 (drop=5.1%) dead=0.49% reinit=0 dis=0.00e+00 elapsed=11s
+[01:17:44]   Arm C_naive T01: tr=48.0% rank=12.448 (drop=5.9%) dead=1.19% reinit=1 dis=1.34e-02 elapsed=21s
+[01:17:55]   Arm C_naive T02: tr=36.8% rank=12.420 (drop=6.2%) dead=2.08% reinit=1 dis=6.99e-02 elapsed=32s
+[01:18:06]   Arm C_naive T03: tr=24.6% rank=12.381 (drop=6.5%) dead=2.29% reinit=1 dis=7.30e-02 elapsed=43s
+[01:18:17]   Arm C_naive T04: tr=62.8% rank=12.387 (drop=6.4%) dead=2.57% reinit=1 dis=1.53e-02 elapsed=53s
+[01:18:27]   Arm C_naive T05: tr=37.2% rank=12.364 (drop=6.6%) dead=2.04% reinit=2 dis=1.91e-02 elapsed=64s
+[01:18:38]   Arm C_naive T06: tr=54.3% rank=12.370 (drop=6.5%) dead=0.98% reinit=2 dis=5.12e-02 elapsed=75s
+[01:18:49]   Arm C_naive T07: tr=57.4% rank=12.357 (drop=6.6%) dead=1.33% reinit=3 dis=3.59e-01 elapsed=86s
+[01:19:00]   Arm C_naive T08: tr=47.9% rank=12.355 (drop=6.7%) dead=2.78% reinit=3 dis=7.95e-01 elapsed=97s
+[01:19:11]   Arm C_naive T09: tr=68.8% rank=12.358 (drop=6.6%) dead=2.94% reinit=2 dis=1.43e-01 elapsed=108s
+[01:19:21]   Arm C_naive T10: tr=74.1% rank=12.317 (drop=6.9%) dead=3.12% reinit=2 dis=2.52e-01 elapsed=118s
+[01:19:32]   Arm C_naive T11: tr=71.0% rank=12.305 (drop=7.0%) dead=3.60% reinit=2 dis=2.72e-02 elapsed=129s
+[01:19:43]   Arm C_naive T12: tr=82.5% rank=12.299 (drop=7.1%) dead=3.85% reinit=3 dis=1.63e-01 elapsed=140s
+[01:19:53]   Arm C_naive T13: tr=68.9% rank=12.268 (drop=7.3%) dead=2.94% reinit=3 dis=3.96e-01 elapsed=150s
+[01:20:04]   Arm C_naive T14: tr=79.8% rank=12.249 (drop=7.5%) dead=3.48% reinit=3 dis=1.22e-01 elapsed=161s
+[01:20:16]   Arm C_naive T15: tr=71.0% rank=12.235 (drop=7.6%) dead=2.98% reinit=1 dis=7.11e-02 elapsed=173s
+[01:20:30]   Arm C_naive T16: tr=82.2% rank=12.205 (drop=7.8%) dead=3.37% reinit=1 dis=6.50e-02 elapsed=187s
+[01:20:41]   Arm C_naive T17: tr=71.6% rank=12.154 (drop=8.2%) dead=4.67% reinit=1 dis=5.91e-02 elapsed=198s
+[01:20:51]   Arm C_naive T18: tr=78.4% rank=12.133 (drop=8.3%) dead=7.16% reinit=2 dis=1.00e-01 elapsed=208s
+[01:21:02]   Arm C_naive T19: tr=78.1% rank=12.096 (drop=8.6%) dead=7.54% reinit=3 dis=1.60e-01 elapsed=219s
+[01:21:02] 
+  Arm C_naive summary:
+[01:21:02]     rank: init=13.2356 final=12.0961 AUC=12.3129 drop=8.61% slope=-0.01829/task r=-0.962
+[01:21:02]     dead: init=2.14% final=7.54% slope=0.25170/task r=0.831
+[01:21:02]     disruption: mean=1.477e-01 max=7.946e-01 min=0.000e+00
+[01:21:02]     total_reinit=37  time=3.7min
+[01:21:02] 
+============================================================
+[01:21:02] COMPARISON: A vs B vs C
+[01:21:02] ============================================================
+[01:21:02] Rank AUC:   A=12.2296  B=12.1420  C=12.3129
+[01:21:02]   B vs A: -0.72%   C vs A: +0.68%   C vs B: +1.41%
+[01:21:02] Final dead%: A=6.76%  B=15.68%  C=7.54%
+[01:21:02]   B-A=+8.92pp   C-A=+0.78pp   C-B=-8.14pp
+[01:21:02] Disruption (max logit diff):
+[01:21:02]   A=0.0 (by definition, no re-init)
+[01:21:02]   B=1.109e-02/4.897e-02 (mean/max over tasks)
+[01:21:02]   C=1.477e-01/7.946e-01 (mean/max over tasks)
+[01:21:02] 
+Hypothesis checks:
+[01:21:02]   C more disruptive than B: True
+[01:21:02]   C higher rank AUC than B: True (+1.41%)
+[01:21:02]   C lower dead% than B:     True (-8.14pp)
+[01:21:02]   All three conditions met: True
+[01:21:02] 
+Results written to /workspace/results/ablation-03/RESULTS.json
+[01:21:02] 
+============================================================
+[01:21:02] FINAL RESULTS (compact):
+[01:21:02] {
+  "status": "SUCCESS",
+  "scale": "probe",
+  "metrics": {
+    "arm_A_rank_auc": 12.2296,
+    "arm_B_rank_auc": 12.142,
+    "arm_C_rank_auc": 12.3129,
+    "arm_A_final_dead_pct": 6.76,
+    "arm_B_final_dead_pct": 15.68,
+    "arm_C_final_dead_pct": 7.54,
+    "arm_A_rank_drop_pct": 9.36,
+    "arm_B_rank_drop_pct": 9.96,
+    "arm_C_rank_drop_pct": 8.61,
+    "arm_B_disruption_mean": 0.011093,
+    "arm_B_disruption_max": 0.048975,
+    "arm_C_disruption_mean": 0.14773,
+    "arm_C_disruption_max": 0.79459,
+    "rank_auc_B_vs_A_pct": -0.72,
+    "rank_auc_C_vs_A_pct": 0.68,
+    "rank_auc_C_vs_B_pct": 1.41,
+    "dead_pct_B_minus_A_pp": 8.92,
+    "dead_pct_C_minus_A_pp": 0.78,
+    "dead_pct_C_minus_B_pp": -8.14,
+    "hyp_C_more_disruptive_than_B": true,
+    "hyp_C_higher_rank_than_B": true,
+    "hyp_C_lower_dead_than_B": true,
+    "hyp_all_conditions_met": true,
+    "arm_A_rank_trend_slope": -0.01837,
+    "arm_B_rank_trend_slope": -0.02626,
+    "arm_C_rank_trend_slope": -0.01829,
+    "arm_A_dead_trend_slope": 0.28927,
+    "arm_B_dead_trend_slope": 0.57408,
+    "arm_C_dead_trend_slope": 0.2517,
+    "arm_B_total_reinit": 39,
+    "arm_C_total_reinit": 37,
+    "sanity_gates_1_4": "PASS (cited from baseline-00)",
+    "sanity_gates_G7_G8_G9": "PASS (cited from increase_complexity-02)"
+  },
+  "subject_executed": "ResNet-18 + SGD (lr=0.1, mom=0.9, wd=0.0005) + CosineAnnealingLR/task, CIFAR-100 class-incremental, 20 tasks \u00d7 5 classes \u00d7 10 epochs/task, batch=128, seed=42. Three arms: A=vanilla, B=SNRI null-space re-init, C=naive kaiming re-init (ReDo-style).",
+  "notes": "Ablation-03: A vs B vs C head-to-head with identical seed/schedule. Rank AUC: A=12.2296 B=12.1420 C=12.3129. Final dead: A=6.76% B=15.68% C=7.54%. Disruption (mean/max): B=1.11e-02/4.90e-02 C=1.48e-01/7.95e-01. Hypothesis (C more disruptive AND better rank AND lower dead than B): True. Sanity gates 1-4 from baseline-00, G7/G8/G9 from increase_complexity-02."
+}
+[01:21:02] ============================================================
+
+✓ Done. /workspace/results/ablation-03/RESULTS.json

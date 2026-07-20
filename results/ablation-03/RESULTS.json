@@ -1,0 +1,1328 @@
+{
+  "status": "SUCCESS",
+  "scale": "probe",
+  "metrics": {
+    "arm_A_rank_auc": 12.2296,
+    "arm_B_rank_auc": 12.142,
+    "arm_C_rank_auc": 12.3129,
+    "arm_A_final_dead_pct": 6.76,
+    "arm_B_final_dead_pct": 15.68,
+    "arm_C_final_dead_pct": 7.54,
+    "arm_A_rank_drop_pct": 9.36,
+    "arm_B_rank_drop_pct": 9.96,
+    "arm_C_rank_drop_pct": 8.61,
+    "arm_B_disruption_mean": 0.011093,
+    "arm_B_disruption_max": 0.048975,
+    "arm_C_disruption_mean": 0.14773,
+    "arm_C_disruption_max": 0.79459,
+    "rank_auc_B_vs_A_pct": -0.72,
+    "rank_auc_C_vs_A_pct": 0.68,
+    "rank_auc_C_vs_B_pct": 1.41,
+    "dead_pct_B_minus_A_pp": 8.92,
+    "dead_pct_C_minus_A_pp": 0.78,
+    "dead_pct_C_minus_B_pp": -8.14,
+    "hyp_C_more_disruptive_than_B": true,
+    "hyp_C_higher_rank_than_B": true,
+    "hyp_C_lower_dead_than_B": true,
+    "hyp_all_conditions_met": true,
+    "arm_A_rank_trend_slope": -0.01837,
+    "arm_B_rank_trend_slope": -0.02626,
+    "arm_C_rank_trend_slope": -0.01829,
+    "arm_A_dead_trend_slope": 0.28927,
+    "arm_B_dead_trend_slope": 0.57408,
+    "arm_C_dead_trend_slope": 0.2517,
+    "arm_B_total_reinit": 39,
+    "arm_C_total_reinit": 37,
+    "sanity_gates_1_4": "PASS (cited from baseline-00)",
+    "sanity_gates_G7_G8_G9": "PASS (cited from increase_complexity-02)",
+    "arms": {
+      "A_vanilla": {
+        "arm": "A_vanilla",
+        "init_rank": 13.2356,
+        "final_rank": 11.9968,
+        "rank_auc": 12.2296,
+        "rank_drop_pct": 9.36,
+        "rank_trend_slope": -0.01837,
+        "rank_trend_r": -0.9155,
+        "init_dead_pct": 2.14,
+        "final_dead_pct": 6.76,
+        "dead_trend_slope": 0.28927,
+        "dead_trend_r": 0.8603,
+        "disruption_mean": null,
+        "disruption_max": null,
+        "disruption_min": null,
+        "total_reinit": 0,
+        "training_time_min": 3.49,
+        "per_task": [
+          {
+            "task_id": 0,
+            "classes": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "final_train_acc_pct": 62.88,
+            "final_test_acc_pct": 67.2,
+            "mean_effective_rank": 12.5575,
+            "rank_drop_from_init_pct": 5.12,
+            "dead_neuron_pct": 0.49,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 1,
+            "classes": [
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "final_train_acc_pct": 42.28,
+            "final_test_acc_pct": 42.8,
+            "mean_effective_rank": 12.3322,
+            "rank_drop_from_init_pct": 6.83,
+            "dead_neuron_pct": 3.72,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 2,
+            "classes": [
+              10,
+              11,
+              12,
+              13,
+              14
+            ],
+            "final_train_acc_pct": 26.96,
+            "final_test_acc_pct": 31.6,
+            "mean_effective_rank": 12.3181,
+            "rank_drop_from_init_pct": 6.93,
+            "dead_neuron_pct": 3.62,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 3,
+            "classes": [
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "final_train_acc_pct": 36.76,
+            "final_test_acc_pct": 41.0,
+            "mean_effective_rank": 12.3125,
+            "rank_drop_from_init_pct": 6.97,
+            "dead_neuron_pct": 3.64,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 4,
+            "classes": [
+              20,
+              21,
+              22,
+              23,
+              24
+            ],
+            "final_train_acc_pct": 62.68,
+            "final_test_acc_pct": 60.4,
+            "mean_effective_rank": 12.2803,
+            "rank_drop_from_init_pct": 7.22,
+            "dead_neuron_pct": 5.56,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 5,
+            "classes": [
+              25,
+              26,
+              27,
+              28,
+              29
+            ],
+            "final_train_acc_pct": 35.68,
+            "final_test_acc_pct": 36.0,
+            "mean_effective_rank": 12.2662,
+            "rank_drop_from_init_pct": 7.32,
+            "dead_neuron_pct": 4.94,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 6,
+            "classes": [
+              30,
+              31,
+              32,
+              33,
+              34
+            ],
+            "final_train_acc_pct": 59.64,
+            "final_test_acc_pct": 63.0,
+            "mean_effective_rank": 12.2722,
+            "rank_drop_from_init_pct": 7.28,
+            "dead_neuron_pct": 3.88,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 7,
+            "classes": [
+              35,
+              36,
+              37,
+              38,
+              39
+            ],
+            "final_train_acc_pct": 63.52,
+            "final_test_acc_pct": 61.0,
+            "mean_effective_rank": 12.265,
+            "rank_drop_from_init_pct": 7.33,
+            "dead_neuron_pct": 5.16,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 8,
+            "classes": [
+              40,
+              41,
+              42,
+              43,
+              44
+            ],
+            "final_train_acc_pct": 54.0,
+            "final_test_acc_pct": 57.6,
+            "mean_effective_rank": 12.2665,
+            "rank_drop_from_init_pct": 7.32,
+            "dead_neuron_pct": 4.19,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 9,
+            "classes": [
+              45,
+              46,
+              47,
+              48,
+              49
+            ],
+            "final_train_acc_pct": 77.04,
+            "final_test_acc_pct": 77.0,
+            "mean_effective_rank": 12.259,
+            "rank_drop_from_init_pct": 7.38,
+            "dead_neuron_pct": 6.65,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 10,
+            "classes": [
+              50,
+              51,
+              52,
+              53,
+              54
+            ],
+            "final_train_acc_pct": 81.4,
+            "final_test_acc_pct": 81.8,
+            "mean_effective_rank": 12.2395,
+            "rank_drop_from_init_pct": 7.53,
+            "dead_neuron_pct": 6.57,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 11,
+            "classes": [
+              55,
+              56,
+              57,
+              58,
+              59
+            ],
+            "final_train_acc_pct": 72.32,
+            "final_test_acc_pct": 68.4,
+            "mean_effective_rank": 12.2269,
+            "rank_drop_from_init_pct": 7.62,
+            "dead_neuron_pct": 6.59,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 12,
+            "classes": [
+              60,
+              61,
+              62,
+              63,
+              64
+            ],
+            "final_train_acc_pct": 82.6,
+            "final_test_acc_pct": 80.0,
+            "mean_effective_rank": 12.2154,
+            "rank_drop_from_init_pct": 7.71,
+            "dead_neuron_pct": 6.98,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 13,
+            "classes": [
+              65,
+              66,
+              67,
+              68,
+              69
+            ],
+            "final_train_acc_pct": 77.48,
+            "final_test_acc_pct": 78.4,
+            "mean_effective_rank": 12.1902,
+            "rank_drop_from_init_pct": 7.9,
+            "dead_neuron_pct": 7.12,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 14,
+            "classes": [
+              70,
+              71,
+              72,
+              73,
+              74
+            ],
+            "final_train_acc_pct": 82.56,
+            "final_test_acc_pct": 81.0,
+            "mean_effective_rank": 12.1731,
+            "rank_drop_from_init_pct": 8.03,
+            "dead_neuron_pct": 8.68,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 15,
+            "classes": [
+              75,
+              76,
+              77,
+              78,
+              79
+            ],
+            "final_train_acc_pct": 69.88,
+            "final_test_acc_pct": 73.0,
+            "mean_effective_rank": 12.1471,
+            "rank_drop_from_init_pct": 8.22,
+            "dead_neuron_pct": 6.68,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 16,
+            "classes": [
+              80,
+              81,
+              82,
+              83,
+              84
+            ],
+            "final_train_acc_pct": 82.68,
+            "final_test_acc_pct": 82.8,
+            "mean_effective_rank": 12.1232,
+            "rank_drop_from_init_pct": 8.4,
+            "dead_neuron_pct": 7.77,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 17,
+            "classes": [
+              85,
+              86,
+              87,
+              88,
+              89
+            ],
+            "final_train_acc_pct": 78.2,
+            "final_test_acc_pct": 74.6,
+            "mean_effective_rank": 12.0922,
+            "rank_drop_from_init_pct": 8.64,
+            "dead_neuron_pct": 7.85,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 18,
+            "classes": [
+              90,
+              91,
+              92,
+              93,
+              94
+            ],
+            "final_train_acc_pct": 85.76,
+            "final_test_acc_pct": 83.0,
+            "mean_effective_rank": 12.0574,
+            "rank_drop_from_init_pct": 8.9,
+            "dead_neuron_pct": 7.46,
+            "n_reinit": 0,
+            "disruption": null
+          },
+          {
+            "task_id": 19,
+            "classes": [
+              95,
+              96,
+              97,
+              98,
+              99
+            ],
+            "final_train_acc_pct": 82.2,
+            "final_test_acc_pct": 80.2,
+            "mean_effective_rank": 11.9968,
+            "rank_drop_from_init_pct": 9.36,
+            "dead_neuron_pct": 6.76,
+            "n_reinit": 0,
+            "disruption": null
+          }
+        ],
+        "reinit_log": []
+      },
+      "B_SNRI": {
+        "arm": "B_SNRI",
+        "init_rank": 13.2356,
+        "final_rank": 11.9167,
+        "rank_auc": 12.142,
+        "rank_drop_pct": 9.96,
+        "rank_trend_slope": -0.02626,
+        "rank_trend_r": -0.924,
+        "init_dead_pct": 2.14,
+        "final_dead_pct": 15.68,
+        "dead_trend_slope": 0.57408,
+        "dead_trend_r": 0.8473,
+        "disruption_mean": 0.011093,
+        "disruption_max": 0.048975,
+        "disruption_min": 0.0,
+        "total_reinit": 39,
+        "training_time_min": 3.62,
+        "per_task": [
+          {
+            "task_id": 0,
+            "classes": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "final_train_acc_pct": 62.88,
+            "final_test_acc_pct": 67.2,
+            "mean_effective_rank": 12.5575,
+            "rank_drop_from_init_pct": 5.12,
+            "dead_neuron_pct": 0.49,
+            "n_reinit": 0,
+            "disruption": 0.0
+          },
+          {
+            "task_id": 1,
+            "classes": [
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "final_train_acc_pct": 48.04,
+            "final_test_acc_pct": 56.4,
+            "mean_effective_rank": 12.4485,
+            "rank_drop_from_init_pct": 5.95,
+            "dead_neuron_pct": 1.19,
+            "n_reinit": 1,
+            "disruption": 0.013443946838378906
+          },
+          {
+            "task_id": 2,
+            "classes": [
+              10,
+              11,
+              12,
+              13,
+              14
+            ],
+            "final_train_acc_pct": 29.88,
+            "final_test_acc_pct": 33.8,
+            "mean_effective_rank": 12.42,
+            "rank_drop_from_init_pct": 6.16,
+            "dead_neuron_pct": 2.17,
+            "n_reinit": 1,
+            "disruption": 0.004036903381347656
+          },
+          {
+            "task_id": 3,
+            "classes": [
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "final_train_acc_pct": 24.2,
+            "final_test_acc_pct": 26.6,
+            "mean_effective_rank": 12.2193,
+            "rank_drop_from_init_pct": 7.68,
+            "dead_neuron_pct": 2.27,
+            "n_reinit": 1,
+            "disruption": 6.008148193359375e-05
+          },
+          {
+            "task_id": 4,
+            "classes": [
+              20,
+              21,
+              22,
+              23,
+              24
+            ],
+            "final_train_acc_pct": 52.16,
+            "final_test_acc_pct": 50.6,
+            "mean_effective_rank": 12.2135,
+            "rank_drop_from_init_pct": 7.72,
+            "dead_neuron_pct": 2.58,
+            "n_reinit": 1,
+            "disruption": 0.00079345703125
+          },
+          {
+            "task_id": 5,
+            "classes": [
+              25,
+              26,
+              27,
+              28,
+              29
+            ],
+            "final_train_acc_pct": 34.8,
+            "final_test_acc_pct": 35.0,
+            "mean_effective_rank": 12.1784,
+            "rank_drop_from_init_pct": 7.99,
+            "dead_neuron_pct": 1.75,
+            "n_reinit": 1,
+            "disruption": 0.0002808570861816406
+          },
+          {
+            "task_id": 6,
+            "classes": [
+              30,
+              31,
+              32,
+              33,
+              34
+            ],
+            "final_train_acc_pct": 51.28,
+            "final_test_acc_pct": 54.4,
+            "mean_effective_rank": 12.1871,
+            "rank_drop_from_init_pct": 7.92,
+            "dead_neuron_pct": 0.82,
+            "n_reinit": 1,
+            "disruption": 0.0014514923095703125
+          },
+          {
+            "task_id": 7,
+            "classes": [
+              35,
+              36,
+              37,
+              38,
+              39
+            ],
+            "final_train_acc_pct": 54.68,
+            "final_test_acc_pct": 52.6,
+            "mean_effective_rank": 12.17,
+            "rank_drop_from_init_pct": 8.05,
+            "dead_neuron_pct": 0.81,
+            "n_reinit": 2,
+            "disruption": 0.03136634826660156
+          },
+          {
+            "task_id": 8,
+            "classes": [
+              40,
+              41,
+              42,
+              43,
+              44
+            ],
+            "final_train_acc_pct": 43.24,
+            "final_test_acc_pct": 45.8,
+            "mean_effective_rank": 12.1095,
+            "rank_drop_from_init_pct": 8.51,
+            "dead_neuron_pct": 1.15,
+            "n_reinit": 2,
+            "disruption": 0.0016570091247558594
+          },
+          {
+            "task_id": 9,
+            "classes": [
+              45,
+              46,
+              47,
+              48,
+              49
+            ],
+            "final_train_acc_pct": 63.4,
+            "final_test_acc_pct": 63.0,
+            "mean_effective_rank": 12.1044,
+            "rank_drop_from_init_pct": 8.55,
+            "dead_neuron_pct": 2.06,
+            "n_reinit": 2,
+            "disruption": 0.0026607513427734375
+          },
+          {
+            "task_id": 10,
+            "classes": [
+              50,
+              51,
+              52,
+              53,
+              54
+            ],
+            "final_train_acc_pct": 77.8,
+            "final_test_acc_pct": 77.6,
+            "mean_effective_rank": 12.1038,
+            "rank_drop_from_init_pct": 8.55,
+            "dead_neuron_pct": 2.87,
+            "n_reinit": 3,
+            "disruption": 0.031543731689453125
+          },
+          {
+            "task_id": 11,
+            "classes": [
+              55,
+              56,
+              57,
+              58,
+              59
+            ],
+            "final_train_acc_pct": 71.72,
+            "final_test_acc_pct": 65.0,
+            "mean_effective_rank": 12.0866,
+            "rank_drop_from_init_pct": 8.68,
+            "dead_neuron_pct": 3.3,
+            "n_reinit": 3,
+            "disruption": 0.011959075927734375
+          },
+          {
+            "task_id": 12,
+            "classes": [
+              60,
+              61,
+              62,
+              63,
+              64
+            ],
+            "final_train_acc_pct": 79.64,
+            "final_test_acc_pct": 77.0,
+            "mean_effective_rank": 12.078,
+            "rank_drop_from_init_pct": 8.75,
+            "dead_neuron_pct": 4.52,
+            "n_reinit": 2,
+            "disruption": 0.00463104248046875
+          },
+          {
+            "task_id": 13,
+            "classes": [
+              65,
+              66,
+              67,
+              68,
+              69
+            ],
+            "final_train_acc_pct": 72.72,
+            "final_test_acc_pct": 73.6,
+            "mean_effective_rank": 12.0542,
+            "rank_drop_from_init_pct": 8.93,
+            "dead_neuron_pct": 5.89,
+            "n_reinit": 3,
+            "disruption": 0.04897499084472656
+          },
+          {
+            "task_id": 14,
+            "classes": [
+              70,
+              71,
+              72,
+              73,
+              74
+            ],
+            "final_train_acc_pct": 80.64,
+            "final_test_acc_pct": 82.2,
+            "mean_effective_rank": 12.0466,
+            "rank_drop_from_init_pct": 8.98,
+            "dead_neuron_pct": 5.68,
+            "n_reinit": 3,
+            "disruption": 0.0070209503173828125
+          },
+          {
+            "task_id": 15,
+            "classes": [
+              75,
+              76,
+              77,
+              78,
+              79
+            ],
+            "final_train_acc_pct": 67.96,
+            "final_test_acc_pct": 66.0,
+            "mean_effective_rank": 12.0249,
+            "rank_drop_from_init_pct": 9.15,
+            "dead_neuron_pct": 5.24,
+            "n_reinit": 3,
+            "disruption": 0.012461662292480469
+          },
+          {
+            "task_id": 16,
+            "classes": [
+              80,
+              81,
+              82,
+              83,
+              84
+            ],
+            "final_train_acc_pct": 71.92,
+            "final_test_acc_pct": 73.6,
+            "mean_effective_rank": 11.9911,
+            "rank_drop_from_init_pct": 9.4,
+            "dead_neuron_pct": 7.83,
+            "n_reinit": 2,
+            "disruption": 0.007755279541015625
+          },
+          {
+            "task_id": 17,
+            "classes": [
+              85,
+              86,
+              87,
+              88,
+              89
+            ],
+            "final_train_acc_pct": 70.96,
+            "final_test_acc_pct": 69.0,
+            "mean_effective_rank": 11.9784,
+            "rank_drop_from_init_pct": 9.5,
+            "dead_neuron_pct": 8.91,
+            "n_reinit": 3,
+            "disruption": 0.022333145141601562
+          },
+          {
+            "task_id": 18,
+            "classes": [
+              90,
+              91,
+              92,
+              93,
+              94
+            ],
+            "final_train_acc_pct": 79.84,
+            "final_test_acc_pct": 76.2,
+            "mean_effective_rank": 11.9522,
+            "rank_drop_from_init_pct": 9.7,
+            "dead_neuron_pct": 11.52,
+            "n_reinit": 3,
+            "disruption": 0.016483306884765625
+          },
+          {
+            "task_id": 19,
+            "classes": [
+              95,
+              96,
+              97,
+              98,
+              99
+            ],
+            "final_train_acc_pct": 74.64,
+            "final_test_acc_pct": 74.2,
+            "mean_effective_rank": 11.9167,
+            "rank_drop_from_init_pct": 9.96,
+            "dead_neuron_pct": 15.68,
+            "n_reinit": 2,
+            "disruption": 0.0029392242431640625
+          }
+        ],
+        "reinit_log": [
+          {
+            "task_id": 0,
+            "n_reinit": 0,
+            "disruption_max_logit_diff": 0.0
+          },
+          {
+            "task_id": 1,
+            "n_reinit": 1,
+            "disruption_max_logit_diff": 0.013443946838378906
+          },
+          {
+            "task_id": 2,
+            "n_reinit": 1,
+            "disruption_max_logit_diff": 0.004036903381347656
+          },
+          {
+            "task_id": 3,
+            "n_reinit": 1,
+            "disruption_max_logit_diff": 6.008148193359375e-05
+          },
+          {
+            "task_id": 4,
+            "n_reinit": 1,
+            "disruption_max_logit_diff": 0.00079345703125
+          },
+          {
+            "task_id": 5,
+            "n_reinit": 1,
+            "disruption_max_logit_diff": 0.0002808570861816406
+          },
+          {
+            "task_id": 6,
+            "n_reinit": 1,
+            "disruption_max_logit_diff": 0.0014514923095703125
+          },
+          {
+            "task_id": 7,
+            "n_reinit": 2,
+            "disruption_max_logit_diff": 0.03136634826660156
+          },
+          {
+            "task_id": 8,
+            "n_reinit": 2,
+            "disruption_max_logit_diff": 0.0016570091247558594
+          },
+          {
+            "task_id": 9,
+            "n_reinit": 2,
+            "disruption_max_logit_diff": 0.0026607513427734375
+          },
+          {
+            "task_id": 10,
+            "n_reinit": 3,
+            "disruption_max_logit_diff": 0.031543731689453125
+          },
+          {
+            "task_id": 11,
+            "n_reinit": 3,
+            "disruption_max_logit_diff": 0.011959075927734375
+          },
+          {
+            "task_id": 12,
+            "n_reinit": 2,
+            "disruption_max_logit_diff": 0.00463104248046875
+          },
+          {
+            "task_id": 13,
+            "n_reinit": 3,
+            "disruption_max_logit_diff": 0.04897499084472656
+          },
+          {
+            "task_id": 14,
+            "n_reinit": 3,
+            "disruption_max_logit_diff": 0.0070209503173828125
+          },
+          {
+            "task_id": 15,
+            "n_reinit": 3,
+            "disruption_max_logit_diff": 0.012461662292480469
+          },
+          {
+            "task_id": 16,
+            "n_reinit": 2,
+            "disruption_max_logit_diff": 0.007755279541015625
+          },
+          {
+            "task_id": 17,
+            "n_reinit": 3,
+            "disruption_max_logit_diff": 0.022333145141601562
+          },
+          {
+            "task_id": 18,
+            "n_reinit": 3,
+            "disruption_max_logit_diff": 0.016483306884765625
+          },
+          {
+            "task_id": 19,
+            "n_reinit": 2,
+            "disruption_max_logit_diff": 0.0029392242431640625
+          }
+        ]
+      },
+      "C_naive": {
+        "arm": "C_naive",
+        "init_rank": 13.2356,
+        "final_rank": 12.0961,
+        "rank_auc": 12.3129,
+        "rank_drop_pct": 8.61,
+        "rank_trend_slope": -0.01829,
+        "rank_trend_r": -0.9618,
+        "init_dead_pct": 2.14,
+        "final_dead_pct": 7.54,
+        "dead_trend_slope": 0.2517,
+        "dead_trend_r": 0.8308,
+        "disruption_mean": 0.14773,
+        "disruption_max": 0.79459,
+        "disruption_min": 0.0,
+        "total_reinit": 37,
+        "training_time_min": 3.65,
+        "per_task": [
+          {
+            "task_id": 0,
+            "classes": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "final_train_acc_pct": 62.88,
+            "final_test_acc_pct": 67.2,
+            "mean_effective_rank": 12.5575,
+            "rank_drop_from_init_pct": 5.12,
+            "dead_neuron_pct": 0.49,
+            "n_reinit": 0,
+            "disruption": 0.0
+          },
+          {
+            "task_id": 1,
+            "classes": [
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "final_train_acc_pct": 48.04,
+            "final_test_acc_pct": 56.4,
+            "mean_effective_rank": 12.4485,
+            "rank_drop_from_init_pct": 5.95,
+            "dead_neuron_pct": 1.19,
+            "n_reinit": 1,
+            "disruption": 0.013443946838378906
+          },
+          {
+            "task_id": 2,
+            "classes": [
+              10,
+              11,
+              12,
+              13,
+              14
+            ],
+            "final_train_acc_pct": 36.84,
+            "final_test_acc_pct": 39.6,
+            "mean_effective_rank": 12.4203,
+            "rank_drop_from_init_pct": 6.16,
+            "dead_neuron_pct": 2.08,
+            "n_reinit": 1,
+            "disruption": 0.06990337371826172
+          },
+          {
+            "task_id": 3,
+            "classes": [
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "final_train_acc_pct": 24.56,
+            "final_test_acc_pct": 27.0,
+            "mean_effective_rank": 12.3807,
+            "rank_drop_from_init_pct": 6.46,
+            "dead_neuron_pct": 2.29,
+            "n_reinit": 1,
+            "disruption": 0.07297515869140625
+          },
+          {
+            "task_id": 4,
+            "classes": [
+              20,
+              21,
+              22,
+              23,
+              24
+            ],
+            "final_train_acc_pct": 62.76,
+            "final_test_acc_pct": 59.8,
+            "mean_effective_rank": 12.3875,
+            "rank_drop_from_init_pct": 6.41,
+            "dead_neuron_pct": 2.57,
+            "n_reinit": 1,
+            "disruption": 0.015279769897460938
+          },
+          {
+            "task_id": 5,
+            "classes": [
+              25,
+              26,
+              27,
+              28,
+              29
+            ],
+            "final_train_acc_pct": 37.16,
+            "final_test_acc_pct": 38.4,
+            "mean_effective_rank": 12.3637,
+            "rank_drop_from_init_pct": 6.59,
+            "dead_neuron_pct": 2.04,
+            "n_reinit": 2,
+            "disruption": 0.01911163330078125
+          },
+          {
+            "task_id": 6,
+            "classes": [
+              30,
+              31,
+              32,
+              33,
+              34
+            ],
+            "final_train_acc_pct": 54.32,
+            "final_test_acc_pct": 60.8,
+            "mean_effective_rank": 12.3705,
+            "rank_drop_from_init_pct": 6.54,
+            "dead_neuron_pct": 0.98,
+            "n_reinit": 2,
+            "disruption": 0.0511627197265625
+          },
+          {
+            "task_id": 7,
+            "classes": [
+              35,
+              36,
+              37,
+              38,
+              39
+            ],
+            "final_train_acc_pct": 57.36,
+            "final_test_acc_pct": 54.0,
+            "mean_effective_rank": 12.3565,
+            "rank_drop_from_init_pct": 6.64,
+            "dead_neuron_pct": 1.33,
+            "n_reinit": 3,
+            "disruption": 0.35948657989501953
+          },
+          {
+            "task_id": 8,
+            "classes": [
+              40,
+              41,
+              42,
+              43,
+              44
+            ],
+            "final_train_acc_pct": 47.92,
+            "final_test_acc_pct": 49.6,
+            "mean_effective_rank": 12.3552,
+            "rank_drop_from_init_pct": 6.65,
+            "dead_neuron_pct": 2.78,
+            "n_reinit": 3,
+            "disruption": 0.7945899963378906
+          },
+          {
+            "task_id": 9,
+            "classes": [
+              45,
+              46,
+              47,
+              48,
+              49
+            ],
+            "final_train_acc_pct": 68.84,
+            "final_test_acc_pct": 67.4,
+            "mean_effective_rank": 12.3585,
+            "rank_drop_from_init_pct": 6.63,
+            "dead_neuron_pct": 2.94,
+            "n_reinit": 2,
+            "disruption": 0.14275741577148438
+          },
+          {
+            "task_id": 10,
+            "classes": [
+              50,
+              51,
+              52,
+              53,
+              54
+            ],
+            "final_train_acc_pct": 74.08,
+            "final_test_acc_pct": 74.6,
+            "mean_effective_rank": 12.3166,
+            "rank_drop_from_init_pct": 6.94,
+            "dead_neuron_pct": 3.12,
+            "n_reinit": 2,
+            "disruption": 0.251556396484375
+          },
+          {
+            "task_id": 11,
+            "classes": [
+              55,
+              56,
+              57,
+              58,
+              59
+            ],
+            "final_train_acc_pct": 70.96,
+            "final_test_acc_pct": 67.4,
+            "mean_effective_rank": 12.3049,
+            "rank_drop_from_init_pct": 7.03,
+            "dead_neuron_pct": 3.6,
+            "n_reinit": 2,
+            "disruption": 0.027151107788085938
+          },
+          {
+            "task_id": 12,
+            "classes": [
+              60,
+              61,
+              62,
+              63,
+              64
+            ],
+            "final_train_acc_pct": 82.52,
+            "final_test_acc_pct": 78.0,
+            "mean_effective_rank": 12.299,
+            "rank_drop_from_init_pct": 7.08,
+            "dead_neuron_pct": 3.85,
+            "n_reinit": 3,
+            "disruption": 0.16333961486816406
+          },
+          {
+            "task_id": 13,
+            "classes": [
+              65,
+              66,
+              67,
+              68,
+              69
+            ],
+            "final_train_acc_pct": 68.88,
+            "final_test_acc_pct": 71.0,
+            "mean_effective_rank": 12.2681,
+            "rank_drop_from_init_pct": 7.31,
+            "dead_neuron_pct": 2.94,
+            "n_reinit": 3,
+            "disruption": 0.39643287658691406
+          },
+          {
+            "task_id": 14,
+            "classes": [
+              70,
+              71,
+              72,
+              73,
+              74
+            ],
+            "final_train_acc_pct": 79.76,
+            "final_test_acc_pct": 82.0,
+            "mean_effective_rank": 12.2491,
+            "rank_drop_from_init_pct": 7.45,
+            "dead_neuron_pct": 3.48,
+            "n_reinit": 3,
+            "disruption": 0.12184333801269531
+          },
+          {
+            "task_id": 15,
+            "classes": [
+              75,
+              76,
+              77,
+              78,
+              79
+            ],
+            "final_train_acc_pct": 70.96,
+            "final_test_acc_pct": 69.6,
+            "mean_effective_rank": 12.2346,
+            "rank_drop_from_init_pct": 7.56,
+            "dead_neuron_pct": 2.98,
+            "n_reinit": 1,
+            "disruption": 0.07113075256347656
+          },
+          {
+            "task_id": 16,
+            "classes": [
+              80,
+              81,
+              82,
+              83,
+              84
+            ],
+            "final_train_acc_pct": 82.2,
+            "final_test_acc_pct": 80.4,
+            "mean_effective_rank": 12.205,
+            "rank_drop_from_init_pct": 7.79,
+            "dead_neuron_pct": 3.37,
+            "n_reinit": 1,
+            "disruption": 0.06498336791992188
+          },
+          {
+            "task_id": 17,
+            "classes": [
+              85,
+              86,
+              87,
+              88,
+              89
+            ],
+            "final_train_acc_pct": 71.6,
+            "final_test_acc_pct": 71.8,
+            "mean_effective_rank": 12.1536,
+            "rank_drop_from_init_pct": 8.18,
+            "dead_neuron_pct": 4.67,
+            "n_reinit": 1,
+            "disruption": 0.05906200408935547
+          },
+          {
+            "task_id": 18,
+            "classes": [
+              90,
+              91,
+              92,
+              93,
+              94
+            ],
+            "final_train_acc_pct": 78.36,
+            "final_test_acc_pct": 74.8,
+            "mean_effective_rank": 12.1328,
+            "rank_drop_from_init_pct": 8.33,
+            "dead_neuron_pct": 7.16,
+            "n_reinit": 2,
+            "disruption": 0.10032463073730469
+          },
+          {
+            "task_id": 19,
+            "classes": [
+              95,
+              96,
+              97,
+              98,
+              99
+            ],
+            "final_train_acc_pct": 78.08,
+            "final_test_acc_pct": 77.2,
+            "mean_effective_rank": 12.0961,
+            "rank_drop_from_init_pct": 8.61,
+            "dead_neuron_pct": 7.54,
+            "n_reinit": 3,
+            "disruption": 0.16007041931152344
+          }
+        ],
+        "reinit_log": [
+          {
+            "task_id": 0,
+            "n_reinit": 0,
+            "disruption_max_logit_diff": 0.0
+          },
+          {
+            "task_id": 1,
+            "n_reinit": 1,
+            "disruption_max_logit_diff": 0.013443946838378906
+          },
+          {
+            "task_id": 2,
+            "n_reinit": 1,
+            "disruption_max_logit_diff": 0.06990337371826172
+          },
+          {
+            "task_id": 3,
+            "n_reinit": 1,
+            "disruption_max_logit_diff": 0.07297515869140625
+          },
+          {
+            "task_id": 4,
+            "n_reinit": 1,
+            "disruption_max_logit_diff": 0.015279769897460938
+          },
+          {
+            "task_id": 5,
+            "n_reinit": 2,
+            "disruption_max_logit_diff": 0.01911163330078125
+          },
+          {
+            "task_id": 6,
+            "n_reinit": 2,
+            "disruption_max_logit_diff": 0.0511627197265625
+          },
+          {
+            "task_id": 7,
+            "n_reinit": 3,
+            "disruption_max_logit_diff": 0.35948657989501953
+          },
+          {
+            "task_id": 8,
+            "n_reinit": 3,
+            "disruption_max_logit_diff": 0.7945899963378906
+          },
+          {
+            "task_id": 9,
+            "n_reinit": 2,
+            "disruption_max_logit_diff": 0.14275741577148438
+          },
+          {
+            "task_id": 10,
+            "n_reinit": 2,
+            "disruption_max_logit_diff": 0.251556396484375
+          },
+          {
+            "task_id": 11,
+            "n_reinit": 2,
+            "disruption_max_logit_diff": 0.027151107788085938
+          },
+          {
+            "task_id": 12,
+            "n_reinit": 3,
+            "disruption_max_logit_diff": 0.16333961486816406
+          },
+          {
+            "task_id": 13,
+            "n_reinit": 3,
+            "disruption_max_logit_diff": 0.39643287658691406
+          },
+          {
+            "task_id": 14,
+            "n_reinit": 3,
+            "disruption_max_logit_diff": 0.12184333801269531
+          },
+          {
+            "task_id": 15,
+            "n_reinit": 1,
+            "disruption_max_logit_diff": 0.07113075256347656
+          },
+          {
+            "task_id": 16,
+            "n_reinit": 1,
+            "disruption_max_logit_diff": 0.06498336791992188
+          },
+          {
+            "task_id": 17,
+            "n_reinit": 1,
+            "disruption_max_logit_diff": 0.05906200408935547
+          },
+          {
+            "task_id": 18,
+            "n_reinit": 2,
+            "disruption_max_logit_diff": 0.10032463073730469
+          },
+          {
+            "task_id": 19,
+            "n_reinit": 3,
+            "disruption_max_logit_diff": 0.16007041931152344
+          }
+        ]
+      }
+    }
+  },
+  "subject_executed": "ResNet-18 + SGD (lr=0.1, mom=0.9, wd=0.0005) + CosineAnnealingLR/task, CIFAR-100 class-incremental, 20 tasks \u00d7 5 classes \u00d7 10 epochs/task, batch=128, seed=42. Three arms: A=vanilla, B=SNRI null-space re-init, C=naive kaiming re-init (ReDo-style).",
+  "notes": "Ablation-03: A vs B vs C head-to-head with identical seed/schedule. Rank AUC: A=12.2296 B=12.1420 C=12.3129. Final dead: A=6.76% B=15.68% C=7.54%. Disruption (mean/max): B=1.11e-02/4.90e-02 C=1.48e-01/7.95e-01. Hypothesis (C more disruptive AND better rank AND lower dead than B): True. Sanity gates 1-4 from baseline-00, G7/G8/G9 from increase_complexity-02."
+}
