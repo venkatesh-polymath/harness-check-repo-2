@@ -1,0 +1,42 @@
+{
+  "status": "DONE",
+  "optimizer": "Adam",
+  "lr": 0.001,
+  "regime": "hidden=100 MLP online Permuted-MNIST, ADAM",
+  "n_seeds": 1,
+  "n_tasks": 6,
+  "healthy": true,
+  "n_collapsed": 0,
+  "mean_dead_after_task1": 0.07999999821186066,
+  "mean_task1_acc": 0.9142,
+  "mean_acc_drop_pp": 0.0,
+  "plasticity_loss_confirmed": false,
+  "predictive_auc": {
+    "dead_unit_fraction": null,
+    "effective_rank": null,
+    "gradient_noise_scale": null,
+    "weight_norm_drift": null,
+    "monotone_null_taskindex": null
+  },
+  "lead_median": {
+    "dead": null,
+    "erank": null,
+    "gns": null,
+    "wdrift": null
+  },
+  "subject_executed": "Adam lr=0.001, 1 seeds x 6 tasks precedence + monotone-null",
+  "metrics": {
+    "optimizer": "Adam",
+    "healthy": true,
+    "plasticity_loss_confirmed": false,
+    "mean_acc_drop_pp": 0.0,
+    "predictive_auc": {
+      "dead_unit_fraction": null,
+      "effective_rank": null,
+      "gradient_noise_scale": null,
+      "weight_norm_drift": null,
+      "monotone_null_taskindex": null
+    }
+  },
+  "notes": "Does plasticity loss + the dead/erank>GNS precedence hold under Adam? Monotone-null included."
+}

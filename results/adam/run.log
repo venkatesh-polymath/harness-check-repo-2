@@ -1,0 +1,94 @@
+ADAM precedence hidden=100 lr=0.001 8seeds x 300tasks
+  s0 t1 acc=0.9142 dead=0.080 erank=17.70 gns=3.74 [1s]
+  s0 t2 acc=0.9174 dead=0.110 erank=18.88 gns=14.11 [2s]
+  s0 t3 acc=0.9236 dead=0.140 erank=20.67 gns=5.55 [3s]
+  s0 t50 acc=0.9230 dead=0.430 erank=25.36 gns=11.89 [44s]
+  s0 t100 acc=0.9157 dead=0.495 erank=23.07 gns=6.12 [86s]
+  s0 t150 acc=0.9084 dead=0.515 erank=23.00 gns=5.31 [127s]
+  s0 t200 acc=0.8890 dead=0.585 erank=17.33 gns=13.33 [168s]
+  s0 t250 acc=0.8903 dead=0.600 erank=16.83 gns=6.30 [208s]
+  s0 t300 acc=0.8851 dead=0.605 erank=12.09 gns=9.86 [248s]
+  Seed 0 DONE dead_t1=0.080 drop=4.1pp tc=None
+  s1 t1 acc=0.9163 dead=0.090 erank=16.66 gns=5.19 [249s]
+  s1 t2 acc=0.9138 dead=0.080 erank=19.78 gns=2.73 [250s]
+  s1 t3 acc=0.9210 dead=0.130 erank=21.75 gns=6.03 [251s]
+  s1 t50 acc=0.9206 dead=0.385 erank=29.10 gns=8.48 [288s]
+  s1 t100 acc=0.9065 dead=0.555 erank=20.28 gns=4.71 [329s]
+  s1 t150 acc=0.8997 dead=0.570 erank=20.00 gns=7.20 [370s]
+  s1 t200 acc=0.8895 dead=0.595 erank=15.54 gns=9.52 [414s]
+  s1 t250 acc=0.8828 dead=0.600 erank=13.23 gns=6.38 [458s]
+  s1 t300 acc=0.8869 dead=0.585 erank=12.48 gns=13.56 [503s]
+  Seed 1 DONE dead_t1=0.090 drop=4.0pp tc=None
+  s2 t1 acc=0.9187 dead=0.075 erank=16.43 gns=6.15 [503s]
+  s2 t2 acc=0.9216 dead=0.100 erank=17.75 gns=4.57 [504s]
+  s2 t3 acc=0.9279 dead=0.140 erank=20.81 gns=8.11 [505s]
+  s2 t50 acc=0.9196 dead=0.375 erank=27.78 gns=13.07 [544s]
+  s2 t100 acc=0.9116 dead=0.525 erank=21.56 gns=10.18 [585s]
+  s2 t150 acc=0.9073 dead=0.570 erank=17.47 gns=11.71 [626s]
+  s2 t200 acc=0.8862 dead=0.620 erank=13.33 gns=5.01 [667s]
+  s2 t250 acc=0.8937 dead=0.585 erank=16.50 gns=9.49 [708s]
+  s2 t300 acc=0.8831 dead=0.605 erank=12.77 gns=17.26 [749s]
+  Seed 2 DONE dead_t1=0.075 drop=4.3pp tc=None
+  s3 t1 acc=0.9144 dead=0.085 erank=16.44 gns=4.44 [749s]
+  s3 t2 acc=0.9157 dead=0.155 erank=17.10 gns=7.80 [750s]
+  s3 t3 acc=0.9188 dead=0.190 erank=18.83 gns=7.33 [751s]
+  s3 t50 acc=0.9205 dead=0.375 erank=29.00 gns=5.48 [790s]
+  s3 t100 acc=0.9157 dead=0.510 erank=21.33 gns=5.73 [831s]
+  s3 t150 acc=0.8976 dead=0.625 erank=13.93 gns=8.85 [872s]
+  s3 t200 acc=0.8991 dead=0.530 erank=16.80 gns=6.13 [913s]
+  s3 t250 acc=0.8921 dead=0.595 erank=12.29 gns=3.13 [953s]
+  s3 t300 acc=0.8809 dead=0.595 erank=11.84 gns=6.19 [995s]
+  Seed 3 DONE dead_t1=0.085 drop=4.5pp tc=None
+  s4 t1 acc=0.9173 dead=0.040 erank=17.52 gns=2.40 [996s]
+  s4 t2 acc=0.9189 dead=0.090 erank=19.89 gns=4.89 [996s]
+  s4 t3 acc=0.9255 dead=0.105 erank=21.80 gns=7.28 [997s]
+  s4 t50 acc=0.9188 dead=0.410 erank=29.69 gns=8.88 [1036s]
+  s4 t100 acc=0.9067 dead=0.470 erank=22.58 gns=6.52 [1077s]
+  s4 t150 acc=0.8945 dead=0.550 erank=20.79 gns=7.71 [1118s]
+  s4 t200 acc=0.8874 dead=0.655 erank=16.22 gns=8.93 [1161s]
+  s4 t250 acc=0.8984 dead=0.635 erank=13.51 gns=12.38 [1201s]
+  s4 t300 acc=0.8923 dead=0.620 erank=13.72 gns=7.83 [1242s]
+  Seed 4 DONE dead_t1=0.040 drop=4.1pp tc=None
+  s5 t1 acc=0.9143 dead=0.100 erank=17.25 gns=9.66 [1242s]
+  s5 t2 acc=0.9235 dead=0.095 erank=20.13 gns=4.62 [1243s]
+  s5 t3 acc=0.9263 dead=0.140 erank=21.51 gns=6.61 [1244s]
+  s5 t50 acc=0.9116 dead=0.490 erank=24.44 gns=6.40 [1283s]
+  s5 t100 acc=0.9092 dead=0.525 erank=19.89 gns=8.23 [1323s]
+  s5 t150 acc=0.9034 dead=0.550 erank=19.04 gns=5.71 [1365s]
+  s5 t200 acc=0.8861 dead=0.595 erank=16.27 gns=6.55 [1406s]
+  s5 t250 acc=0.8908 dead=0.600 erank=15.94 gns=8.33 [1448s]
+  s5 t300 acc=0.8842 dead=0.585 erank=13.27 gns=11.49 [1490s]
+  Seed 5 DONE dead_t1=0.100 drop=4.2pp tc=None
+  s6 t1 acc=0.9126 dead=0.080 erank=16.98 gns=4.45 [1491s]
+  s6 t2 acc=0.9247 dead=0.110 erank=20.36 gns=3.94 [1491s]
+  s6 t3 acc=0.9267 dead=0.150 erank=21.59 gns=4.98 [1492s]
+  s6 t50 acc=0.9275 dead=0.425 erank=28.46 gns=8.55 [1530s]
+  s6 t100 acc=0.9146 dead=0.525 erank=20.83 gns=10.98 [1571s]
+  s6 t150 acc=0.9022 dead=0.570 erank=20.92 gns=11.27 [1611s]
+  s6 t200 acc=0.8944 dead=0.595 erank=14.78 gns=5.22 [1652s]
+  s6 t250 acc=0.8916 dead=0.605 erank=13.59 gns=12.63 [1692s]
+  s6 t300 acc=0.8856 dead=0.620 erank=12.69 gns=8.56 [1732s]
+  Seed 6 DONE dead_t1=0.080 drop=4.1pp tc=None
+  s7 t1 acc=0.9113 dead=0.090 erank=16.20 gns=2.82 [1733s]
+  s7 t2 acc=0.9102 dead=0.120 erank=19.83 gns=2.22 [1734s]
+  s7 t3 acc=0.9255 dead=0.125 erank=21.09 gns=9.35 [1734s]
+  s7 t50 acc=0.9282 dead=0.375 erank=29.12 gns=7.80 [1773s]
+  s7 t100 acc=0.9130 dead=0.540 erank=19.64 gns=15.08 [1815s]
+  s7 t150 acc=0.9010 dead=0.535 erank=17.79 gns=6.34 [1857s]
+  s7 t200 acc=0.8939 dead=0.635 erank=12.13 gns=11.26 [1899s]
+  s7 t250 acc=0.8919 dead=0.580 erank=13.19 gns=10.29 [1943s]
+  s7 t300 acc=0.8930 dead=0.565 erank=14.78 gns=7.76 [1987s]
+  Seed 7 DONE dead_t1=0.090 drop=4.3pp tc=None
+DONE {
+  "optimizer": "Adam",
+  "healthy": true,
+  "plasticity_loss_confirmed": false,
+  "mean_acc_drop_pp": 4.198249999999989,
+  "predictive_auc": {
+    "dead_unit_fraction": null,
+    "effective_rank": null,
+    "gradient_noise_scale": null,
+    "weight_norm_drift": null,
+    "monotone_null_taskindex": null
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "status": "SUCCESS",
+  "scale": "full",
+  "optimizer": "Adam",
+  "lr": 0.001,
+  "regime": "hidden=100 MLP online Permuted-MNIST, ADAM",
+  "n_seeds": 8,
+  "n_tasks": 300,
+  "healthy": true,
+  "n_collapsed": 0,
+  "mean_dead_after_task1": 0.0799999973969534,
+  "mean_task1_acc": 0.9148875,
+  "mean_acc_drop_pp": 4.198249999999989,
+  "plasticity_loss_confirmed": false,
+  "predictive_auc": {
+    "dead_unit_fraction": null,
+    "effective_rank": null,
+    "gradient_noise_scale": null,
+    "weight_norm_drift": null,
+    "monotone_null_taskindex": null
+  },
+  "lead_median": {
+    "dead": null,
+    "erank": null,
+    "gns": null,
+    "wdrift": null
+  },
+  "subject_executed": "Adam lr=0.001, 8 seeds x 300 tasks precedence + monotone-null, hidden=100 MLP on online Permuted-MNIST (same protocol as SGD baseline)",
+  "metrics": {
+    "optimizer": "Adam",
+    "lr": 0.001,
+    "n_seeds": 8,
+    "n_tasks": 300,
+    "healthy": true,
+    "mean_task1_acc": 0.9148875,
+    "mean_dead_after_task1": 0.08,
+    "mean_acc_drop_pp": 4.198,
+    "plasticity_loss_confirmed": false,
+    "n_collapsed_of_8_seeds": 0,
+    "predictive_auc": {
+      "dead_unit_fraction": null,
+      "effective_rank": null,
+      "gradient_noise_scale": null,
+      "weight_norm_drift": null,
+      "monotone_null_taskindex": null
+    },
+    "baseline_comparison_sgd": {
+      "mean_acc_drop_pp_sgd": 18.9,
+      "mean_acc_drop_pp_adam": 4.2,
+      "n_collapsed_sgd": 8,
+      "n_collapsed_adam": 0,
+      "dead_unit_trajectory_similar": true,
+      "conclusion": "Adam is dramatically more resistant to accuracy-based plasticity loss than SGD. Dead units still accumulate to similar levels (~60% by task 300), but Adam's adaptive learning rates compensate, maintaining accuracy within 4.2pp vs 18.9pp drop under SGD. The 20pp collapse threshold is never crossed under Adam in 8 seeds, making predictive AUC undefined (no positive collapse labels). This finding directly addresses the SGD-only scope limitation: the dead-unit/effective-rank predictive precedence measured for SGD does NOT transfer to Adam, because plasticity loss (by the accuracy criterion) does not occur under Adam at this scale."
+    }
+  },
+  "notes": "Adam lr=1e-3 does NOT exhibit the accuracy-based plasticity collapse seen with SGD. Dead units accumulate similarly (0.08->0.60) but accuracy only drops ~4.2pp over 300 tasks vs ~18.9pp for SGD. All 8 seeds remain healthy; predictive AUC is undefined because no collapse occurs (requires positive labels). This is a null result for the SGD-optimizer-generalization question: Adam resists plasticity collapse under this regime. The paper's findings on predictive AUC are specific to optimizers that actually collapse."
+}
