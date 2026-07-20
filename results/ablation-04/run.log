@@ -1,0 +1,950 @@
+[01:28:28] Python 3.12.10 (main, May 21 2025, 23:34:56) [GCC 12.2.0]
+[01:28:28] PyTorch 2.13.0+cu130
+[01:28:28] GPU: NVIDIA H100 80GB HBM3
+[01:28:28] Config: 20 tasks × 5 classes × 10 epochs
+[01:28:28] Seeds: [0, 1, 2, 3, 4]
+[01:28:28] Arms: A=vanilla  B=SNRI  C=naive-random-reinit(ReDo)
+[01:29:26] CIFAR-100: 50000 train / 10000 test
+[01:29:26] 
+======================================================================
+[01:29:26] ABLATION-04: Full-scale multi-seed run (5 seeds × 3 arms)
+[01:29:26] ======================================================================
+[01:29:26] 
+============================================================
+[01:29:26] SEED 0
+[01:29:26] ============================================================
+[01:29:33]   [A_vanilla seed=0] Init rank=13.2369  init_dead=2.04%
+[01:29:47]   [A_vanilla s=0] T00: tr=69.4% rank=12.512 drop=5.5% dead=0.54% reinit=0 dis=N/A t=14s
+[01:30:00]   [A_vanilla s=0] T01: tr=45.9% rank=12.475 drop=5.8% dead=0.27% reinit=0 dis=N/A t=27s
+[01:30:14]   [A_vanilla s=0] T02: tr=45.4% rank=12.455 drop=5.9% dead=0.43% reinit=0 dis=N/A t=41s
+[01:30:27]   [A_vanilla s=0] T03: tr=56.6% rank=12.433 drop=6.1% dead=0.38% reinit=0 dis=N/A t=54s
+[01:30:40]   [A_vanilla s=0] T04: tr=78.8% rank=12.435 drop=6.1% dead=1.04% reinit=0 dis=N/A t=67s
+[01:30:53]   [A_vanilla s=0] T05: tr=55.0% rank=12.421 drop=6.2% dead=0.46% reinit=0 dis=N/A t=80s
+[01:31:06]   [A_vanilla s=0] T06: tr=67.1% rank=12.418 drop=6.2% dead=0.52% reinit=0 dis=N/A t=92s
+[01:31:19]   [A_vanilla s=0] T07: tr=71.8% rank=12.395 drop=6.4% dead=0.36% reinit=0 dis=N/A t=105s
+[01:31:31]   [A_vanilla s=0] T08: tr=65.7% rank=12.388 drop=6.4% dead=0.53% reinit=0 dis=N/A t=118s
+[01:31:44]   [A_vanilla s=0] T09: tr=82.4% rank=12.378 drop=6.5% dead=0.60% reinit=0 dis=N/A t=131s
+[01:31:57]   [A_vanilla s=0] T10: tr=86.6% rank=12.344 drop=6.7% dead=0.77% reinit=0 dis=N/A t=144s
+[01:32:10]   [A_vanilla s=0] T11: tr=79.3% rank=12.324 drop=6.9% dead=0.90% reinit=0 dis=N/A t=157s
+[01:32:23]   [A_vanilla s=0] T12: tr=83.2% rank=12.303 drop=7.1% dead=3.51% reinit=0 dis=N/A t=169s
+[01:32:36]   [A_vanilla s=0] T13: tr=74.0% rank=12.279 drop=7.2% dead=2.66% reinit=0 dis=N/A t=182s
+[01:32:49]   [A_vanilla s=0] T14: tr=82.2% rank=12.244 drop=7.5% dead=3.63% reinit=0 dis=N/A t=196s
+[01:33:03]   [A_vanilla s=0] T15: tr=73.4% rank=12.223 drop=7.7% dead=5.09% reinit=0 dis=N/A t=210s
+[01:33:16]   [A_vanilla s=0] T16: tr=82.8% rank=12.195 drop=7.9% dead=5.30% reinit=0 dis=N/A t=223s
+[01:33:29]   [A_vanilla s=0] T17: tr=78.9% rank=12.166 drop=8.1% dead=8.52% reinit=0 dis=N/A t=236s
+[01:33:42]   [A_vanilla s=0] T18: tr=83.6% rank=12.125 drop=8.4% dead=8.42% reinit=0 dis=N/A t=249s
+[01:33:55]   [A_vanilla s=0] T19: tr=81.5% rank=12.071 drop=8.8% dead=9.87% reinit=0 dis=N/A t=262s
+[01:33:55]   [A_vanilla s=0] SUMMARY: rank_auc=12.3292 rank_drop=8.81% dead_final=9.87% reinit=0 time=4.4min
+[01:34:01]   [B_SNRI seed=0] Init rank=13.2369  init_dead=2.04%
+[01:34:15]   [B_SNRI s=0] T00: tr=69.4% rank=12.512 drop=5.5% dead=0.54% reinit=0 dis=0.00e+00 t=13s
+[01:34:28]   [B_SNRI s=0] T01: tr=42.4% rank=12.388 drop=6.4% dead=2.13% reinit=0 dis=0.00e+00 t=26s
+[01:34:41]   [B_SNRI s=0] T02: tr=53.5% rank=12.359 drop=6.6% dead=2.09% reinit=0 dis=0.00e+00 t=39s
+[01:34:54]   [B_SNRI s=0] T03: tr=60.0% rank=12.349 drop=6.7% dead=2.20% reinit=0 dis=0.00e+00 t=53s
+[01:35:07]   [B_SNRI s=0] T04: tr=77.2% rank=12.346 drop=6.7% dead=4.57% reinit=0 dis=0.00e+00 t=66s
+[01:35:21]   [B_SNRI s=0] T05: tr=47.8% rank=12.325 drop=6.9% dead=4.21% reinit=0 dis=0.00e+00 t=80s
+[01:35:34]   [B_SNRI s=0] T06: tr=69.5% rank=12.331 drop=6.8% dead=2.42% reinit=0 dis=0.00e+00 t=93s
+[01:35:48]   [B_SNRI s=0] T07: tr=73.9% rank=12.313 drop=7.0% dead=2.24% reinit=0 dis=0.00e+00 t=107s
+[01:36:01]   [B_SNRI s=0] T08: tr=68.9% rank=12.309 drop=7.0% dead=2.69% reinit=0 dis=0.00e+00 t=120s
+[01:36:15]   [B_SNRI s=0] T09: tr=78.5% rank=12.281 drop=7.2% dead=6.04% reinit=0 dis=0.00e+00 t=133s
+[01:36:28]   [B_SNRI s=0] T10: tr=81.6% rank=12.255 drop=7.4% dead=9.25% reinit=0 dis=0.00e+00 t=146s
+[01:36:41]   [B_SNRI s=0] T11: tr=72.0% rank=12.227 drop=7.6% dead=10.06% reinit=0 dis=0.00e+00 t=160s
+[01:36:54]   [B_SNRI s=0] T12: tr=85.2% rank=12.217 drop=7.7% dead=10.07% reinit=0 dis=0.00e+00 t=173s
+[01:37:08]   [B_SNRI s=0] T13: tr=80.6% rank=12.182 drop=8.0% dead=9.63% reinit=0 dis=0.00e+00 t=187s
+[01:37:23]   [B_SNRI s=0] T14: tr=82.9% rank=12.136 drop=8.3% dead=10.06% reinit=0 dis=0.00e+00 t=202s
+[01:37:36]   [B_SNRI s=0] T15: tr=72.4% rank=12.110 drop=8.5% dead=9.93% reinit=0 dis=0.00e+00 t=215s
+[01:37:50]   [B_SNRI s=0] T16: tr=80.3% rank=12.092 drop=8.7% dead=10.40% reinit=0 dis=0.00e+00 t=229s
+[01:38:05]   [B_SNRI s=0] T17: tr=80.2% rank=12.061 drop=8.9% dead=10.41% reinit=0 dis=0.00e+00 t=244s
+[01:38:18]   [B_SNRI s=0] T18: tr=83.5% rank=12.008 drop=9.3% dead=11.29% reinit=1 dis=3.21e-02 t=257s
+[01:38:32]   [B_SNRI s=0] T19: tr=83.3% rank=11.954 drop=9.7% dead=10.78% reinit=4 dis=6.37e-02 t=270s
+[01:38:32]   [B_SNRI s=0] SUMMARY: rank_auc=12.2377 rank_drop=9.69% dead_final=10.78% reinit=5 time=4.5min
+[01:38:32]   [B_SNRI s=0] disruption: mean=1.616e-05 max=6.369e-02
+[01:38:38]   [C_naive seed=0] Init rank=13.2369  init_dead=2.04%
+[01:38:51]   [C_naive s=0] T00: tr=69.4% rank=12.512 drop=5.5% dead=0.54% reinit=0 dis=0.00e+00 t=13s
+[01:39:05]   [C_naive s=0] T01: tr=42.4% rank=12.388 drop=6.4% dead=2.13% reinit=0 dis=0.00e+00 t=27s
+[01:39:18]   [C_naive s=0] T02: tr=53.5% rank=12.359 drop=6.6% dead=2.09% reinit=0 dis=0.00e+00 t=40s
+[01:39:31]   [C_naive s=0] T03: tr=60.0% rank=12.349 drop=6.7% dead=2.20% reinit=0 dis=0.00e+00 t=54s
+[01:39:45]   [C_naive s=0] T04: tr=77.2% rank=12.346 drop=6.7% dead=4.57% reinit=0 dis=0.00e+00 t=67s
+[01:39:58]   [C_naive s=0] T05: tr=47.8% rank=12.325 drop=6.9% dead=4.21% reinit=0 dis=0.00e+00 t=80s
+[01:40:12]   [C_naive s=0] T06: tr=69.5% rank=12.331 drop=6.8% dead=2.42% reinit=0 dis=0.00e+00 t=95s
+[01:40:28]   [C_naive s=0] T07: tr=73.9% rank=12.313 drop=7.0% dead=2.24% reinit=0 dis=0.00e+00 t=110s
+[01:40:42]   [C_naive s=0] T08: tr=68.9% rank=12.309 drop=7.0% dead=2.69% reinit=0 dis=0.00e+00 t=124s
+[01:40:55]   [C_naive s=0] T09: tr=78.5% rank=12.281 drop=7.2% dead=6.04% reinit=0 dis=0.00e+00 t=137s
+[01:41:08]   [C_naive s=0] T10: tr=81.6% rank=12.255 drop=7.4% dead=9.25% reinit=0 dis=0.00e+00 t=150s
+[01:41:21]   [C_naive s=0] T11: tr=72.0% rank=12.227 drop=7.6% dead=10.06% reinit=0 dis=0.00e+00 t=164s
+[01:41:35]   [C_naive s=0] T12: tr=85.2% rank=12.217 drop=7.7% dead=10.07% reinit=0 dis=0.00e+00 t=177s
+[01:41:48]   [C_naive s=0] T13: tr=80.6% rank=12.182 drop=8.0% dead=9.63% reinit=0 dis=0.00e+00 t=190s
+[01:42:01]   [C_naive s=0] T14: tr=82.9% rank=12.136 drop=8.3% dead=10.06% reinit=0 dis=0.00e+00 t=204s
+[01:42:15]   [C_naive s=0] T15: tr=72.4% rank=12.110 drop=8.5% dead=9.93% reinit=0 dis=0.00e+00 t=217s
+[01:42:28]   [C_naive s=0] T16: tr=80.3% rank=12.092 drop=8.7% dead=10.40% reinit=0 dis=0.00e+00 t=230s
+[01:42:41]   [C_naive s=0] T17: tr=80.2% rank=12.061 drop=8.9% dead=10.41% reinit=0 dis=0.00e+00 t=244s
+[01:42:55]   [C_naive s=0] T18: tr=83.5% rank=12.008 drop=9.3% dead=11.29% reinit=1 dis=3.21e-02 t=257s
+[01:43:08]   [C_naive s=0] T19: tr=83.2% rank=11.953 drop=9.7% dead=10.80% reinit=4 dis=2.75e-01 t=271s
+[01:43:08]   [C_naive s=0] SUMMARY: rank_auc=12.2377 rank_drop=9.70% dead_final=10.80% reinit=5 time=4.5min
+[01:43:08]   [C_naive s=0] disruption: mean=7.661e-05 max=2.750e-01
+[01:43:08] Seed 0 done. Total elapsed: 13.7min
+[01:43:08] 
+============================================================
+[01:43:08] SEED 1
+[01:43:08] ============================================================
+[01:43:15]   [A_vanilla seed=1] Init rank=13.2346  init_dead=2.89%
+[01:43:28]   [A_vanilla s=1] T00: tr=70.3% rank=12.509 drop=5.5% dead=0.51% reinit=0 dis=N/A t=13s
+[01:43:41]   [A_vanilla s=1] T01: tr=44.7% rank=12.389 drop=6.4% dead=0.19% reinit=0 dis=N/A t=26s
+[01:43:55]   [A_vanilla s=1] T02: tr=30.1% rank=12.368 drop=6.5% dead=0.16% reinit=0 dis=N/A t=40s
+[01:44:09]   [A_vanilla s=1] T03: tr=41.7% rank=12.295 drop=7.1% dead=0.15% reinit=0 dis=N/A t=54s
+[01:44:22]   [A_vanilla s=1] T04: tr=67.8% rank=12.271 drop=7.3% dead=0.30% reinit=0 dis=N/A t=67s
+[01:44:35]   [A_vanilla s=1] T05: tr=35.6% rank=12.240 drop=7.5% dead=0.15% reinit=0 dis=N/A t=80s
+[01:44:49]   [A_vanilla s=1] T06: tr=50.1% rank=12.252 drop=7.4% dead=0.20% reinit=0 dis=N/A t=94s
+[01:45:03]   [A_vanilla s=1] T07: tr=64.6% rank=12.234 drop=7.6% dead=0.16% reinit=0 dis=N/A t=108s
+[01:45:17]   [A_vanilla s=1] T08: tr=60.2% rank=12.230 drop=7.6% dead=0.26% reinit=0 dis=N/A t=122s
+[01:45:32]   [A_vanilla s=1] T09: tr=77.4% rank=12.229 drop=7.6% dead=0.43% reinit=0 dis=N/A t=136s
+[01:45:46]   [A_vanilla s=1] T10: tr=80.4% rank=12.203 drop=7.8% dead=0.72% reinit=0 dis=N/A t=151s
+[01:46:00]   [A_vanilla s=1] T11: tr=64.2% rank=12.184 drop=7.9% dead=0.45% reinit=0 dis=N/A t=165s
+[01:46:13]   [A_vanilla s=1] T12: tr=82.1% rank=12.178 drop=8.0% dead=0.80% reinit=0 dis=N/A t=178s
+[01:46:27]   [A_vanilla s=1] T13: tr=78.2% rank=12.160 drop=8.1% dead=1.22% reinit=0 dis=N/A t=192s
+[01:46:42]   [A_vanilla s=1] T14: tr=82.6% rank=12.138 drop=8.3% dead=1.39% reinit=0 dis=N/A t=206s
+[01:46:55]   [A_vanilla s=1] T15: tr=67.3% rank=12.115 drop=8.5% dead=1.74% reinit=0 dis=N/A t=220s
+[01:47:09]   [A_vanilla s=1] T16: tr=79.4% rank=12.089 drop=8.7% dead=2.35% reinit=0 dis=N/A t=234s
+[01:47:23]   [A_vanilla s=1] T17: tr=74.2% rank=12.059 drop=8.9% dead=3.08% reinit=0 dis=N/A t=248s
+[01:47:35]   [A_vanilla s=1] T18: tr=84.0% rank=12.037 drop=9.1% dead=4.65% reinit=0 dis=N/A t=260s
+[01:47:51]   [A_vanilla s=1] T19: tr=82.0% rank=11.984 drop=9.4% dead=5.59% reinit=0 dis=N/A t=276s
+[01:47:51]   [A_vanilla s=1] SUMMARY: rank_auc=12.2082 rank_drop=9.45% dead_final=5.59% reinit=0 time=4.6min
+[01:47:57]   [B_SNRI seed=1] Init rank=13.2346  init_dead=2.89%
+[01:48:10]   [B_SNRI s=1] T00: tr=70.3% rank=12.509 drop=5.5% dead=0.51% reinit=0 dis=0.00e+00 t=13s
+[01:48:23]   [B_SNRI s=1] T01: tr=38.8% rank=12.363 drop=6.6% dead=0.24% reinit=0 dis=0.00e+00 t=26s
+[01:48:36]   [B_SNRI s=1] T02: tr=39.6% rank=12.292 drop=7.1% dead=0.47% reinit=0 dis=0.00e+00 t=39s
+[01:48:50]   [B_SNRI s=1] T03: tr=51.1% rank=12.282 drop=7.2% dead=0.37% reinit=0 dis=0.00e+00 t=53s
+[01:49:04]   [B_SNRI s=1] T04: tr=71.7% rank=12.273 drop=7.3% dead=1.08% reinit=0 dis=0.00e+00 t=66s
+[01:49:17]   [B_SNRI s=1] T05: tr=48.3% rank=12.261 drop=7.4% dead=1.00% reinit=0 dis=0.00e+00 t=80s
+[01:49:31]   [B_SNRI s=1] T06: tr=54.8% rank=12.264 drop=7.3% dead=0.77% reinit=0 dis=0.00e+00 t=94s
+[01:49:44]   [B_SNRI s=1] T07: tr=69.3% rank=12.245 drop=7.5% dead=1.19% reinit=0 dis=0.00e+00 t=107s
+[01:49:58]   [B_SNRI s=1] T08: tr=62.5% rank=12.244 drop=7.5% dead=1.63% reinit=0 dis=0.00e+00 t=121s
+[01:50:12]   [B_SNRI s=1] T09: tr=81.2% rank=12.235 drop=7.6% dead=1.94% reinit=0 dis=0.00e+00 t=134s
+[01:50:25]   [B_SNRI s=1] T10: tr=83.6% rank=12.215 drop=7.7% dead=1.87% reinit=0 dis=0.00e+00 t=148s
+[01:50:39]   [B_SNRI s=1] T11: tr=74.2% rank=12.196 drop=7.8% dead=1.30% reinit=0 dis=0.00e+00 t=162s
+[01:50:52]   [B_SNRI s=1] T12: tr=79.0% rank=12.169 drop=8.1% dead=2.71% reinit=0 dis=0.00e+00 t=175s
+[01:51:05]   [B_SNRI s=1] T13: tr=77.4% rank=12.148 drop=8.2% dead=1.91% reinit=1 dis=1.38e-01 t=188s
+[01:51:19]   [B_SNRI s=1] T14: tr=82.2% rank=12.128 drop=8.4% dead=4.79% reinit=3 dis=1.21e-01 t=202s
+[01:51:32]   [B_SNRI s=1] T15: tr=74.5% rank=12.105 drop=8.5% dead=3.05% reinit=5 dis=1.57e-01 t=215s
+[01:51:46]   [B_SNRI s=1] T16: tr=81.6% rank=12.068 drop=8.8% dead=6.21% reinit=12 dis=3.61e-01 t=228s
+[01:51:59]   [B_SNRI s=1] T17: tr=65.6% rank=12.002 drop=9.3% dead=6.17% reinit=8 dis=2.12e-02 t=242s
+[01:52:13]   [B_SNRI s=1] T18: tr=67.9% rank=11.978 drop=9.5% dead=6.64% reinit=8 dis=2.68e-01 t=255s
+[01:52:26]   [B_SNRI s=1] T19: tr=77.4% rank=11.958 drop=9.6% dead=6.01% reinit=6 dis=7.14e-03 t=269s
+[01:52:26]   [B_SNRI s=1] SUMMARY: rank_auc=12.1969 rank_drop=9.65% dead_final=6.01% reinit=43 time=4.5min
+[01:52:26]   [B_SNRI s=1] disruption: mean=1.468e-04 max=3.613e-01
+[01:52:32]   [C_naive seed=1] Init rank=13.2346  init_dead=2.89%
+[01:52:45]   [C_naive s=1] T00: tr=70.3% rank=12.509 drop=5.5% dead=0.51% reinit=0 dis=0.00e+00 t=13s
+[01:52:58]   [C_naive s=1] T01: tr=38.8% rank=12.363 drop=6.6% dead=0.24% reinit=0 dis=0.00e+00 t=26s
+[01:53:11]   [C_naive s=1] T02: tr=39.6% rank=12.292 drop=7.1% dead=0.47% reinit=0 dis=0.00e+00 t=40s
+[01:53:25]   [C_naive s=1] T03: tr=51.1% rank=12.282 drop=7.2% dead=0.37% reinit=0 dis=0.00e+00 t=53s
+[01:53:38]   [C_naive s=1] T04: tr=71.7% rank=12.273 drop=7.3% dead=1.08% reinit=0 dis=0.00e+00 t=66s
+[01:53:52]   [C_naive s=1] T05: tr=48.3% rank=12.261 drop=7.4% dead=1.00% reinit=0 dis=0.00e+00 t=80s
+[01:54:05]   [C_naive s=1] T06: tr=54.8% rank=12.264 drop=7.3% dead=0.77% reinit=0 dis=0.00e+00 t=93s
+[01:54:18]   [C_naive s=1] T07: tr=69.3% rank=12.245 drop=7.5% dead=1.19% reinit=0 dis=0.00e+00 t=107s
+[01:54:32]   [C_naive s=1] T08: tr=62.5% rank=12.244 drop=7.5% dead=1.63% reinit=0 dis=0.00e+00 t=120s
+[01:54:46]   [C_naive s=1] T09: tr=81.2% rank=12.235 drop=7.6% dead=1.94% reinit=0 dis=0.00e+00 t=134s
+[01:54:59]   [C_naive s=1] T10: tr=83.6% rank=12.215 drop=7.7% dead=1.87% reinit=0 dis=0.00e+00 t=147s
+[01:55:13]   [C_naive s=1] T11: tr=74.2% rank=12.196 drop=7.8% dead=1.30% reinit=0 dis=0.00e+00 t=161s
+[01:55:26]   [C_naive s=1] T12: tr=79.0% rank=12.169 drop=8.1% dead=2.71% reinit=0 dis=0.00e+00 t=175s
+[01:55:39]   [C_naive s=1] T13: tr=77.4% rank=12.148 drop=8.2% dead=1.91% reinit=1 dis=1.38e-01 t=188s
+[01:55:53]   [C_naive s=1] T14: tr=82.4% rank=12.128 drop=8.4% dead=4.87% reinit=3 dis=1.21e-01 t=201s
+[01:56:07]   [C_naive s=1] T15: tr=75.2% rank=12.113 drop=8.5% dead=3.21% reinit=3 dis=3.55e-01 t=215s
+[01:56:21]   [C_naive s=1] T16: tr=82.0% rank=12.076 drop=8.8% dead=4.65% reinit=8 dis=3.64e-01 t=229s
+[01:56:34]   [C_naive s=1] T17: tr=71.3% rank=12.033 drop=9.1% dead=5.57% reinit=6 dis=1.69e+00 t=242s
+[01:56:47]   [C_naive s=1] T18: tr=82.0% rank=12.006 drop=9.3% dead=8.65% reinit=12 dis=2.38e-01 t=255s
+[01:57:00]   [C_naive s=1] T19: tr=83.3% rank=11.958 drop=9.6% dead=6.86% reinit=8 dis=9.93e-01 t=268s
+[01:57:00]   [C_naive s=1] SUMMARY: rank_auc=12.2006 rank_drop=9.65% dead_final=6.86% reinit=41 time=4.5min
+[01:57:00]   [C_naive s=1] disruption: mean=1.611e-03 max=1.688e+00
+[01:57:00] Seed 1 done. Total elapsed: 27.6min
+[01:57:00] 
+============================================================
+[01:57:00] SEED 2
+[01:57:00] ============================================================
+[01:57:07]   [A_vanilla seed=2] Init rank=13.2350  init_dead=2.01%
+[01:57:19]   [A_vanilla s=2] T00: tr=71.4% rank=12.657 drop=4.4% dead=0.24% reinit=0 dis=N/A t=13s
+[01:57:32]   [A_vanilla s=2] T01: tr=40.2% rank=12.578 drop=5.0% dead=0.40% reinit=0 dis=N/A t=26s
+[01:57:47]   [A_vanilla s=2] T02: tr=48.3% rank=12.546 drop=5.2% dead=0.35% reinit=0 dis=N/A t=40s
+[01:58:01]   [A_vanilla s=2] T03: tr=53.9% rank=12.519 drop=5.4% dead=0.34% reinit=0 dis=N/A t=55s
+[01:58:15]   [A_vanilla s=2] T04: tr=58.4% rank=12.510 drop=5.5% dead=1.25% reinit=0 dis=N/A t=68s
+[01:58:28]   [A_vanilla s=2] T05: tr=52.0% rank=12.491 drop=5.6% dead=0.78% reinit=0 dis=N/A t=82s
+[01:58:41]   [A_vanilla s=2] T06: tr=58.6% rank=12.485 drop=5.7% dead=0.57% reinit=0 dis=N/A t=94s
+[01:58:54]   [A_vanilla s=2] T07: tr=64.2% rank=12.459 drop=5.9% dead=0.58% reinit=0 dis=N/A t=107s
+[01:59:08]   [A_vanilla s=2] T08: tr=59.6% rank=12.454 drop=5.9% dead=0.77% reinit=0 dis=N/A t=121s
+[01:59:22]   [A_vanilla s=2] T09: tr=74.6% rank=12.441 drop=6.0% dead=1.25% reinit=0 dis=N/A t=135s
+[01:59:34]   [A_vanilla s=2] T10: tr=82.6% rank=12.428 drop=6.1% dead=1.37% reinit=0 dis=N/A t=148s
+[01:59:48]   [A_vanilla s=2] T11: tr=76.1% rank=12.415 drop=6.2% dead=1.45% reinit=0 dis=N/A t=161s
+[02:00:02]   [A_vanilla s=2] T12: tr=83.2% rank=12.388 drop=6.4% dead=4.17% reinit=0 dis=N/A t=175s
+[02:00:15]   [A_vanilla s=2] T13: tr=76.6% rank=12.340 drop=6.8% dead=5.50% reinit=0 dis=N/A t=189s
+[02:00:29]   [A_vanilla s=2] T14: tr=82.2% rank=12.302 drop=7.0% dead=7.50% reinit=0 dis=N/A t=202s
+[02:00:42]   [A_vanilla s=2] T15: tr=68.2% rank=12.273 drop=7.3% dead=8.68% reinit=0 dis=N/A t=215s
+[02:00:54]   [A_vanilla s=2] T16: tr=77.0% rank=12.246 drop=7.5% dead=8.32% reinit=0 dis=N/A t=228s
+[02:01:07]   [A_vanilla s=2] T17: tr=77.8% rank=12.221 drop=7.7% dead=9.60% reinit=0 dis=N/A t=241s
+[02:01:21]   [A_vanilla s=2] T18: tr=85.6% rank=12.186 drop=7.9% dead=9.89% reinit=0 dis=N/A t=254s
+[02:01:34]   [A_vanilla s=2] T19: tr=79.2% rank=12.089 drop=8.7% dead=10.21% reinit=0 dis=N/A t=268s
+[02:01:34]   [A_vanilla s=2] SUMMARY: rank_auc=12.4013 rank_drop=8.66% dead_final=10.21% reinit=0 time=4.5min
+[02:01:41]   [B_SNRI seed=2] Init rank=13.2350  init_dead=2.01%
+[02:01:54]   [B_SNRI s=2] T00: tr=71.4% rank=12.657 drop=4.4% dead=0.24% reinit=0 dis=0.00e+00 t=14s
+[02:02:08]   [B_SNRI s=2] T01: tr=39.6% rank=12.571 drop=5.0% dead=0.58% reinit=0 dis=0.00e+00 t=27s
+[02:02:21]   [B_SNRI s=2] T02: tr=53.4% rank=12.545 drop=5.2% dead=0.40% reinit=0 dis=0.00e+00 t=40s
+[02:02:34]   [B_SNRI s=2] T03: tr=58.8% rank=12.526 drop=5.4% dead=0.71% reinit=0 dis=0.00e+00 t=54s
+[02:02:48]   [B_SNRI s=2] T04: tr=76.2% rank=12.526 drop=5.4% dead=3.92% reinit=0 dis=0.00e+00 t=67s
+[02:03:01]   [B_SNRI s=2] T05: tr=50.5% rank=12.493 drop=5.6% dead=3.16% reinit=0 dis=0.00e+00 t=80s
+[02:03:14]   [B_SNRI s=2] T06: tr=48.8% rank=12.453 drop=5.9% dead=2.61% reinit=0 dis=0.00e+00 t=93s
+[02:03:27]   [B_SNRI s=2] T07: tr=55.9% rank=12.424 drop=6.1% dead=5.28% reinit=0 dis=0.00e+00 t=107s
+[02:03:41]   [B_SNRI s=2] T08: tr=48.9% rank=12.417 drop=6.2% dead=6.35% reinit=0 dis=0.00e+00 t=120s
+[02:03:54]   [B_SNRI s=2] T09: tr=72.7% rank=12.416 drop=6.2% dead=6.37% reinit=0 dis=0.00e+00 t=133s
+[02:04:07]   [B_SNRI s=2] T10: tr=85.7% rank=12.378 drop=6.5% dead=8.46% reinit=0 dis=0.00e+00 t=147s
+[02:04:20]   [B_SNRI s=2] T11: tr=73.4% rank=12.331 drop=6.8% dead=10.18% reinit=0 dis=0.00e+00 t=160s
+[02:04:33]   [B_SNRI s=2] T12: tr=82.8% rank=12.307 drop=7.0% dead=10.19% reinit=0 dis=0.00e+00 t=173s
+[02:04:46]   [B_SNRI s=2] T13: tr=78.3% rank=12.288 drop=7.2% dead=8.96% reinit=0 dis=0.00e+00 t=186s
+[02:05:00]   [B_SNRI s=2] T14: tr=81.8% rank=12.260 drop=7.4% dead=7.85% reinit=0 dis=0.00e+00 t=199s
+[02:05:13]   [B_SNRI s=2] T15: tr=57.8% rank=12.220 drop=7.7% dead=8.10% reinit=0 dis=0.00e+00 t=212s
+[02:05:26]   [B_SNRI s=2] T16: tr=82.7% rank=12.212 drop=7.7% dead=9.15% reinit=0 dis=0.00e+00 t=226s
+[02:05:40]   [B_SNRI s=2] T17: tr=73.8% rank=12.184 drop=7.9% dead=11.52% reinit=0 dis=0.00e+00 t=239s
+[02:05:53]   [B_SNRI s=2] T18: tr=84.1% rank=12.144 drop=8.2% dead=10.91% reinit=1 dis=6.62e-02 t=252s
+[02:06:06]   [B_SNRI s=2] T19: tr=83.5% rank=12.092 drop=8.6% dead=11.92% reinit=0 dis=0.00e+00 t=266s
+[02:06:06]   [B_SNRI s=2] SUMMARY: rank_auc=12.3722 rank_drop=8.64% dead_final=11.92% reinit=1 time=4.4min
+[02:06:06]   [B_SNRI s=2] disruption: mean=5.205e-06 max=6.618e-02
+[02:06:12]   [C_naive seed=2] Init rank=13.2350  init_dead=2.01%
+[02:06:25]   [C_naive s=2] T00: tr=71.4% rank=12.657 drop=4.4% dead=0.24% reinit=0 dis=0.00e+00 t=13s
+[02:06:39]   [C_naive s=2] T01: tr=39.6% rank=12.571 drop=5.0% dead=0.58% reinit=0 dis=0.00e+00 t=26s
+[02:06:52]   [C_naive s=2] T02: tr=53.4% rank=12.545 drop=5.2% dead=0.40% reinit=0 dis=0.00e+00 t=40s
+[02:07:05]   [C_naive s=2] T03: tr=58.8% rank=12.526 drop=5.4% dead=0.71% reinit=0 dis=0.00e+00 t=53s
+[02:07:18]   [C_naive s=2] T04: tr=76.2% rank=12.526 drop=5.4% dead=3.92% reinit=0 dis=0.00e+00 t=66s
+[02:07:32]   [C_naive s=2] T05: tr=50.5% rank=12.493 drop=5.6% dead=3.16% reinit=0 dis=0.00e+00 t=79s
+[02:07:45]   [C_naive s=2] T06: tr=48.8% rank=12.453 drop=5.9% dead=2.61% reinit=0 dis=0.00e+00 t=93s
+[02:07:58]   [C_naive s=2] T07: tr=55.9% rank=12.424 drop=6.1% dead=5.28% reinit=0 dis=0.00e+00 t=106s
+[02:08:12]   [C_naive s=2] T08: tr=48.9% rank=12.417 drop=6.2% dead=6.35% reinit=0 dis=0.00e+00 t=120s
+[02:08:26]   [C_naive s=2] T09: tr=72.7% rank=12.416 drop=6.2% dead=6.37% reinit=0 dis=0.00e+00 t=134s
+[02:08:40]   [C_naive s=2] T10: tr=85.7% rank=12.378 drop=6.5% dead=8.46% reinit=0 dis=0.00e+00 t=148s
+[02:08:53]   [C_naive s=2] T11: tr=73.4% rank=12.331 drop=6.8% dead=10.18% reinit=0 dis=0.00e+00 t=161s
+[02:09:07]   [C_naive s=2] T12: tr=82.8% rank=12.307 drop=7.0% dead=10.19% reinit=0 dis=0.00e+00 t=175s
+[02:09:20]   [C_naive s=2] T13: tr=78.3% rank=12.288 drop=7.2% dead=8.96% reinit=0 dis=0.00e+00 t=188s
+[02:09:33]   [C_naive s=2] T14: tr=81.8% rank=12.260 drop=7.4% dead=7.85% reinit=0 dis=0.00e+00 t=201s
+[02:09:46]   [C_naive s=2] T15: tr=57.8% rank=12.220 drop=7.7% dead=8.10% reinit=0 dis=0.00e+00 t=214s
+[02:09:59]   [C_naive s=2] T16: tr=82.7% rank=12.212 drop=7.7% dead=9.15% reinit=0 dis=0.00e+00 t=227s
+[02:10:12]   [C_naive s=2] T17: tr=73.8% rank=12.184 drop=7.9% dead=11.52% reinit=0 dis=0.00e+00 t=240s
+[02:10:25]   [C_naive s=2] T18: tr=84.1% rank=12.144 drop=8.2% dead=10.91% reinit=1 dis=1.03e-01 t=253s
+[02:10:38]   [C_naive s=2] T19: tr=83.3% rank=12.091 drop=8.6% dead=11.32% reinit=1 dis=3.43e-01 t=266s
+[02:10:38]   [C_naive s=2] SUMMARY: rank_auc=12.3722 rank_drop=8.64% dead_final=11.32% reinit=2 time=4.4min
+[02:10:38]   [C_naive s=2] disruption: mean=1.695e-04 max=3.435e-01
+[02:10:38] Seed 2 done. Total elapsed: 41.2min
+[02:10:38] 
+============================================================
+[02:10:38] SEED 3
+[02:10:38] ============================================================
+[02:10:44]   [A_vanilla seed=3] Init rank=13.2372  init_dead=2.14%
+[02:10:57]   [A_vanilla s=3] T00: tr=69.8% rank=12.554 drop=5.2% dead=0.29% reinit=0 dis=N/A t=13s
+[02:11:09]   [A_vanilla s=3] T01: tr=31.2% rank=10.225 drop=22.8% dead=9.49% reinit=0 dis=N/A t=25s
+[02:11:22]   [A_vanilla s=3] T02: tr=43.0% rank=10.245 drop=22.6% dead=9.76% reinit=0 dis=N/A t=38s
+[02:11:35]   [A_vanilla s=3] T03: tr=45.8% rank=10.220 drop=22.8% dead=9.68% reinit=0 dis=N/A t=51s
+[02:11:48]   [A_vanilla s=3] T04: tr=61.4% rank=10.221 drop=22.8% dead=11.60% reinit=0 dis=N/A t=64s
+[02:12:01]   [A_vanilla s=3] T05: tr=36.9% rank=10.214 drop=22.8% dead=11.09% reinit=0 dis=N/A t=77s
+[02:12:14]   [A_vanilla s=3] T06: tr=51.0% rank=10.205 drop=22.9% dead=9.85% reinit=0 dis=N/A t=90s
+[02:12:27]   [A_vanilla s=3] T07: tr=56.3% rank=10.147 drop=23.3% dead=10.98% reinit=0 dis=N/A t=103s
+[02:12:39]   [A_vanilla s=3] T08: tr=51.7% rank=10.150 drop=23.3% dead=11.74% reinit=0 dis=N/A t=115s
+[02:12:52]   [A_vanilla s=3] T09: tr=61.4% rank=10.153 drop=23.3% dead=11.88% reinit=0 dis=N/A t=128s
+[02:13:04]   [A_vanilla s=3] T10: tr=77.3% rank=10.156 drop=23.3% dead=12.94% reinit=0 dis=N/A t=140s
+[02:13:17]   [A_vanilla s=3] T11: tr=64.2% rank=10.143 drop=23.4% dead=13.35% reinit=0 dis=N/A t=153s
+[02:13:30]   [A_vanilla s=3] T12: tr=77.6% rank=10.142 drop=23.4% dead=14.60% reinit=0 dis=N/A t=166s
+[02:13:43]   [A_vanilla s=3] T13: tr=69.9% rank=10.146 drop=23.4% dead=13.44% reinit=0 dis=N/A t=179s
+[02:13:56]   [A_vanilla s=3] T14: tr=78.2% rank=10.149 drop=23.3% dead=13.88% reinit=0 dis=N/A t=192s
+[02:14:08]   [A_vanilla s=3] T15: tr=55.8% rank=10.139 drop=23.4% dead=14.02% reinit=0 dis=N/A t=204s
+[02:14:21]   [A_vanilla s=3] T16: tr=75.5% rank=10.151 drop=23.3% dead=16.09% reinit=0 dis=N/A t=217s
+[02:14:34]   [A_vanilla s=3] T17: tr=65.9% rank=10.150 drop=23.3% dead=16.23% reinit=0 dis=N/A t=230s
+[02:14:47]   [A_vanilla s=3] T18: tr=79.0% rank=10.147 drop=23.3% dead=17.93% reinit=0 dis=N/A t=243s
+[02:15:00]   [A_vanilla s=3] T19: tr=76.8% rank=10.132 drop=23.5% dead=18.93% reinit=0 dis=N/A t=256s
+[02:15:00]   [A_vanilla s=3] SUMMARY: rank_auc=10.2894 rank_drop=23.46% dead_final=18.93% reinit=0 time=4.3min
+[02:15:06]   [B_SNRI seed=3] Init rank=13.2372  init_dead=2.14%
+[02:15:20]   [B_SNRI s=3] T00: tr=69.8% rank=12.554 drop=5.2% dead=0.29% reinit=0 dis=0.00e+00 t=14s
+[02:15:34]   [B_SNRI s=3] T01: tr=33.8% rank=12.501 drop=5.6% dead=0.68% reinit=0 dis=0.00e+00 t=28s
+[02:15:47]   [B_SNRI s=3] T02: tr=43.5% rank=12.477 drop=5.7% dead=2.20% reinit=2 dis=7.83e-01 t=41s
+[02:16:02]   [B_SNRI s=3] T03: tr=55.5% rank=12.464 drop=5.8% dead=2.13% reinit=2 dis=2.60e-02 t=56s
+[02:16:15]   [B_SNRI s=3] T04: tr=73.4% rank=12.464 drop=5.8% dead=4.09% reinit=3 dis=3.66e-03 t=69s
+[02:16:29]   [B_SNRI s=3] T05: tr=55.5% rank=12.429 drop=6.1% dead=3.22% reinit=2 dis=2.61e-03 t=83s
+[02:16:42]   [B_SNRI s=3] T06: tr=74.8% rank=12.437 drop=6.0% dead=3.22% reinit=2 dis=7.38e-03 t=96s
+[02:16:57]   [B_SNRI s=3] T07: tr=74.4% rank=12.421 drop=6.2% dead=3.88% reinit=1 dis=6.54e-03 t=111s
+[02:17:11]   [B_SNRI s=3] T08: tr=70.3% rank=12.410 drop=6.3% dead=4.60% reinit=1 dis=1.66e-03 t=125s
+[02:17:25]   [B_SNRI s=3] T09: tr=85.1% rank=12.398 drop=6.3% dead=4.16% reinit=1 dis=2.12e-03 t=138s
+[02:17:39]   [B_SNRI s=3] T10: tr=86.2% rank=12.364 drop=6.6% dead=5.11% reinit=2 dis=5.21e-02 t=153s
+[02:17:53]   [B_SNRI s=3] T11: tr=70.2% rank=12.326 drop=6.9% dead=5.97% reinit=3 dis=2.89e-03 t=167s
+[02:18:08]   [B_SNRI s=3] T12: tr=79.5% rank=12.267 drop=7.3% dead=6.31% reinit=1 dis=1.93e-03 t=182s
+[02:18:21]   [B_SNRI s=3] T13: tr=81.2% rank=12.247 drop=7.5% dead=6.74% reinit=1 dis=1.20e-03 t=195s
+[02:18:35]   [B_SNRI s=3] T14: tr=80.7% rank=12.202 drop=7.8% dead=7.89% reinit=5 dis=2.14e-01 t=209s
+[02:18:48]   [B_SNRI s=3] T15: tr=64.4% rank=12.171 drop=8.1% dead=8.50% reinit=2 dis=1.76e-01 t=222s
+[02:19:02]   [B_SNRI s=3] T16: tr=79.4% rank=12.143 drop=8.3% dead=6.94% reinit=5 dis=3.16e-01 t=236s
+[02:19:16]   [B_SNRI s=3] T17: tr=79.8% rank=12.128 drop=8.4% dead=9.38% reinit=3 dis=1.01e-02 t=250s
+[02:19:30]   [B_SNRI s=3] T18: tr=86.2% rank=12.090 drop=8.7% dead=10.09% reinit=3 dis=7.79e-03 t=264s
+[02:19:44]   [B_SNRI s=3] T19: tr=83.7% rank=12.031 drop=9.1% dead=9.36% reinit=5 dis=1.05e-01 t=278s
+[02:19:44]   [B_SNRI s=3] SUMMARY: rank_auc=12.3262 rank_drop=9.11% dead_final=9.36% reinit=44 time=4.6min
+[02:19:44]   [B_SNRI s=3] disruption: mean=1.517e-04 max=7.833e-01
+[02:19:51]   [C_naive seed=3] Init rank=13.2372  init_dead=2.14%
+[02:20:05]   [C_naive s=3] T00: tr=69.8% rank=12.554 drop=5.2% dead=0.29% reinit=0 dis=0.00e+00 t=14s
+[02:20:19]   [C_naive s=3] T01: tr=33.8% rank=12.501 drop=5.6% dead=0.68% reinit=0 dis=0.00e+00 t=29s
+[02:20:34]   [C_naive s=3] T02: tr=43.5% rank=12.477 drop=5.7% dead=2.20% reinit=2 dis=7.01e-01 t=44s
+[02:20:48]   [C_naive s=3] T03: tr=55.7% rank=12.463 drop=5.8% dead=2.13% reinit=2 dis=3.40e-02 t=58s
+[02:21:01]   [C_naive s=3] T04: tr=74.7% rank=12.461 drop=5.9% dead=4.16% reinit=2 dis=8.81e-02 t=71s
+[02:21:15]   [C_naive s=3] T05: tr=49.0% rank=12.429 drop=6.1% dead=3.33% reinit=2 dis=2.87e-01 t=84s
+[02:21:28]   [C_naive s=3] T06: tr=66.2% rank=12.437 drop=6.0% dead=2.29% reinit=2 dis=6.60e-02 t=98s
+[02:21:42]   [C_naive s=3] T07: tr=73.4% rank=12.412 drop=6.2% dead=3.31% reinit=1 dis=3.35e-02 t=111s
+[02:21:55]   [C_naive s=3] T08: tr=67.4% rank=12.405 drop=6.3% dead=3.52% reinit=1 dis=1.51e-01 t=124s
+[02:22:09]   [C_naive s=3] T09: tr=82.2% rank=12.383 drop=6.5% dead=3.00% reinit=3 dis=6.14e-01 t=139s
+[02:22:24]   [C_naive s=3] T10: tr=83.5% rank=12.362 drop=6.6% dead=4.67% reinit=3 dis=1.23e-01 t=154s
+[02:22:38]   [C_naive s=3] T11: tr=74.5% rank=12.329 drop=6.9% dead=4.79% reinit=2 dis=2.22e+00 t=167s
+[02:22:52]   [C_naive s=3] T12: tr=83.7% rank=12.324 drop=6.9% dead=5.19% reinit=2 dis=1.03e-01 t=181s
+[02:23:06]   [C_naive s=3] T13: tr=81.0% rank=12.290 drop=7.2% dead=5.60% reinit=2 dis=3.18e-01 t=195s
+[02:23:19]   [C_naive s=3] T14: tr=83.3% rank=12.263 drop=7.4% dead=6.89% reinit=3 dis=3.09e-01 t=209s
+[02:23:33]   [C_naive s=3] T15: tr=72.0% rank=12.229 drop=7.6% dead=7.22% reinit=2 dis=2.99e-02 t=222s
+[02:23:46]   [C_naive s=3] T16: tr=82.9% rank=12.203 drop=7.8% dead=7.38% reinit=3 dis=3.83e-01 t=236s
+[02:24:00]   [C_naive s=3] T17: tr=81.9% rank=12.178 drop=8.0% dead=10.45% reinit=3 dis=3.15e-01 t=249s
+[02:24:13]   [C_naive s=3] T18: tr=83.4% rank=12.076 drop=8.8% dead=13.27% reinit=9 dis=1.08e-01 t=263s
+[02:24:26]   [C_naive s=3] T19: tr=78.9% rank=12.030 drop=9.1% dead=12.46% reinit=8 dis=1.22e-01 t=276s
+[02:24:26]   [C_naive s=3] SUMMARY: rank_auc=12.3403 rank_drop=9.12% dead_final=12.46% reinit=52 time=4.6min
+[02:24:26]   [C_naive s=3] disruption: mean=1.778e-03 max=2.222e+00
+[02:24:26] Seed 3 done. Total elapsed: 55.0min
+[02:24:26] 
+============================================================
+[02:24:26] SEED 4
+[02:24:26] ============================================================
+[02:24:32]   [A_vanilla seed=4] Init rank=13.2353  init_dead=2.05%
+[02:24:45]   [A_vanilla s=4] T00: tr=58.6% rank=12.297 drop=7.1% dead=0.28% reinit=0 dis=N/A t=13s
+[02:24:58]   [A_vanilla s=4] T01: tr=41.1% rank=12.239 drop=7.5% dead=0.55% reinit=0 dis=N/A t=25s
+[02:25:10]   [A_vanilla s=4] T02: tr=48.2% rank=12.231 drop=7.6% dead=0.70% reinit=0 dis=N/A t=38s
+[02:25:23]   [A_vanilla s=4] T03: tr=52.8% rank=12.180 drop=8.0% dead=0.59% reinit=0 dis=N/A t=51s
+[02:25:36]   [A_vanilla s=4] T04: tr=66.6% rank=12.170 drop=8.0% dead=1.17% reinit=0 dis=N/A t=63s
+[02:25:50]   [A_vanilla s=4] T05: tr=45.4% rank=12.148 drop=8.2% dead=1.18% reinit=0 dis=N/A t=78s
+[02:26:04]   [A_vanilla s=4] T06: tr=63.7% rank=12.153 drop=8.2% dead=0.66% reinit=0 dis=N/A t=91s
+[02:26:17]   [A_vanilla s=4] T07: tr=66.0% rank=12.145 drop=8.2% dead=0.95% reinit=0 dis=N/A t=104s
+[02:26:29]   [A_vanilla s=4] T08: tr=59.3% rank=12.132 drop=8.3% dead=1.75% reinit=0 dis=N/A t=117s
+[02:26:42]   [A_vanilla s=4] T09: tr=79.8% rank=12.129 drop=8.4% dead=2.07% reinit=0 dis=N/A t=130s
+[02:26:55]   [A_vanilla s=4] T10: tr=82.2% rank=12.110 drop=8.5% dead=2.30% reinit=0 dis=N/A t=142s
+[02:27:08]   [A_vanilla s=4] T11: tr=70.8% rank=12.095 drop=8.6% dead=1.88% reinit=0 dis=N/A t=155s
+[02:27:21]   [A_vanilla s=4] T12: tr=83.2% rank=12.088 drop=8.7% dead=2.65% reinit=0 dis=N/A t=168s
+[02:27:34]   [A_vanilla s=4] T13: tr=77.7% rank=12.058 drop=8.9% dead=3.24% reinit=0 dis=N/A t=181s
+[02:27:47]   [A_vanilla s=4] T14: tr=81.8% rank=12.043 drop=9.0% dead=5.62% reinit=0 dis=N/A t=195s
+[02:28:00]   [A_vanilla s=4] T15: tr=69.3% rank=11.999 drop=9.3% dead=5.66% reinit=0 dis=N/A t=208s
+[02:28:13]   [A_vanilla s=4] T16: tr=81.8% rank=11.972 drop=9.5% dead=8.02% reinit=0 dis=N/A t=221s
+[02:28:26]   [A_vanilla s=4] T17: tr=74.7% rank=11.958 drop=9.6% dead=7.42% reinit=0 dis=N/A t=234s
+[02:28:39]   [A_vanilla s=4] T18: tr=84.6% rank=11.928 drop=9.9% dead=6.67% reinit=0 dis=N/A t=247s
+[02:28:52]   [A_vanilla s=4] T19: tr=83.4% rank=11.883 drop=10.2% dead=6.54% reinit=0 dis=N/A t=259s
+[02:28:52]   [A_vanilla s=4] SUMMARY: rank_auc=12.0979 rank_drop=10.22% dead_final=6.54% reinit=0 time=4.3min
+[02:28:58]   [B_SNRI seed=4] Init rank=13.2353  init_dead=2.05%
+[02:29:11]   [B_SNRI s=4] T00: tr=58.6% rank=12.297 drop=7.1% dead=0.28% reinit=0 dis=0.00e+00 t=13s
+[02:29:24]   [B_SNRI s=4] T01: tr=26.4% rank=12.141 drop=8.3% dead=0.12% reinit=1 dis=0.00e+00 t=26s
+[02:29:37]   [B_SNRI s=4] T02: tr=21.9% rank=12.122 drop=8.4% dead=0.38% reinit=1 dis=0.00e+00 t=40s
+[02:29:50]   [B_SNRI s=4] T03: tr=25.4% rank=12.099 drop=8.6% dead=0.45% reinit=2 dis=1.35e-02 t=53s
+[02:30:04]   [B_SNRI s=4] T04: tr=63.0% rank=11.857 drop=10.4% dead=0.91% reinit=2 dis=3.69e-03 t=66s
+[02:30:17]   [B_SNRI s=4] T05: tr=39.7% rank=11.815 drop=10.7% dead=1.20% reinit=2 dis=2.86e-03 t=79s
+[02:30:30]   [B_SNRI s=4] T06: tr=50.3% rank=11.821 drop=10.7% dead=1.17% reinit=2 dis=2.59e-03 t=93s
+[02:30:45]   [B_SNRI s=4] T07: tr=51.6% rank=11.815 drop=10.7% dead=1.10% reinit=1 dis=0.00e+00 t=107s
+[02:31:00]   [B_SNRI s=4] T08: tr=51.3% rank=11.819 drop=10.7% dead=2.27% reinit=2 dis=3.86e-03 t=122s
+[02:31:13]   [B_SNRI s=4] T09: tr=72.0% rank=11.804 drop=10.8% dead=2.38% reinit=2 dis=1.62e-03 t=135s
+[02:31:26]   [B_SNRI s=4] T10: tr=80.2% rank=11.795 drop=10.9% dead=3.05% reinit=2 dis=2.27e-03 t=148s
+[02:31:39]   [B_SNRI s=4] T11: tr=65.8% rank=11.785 drop=11.0% dead=2.60% reinit=2 dis=8.30e-04 t=161s
+[02:31:52]   [B_SNRI s=4] T12: tr=82.0% rank=11.783 drop=11.0% dead=3.74% reinit=2 dis=3.34e-03 t=174s
+[02:32:05]   [B_SNRI s=4] T13: tr=77.2% rank=11.768 drop=11.1% dead=4.21% reinit=2 dis=1.08e-03 t=188s
+[02:32:19]   [B_SNRI s=4] T14: tr=81.3% rank=11.754 drop=11.2% dead=4.36% reinit=2 dis=1.59e-03 t=201s
+[02:32:33]   [B_SNRI s=4] T15: tr=72.0% rank=11.734 drop=11.3% dead=4.22% reinit=2 dis=1.15e-03 t=215s
+[02:32:46]   [B_SNRI s=4] T16: tr=79.4% rank=11.711 drop=11.5% dead=4.96% reinit=4 dis=6.29e-02 t=229s
+[02:33:00]   [B_SNRI s=4] T17: tr=69.8% rank=11.693 drop=11.7% dead=5.07% reinit=3 dis=9.29e-04 t=242s
+[02:33:13]   [B_SNRI s=4] T18: tr=81.9% rank=11.675 drop=11.8% dead=7.43% reinit=3 dis=3.49e-03 t=255s
+[02:33:26]   [B_SNRI s=4] T19: tr=79.4% rank=11.638 drop=12.1% dead=7.21% reinit=3 dis=1.22e-03 t=268s
+[02:33:26]   [B_SNRI s=4] SUMMARY: rank_auc=11.8462 rank_drop=12.07% dead_final=7.21% reinit=40 time=4.5min
+[02:33:26]   [B_SNRI s=4] disruption: mean=2.291e-05 max=6.295e-02
+[02:33:32]   [C_naive seed=4] Init rank=13.2353  init_dead=2.05%
+[02:33:45]   [C_naive s=4] T00: tr=58.6% rank=12.297 drop=7.1% dead=0.28% reinit=0 dis=0.00e+00 t=13s
+[02:33:59]   [C_naive s=4] T01: tr=26.4% rank=12.141 drop=8.3% dead=0.12% reinit=1 dis=0.00e+00 t=26s
+[02:34:12]   [C_naive s=4] T02: tr=21.9% rank=12.122 drop=8.4% dead=0.38% reinit=1 dis=0.00e+00 t=40s
+[02:34:25]   [C_naive s=4] T03: tr=25.4% rank=12.099 drop=8.6% dead=0.45% reinit=2 dis=1.35e-02 t=53s
+[02:34:38]   [C_naive s=4] T04: tr=62.8% rank=11.856 drop=10.4% dead=0.85% reinit=2 dis=1.57e-01 t=66s
+[02:34:52]   [C_naive s=4] T05: tr=38.5% rank=11.814 drop=10.7% dead=1.13% reinit=2 dis=5.86e-01 t=80s
+[02:35:05]   [C_naive s=4] T06: tr=54.8% rank=11.816 drop=10.7% dead=1.24% reinit=2 dis=2.33e-02 t=93s
+[02:35:19]   [C_naive s=4] T07: tr=61.8% rank=11.819 drop=10.7% dead=1.15% reinit=2 dis=3.10e-02 t=106s
+[02:35:32]   [C_naive s=4] T08: tr=52.6% rank=11.812 drop=10.8% dead=1.69% reinit=2 dis=5.10e-01 t=120s
+[02:35:45]   [C_naive s=4] T09: tr=77.6% rank=11.821 drop=10.7% dead=2.73% reinit=2 dis=2.47e-03 t=133s
+[02:35:58]   [C_naive s=4] T10: tr=83.6% rank=11.813 drop=10.7% dead=3.33% reinit=2 dis=0.00e+00 t=146s
+[02:36:11]   [C_naive s=4] T11: tr=72.6% rank=11.803 drop=10.8% dead=3.29% reinit=2 dis=7.05e-02 t=159s
+[02:36:25]   [C_naive s=4] T12: tr=83.0% rank=11.802 drop=10.8% dead=4.26% reinit=2 dis=0.00e+00 t=172s
+[02:36:38]   [C_naive s=4] T13: tr=73.9% rank=11.782 drop=11.0% dead=4.64% reinit=2 dis=5.91e-04 t=186s
+[02:36:51]   [C_naive s=4] T14: tr=79.2% rank=11.771 drop=11.1% dead=4.86% reinit=2 dis=3.63e-04 t=199s
+[02:37:04]   [C_naive s=4] T15: tr=72.2% rank=11.753 drop=11.2% dead=5.05% reinit=4 dis=3.38e-01 t=212s
+[02:37:18]   [C_naive s=4] T16: tr=81.5% rank=11.737 drop=11.3% dead=6.91% reinit=5 dis=5.41e-01 t=225s
+[02:37:31]   [C_naive s=4] T17: tr=62.5% rank=11.674 drop=11.8% dead=8.17% reinit=6 dis=2.43e-01 t=239s
+[02:37:44]   [C_naive s=4] T18: tr=77.8% rank=11.653 drop=12.0% dead=10.23% reinit=5 dis=1.76e-01 t=252s
+[02:37:57]   [C_naive s=4] T19: tr=63.3% rank=11.633 drop=12.1% dead=9.43% reinit=5 dis=2.31e-01 t=265s
+[02:37:57]   [C_naive s=4] SUMMARY: rank_auc=11.8509 rank_drop=12.10% dead_final=9.43% reinit=51 time=4.4min
+[02:37:57]   [C_naive s=4] disruption: mean=9.070e-04 max=5.858e-01
+[02:37:57] Seed 4 done. Total elapsed: 68.5min
+[02:37:57] 
+All seeds done. Total time: 68.5min
+[02:37:57] 
+======================================================================
+[02:37:57] AGGREGATE STATISTICS
+[02:37:57] ======================================================================
+[02:37:57] 
+  A_vanilla:
+[02:37:57]     rank_auc: mean=11.8652 std=0.8885 [10.2894, 12.4013]
+[02:37:57]     final_dead_pct: mean=10.2280 std=5.2670 [5.5900, 18.9300]
+[02:37:57]     rank_drop_pct: mean=12.1200 std=6.3691 [8.6600, 23.4600]
+[02:37:57] 
+  B_SNRI:
+[02:37:57]     rank_auc: mean=12.1958 std=0.2074 [11.8462, 12.3722]
+[02:37:57]     final_dead_pct: mean=9.0560 std=2.4471 [6.0100, 11.9200]
+[02:37:57]     rank_drop_pct: mean=9.8320 std=1.3233 [8.6400, 12.0700]
+[02:37:57]     disruption_mean: mean=0.0001 std=0.0001 [0.0000, 0.0002]
+[02:37:57]     disruption_max: mean=0.2675 std=0.3158 [0.0629, 0.7833]
+[02:37:57] 
+  C_naive:
+[02:37:57]     rank_auc: mean=12.2003 std=0.2077 [11.8509, 12.3722]
+[02:37:57]     final_dead_pct: mean=10.1740 std=2.1487 [6.8600, 12.4600]
+[02:37:57]     rank_drop_pct: mean=9.8420 std=1.3343 [8.6400, 12.1000]
+[02:37:57]     disruption_mean: mean=0.0009 std=0.0008 [0.0001, 0.0018]
+[02:37:57]     disruption_max: mean=1.0229 std=0.8793 [0.2750, 2.2222]
+[02:37:57] 
+--- Sign consistency across seeds ---
+[02:37:57]   rank_auc: C > B in 3/5 seeds (diffs: [0.0, 0.0037, 0.0, 0.0141, 0.0047])
+[02:37:57]   dead%:    B > A in 4/5 seeds (diffs: [0.91, 0.42, 1.71, -9.57, 0.67])
+[02:37:57]   dead%:    C < B in 1/5 seeds (diffs: [0.02, 0.85, -0.6, 3.1, 2.22])
+[02:37:57]   disruption: C > B in 5/5 seeds (diffs: [0.0001, 0.0015, 0.0002, 0.0016, 0.0009])
+[02:37:57] 
+--- Wilcoxon signed-rank tests (H0: median difference = 0) ---
+[02:37:57]   rank_auc B-vs-A: stat=5.00 p=0.6250 r=0.333  (mean diff = 0.3306 ± 0.9585)
+[02:37:57]   rank_auc C-vs-B: stat=0.00 p=0.2500 r=1.000  (mean diff = 0.0045 ± 0.0058)
+[02:37:57]   dead_pct B-vs-A: stat=5.00 p=0.6250 r=0.333  (mean diff = -1.1720 ± 4.7195)
+[02:37:57]   dead_pct C-vs-B: stat=2.00 p=0.1875 r=0.733  (mean diff = 1.1180 ± 1.5307)
+[02:37:57]   disruption C-vs-B: stat=0.00 p=0.0625 r=1.000  (mean diff = 0.0008 ± 0.0007)
+[02:37:57] 
+  Bonferroni-corrected α = 0.0125 (4 primary tests)
+[02:37:57] 
+--- Primary hypotheses ---
+[02:37:57]   H1 (C more disruptive than B): consistent in 5/5 seeds → True
+[02:37:57]   H2 (C higher rank AUC than B): consistent in 3/5 seeds → False
+[02:37:57]   H3 (B more dead than A): consistent in 4/5 seeds → False
+[02:37:57]   H4 (C fewer dead than B): consistent in 1/5 seeds → False
+[02:37:57] 
+  ALL HYPOTHESES CONSISTENT: False
+[02:37:57] 
+======================================================================
+[02:37:57] Writing RESULTS.json
+[02:37:57] ======================================================================
+[02:37:57] 
+Results written to /workspace/results/ablation-04/RESULTS.json
+[02:37:57] 
+======================================================================
+[02:37:57] FINAL RESULTS (compact, no per_seed):
+[02:37:57] {
+  "status": "SUCCESS",
+  "scale": "full",
+  "subject_executed": "ResNet-18 + SGD (lr=0.1, mom=0.9, wd=0.0005, nesterov=True) + CosineAnnealingLR/task, CIFAR-100 class-incremental, 20 tasks \u00d7 5 classes \u00d7 10 epochs/task, batch=128, seeds=[0, 1, 2, 3, 4]. Three arms: A=vanilla, B=SNRI null-space re-init, C=naive kaiming re-init (ReDo-style). Full-scale: 5 independent seeds.",
+  "notes": "Ablation-04 full: 5 seeds \u00d7 3 arms. Rank AUC: A=11.8652\u00b10.8885  B=12.1958\u00b10.2074  C=12.2003\u00b10.2077. Final dead%: A=10.23\u00b15.27  B=9.06\u00b12.45  C=10.17\u00b12.15. Sign consistency C>B rank_auc: 3/5, B>A dead%: 4/5, C<B dead%: 1/5, C>B disruption: 5/5. All hypotheses consistent: False. Sanity gates 1-4 from baseline-00, G7/G8/G9 from increase_complexity-02.",
+  "metrics": {
+    "arm_A_rank_auc_mean": 11.8652,
+    "arm_A_rank_auc_std": 0.8885,
+    "arm_B_rank_auc_mean": 12.1958,
+    "arm_B_rank_auc_std": 0.2074,
+    "arm_C_rank_auc_mean": 12.2003,
+    "arm_C_rank_auc_std": 0.2077,
+    "arm_A_final_dead_pct_mean": 10.228,
+    "arm_A_final_dead_pct_std": 5.267,
+    "arm_B_final_dead_pct_mean": 9.056,
+    "arm_B_final_dead_pct_std": 2.4471,
+    "arm_C_final_dead_pct_mean": 10.174,
+    "arm_C_final_dead_pct_std": 2.1487,
+    "arm_A_rank_drop_pct_mean": 12.12,
+    "arm_B_rank_drop_pct_mean": 9.832,
+    "arm_C_rank_drop_pct_mean": 9.842,
+    "arm_B_disruption_mean_mean": 0.0001,
+    "arm_B_disruption_mean_std": 0.0001,
+    "arm_B_disruption_max_mean": 0.2675,
+    "arm_C_disruption_mean_mean": 0.0009,
+    "arm_C_disruption_mean_std": 0.0008,
+    "arm_C_disruption_max_mean": 1.0229,
+    "arm_A_rank_auc_per_seed": [
+      12.3292,
+      12.2082,
+      12.4013,
+      10.2894,
+      12.0979
+    ],
+    "arm_B_rank_auc_per_seed": [
+      12.2377,
+      12.1969,
+      12.3722,
+      12.3262,
+      11.8462
+    ],
+    "arm_C_rank_auc_per_seed": [
+      12.2377,
+      12.2006,
+      12.3722,
+      12.3403,
+      11.8509
+    ],
+    "arm_A_dead_pct_per_seed": [
+      9.87,
+      5.59,
+      10.21,
+      18.93,
+      6.54
+    ],
+    "arm_B_dead_pct_per_seed": [
+      10.78,
+      6.01,
+      11.92,
+      9.36,
+      7.21
+    ],
+    "arm_C_dead_pct_per_seed": [
+      10.8,
+      6.86,
+      11.32,
+      12.46,
+      9.43
+    ],
+    "sign_C_gt_B_rank_auc": "3/5",
+    "sign_B_gt_A_dead_pct": "4/5",
+    "sign_C_lt_B_dead_pct": "1/5",
+    "sign_C_gt_B_disruption": "5/5",
+    "wilcoxon_p_rank_auc_B_vs_A": 0.625,
+    "wilcoxon_p_rank_auc_C_vs_B": 0.25,
+    "wilcoxon_p_dead_B_vs_A": 0.625,
+    "wilcoxon_p_dead_C_vs_B": 0.1875,
+    "wilcoxon_p_dis_C_vs_B": 0.0625,
+    "wilcoxon_r_rank_auc_B_vs_A": 0.33333333333333337,
+    "wilcoxon_r_rank_auc_C_vs_B": 1.0,
+    "wilcoxon_r_dead_B_vs_A": 0.33333333333333337,
+    "wilcoxon_r_dead_C_vs_B": 0.7333333333333334,
+    "bonferroni_alpha": 0.0125,
+    "hyp_H1_C_more_disruptive": true,
+    "hyp_H2_C_higher_rank": false,
+    "hyp_H3_B_more_dead_than_A": false,
+    "hyp_H4_C_fewer_dead_than_B": false,
+    "hyp_all_consistent": false,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "sanity_gates_1_4": "PASS (cited from baseline-00)",
+    "sanity_gates_G7_G8_G9": "PASS (cited from increase_complexity-02)"
+  }
+}
+[02:37:57] ======================================================================
+9% reinit=0 dis=0.00e+00 t=107s
+[01:49:58]   [B_SNRI s=1] T08: tr=62.5% rank=12.244 drop=7.5% dead=1.63% reinit=0 dis=0.00e+00 t=121s
+[01:50:12]   [B_SNRI s=1] T09: tr=81.2% rank=12.235 drop=7.6% dead=1.94% reinit=0 dis=0.00e+00 t=134s
+[01:50:25]   [B_SNRI s=1] T10: tr=83.6% rank=12.215 drop=7.7% dead=1.87% reinit=0 dis=0.00e+00 t=148s
+[01:50:39]   [B_SNRI s=1] T11: tr=74.2% rank=12.196 drop=7.8% dead=1.30% reinit=0 dis=0.00e+00 t=162s
+[01:50:52]   [B_SNRI s=1] T12: tr=79.0% rank=12.169 drop=8.1% dead=2.71% reinit=0 dis=0.00e+00 t=175s
+[01:51:05]   [B_SNRI s=1] T13: tr=77.4% rank=12.148 drop=8.2% dead=1.91% reinit=1 dis=1.38e-01 t=188s
+[01:51:19]   [B_SNRI s=1] T14: tr=82.2% rank=12.128 drop=8.4% dead=4.79% reinit=3 dis=1.21e-01 t=202s
+[01:51:32]   [B_SNRI s=1] T15: tr=74.5% rank=12.105 drop=8.5% dead=3.05% reinit=5 dis=1.57e-01 t=215s
+[01:51:46]   [B_SNRI s=1] T16: tr=81.6% rank=12.068 drop=8.8% dead=6.21% reinit=12 dis=3.61e-01 t=228s
+[01:51:59]   [B_SNRI s=1] T17: tr=65.6% rank=12.002 drop=9.3% dead=6.17% reinit=8 dis=2.12e-02 t=242s
+[01:52:13]   [B_SNRI s=1] T18: tr=67.9% rank=11.978 drop=9.5% dead=6.64% reinit=8 dis=2.68e-01 t=255s
+[01:52:26]   [B_SNRI s=1] T19: tr=77.4% rank=11.958 drop=9.6% dead=6.01% reinit=6 dis=7.14e-03 t=269s
+[01:52:26]   [B_SNRI s=1] SUMMARY: rank_auc=12.1969 rank_drop=9.65% dead_final=6.01% reinit=43 time=4.5min
+[01:52:26]   [B_SNRI s=1] disruption: mean=1.468e-04 max=3.613e-01
+[01:52:32]   [C_naive seed=1] Init rank=13.2346  init_dead=2.89%
+[01:52:45]   [C_naive s=1] T00: tr=70.3% rank=12.509 drop=5.5% dead=0.51% reinit=0 dis=0.00e+00 t=13s
+[01:52:58]   [C_naive s=1] T01: tr=38.8% rank=12.363 drop=6.6% dead=0.24% reinit=0 dis=0.00e+00 t=26s
+[01:53:11]   [C_naive s=1] T02: tr=39.6% rank=12.292 drop=7.1% dead=0.47% reinit=0 dis=0.00e+00 t=40s
+[01:53:25]   [C_naive s=1] T03: tr=51.1% rank=12.282 drop=7.2% dead=0.37% reinit=0 dis=0.00e+00 t=53s
+[01:53:38]   [C_naive s=1] T04: tr=71.7% rank=12.273 drop=7.3% dead=1.08% reinit=0 dis=0.00e+00 t=66s
+[01:53:52]   [C_naive s=1] T05: tr=48.3% rank=12.261 drop=7.4% dead=1.00% reinit=0 dis=0.00e+00 t=80s
+[01:54:05]   [C_naive s=1] T06: tr=54.8% rank=12.264 drop=7.3% dead=0.77% reinit=0 dis=0.00e+00 t=93s
+[01:54:18]   [C_naive s=1] T07: tr=69.3% rank=12.245 drop=7.5% dead=1.19% reinit=0 dis=0.00e+00 t=107s
+[01:54:32]   [C_naive s=1] T08: tr=62.5% rank=12.244 drop=7.5% dead=1.63% reinit=0 dis=0.00e+00 t=120s
+[01:54:46]   [C_naive s=1] T09: tr=81.2% rank=12.235 drop=7.6% dead=1.94% reinit=0 dis=0.00e+00 t=134s
+[01:54:59]   [C_naive s=1] T10: tr=83.6% rank=12.215 drop=7.7% dead=1.87% reinit=0 dis=0.00e+00 t=147s
+[01:55:13]   [C_naive s=1] T11: tr=74.2% rank=12.196 drop=7.8% dead=1.30% reinit=0 dis=0.00e+00 t=161s
+[01:55:26]   [C_naive s=1] T12: tr=79.0% rank=12.169 drop=8.1% dead=2.71% reinit=0 dis=0.00e+00 t=175s
+[01:55:39]   [C_naive s=1] T13: tr=77.4% rank=12.148 drop=8.2% dead=1.91% reinit=1 dis=1.38e-01 t=188s
+[01:55:53]   [C_naive s=1] T14: tr=82.4% rank=12.128 drop=8.4% dead=4.87% reinit=3 dis=1.21e-01 t=201s
+[01:56:07]   [C_naive s=1] T15: tr=75.2% rank=12.113 drop=8.5% dead=3.21% reinit=3 dis=3.55e-01 t=215s
+[01:56:21]   [C_naive s=1] T16: tr=82.0% rank=12.076 drop=8.8% dead=4.65% reinit=8 dis=3.64e-01 t=229s
+[01:56:34]   [C_naive s=1] T17: tr=71.3% rank=12.033 drop=9.1% dead=5.57% reinit=6 dis=1.69e+00 t=242s
+[01:56:47]   [C_naive s=1] T18: tr=82.0% rank=12.006 drop=9.3% dead=8.65% reinit=12 dis=2.38e-01 t=255s
+[01:57:00]   [C_naive s=1] T19: tr=83.3% rank=11.958 drop=9.6% dead=6.86% reinit=8 dis=9.93e-01 t=268s
+[01:57:00]   [C_naive s=1] SUMMARY: rank_auc=12.2006 rank_drop=9.65% dead_final=6.86% reinit=41 time=4.5min
+[01:57:00]   [C_naive s=1] disruption: mean=1.611e-03 max=1.688e+00
+[01:57:00] Seed 1 done. Total elapsed: 27.6min
+[01:57:00] 
+============================================================
+[01:57:00] SEED 2
+[01:57:00] ============================================================
+[01:57:07]   [A_vanilla seed=2] Init rank=13.2350  init_dead=2.01%
+[01:57:19]   [A_vanilla s=2] T00: tr=71.4% rank=12.657 drop=4.4% dead=0.24% reinit=0 dis=N/A t=13s
+[01:57:32]   [A_vanilla s=2] T01: tr=40.2% rank=12.578 drop=5.0% dead=0.40% reinit=0 dis=N/A t=26s
+[01:57:47]   [A_vanilla s=2] T02: tr=48.3% rank=12.546 drop=5.2% dead=0.35% reinit=0 dis=N/A t=40s
+[01:58:01]   [A_vanilla s=2] T03: tr=53.9% rank=12.519 drop=5.4% dead=0.34% reinit=0 dis=N/A t=55s
+[01:58:15]   [A_vanilla s=2] T04: tr=58.4% rank=12.510 drop=5.5% dead=1.25% reinit=0 dis=N/A t=68s
+[01:58:28]   [A_vanilla s=2] T05: tr=52.0% rank=12.491 drop=5.6% dead=0.78% reinit=0 dis=N/A t=82s
+[01:58:41]   [A_vanilla s=2] T06: tr=58.6% rank=12.485 drop=5.7% dead=0.57% reinit=0 dis=N/A t=94s
+[01:58:54]   [A_vanilla s=2] T07: tr=64.2% rank=12.459 drop=5.9% dead=0.58% reinit=0 dis=N/A t=107s
+[01:59:08]   [A_vanilla s=2] T08: tr=59.6% rank=12.454 drop=5.9% dead=0.77% reinit=0 dis=N/A t=121s
+[01:59:22]   [A_vanilla s=2] T09: tr=74.6% rank=12.441 drop=6.0% dead=1.25% reinit=0 dis=N/A t=135s
+[01:59:34]   [A_vanilla s=2] T10: tr=82.6% rank=12.428 drop=6.1% dead=1.37% reinit=0 dis=N/A t=148s
+[01:59:48]   [A_vanilla s=2] T11: tr=76.1% rank=12.415 drop=6.2% dead=1.45% reinit=0 dis=N/A t=161s
+[02:00:02]   [A_vanilla s=2] T12: tr=83.2% rank=12.388 drop=6.4% dead=4.17% reinit=0 dis=N/A t=175s
+[02:00:15]   [A_vanilla s=2] T13: tr=76.6% rank=12.340 drop=6.8% dead=5.50% reinit=0 dis=N/A t=189s
+[02:00:29]   [A_vanilla s=2] T14: tr=82.2% rank=12.302 drop=7.0% dead=7.50% reinit=0 dis=N/A t=202s
+[02:00:42]   [A_vanilla s=2] T15: tr=68.2% rank=12.273 drop=7.3% dead=8.68% reinit=0 dis=N/A t=215s
+[02:00:54]   [A_vanilla s=2] T16: tr=77.0% rank=12.246 drop=7.5% dead=8.32% reinit=0 dis=N/A t=228s
+[02:01:07]   [A_vanilla s=2] T17: tr=77.8% rank=12.221 drop=7.7% dead=9.60% reinit=0 dis=N/A t=241s
+[02:01:21]   [A_vanilla s=2] T18: tr=85.6% rank=12.186 drop=7.9% dead=9.89% reinit=0 dis=N/A t=254s
+[02:01:34]   [A_vanilla s=2] T19: tr=79.2% rank=12.089 drop=8.7% dead=10.21% reinit=0 dis=N/A t=268s
+[02:01:34]   [A_vanilla s=2] SUMMARY: rank_auc=12.4013 rank_drop=8.66% dead_final=10.21% reinit=0 time=4.5min
+[02:01:41]   [B_SNRI seed=2] Init rank=13.2350  init_dead=2.01%
+[02:01:54]   [B_SNRI s=2] T00: tr=71.4% rank=12.657 drop=4.4% dead=0.24% reinit=0 dis=0.00e+00 t=14s
+[02:02:08]   [B_SNRI s=2] T01: tr=39.6% rank=12.571 drop=5.0% dead=0.58% reinit=0 dis=0.00e+00 t=27s
+[02:02:21]   [B_SNRI s=2] T02: tr=53.4% rank=12.545 drop=5.2% dead=0.40% reinit=0 dis=0.00e+00 t=40s
+[02:02:34]   [B_SNRI s=2] T03: tr=58.8% rank=12.526 drop=5.4% dead=0.71% reinit=0 dis=0.00e+00 t=54s
+[02:02:48]   [B_SNRI s=2] T04: tr=76.2% rank=12.526 drop=5.4% dead=3.92% reinit=0 dis=0.00e+00 t=67s
+[02:03:01]   [B_SNRI s=2] T05: tr=50.5% rank=12.493 drop=5.6% dead=3.16% reinit=0 dis=0.00e+00 t=80s
+[02:03:14]   [B_SNRI s=2] T06: tr=48.8% rank=12.453 drop=5.9% dead=2.61% reinit=0 dis=0.00e+00 t=93s
+[02:03:27]   [B_SNRI s=2] T07: tr=55.9% rank=12.424 drop=6.1% dead=5.28% reinit=0 dis=0.00e+00 t=107s
+[02:03:41]   [B_SNRI s=2] T08: tr=48.9% rank=12.417 drop=6.2% dead=6.35% reinit=0 dis=0.00e+00 t=120s
+[02:03:54]   [B_SNRI s=2] T09: tr=72.7% rank=12.416 drop=6.2% dead=6.37% reinit=0 dis=0.00e+00 t=133s
+[02:04:07]   [B_SNRI s=2] T10: tr=85.7% rank=12.378 drop=6.5% dead=8.46% reinit=0 dis=0.00e+00 t=147s
+[02:04:20]   [B_SNRI s=2] T11: tr=73.4% rank=12.331 drop=6.8% dead=10.18% reinit=0 dis=0.00e+00 t=160s
+[02:04:33]   [B_SNRI s=2] T12: tr=82.8% rank=12.307 drop=7.0% dead=10.19% reinit=0 dis=0.00e+00 t=173s
+[02:04:46]   [B_SNRI s=2] T13: tr=78.3% rank=12.288 drop=7.2% dead=8.96% reinit=0 dis=0.00e+00 t=186s
+[02:05:00]   [B_SNRI s=2] T14: tr=81.8% rank=12.260 drop=7.4% dead=7.85% reinit=0 dis=0.00e+00 t=199s
+[02:05:13]   [B_SNRI s=2] T15: tr=57.8% rank=12.220 drop=7.7% dead=8.10% reinit=0 dis=0.00e+00 t=212s
+[02:05:26]   [B_SNRI s=2] T16: tr=82.7% rank=12.212 drop=7.7% dead=9.15% reinit=0 dis=0.00e+00 t=226s
+[02:05:40]   [B_SNRI s=2] T17: tr=73.8% rank=12.184 drop=7.9% dead=11.52% reinit=0 dis=0.00e+00 t=239s
+[02:05:53]   [B_SNRI s=2] T18: tr=84.1% rank=12.144 drop=8.2% dead=10.91% reinit=1 dis=6.62e-02 t=252s
+[02:06:06]   [B_SNRI s=2] T19: tr=83.5% rank=12.092 drop=8.6% dead=11.92% reinit=0 dis=0.00e+00 t=266s
+[02:06:06]   [B_SNRI s=2] SUMMARY: rank_auc=12.3722 rank_drop=8.64% dead_final=11.92% reinit=1 time=4.4min
+[02:06:06]   [B_SNRI s=2] disruption: mean=5.205e-06 max=6.618e-02
+[02:06:12]   [C_naive seed=2] Init rank=13.2350  init_dead=2.01%
+[02:06:25]   [C_naive s=2] T00: tr=71.4% rank=12.657 drop=4.4% dead=0.24% reinit=0 dis=0.00e+00 t=13s
+[02:06:39]   [C_naive s=2] T01: tr=39.6% rank=12.571 drop=5.0% dead=0.58% reinit=0 dis=0.00e+00 t=26s
+[02:06:52]   [C_naive s=2] T02: tr=53.4% rank=12.545 drop=5.2% dead=0.40% reinit=0 dis=0.00e+00 t=40s
+[02:07:05]   [C_naive s=2] T03: tr=58.8% rank=12.526 drop=5.4% dead=0.71% reinit=0 dis=0.00e+00 t=53s
+[02:07:18]   [C_naive s=2] T04: tr=76.2% rank=12.526 drop=5.4% dead=3.92% reinit=0 dis=0.00e+00 t=66s
+[02:07:32]   [C_naive s=2] T05: tr=50.5% rank=12.493 drop=5.6% dead=3.16% reinit=0 dis=0.00e+00 t=79s
+[02:07:45]   [C_naive s=2] T06: tr=48.8% rank=12.453 drop=5.9% dead=2.61% reinit=0 dis=0.00e+00 t=93s
+[02:07:58]   [C_naive s=2] T07: tr=55.9% rank=12.424 drop=6.1% dead=5.28% reinit=0 dis=0.00e+00 t=106s
+[02:08:12]   [C_naive s=2] T08: tr=48.9% rank=12.417 drop=6.2% dead=6.35% reinit=0 dis=0.00e+00 t=120s
+[02:08:26]   [C_naive s=2] T09: tr=72.7% rank=12.416 drop=6.2% dead=6.37% reinit=0 dis=0.00e+00 t=134s
+[02:08:40]   [C_naive s=2] T10: tr=85.7% rank=12.378 drop=6.5% dead=8.46% reinit=0 dis=0.00e+00 t=148s
+[02:08:53]   [C_naive s=2] T11: tr=73.4% rank=12.331 drop=6.8% dead=10.18% reinit=0 dis=0.00e+00 t=161s
+[02:09:07]   [C_naive s=2] T12: tr=82.8% rank=12.307 drop=7.0% dead=10.19% reinit=0 dis=0.00e+00 t=175s
+[02:09:20]   [C_naive s=2] T13: tr=78.3% rank=12.288 drop=7.2% dead=8.96% reinit=0 dis=0.00e+00 t=188s
+[02:09:33]   [C_naive s=2] T14: tr=81.8% rank=12.260 drop=7.4% dead=7.85% reinit=0 dis=0.00e+00 t=201s
+[02:09:46]   [C_naive s=2] T15: tr=57.8% rank=12.220 drop=7.7% dead=8.10% reinit=0 dis=0.00e+00 t=214s
+[02:09:59]   [C_naive s=2] T16: tr=82.7% rank=12.212 drop=7.7% dead=9.15% reinit=0 dis=0.00e+00 t=227s
+[02:10:12]   [C_naive s=2] T17: tr=73.8% rank=12.184 drop=7.9% dead=11.52% reinit=0 dis=0.00e+00 t=240s
+[02:10:25]   [C_naive s=2] T18: tr=84.1% rank=12.144 drop=8.2% dead=10.91% reinit=1 dis=1.03e-01 t=253s
+[02:10:38]   [C_naive s=2] T19: tr=83.3% rank=12.091 drop=8.6% dead=11.32% reinit=1 dis=3.43e-01 t=266s
+[02:10:38]   [C_naive s=2] SUMMARY: rank_auc=12.3722 rank_drop=8.64% dead_final=11.32% reinit=2 time=4.4min
+[02:10:38]   [C_naive s=2] disruption: mean=1.695e-04 max=3.435e-01
+[02:10:38] Seed 2 done. Total elapsed: 41.2min
+[02:10:38] 
+============================================================
+[02:10:38] SEED 3
+[02:10:38] ============================================================
+[02:10:44]   [A_vanilla seed=3] Init rank=13.2372  init_dead=2.14%
+[02:10:57]   [A_vanilla s=3] T00: tr=69.8% rank=12.554 drop=5.2% dead=0.29% reinit=0 dis=N/A t=13s
+[02:11:09]   [A_vanilla s=3] T01: tr=31.2% rank=10.225 drop=22.8% dead=9.49% reinit=0 dis=N/A t=25s
+[02:11:22]   [A_vanilla s=3] T02: tr=43.0% rank=10.245 drop=22.6% dead=9.76% reinit=0 dis=N/A t=38s
+[02:11:35]   [A_vanilla s=3] T03: tr=45.8% rank=10.220 drop=22.8% dead=9.68% reinit=0 dis=N/A t=51s
+[02:11:48]   [A_vanilla s=3] T04: tr=61.4% rank=10.221 drop=22.8% dead=11.60% reinit=0 dis=N/A t=64s
+[02:12:01]   [A_vanilla s=3] T05: tr=36.9% rank=10.214 drop=22.8% dead=11.09% reinit=0 dis=N/A t=77s
+[02:12:14]   [A_vanilla s=3] T06: tr=51.0% rank=10.205 drop=22.9% dead=9.85% reinit=0 dis=N/A t=90s
+[02:12:27]   [A_vanilla s=3] T07: tr=56.3% rank=10.147 drop=23.3% dead=10.98% reinit=0 dis=N/A t=103s
+[02:12:39]   [A_vanilla s=3] T08: tr=51.7% rank=10.150 drop=23.3% dead=11.74% reinit=0 dis=N/A t=115s
+[02:12:52]   [A_vanilla s=3] T09: tr=61.4% rank=10.153 drop=23.3% dead=11.88% reinit=0 dis=N/A t=128s
+[02:13:04]   [A_vanilla s=3] T10: tr=77.3% rank=10.156 drop=23.3% dead=12.94% reinit=0 dis=N/A t=140s
+[02:13:17]   [A_vanilla s=3] T11: tr=64.2% rank=10.143 drop=23.4% dead=13.35% reinit=0 dis=N/A t=153s
+[02:13:30]   [A_vanilla s=3] T12: tr=77.6% rank=10.142 drop=23.4% dead=14.60% reinit=0 dis=N/A t=166s
+[02:13:43]   [A_vanilla s=3] T13: tr=69.9% rank=10.146 drop=23.4% dead=13.44% reinit=0 dis=N/A t=179s
+[02:13:56]   [A_vanilla s=3] T14: tr=78.2% rank=10.149 drop=23.3% dead=13.88% reinit=0 dis=N/A t=192s
+[02:14:08]   [A_vanilla s=3] T15: tr=55.8% rank=10.139 drop=23.4% dead=14.02% reinit=0 dis=N/A t=204s
+[02:14:21]   [A_vanilla s=3] T16: tr=75.5% rank=10.151 drop=23.3% dead=16.09% reinit=0 dis=N/A t=217s
+[02:14:34]   [A_vanilla s=3] T17: tr=65.9% rank=10.150 drop=23.3% dead=16.23% reinit=0 dis=N/A t=230s
+[02:14:47]   [A_vanilla s=3] T18: tr=79.0% rank=10.147 drop=23.3% dead=17.93% reinit=0 dis=N/A t=243s
+[02:15:00]   [A_vanilla s=3] T19: tr=76.8% rank=10.132 drop=23.5% dead=18.93% reinit=0 dis=N/A t=256s
+[02:15:00]   [A_vanilla s=3] SUMMARY: rank_auc=10.2894 rank_drop=23.46% dead_final=18.93% reinit=0 time=4.3min
+[02:15:06]   [B_SNRI seed=3] Init rank=13.2372  init_dead=2.14%
+[02:15:20]   [B_SNRI s=3] T00: tr=69.8% rank=12.554 drop=5.2% dead=0.29% reinit=0 dis=0.00e+00 t=14s
+[02:15:34]   [B_SNRI s=3] T01: tr=33.8% rank=12.501 drop=5.6% dead=0.68% reinit=0 dis=0.00e+00 t=28s
+[02:15:47]   [B_SNRI s=3] T02: tr=43.5% rank=12.477 drop=5.7% dead=2.20% reinit=2 dis=7.83e-01 t=41s
+[02:16:02]   [B_SNRI s=3] T03: tr=55.5% rank=12.464 drop=5.8% dead=2.13% reinit=2 dis=2.60e-02 t=56s
+[02:16:15]   [B_SNRI s=3] T04: tr=73.4% rank=12.464 drop=5.8% dead=4.09% reinit=3 dis=3.66e-03 t=69s
+[02:16:29]   [B_SNRI s=3] T05: tr=55.5% rank=12.429 drop=6.1% dead=3.22% reinit=2 dis=2.61e-03 t=83s
+[02:16:42]   [B_SNRI s=3] T06: tr=74.8% rank=12.437 drop=6.0% dead=3.22% reinit=2 dis=7.38e-03 t=96s
+[02:16:57]   [B_SNRI s=3] T07: tr=74.4% rank=12.421 drop=6.2% dead=3.88% reinit=1 dis=6.54e-03 t=111s
+[02:17:11]   [B_SNRI s=3] T08: tr=70.3% rank=12.410 drop=6.3% dead=4.60% reinit=1 dis=1.66e-03 t=125s
+[02:17:25]   [B_SNRI s=3] T09: tr=85.1% rank=12.398 drop=6.3% dead=4.16% reinit=1 dis=2.12e-03 t=138s
+[02:17:39]   [B_SNRI s=3] T10: tr=86.2% rank=12.364 drop=6.6% dead=5.11% reinit=2 dis=5.21e-02 t=153s
+[02:17:53]   [B_SNRI s=3] T11: tr=70.2% rank=12.326 drop=6.9% dead=5.97% reinit=3 dis=2.89e-03 t=167s
+[02:18:08]   [B_SNRI s=3] T12: tr=79.5% rank=12.267 drop=7.3% dead=6.31% reinit=1 dis=1.93e-03 t=182s
+[02:18:21]   [B_SNRI s=3] T13: tr=81.2% rank=12.247 drop=7.5% dead=6.74% reinit=1 dis=1.20e-03 t=195s
+[02:18:35]   [B_SNRI s=3] T14: tr=80.7% rank=12.202 drop=7.8% dead=7.89% reinit=5 dis=2.14e-01 t=209s
+[02:18:48]   [B_SNRI s=3] T15: tr=64.4% rank=12.171 drop=8.1% dead=8.50% reinit=2 dis=1.76e-01 t=222s
+[02:19:02]   [B_SNRI s=3] T16: tr=79.4% rank=12.143 drop=8.3% dead=6.94% reinit=5 dis=3.16e-01 t=236s
+[02:19:16]   [B_SNRI s=3] T17: tr=79.8% rank=12.128 drop=8.4% dead=9.38% reinit=3 dis=1.01e-02 t=250s
+[02:19:30]   [B_SNRI s=3] T18: tr=86.2% rank=12.090 drop=8.7% dead=10.09% reinit=3 dis=7.79e-03 t=264s
+[02:19:44]   [B_SNRI s=3] T19: tr=83.7% rank=12.031 drop=9.1% dead=9.36% reinit=5 dis=1.05e-01 t=278s
+[02:19:44]   [B_SNRI s=3] SUMMARY: rank_auc=12.3262 rank_drop=9.11% dead_final=9.36% reinit=44 time=4.6min
+[02:19:44]   [B_SNRI s=3] disruption: mean=1.517e-04 max=7.833e-01
+[02:19:51]   [C_naive seed=3] Init rank=13.2372  init_dead=2.14%
+[02:20:05]   [C_naive s=3] T00: tr=69.8% rank=12.554 drop=5.2% dead=0.29% reinit=0 dis=0.00e+00 t=14s
+[02:20:19]   [C_naive s=3] T01: tr=33.8% rank=12.501 drop=5.6% dead=0.68% reinit=0 dis=0.00e+00 t=29s
+[02:20:34]   [C_naive s=3] T02: tr=43.5% rank=12.477 drop=5.7% dead=2.20% reinit=2 dis=7.01e-01 t=44s
+[02:20:48]   [C_naive s=3] T03: tr=55.7% rank=12.463 drop=5.8% dead=2.13% reinit=2 dis=3.40e-02 t=58s
+[02:21:01]   [C_naive s=3] T04: tr=74.7% rank=12.461 drop=5.9% dead=4.16% reinit=2 dis=8.81e-02 t=71s
+[02:21:15]   [C_naive s=3] T05: tr=49.0% rank=12.429 drop=6.1% dead=3.33% reinit=2 dis=2.87e-01 t=84s
+[02:21:28]   [C_naive s=3] T06: tr=66.2% rank=12.437 drop=6.0% dead=2.29% reinit=2 dis=6.60e-02 t=98s
+[02:21:42]   [C_naive s=3] T07: tr=73.4% rank=12.412 drop=6.2% dead=3.31% reinit=1 dis=3.35e-02 t=111s
+[02:21:55]   [C_naive s=3] T08: tr=67.4% rank=12.405 drop=6.3% dead=3.52% reinit=1 dis=1.51e-01 t=124s
+[02:22:09]   [C_naive s=3] T09: tr=82.2% rank=12.383 drop=6.5% dead=3.00% reinit=3 dis=6.14e-01 t=139s
+[02:22:24]   [C_naive s=3] T10: tr=83.5% rank=12.362 drop=6.6% dead=4.67% reinit=3 dis=1.23e-01 t=154s
+[02:22:38]   [C_naive s=3] T11: tr=74.5% rank=12.329 drop=6.9% dead=4.79% reinit=2 dis=2.22e+00 t=167s
+[02:22:52]   [C_naive s=3] T12: tr=83.7% rank=12.324 drop=6.9% dead=5.19% reinit=2 dis=1.03e-01 t=181s
+[02:23:06]   [C_naive s=3] T13: tr=81.0% rank=12.290 drop=7.2% dead=5.60% reinit=2 dis=3.18e-01 t=195s
+[02:23:19]   [C_naive s=3] T14: tr=83.3% rank=12.263 drop=7.4% dead=6.89% reinit=3 dis=3.09e-01 t=209s
+[02:23:33]   [C_naive s=3] T15: tr=72.0% rank=12.229 drop=7.6% dead=7.22% reinit=2 dis=2.99e-02 t=222s
+[02:23:46]   [C_naive s=3] T16: tr=82.9% rank=12.203 drop=7.8% dead=7.38% reinit=3 dis=3.83e-01 t=236s
+[02:24:00]   [C_naive s=3] T17: tr=81.9% rank=12.178 drop=8.0% dead=10.45% reinit=3 dis=3.15e-01 t=249s
+[02:24:13]   [C_naive s=3] T18: tr=83.4% rank=12.076 drop=8.8% dead=13.27% reinit=9 dis=1.08e-01 t=263s
+[02:24:26]   [C_naive s=3] T19: tr=78.9% rank=12.030 drop=9.1% dead=12.46% reinit=8 dis=1.22e-01 t=276s
+[02:24:26]   [C_naive s=3] SUMMARY: rank_auc=12.3403 rank_drop=9.12% dead_final=12.46% reinit=52 time=4.6min
+[02:24:26]   [C_naive s=3] disruption: mean=1.778e-03 max=2.222e+00
+[02:24:26] Seed 3 done. Total elapsed: 55.0min
+[02:24:26] 
+============================================================
+[02:24:26] SEED 4
+[02:24:26] ============================================================
+[02:24:32]   [A_vanilla seed=4] Init rank=13.2353  init_dead=2.05%
+[02:24:45]   [A_vanilla s=4] T00: tr=58.6% rank=12.297 drop=7.1% dead=0.28% reinit=0 dis=N/A t=13s
+[02:24:58]   [A_vanilla s=4] T01: tr=41.1% rank=12.239 drop=7.5% dead=0.55% reinit=0 dis=N/A t=25s
+[02:25:10]   [A_vanilla s=4] T02: tr=48.2% rank=12.231 drop=7.6% dead=0.70% reinit=0 dis=N/A t=38s
+[02:25:23]   [A_vanilla s=4] T03: tr=52.8% rank=12.180 drop=8.0% dead=0.59% reinit=0 dis=N/A t=51s
+[02:25:36]   [A_vanilla s=4] T04: tr=66.6% rank=12.170 drop=8.0% dead=1.17% reinit=0 dis=N/A t=63s
+[02:25:50]   [A_vanilla s=4] T05: tr=45.4% rank=12.148 drop=8.2% dead=1.18% reinit=0 dis=N/A t=78s
+[02:26:04]   [A_vanilla s=4] T06: tr=63.7% rank=12.153 drop=8.2% dead=0.66% reinit=0 dis=N/A t=91s
+[02:26:17]   [A_vanilla s=4] T07: tr=66.0% rank=12.145 drop=8.2% dead=0.95% reinit=0 dis=N/A t=104s
+[02:26:29]   [A_vanilla s=4] T08: tr=59.3% rank=12.132 drop=8.3% dead=1.75% reinit=0 dis=N/A t=117s
+[02:26:42]   [A_vanilla s=4] T09: tr=79.8% rank=12.129 drop=8.4% dead=2.07% reinit=0 dis=N/A t=130s
+[02:26:55]   [A_vanilla s=4] T10: tr=82.2% rank=12.110 drop=8.5% dead=2.30% reinit=0 dis=N/A t=142s
+[02:27:08]   [A_vanilla s=4] T11: tr=70.8% rank=12.095 drop=8.6% dead=1.88% reinit=0 dis=N/A t=155s
+[02:27:21]   [A_vanilla s=4] T12: tr=83.2% rank=12.088 drop=8.7% dead=2.65% reinit=0 dis=N/A t=168s
+[02:27:34]   [A_vanilla s=4] T13: tr=77.7% rank=12.058 drop=8.9% dead=3.24% reinit=0 dis=N/A t=181s
+[02:27:47]   [A_vanilla s=4] T14: tr=81.8% rank=12.043 drop=9.0% dead=5.62% reinit=0 dis=N/A t=195s
+[02:28:00]   [A_vanilla s=4] T15: tr=69.3% rank=11.999 drop=9.3% dead=5.66% reinit=0 dis=N/A t=208s
+[02:28:13]   [A_vanilla s=4] T16: tr=81.8% rank=11.972 drop=9.5% dead=8.02% reinit=0 dis=N/A t=221s
+[02:28:26]   [A_vanilla s=4] T17: tr=74.7% rank=11.958 drop=9.6% dead=7.42% reinit=0 dis=N/A t=234s
+[02:28:39]   [A_vanilla s=4] T18: tr=84.6% rank=11.928 drop=9.9% dead=6.67% reinit=0 dis=N/A t=247s
+[02:28:52]   [A_vanilla s=4] T19: tr=83.4% rank=11.883 drop=10.2% dead=6.54% reinit=0 dis=N/A t=259s
+[02:28:52]   [A_vanilla s=4] SUMMARY: rank_auc=12.0979 rank_drop=10.22% dead_final=6.54% reinit=0 time=4.3min
+[02:28:58]   [B_SNRI seed=4] Init rank=13.2353  init_dead=2.05%
+[02:29:11]   [B_SNRI s=4] T00: tr=58.6% rank=12.297 drop=7.1% dead=0.28% reinit=0 dis=0.00e+00 t=13s
+[02:29:24]   [B_SNRI s=4] T01: tr=26.4% rank=12.141 drop=8.3% dead=0.12% reinit=1 dis=0.00e+00 t=26s
+[02:29:37]   [B_SNRI s=4] T02: tr=21.9% rank=12.122 drop=8.4% dead=0.38% reinit=1 dis=0.00e+00 t=40s
+[02:29:50]   [B_SNRI s=4] T03: tr=25.4% rank=12.099 drop=8.6% dead=0.45% reinit=2 dis=1.35e-02 t=53s
+[02:30:04]   [B_SNRI s=4] T04: tr=63.0% rank=11.857 drop=10.4% dead=0.91% reinit=2 dis=3.69e-03 t=66s
+[02:30:17]   [B_SNRI s=4] T05: tr=39.7% rank=11.815 drop=10.7% dead=1.20% reinit=2 dis=2.86e-03 t=79s
+[02:30:30]   [B_SNRI s=4] T06: tr=50.3% rank=11.821 drop=10.7% dead=1.17% reinit=2 dis=2.59e-03 t=93s
+[02:30:45]   [B_SNRI s=4] T07: tr=51.6% rank=11.815 drop=10.7% dead=1.10% reinit=1 dis=0.00e+00 t=107s
+[02:31:00]   [B_SNRI s=4] T08: tr=51.3% rank=11.819 drop=10.7% dead=2.27% reinit=2 dis=3.86e-03 t=122s
+[02:31:13]   [B_SNRI s=4] T09: tr=72.0% rank=11.804 drop=10.8% dead=2.38% reinit=2 dis=1.62e-03 t=135s
+[02:31:26]   [B_SNRI s=4] T10: tr=80.2% rank=11.795 drop=10.9% dead=3.05% reinit=2 dis=2.27e-03 t=148s
+[02:31:39]   [B_SNRI s=4] T11: tr=65.8% rank=11.785 drop=11.0% dead=2.60% reinit=2 dis=8.30e-04 t=161s
+[02:31:52]   [B_SNRI s=4] T12: tr=82.0% rank=11.783 drop=11.0% dead=3.74% reinit=2 dis=3.34e-03 t=174s
+[02:32:05]   [B_SNRI s=4] T13: tr=77.2% rank=11.768 drop=11.1% dead=4.21% reinit=2 dis=1.08e-03 t=188s
+[02:32:19]   [B_SNRI s=4] T14: tr=81.3% rank=11.754 drop=11.2% dead=4.36% reinit=2 dis=1.59e-03 t=201s
+[02:32:33]   [B_SNRI s=4] T15: tr=72.0% rank=11.734 drop=11.3% dead=4.22% reinit=2 dis=1.15e-03 t=215s
+[02:32:46]   [B_SNRI s=4] T16: tr=79.4% rank=11.711 drop=11.5% dead=4.96% reinit=4 dis=6.29e-02 t=229s
+[02:33:00]   [B_SNRI s=4] T17: tr=69.8% rank=11.693 drop=11.7% dead=5.07% reinit=3 dis=9.29e-04 t=242s
+[02:33:13]   [B_SNRI s=4] T18: tr=81.9% rank=11.675 drop=11.8% dead=7.43% reinit=3 dis=3.49e-03 t=255s
+[02:33:26]   [B_SNRI s=4] T19: tr=79.4% rank=11.638 drop=12.1% dead=7.21% reinit=3 dis=1.22e-03 t=268s
+[02:33:26]   [B_SNRI s=4] SUMMARY: rank_auc=11.8462 rank_drop=12.07% dead_final=7.21% reinit=40 time=4.5min
+[02:33:26]   [B_SNRI s=4] disruption: mean=2.291e-05 max=6.295e-02
+[02:33:32]   [C_naive seed=4] Init rank=13.2353  init_dead=2.05%
+[02:33:45]   [C_naive s=4] T00: tr=58.6% rank=12.297 drop=7.1% dead=0.28% reinit=0 dis=0.00e+00 t=13s
+[02:33:59]   [C_naive s=4] T01: tr=26.4% rank=12.141 drop=8.3% dead=0.12% reinit=1 dis=0.00e+00 t=26s
+[02:34:12]   [C_naive s=4] T02: tr=21.9% rank=12.122 drop=8.4% dead=0.38% reinit=1 dis=0.00e+00 t=40s
+[02:34:25]   [C_naive s=4] T03: tr=25.4% rank=12.099 drop=8.6% dead=0.45% reinit=2 dis=1.35e-02 t=53s
+[02:34:38]   [C_naive s=4] T04: tr=62.8% rank=11.856 drop=10.4% dead=0.85% reinit=2 dis=1.57e-01 t=66s
+[02:34:52]   [C_naive s=4] T05: tr=38.5% rank=11.814 drop=10.7% dead=1.13% reinit=2 dis=5.86e-01 t=80s
+[02:35:05]   [C_naive s=4] T06: tr=54.8% rank=11.816 drop=10.7% dead=1.24% reinit=2 dis=2.33e-02 t=93s
+[02:35:19]   [C_naive s=4] T07: tr=61.8% rank=11.819 drop=10.7% dead=1.15% reinit=2 dis=3.10e-02 t=106s
+[02:35:32]   [C_naive s=4] T08: tr=52.6% rank=11.812 drop=10.8% dead=1.69% reinit=2 dis=5.10e-01 t=120s
+[02:35:45]   [C_naive s=4] T09: tr=77.6% rank=11.821 drop=10.7% dead=2.73% reinit=2 dis=2.47e-03 t=133s
+[02:35:58]   [C_naive s=4] T10: tr=83.6% rank=11.813 drop=10.7% dead=3.33% reinit=2 dis=0.00e+00 t=146s
+[02:36:11]   [C_naive s=4] T11: tr=72.6% rank=11.803 drop=10.8% dead=3.29% reinit=2 dis=7.05e-02 t=159s
+[02:36:25]   [C_naive s=4] T12: tr=83.0% rank=11.802 drop=10.8% dead=4.26% reinit=2 dis=0.00e+00 t=172s
+[02:36:38]   [C_naive s=4] T13: tr=73.9% rank=11.782 drop=11.0% dead=4.64% reinit=2 dis=5.91e-04 t=186s
+[02:36:51]   [C_naive s=4] T14: tr=79.2% rank=11.771 drop=11.1% dead=4.86% reinit=2 dis=3.63e-04 t=199s
+[02:37:04]   [C_naive s=4] T15: tr=72.2% rank=11.753 drop=11.2% dead=5.05% reinit=4 dis=3.38e-01 t=212s
+[02:37:18]   [C_naive s=4] T16: tr=81.5% rank=11.737 drop=11.3% dead=6.91% reinit=5 dis=5.41e-01 t=225s
+[02:37:31]   [C_naive s=4] T17: tr=62.5% rank=11.674 drop=11.8% dead=8.17% reinit=6 dis=2.43e-01 t=239s
+[02:37:44]   [C_naive s=4] T18: tr=77.8% rank=11.653 drop=12.0% dead=10.23% reinit=5 dis=1.76e-01 t=252s
+[02:37:57]   [C_naive s=4] T19: tr=63.3% rank=11.633 drop=12.1% dead=9.43% reinit=5 dis=2.31e-01 t=265s
+[02:37:57]   [C_naive s=4] SUMMARY: rank_auc=11.8509 rank_drop=12.10% dead_final=9.43% reinit=51 time=4.4min
+[02:37:57]   [C_naive s=4] disruption: mean=9.070e-04 max=5.858e-01
+[02:37:57] Seed 4 done. Total elapsed: 68.5min
+[02:37:57] 
+All seeds done. Total time: 68.5min
+[02:37:57] 
+======================================================================
+[02:37:57] AGGREGATE STATISTICS
+[02:37:57] ======================================================================
+[02:37:57] 
+  A_vanilla:
+[02:37:57]     rank_auc: mean=11.8652 std=0.8885 [10.2894, 12.4013]
+[02:37:57]     final_dead_pct: mean=10.2280 std=5.2670 [5.5900, 18.9300]
+[02:37:57]     rank_drop_pct: mean=12.1200 std=6.3691 [8.6600, 23.4600]
+[02:37:57] 
+  B_SNRI:
+[02:37:57]     rank_auc: mean=12.1958 std=0.2074 [11.8462, 12.3722]
+[02:37:57]     final_dead_pct: mean=9.0560 std=2.4471 [6.0100, 11.9200]
+[02:37:57]     rank_drop_pct: mean=9.8320 std=1.3233 [8.6400, 12.0700]
+[02:37:57]     disruption_mean: mean=0.0001 std=0.0001 [0.0000, 0.0002]
+[02:37:57]     disruption_max: mean=0.2675 std=0.3158 [0.0629, 0.7833]
+[02:37:57] 
+  C_naive:
+[02:37:57]     rank_auc: mean=12.2003 std=0.2077 [11.8509, 12.3722]
+[02:37:57]     final_dead_pct: mean=10.1740 std=2.1487 [6.8600, 12.4600]
+[02:37:57]     rank_drop_pct: mean=9.8420 std=1.3343 [8.6400, 12.1000]
+[02:37:57]     disruption_mean: mean=0.0009 std=0.0008 [0.0001, 0.0018]
+[02:37:57]     disruption_max: mean=1.0229 std=0.8793 [0.2750, 2.2222]
+[02:37:57] 
+--- Sign consistency across seeds ---
+[02:37:57]   rank_auc: C > B in 3/5 seeds (diffs: [0.0, 0.0037, 0.0, 0.0141, 0.0047])
+[02:37:57]   dead%:    B > A in 4/5 seeds (diffs: [0.91, 0.42, 1.71, -9.57, 0.67])
+[02:37:57]   dead%:    C < B in 1/5 seeds (diffs: [0.02, 0.85, -0.6, 3.1, 2.22])
+[02:37:57]   disruption: C > B in 5/5 seeds (diffs: [0.0001, 0.0015, 0.0002, 0.0016, 0.0009])
+[02:37:57] 
+--- Wilcoxon signed-rank tests (H0: median difference = 0) ---
+[02:37:57]   rank_auc B-vs-A: stat=5.00 p=0.6250 r=0.333  (mean diff = 0.3306 ± 0.9585)
+[02:37:57]   rank_auc C-vs-B: stat=0.00 p=0.2500 r=1.000  (mean diff = 0.0045 ± 0.0058)
+[02:37:57]   dead_pct B-vs-A: stat=5.00 p=0.6250 r=0.333  (mean diff = -1.1720 ± 4.7195)
+[02:37:57]   dead_pct C-vs-B: stat=2.00 p=0.1875 r=0.733  (mean diff = 1.1180 ± 1.5307)
+[02:37:57]   disruption C-vs-B: stat=0.00 p=0.0625 r=1.000  (mean diff = 0.0008 ± 0.0007)
+[02:37:57] 
+  Bonferroni-corrected α = 0.0125 (4 primary tests)
+[02:37:57] 
+--- Primary hypotheses ---
+[02:37:57]   H1 (C more disruptive than B): consistent in 5/5 seeds → True
+[02:37:57]   H2 (C higher rank AUC than B): consistent in 3/5 seeds → False
+[02:37:57]   H3 (B more dead than A): consistent in 4/5 seeds → False
+[02:37:57]   H4 (C fewer dead than B): consistent in 1/5 seeds → False
+[02:37:57] 
+  ALL HYPOTHESES CONSISTENT: False
+[02:37:57] 
+======================================================================
+[02:37:57] Writing RESULTS.json
+[02:37:57] ======================================================================
+[02:37:57] 
+Results written to /workspace/results/ablation-04/RESULTS.json
+[02:37:57] 
+======================================================================
+[02:37:57] FINAL RESULTS (compact, no per_seed):
+[02:37:57] {
+  "status": "SUCCESS",
+  "scale": "full",
+  "subject_executed": "ResNet-18 + SGD (lr=0.1, mom=0.9, wd=0.0005, nesterov=True) + CosineAnnealingLR/task, CIFAR-100 class-incremental, 20 tasks \u00d7 5 classes \u00d7 10 epochs/task, batch=128, seeds=[0, 1, 2, 3, 4]. Three arms: A=vanilla, B=SNRI null-space re-init, C=naive kaiming re-init (ReDo-style). Full-scale: 5 independent seeds.",
+  "notes": "Ablation-04 full: 5 seeds \u00d7 3 arms. Rank AUC: A=11.8652\u00b10.8885  B=12.1958\u00b10.2074  C=12.2003\u00b10.2077. Final dead%: A=10.23\u00b15.27  B=9.06\u00b12.45  C=10.17\u00b12.15. Sign consistency C>B rank_auc: 3/5, B>A dead%: 4/5, C<B dead%: 1/5, C>B disruption: 5/5. All hypotheses consistent: False. Sanity gates 1-4 from baseline-00, G7/G8/G9 from increase_complexity-02.",
+  "metrics": {
+    "arm_A_rank_auc_mean": 11.8652,
+    "arm_A_rank_auc_std": 0.8885,
+    "arm_B_rank_auc_mean": 12.1958,
+    "arm_B_rank_auc_std": 0.2074,
+    "arm_C_rank_auc_mean": 12.2003,
+    "arm_C_rank_auc_std": 0.2077,
+    "arm_A_final_dead_pct_mean": 10.228,
+    "arm_A_final_dead_pct_std": 5.267,
+    "arm_B_final_dead_pct_mean": 9.056,
+    "arm_B_final_dead_pct_std": 2.4471,
+    "arm_C_final_dead_pct_mean": 10.174,
+    "arm_C_final_dead_pct_std": 2.1487,
+    "arm_A_rank_drop_pct_mean": 12.12,
+    "arm_B_rank_drop_pct_mean": 9.832,
+    "arm_C_rank_drop_pct_mean": 9.842,
+    "arm_B_disruption_mean_mean": 0.0001,
+    "arm_B_disruption_mean_std": 0.0001,
+    "arm_B_disruption_max_mean": 0.2675,
+    "arm_C_disruption_mean_mean": 0.0009,
+    "arm_C_disruption_mean_std": 0.0008,
+    "arm_C_disruption_max_mean": 1.0229,
+    "arm_A_rank_auc_per_seed": [
+      12.3292,
+      12.2082,
+      12.4013,
+      10.2894,
+      12.0979
+    ],
+    "arm_B_rank_auc_per_seed": [
+      12.2377,
+      12.1969,
+      12.3722,
+      12.3262,
+      11.8462
+    ],
+    "arm_C_rank_auc_per_seed": [
+      12.2377,
+      12.2006,
+      12.3722,
+      12.3403,
+      11.8509
+    ],
+    "arm_A_dead_pct_per_seed": [
+      9.87,
+      5.59,
+      10.21,
+      18.93,
+      6.54
+    ],
+    "arm_B_dead_pct_per_seed": [
+      10.78,
+      6.01,
+      11.92,
+      9.36,
+      7.21
+    ],
+    "arm_C_dead_pct_per_seed": [
+      10.8,
+      6.86,
+      11.32,
+      12.46,
+      9.43
+    ],
+    "sign_C_gt_B_rank_auc": "3/5",
+    "sign_B_gt_A_dead_pct": "4/5",
+    "sign_C_lt_B_dead_pct": "1/5",
+    "sign_C_gt_B_disruption": "5/5",
+    "wilcoxon_p_rank_auc_B_vs_A": 0.625,
+    "wilcoxon_p_rank_auc_C_vs_B": 0.25,
+    "wilcoxon_p_dead_B_vs_A": 0.625,
+    "wilcoxon_p_dead_C_vs_B": 0.1875,
+    "wilcoxon_p_dis_C_vs_B": 0.0625,
+    "wilcoxon_r_rank_auc_B_vs_A": 0.33333333333333337,
+    "wilcoxon_r_rank_auc_C_vs_B": 1.0,
+    "wilcoxon_r_dead_B_vs_A": 0.33333333333333337,
+    "wilcoxon_r_dead_C_vs_B": 0.7333333333333334,
+    "bonferroni_alpha": 0.0125,
+    "hyp_H1_C_more_disruptive": true,
+    "hyp_H2_C_higher_rank": false,
+    "hyp_H3_B_more_dead_than_A": false,
+    "hyp_H4_C_fewer_dead_than_B": false,
+    "hyp_all_consistent": false,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "sanity_gates_1_4": "PASS (cited from baseline-00)",
+    "sanity_gates_G7_G8_G9": "PASS (cited from increase_complexity-02)"
+  }
+}
+[02:37:57] ======================================================================
+
+✓ Done. /workspace/results/ablation-04/RESULTS.json

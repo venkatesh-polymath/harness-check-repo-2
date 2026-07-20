@@ -1,10 +1,10 @@
-# EXPERIMENT BRIEF — round ablation-03 (probe)
+# EXPERIMENT BRIEF — round ablation-04 (full)
 
 ## THIS ROUND (do exactly this)
-Mechanism-isolation ablation on the same 20-task continual CIFAR-100 setup. Compare three arms head-to-head with identical seeds/schedule: (A) vanilla baseline (from refine-01), (B) SNRI null-space re-init (from increase_complexity-02), (C) naive random re-init of the same detected dead units (continual-backprop / ReDo-style, disruptive standard init, NOT projected into the null space). Hypothesis to test: SNRI's null-space projection makes re-inits provably non-disruptive but starves the new units of function-aligned gradient, so they fail to restore usable effective rank; a disruptive naive re-init should restore rank/dead-neuron better. Report effective-rank AUC, final dead-neuron fraction, and disruption (immediate logit change) for B and C, plus per-arm final/mean plasticity metrics. Keep sanity gates.
+Full-scale confirmation of the ablation-03 finding across multiple seeds (e.g. 3-5 seeds). Same 20-task continual CIFAR-100, three arms A=vanilla, B=SNRI null-space re-init, C=naive random re-init of the same dead units. Report per-seed and mean±std for: effective-rank AUC, final dead-neuron fraction, rank_drop_pct, and disruption (mean/max logit change) for B and C. Test whether the ordering holds across seeds: C restores rank/dead-neurons better than B, SNRI (B) ends with MORE dead neurons than even vanilla (A), and B is far less disruptive than C. Confirm statistical robustness (report whether B-vs-A and C-vs-B differences are consistent in sign across all seeds). Keep sanity gates.
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/ablation-03/.
+for context and build on them; write this round's outputs under results/ablation-04/.
 
 ## Idea
 Spectral Null-Space Re-initialization (SNRI): A Provably Non-Disruptive, Rank-Maximizing Plasticity Maintenance Rule
@@ -39,4 +39,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: Vanilla ResNet-18 + SGD + cosine LR on CIFAR-100 with zero plasticity intervention — the published continual-learning plasticity benchmark with documented effective-rank collapse and accuracy reference numbers (Lyle et al. 2023, Abbas et al. 2023).
 - eval contract: Dataset: CIFAR-100 fixed standard split. Primary metric: effective rank (nuclear-norm / Frobenius-norm ratio) per weight matrix, sampled every 10 epochs, reported as AUC over the full training curve averaged across layers. Secondary metrics: final top-1 test accuracy, dead-neuron fraction (ReLU units with zero activation on entire val set at epoch 200). Sanity gates before any arm runs: (1) loss at init ≈ log(100) = 4.605 ± 0.01, (2) constant-predictor accuracy = 1.0 ± 0.1%, (3) single-batch memorization drives training loss < 0.01 within 500 steps, (4) two runs with identical seed produce bit-identical final weight checksums. Statistical test: paired Wilcoxon signed-rank test across 5 seeds (α = 0.05, Bonferroni-corrected for 4 pairwise comparisons vs. baseline) on both effective-rank AUC and final accuracy; report effect size (rank-biserial r).
 
-Record everything under results/ablation-03/. Do not commit weights.
+Record everything under results/ablation-04/. Do not commit weights.
