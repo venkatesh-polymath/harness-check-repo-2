@@ -12,7 +12,8 @@ import numpy as np, torch, torch.nn as nn, torch.optim as optim, torchvision
 from scipy.stats import wilcoxon
 
 K_EVENTS = int(os.environ.get("SH_K", "8"))
-RESULTS_DIR = f"results/iv_sweep_K{K_EVENTS}"
+ONE_ARM = os.environ.get("SH_ARM", "").strip()   # single-arm mode: short, reliable pods
+RESULTS_DIR = f"results/iv_K{K_EVENTS}_{ONE_ARM}" if ONE_ARM else f"results/iv_sweep_K{K_EVENTS}"
 os.makedirs(RESULTS_DIR, exist_ok=True); os.makedirs("_weights", exist_ok=True)
 RESULTS_PATH = os.path.join(RESULTS_DIR, "RESULTS.json")
 
@@ -22,7 +23,7 @@ STEPS, BS, PROBE, NC, IND = 200, 128, 1000, 10, 784
 LR, MOM, WD = 0.10, 0.9, 0.0
 DATA_SEED, SS_WIN = 42, 50
 TRIG_FRAC, TRIG_GAP, DEAD_STEP, DEAD_THRESH = 0.92, 8, 0.10, 0.50
-ARMS = ["none", "triggered", "smart", "fixed", "random"]
+ARMS = [ONE_ARM] if ONE_ARM else ["none", "triggered", "smart", "fixed", "random"]
 if os.environ.get("SH_SMOKE") == "1":
     N_SEEDS, N_TASKS = 2, 20; RESULTS_DIR += "_smoke"; os.makedirs(RESULTS_DIR, exist_ok=True); RESULTS_PATH = os.path.join(RESULTS_DIR, "RESULTS.json")
 print(f"SWEEP K={K_EVENTS} arms={ARMS} {N_SEEDS}seeds x {N_TASKS}tasks", flush=True)
@@ -117,6 +118,18 @@ def main():
             r=run_arm(arm,seed,P,X_tr,y_tr,X_te,y_te,crit); data[arm][seed]=r
             print(f"  K{K_EVENTS} {arm:9s} s{seed} ss={r['ss']:.4f} dead={r['final_dead']:.3f} nev={r['nev']} [{time.time()-t0:.0f}s]",flush=True)
         json.dump({"status":"RUNNING","K":K_EVENTS,"data":{a:{str(s):v for s,v in data[a].items()} for a in ARMS}}, open(RESULTS_PATH,"w"))
+    if ONE_ARM:
+        arm=ONE_ARM
+        out={"status":"DONE","K_events":K_EVENTS,"arm":arm,"n_seeds":N_SEEDS,"n_tasks":N_TASKS,
+             "regime":"hidden=100 MLP online Permuted-MNIST SGD lr=0.10",
+             "mean_ss_acc":float(np.mean([data[arm][s]['ss'] for s in data[arm]])),
+             "mean_final_dead":float(np.mean([data[arm][s]['final_dead'] for s in data[arm]])),
+             "mean_events":float(np.mean([data[arm][s]['nev'] for s in data[arm]])),
+             "per_seed":{str(s):data[arm][s] for s in data[arm]},
+             "subject_executed":f"intervention arm={arm} K={K_EVENTS}, {N_SEEDS} seeds",
+             "metrics":{"K":K_EVENTS,"arm":arm,"mean_ss_acc":float(np.mean([data[arm][s]['ss'] for s in data[arm]]))},
+             "notes":"single-arm pod (merged with other arms locally for contrasts)"}
+        json.dump(out,open(RESULTS_PATH,"w"),indent=2); print("DONE",json.dumps(out["metrics"],indent=2),flush=True); return
     def contrast(a,b):
         ss=sorted(set(data[a])&set(data[b])); d=np.array([data[a][s]['ss']-data[b][s]['ss'] for s in ss])
         try: p=float(wilcoxon(d).pvalue)
