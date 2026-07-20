@@ -1,0 +1,32 @@
+{
+  "status": "DONE",
+  "K_events": 8,
+  "arm": "fixed",
+  "n_seeds": 2,
+  "n_tasks": 20,
+  "regime": "hidden=100 MLP online Permuted-MNIST SGD lr=0.10",
+  "mean_ss_acc": 0.9309025,
+  "mean_final_dead": 0.05749999871477485,
+  "mean_events": 8.0,
+  "per_seed": {
+    "0": {
+      "ss": 0.9315849999999999,
+      "task1": 0.9238,
+      "final_dead": 0.049999999813735485,
+      "nev": 8
+    },
+    "1": {
+      "ss": 0.93022,
+      "task1": 0.9354,
+      "final_dead": 0.06499999761581421,
+      "nev": 8
+    }
+  },
+  "subject_executed": "intervention arm=fixed K=8, 2 seeds",
+  "metrics": {
+    "K": 8,
+    "arm": "fixed",
+    "mean_ss_acc": 0.9309025
+  },
+  "notes": "single-arm pod (merged with other arms locally for contrasts)"
+}

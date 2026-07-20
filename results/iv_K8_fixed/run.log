@@ -1,0 +1,5 @@
+SWEEP K=8 arms=['fixed'] 10seeds x 280tasks
+  K8 fixed     s0 ss=0.9082 dead=0.760 nev=8 [151s]
+  K8 fixed     s1 ss=0.9069 dead=0.750 nev=8 [303s]
+  K8 fixed     s2 ss=0.9055 dead=0.670 nev=8 [455s]
+  K8 fixed     s3 ss=0.9058 dead=0.610 nev=8 [604s]
