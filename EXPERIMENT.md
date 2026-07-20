@@ -1,10 +1,10 @@
-# EXPERIMENT BRIEF — round refine-01 (probe)
+# EXPERIMENT BRIEF — round increase_complexity-02 (probe)
 
 ## THIS ROUND (do exactly this)
-Still baseline only (no SNRI). Strengthen non-stationarity to elicit measurable plasticity loss: extend to a longer task sequence (e.g. 15-20 sequential CIFAR-100 tasks, or add class-shuffle/warm-start-per-task) so cumulative rank collapse and rising dead-neuron fraction become clearly visible across tasks. Keep same architecture/optimizer. Log per-task plasticity (final train acc per task), effective-rank trajectory, and dead-neuron fraction per task. Goal: a baseline that demonstrably loses plasticity over the sequence.
+Now build the proposed method: Spectral Null-Space Re-initialization (SNRI). Same 20-task continual CIFAR-100 setup and architecture as refine-01 (the established baseline). Implement SNRI per the idea spec: periodically re-initialize dead/low-utility units into the null space of the weight matrix's top singular subspace so it is provably non-disruptive to current function while restoring effective rank. Compare head-to-head against the refine-01 vanilla baseline. Log the same plasticity proxies (effective-rank trajectory, dead-neuron fraction per task, per-task train acc) plus the disruption metric (change in outputs/loss immediately after each re-init event). Keep sanity gates.
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/refine-01/.
+for context and build on them; write this round's outputs under results/increase_complexity-02/.
 
 ## Idea
 Spectral Null-Space Re-initialization (SNRI): A Provably Non-Disruptive, Rank-Maximizing Plasticity Maintenance Rule
@@ -39,4 +39,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - baseline: Vanilla ResNet-18 + SGD + cosine LR on CIFAR-100 with zero plasticity intervention — the published continual-learning plasticity benchmark with documented effective-rank collapse and accuracy reference numbers (Lyle et al. 2023, Abbas et al. 2023).
 - eval contract: Dataset: CIFAR-100 fixed standard split. Primary metric: effective rank (nuclear-norm / Frobenius-norm ratio) per weight matrix, sampled every 10 epochs, reported as AUC over the full training curve averaged across layers. Secondary metrics: final top-1 test accuracy, dead-neuron fraction (ReLU units with zero activation on entire val set at epoch 200). Sanity gates before any arm runs: (1) loss at init ≈ log(100) = 4.605 ± 0.01, (2) constant-predictor accuracy = 1.0 ± 0.1%, (3) single-batch memorization drives training loss < 0.01 within 500 steps, (4) two runs with identical seed produce bit-identical final weight checksums. Statistical test: paired Wilcoxon signed-rank test across 5 seeds (α = 0.05, Bonferroni-corrected for 4 pairwise comparisons vs. baseline) on both effective-rank AUC and final accuracy; report effect size (rank-biserial r).
 
-Record everything under results/refine-01/. Do not commit weights.
+Record everything under results/increase_complexity-02/. Do not commit weights.
