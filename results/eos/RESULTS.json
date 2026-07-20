@@ -1,0 +1,142 @@
+{
+  "status": "SUCCESS",
+  "scale": "full",
+  "regime": "hidden=100 MLP online Permuted-MNIST SGD lr=0.10 (validated healthy regime)",
+  "n_seeds": 6,
+  "n_tasks": 250,
+  "healthy": true,
+  "mean_dead_after_task1": 0.07083333190530539,
+  "mean_task1_acc": 0.9325166666666668,
+  "mean_acc_drop_pp": 20.400250000000007,
+  "n_collapsed": 6,
+  "predictive_auc": {
+    "dead_unit_fraction": 0.9100467325378729,
+    "effective_rank": 0.9042028759893653,
+    "sharpness": 0.19052895372227258,
+    "eos_product": 0.19052895372227258
+  },
+  "lead_times": {
+    "dead_unit_fraction": {
+      "median": 209.5,
+      "mean": 203.0,
+      "ci95": [
+        185.33333333333334,
+        219.16666666666666
+      ]
+    },
+    "effective_rank": {
+      "median": 198.0,
+      "mean": 192.83333333333334,
+      "ci95": [
+        176.5,
+        208.66666666666666
+      ]
+    },
+    "sharpness": {
+      "median": 199.5,
+      "mean": 186.16666666666666,
+      "ci95": [
+        160.33333333333334,
+        210.6791666666666
+      ]
+    },
+    "eos_product": {
+      "median": 199.5,
+      "mean": 186.16666666666666,
+      "ci95": [
+        160.33333333333334,
+        210.6791666666666
+      ]
+    }
+  },
+  "precedence_order": [
+    "dead_unit_fraction",
+    "sharpness",
+    "eos_product",
+    "effective_rank"
+  ],
+  "sharpness_vs_dead_paired": {
+    "median_diff": -8.5,
+    "wilcoxon_p": 0.03125
+  },
+  "mean_sharpness_init": 3.444838824837158,
+  "mean_sharpness_final": 6.020613682611535,
+  "mean_eos_init": 0.3444838824837158,
+  "mean_eos_final": 0.6020613682611535,
+  "per_seed": [
+    {
+      "seed": 0,
+      "task1_acc": 0.9238,
+      "dead_after_task1": 0.05999999865889549,
+      "healthy": true,
+      "t_collapse": 234,
+      "sharp_init": 4.0047337375581264,
+      "sharp_final": 4.767530754208565
+    },
+    {
+      "seed": 1,
+      "task1_acc": 0.9354,
+      "dead_after_task1": 0.06499999761581421,
+      "healthy": true,
+      "t_collapse": 216,
+      "sharp_init": 2.490799772553146,
+      "sharp_final": 5.048220451921225
+    },
+    {
+      "seed": 2,
+      "task1_acc": 0.9309,
+      "dead_after_task1": 0.07499999925494194,
+      "healthy": true,
+      "t_collapse": 225,
+      "sharp_init": 3.881619121879339,
+      "sharp_final": 5.63486797735095
+    },
+    {
+      "seed": 3,
+      "task1_acc": 0.937,
+      "dead_after_task1": 0.07499999925494194,
+      "healthy": true,
+      "t_collapse": 215,
+      "sharp_init": 3.0921150892972946,
+      "sharp_final": 5.398012793622911
+    },
+    {
+      "seed": 4,
+      "task1_acc": 0.9294,
+      "dead_after_task1": 0.06499999947845936,
+      "healthy": true,
+      "t_collapse": 190,
+      "sharp_init": 3.6552122812718153,
+      "sharp_final": 9.573534745723009
+    },
+    {
+      "seed": 5,
+      "task1_acc": 0.9386,
+      "dead_after_task1": 0.08499999716877937,
+      "healthy": true,
+      "t_collapse": 170,
+      "sharp_init": 3.5445529464632273,
+      "sharp_final": 5.70151537284255
+    }
+  ],
+  "subject_executed": "EOS/sharpness predictor on validated regime; top-Hessian-eig via power iteration",
+  "metrics": {
+    "healthy": true,
+    "predictive_auc": {
+      "dead_unit_fraction": 0.9100467325378729,
+      "effective_rank": 0.9042028759893653,
+      "sharpness": 0.19052895372227258,
+      "eos_product": 0.19052895372227258
+    },
+    "precedence_order": [
+      "dead_unit_fraction",
+      "sharpness",
+      "eos_product",
+      "effective_rank"
+    ],
+    "mean_sharpness_init": 3.444838824837158,
+    "mean_sharpness_final": 6.020613682611535
+  },
+  "notes": "Q1 does sharpness predict collapse (AUC)? Q2 does it LEAD dead-unit/erank? Honest either way.",
+  "total_wall_time_sec": 999.9754033088684
+}

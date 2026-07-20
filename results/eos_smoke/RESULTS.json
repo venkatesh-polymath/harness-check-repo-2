@@ -1,0 +1,86 @@
+{
+  "status": "DONE",
+  "regime": "hidden=100 MLP online Permuted-MNIST SGD lr=0.10 (validated healthy regime)",
+  "n_seeds": 1,
+  "n_tasks": 6,
+  "healthy": true,
+  "mean_dead_after_task1": 0.05999999865889549,
+  "mean_task1_acc": 0.9238,
+  "mean_acc_drop_pp": 0.0,
+  "n_collapsed": 0,
+  "predictive_auc": {
+    "dead_unit_fraction": null,
+    "effective_rank": null,
+    "sharpness": null,
+    "eos_product": null
+  },
+  "lead_times": {
+    "dead_unit_fraction": {
+      "median": null,
+      "mean": null,
+      "ci95": [
+        null,
+        null
+      ]
+    },
+    "effective_rank": {
+      "median": null,
+      "mean": null,
+      "ci95": [
+        null,
+        null
+      ]
+    },
+    "sharpness": {
+      "median": null,
+      "mean": null,
+      "ci95": [
+        null,
+        null
+      ]
+    },
+    "eos_product": {
+      "median": null,
+      "mean": null,
+      "ci95": [
+        null,
+        null
+      ]
+    }
+  },
+  "precedence_order": [],
+  "sharpness_vs_dead_paired": {
+    "median_diff": null,
+    "wilcoxon_p": null
+  },
+  "mean_sharpness_init": 4.0047337375581264,
+  "mean_sharpness_final": 3.0553406151011586,
+  "mean_eos_init": 0.40047337375581266,
+  "mean_eos_final": 0.30553406151011586,
+  "per_seed": [
+    {
+      "seed": 0,
+      "task1_acc": 0.9238,
+      "dead_after_task1": 0.05999999865889549,
+      "healthy": true,
+      "t_collapse": null,
+      "sharp_init": 4.0047337375581264,
+      "sharp_final": 3.0553406151011586
+    }
+  ],
+  "subject_executed": "EOS/sharpness predictor on validated regime; top-Hessian-eig via power iteration",
+  "metrics": {
+    "healthy": true,
+    "predictive_auc": {
+      "dead_unit_fraction": null,
+      "effective_rank": null,
+      "sharpness": null,
+      "eos_product": null
+    },
+    "precedence_order": [],
+    "mean_sharpness_init": 4.0047337375581264,
+    "mean_sharpness_final": 3.0553406151011586
+  },
+  "notes": "Q1 does sharpness predict collapse (AUC)? Q2 does it LEAD dead-unit/erank? Honest either way.",
+  "total_wall_time_sec": 9.740307807922363
+}
