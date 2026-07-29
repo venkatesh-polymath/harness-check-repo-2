@@ -1,0 +1,308 @@
+{
+  "status": "SUCCESS",
+  "scale": "probe",
+  "subject_executed": "MSP / Temperature-Scaled MSP / MC-Dropout (T=20, p=0.3) / Deep Ensemble (K=3) on CIFAR-10 100 labels/class, 200 epochs (LR=0.1), 3 seeds",
+  "notes": "refine-03: 100/class (was 50), 200 epochs (was 100), MC-Dropout p=0.3 (was 0.1). KEY OUTCOME: accuracy gate 0/3 seeds >=55% (mean 52.8%, target 55-65%); AUPPC 0/3 seeds in [0.70,0.88] (mean 0.506, target). Comparison still not valid (refuted_c fires: MSP error ~47% > 25% threshold). BUT STRONG PROGRESS: MSP AUPPC improved 0.063->0.203->0.506 (8x total vs main-01). All 4 sanity gates PASSED for first time. ENS beats MSP in AUPPC (0.543 vs 0.506, delta=+0.037 consistent). MCD with p=0.3 severely undercalibrated (AUPPC 0.096 vs MSP 0.506); p too high -> too-uniform predictions -> low coverage. TS ECE 0.017 (93% reduction) but AUPPC lower due to reduced confidence. Root cause of ~53% accuracy: ResNet-8 (~77K params) trained on 900 samples has train_acc=94% but test_acc=53% (huge overfit gap). Architecture bottleneck. Next round: use WideResNet-16-4 OR CIFAR-5 coarser split to reach 55%+. Runtime 1461.7s (24.4 min).",
+  "baseline_comparison_vs_prior": {
+    "auppc_msp_refine02": 0.2025,
+    "auppc_msp_refine03": 0.5062841671147956,
+    "auppc_msp_main01": 0.0634,
+    "acc_msp_refine02": 0.336,
+    "acc_msp_refine03": 0.5275666666666666,
+    "ece_msp_refine02": 0.141,
+    "ece_msp_refine03": 0.24495063247233628,
+    "accuracy_gate_passed": "0/3 seeds >= 55%",
+    "auppc_in_band": "0/3 seeds in [0.70, 0.88]"
+  },
+  "sanity_gates": [
+    {
+      "name": "reproducibility",
+      "passed": true,
+      "diff": 0.0,
+      "run1_loss": 2.3753578662872314,
+      "run2_loss": 2.3753578662872314
+    },
+    {
+      "name": "loss_at_init",
+      "passed": true,
+      "init_ce_loss": 2.3022968769073486
+    },
+    {
+      "name": "uniform_baseline",
+      "passed": true,
+      "uniform_accuracy": 0.1
+    },
+    {
+      "name": "overfit_one_batch",
+      "passed": true,
+      "single_batch_loss_at_step300": 0.009224535897374153
+    }
+  ],
+  "all_sanity_gates_passed": true,
+  "per_seed_results": [
+    {
+      "seed": 42,
+      "msp": {
+        "test_acc": 0.5284,
+        "auppc": 0.489074123851484,
+        "ece": 0.24717882415801284
+      },
+      "ts": {
+        "test_acc": 0.5284,
+        "auppc": 0.4217288553256607,
+        "ece": 0.02535865651965141,
+        "ece_val": 0.08412901371717453,
+        "ece_msp_val": 0.2280133521556854,
+        "temperature": 2.2910397052764893,
+        "ece_improvement": 0.22182016763836143
+      },
+      "mc_dropout": {
+        "test_acc": 0.4932,
+        "auppc": 0.09308777877993114,
+        "ece": 0.17119875352382657
+      },
+      "ensemble": {
+        "test_acc": 0.5247,
+        "member_accs": [
+          0.5284,
+          0.5097,
+          0.536
+        ],
+        "auppc": 0.5359382551379187,
+        "ece": 0.12614889553785322
+      },
+      "delta_ens_vs_mcd": 0.4428504763579876,
+      "delta_mcd_vs_msp": -0.3959863450715529,
+      "delta_ts_vs_msp": -0.06734526852582334,
+      "delta_ens_vs_msp": 0.046864131286434685,
+      "delta_ens_vs_ts": 0.11420939981225803,
+      "ts_recovery_fraction": -1.4370322606474333
+    },
+    {
+      "seed": 7,
+      "msp": {
+        "test_acc": 0.5142,
+        "auppc": 0.5050037180436482,
+        "ece": 0.25213457727730276
+      },
+      "ts": {
+        "test_acc": 0.5142,
+        "auppc": 0.37271823680290495,
+        "ece": 0.0085578536748886,
+        "ece_val": 0.06802836313843727,
+        "ece_msp_val": 0.2462746372818947,
+        "temperature": 2.463320016860962,
+        "ece_improvement": 0.24357672360241417
+      },
+      "mc_dropout": {
+        "test_acc": 0.5032,
+        "auppc": 0.09180571262256537,
+        "ece": 0.1698550125092268
+      },
+      "ensemble": {
+        "test_acc": 0.5163000000000001,
+        "member_accs": [
+          0.5142,
+          0.501,
+          0.5337
+        ],
+        "auppc": 0.5417203975583986,
+        "ece": 0.14908350944966078
+      },
+      "delta_ens_vs_mcd": 0.44991468493583325,
+      "delta_mcd_vs_msp": -0.4131980054210828,
+      "delta_ts_vs_msp": -0.13228548124074324,
+      "delta_ens_vs_msp": 0.03671667951475044,
+      "delta_ens_vs_ts": 0.16900216075549368,
+      "ts_recovery_fraction": -3.6028715828619333
+    },
+    {
+      "seed": 123,
+      "msp": {
+        "test_acc": 0.5401,
+        "auppc": 0.5247746594492546,
+        "ece": 0.23553849598169327
+      },
+      "ts": {
+        "test_acc": 0.5401,
+        "auppc": 0.4370284369717966,
+        "ece": 0.016859822507202624,
+        "ece_val": 0.08703216671943664,
+        "ece_msp_val": 0.21039877563714982,
+        "temperature": 2.278897762298584,
+        "ece_improvement": 0.21867867347449066
+      },
+      "mc_dropout": {
+        "test_acc": 0.5079,
+        "auppc": 0.10287745438448989,
+        "ece": 0.17207895020544528
+      },
+      "ensemble": {
+        "test_acc": 0.5290666666666667,
+        "member_accs": [
+          0.5401,
+          0.5333,
+          0.5138
+        ],
+        "auppc": 0.5514509006618407,
+        "ece": 0.1439722316086292
+      },
+      "delta_ens_vs_mcd": 0.44857344627735074,
+      "delta_mcd_vs_msp": -0.4218972050647647,
+      "delta_ts_vs_msp": -0.087746222477458,
+      "delta_ens_vs_msp": 0.02667624121258605,
+      "delta_ens_vs_ts": 0.11442246369004405,
+      "ts_recovery_fraction": -3.2893023337957628
+    }
+  ],
+  "metrics": {
+    "auppc_msp": {
+      "values": [
+        0.489074123851484,
+        0.5050037180436482,
+        0.5247746594492546
+      ],
+      "mean": 0.5062841671147956,
+      "std": 0.014602778796283328
+    },
+    "auppc_ts_msp": {
+      "values": [
+        0.4217288553256607,
+        0.37271823680290495,
+        0.4370284369717966
+      ],
+      "mean": 0.4104918430334541,
+      "std": 0.027430558329256685
+    },
+    "auppc_mc_dropout": {
+      "values": [
+        0.09308777877993114,
+        0.09180571262256537,
+        0.10287745438448989
+      ],
+      "mean": 0.09592364859566212,
+      "std": 0.004944861617175043
+    },
+    "auppc_ensemble": {
+      "values": [
+        0.5359382551379187,
+        0.5417203975583986,
+        0.5514509006618407
+      ],
+      "mean": 0.5430365177860527,
+      "std": 0.006401024507995785
+    },
+    "acc_msp": {
+      "values": [
+        0.5284,
+        0.5142,
+        0.5401
+      ],
+      "mean": 0.5275666666666666,
+      "std": 0.010590037246813119
+    },
+    "acc_ts_msp": {
+      "values": [
+        0.5284,
+        0.5142,
+        0.5401
+      ],
+      "mean": 0.5275666666666666,
+      "std": 0.010590037246813119
+    },
+    "acc_mc_dropout": {
+      "values": [
+        0.4932,
+        0.5032,
+        0.5079
+      ],
+      "mean": 0.5014333333333333,
+      "std": 0.006129890337971428
+    },
+    "acc_ensemble": {
+      "values": [
+        0.5247,
+        0.5163000000000001,
+        0.5290666666666667
+      ],
+      "mean": 0.5233555555555557,
+      "std": 0.005297961406213534
+    },
+    "ece_msp": {
+      "values": [
+        0.24717882415801284,
+        0.25213457727730276,
+        0.23553849598169327
+      ],
+      "mean": 0.24495063247233628,
+      "std": 0.0069561055787324185
+    },
+    "ece_ts_msp": {
+      "values": [
+        0.02535865651965141,
+        0.0085578536748886,
+        0.016859822507202624
+      ],
+      "mean": 0.01692544423391421,
+      "std": 0.006859055995077358
+    },
+    "ece_mc_dropout": {
+      "values": [
+        0.17119875352382657,
+        0.1698550125092268,
+        0.17207895020544528
+      ],
+      "mean": 0.17104423874616623,
+      "std": 0.0009144691835711626
+    },
+    "ece_ensemble": {
+      "values": [
+        0.12614889553785322,
+        0.14908350944966078,
+        0.1439722316086292
+      ],
+      "mean": 0.13973487886538108,
+      "std": 0.00983075098941933
+    },
+    "delta_ensemble_vs_mcd_mean": 0.4471128691903905,
+    "delta_ensemble_vs_mcd_std": 0.003063301571620833,
+    "delta_mcd_vs_msp_mean": -0.41036051851913347,
+    "delta_mcd_vs_msp_std": 0.010766666625469759,
+    "delta_ts_vs_msp_mean": -0.09579232408134153,
+    "delta_ts_vs_msp_std": 0.027115341538567837,
+    "delta_ensemble_vs_msp_mean": 0.03675235067125706,
+    "delta_ensemble_vs_msp_std": 0.00824171020812242,
+    "delta_ensemble_vs_ts_mean": 0.1325446747525986,
+    "delta_ensemble_vs_ts_std": 0.025779482323383625,
+    "ts_recovery_fraction_mean": -2.7764020591017093,
+    "msp_auppc_in_sanity_band_count": 0,
+    "accuracy_gate_passed_count": 0
+  },
+  "hypothesis": {
+    "confirmed": false,
+    "refuted": true,
+    "cond_a_ens_minus_mcd_ge_0030": true,
+    "cond_b_mcd_minus_msp_ge_2of3": false,
+    "cond_c_ens_acc_gt_msp_2of3": false,
+    "refuted_a_ens_le_mcd_plus_010_ge_2of3": false,
+    "refuted_b_msp_auppc_gt_090_ge_2of3": false,
+    "refuted_c_msp_error_gt_25pct_ge_2of3": true
+  },
+  "config": {
+    "labels_per_class": 100,
+    "probe_epochs": 200,
+    "lr": 0.1,
+    "weight_decay": 0.0005,
+    "ensemble_k": 3,
+    "mc_passes": 20,
+    "mc_dropout_p": 0.3,
+    "ts_val_fraction": 0.1,
+    "seeds": [
+      42,
+      7,
+      123
+    ],
+    "thresholds_n": 20
+  },
+  "runtime_seconds": 1461.7177686691284
+}

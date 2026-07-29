@@ -1,0 +1,569 @@
+18:41:15 INFO Device: cuda
+18:41:15 INFO ======================================================================
+18:41:15 INFO refine-03: 100 labels/class, 200 epochs, MC-Dropout p=0.3
+18:41:15 INFO ======================================================================
+18:41:16 INFO 
+══ SANITY GATES ══
+18:41:16 INFO ── Gate: Reproducibility ──
+18:41:18 INFO   run1=2.37535787  run2=2.37535787  diff=0.0  PASS
+18:41:18 INFO ── Gate: Loss at init ──
+18:41:18 INFO   init CE loss = 2.302297  PASS
+18:41:18 INFO ── Gate: Uniform baseline ──
+18:41:19 INFO   uniform accuracy = 0.1000  PASS
+18:41:19 INFO ── Gate: Overfit one batch ──
+18:41:20 INFO   overfit: loss=0.009225 at step 37  PASS
+18:41:20 INFO   final loss at step 300 = 0.009225  PASS
+18:41:20 INFO 
+All sanity gates passed: True
+18:41:20 INFO 
+══ MAIN EXPERIMENT ══
+18:41:20 INFO 
+============================================================
+18:41:20 INFO SEED 42
+18:41:20 INFO ============================================================
+18:41:20 INFO   labeled_train=900 val_ts=100 unlabeled=49000
+18:41:20 INFO 
+── MSP baseline (seed=42) ──
+18:41:21 INFO   MSP ep   1/200: loss=2.1763 tr_acc=0.184 te_acc=0.175 lr=0.09999
+18:41:30 INFO   MSP ep  25/200: loss=1.6477 tr_acc=0.367 te_acc=0.308 lr=0.09619
+18:41:39 INFO   MSP ep  50/200: loss=1.3826 tr_acc=0.516 te_acc=0.335 lr=0.08536
+18:41:48 INFO   MSP ep  75/200: loss=1.0904 tr_acc=0.577 te_acc=0.451 lr=0.06913
+18:41:58 INFO   MSP ep 100/200: loss=0.8842 tr_acc=0.683 te_acc=0.450 lr=0.05000
+18:42:07 INFO   MSP ep 125/200: loss=0.6731 tr_acc=0.769 te_acc=0.477 lr=0.03087
+18:42:16 INFO   MSP ep 150/200: loss=0.3866 tr_acc=0.873 te_acc=0.512 lr=0.01464
+18:42:25 INFO   MSP ep 175/200: loss=0.2829 tr_acc=0.919 te_acc=0.513 lr=0.00381
+18:42:34 INFO   MSP ep 200/200: loss=0.2470 tr_acc=0.943 te_acc=0.528 lr=0.00000
+18:42:35 INFO   MSP test acc = 0.5284
+18:42:40 INFO   MSP AUPPC=0.4891  ECE=0.2472
+18:42:40 INFO 
+── Temperature Scaling (seed=42) ──
+18:42:41 INFO   Temperature scaling: T = 2.2910
+18:42:46 INFO   TS AUPPC=0.4217  ECE=0.0254  T=2.2910
+18:42:46 INFO   TS ECE improvement: 0.2472 → 0.0254
+18:42:46 INFO 
+── MC-Dropout (seed=42, p=0.3, T=20) ──
+18:42:47 INFO   MCD ep   1/200: loss=2.2032 tr_acc=0.172 te_acc=0.175 lr=0.09999
+18:42:56 INFO   MCD ep  25/200: loss=1.6521 tr_acc=0.379 te_acc=0.365 lr=0.09619
+18:43:05 INFO   MCD ep  50/200: loss=1.5459 tr_acc=0.449 te_acc=0.387 lr=0.08536
+18:43:14 INFO   MCD ep  75/200: loss=1.1890 tr_acc=0.580 te_acc=0.422 lr=0.06913
+18:43:23 INFO   MCD ep 100/200: loss=0.9971 tr_acc=0.626 te_acc=0.447 lr=0.05000
+18:43:33 INFO   MCD ep 125/200: loss=0.8350 tr_acc=0.699 te_acc=0.465 lr=0.03087
+18:43:42 INFO   MCD ep 150/200: loss=0.6259 tr_acc=0.788 te_acc=0.488 lr=0.01464
+18:43:51 INFO   MCD ep 175/200: loss=0.5301 tr_acc=0.819 te_acc=0.490 lr=0.00381
+18:44:00 INFO   MCD ep 200/200: loss=0.4762 tr_acc=0.847 te_acc=0.493 lr=0.00000
+18:44:01 INFO   MCD test acc = 0.4932
+18:45:30 INFO   MCD AUPPC=0.0931  ECE=0.1712
+18:45:30 INFO 
+── Deep Ensemble (seed=42, K=3) ──
+18:45:31 INFO   ENS[k=0] ep   1/200: loss=2.1763 tr_acc=0.184 te_acc=0.175 lr=0.09999
+18:45:40 INFO   ENS[k=0] ep  25/200: loss=1.6477 tr_acc=0.367 te_acc=0.308 lr=0.09619
+18:45:49 INFO   ENS[k=0] ep  50/200: loss=1.3826 tr_acc=0.516 te_acc=0.335 lr=0.08536
+18:45:59 INFO   ENS[k=0] ep  75/200: loss=1.0904 tr_acc=0.577 te_acc=0.451 lr=0.06913
+18:46:08 INFO   ENS[k=0] ep 100/200: loss=0.8842 tr_acc=0.683 te_acc=0.450 lr=0.05000
+18:46:16 INFO   ENS[k=0] ep 125/200: loss=0.6731 tr_acc=0.769 te_acc=0.477 lr=0.03087
+18:46:25 INFO   ENS[k=0] ep 150/200: loss=0.3866 tr_acc=0.873 te_acc=0.512 lr=0.01464
+18:46:34 INFO   ENS[k=0] ep 175/200: loss=0.2829 tr_acc=0.919 te_acc=0.513 lr=0.00381
+18:46:43 INFO   ENS[k=0] ep 200/200: loss=0.2470 tr_acc=0.943 te_acc=0.528 lr=0.00000
+18:46:44 INFO   member 0: test acc = 0.5284
+18:46:45 INFO   ENS[k=1] ep   1/200: loss=2.1931 tr_acc=0.167 te_acc=0.156 lr=0.09999
+18:46:54 INFO   ENS[k=1] ep  25/200: loss=1.5963 tr_acc=0.416 te_acc=0.343 lr=0.09619
+18:47:03 INFO   ENS[k=1] ep  50/200: loss=1.3397 tr_acc=0.513 te_acc=0.409 lr=0.08536
+18:47:12 INFO   ENS[k=1] ep  75/200: loss=1.2062 tr_acc=0.548 te_acc=0.400 lr=0.06913
+18:47:20 INFO   ENS[k=1] ep 100/200: loss=1.0880 tr_acc=0.603 te_acc=0.440 lr=0.05000
+18:47:29 INFO   ENS[k=1] ep 125/200: loss=0.6639 tr_acc=0.770 te_acc=0.487 lr=0.03087
+18:47:38 INFO   ENS[k=1] ep 150/200: loss=0.4749 tr_acc=0.832 te_acc=0.484 lr=0.01464
+18:47:46 INFO   ENS[k=1] ep 175/200: loss=0.2856 tr_acc=0.926 te_acc=0.506 lr=0.00381
+18:47:55 INFO   ENS[k=1] ep 200/200: loss=0.2394 tr_acc=0.940 te_acc=0.510 lr=0.00000
+18:47:56 INFO   member 1: test acc = 0.5097
+18:47:57 INFO   ENS[k=2] ep   1/200: loss=2.2167 tr_acc=0.169 te_acc=0.104 lr=0.09999
+18:48:06 INFO   ENS[k=2] ep  25/200: loss=1.6311 tr_acc=0.398 te_acc=0.334 lr=0.09619
+18:48:15 INFO   ENS[k=2] ep  50/200: loss=1.3013 tr_acc=0.506 te_acc=0.421 lr=0.08536
+18:48:24 INFO   ENS[k=2] ep  75/200: loss=1.0993 tr_acc=0.621 te_acc=0.449 lr=0.06913
+18:48:33 INFO   ENS[k=2] ep 100/200: loss=0.8272 tr_acc=0.714 te_acc=0.446 lr=0.05000
+18:48:42 INFO   ENS[k=2] ep 125/200: loss=0.6849 tr_acc=0.750 te_acc=0.493 lr=0.03087
+18:48:51 INFO   ENS[k=2] ep 150/200: loss=0.3790 tr_acc=0.883 te_acc=0.529 lr=0.01464
+18:49:00 INFO   ENS[k=2] ep 175/200: loss=0.2673 tr_acc=0.926 te_acc=0.523 lr=0.00381
+18:49:09 INFO   ENS[k=2] ep 200/200: loss=0.2325 tr_acc=0.948 te_acc=0.536 lr=0.00000
+18:49:09 INFO   member 2: test acc = 0.5360
+18:49:23 INFO   ENS AUPPC=0.5359  ECE=0.1261  mean_acc=0.5247
+18:49:23 INFO 
+  Δ(ENS-MCD)=+0.4429  Δ(MCD-MSP)=-0.3960  Δ(TS-MSP)=-0.0673
+18:49:23 INFO   Δ(ENS-MSP)=+0.0469  Δ(ENS-TS)=+0.1142  TS_recovery=-1.437
+18:49:23 INFO 
+  Seed 42 done in 483.6s
+18:49:23 INFO 
+============================================================
+18:49:23 INFO SEED 7
+18:49:23 INFO ============================================================
+18:49:23 INFO   labeled_train=900 val_ts=100 unlabeled=49000
+18:49:23 INFO 
+── MSP baseline (seed=7) ──
+18:49:24 INFO   MSP ep   1/200: loss=2.2104 tr_acc=0.163 te_acc=0.160 lr=0.09999
+18:49:34 INFO   MSP ep  25/200: loss=1.6184 tr_acc=0.354 te_acc=0.306 lr=0.09619
+18:49:43 INFO   MSP ep  50/200: loss=1.2993 tr_acc=0.513 te_acc=0.419 lr=0.08536
+18:49:52 INFO   MSP ep  75/200: loss=1.0776 tr_acc=0.592 te_acc=0.425 lr=0.06913
+18:50:01 INFO   MSP ep 100/200: loss=0.7688 tr_acc=0.724 te_acc=0.442 lr=0.05000
+18:50:10 INFO   MSP ep 125/200: loss=0.6461 tr_acc=0.782 te_acc=0.494 lr=0.03087
+18:50:20 INFO   MSP ep 150/200: loss=0.4847 tr_acc=0.831 te_acc=0.489 lr=0.01464
+18:50:29 INFO   MSP ep 175/200: loss=0.2907 tr_acc=0.926 te_acc=0.489 lr=0.00381
+18:50:38 INFO   MSP ep 200/200: loss=0.2310 tr_acc=0.950 te_acc=0.514 lr=0.00000
+18:50:39 INFO   MSP test acc = 0.5142
+18:50:44 INFO   MSP AUPPC=0.5050  ECE=0.2521
+18:50:44 INFO 
+── Temperature Scaling (seed=7) ──
+18:50:45 INFO   Temperature scaling: T = 2.4633
+18:50:49 INFO   TS AUPPC=0.3727  ECE=0.0086  T=2.4633
+18:50:49 INFO   TS ECE improvement: 0.2521 → 0.0086
+18:50:49 INFO 
+── MC-Dropout (seed=7, p=0.3, T=20) ──
+18:50:51 INFO   MCD ep   1/200: loss=2.2333 tr_acc=0.148 te_acc=0.164 lr=0.09999
+18:51:00 INFO   MCD ep  25/200: loss=1.6631 tr_acc=0.358 te_acc=0.352 lr=0.09619
+18:51:09 INFO   MCD ep  50/200: loss=1.4057 tr_acc=0.464 te_acc=0.386 lr=0.08536
+18:51:19 INFO   MCD ep  75/200: loss=1.2100 tr_acc=0.553 te_acc=0.432 lr=0.06913
+18:51:28 INFO   MCD ep 100/200: loss=0.9484 tr_acc=0.657 te_acc=0.463 lr=0.05000
+18:51:38 INFO   MCD ep 125/200: loss=0.8392 tr_acc=0.697 te_acc=0.459 lr=0.03087
+18:51:47 INFO   MCD ep 150/200: loss=0.5997 tr_acc=0.776 te_acc=0.497 lr=0.01464
+18:51:57 INFO   MCD ep 175/200: loss=0.4870 tr_acc=0.836 te_acc=0.493 lr=0.00381
+18:52:06 INFO   MCD ep 200/200: loss=0.4044 tr_acc=0.874 te_acc=0.506 lr=0.00000
+18:52:07 INFO   MCD test acc = 0.5032
+18:53:37 INFO   MCD AUPPC=0.0918  ECE=0.1699
+18:53:37 INFO 
+── Deep Ensemble (seed=7, K=3) ──
+18:53:38 INFO   ENS[k=0] ep   1/200: loss=2.2104 tr_acc=0.163 te_acc=0.160 lr=0.09999
+18:53:47 INFO   ENS[k=0] ep  25/200: loss=1.6184 tr_acc=0.354 te_acc=0.306 lr=0.09619
+18:53:55 INFO   ENS[k=0] ep  50/200: loss=1.2993 tr_acc=0.513 te_acc=0.419 lr=0.08536
+18:54:04 INFO   ENS[k=0] ep  75/200: loss=1.0776 tr_acc=0.592 te_acc=0.425 lr=0.06913
+18:54:13 INFO   ENS[k=0] ep 100/200: loss=0.7688 tr_acc=0.724 te_acc=0.442 lr=0.05000
+18:54:22 INFO   ENS[k=0] ep 125/200: loss=0.6461 tr_acc=0.782 te_acc=0.494 lr=0.03087
+18:54:32 INFO   ENS[k=0] ep 150/200: loss=0.4847 tr_acc=0.831 te_acc=0.489 lr=0.01464
+18:54:41 INFO   ENS[k=0] ep 175/200: loss=0.2907 tr_acc=0.926 te_acc=0.489 lr=0.00381
+18:54:51 INFO   ENS[k=0] ep 200/200: loss=0.2310 tr_acc=0.950 te_acc=0.514 lr=0.00000
+18:54:52 INFO   member 0: test acc = 0.5142
+18:54:53 INFO   ENS[k=1] ep   1/200: loss=2.2393 tr_acc=0.160 te_acc=0.165 lr=0.09999
+18:55:02 INFO   ENS[k=1] ep  25/200: loss=1.6638 tr_acc=0.368 te_acc=0.331 lr=0.09619
+18:55:11 INFO   ENS[k=1] ep  50/200: loss=1.3663 tr_acc=0.480 te_acc=0.406 lr=0.08536
+18:55:20 INFO   ENS[k=1] ep  75/200: loss=1.1159 tr_acc=0.588 te_acc=0.413 lr=0.06913
+18:55:29 INFO   ENS[k=1] ep 100/200: loss=0.7646 tr_acc=0.741 te_acc=0.435 lr=0.05000
+18:55:38 INFO   ENS[k=1] ep 125/200: loss=0.5166 tr_acc=0.827 te_acc=0.434 lr=0.03087
+18:55:47 INFO   ENS[k=1] ep 150/200: loss=0.3557 tr_acc=0.887 te_acc=0.479 lr=0.01464
+18:55:56 INFO   ENS[k=1] ep 175/200: loss=0.2448 tr_acc=0.939 te_acc=0.502 lr=0.00381
+18:56:05 INFO   ENS[k=1] ep 200/200: loss=0.2025 tr_acc=0.963 te_acc=0.501 lr=0.00000
+18:56:05 INFO   member 1: test acc = 0.5010
+18:56:07 INFO   ENS[k=2] ep   1/200: loss=2.1708 tr_acc=0.181 te_acc=0.154 lr=0.09999
+18:56:15 INFO   ENS[k=2] ep  25/200: loss=1.6235 tr_acc=0.390 te_acc=0.356 lr=0.09619
+18:56:24 INFO   ENS[k=2] ep  50/200: loss=1.2715 tr_acc=0.536 te_acc=0.419 lr=0.08536
+18:56:33 INFO   ENS[k=2] ep  75/200: loss=1.0721 tr_acc=0.597 te_acc=0.441 lr=0.06913
+18:56:42 INFO   ENS[k=2] ep 100/200: loss=0.8202 tr_acc=0.702 te_acc=0.433 lr=0.05000
+18:56:51 INFO   ENS[k=2] ep 125/200: loss=0.6052 tr_acc=0.779 te_acc=0.478 lr=0.03087
+18:57:00 INFO   ENS[k=2] ep 150/200: loss=0.3731 tr_acc=0.872 te_acc=0.519 lr=0.01464
+18:57:09 INFO   ENS[k=2] ep 175/200: loss=0.2524 tr_acc=0.930 te_acc=0.523 lr=0.00381
+18:57:18 INFO   ENS[k=2] ep 200/200: loss=0.2095 tr_acc=0.944 te_acc=0.534 lr=0.00000
+18:57:19 INFO   member 2: test acc = 0.5337
+18:57:32 INFO   ENS AUPPC=0.5417  ECE=0.1491  mean_acc=0.5163
+18:57:32 INFO 
+  Δ(ENS-MCD)=+0.4499  Δ(MCD-MSP)=-0.4132  Δ(TS-MSP)=-0.1323
+18:57:32 INFO   Δ(ENS-MSP)=+0.0367  Δ(ENS-TS)=+0.1690  TS_recovery=-3.603
+18:57:32 INFO 
+  Seed 7 done in 489.1s
+18:57:32 INFO 
+============================================================
+18:57:32 INFO SEED 123
+18:57:32 INFO ============================================================
+18:57:32 INFO   labeled_train=900 val_ts=100 unlabeled=49000
+18:57:32 INFO 
+── MSP baseline (seed=123) ──
+18:57:34 INFO   MSP ep   1/200: loss=2.1687 tr_acc=0.190 te_acc=0.151 lr=0.09999
+18:57:42 INFO   MSP ep  25/200: loss=1.6157 tr_acc=0.408 te_acc=0.336 lr=0.09619
+18:57:51 INFO   MSP ep  50/200: loss=1.2503 tr_acc=0.547 te_acc=0.435 lr=0.08536
+18:58:01 INFO   MSP ep  75/200: loss=0.9613 tr_acc=0.654 te_acc=0.461 lr=0.06913
+18:58:10 INFO   MSP ep 100/200: loss=0.9409 tr_acc=0.642 te_acc=0.446 lr=0.05000
+18:58:19 INFO   MSP ep 125/200: loss=0.6189 tr_acc=0.779 te_acc=0.505 lr=0.03087
+18:58:28 INFO   MSP ep 150/200: loss=0.4731 tr_acc=0.846 te_acc=0.521 lr=0.01464
+18:58:37 INFO   MSP ep 175/200: loss=0.2665 tr_acc=0.928 te_acc=0.538 lr=0.00381
+18:58:46 INFO   MSP ep 200/200: loss=0.2398 tr_acc=0.941 te_acc=0.540 lr=0.00000
+18:58:47 INFO   MSP test acc = 0.5401
+18:58:52 INFO   MSP AUPPC=0.5248  ECE=0.2355
+18:58:52 INFO 
+── Temperature Scaling (seed=123) ──
+18:58:53 INFO   Temperature scaling: T = 2.2789
+18:58:58 INFO   TS AUPPC=0.4370  ECE=0.0169  T=2.2789
+18:58:58 INFO   TS ECE improvement: 0.2355 → 0.0169
+18:58:58 INFO 
+── MC-Dropout (seed=123, p=0.3, T=20) ──
+18:58:59 INFO   MCD ep   1/200: loss=2.2352 tr_acc=0.139 te_acc=0.176 lr=0.09999
+18:59:08 INFO   MCD ep  25/200: loss=1.5633 tr_acc=0.432 te_acc=0.325 lr=0.09619
+18:59:17 INFO   MCD ep  50/200: loss=1.3894 tr_acc=0.481 te_acc=0.412 lr=0.08536
+18:59:26 INFO   MCD ep  75/200: loss=1.1806 tr_acc=0.560 te_acc=0.427 lr=0.06913
+18:59:36 INFO   MCD ep 100/200: loss=0.9682 tr_acc=0.642 te_acc=0.472 lr=0.05000
+18:59:45 INFO   MCD ep 125/200: loss=0.8006 tr_acc=0.746 te_acc=0.468 lr=0.03087
+18:59:54 INFO   MCD ep 150/200: loss=0.5812 tr_acc=0.796 te_acc=0.499 lr=0.01464
+19:00:03 INFO   MCD ep 175/200: loss=0.4869 tr_acc=0.860 te_acc=0.503 lr=0.00381
+19:00:12 INFO   MCD ep 200/200: loss=0.4573 tr_acc=0.859 te_acc=0.508 lr=0.00000
+19:00:13 INFO   MCD test acc = 0.5079
+19:01:44 INFO   MCD AUPPC=0.1029  ECE=0.1721
+19:01:44 INFO 
+── Deep Ensemble (seed=123, K=3) ──
+19:01:45 INFO   ENS[k=0] ep   1/200: loss=2.1687 tr_acc=0.190 te_acc=0.151 lr=0.09999
+19:01:54 INFO   ENS[k=0] ep  25/200: loss=1.6157 tr_acc=0.408 te_acc=0.336 lr=0.09619
+19:02:03 INFO   ENS[k=0] ep  50/200: loss=1.2503 tr_acc=0.547 te_acc=0.435 lr=0.08536
+19:02:12 INFO   ENS[k=0] ep  75/200: loss=0.9613 tr_acc=0.654 te_acc=0.461 lr=0.06913
+19:02:21 INFO   ENS[k=0] ep 100/200: loss=0.9409 tr_acc=0.642 te_acc=0.446 lr=0.05000
+19:02:30 INFO   ENS[k=0] ep 125/200: loss=0.6189 tr_acc=0.779 te_acc=0.505 lr=0.03087
+19:02:39 INFO   ENS[k=0] ep 150/200: loss=0.4731 tr_acc=0.846 te_acc=0.521 lr=0.01464
+19:02:48 INFO   ENS[k=0] ep 175/200: loss=0.2665 tr_acc=0.928 te_acc=0.538 lr=0.00381
+19:02:57 INFO   ENS[k=0] ep 200/200: loss=0.2398 tr_acc=0.941 te_acc=0.540 lr=0.00000
+19:02:58 INFO   member 0: test acc = 0.5401
+19:02:59 INFO   ENS[k=1] ep   1/200: loss=2.2041 tr_acc=0.179 te_acc=0.202 lr=0.09999
+19:03:08 INFO   ENS[k=1] ep  25/200: loss=1.5694 tr_acc=0.400 te_acc=0.342 lr=0.09619
+19:03:17 INFO   ENS[k=1] ep  50/200: loss=1.2523 tr_acc=0.538 te_acc=0.418 lr=0.08536
+19:03:26 INFO   ENS[k=1] ep  75/200: loss=1.1293 tr_acc=0.590 te_acc=0.440 lr=0.06913
+19:03:35 INFO   ENS[k=1] ep 100/200: loss=0.7822 tr_acc=0.723 te_acc=0.496 lr=0.05000
+19:03:43 INFO   ENS[k=1] ep 125/200: loss=0.6519 tr_acc=0.770 te_acc=0.479 lr=0.03087
+19:03:52 INFO   ENS[k=1] ep 150/200: loss=0.4470 tr_acc=0.856 te_acc=0.515 lr=0.01464
+19:04:01 INFO   ENS[k=1] ep 175/200: loss=0.2694 tr_acc=0.928 te_acc=0.529 lr=0.00381
+19:04:10 INFO   ENS[k=1] ep 200/200: loss=0.2162 tr_acc=0.949 te_acc=0.533 lr=0.00000
+19:04:11 INFO   member 1: test acc = 0.5333
+19:04:12 INFO   ENS[k=2] ep   1/200: loss=2.1744 tr_acc=0.178 te_acc=0.161 lr=0.09999
+19:04:21 INFO   ENS[k=2] ep  25/200: loss=1.6644 tr_acc=0.381 te_acc=0.302 lr=0.09619
+19:04:29 INFO   ENS[k=2] ep  50/200: loss=1.3081 tr_acc=0.523 te_acc=0.412 lr=0.08536
+19:04:38 INFO   ENS[k=2] ep  75/200: loss=1.0946 tr_acc=0.606 te_acc=0.464 lr=0.06913
+19:04:47 INFO   ENS[k=2] ep 100/200: loss=0.8031 tr_acc=0.702 te_acc=0.465 lr=0.05000
+19:04:56 INFO   ENS[k=2] ep 125/200: loss=0.5651 tr_acc=0.822 te_acc=0.482 lr=0.03087
+19:05:05 INFO   ENS[k=2] ep 150/200: loss=0.4185 tr_acc=0.876 te_acc=0.490 lr=0.01464
+19:05:13 INFO   ENS[k=2] ep 175/200: loss=0.2663 tr_acc=0.937 te_acc=0.510 lr=0.00381
+19:05:22 INFO   ENS[k=2] ep 200/200: loss=0.2210 tr_acc=0.953 te_acc=0.514 lr=0.00000
+19:05:23 INFO   member 2: test acc = 0.5138
+19:05:37 INFO   ENS AUPPC=0.5515  ECE=0.1440  mean_acc=0.5291
+19:05:37 INFO 
+  Δ(ENS-MCD)=+0.4486  Δ(MCD-MSP)=-0.4219  Δ(TS-MSP)=-0.0877
+19:05:37 INFO   Δ(ENS-MSP)=+0.0267  Δ(ENS-TS)=+0.1144  TS_recovery=-3.289
+19:05:37 INFO 
+  Seed 123 done in 484.4s
+19:05:37 INFO 
+Results written to /workspace/results/refine-03/RESULTS.json
+19:05:37 INFO 
+======================================================================
+19:05:37 INFO SUMMARY — refine-03
+19:05:37 INFO ======================================================================
+19:05:37 INFO   Runtime: 1461.7s (24.4 min)
+19:05:37 INFO   MSP acc:         0.528 ± 0.011 (gate >=0.55: 0/3)
+19:05:37 INFO   AUPPC MSP:       0.5063 ± 0.0146 (in-band: 0/3)
+19:05:37 INFO   AUPPC TS:        0.4105 ± 0.0274
+19:05:37 INFO   AUPPC MCD:       0.0959 ± 0.0049
+19:05:37 INFO   AUPPC Ensemble:  0.5430 ± 0.0064
+19:05:37 INFO   Δ(ENS-MCD):     +0.4471 ± 0.0031
+19:05:37 INFO   Δ(MCD-MSP):     -0.4104 ± 0.0108
+19:05:37 INFO   ECE: MSP=0.2450 TS=0.0169 MCD=0.1710 ENS=0.1397
+19:05:37 INFO   Hypothesis: confirmed=False  refuted=True
+19:05:37 INFO   Sanity gates: 4/4 passed
+19:05:37 INFO ======================================================================
+
+── RESULTS.json ──
+{
+  "status": "SUCCESS",
+  "scale": "probe",
+  "subject_executed": "MSP / Temperature-Scaled MSP / MC-Dropout (T=20, p=0.3) / Deep Ensemble (K=3) on CIFAR-10 100 labels/class, 200 epochs (LR=0.1), 3 seeds",
+  "notes": "refine-03: 100/class (was 50), 200 epochs (was 100), MC-Dropout p=0.3 (was 0.1). MSP acc gate (0/3 seeds >= 55%). AUPPC sanity band [0.70,0.88]: 0/3 seeds. Runtime 1461.7s (24.4 min).",
+  "baseline_comparison_vs_prior": {
+    "auppc_msp_refine02": 0.2025,
+    "auppc_msp_refine03": 0.5062841671147956,
+    "auppc_msp_main01": 0.0634,
+    "acc_msp_refine02": 0.336,
+    "acc_msp_refine03": 0.5275666666666666,
+    "ece_msp_refine02": 0.141,
+    "ece_msp_refine03": 0.24495063247233628,
+    "accuracy_gate_passed": "0/3 seeds >= 55%",
+    "auppc_in_band": "0/3 seeds in [0.70, 0.88]"
+  },
+  "sanity_gates": [
+    {
+      "name": "reproducibility",
+      "passed": true,
+      "diff": 0.0,
+      "run1_loss": 2.3753578662872314,
+      "run2_loss": 2.3753578662872314
+    },
+    {
+      "name": "loss_at_init",
+      "passed": true,
+      "init_ce_loss": 2.3022968769073486
+    },
+    {
+      "name": "uniform_baseline",
+      "passed": true,
+      "uniform_accuracy": 0.1
+    },
+    {
+      "name": "overfit_one_batch",
+      "passed": true,
+      "single_batch_loss_at_step300": 0.009224535897374153
+    }
+  ],
+  "all_sanity_gates_passed": true,
+  "per_seed_results": [
+    {
+      "seed": 42,
+      "msp": {
+        "test_acc": 0.5284,
+        "auppc": 0.489074123851484,
+        "ece": 0.24717882415801284
+      },
+      "ts": {
+        "test_acc": 0.5284,
+        "auppc": 0.4217288553256607,
+        "ece": 0.02535865651965141,
+        "ece_val": 0.08412901371717453,
+        "ece_msp_val": 0.2280133521556854,
+        "temperature": 2.2910397052764893,
+        "ece_improvement": 0.22182016763836143
+      },
+      "mc_dropout": {
+        "test_acc": 0.4932,
+        "auppc": 0.09308777877993114,
+        "ece": 0.17119875352382657
+      },
+      "ensemble": {
+        "test_acc": 0.5247,
+        "member_accs": [
+          0.5284,
+          0.5097,
+          0.536
+        ],
+        "auppc": 0.5359382551379187,
+        "ece": 0.12614889553785322
+      },
+      "delta_ens_vs_mcd": 0.4428504763579876,
+      "delta_mcd_vs_msp": -0.3959863450715529,
+      "delta_ts_vs_msp": -0.06734526852582334,
+      "delta_ens_vs_msp": 0.046864131286434685,
+      "delta_ens_vs_ts": 0.11420939981225803,
+      "ts_recovery_fraction": -1.4370322606474333
+    },
+    {
+      "seed": 7,
+      "msp": {
+        "test_acc": 0.5142,
+        "auppc": 0.5050037180436482,
+        "ece": 0.25213457727730276
+      },
+      "ts": {
+        "test_acc": 0.5142,
+        "auppc": 0.37271823680290495,
+        "ece": 0.0085578536748886,
+        "ece_val": 0.06802836313843727,
+        "ece_msp_val": 0.2462746372818947,
+        "temperature": 2.463320016860962,
+        "ece_improvement": 0.24357672360241417
+      },
+      "mc_dropout": {
+        "test_acc": 0.5032,
+        "auppc": 0.09180571262256537,
+        "ece": 0.1698550125092268
+      },
+      "ensemble": {
+        "test_acc": 0.5163000000000001,
+        "member_accs": [
+          0.5142,
+          0.501,
+          0.5337
+        ],
+        "auppc": 0.5417203975583986,
+        "ece": 0.14908350944966078
+      },
+      "delta_ens_vs_mcd": 0.44991468493583325,
+      "delta_mcd_vs_msp": -0.4131980054210828,
+      "delta_ts_vs_msp": -0.13228548124074324,
+      "delta_ens_vs_msp": 0.03671667951475044,
+      "delta_ens_vs_ts": 0.16900216075549368,
+      "ts_recovery_fraction": -3.6028715828619333
+    },
+    {
+      "seed": 123,
+      "msp": {
+        "test_acc": 0.5401,
+        "auppc": 0.5247746594492546,
+        "ece": 0.23553849598169327
+      },
+      "ts": {
+        "test_acc": 0.5401,
+        "auppc": 0.4370284369717966,
+        "ece": 0.016859822507202624,
+        "ece_val": 0.08703216671943664,
+        "ece_msp_val": 0.21039877563714982,
+        "temperature": 2.278897762298584,
+        "ece_improvement": 0.21867867347449066
+      },
+      "mc_dropout": {
+        "test_acc": 0.5079,
+        "auppc": 0.10287745438448989,
+        "ece": 0.17207895020544528
+      },
+      "ensemble": {
+        "test_acc": 0.5290666666666667,
+        "member_accs": [
+          0.5401,
+          0.5333,
+          0.5138
+        ],
+        "auppc": 0.5514509006618407,
+        "ece": 0.1439722316086292
+      },
+      "delta_ens_vs_mcd": 0.44857344627735074,
+      "delta_mcd_vs_msp": -0.4218972050647647,
+      "delta_ts_vs_msp": -0.087746222477458,
+      "delta_ens_vs_msp": 0.02667624121258605,
+      "delta_ens_vs_ts": 0.11442246369004405,
+      "ts_recovery_fraction": -3.2893023337957628
+    }
+  ],
+  "metrics": {
+    "auppc_msp": {
+      "values": [
+        0.489074123851484,
+        0.5050037180436482,
+        0.5247746594492546
+      ],
+      "mean": 0.5062841671147956,
+      "std": 0.014602778796283328
+    },
+    "auppc_ts_msp": {
+      "values": [
+        0.4217288553256607,
+        0.37271823680290495,
+        0.4370284369717966
+      ],
+      "mean": 0.4104918430334541,
+      "std": 0.027430558329256685
+    },
+    "auppc_mc_dropout": {
+      "values": [
+        0.09308777877993114,
+        0.09180571262256537,
+        0.10287745438448989
+      ],
+      "mean": 0.09592364859566212,
+      "std": 0.004944861617175043
+    },
+    "auppc_ensemble": {
+      "values": [
+        0.5359382551379187,
+        0.5417203975583986,
+        0.5514509006618407
+      ],
+      "mean": 0.5430365177860527,
+      "std": 0.006401024507995785
+    },
+    "acc_msp": {
+      "values": [
+        0.5284,
+        0.5142,
+        0.5401
+      ],
+      "mean": 0.5275666666666666,
+      "std": 0.010590037246813119
+    },
+    "acc_ts_msp": {
+      "values": [
+        0.5284,
+        0.5142,
+        0.5401
+      ],
+      "mean": 0.5275666666666666,
+      "std": 0.010590037246813119
+    },
+    "acc_mc_dropout": {
+      "values": [
+        0.4932,
+        0.5032,
+        0.5079
+      ],
+      "mean": 0.5014333333333333,
+      "std": 0.006129890337971428
+    },
+    "acc_ensemble": {
+      "values": [
+        0.5247,
+        0.5163000000000001,
+        0.5290666666666667
+      ],
+      "mean": 0.5233555555555557,
+      "std": 0.005297961406213534
+    },
+    "ece_msp": {
+      "values": [
+        0.24717882415801284,
+        0.25213457727730276,
+        0.23553849598169327
+      ],
+      "mean": 0.24495063247233628,
+      "std": 0.0069561055787324185
+    },
+    "ece_ts_msp": {
+      "values": [
+        0.02535865651965141,
+        0.0085578536748886,
+        0.016859822507202624
+      ],
+      "mean": 0.01692544423391421,
+      "std": 0.006859055995077358
+    },
+    "ece_mc_dropout": {
+      "values": [
+        0.17119875352382657,
+        0.1698550125092268,
+        0.17207895020544528
+      ],
+      "mean": 0.17104423874616623,
+      "std": 0.0009144691835711626
+    },
+    "ece_ensemble": {
+      "values": [
+        0.12614889553785322,
+        0.14908350944966078,
+        0.1439722316086292
+      ],
+      "mean": 0.13973487886538108,
+      "std": 0.00983075098941933
+    },
+    "delta_ensemble_vs_mcd_mean": 0.4471128691903905,
+    "delta_ensemble_vs_mcd_std": 0.003063301571620833,
+    "delta_mcd_vs_msp_mean": -0.41036051851913347,
+    "delta_mcd_vs_msp_std": 0.010766666625469759,
+    "delta_ts_vs_msp_mean": -0.09579232408134153,
+    "delta_ts_vs_msp_std": 0.027115341538567837,
+    "delta_ensemble_vs_msp_mean": 0.03675235067125706,
+    "delta_ensemble_vs_msp_std": 0.00824171020812242,
+    "delta_ensemble_vs_ts_mean": 0.1325446747525986,
+    "delta_ensemble_vs_ts_std": 0.025779482323383625,
+    "ts_recovery_fraction_mean": -2.7764020591017093,
+    "msp_auppc_in_sanity_band_count": 0,
+    "accuracy_gate_passed_count": 0
+  },
+  "hypothesis": {
+    "confirmed": false,
+    "refuted": true,
+    "cond_a_ens_minus_mcd_ge_0030": true,
+    "cond_b_mcd_minus_msp_ge_2of3": false,
+    "cond_c_ens_acc_gt_msp_2of3": false,
+    "refuted_a_ens_le_mcd_plus_010_ge_2of3": false,
+    "refuted_b_msp_auppc_gt_090_ge_2of3": false,
+    "refuted_c_msp_error_gt_25pct_ge_2of3": true
+  },
+  "config": {
+    "labels_per_class": 100,
+    "probe_epochs": 200,
+    "lr": 0.1,
+    "weight_decay": 0.0005,
+    "ensemble_k": 3,
+    "mc_passes": 20,
+    "mc_dropout_p": 0.3,
+    "ts_val_fraction": 0.1,
+    "seeds": [
+      42,
+      7,
+      123
+    ],
+    "thresholds_n": 20
+  },
+  "runtime_seconds": 1461.7177686691284
+}
