@@ -1,10 +1,10 @@
-# EXPERIMENT BRIEF — round main-01 (probe)
+# EXPERIMENT BRIEF — round refine-02 (probe)
 
 ## THIS ROUND (do exactly this)
-Run the sanity gates first (loss-at-init, input-independent baseline, overfit-one-batch). Then implement BOTH the solid baseline AND the proposed method from the study spec. Train each for 3 seeds at a representative REDUCED scale (small subset / few epochs — keep each run to tens of minutes, not hours). Report the target metric per seed for baseline vs method, with mean+/-std and the delta.
+Build on prior round results/main-01/. REFINE, do not restart. CRITICAL: the central claim is a 2-4% reduction in CIFAR-10-C mean corruption error (mCE), but last round SKIPPED CIFAR-10-C and only measured clean accuracy, so the claim was untestable. FIX: evaluate BOTH the baseline (FixMatch+RandAug) and the method (FixMatch+invariance-auditor) on CIFAR-10-C mCE — apply the standard corruptions (a representative subset of the 15 types x 5 severities is fine) and report mCE per seed for baseline vs method + delta. Also report the auditor AUROC/precision/recall and whether its rollback actually fired. 3 seeds, sanity gates.
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/main-01/.
+for context and build on them; write this round's outputs under results/refine-02/.
 
 ## Idea
 Online Mid-Training Invariance Auditor via Unlabeled Feature-Tail Consistency Signal
@@ -46,4 +46,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - refutes the hypothesis if: (see prediction)
 - smallest effect worth caring about (SESOI): (none)
 
-Record everything under results/main-01/. Do not commit weights.
+Record everything under results/refine-02/. Do not commit weights.

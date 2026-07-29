@@ -1,0 +1,111 @@
+======================================================================
+Experiment : Online Mid-Training Invariance Auditor  [round refine-02]
+Device     : cuda
+Epochs     : 30  | Seeds: [42, 123, 456]
+CIFAR-10-C : 5 corruption types × 5 severities = 25 pairs
+======================================================================
+
+=== GATE 1 : fixed-seed reproducibility ===
+  max|Δloss| = 0.0  → PASS
+
+=== GATE 2 : CE loss at init ===
+  initial CE = 2.301693  (expect 2.28–2.32)  → PASS
+
+=== GATE 3 : input-independent baseline ===
+  class-0 baseline acc = 0.1000  → PASS
+
+=== GATE 4 : overfit one batch ===
+  min CE = 0.009970  (hit_step=220)  → PASS
+
+Sanity gates all_passed=True
+
+Split: labeled=500  unlabeled=4000  audit=500
+
+────────────────────────────────────────────────────────────
+BASELINE  seed=42
+────────────────────────────────────────────────────────────
+  seed=42 ep=  5/30  loss=1.7585  tr=0.321  te=0.290  (14s)
+  seed=42 ep= 10/30  loss=1.4932  tr=0.454  te=0.327  (28s)
+  seed=42 ep= 15/30  loss=1.2722  tr=0.485  te=0.332  (43s)
+  seed=42 ep= 20/30  loss=1.0625  tr=0.656  te=0.388  (57s)
+  seed=42 ep= 25/30  loss=0.7937  tr=0.727  te=0.403  (71s)
+  seed=42 ep= 30/30  loss=0.6882  tr=0.762  te=0.414  (85s)
+  seed=42 [baseline] evaluating CIFAR-10-C mCE ...
+  seed=42 [baseline] mCE=0.7160  (54.5s)  gaussian_noise=0.604  contrast=0.792  brightness=0.735  gaussian_blur=0.809  pixelate=0.640
+
+────────────────────────────────────────────────────────────
+METHOD    seed=42
+────────────────────────────────────────────────────────────
+  seed=42 ep=  5/30  loss=1.7585  tr=0.321  te=0.290  (14s)
+  seed=42 ep= 10/30  loss=1.4932  tr=0.454  te=0.327  (28s)
+    [auditor e10] tail_size=100
+    [auditor e10] ROLLBACK 'contrast' cos=0.752
+    [auditor e10] ROLLBACK 'brightness' cos=0.802
+    [auditor e10] ROLLBACK 'sharpness' cos=0.773  rolls=3
+  seed=42 ep= 15/30  loss=1.2298  tr=0.588  te=0.374  (43s)
+  seed=42 ep= 20/30  loss=1.0018  tr=0.679  te=0.388  (57s)
+    [auditor e20] re-admitted 'contrast'
+    [auditor e20] re-admitted 'brightness'
+    [auditor e20] re-admitted 'sharpness'
+    [auditor e20] tail_size=100
+    [auditor e20] ROLLBACK 'contrast' cos=0.686
+    [auditor e20] ROLLBACK 'brightness' cos=0.793
+    [auditor e20] ROLLBACK 'sharpness' cos=0.647  rolls=3
+  seed=42 ep= 25/30  loss=0.8048  tr=0.794  te=0.416  (70s)
+  seed=42 ep= 30/30  loss=0.7139  tr=0.796  te=0.426  (84s)
+    [auditor e30] re-admitted 'contrast'
+    [auditor e30] re-admitted 'brightness'
+    [auditor e30] re-admitted 'sharpness'
+    [auditor e30] tail_size=100
+    [auditor e30] ROLLBACK 'contrast' cos=0.728
+    [auditor e30] ROLLBACK 'brightness' cos=0.818
+    [auditor e30] ROLLBACK 'sharpness' cos=0.661  rolls=3
+  seed=42 [method] evaluating CIFAR-10-C mCE ...
+  seed=42 [method] mCE=0.7023  (54.1s)  gaussian_noise=0.606  contrast=0.781  brightness=0.697  gaussian_blur=0.801  pixelate=0.626
+  → Auditor AUROC=0.5  prec=0.67  rec=0.67  rollbacks=9
+
+────────────────────────────────────────────────────────────
+BASELINE  seed=123
+────────────────────────────────────────────────────────────
+  seed=123 ep=  5/30  loss=1.7025  tr=0.344  te=0.303  (14s)
+  seed=123 ep= 10/30  loss=1.3776  tr=0.512  te=0.369  (28s)
+  seed=123 ep= 15/30  loss=1.0392  tr=0.646  te=0.401  (42s)
+  seed=123 ep= 20/30  loss=0.7841  tr=0.694  te=0.427  (56s)
+  seed=123 ep= 25/30  loss=0.6254  tr=0.833  te=0.447  (69s)
+  seed=123 ep= 30/30  loss=0.5211  tr=0.850  te=0.451  (83s)
+  seed=123 [baseline] evaluating CIFAR-10-C mCE ...
+  seed=123 [baseline] mCE=0.7066  (54.2s)  gaussian_noise=0.597  contrast=0.779  brightness=0.700  gaussian_blur=0.808  pixelate=0.649
+
+────────────────────────────────────────────────────────────
+METHOD    seed=123
+────────────────────────────────────────────────────────────
+  seed=123 ep=  5/30  loss=1.7025  tr=0.344  te=0.303  (14s)
+  seed=123 ep= 10/30  loss=1.3776  tr=0.512  te=0.369  (28s)
+    [auditor e10] tail_size=100
+    [auditor e10] ROLLBACK 'contrast' cos=0.755
+    [auditor e10] ROLLBACK 'sharpness' cos=0.671  rolls=2
+  seed=123 ep= 15/30  loss=1.0541  tr=0.656  te=0.423  (42s)
+  seed=123 ep= 20/30  loss=0.8083  tr=0.794  te=0.468  (56s)
+    [auditor e20] re-admitted 'contrast'
+    [auditor e20] re-admitted 'sharpness'
+    [auditor e20] tail_size=100
+    [auditor e20] ROLLBACK 'contrast' cos=0.818
+    [auditor e20] ROLLBACK 'sharpness' cos=0.660  rolls=2
+  seed=123 ep= 25/30  loss=0.5635  tr=0.883  te=0.465  (71s)
+  seed=123 ep= 30/30  loss=0.5472  tr=0.887  te=0.476  (85s)
+    [auditor e30] re-admitted 'contrast'
+    [auditor e30] re-admitted 'sharpness'
+    [auditor e30] tail_size=100
+    [auditor e30] ROLLBACK 'sharpness' cos=0.656  rolls=1
+  seed=123 [method] evaluating CIFAR-10-C mCE ...
+  seed=123 [method] mCE=0.6955  (54.1s)  gaussian_noise=0.608  contrast=0.765  brightness=0.679  gaussian_blur=0.805  pixelate=0.622
+  → Auditor AUROC=0.0  prec=1.00  rec=0.67  rollbacks=5
+
+────────────────────────────────────────────────────────────
+BASELINE  seed=456
+────────────────────────────────────────────────────────────
+  seed=456 ep=  5/30  loss=1.7523  tr=0.356  te=0.273  (14s)
+  seed=456 ep= 10/30  loss=1.4386  tr=0.423  te=0.309  (28s)
+  seed=456 ep= 15/30  loss=1.2198  tr=0.565  te=0.358  (43s)
+  seed=456 ep= 20/30  loss=0.9839  tr=0.688  te=0.389  (57s)
+  seed=456 ep= 25/30  loss=0.7529  tr=0.779  te=0.412  (72s)
