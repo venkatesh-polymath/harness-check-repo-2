@@ -1,0 +1,58 @@
+{
+  "status": "SUCCESS",
+  "scale": "probe",
+  "metrics": {
+    "sanity_gates": {
+      "gate_1_reproducibility": {
+        "passed": true,
+        "max_loss_diff": 0.0
+      },
+      "gate_2_loss_at_init": {
+        "passed": true,
+        "initial_loss": 2.3016932010650635,
+        "expected": 2.302585092994046
+      },
+      "gate_3_input_independent": {
+        "passed": true,
+        "accuracy": 0.1
+      },
+      "gate_4_overfit_batch": {
+        "passed": true,
+        "min_loss": 0.009969794191420078,
+        "hit_step": 220
+      },
+      "all_passed": true
+    },
+    "baseline_fixmatch_randaug": {
+      "per_seed_test_acc": [
+        0.4138,
+        0.451,
+        0.4166
+      ],
+      "mean_test_acc": 0.42713333333333336,
+      "std_test_acc": 0.01691495065188059
+    },
+    "method_fixmatch_auditor": {
+      "per_seed_test_acc": [
+        0.4265,
+        0.476,
+        0.4188
+      ],
+      "mean_test_acc": 0.4404333333333333,
+      "std_test_acc": 0.025345128832885325,
+      "auditor_auroc_per_seed": [
+        0.5,
+        0.0,
+        1.0
+      ],
+      "mean_auditor_auroc": 0.5,
+      "mean_auditor_precision": 0.8888888888888888,
+      "mean_auditor_recall": 0.6666666666666666
+    },
+    "delta_mean_test_acc": 0.013299999999999923,
+    "n_seeds": 3,
+    "epochs_per_run": 30
+  },
+  "subject_executed": "FixMatch+RandAugment (baseline) vs FixMatch+OnlineAuditor (method); ResNet-8 on CIFAR-10 semi-supervised (50 labels/class, 4000 unlabeled); 30 epochs \u00d7 3 seeds; probe scale",
+  "notes": "Probe: 30 epochs (spec=500), 50 labels/class, 4000 unlabeled train samples. Auditor runs every 10 epochs, flags ops with cos-sim < 0.82, re-admits after 10 epochs. CIFAR-10-C evaluation skipped (probe scale). AUROC computed over 3 seed(s) with sufficient audit data."
+}

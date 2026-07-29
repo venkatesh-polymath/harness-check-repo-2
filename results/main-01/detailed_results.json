@@ -1,0 +1,161 @@
+{
+  "gates": {
+    "gate_1_reproducibility": {
+      "passed": true,
+      "max_loss_diff": 0.0
+    },
+    "gate_2_loss_at_init": {
+      "passed": true,
+      "initial_loss": 2.3016932010650635,
+      "expected": 2.302585092994046
+    },
+    "gate_3_input_independent": {
+      "passed": true,
+      "accuracy": 0.1
+    },
+    "gate_4_overfit_batch": {
+      "passed": true,
+      "min_loss": 0.009969794191420078,
+      "hit_step": 220
+    },
+    "all_passed": true
+  },
+  "baseline": [
+    {
+      "seed": 42,
+      "method": "baseline",
+      "final_test_acc": 0.4138
+    },
+    {
+      "seed": 123,
+      "method": "baseline",
+      "final_test_acc": 0.451
+    },
+    {
+      "seed": 456,
+      "method": "baseline",
+      "final_test_acc": 0.4166
+    }
+  ],
+  "method": [
+    {
+      "seed": 42,
+      "method": "method",
+      "final_test_acc": 0.4265,
+      "auditor": {
+        "auroc": 0.5,
+        "precision": 0.6666666666666666,
+        "recall": 0.6666666666666666,
+        "rollback_log": [
+          [
+            10,
+            "contrast"
+          ],
+          [
+            10,
+            "brightness"
+          ],
+          [
+            10,
+            "sharpness"
+          ],
+          [
+            20,
+            "contrast"
+          ],
+          [
+            20,
+            "brightness"
+          ],
+          [
+            20,
+            "sharpness"
+          ],
+          [
+            30,
+            "contrast"
+          ],
+          [
+            30,
+            "brightness"
+          ],
+          [
+            30,
+            "sharpness"
+          ]
+        ],
+        "n_rollbacks": 9
+      }
+    },
+    {
+      "seed": 123,
+      "method": "method",
+      "final_test_acc": 0.476,
+      "auditor": {
+        "auroc": 0.0,
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "rollback_log": [
+          [
+            10,
+            "contrast"
+          ],
+          [
+            10,
+            "sharpness"
+          ],
+          [
+            20,
+            "contrast"
+          ],
+          [
+            20,
+            "sharpness"
+          ],
+          [
+            30,
+            "sharpness"
+          ]
+        ],
+        "n_rollbacks": 5
+      }
+    },
+    {
+      "seed": 456,
+      "method": "method",
+      "final_test_acc": 0.4188,
+      "auditor": {
+        "auroc": 1.0,
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "rollback_log": [
+          [
+            10,
+            "contrast"
+          ],
+          [
+            10,
+            "sharpness"
+          ],
+          [
+            20,
+            "contrast"
+          ],
+          [
+            20,
+            "sharpness"
+          ],
+          [
+            30,
+            "contrast"
+          ],
+          [
+            30,
+            "sharpness"
+          ]
+        ],
+        "n_rollbacks": 6
+      }
+    }
+  ]
+}
