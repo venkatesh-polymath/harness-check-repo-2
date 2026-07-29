@@ -1,10 +1,10 @@
-# EXPERIMENT BRIEF — round refine-02 (probe)
+# EXPERIMENT BRIEF — round refine-03 (probe)
 
 ## THIS ROUND (do exactly this)
-Build on prior round results/main-01/. REFINE, do not restart. The suppress-vs-shift MECHANISM replicated and should be preserved (SSL suppresses the background shortcut, shifts weight to the patch signal). BUT worst-group accuracy is DEGENERATE: groups 0-2 are NaN in every seed (only group 3 populated), so WGA collapses to a single group rather than a true 4-group worst-group accuracy. FIX: correct the group construction so all four (label x spurious-signal) groups are populated and non-empty, then recompute the TRUE worst-group accuracy for ERM vs SimCLR under both the bg-off and patch-off shifts. 3 seeds, sanity gates. Report proper per-group accuracies, true WGA, and the suppress-vs-shift deltas.
+Build on results/. The post_results reviewer flagged a FATAL CONFOUND: SimCLRs color-jitter/grayscale augmentations are designed to destroy exactly the injected HSV hue signal, so SSLs worst-group gain may just be "augmentation mechanically deletes the synthetic feature", not a real invariance mechanism. ADD A CONTROL to disentangle this: run a THIRD arm, SimCLR-NO-COLOR-AUG (keep crop/flip, remove color-jitter+grayscale so it CANNOT delete the HSV signal). Compare ERM vs SimCLR-full-aug vs SimCLR-no-color-aug on true 4-group WGA under bg-off and patch-off shifts, 3 seeds. Interpretation: if the worst-group gain PERSISTS without color aug -> real invariance mechanism; if it VANISHES -> the gain was augmentation deletion. Report both WGAs + the decodability of the HSV signal per arm, and state which conclusion the data supports.
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/refine-02/.
+for context and build on them; write this round's outputs under results/refine-03/.
 
 ## Idea
 SSL Spurious-Correlation Suppress-vs-Shift Audit on Togglable-Signal CIFAR Suite
@@ -43,4 +43,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - refutes the hypothesis if: (see prediction)
 - smallest effect worth caring about (SESOI): (none)
 
-Record everything under results/refine-02/. Do not commit weights.
+Record everything under results/refine-03/. Do not commit weights.

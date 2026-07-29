@@ -1,0 +1,957 @@
+Device: cuda
+Scale: train=5000 test=1000
+Epochs: ERM=20 SimCLR=20 Probe=20
+Seeds: [0, 1, 2]
+
+============================================================
+SANITY GATES
+============================================================
+
+G1: Fixed seed reproducibility...
+  max_diff=0.00e+00  PASS=True
+
+G2: Loss at init ≈ ln(10) = 2.303...
+  loss_0=2.5021  expected=2.3026  PASS=True
+
+G3: Dummy classifier → ~10% accuracy...
+  dummy_acc=10.0%  PASS=True
+
+G4: Overfit single batch (32 samples, 200 SGD steps)...
+  train_loss@200=0.000701  PASS=True
+
+All gates passed: True
+  [WARNING] cv2 not available, skipping G5/G6
+
+============================================================
+ARM 1: ERM BASELINE (3 seeds)
+============================================================
+
+  [ERM seed=0]
+  ERM ep 4/20  loss=0.4484
+  ERM ep 8/20  loss=0.5146
+  ERM ep 12/20  loss=0.3759
+  ERM ep 16/20  loss=0.2890
+  ERM ep 20/20  loss=0.2597
+    ERM HSV decodability (bg_class predict acc): 0.938
+    Creating WGA eval loaders (seed=0) ...
+    bgoff  group counts: [198, 245, 258, 299]
+    patchoff group counts: [198, 245, 258, 299]
+    acc_on=0.911  acc_off=0.065  gap=0.846
+    WGA bgoff:    0.047  groups={0: 0.06060606241226196, 1: 0.05714285746216774, 2: 0.04651162773370743, 3: 0.113712377846241}
+    WGA patchoff: 0.033  groups={0: 0.035353533923625946, 1: 0.03265305981040001, 2: 0.9186046719551086, 3: 0.9030100107192993}
+
+  [ERM seed=1]
+  ERM ep 4/20  loss=0.7260
+  ERM ep 8/20  loss=0.4051
+  ERM ep 12/20  loss=0.6753
+  ERM ep 16/20  loss=0.3405
+  ERM ep 20/20  loss=0.2940
+    ERM HSV decodability (bg_class predict acc): 0.919
+    Creating WGA eval loaders (seed=1) ...
+    bgoff  group counts: [210, 250, 253, 287]
+    patchoff group counts: [210, 250, 253, 287]
+    acc_on=0.907  acc_off=0.066  gap=0.841
+    WGA bgoff:    0.038  groups={0: 0.03809523954987526, 1: 0.07599999755620956, 2: 0.08695652335882187, 3: 0.0731707289814949}
+    WGA patchoff: 0.005  groups={0: 0.004761904943734407, 1: 0.02800000086426735, 2: 0.9011857509613037, 3: 0.8850173950195312}
+
+  [ERM seed=2]
+  ERM ep 4/20  loss=0.8650
+  ERM ep 8/20  loss=0.4028
+  ERM ep 12/20  loss=0.3849
+  ERM ep 16/20  loss=0.3111
+  ERM ep 20/20  loss=0.2850
+    ERM HSV decodability (bg_class predict acc): 0.931
+    Creating WGA eval loaders (seed=2) ...
+    bgoff  group counts: [208, 237, 229, 326]
+    patchoff group counts: [208, 237, 229, 326]
+    acc_on=0.916  acc_off=0.046  gap=0.870
+    WGA bgoff:    0.034  groups={0: 0.03365384787321091, 1: 0.08016877621412277, 2: 0.043668121099472046, 3: 0.06441717594861984}
+    WGA patchoff: 0.010  groups={0: 0.009615384973585606, 1: 0.025316456332802773, 2: 0.9126637578010559, 3: 0.9171779155731201}
+
+============================================================
+ARM 2: SimCLR-FULL-AUG (crop+flip+colorjitter+grayscale, 3 seeds)
+============================================================
+
+  [SimCLR-full-aug seed=0]
+  SimCLR ep 4/20  loss=4.7663
+  SimCLR ep 8/20  loss=4.5696
+  SimCLR ep 12/20  loss=4.4599
+  SimCLR ep 16/20  loss=4.4145
+  SimCLR ep 20/20  loss=4.3897
+    SimCLR-full-aug HSV decodability: 0.872
+    Creating WGA eval loaders (seed=0) ...
+    bgoff  group counts: [198, 245, 258, 299]
+    patchoff group counts: [198, 245, 258, 299]
+    acc_on=0.825  acc_off=0.239  gap=0.586
+    WGA bgoff:    0.217  groups={0: 0.21717171370983124, 1: 0.2775510251522064, 2: 0.23643410205841064, 3: 0.2508361339569092}
+    WGA patchoff: 0.098  groups={0: 0.13636364042758942, 1: 0.09795918315649033, 2: 0.7984496355056763, 3: 0.832775890827179}
+
+  [SimCLR-full-aug seed=1]
+  SimCLR ep 4/20  loss=4.7769
+  SimCLR ep 8/20  loss=4.5711
+  SimCLR ep 12/20  loss=4.4970
+  SimCLR ep 16/20  loss=4.4221
+  SimCLR ep 20/20  loss=4.3991
+    SimCLR-full-aug HSV decodability: 0.870
+    Creating WGA eval loaders (seed=1) ...
+    bgoff  group counts: [210, 250, 253, 287]
+    patchoff group counts: [210, 250, 253, 287]
+    acc_on=0.858  acc_off=0.201  gap=0.657
+    WGA bgoff:    0.181  groups={0: 0.19523809850215912, 1: 0.2160000056028366, 2: 0.24110671877861023, 3: 0.18118466436862946}
+    WGA patchoff: 0.096  groups={0: 0.10000000149011612, 1: 0.09600000083446503, 2: 0.8695651888847351, 3: 0.7979093790054321}
+
+  [SimCLR-full-aug seed=2]
+  SimCLR ep 4/20  loss=4.7810
+  SimCLR ep 8/20  loss=4.5712
+  SimCLR ep 12/20  loss=4.4859
+  SimCLR ep 16/20  loss=4.4139
+  SimCLR ep 20/20  loss=4.3983
+    SimCLR-full-aug HSV decodability: 0.847
+    Creating WGA eval loaders (seed=2) ...
+    bgoff  group counts: [208, 237, 229, 326]
+    patchoff group counts: [208, 237, 229, 326]
+    acc_on=0.831  acc_off=0.218  gap=0.613
+    WGA bgoff:    0.179  groups={0: 0.23557692766189575, 1: 0.27848100662231445, 2: 0.17903929948806763, 3: 0.2300613522529602}
+    WGA patchoff: 0.097  groups={0: 0.10096153616905212, 1: 0.09704641252756119, 2: 0.8034934401512146, 3: 0.7944785356521606}
+
+============================================================
+ARM 3: SimCLR-NO-COLOR-AUG (crop+flip ONLY, 3 seeds)
+============================================================
+
+  [SimCLR-no-color-aug seed=0]
+  SimCLR ep 4/20  loss=3.8357
+  SimCLR ep 8/20  loss=3.7968
+  SimCLR ep 12/20  loss=3.7807
+  SimCLR ep 16/20  loss=3.7751
+  SimCLR ep 20/20  loss=3.7732
+    SimCLR-no-color-aug HSV decodability: 0.934
+    Creating WGA eval loaders (seed=0) ...
+    bgoff  group counts: [198, 245, 258, 299]
+    patchoff group counts: [198, 245, 258, 299]
+    acc_on=0.914  acc_off=0.067  gap=0.847
+    WGA bgoff:    0.050  groups={0: 0.0555555559694767, 1: 0.0693877562880516, 2: 0.05038759857416153, 3: 0.08361203968524933}
+    WGA patchoff: 0.024  groups={0: 0.02525252476334572, 1: 0.02448979578912258, 2: 0.930232584476471, 3: 0.8996655344963074}
+
+  [SimCLR-no-color-aug seed=1]
+  SimCLR ep 4/20  loss=3.8408
+  SimCLR ep 8/20  loss=3.8060
+  SimCLR ep 12/20  loss=3.7866
+  SimCLR ep 16/20  loss=3.7761
+  SimCLR ep 20/20  loss=3.7735
+    SimCLR-no-color-aug HSV decodability: 0.928
+    Creating WGA eval loaders (seed=1) ...
+    bgoff  group counts: [210, 250, 253, 287]
+    patchoff group counts: [210, 250, 253, 287]
+    acc_on=0.908  acc_off=0.055  gap=0.853
+    WGA bgoff:    0.033  groups={0: 0.03333333507180214, 1: 0.05999999865889549, 2: 0.07114624232053757, 3: 0.04878048598766327}
+    WGA patchoff: 0.010  groups={0: 0.009523809887468815, 1: 0.02800000086426735, 2: 0.9011857509613037, 3: 0.8850173950195312}
+
+  [SimCLR-no-color-aug seed=2]
+  SimCLR ep 4/20  loss=3.8253
+  SimCLR ep 8/20  loss=3.7953
+  SimCLR ep 12/20  loss=3.7779
+  SimCLR ep 16/20  loss=3.7694
+  SimCLR ep 20/20  loss=3.7718
+    SimCLR-no-color-aug HSV decodability: 0.933
+    Creating WGA eval loaders (seed=2) ...
+    bgoff  group counts: [208, 237, 229, 326]
+    patchoff group counts: [208, 237, 229, 326]
+    acc_on=0.925  acc_off=0.050  gap=0.875
+    WGA bgoff:    0.044  groups={0: 0.048076923936605453, 1: 0.05907173082232475, 2: 0.043668121099472046, 3: 0.061349693685770035}
+    WGA patchoff: 0.010  groups={0: 0.009615384973585606, 1: 0.025316456332802773, 2: 0.9170305728912354, 3: 0.9202454090118408}
+
+============================================================
+RESULTS SUMMARY — refine-03
+============================================================
+
+Arm                        wga_bgoff  wga_patchoff  hsv_decode   acc_on
+----------------------------------------------------------------------
+ERM                            0.039         0.016       0.929    0.911
+SimCLR-full-aug                0.192         0.097       0.863    0.838
+SimCLR-no-color-aug            0.042         0.015       0.932    0.916
+
+Δwga_bgoff   (SimCLR-full − ERM):         +0.153
+Δwga_bgoff   (SimCLR-no-color − ERM):     +0.003
+Δwga_patchoff (SimCLR-full − ERM):        +0.081
+Δwga_patchoff (SimCLR-no-color − ERM):    -0.001
+
+HSV decodability (higher = bg color info retained in representation):
+  ERM:               0.929
+  SimCLR-full-aug:   0.863
+  SimCLR-no-color:   0.932
+
+Conclusion: DELETION: WGA gain vanishes without color-aug → augmentation deletion explains SimCLR gain
+  bgoff gain PERSISTS without color aug: False
+  SimCLR-full HSV decode lower: False
+  SimCLR-no-color HSV decode retained: False
+
+Results written to /workspace/results/refine-03/RESULTS.json
+Total elapsed: 542.2s
+
+============================================================
+{
+  "status": "SUCCESS",
+  "scale": "probe",
+  "subject_executed": "refine-03: Control for color-aug confound. ERM vs SimCLR-full-aug vs SimCLR-no-color-aug on Togglable-Signal CIFAR-10. 5000 train / 1000 test / [0, 1, 2] seeds. ERM 20ep, SimCLR 20ep pretrain + 20ep probe.",
+  "metrics": {
+    "erm": {
+      "wga_bgoff": {
+        "mean": 0.03942023838559786,
+        "std": 0.005332125415582244,
+        "per_seed": [
+          0.04651162773370743,
+          0.03809523954987526,
+          0.03365384787321091
+        ]
+      },
+      "wga_patchoff": {
+        "mean": 0.01567678324257334,
+        "std": 0.012166471460001504,
+        "per_seed": [
+          0.03265305981040001,
+          0.004761904943734407,
+          0.009615384973585606
+        ]
+      },
+      "hsv_decodability": {
+        "mean": 0.9293999999999999,
+        "std": 0.007643733817099238,
+        "per_seed": [
+          0.9376,
+          0.9192,
+          0.9314
+        ]
+      },
+      "acc_on": {
+        "mean": 0.9113333333333333,
+        "std": 0.0036817870057290905,
+        "per_seed": [
+          0.911,
+          0.907,
+          0.916
+        ]
+      },
+      "acc_off": {
+        "mean": 0.059,
+        "std": 0.009201449161228175,
+        "per_seed": [
+          0.065,
+          0.066,
+          0.046
+        ]
+      },
+      "spurious_gap": {
+        "mean": 0.8523333333333333,
+        "std": 0.01265789169736501,
+        "per_seed": [
+          0.8460000000000001,
+          0.841,
+          0.87
+        ]
+      },
+      "per_group_bgoff": {
+        "0": {
+          "mean": 0.04411838327844938,
+          "std": 0.011798705082085775,
+          "per_seed": [
+            0.06060606241226196,
+            0.03809523954987526,
+            0.03365384787321091
+          ]
+        },
+        "1": {
+          "mean": 0.07110387707750003,
+          "std": 0.010017558930845305,
+          "per_seed": [
+            0.05714285746216774,
+            0.07599999755620956,
+            0.08016877621412277
+          ]
+        },
+        "2": {
+          "mean": 0.05904542406400045,
+          "std": 0.019770238244707975,
+          "per_seed": [
+            0.04651162773370743,
+            0.08695652335882187,
+            0.043668121099472046
+          ]
+        },
+        "3": {
+          "mean": 0.08376676092545192,
+          "std": 0.021474188416947232,
+          "per_seed": [
+            0.113712377846241,
+            0.0731707289814949,
+            0.06441717594861984
+          ]
+        }
+      },
+      "per_group_patchoff": {
+        "0": {
+          "mean": 0.01657694128031532,
+          "std": 0.013424092534684573,
+          "per_seed": [
+            0.035353533923625946,
+            0.004761904943734407,
+            0.009615384973585606
+          ]
+        },
+        "1": {
+          "mean": 0.02865650566915671,
+          "std": 0.0030309169752188946,
+          "per_seed": [
+            0.03265305981040001,
+            0.02800000086426735,
+            0.025316456332802773
+          ]
+        },
+        "2": {
+          "mean": 0.9108180602391561,
+          "std": 0.007230013912601033,
+          "per_seed": [
+            0.9186046719551086,
+            0.9011857509613037,
+            0.9126637578010559
+          ]
+        },
+        "3": {
+          "mean": 0.9017351071039835,
+          "std": 0.013160390191548573,
+          "per_seed": [
+            0.9030100107192993,
+            0.8850173950195312,
+            0.9171779155731201
+          ]
+        }
+      },
+      "per_seed_results": [
+        {
+          "seed": 0,
+          "acc_on": 0.911,
+          "acc_off": 0.065,
+          "spurious_gap": 0.8460000000000001,
+          "wga_bgoff": 0.04651162773370743,
+          "wga_patchoff": 0.03265305981040001,
+          "hsv_decodability": 0.9376,
+          "group_accs_bgoff": {
+            "0": 0.06060606241226196,
+            "1": 0.05714285746216774,
+            "2": 0.04651162773370743,
+            "3": 0.113712377846241
+          },
+          "group_sizes_bgoff": {
+            "0": 198,
+            "1": 245,
+            "2": 258,
+            "3": 299
+          },
+          "group_accs_patchoff": {
+            "0": 0.035353533923625946,
+            "1": 0.03265305981040001,
+            "2": 0.9186046719551086,
+            "3": 0.9030100107192993
+          },
+          "group_sizes_patchoff": {
+            "0": 198,
+            "1": 245,
+            "2": 258,
+            "3": 299
+          }
+        },
+        {
+          "seed": 1,
+          "acc_on": 0.907,
+          "acc_off": 0.066,
+          "spurious_gap": 0.841,
+          "wga_bgoff": 0.03809523954987526,
+          "wga_patchoff": 0.004761904943734407,
+          "hsv_decodability": 0.9192,
+          "group_accs_bgoff": {
+            "0": 0.03809523954987526,
+            "1": 0.07599999755620956,
+            "2": 0.08695652335882187,
+            "3": 0.0731707289814949
+          },
+          "group_sizes_bgoff": {
+            "0": 210,
+            "1": 250,
+            "2": 253,
+            "3": 287
+          },
+          "group_accs_patchoff": {
+            "0": 0.004761904943734407,
+            "1": 0.02800000086426735,
+            "2": 0.9011857509613037,
+            "3": 0.8850173950195312
+          },
+          "group_sizes_patchoff": {
+            "0": 210,
+            "1": 250,
+            "2": 253,
+            "3": 287
+          }
+        },
+        {
+          "seed": 2,
+          "acc_on": 0.916,
+          "acc_off": 0.046,
+          "spurious_gap": 0.87,
+          "wga_bgoff": 0.03365384787321091,
+          "wga_patchoff": 0.009615384973585606,
+          "hsv_decodability": 0.9314,
+          "group_accs_bgoff": {
+            "0": 0.03365384787321091,
+            "1": 0.08016877621412277,
+            "2": 0.043668121099472046,
+            "3": 0.06441717594861984
+          },
+          "group_sizes_bgoff": {
+            "0": 208,
+            "1": 237,
+            "2": 229,
+            "3": 326
+          },
+          "group_accs_patchoff": {
+            "0": 0.009615384973585606,
+            "1": 0.025316456332802773,
+            "2": 0.9126637578010559,
+            "3": 0.9171779155731201
+          },
+          "group_sizes_patchoff": {
+            "0": 208,
+            "1": 237,
+            "2": 229,
+            "3": 326
+          }
+        }
+      ]
+    },
+    "simclr_full_aug": {
+      "wga_bgoff": {
+        "mean": 0.19246522585550943,
+        "std": 0.017492065900277947,
+        "per_seed": [
+          0.21717171370983124,
+          0.18118466436862946,
+          0.17903929948806763
+        ]
+      },
+      "wga_patchoff": {
+        "mean": 0.09700186550617218,
+        "std": 0.0008004528595614215,
+        "per_seed": [
+          0.09795918315649033,
+          0.09600000083446503,
+          0.09704641252756119
+        ]
+      },
+      "hsv_decodability": {
+        "mean": 0.8630666666666666,
+        "std": 0.01112874156806997,
+        "per_seed": [
+          0.8722,
+          0.8696,
+          0.8474
+        ]
+      },
+      "acc_on": {
+        "mean": 0.838,
+        "std": 0.014352700094407337,
+        "per_seed": [
+          0.825,
+          0.858,
+          0.831
+        ]
+      },
+      "acc_off": {
+        "mean": 0.21933333333333335,
+        "std": 0.015542057635833013,
+        "per_seed": [
+          0.239,
+          0.201,
+          0.218
+        ]
+      },
+      "spurious_gap": {
+        "mean": 0.6186666666666666,
+        "std": 0.029261275129806353,
+        "per_seed": [
+          0.586,
+          0.657,
+          0.613
+        ]
+      },
+      "per_group_bgoff": {
+        "0": {
+          "mean": 0.21599557995796204,
+          "std": 0.01648924401837592,
+          "per_seed": [
+            0.21717171370983124,
+            0.19523809850215912,
+            0.23557692766189575
+          ]
+        },
+        "1": {
+          "mean": 0.25734401245911914,
+          "std": 0.029237092805577642,
+          "per_seed": [
+            0.2775510251522064,
+            0.2160000056028366,
+            0.27848100662231445
+          ]
+        },
+        "2": {
+          "mean": 0.21886004010836282,
+          "std": 0.028222058446247252,
+          "per_seed": [
+            0.23643410205841064,
+            0.24110671877861023,
+            0.17903929948806763
+          ]
+        },
+        "3": {
+          "mean": 0.22069405019283295,
+          "std": 0.029196364669435728,
+          "per_seed": [
+            0.2508361339569092,
+            0.18118466436862946,
+            0.2300613522529602
+          ]
+        }
+      },
+      "per_group_patchoff": {
+        "0": {
+          "mean": 0.11244172602891922,
+          "std": 0.016919902060545496,
+          "per_seed": [
+            0.13636364042758942,
+            0.10000000149011612,
+            0.10096153616905212
+          ]
+        },
+        "1": {
+          "mean": 0.09700186550617218,
+          "std": 0.0008004528595614215,
+          "per_seed": [
+            0.09795918315649033,
+            0.09600000083446503,
+            0.09704641252756119
+          ]
+        },
+        "2": {
+          "mean": 0.823836088180542,
+          "std": 0.03240085368974368,
+          "per_seed": [
+            0.7984496355056763,
+            0.8695651888847351,
+            0.8034934401512146
+          ]
+        },
+        "3": {
+          "mean": 0.8083879351615906,
+          "std": 0.01730167540420484,
+          "per_seed": [
+            0.832775890827179,
+            0.7979093790054321,
+            0.7944785356521606
+          ]
+        }
+      },
+      "per_seed_results": [
+        {
+          "seed": 0,
+          "color_aug": true,
+          "acc_on": 0.825,
+          "acc_off": 0.239,
+          "spurious_gap": 0.586,
+          "wga_bgoff": 0.21717171370983124,
+          "wga_patchoff": 0.09795918315649033,
+          "hsv_decodability": 0.8722,
+          "group_accs_bgoff": {
+            "0": 0.21717171370983124,
+            "1": 0.2775510251522064,
+            "2": 0.23643410205841064,
+            "3": 0.2508361339569092
+          },
+          "group_sizes_bgoff": {
+            "0": 198,
+            "1": 245,
+            "2": 258,
+            "3": 299
+          },
+          "group_accs_patchoff": {
+            "0": 0.13636364042758942,
+            "1": 0.09795918315649033,
+            "2": 0.7984496355056763,
+            "3": 0.832775890827179
+          },
+          "group_sizes_patchoff": {
+            "0": 198,
+            "1": 245,
+            "2": 258,
+            "3": 299
+          }
+        },
+        {
+          "seed": 1,
+          "color_aug": true,
+          "acc_on": 0.858,
+          "acc_off": 0.201,
+          "spurious_gap": 0.657,
+          "wga_bgoff": 0.18118466436862946,
+          "wga_patchoff": 0.09600000083446503,
+          "hsv_decodability": 0.8696,
+          "group_accs_bgoff": {
+            "0": 0.19523809850215912,
+            "1": 0.2160000056028366,
+            "2": 0.24110671877861023,
+            "3": 0.18118466436862946
+          },
+          "group_sizes_bgoff": {
+            "0": 210,
+            "1": 250,
+            "2": 253,
+            "3": 287
+          },
+          "group_accs_patchoff": {
+            "0": 0.10000000149011612,
+            "1": 0.09600000083446503,
+            "2": 0.8695651888847351,
+            "3": 0.7979093790054321
+          },
+          "group_sizes_patchoff": {
+            "0": 210,
+            "1": 250,
+            "2": 253,
+            "3": 287
+          }
+        },
+        {
+          "seed": 2,
+          "color_aug": true,
+          "acc_on": 0.831,
+          "acc_off": 0.218,
+          "spurious_gap": 0.613,
+          "wga_bgoff": 0.17903929948806763,
+          "wga_patchoff": 0.09704641252756119,
+          "hsv_decodability": 0.8474,
+          "group_accs_bgoff": {
+            "0": 0.23557692766189575,
+            "1": 0.27848100662231445,
+            "2": 0.17903929948806763,
+            "3": 0.2300613522529602
+          },
+          "group_sizes_bgoff": {
+            "0": 208,
+            "1": 237,
+            "2": 229,
+            "3": 326
+          },
+          "group_accs_patchoff": {
+            "0": 0.10096153616905212,
+            "1": 0.09704641252756119,
+            "2": 0.8034934401512146,
+            "3": 0.7944785356521606
+          },
+          "group_sizes_patchoff": {
+            "0": 208,
+            "1": 237,
+            "2": 229,
+            "3": 326
+          }
+        }
+      ]
+    },
+    "simclr_no_color_aug": {
+      "wga_bgoff": {
+        "mean": 0.04246301824847857,
+        "std": 0.007014327269386155,
+        "per_seed": [
+          0.05038759857416153,
+          0.03333333507180214,
+          0.043668121099472046
+        ]
+      },
+      "wga_patchoff": {
+        "mean": 0.014542996883392334,
+        "std": 0.007033548315152491,
+        "per_seed": [
+          0.02448979578912258,
+          0.009523809887468815,
+          0.009615384973585606
+        ]
+      },
+      "hsv_decodability": {
+        "mean": 0.9317333333333333,
+        "std": 0.002719477073916128,
+        "per_seed": [
+          0.9344,
+          0.928,
+          0.9328
+        ]
+      },
+      "acc_on": {
+        "mean": 0.9156666666666666,
+        "std": 0.007039570693980965,
+        "per_seed": [
+          0.914,
+          0.908,
+          0.925
+        ]
+      },
+      "acc_off": {
+        "mean": 0.057333333333333326,
+        "std": 0.0071336448530108995,
+        "per_seed": [
+          0.067,
+          0.055,
+          0.05
+        ]
+      },
+      "spurious_gap": {
+        "mean": 0.8583333333333334,
+        "std": 0.012036980056845203,
+        "per_seed": [
+          0.847,
+          0.853,
+          0.875
+        ]
+      },
+      "per_group_bgoff": {
+        "0": {
+          "mean": 0.04565527165929476,
+          "std": 0.009232373303414964,
+          "per_seed": [
+            0.0555555559694767,
+            0.03333333507180214,
+            0.048076923936605453
+          ]
+        },
+        "1": {
+          "mean": 0.06281982858975728,
+          "std": 0.00465966207513086,
+          "per_seed": [
+            0.0693877562880516,
+            0.05999999865889549,
+            0.05907173082232475
+          ]
+        },
+        "2": {
+          "mean": 0.055067320664723717,
+          "std": 0.011695772330022065,
+          "per_seed": [
+            0.05038759857416153,
+            0.07114624232053757,
+            0.043668121099472046
+          ]
+        },
+        "3": {
+          "mean": 0.06458073978622754,
+          "std": 0.014402292119067173,
+          "per_seed": [
+            0.08361203968524933,
+            0.04878048598766327,
+            0.061349693685770035
+          ]
+        }
+      },
+      "per_group_patchoff": {
+        "0": {
+          "mean": 0.014797239874800047,
+          "std": 0.007393097369600373,
+          "per_seed": [
+            0.02525252476334572,
+            0.009523809887468815,
+            0.009615384973585606
+          ]
+        },
+        "1": {
+          "mean": 0.025935417662064236,
+          "std": 0.0014983812960956363,
+          "per_seed": [
+            0.02448979578912258,
+            0.02800000086426735,
+            0.025316456332802773
+          ]
+        },
+        "2": {
+          "mean": 0.91614963610967,
+          "std": 0.011874669722404821,
+          "per_seed": [
+            0.930232584476471,
+            0.9011857509613037,
+            0.9170305728912354
+          ]
+        },
+        "3": {
+          "mean": 0.9016427795092264,
+          "std": 0.014449575907073648,
+          "per_seed": [
+            0.8996655344963074,
+            0.8850173950195312,
+            0.9202454090118408
+          ]
+        }
+      },
+      "per_seed_results": [
+        {
+          "seed": 0,
+          "color_aug": false,
+          "acc_on": 0.914,
+          "acc_off": 0.067,
+          "spurious_gap": 0.847,
+          "wga_bgoff": 0.05038759857416153,
+          "wga_patchoff": 0.02448979578912258,
+          "hsv_decodability": 0.9344,
+          "group_accs_bgoff": {
+            "0": 0.0555555559694767,
+            "1": 0.0693877562880516,
+            "2": 0.05038759857416153,
+            "3": 0.08361203968524933
+          },
+          "group_sizes_bgoff": {
+            "0": 198,
+            "1": 245,
+            "2": 258,
+            "3": 299
+          },
+          "group_accs_patchoff": {
+            "0": 0.02525252476334572,
+            "1": 0.02448979578912258,
+            "2": 0.930232584476471,
+            "3": 0.8996655344963074
+          },
+          "group_sizes_patchoff": {
+            "0": 198,
+            "1": 245,
+            "2": 258,
+            "3": 299
+          }
+        },
+        {
+          "seed": 1,
+          "color_aug": false,
+          "acc_on": 0.908,
+          "acc_off": 0.055,
+          "spurious_gap": 0.853,
+          "wga_bgoff": 0.03333333507180214,
+          "wga_patchoff": 0.009523809887468815,
+          "hsv_decodability": 0.928,
+          "group_accs_bgoff": {
+            "0": 0.03333333507180214,
+            "1": 0.05999999865889549,
+            "2": 0.07114624232053757,
+            "3": 0.04878048598766327
+          },
+          "group_sizes_bgoff": {
+            "0": 210,
+            "1": 250,
+            "2": 253,
+            "3": 287
+          },
+          "group_accs_patchoff": {
+            "0": 0.009523809887468815,
+            "1": 0.02800000086426735,
+            "2": 0.9011857509613037,
+            "3": 0.8850173950195312
+          },
+          "group_sizes_patchoff": {
+            "0": 210,
+            "1": 250,
+            "2": 253,
+            "3": 287
+          }
+        },
+        {
+          "seed": 2,
+          "color_aug": false,
+          "acc_on": 0.925,
+          "acc_off": 0.05,
+          "spurious_gap": 0.875,
+          "wga_bgoff": 0.043668121099472046,
+          "wga_patchoff": 0.009615384973585606,
+          "hsv_decodability": 0.9328,
+          "group_accs_bgoff": {
+            "0": 0.048076923936605453,
+            "1": 0.05907173082232475,
+            "2": 0.043668121099472046,
+            "3": 0.061349693685770035
+          },
+          "group_sizes_bgoff": {
+            "0": 208,
+            "1": 237,
+            "2": 229,
+            "3": 326
+          },
+          "group_accs_patchoff": {
+            "0": 0.009615384973585606,
+            "1": 0.025316456332802773,
+            "2": 0.9170305728912354,
+            "3": 0.9202454090118408
+          },
+          "group_sizes_patchoff": {
+            "0": 208,
+            "1": 237,
+            "2": 229,
+            "3": 326
+          }
+        }
+      ]
+    },
+    "deltas": {
+      "wga_bgoff_full_minus_erm": 0.15304498746991158,
+      "wga_bgoff_nocolor_minus_erm": 0.003042779862880707,
+      "wga_patchoff_full_minus_erm": 0.08132508226359884,
+      "wga_patchoff_nocolor_minus_erm": -0.0011337863591810056
+    },
+    "conclusion": "DELETION: WGA gain vanishes without color-aug \u2192 augmentation deletion explains SimCLR gain",
+    "interpretation": {
+      "bgoff_gain_full_aug": true,
+      "bgoff_gain_no_color_aug": false,
+      "hsv_decode_full_lower": false,
+      "hsv_decode_nc_retained": false,
+      "mechanism": "DELETION: WGA gain vanishes without color-aug \u2192 augmentation deletion explains SimCLR gain"
+    },
+    "refine02_reference": {
+      "erm_wga_bgoff_mean": 0.0394,
+      "erm_wga_patchoff_mean": 0.0157,
+      "simclr_wga_bgoff_mean": 0.1925,
+      "simclr_wga_patchoff_mean": 0.097,
+      "delta_bgoff": 0.153,
+      "note": "refine-02 showed SimCLR wga_bgoff gain +15.3pp; reviewer flagged color-aug confound"
+    }
+  },
+  "sanity_gates": {
+    "G1_fixed_seed": true,
+    "G2_loss_at_init": true,
+    "G3_dummy": true,
+    "G4_overfit": true,
+    "G5_bg_probe": null,
+    "G6_patch_probe": null,
+    "G7_balanced_groups": null,
+    "all_gates_passed": true
+  },
+  "config": {
+    "subset_train": 5000,
+    "subset_test": 1000,
+    "erm_epochs": 20,
+    "simclr_epochs": 20,
+    "probe_epochs": 20,
+    "batch_size": 128,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "device": "cuda",
+    "arms": [
+      "ERM",
+      "SimCLR-full-aug (crop+flip+colorjitter+grayscale)",
+      "SimCLR-no-color-aug (crop+flip ONLY)"
+    ]
+  },
+  "elapsed_seconds": 542.2,
+  "notes": "refine-03: Added SimCLR-no-color-aug control arm to test whether SimCLR's WGA gain is due to augmentation deletion of HSV signal or a genuine invariance mechanism. HSV decodability = linear probe accuracy predicting bg_class from backbone features (high=color info retained, low=color suppressed). Interpretation: if WGA gain persists without color aug \u2192 real invariance; if vanishes \u2192 deletion mechanism."
+}
+============================================================
