@@ -67,12 +67,18 @@ class TogglableCIFAR10(Dataset):
     root : str            – path to CIFAR-10 root (contains cifar-10-batches-py/)
     train : bool          – train or test split
     spurious_rate : float – fraction of examples where spurious signal is class-correlated
-                           (remainder get a random class's color signal)
+                           (remainder get a random class's color signal); shared rate for
+                           bg and patch when bg_spurious_rate/patch_spurious_rate not set.
     bg_enabled : bool     – whether background-color tint is rendered
     patch_enabled : bool  – whether color-patch is rendered
     seed : int            – RNG seed for determining which examples get spurious signal
     subset_size : int     – if > 0, subsample this many examples (for quick probe runs)
     transform             – additional torchvision transforms applied AFTER signal injection
+    bg_spurious_rate : float or None  – independent spurious rate for BG signal only.
+                           When not None, BG and patch get INDEPENDENT Bernoulli draws,
+                           enabling balanced 4-group WGA evaluation sets. Use 0.5 to get
+                           ~25% in each of groups 0-3.
+    patch_spurious_rate : float or None – independent spurious rate for patch signal only.
     """
 
     def __init__(
@@ -86,6 +92,8 @@ class TogglableCIFAR10(Dataset):
         subset_size: int = 0,
         transform=None,
         return_group: bool = False,
+        bg_spurious_rate: float = None,
+        patch_spurious_rate: float = None,
     ):
         self.train = train
         self.spurious_rate = spurious_rate
@@ -107,24 +115,40 @@ class TogglableCIFAR10(Dataset):
             images = images[idx]
             labels = labels[idx]
 
-        # Pre-compute which class's spurious color each image gets
-        rng = np.random.RandomState(seed + 1000)
         n = len(images)
-        # bg_class[i] = the class index whose hue is used for background tint of image i
-        # patch_class[i] = the class index whose hue is used for color patch of image i
-        is_spurious_correlated = rng.rand(n) < spurious_rate
-        # Random noise class for non-correlated examples
-        rand_bg_class = rng.randint(0, 10, size=n)
-        rand_patch_class = rng.randint(0, 10, size=n)
+        rng = np.random.RandomState(seed + 1000)
 
-        self.bg_class = np.where(is_spurious_correlated, labels, rand_bg_class)
-        self.patch_class = np.where(is_spurious_correlated, labels, rand_patch_class)
+        if bg_spurious_rate is None and patch_spurious_rate is None:
+            # Original behavior: single shared spurious_rate for both bg and patch
+            # (RNG order preserved for backward compat)
+            is_spurious_correlated = rng.rand(n) < spurious_rate
+            rand_bg_class = rng.randint(0, 10, size=n)
+            rand_patch_class = rng.randint(0, 10, size=n)
+            self.bg_class = np.where(is_spurious_correlated, labels, rand_bg_class)
+            self.patch_class = np.where(is_spurious_correlated, labels, rand_patch_class)
+        else:
+            # NEW: independent spurious rates for bg and patch
+            # Allows creating balanced 4-group WGA evaluation sets
+            bg_rate = bg_spurious_rate if bg_spurious_rate is not None else spurious_rate
+            patch_rate = patch_spurious_rate if patch_spurious_rate is not None else spurious_rate
+            rand_bg_class = rng.randint(0, 10, size=n)
+            rand_patch_class = rng.randint(0, 10, size=n)
+            is_bg_correlated = rng.rand(n) < bg_rate
+            is_patch_correlated = rng.rand(n) < patch_rate
+            self.bg_class = np.where(is_bg_correlated, labels, rand_bg_class)
+            self.patch_class = np.where(is_patch_correlated, labels, rand_patch_class)
 
         # Precompute spurious-correlation group labels (for WGA)
         # group encoding: (bg_matches_label << 1) | (patch_matches_label)
+        # Group 0 (00): neither signal matches label
+        # Group 1 (01): only patch matches label
+        # Group 2 (10): only bg matches label
+        # Group 3 (11): both signals match label
         bg_matches = (self.bg_class == labels).astype(int)
         patch_matches = (self.patch_class == labels).astype(int)
         self.group_labels = bg_matches * 2 + patch_matches  # 0,1,2,3
+        self.bg_matches = bg_matches    # stored for binary WGA analysis
+        self.patch_matches = patch_matches
 
         self.images = images
         self.labels = labels

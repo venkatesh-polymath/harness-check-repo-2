@@ -1,0 +1,544 @@
+{
+  "status": "SUCCESS",
+  "scale": "probe",
+  "subject_executed": "refine-02: Fixed 4-group WGA; ERM vs SimCLR on Togglable-Signal CIFAR-10; 5k train, 1k test, [0, 1, 2] seeds; ERM 20ep, SimCLR 20ep pretrain + 20ep probe; WGA test sets: bg_spurious_rate=0.5, patch_spurious_rate=0.5 (independent)",
+  "metrics": {
+    "erm": {
+      "spurious_gap": {
+        "mean": 0.8523333333333333,
+        "std": 0.01265789169736501,
+        "per_seed": [
+          0.8460000000000001,
+          0.841,
+          0.87
+        ]
+      },
+      "wga_bgoff": {
+        "mean": 0.03942023838559786,
+        "std": 0.005332125415582244,
+        "per_seed": [
+          0.04651162773370743,
+          0.03809523954987526,
+          0.03365384787321091
+        ]
+      },
+      "wga_patchoff": {
+        "mean": 0.01567678324257334,
+        "std": 0.012166471460001504,
+        "per_seed": [
+          0.03265305981040001,
+          0.004761904943734407,
+          0.009615384973585606
+        ]
+      },
+      "acc_on": {
+        "mean": 0.9113333333333333,
+        "std": 0.0036817870057290905,
+        "per_seed": [
+          0.911,
+          0.907,
+          0.916
+        ]
+      },
+      "acc_off": {
+        "mean": 0.059,
+        "std": 0.009201449161228175,
+        "per_seed": [
+          0.065,
+          0.066,
+          0.046
+        ]
+      },
+      "per_group_bgoff": {
+        "0": {
+          "mean": 0.04411838327844938,
+          "std": 0.011798705082085775,
+          "per_seed": [
+            0.06060606241226196,
+            0.03809523954987526,
+            0.03365384787321091
+          ]
+        },
+        "1": {
+          "mean": 0.07110387707750003,
+          "std": 0.010017558930845305,
+          "per_seed": [
+            0.05714285746216774,
+            0.07599999755620956,
+            0.08016877621412277
+          ]
+        },
+        "2": {
+          "mean": 0.05904542406400045,
+          "std": 0.019770238244707975,
+          "per_seed": [
+            0.04651162773370743,
+            0.08695652335882187,
+            0.043668121099472046
+          ]
+        },
+        "3": {
+          "mean": 0.08376676092545192,
+          "std": 0.021474188416947232,
+          "per_seed": [
+            0.113712377846241,
+            0.0731707289814949,
+            0.06441717594861984
+          ]
+        }
+      },
+      "per_group_patchoff": {
+        "0": {
+          "mean": 0.01657694128031532,
+          "std": 0.013424092534684573,
+          "per_seed": [
+            0.035353533923625946,
+            0.004761904943734407,
+            0.009615384973585606
+          ]
+        },
+        "1": {
+          "mean": 0.02865650566915671,
+          "std": 0.0030309169752188946,
+          "per_seed": [
+            0.03265305981040001,
+            0.02800000086426735,
+            0.025316456332802773
+          ]
+        },
+        "2": {
+          "mean": 0.9108180602391561,
+          "std": 0.007230013912601033,
+          "per_seed": [
+            0.9186046719551086,
+            0.9011857509613037,
+            0.9126637578010559
+          ]
+        },
+        "3": {
+          "mean": 0.9017351071039835,
+          "std": 0.013160390191548573,
+          "per_seed": [
+            0.9030100107192993,
+            0.8850173950195312,
+            0.9171779155731201
+          ]
+        }
+      },
+      "per_seed_results": [
+        {
+          "seed": 0,
+          "acc_on": 0.911,
+          "acc_off": 0.065,
+          "spurious_gap": 0.8460000000000001,
+          "wga_bgoff": 0.04651162773370743,
+          "wga_patchoff": 0.03265305981040001,
+          "group_accs_bgoff": {
+            "0": 0.06060606241226196,
+            "1": 0.05714285746216774,
+            "2": 0.04651162773370743,
+            "3": 0.113712377846241
+          },
+          "group_sizes_bgoff": {
+            "0": 198,
+            "1": 245,
+            "2": 258,
+            "3": 299
+          },
+          "group_accs_patchoff": {
+            "0": 0.035353533923625946,
+            "1": 0.03265305981040001,
+            "2": 0.9186046719551086,
+            "3": 0.9030100107192993
+          },
+          "group_sizes_patchoff": {
+            "0": 198,
+            "1": 245,
+            "2": 258,
+            "3": 299
+          }
+        },
+        {
+          "seed": 1,
+          "acc_on": 0.907,
+          "acc_off": 0.066,
+          "spurious_gap": 0.841,
+          "wga_bgoff": 0.03809523954987526,
+          "wga_patchoff": 0.004761904943734407,
+          "group_accs_bgoff": {
+            "0": 0.03809523954987526,
+            "1": 0.07599999755620956,
+            "2": 0.08695652335882187,
+            "3": 0.0731707289814949
+          },
+          "group_sizes_bgoff": {
+            "0": 210,
+            "1": 250,
+            "2": 253,
+            "3": 287
+          },
+          "group_accs_patchoff": {
+            "0": 0.004761904943734407,
+            "1": 0.02800000086426735,
+            "2": 0.9011857509613037,
+            "3": 0.8850173950195312
+          },
+          "group_sizes_patchoff": {
+            "0": 210,
+            "1": 250,
+            "2": 253,
+            "3": 287
+          }
+        },
+        {
+          "seed": 2,
+          "acc_on": 0.916,
+          "acc_off": 0.046,
+          "spurious_gap": 0.87,
+          "wga_bgoff": 0.03365384787321091,
+          "wga_patchoff": 0.009615384973585606,
+          "group_accs_bgoff": {
+            "0": 0.03365384787321091,
+            "1": 0.08016877621412277,
+            "2": 0.043668121099472046,
+            "3": 0.06441717594861984
+          },
+          "group_sizes_bgoff": {
+            "0": 208,
+            "1": 237,
+            "2": 229,
+            "3": 326
+          },
+          "group_accs_patchoff": {
+            "0": 0.009615384973585606,
+            "1": 0.025316456332802773,
+            "2": 0.9126637578010559,
+            "3": 0.9171779155731201
+          },
+          "group_sizes_patchoff": {
+            "0": 208,
+            "1": 237,
+            "2": 229,
+            "3": 326
+          }
+        }
+      ]
+    },
+    "simclr": {
+      "spurious_gap": {
+        "mean": 0.6186666666666666,
+        "std": 0.029261275129806353,
+        "per_seed": [
+          0.586,
+          0.657,
+          0.613
+        ]
+      },
+      "wga_bgoff": {
+        "mean": 0.19246522585550943,
+        "std": 0.017492065900277947,
+        "per_seed": [
+          0.21717171370983124,
+          0.18118466436862946,
+          0.17903929948806763
+        ]
+      },
+      "wga_patchoff": {
+        "mean": 0.09700186550617218,
+        "std": 0.0008004528595614215,
+        "per_seed": [
+          0.09795918315649033,
+          0.09600000083446503,
+          0.09704641252756119
+        ]
+      },
+      "acc_on": {
+        "mean": 0.838,
+        "std": 0.014352700094407337,
+        "per_seed": [
+          0.825,
+          0.858,
+          0.831
+        ]
+      },
+      "acc_off": {
+        "mean": 0.21933333333333335,
+        "std": 0.015542057635833013,
+        "per_seed": [
+          0.239,
+          0.201,
+          0.218
+        ]
+      },
+      "per_group_bgoff": {
+        "0": {
+          "mean": 0.21599557995796204,
+          "std": 0.01648924401837592,
+          "per_seed": [
+            0.21717171370983124,
+            0.19523809850215912,
+            0.23557692766189575
+          ]
+        },
+        "1": {
+          "mean": 0.25734401245911914,
+          "std": 0.029237092805577642,
+          "per_seed": [
+            0.2775510251522064,
+            0.2160000056028366,
+            0.27848100662231445
+          ]
+        },
+        "2": {
+          "mean": 0.21886004010836282,
+          "std": 0.028222058446247252,
+          "per_seed": [
+            0.23643410205841064,
+            0.24110671877861023,
+            0.17903929948806763
+          ]
+        },
+        "3": {
+          "mean": 0.22069405019283295,
+          "std": 0.029196364669435728,
+          "per_seed": [
+            0.2508361339569092,
+            0.18118466436862946,
+            0.2300613522529602
+          ]
+        }
+      },
+      "per_group_patchoff": {
+        "0": {
+          "mean": 0.11244172602891922,
+          "std": 0.016919902060545496,
+          "per_seed": [
+            0.13636364042758942,
+            0.10000000149011612,
+            0.10096153616905212
+          ]
+        },
+        "1": {
+          "mean": 0.09700186550617218,
+          "std": 0.0008004528595614215,
+          "per_seed": [
+            0.09795918315649033,
+            0.09600000083446503,
+            0.09704641252756119
+          ]
+        },
+        "2": {
+          "mean": 0.823836088180542,
+          "std": 0.03240085368974368,
+          "per_seed": [
+            0.7984496355056763,
+            0.8695651888847351,
+            0.8034934401512146
+          ]
+        },
+        "3": {
+          "mean": 0.8083879351615906,
+          "std": 0.01730167540420484,
+          "per_seed": [
+            0.832775890827179,
+            0.7979093790054321,
+            0.7944785356521606
+          ]
+        }
+      },
+      "per_seed_results": [
+        {
+          "seed": 0,
+          "acc_on": 0.825,
+          "acc_off": 0.239,
+          "spurious_gap": 0.586,
+          "wga_bgoff": 0.21717171370983124,
+          "wga_patchoff": 0.09795918315649033,
+          "group_accs_bgoff": {
+            "0": 0.21717171370983124,
+            "1": 0.2775510251522064,
+            "2": 0.23643410205841064,
+            "3": 0.2508361339569092
+          },
+          "group_sizes_bgoff": {
+            "0": 198,
+            "1": 245,
+            "2": 258,
+            "3": 299
+          },
+          "group_accs_patchoff": {
+            "0": 0.13636364042758942,
+            "1": 0.09795918315649033,
+            "2": 0.7984496355056763,
+            "3": 0.832775890827179
+          },
+          "group_sizes_patchoff": {
+            "0": 198,
+            "1": 245,
+            "2": 258,
+            "3": 299
+          }
+        },
+        {
+          "seed": 1,
+          "acc_on": 0.858,
+          "acc_off": 0.201,
+          "spurious_gap": 0.657,
+          "wga_bgoff": 0.18118466436862946,
+          "wga_patchoff": 0.09600000083446503,
+          "group_accs_bgoff": {
+            "0": 0.19523809850215912,
+            "1": 0.2160000056028366,
+            "2": 0.24110671877861023,
+            "3": 0.18118466436862946
+          },
+          "group_sizes_bgoff": {
+            "0": 210,
+            "1": 250,
+            "2": 253,
+            "3": 287
+          },
+          "group_accs_patchoff": {
+            "0": 0.10000000149011612,
+            "1": 0.09600000083446503,
+            "2": 0.8695651888847351,
+            "3": 0.7979093790054321
+          },
+          "group_sizes_patchoff": {
+            "0": 210,
+            "1": 250,
+            "2": 253,
+            "3": 287
+          }
+        },
+        {
+          "seed": 2,
+          "acc_on": 0.831,
+          "acc_off": 0.218,
+          "spurious_gap": 0.613,
+          "wga_bgoff": 0.17903929948806763,
+          "wga_patchoff": 0.09704641252756119,
+          "group_accs_bgoff": {
+            "0": 0.23557692766189575,
+            "1": 0.27848100662231445,
+            "2": 0.17903929948806763,
+            "3": 0.2300613522529602
+          },
+          "group_sizes_bgoff": {
+            "0": 208,
+            "1": 237,
+            "2": 229,
+            "3": 326
+          },
+          "group_accs_patchoff": {
+            "0": 0.10096153616905212,
+            "1": 0.09704641252756119,
+            "2": 0.8034934401512146,
+            "3": 0.7944785356521606
+          },
+          "group_sizes_patchoff": {
+            "0": 208,
+            "1": 237,
+            "2": 229,
+            "3": 326
+          }
+        }
+      ]
+    },
+    "delta_wga_bgoff_ssl_minus_erm": 0.15304498746991158,
+    "delta_wga_patchoff_erm_minus_ssl": -0.08132508226359884,
+    "delta_spurious_gap_ssl_minus_erm": -0.2336666666666667,
+    "h9_ssl_better_on_bg": false,
+    "h10_erm_better_on_patch": false,
+    "h11_shift_balance": false,
+    "baseline_main01": {
+      "erm_wga_bgoff_degenerate": 0.071,
+      "erm_wga_patchoff_degenerate": 0.904,
+      "simclr_wga_bgoff_degenerate": 0.24,
+      "simclr_wga_patchoff_degenerate": 0.811,
+      "note": "main-01 WGA was degenerate (only group 3 populated)"
+    }
+  },
+  "sanity_gates": {
+    "G1_fixed_seed": true,
+    "G2_loss_at_init": true,
+    "G3_dummy_classifier": true,
+    "G4_overfit_batch": true,
+    "G5_bg_probe": true,
+    "G6_patch_probe": true,
+    "G7_balanced_groups": true,
+    "all_gates_passed": true,
+    "details": {
+      "G1_fixed_seed": {
+        "gate": "fixed_seed",
+        "passed": true,
+        "max_diff": 0.0,
+        "threshold": 1e-05
+      },
+      "G2_loss_at_init": {
+        "gate": "loss_at_init",
+        "passed": true,
+        "loss_0": 2.502112854003906,
+        "expected": 2.302585092994046,
+        "diff": 0.19952776100986025,
+        "threshold": 0.2
+      },
+      "G3_dummy_classifier": {
+        "gate": "dummy_classifier",
+        "passed": true,
+        "dummy_acc": 0.1,
+        "dummy_acc_pct": 10.0,
+        "threshold_low": 9.5,
+        "threshold_high": 10.5
+      },
+      "G4_overfit_batch": {
+        "gate": "overfit_one_batch",
+        "passed": true,
+        "train_loss_step200": 0.0007011262350715697,
+        "threshold": 0.01
+      },
+      "G5_bg_signal_probe": {
+        "gate": "lp_background_signal",
+        "passed": true,
+        "lp_bg_acc_rho1": 0.8552,
+        "lp_bg_acc_rho0": 0.1376
+      },
+      "G6_patch_signal_probe": {
+        "gate": "lp_patch_signal",
+        "passed": true,
+        "lp_patch_acc_rho1": 1.0,
+        "lp_patch_acc_rho0": 0.1222
+      },
+      "G7_balanced_groups": {
+        "gate": "balanced_4group",
+        "passed": true,
+        "group_counts": [
+          198,
+          245,
+          258,
+          299
+        ],
+        "note": "All 4 groups must be non-empty for valid WGA"
+      }
+    }
+  },
+  "config": {
+    "subset_train": 5000,
+    "subset_test": 1000,
+    "erm_epochs": 20,
+    "simclr_epochs": 20,
+    "probe_epochs": 20,
+    "batch_size": 128,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "device": "cuda",
+    "wga_eval_bg_spurious_rate": 0.5,
+    "wga_eval_patch_spurious_rate": 0.5,
+    "fix_description": "WGA test sets now use independent bg/patch spurious rates=0.5 so all 4 groups are populated (~25% each). This is the key fix vs main-01 where spurious_rate=1.0 put all test samples in group 3 only."
+  },
+  "elapsed_seconds": 322.9,
+  "notes": "refine-02: Fixed degenerate WGA. WGA test sets use independent bg/patch spurious_rate=0.5 for balanced 4-group coverage. bgoff WGA: group 0 (no shortcut) expected lowest acc; patchoff WGA: groups 0,1 (bg anti-correlated) expected lowest acc. ERM with strong spurious signals \u2192 low WGA on hard groups. SimCLR with color-jitter suppresses bg \u2192 better wga_bgoff, may shift reliance to patch \u2192 lower wga_patchoff."
+}

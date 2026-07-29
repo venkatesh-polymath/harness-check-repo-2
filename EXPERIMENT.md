@@ -1,10 +1,10 @@
-# EXPERIMENT BRIEF — round main-01 (probe)
+# EXPERIMENT BRIEF — round refine-02 (probe)
 
 ## THIS ROUND (do exactly this)
-Run the sanity gates first (loss-at-init, input-independent baseline, overfit-one-batch). Then implement BOTH the solid baseline AND the proposed method from the study spec. Train each for 3 seeds at a representative REDUCED scale (small subset / few epochs — keep each run to tens of minutes, not hours). Report the target metric per seed for baseline vs method, with mean+/-std and the delta.
+Build on prior round results/main-01/. REFINE, do not restart. The suppress-vs-shift MECHANISM replicated and should be preserved (SSL suppresses the background shortcut, shifts weight to the patch signal). BUT worst-group accuracy is DEGENERATE: groups 0-2 are NaN in every seed (only group 3 populated), so WGA collapses to a single group rather than a true 4-group worst-group accuracy. FIX: correct the group construction so all four (label x spurious-signal) groups are populated and non-empty, then recompute the TRUE worst-group accuracy for ERM vs SimCLR under both the bg-off and patch-off shifts. 3 seeds, sanity gates. Report proper per-group accuracies, true WGA, and the suppress-vs-shift deltas.
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/main-01/.
+for context and build on them; write this round's outputs under results/refine-02/.
 
 ## Idea
 SSL Spurious-Correlation Suppress-vs-Shift Audit on Togglable-Signal CIFAR Suite
@@ -43,4 +43,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - refutes the hypothesis if: (see prediction)
 - smallest effect worth caring about (SESOI): (none)
 
-Record everything under results/main-01/. Do not commit weights.
+Record everything under results/refine-02/. Do not commit weights.
