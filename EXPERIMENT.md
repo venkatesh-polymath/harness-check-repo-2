@@ -1,10 +1,10 @@
-# EXPERIMENT BRIEF — round refine-02 (probe)
+# EXPERIMENT BRIEF — round refine-02b (probe)
 
 ## THIS ROUND (do exactly this)
-Build on prior round results/main-01/. REFINE, do not restart. CRITICAL: the central claim is a 2-4% reduction in CIFAR-10-C mean corruption error (mCE), but last round SKIPPED CIFAR-10-C and only measured clean accuracy, so the claim was untestable. FIX: evaluate BOTH the baseline (FixMatch+RandAug) and the method (FixMatch+invariance-auditor) on CIFAR-10-C mCE — apply the standard corruptions (a representative subset of the 15 types x 5 severities is fine) and report mCE per seed for baseline vs method + delta. Also report the auditor AUROC/precision/recall and whether its rollback actually fired. 3 seeds, sanity gates.
+Build on prior results/. The last mCE round did not finish and wrote no RESULTS.json. Keep it LIGHT and finishable: evaluate CIFAR-10-C mCE on a SMALL representative subset only — 4 corruption types (gaussian_noise, motion_blur, fog, contrast) at severity 3 ONLY (not all 15x5). Reuse the already-trained baseline and method checkpoints from results/main-01 or results/refine-02 if present rather than retraining. Report mCE (or mean corruption accuracy) per seed for baseline (FixMatch+RandAug) vs method (FixMatch+auditor) + delta, plus the auditor AUROC. Prioritize FINISHING and writing RESULTS.json over completeness.
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/refine-02/.
+for context and build on them; write this round's outputs under results/refine-02b/.
 
 ## Idea
 Online Mid-Training Invariance Auditor via Unlabeled Feature-Tail Consistency Signal
@@ -46,4 +46,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - refutes the hypothesis if: (see prediction)
 - smallest effect worth caring about (SESOI): (none)
 
-Record everything under results/refine-02/. Do not commit weights.
+Record everything under results/refine-02b/. Do not commit weights.

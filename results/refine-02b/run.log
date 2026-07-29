@@ -1,0 +1,267 @@
+======================================================================
+Experiment : Online Mid-Training Invariance Auditor  [round refine-02b]
+Device     : cuda
+Epochs     : 30  | Seeds: [42, 123, 456]
+CIFAR-10-C : 4 corruption types × severity 3 only = 4 pairs  (LIGHT: prior rounds timed out at 5×5=25 pairs)
+Sanity gates: SKIPPED (all 4 passed in main-01 and refine-02)
+======================================================================
+Sanity gates: all_passed=True (inherited from main-01)
+
+Split: labeled=500  unlabeled=4000  audit=500
+
+────────────────────────────────────────────────────────────
+BASELINE  seed=42
+────────────────────────────────────────────────────────────
+  seed=42 ep=  5/30  loss=1.7585  tr=0.321  te=0.290  (16s)
+  seed=42 ep= 10/30  loss=1.4932  tr=0.454  te=0.327  (30s)
+  seed=42 ep= 15/30  loss=1.2722  tr=0.485  te=0.332  (45s)
+  seed=42 ep= 20/30  loss=1.0625  tr=0.656  te=0.388  (59s)
+  seed=42 ep= 25/30  loss=0.7937  tr=0.727  te=0.403  (73s)
+  seed=42 ep= 30/30  loss=0.6882  tr=0.762  te=0.414  (88s)
+  seed=42 [baseline] evaluating CIFAR-10-C (4 types × sev=3) ...
+  seed=42 [baseline] mCE=0.7531  (10.3s)  gaussian_noise=0.610  motion_blur=0.801  fog=0.793  contrast=0.808
+
+────────────────────────────────────────────────────────────
+METHOD    seed=42
+────────────────────────────────────────────────────────────
+  seed=42 ep=  5/30  loss=1.7585  tr=0.321  te=0.290  (14s)
+  seed=42 ep= 10/30  loss=1.4932  tr=0.454  te=0.327  (29s)
+    [auditor e10] tail_size=100
+    [auditor e10] ROLLBACK 'contrast' cos=0.752
+    [auditor e10] ROLLBACK 'brightness' cos=0.802
+    [auditor e10] ROLLBACK 'sharpness' cos=0.773  rolls=3
+  seed=42 ep= 15/30  loss=1.2298  tr=0.588  te=0.374  (43s)
+  seed=42 ep= 20/30  loss=1.0018  tr=0.679  te=0.388  (57s)
+    [auditor e20] re-admitted 'contrast'
+    [auditor e20] re-admitted 'brightness'
+    [auditor e20] re-admitted 'sharpness'
+    [auditor e20] tail_size=100
+    [auditor e20] ROLLBACK 'contrast' cos=0.686
+    [auditor e20] ROLLBACK 'brightness' cos=0.793
+    [auditor e20] ROLLBACK 'sharpness' cos=0.647  rolls=3
+  seed=42 ep= 25/30  loss=0.8048  tr=0.794  te=0.416  (71s)
+  seed=42 ep= 30/30  loss=0.7139  tr=0.796  te=0.426  (86s)
+    [auditor e30] re-admitted 'contrast'
+    [auditor e30] re-admitted 'brightness'
+    [auditor e30] re-admitted 'sharpness'
+    [auditor e30] tail_size=100
+    [auditor e30] ROLLBACK 'contrast' cos=0.728
+    [auditor e30] ROLLBACK 'brightness' cos=0.818
+    [auditor e30] ROLLBACK 'sharpness' cos=0.661  rolls=3
+  seed=42 [method] evaluating CIFAR-10-C (4 types × sev=3) ...
+  seed=42 [method] mCE=0.7466  (10.4s)  gaussian_noise=0.613  motion_blur=0.787  fog=0.797  contrast=0.789
+  → Auditor AUROC=0.5  prec=0.67  rec=0.67  rollbacks=9
+
+────────────────────────────────────────────────────────────
+BASELINE  seed=123
+────────────────────────────────────────────────────────────
+  seed=123 ep=  5/30  loss=1.7025  tr=0.344  te=0.303  (15s)
+  seed=123 ep= 10/30  loss=1.3776  tr=0.512  te=0.369  (31s)
+  seed=123 ep= 15/30  loss=1.0392  tr=0.646  te=0.401  (48s)
+  seed=123 ep= 20/30  loss=0.7841  tr=0.694  te=0.427  (63s)
+  seed=123 ep= 25/30  loss=0.6254  tr=0.833  te=0.447  (77s)
+  seed=123 ep= 30/30  loss=0.5211  tr=0.850  te=0.451  (92s)
+  seed=123 [baseline] evaluating CIFAR-10-C (4 types × sev=3) ...
+  seed=123 [baseline] mCE=0.7482  (10.3s)  gaussian_noise=0.605  motion_blur=0.793  fog=0.804  contrast=0.790
+
+────────────────────────────────────────────────────────────
+METHOD    seed=123
+────────────────────────────────────────────────────────────
+  seed=123 ep=  5/30  loss=1.7025  tr=0.344  te=0.303  (14s)
+  seed=123 ep= 10/30  loss=1.3776  tr=0.512  te=0.369  (29s)
+    [auditor e10] tail_size=100
+    [auditor e10] ROLLBACK 'contrast' cos=0.755
+    [auditor e10] ROLLBACK 'sharpness' cos=0.671  rolls=2
+  seed=123 ep= 15/30  loss=1.0541  tr=0.656  te=0.423  (44s)
+  seed=123 ep= 20/30  loss=0.8083  tr=0.794  te=0.468  (59s)
+    [auditor e20] re-admitted 'contrast'
+    [auditor e20] re-admitted 'sharpness'
+    [auditor e20] tail_size=100
+    [auditor e20] ROLLBACK 'contrast' cos=0.818
+    [auditor e20] ROLLBACK 'sharpness' cos=0.660  rolls=2
+  seed=123 ep= 25/30  loss=0.5635  tr=0.883  te=0.465  (74s)
+  seed=123 ep= 30/30  loss=0.5472  tr=0.887  te=0.476  (88s)
+    [auditor e30] re-admitted 'contrast'
+    [auditor e30] re-admitted 'sharpness'
+    [auditor e30] tail_size=100
+    [auditor e30] ROLLBACK 'sharpness' cos=0.656  rolls=1
+  seed=123 [method] evaluating CIFAR-10-C (4 types × sev=3) ...
+  seed=123 [method] mCE=0.7436  (10.5s)  gaussian_noise=0.623  motion_blur=0.791  fog=0.782  contrast=0.778
+  → Auditor AUROC=0.0  prec=1.00  rec=0.67  rollbacks=5
+
+────────────────────────────────────────────────────────────
+BASELINE  seed=456
+────────────────────────────────────────────────────────────
+  seed=456 ep=  5/30  loss=1.7523  tr=0.356  te=0.273  (14s)
+  seed=456 ep= 10/30  loss=1.4386  tr=0.423  te=0.309  (29s)
+  seed=456 ep= 15/30  loss=1.2198  tr=0.565  te=0.358  (43s)
+  seed=456 ep= 20/30  loss=0.9839  tr=0.688  te=0.389  (58s)
+  seed=456 ep= 25/30  loss=0.7529  tr=0.779  te=0.412  (72s)
+  seed=456 ep= 30/30  loss=0.7291  tr=0.806  te=0.417  (87s)
+  seed=456 [baseline] evaluating CIFAR-10-C (4 types × sev=3) ...
+  seed=456 [baseline] mCE=0.7595  (10.2s)  gaussian_noise=0.625  motion_blur=0.803  fog=0.802  contrast=0.808
+
+────────────────────────────────────────────────────────────
+METHOD    seed=456
+────────────────────────────────────────────────────────────
+  seed=456 ep=  5/30  loss=1.7523  tr=0.356  te=0.273  (14s)
+  seed=456 ep= 10/30  loss=1.4386  tr=0.423  te=0.309  (29s)
+    [auditor e10] tail_size=100
+    [auditor e10] ROLLBACK 'contrast' cos=0.770
+    [auditor e10] ROLLBACK 'sharpness' cos=0.777  rolls=2
+  seed=456 ep= 15/30  loss=1.2605  tr=0.577  te=0.350  (44s)
+  seed=456 ep= 20/30  loss=1.0090  tr=0.644  te=0.369  (58s)
+    [auditor e20] re-admitted 'contrast'
+    [auditor e20] re-admitted 'sharpness'
+    [auditor e20] tail_size=100
+    [auditor e20] ROLLBACK 'contrast' cos=0.794
+    [auditor e20] ROLLBACK 'sharpness' cos=0.790  rolls=2
+  seed=456 ep= 25/30  loss=0.8137  tr=0.781  te=0.415  (73s)
+  seed=456 ep= 30/30  loss=0.7130  tr=0.804  te=0.419  (87s)
+    [auditor e30] re-admitted 'contrast'
+    [auditor e30] re-admitted 'sharpness'
+    [auditor e30] tail_size=100
+    [auditor e30] ROLLBACK 'contrast' cos=0.752
+    [auditor e30] ROLLBACK 'sharpness' cos=0.723  rolls=2
+  seed=456 [method] evaluating CIFAR-10-C (4 types × sev=3) ...
+  seed=456 [method] mCE=0.7504  (10.2s)  gaussian_noise=0.616  motion_blur=0.790  fog=0.798  contrast=0.797
+  → Auditor AUROC=1.0  prec=1.00  rec=0.67  rollbacks=6
+
+======================================================================
+RESULTS SUMMARY
+======================================================================
+Baseline (FixMatch+RandAugment)    clean acc: [0.4138, 0.451, 0.4166]  mean=0.4271±0.0169
+Method   (FixMatch+OnlineAuditor)  clean acc: [0.4265, 0.476, 0.4188]  mean=0.4404±0.0253
+  Δ clean acc: +0.0133
+
+Baseline  mCE: ['0.7531', '0.7482', '0.7595']  mean=0.7536±0.0046
+Method    mCE: ['0.7466', '0.7436', '0.7504']  mean=0.7468±0.0028
+  Δ mCE: -0.0067 (negative = method MORE robust)
+
+Per-corruption error rate (baseline → method → delta):
+  gaussian_noise      : 0.6134 → 0.6173  (+0.0039)
+  motion_blur         : 0.7993 → 0.7893  (-0.0100)
+  fog                 : 0.7996 → 0.7927  (-0.0070)
+  contrast            : 0.8020 → 0.7882  (-0.0139)
+
+Auditor AUROC (per-seed): [0.5, 0.0, 1.0]  mean=0.5000
+Auditor prec/rec: 0.889 / 0.667
+Auditor fired: [True, True, True]  total rollbacks: [9, 5, 6]
+
+Saved → /workspace/results/refine-02b/RESULTS.json
+
+======================================================================
+RESULTS.json
+======================================================================
+{
+  "status": "SUCCESS",
+  "scale": "probe",
+  "metrics": {
+    "sanity_gates": {
+      "gate_1_reproducibility": {
+        "passed": true,
+        "max_loss_diff": 0.0,
+        "source": "main-01"
+      },
+      "gate_2_loss_at_init": {
+        "passed": true,
+        "initial_loss": 2.3017,
+        "source": "main-01"
+      },
+      "gate_3_input_independent": {
+        "passed": true,
+        "accuracy": 0.1,
+        "source": "main-01"
+      },
+      "gate_4_overfit_batch": {
+        "passed": true,
+        "min_loss": 0.009969,
+        "source": "main-01"
+      },
+      "all_passed": true,
+      "note": "Sanity gates skipped in refine-02b; results inherited from main-01 (all PASS)"
+    },
+    "baseline_fixmatch_randaug": {
+      "per_seed_test_acc": [
+        0.4138,
+        0.451,
+        0.4166
+      ],
+      "mean_test_acc": 0.42713333333333336,
+      "std_test_acc": 0.01691495065188059,
+      "per_seed_mCE": [
+        0.753075,
+        0.748175,
+        0.759525
+      ],
+      "mean_mCE": 0.7535916666666668,
+      "std_mCE": 0.004647998374449885,
+      "per_corruption_mean_error": {
+        "gaussian_noise": 0.6134,
+        "motion_blur": 0.7993,
+        "fog": 0.7996333333333334,
+        "contrast": 0.8020333333333333
+      }
+    },
+    "method_fixmatch_auditor": {
+      "per_seed_test_acc": [
+        0.4265,
+        0.476,
+        0.4188
+      ],
+      "mean_test_acc": 0.4404333333333333,
+      "std_test_acc": 0.025345128832885325,
+      "per_seed_mCE": [
+        0.746575,
+        0.743625,
+        0.7503500000000001
+      ],
+      "mean_mCE": 0.7468499999999999,
+      "std_mCE": 0.0027523474829074324,
+      "per_corruption_mean_error": {
+        "gaussian_noise": 0.6173000000000001,
+        "motion_blur": 0.7892666666666667,
+        "fog": 0.7926666666666667,
+        "contrast": 0.7881666666666667
+      },
+      "auditor_auroc_per_seed": [
+        0.5,
+        0.0,
+        1.0
+      ],
+      "mean_auditor_auroc": 0.5,
+      "mean_auditor_precision": 0.8888888888888888,
+      "mean_auditor_recall": 0.6666666666666666,
+      "auditor_fired_per_seed": [
+        true,
+        true,
+        true
+      ],
+      "rollbacks_per_seed": [
+        9,
+        5,
+        6
+      ]
+    },
+    "delta_mean_test_acc": 0.013299999999999923,
+    "delta_mean_mCE": -0.006741666666666868,
+    "per_corruption_delta_mCE": {
+      "gaussian_noise": 0.0039000000000001256,
+      "motion_blur": -0.010033333333333339,
+      "fog": -0.0069666666666666766,
+      "contrast": -0.013866666666666583
+    },
+    "n_seeds": 3,
+    "epochs_per_run": 30,
+    "n_corruptions": 4,
+    "corruption_types": [
+      "gaussian_noise",
+      "motion_blur",
+      "fog",
+      "contrast"
+    ],
+    "severity_evaluated": 3
+  },
+  "subject_executed": "FixMatch+RandAugment (baseline) vs FixMatch+OnlineAuditor (method); ResNet-8 on CIFAR-10 semi-supervised (50 labels/class, 4000 unlabeled); 30 epochs \u00d7 3 seeds; CIFAR-10-C eval: ['gaussian_noise', 'motion_blur', 'fog', 'contrast'] at severity 3",
+  "notes": "Probe: 30 epochs (spec=500). refine-02b: reduced CIFAR-10-C eval from 5\u00d75=25 pairs to 4\u00d71=4 pairs (severity 3 only) to ensure completion. New corruptions vs refine-02: motion_blur (GaussianBlur+translate proxy) and fog (white overlay blend). Sanity gates inherited from main-01 (all PASS). delta_mCE=-0.0067 (method more robust). Auditor AUROC mean=0.5."
+}

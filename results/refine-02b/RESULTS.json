@@ -1,0 +1,112 @@
+{
+  "status": "SUCCESS",
+  "scale": "probe",
+  "metrics": {
+    "sanity_gates": {
+      "gate_1_reproducibility": {
+        "passed": true,
+        "max_loss_diff": 0.0,
+        "source": "main-01"
+      },
+      "gate_2_loss_at_init": {
+        "passed": true,
+        "initial_loss": 2.3017,
+        "source": "main-01"
+      },
+      "gate_3_input_independent": {
+        "passed": true,
+        "accuracy": 0.1,
+        "source": "main-01"
+      },
+      "gate_4_overfit_batch": {
+        "passed": true,
+        "min_loss": 0.009969,
+        "source": "main-01"
+      },
+      "all_passed": true,
+      "note": "Sanity gates skipped in refine-02b; results inherited from main-01 (all PASS)"
+    },
+    "baseline_fixmatch_randaug": {
+      "per_seed_test_acc": [
+        0.4138,
+        0.451,
+        0.4166
+      ],
+      "mean_test_acc": 0.42713333333333336,
+      "std_test_acc": 0.01691495065188059,
+      "per_seed_mCE": [
+        0.753075,
+        0.748175,
+        0.759525
+      ],
+      "mean_mCE": 0.7535916666666668,
+      "std_mCE": 0.004647998374449885,
+      "per_corruption_mean_error": {
+        "gaussian_noise": 0.6134,
+        "motion_blur": 0.7993,
+        "fog": 0.7996333333333334,
+        "contrast": 0.8020333333333333
+      }
+    },
+    "method_fixmatch_auditor": {
+      "per_seed_test_acc": [
+        0.4265,
+        0.476,
+        0.4188
+      ],
+      "mean_test_acc": 0.4404333333333333,
+      "std_test_acc": 0.025345128832885325,
+      "per_seed_mCE": [
+        0.746575,
+        0.743625,
+        0.7503500000000001
+      ],
+      "mean_mCE": 0.7468499999999999,
+      "std_mCE": 0.0027523474829074324,
+      "per_corruption_mean_error": {
+        "gaussian_noise": 0.6173000000000001,
+        "motion_blur": 0.7892666666666667,
+        "fog": 0.7926666666666667,
+        "contrast": 0.7881666666666667
+      },
+      "auditor_auroc_per_seed": [
+        0.5,
+        0.0,
+        1.0
+      ],
+      "mean_auditor_auroc": 0.5,
+      "mean_auditor_precision": 0.8888888888888888,
+      "mean_auditor_recall": 0.6666666666666666,
+      "auditor_fired_per_seed": [
+        true,
+        true,
+        true
+      ],
+      "rollbacks_per_seed": [
+        9,
+        5,
+        6
+      ]
+    },
+    "delta_mean_test_acc": 0.013299999999999923,
+    "delta_mean_mCE": -0.006741666666666868,
+    "per_corruption_delta_mCE": {
+      "gaussian_noise": 0.0039000000000001256,
+      "motion_blur": -0.010033333333333339,
+      "fog": -0.0069666666666666766,
+      "contrast": -0.013866666666666583
+    },
+    "n_seeds": 3,
+    "epochs_per_run": 30,
+    "n_corruptions": 4,
+    "corruption_types": [
+      "gaussian_noise",
+      "motion_blur",
+      "fog",
+      "contrast"
+    ],
+    "severity_evaluated": 3
+  },
+  "subject_executed": "FixMatch+RandAugment (baseline) vs FixMatch+OnlineAuditor (method); ResNet-8 on CIFAR-10 semi-supervised (50 labels/class, 4000 unlabeled); 30 epochs \u00d7 3 seeds; CIFAR-10-C eval: ['gaussian_noise', 'motion_blur', 'fog', 'contrast'] at severity 3",
+  "notes": "Probe: 30 epochs (spec=500). refine-02b: reduced CIFAR-10-C eval from 5\u00d75=25 pairs to 4\u00d71=4 pairs (severity 3 only) to ensure completion. New corruptions vs refine-02: motion_blur (GaussianBlur+translate proxy) and fog (white overlay blend). Sanity gates inherited from main-01 (all PASS). delta_mCE=-0.0067 (method more robust). Auditor AUROC mean=0.5."
+}
