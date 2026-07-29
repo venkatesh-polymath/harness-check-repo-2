@@ -1,0 +1,312 @@
+{
+  "status": "SUCCESS",
+  "scale": "probe",
+  "subject_executed": "MSP / Temperature-Scaled MSP / MC-Dropout (T=20, p=0.1) / Deep Ensemble (K=3) on CIFAR-10 50 labels/class, 100 epochs (LR=0.1), 3 seeds",
+  "notes": "refine-02: fixed LR (3e-3\u21920.1), added TS arm, 100 epochs. MSP AUPPC sanity band [0.70,0.88]: 0/3 seeds (still below band; needs 200 epochs + full 500 labeled). Hypothesis confirmed=False, refuted=True (probe artifact: MSP test error ~66% > 25% threshold). AUPPC improved 3.2\u00d7 over main-01 (0.203 vs 0.063). TS arm: T>1 on all seeds \u2192 reduces overconfidence \u2192 ECE \u221274% (0.141\u21920.036) but AUPPC lower than MSP because fewer samples above 0.50 threshold. MCD ECE=0.249 (needs p tuning for full run). Runtime 821s (13.7 min).",
+  "baseline_comparison_vs_main01": {
+    "auppc_msp_main01": 0.0634,
+    "auppc_msp_refine02": 0.2025,
+    "auppc_msp_improvement": "3.2x",
+    "auppc_mcd_main01": 0.0040,
+    "auppc_mcd_refine02": 0.0220,
+    "auppc_ens_main01": 0.0599,
+    "auppc_ens_refine02": 0.1852,
+    "auppc_ts_refine02": 0.0594,
+    "auppc_ts_main01": "N/A (arm was missing)",
+    "acc_msp_main01": 0.317,
+    "acc_msp_refine02": 0.336,
+    "ece_msp_main01": 0.022,
+    "ece_msp_refine02": 0.141,
+    "note_on_ece": "ECE worse for MSP in refine-02 vs main-01 because LR=0.1 causes overconfidence (T=1.9-2.5 for TS). main-01's low ECE was a coincidence of undertrained model having low confidence on everything."
+  },
+  "sanity_gates": [
+    {
+      "name": "loss_at_init",
+      "passed": true,
+      "init_ce_loss": 2.302722930908203
+    },
+    {
+      "name": "uniform_baseline",
+      "passed": true,
+      "uniform_accuracy": 0.1
+    },
+    {
+      "name": "overfit_one_batch",
+      "passed": false,
+      "single_batch_loss_at_step200": 0.010141774080693722
+    },
+    {
+      "name": "reproducibility",
+      "passed": true,
+      "diff": 0.0,
+      "run1_loss": 2.3229801654815674,
+      "run2_loss": 2.3229801654815674
+    }
+  ],
+  "all_sanity_gates_passed": false,
+  "per_seed_results": [
+    {
+      "seed": 42,
+      "msp": {
+        "test_acc": 0.3568,
+        "auppc": 0.2543798078062553,
+        "ece": 0.16199091358738715
+      },
+      "ts": {
+        "test_acc": 0.3568,
+        "auppc": 0.04385676667771817,
+        "ece": 0.062421107284649446,
+        "ece_val": 0.20807684481143954,
+        "ece_msp_val": 0.25983832269907,
+        "temperature": 2.4954640865325928,
+        "ece_improvement": 0.05176147788763044
+      },
+      "mc_dropout": {
+        "test_acc": 0.322,
+        "auppc": 0.01802411285342065,
+        "ece": 0.2422871523306827
+      },
+      "ensemble": {
+        "test_acc": 0.3594333333333333,
+        "member_accs": [
+          0.3568,
+          0.3285,
+          0.393
+        ],
+        "auppc": 0.22521868385169877,
+        "ece": 0.08795971617764896
+      },
+      "delta_ens_vs_mcd": 0.20719457099827812,
+      "delta_mcd_vs_msp": -0.23635569495283465,
+      "delta_ts_vs_msp": -0.21052304112853712,
+      "delta_ens_vs_msp": -0.029161123954556528,
+      "delta_ens_vs_ts": 0.1813619171739806,
+      "ts_recovery_fraction": 7.219304765365265
+    },
+    {
+      "seed": 7,
+      "msp": {
+        "test_acc": 0.3364,
+        "auppc": 0.18332151154421308,
+        "ece": 0.11729967643937679
+      },
+      "ts": {
+        "test_acc": 0.3364,
+        "auppc": 0.08701270313690933,
+        "ece": 0.021895353383488126,
+        "ece_val": 0.07889605671167374,
+        "ece_msp_val": 0.12707388877868653,
+        "temperature": 1.6223393678665161,
+        "ece_improvement": 0.04817783206701279
+      },
+      "mc_dropout": {
+        "test_acc": 0.3127,
+        "auppc": 0.028030565946959553,
+        "ece": 0.2499520558320512
+      },
+      "ensemble": {
+        "test_acc": 0.3314,
+        "member_accs": [
+          0.3364,
+          0.3188,
+          0.339
+        ],
+        "auppc": 0.14103100542586058,
+        "ece": 0.059941513136781824
+      },
+      "delta_ens_vs_mcd": 0.11300043947890104,
+      "delta_mcd_vs_msp": -0.15529094559725354,
+      "delta_ts_vs_msp": -0.09630880840730376,
+      "delta_ens_vs_msp": -0.0422905061183525,
+      "delta_ens_vs_ts": 0.054018302288951256,
+      "ts_recovery_fraction": 2.2773151056120686
+    },
+    {
+      "seed": 123,
+      "msp": {
+        "test_acc": 0.3157,
+        "auppc": 0.16982447262573686,
+        "ece": 0.14241410734978588
+      },
+      "ts": {
+        "test_acc": 0.3157,
+        "auppc": 0.04729158101142859,
+        "ece": 0.022826141198777187,
+        "ece_val": 0.138260158598423,
+        "ece_msp_val": 0.1737440660595894,
+        "temperature": 1.904868483543396,
+        "ece_improvement": 0.03548390746116639
+      },
+      "mc_dropout": {
+        "test_acc": 0.3206,
+        "auppc": 0.01982259522607196,
+        "ece": 0.25528410103465576
+      },
+      "ensemble": {
+        "test_acc": 0.3386,
+        "member_accs": [
+          0.3157,
+          0.3467,
+          0.3534
+        ],
+        "auppc": 0.18944763372589618,
+        "ece": 0.10227456234380453
+      },
+      "delta_ens_vs_mcd": 0.16962503849982422,
+      "delta_mcd_vs_msp": -0.1500018773996649,
+      "delta_ts_vs_msp": -0.12253289161430826,
+      "delta_ens_vs_msp": 0.019623161100159325,
+      "delta_ens_vs_ts": 0.14215605271446757,
+      "ts_recovery_fraction": -6.244299325112985
+    }
+  ],
+  "metrics": {
+    "auppc_msp": {
+      "values": [
+        0.2543798078062553,
+        0.18332151154421308,
+        0.16982447262573686
+      ],
+      "mean": 0.20250859732540175,
+      "std": 0.037090064909204225
+    },
+    "auppc_ts_msp": {
+      "values": [
+        0.04385676667771817,
+        0.08701270313690933,
+        0.04729158101142859
+      ],
+      "mean": 0.0593870169420187,
+      "std": 0.019584575404821242
+    },
+    "auppc_mc_dropout": {
+      "values": [
+        0.01802411285342065,
+        0.028030565946959553,
+        0.01982259522607196
+      ],
+      "mean": 0.02195909134215072,
+      "std": 0.004355512799415877
+    },
+    "auppc_ensemble": {
+      "values": [
+        0.22521868385169877,
+        0.14103100542586058,
+        0.18944763372589618
+      ],
+      "mean": 0.18523244100115185,
+      "std": 0.03449847520266307
+    },
+    "acc_msp": {
+      "values": [
+        0.3568,
+        0.3364,
+        0.3157
+      ],
+      "mean": 0.33630000000000004,
+      "std": 0.016779153733129697
+    },
+    "acc_ts_msp": {
+      "values": [
+        0.3568,
+        0.3364,
+        0.3157
+      ],
+      "mean": 0.33630000000000004,
+      "std": 0.016779153733129697
+    },
+    "acc_mc_dropout": {
+      "values": [
+        0.322,
+        0.3127,
+        0.3206
+      ],
+      "mean": 0.31843333333333335,
+      "std": 0.004094169295745148
+    },
+    "acc_ensemble": {
+      "values": [
+        0.3594333333333333,
+        0.3314,
+        0.3386
+      ],
+      "mean": 0.3431444444444445,
+      "std": 0.011887133826843376
+    },
+    "ece_msp": {
+      "values": [
+        0.16199091358738715,
+        0.11729967643937679,
+        0.14241410734978588
+      ],
+      "mean": 0.14056823245884995,
+      "std": 0.018291748778063225
+    },
+    "ece_ts_msp": {
+      "values": [
+        0.062421107284649446,
+        0.021895353383488126,
+        0.022826141198777187
+      ],
+      "mean": 0.03571420062230492,
+      "std": 0.018888457482329597
+    },
+    "ece_mc_dropout": {
+      "values": [
+        0.2422871523306827,
+        0.2499520558320512,
+        0.25528410103465576
+      ],
+      "mean": 0.24917443639912987,
+      "std": 0.005334397053730276
+    },
+    "ece_ensemble": {
+      "values": [
+        0.08795971617764896,
+        0.059941513136781824,
+        0.10227456234380453
+      ],
+      "mean": 0.08339193055274512,
+      "std": 0.017581624174638703
+    },
+    "delta_ensemble_vs_mcd_mean": 0.16327334965900112,
+    "delta_ensemble_vs_mcd_std": 0.03871598779591711,
+    "delta_mcd_vs_msp_mean": -0.18054950598325104,
+    "delta_mcd_vs_msp_std": 0.03951996631308739,
+    "delta_ts_vs_msp_mean": -0.14312158038338305,
+    "delta_ts_vs_msp_std": 0.04884767696931201,
+    "delta_ensemble_vs_msp_mean": -0.017276156324249902,
+    "delta_ensemble_vs_msp_std": 0.026636627524159708,
+    "delta_ensemble_vs_ts_mean": 0.12584542405913315,
+    "delta_ensemble_vs_ts_std": 0.05325177003847433,
+    "ts_recovery_fraction_mean": 1.0841068486214496,
+    "msp_auppc_in_sanity_band_count": 0
+  },
+  "hypothesis": {
+    "confirmed": false,
+    "refuted": true,
+    "cond_a_ens_minus_mcd_ge_0030": true,
+    "cond_b_mcd_minus_msp_ge_2of3": false,
+    "cond_c_ens_acc_gt_msp_2of3": false,
+    "refuted_a_ens_le_mcd_plus_010_ge_2of3": false,
+    "refuted_b_msp_auppc_gt_090_ge_2of3": false,
+    "refuted_c_msp_error_gt_25pct_ge_2of3": true
+  },
+  "config": {
+    "labels_per_class": 50,
+    "probe_epochs": 100,
+    "lr": 0.1,
+    "weight_decay": 0.0005,
+    "ensemble_k": 3,
+    "mc_passes": 20,
+    "mc_dropout_p": 0.1,
+    "ts_val_fraction": 0.1,
+    "seeds": [
+      42,
+      7,
+      123
+    ],
+    "thresholds_n": 20
+  },
+  "runtime_seconds": 820.8408455848694
+}

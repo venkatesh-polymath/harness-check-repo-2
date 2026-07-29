@@ -1,10 +1,10 @@
-# EXPERIMENT BRIEF — round main-01 (probe)
+# EXPERIMENT BRIEF — round refine-02 (probe)
 
 ## THIS ROUND (do exactly this)
-Run the sanity gates first (loss-at-init, input-independent baseline, overfit-one-batch). Then implement BOTH the solid baseline AND the proposed method from the study spec. Train each for 3 seeds at a representative REDUCED scale (small subset / few epochs — keep each run to tens of minutes, not hours). Report the target metric per seed for baseline vs method, with mean+/-std and the delta.
+Build on prior round results/main-01/. REFINE, do not restart. PROBLEM: last round the CNN was badly undertrained (~31% test acc at 50 epochs), so every AUPPC value collapsed 10-15x below the sanity band [0.70,0.88] and the comparison is meaningless. FIX: (1) train the baseline to a sane accuracy (more epochs / tuned LR so test acc is well above chance and AUPPC is in a reasonable range); (2) implement the MISSING temperature-scaling arm — the idea core is whether temperature-scaled MSP recovers ~50% of the ensemble pseudo-label-precision gain over MC-dropout. Keep 3 seeds, run sanity gates. Report AUPPC + acc + ECE for MSP, MC-dropout, ensemble, AND temperature-scaled MSP, with pairwise deltas.
 
 Prior rounds' code and results are already committed under results/*/. Read them
-for context and build on them; write this round's outputs under results/main-01/.
+for context and build on them; write this round's outputs under results/refine-02/.
 
 ## Idea
 Deep Ensemble vs. MC-Dropout Pseudo-Label Precision Pareto at 50–100 Labels/Class
@@ -43,4 +43,4 @@ Sanity gates: fixed seed, verify loss at init, input-independent baseline, overf
 - refutes the hypothesis if: ANY one of three conditions suffices: (a) mean AUPPC(Deep Ensemble) ≤ mean AUPPC(MC-Dropout) + 0.010 in ≥ 2/3 seeds — ensemble fails to exceed MC-Dropout by even the SESOI; (b) MSP baseline AUPPC > 0.90 in ≥ 2/3 seeds — ceiling effect, threshold sweep too coarse to separate methods, probe must be redesigned before full run; (c) MSP baseline downstream test error > 25% in ≥ 2/3 seeds — model not converging, setup is broken.
 - smallest effect worth caring about (SESOI): ΔAUPPC = 0.015 absolute (1.5 pp). Below this level the calibration difference is operationally equivalent to noise in pseudo-label generation, and the 5× compute overhead of a K=5 ensemble over T=20 MC-Dropout passes is not justified. This is also approximately the seed-to-seed std expected from [arxiv-1906.02530]'s ECE spread across CIFAR-10 corruption variants (0.037 ± ~0.012 for ensembles), translated to precision-coverage units.
 
-Record everything under results/main-01/. Do not commit weights.
+Record everything under results/refine-02/. Do not commit weights.
